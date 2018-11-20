@@ -17,6 +17,10 @@ Each of these will have a `github branch` which is how the `advancement of each 
 
 These criteria will be expanded at a later date.
 
+### Ethereum
+
+Expand on charity donation idea...
+
 ## Usage
 
 This will be expanded with usage instructions for the UI and for deployment with heroku later.
@@ -86,9 +90,11 @@ For commercial or educational use, please paste a link to this repository to giv
 
 ### Merging
 
-All merge requests must be directed to the `development branch`, to be merged into the `master branch` at the discretion of the product owner.
-
 All pull requests to the `development branch` must be derived from the `doc, devops, ui, ether` branches.
+
+Sub branches must be merged into the `parent branch (doc, devops, ui, etc`, and a separate pull request to development must be made after testing on the parent branch.
+
+All merge requests must be directed to the `development branch`, to be merged into the `master branch` at the discretion of the product owner.
 
 ## License
 
