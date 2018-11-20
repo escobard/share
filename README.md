@@ -1,52 +1,25 @@
 # Share - An Ethereum peer-to-peer rewards platform with charitable contributions 
 
-### Needs to be updated
-
-This project uses the Ethereum blockchain protocol on the Rinkeby test network, smart contracts with solidity,
-along with a simple UI to give the user the ability to create, buy, trade, and store Star tokens using the ERC-721
-Ethereum token standards. 
+This project's ethereum logic is based largely off the logic developed here: https://github.com/escobard/blockchains-nd-term1/tree/master/part4/project5
 
 ## Project Criteria
 
-The main purpose of this application is to meet the project criteria for the third project of the Blockchains Nanodegree by Udacity:
+The main purpose of this application is to develop a production ready web application, that interacts with the rinkeby test network to create a donation platform using ethereum.
 
-1)Define and implement smart contract interface
-    1) Smart contract implements the ERC-721 or ERC721Token interface
-1) Add metadata to the star token
-    1) The star token should have these pieces of metadata added:
-    1) ```
-           Star coordinators
-              Dec
-              Mag
-              Cent
-           Star story
-       ```
+To achieve this, the following technologies will be utilized:
 
-1) Configure uniqueness with the stars
-    1) Smart contract prevents stars with the same coordinates from being added
-1) Smart contract contains required functions
-    1) Smart contract implements all these functions - createStar(), putStarUpForSale(), buyStar(), checkIfStarExist(), mint(), approve(), safeTransferFrom(), SetApprovalForAll(), getApproved(), isApprovedForAll(), ownerOf(), starsForSale(), tokenIdToStarInfo()
-    1) Expected response for tokenIdToStarInfo():
-    1) `["Star power 103!", "I love my wonderful star", "ra_032.155", "dec_121.874", "mag_245.978"]`
-1) Properly test all required functions
-    1) Project contains tests for the following functions and all tests are approved without error:
-    1) createStar(), putStarUpForSale(), buyStar(), checkIfStarExist(), mint(), approve(), safeTransferFrom(), SetApprovalForAll(), getApproved(), isApprovedForAll(), ownerOf(), starsForSale(), tokenIdToStarInfo()
-1) Deploy smart contract on a public test network
-    1) Smart contract is deployed on on the Ethereum RINKEBY test network
-    2) Execute createStar() function
-    3) Place your star for sale using putStarUpForSale() function
-1) Client code interacts with smart contract Front-end is configured to:
-    1) Claim a new star. Each new star support these pieces of metadata:
-    1) ```
-        Star coordinators
-        Dec
-        Mag
-        Cent
-        Star story
-        ```
-    1) Lookup a star by ID using tokenIdToStarInfo()
+1) Heroku for automatic deployment and hosting of the UI, and (potentially) API layers.
+2) Github for source control and project management.
+2) React for the UI with `create-react-app` for quick bundling and deployment.
+3) Ethereum network interaction with Truffle to test, compile, develop, and deploy smart contracts.
+
+These criteria will be expanded at a later date
 
 ## Usage
+
+This will be expanded with usage instructions for the UI and for deployment with heroku later.
+
+### Truffle
 
 Metamask must be installed to use the application to interact with the deployed smart contract. 
 You can download, and learn more about metamask here: [https://metamask.io/](https://metamask.io/)
@@ -61,7 +34,7 @@ You can download, and learn more about metamask here: [https://metamask.io/](htt
 5) Once succesful, star details are displayed under the star form.
 6) The user can retrieve the star from the network, by entering the star's tokenId.
 
-### Testing
+#### Truffle - Testing
 
 1) Navigate to the `/smart_contracts` folder
 1) Run `npm install` - `truffle.js must be installed globally`
@@ -70,7 +43,7 @@ You can download, and learn more about metamask here: [https://metamask.io/](htt
 3) Once ganache is up and running, run the command `truffle test`
 4) 18 tests should pass with various functionality of the 3 token contracts. 
 
-### Deployment
+#### Truffle -  Deployment
 
 1) Navigate to the `/smart_contracts` folder
 2) Open `truffle.js`
