@@ -13,7 +13,9 @@ To achieve this, the following technologies will be utilized:
 2) React for the UI with `create-react-app` for quick bundling and deployment.
 3) Ethereum network interaction with Truffle to test, compile, develop, and deploy smart contracts.
 
-These criteria will be expanded at a later date
+Each of these will have a `github branch` which is how the `advancement of each part of the stack` will be tracked.
+
+These criteria will be expanded at a later date.
 
 ## Usage
 
@@ -53,19 +55,25 @@ You can download, and learn more about metamask here: [https://metamask.io/](htt
 
 ## Libraries, Frameworks & Tools
 
+[React](https://reactjs.org/)
+
+[Redux](https://redux.js.org/)
+
+[Heroku](https://www.heroku.com/)
+
 [Ethereum](https://www.ethereum.org/)
 
 [Solidity Smart Contracts](https://github.com/ethereum/solidity)
 
 [Truffle](https://truffleframework.com/)
 
-[Ganache](https://truffleframework.com/ganache)
-
-[Remix](https://remix.ethereum.org/)
-
 ## Contribution
 
-All files in this repository are protected under the MIT license, but feel free to contribute, fork, star, or share this application as you see fit.
+Contribution is allowed at the discretion of the product owner.
+
+### Forking
+
+All files in this repository are protected under the MIT license, but feel free to fork, star, or share this application as you see fit.
 
 For commercial or educational use, please paste a link to this repository to give proper credit.
 
