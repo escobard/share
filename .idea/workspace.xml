@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39da7f77-135d-4deb-b731-486d97edb808" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/Share.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
@@ -39,14 +43,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gitignore" value="5" />
-          <entry key="md" value="1700" />
-          <entry key="txt" value="203" />
+          <entry key="md" value="2611" />
+          <entry key="txt" value="280" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Markdown" value="1700" />
-          <entry key="PLAIN_TEXT" value="208" />
+          <entry key="Markdown" value="2611" />
+          <entry key="PLAIN_TEXT" value="285" />
         </counts>
       </usages-collector>
     </session>
@@ -56,9 +60,9 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="FIRST">
-              <first_editor relative-caret-position="517">
-                <caret line="71" column="63" selection-start-line="71" selection-start-column="63" selection-end-line="71" selection-end-column="63" />
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="385">
+                <caret line="27" column="66" selection-start-line="27" selection-start-column="66" selection-end-line="27" selection-end-column="66" />
               </first_editor>
               <second_editor />
             </state>
@@ -69,7 +73,7 @@
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
+              <caret column="5" selection-start-column="5" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -95,10 +99,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-11" />
-    <option name="y" value="-11" />
-    <option name="width" value="3863" />
-    <option name="height" value="2123" />
+    <option name="x" value="-2568" />
+    <option name="y" value="395" />
+    <option name="width" value="2576" />
+    <option name="height" value="1416" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -174,17 +178,24 @@
       <option name="project" value="LOCAL" />
       <updated>1542679662846</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="doc-readme - doc: updated with merging and contribution rules, created all branches">
+      <created>1542685675693</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1542685675693</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3959000" />
+    <option name="totallyTimeSpent" value="6276000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="2575" height="1415" extended-state="6" />
+    <frame x="-2568" y="395" width="2576" height="1416" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.43026003" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.06540583" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -213,31 +224,23 @@
     <MESSAGE value="doc-readme - doc: updated base README.mmd file" />
     <MESSAGE value="doc-readme - chore: added .gitignore file, added .idea to file to ignore webstore IDE" />
     <MESSAGE value="doc-readme - doc: updated with base criteria, removed obsolete content" />
-    <option name="LAST_COMMIT_MESSAGE" value="doc-readme - doc: updated with base criteria, removed obsolete content" />
+    <MESSAGE value="doc-readme - doc: updated with merging and contribution rules, created all branches" />
+    <option name="LAST_COMMIT_MESSAGE" value="doc-readme - doc: updated with merging and contribution rules, created all branches" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/share/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="765">
-            <caret line="100" column="177" selection-start-line="100" selection-start-column="177" selection-end-line="100" selection-end-column="177" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/share/README.md" />
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
+          <caret column="5" selection-start-column="5" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="517">
-            <caret line="71" column="63" selection-start-line="71" selection-start-column="63" selection-end-line="71" selection-end-column="63" />
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="385">
+            <caret line="27" column="66" selection-start-line="27" selection-start-column="66" selection-end-line="27" selection-end-column="66" />
           </first_editor>
           <second_editor />
         </state>
