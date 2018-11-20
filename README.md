@@ -15,7 +15,17 @@ To achieve this, the following technologies will be utilized:
 
 Each of these will have a `github branch` which is how the `advancement of each part of the stack` will be tracked.
 
+The secondary purpose of this application is to showcase my caliber with deployment pipelines, continuous integration, proper scrum usage, and real-world usage of smart contracts.
+
 These criteria will be expanded at a later date.
+
+### Ethereum
+
+The main criteria with the Ethereum stack of this web application is to create logic to facilitate charitable contributions.
+
+The secondary purpose of the Ethereum logic is to collect 4% of charitable contributions in a lottery that will be gifted at the end of the month to select users.
+
+Lastly, 1% of charitable donations are given back to the business.
 
 ## Usage
 
@@ -86,9 +96,11 @@ For commercial or educational use, please paste a link to this repository to giv
 
 ### Merging
 
-All merge requests must be directed to the `development branch`, to be merged into the `master branch` at the discretion of the product owner.
-
 All pull requests to the `development branch` must be derived from the `doc, devops, ui, ether` branches.
+
+Sub branches must be merged into the `parent branch (doc, devops, ui, etc`, and a separate pull request to development must be made after testing on the parent branch.
+
+All merge requests must be directed to the `development branch`, to be merged into the `master branch` at the discretion of the product owner.
 
 ## License
 
