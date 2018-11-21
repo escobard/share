@@ -9,19 +9,63 @@ The main purpose of this application is to develop a production ready web applic
 To achieve this, the following technologies will be utilized:
 
 1) Heroku for automatic deployment and hosting of the UI, and (potentially) API layers.
-2) Github for source control and project management.
+2) Github for source control and Waffle.io for scrum.
 2) React for the UI with `create-react-app` for quick bundling and deployment.
-3) Ethereum network interaction with Truffle to test, compile, develop, and deploy smart contracts.
+3) Node with Express for the API with Mongoose as the ORM to connect to MongoDB.
+4) MongoDB to store the source copy of the blockchain.
+5) Ethereum network interaction with Truffle to test, compile, develop, and deploy smart contracts.
 
 Each of these will have a `github branch` which is how the `advancement of each part of the stack` will be tracked.
 
-The secondary purpose of this application is to showcase my caliber with deployment pipelines, continuous integration, proper scrum usage, and real-world usage of smart contracts.
+The other purpose is to showcase my capabilities with the following:
+ - automatic deployment pipelines
+ - continuous integration between host and repository
+ - proper scrum usage
+ - real-world usage of blockchain technology
+ - use various JavaScript libraries, frameworks, and tools to interact with the Ethereum network.
 
 These criteria will be expanded at a later date.
 
+### API 
+
+The main criteria of the API layer is to control the business logic of the product and manage interactions between the Ethereum, UI, and Blockchain.
+
+This is managed by a combination of Node.js, Express.js, Mongoose and various other npm libraries.
+
+### Blockchain
+
+The main criteria of the Blockchain layer is to store encrypted, non-critical transaction data in a centralized location.
+
+Here is the main data structure of the blockchain:
+
+```
+[
+            {
+                hash: "050a5ed6c537bbf8f63cff1c297617aad9f7f8b12d6b4c2f41a38371cc36ba80",
+                height: 0,
+                body: "Genesis block - First block in the chain",
+                time: "1541637545",
+                previousblockhash: ""
+            },
+            {
+                hash: "3d344d97bf037d045a8dcd46ed659e54d1f7160625ca0a8690e44ad6f4254eff",
+                height: 1,
+                body: {
+                    transaction: "19xSGYkKgStMzqPthuJ4VW7C3XS2SUYTkE",
+                    donor: "19xSGYkKgStMzqPthuJ4VW7C3XS2SUYTkE",
+                    charity: "19xSGYkKgStMzqPthuJ4VW7C3XS2SUYTkE",
+                },
+                time: "1541718988",
+                previousblockhash: "050a5ed6c537bbf8f63cff1c297617aad9f7f8b12d6b4c2f41a38371cc36ba80"
+            }
+        ]
+```
+
+The `body properties` of the block are further encrypted with a SHA256 algorithm securing anonymity. 
+
 ### Ethereum
 
-The main criteria with the Ethereum stack of this web application is to create logic to facilitate charitable contributions.
+The main criteria with the Ethereum layer of this web application is to create logic to facilitate charitable contributions.
 
 The secondary purpose of the Ethereum logic is to collect 4% of charitable contributions in a lottery that will be gifted at the end of the month to select users.
 
@@ -43,7 +87,7 @@ You can download, and learn more about metamask here: [https://metamask.io/](htt
     1) if privacy mode is not enabled, the application will grab injected web3 instance from metamask
 4) Fill out the form to create your star.
     1) The user can track the status of the transaction in the console log.
-5) Once succesful, star details are displayed under the star form.
+5) Once successful, star details are displayed under the star form.
 6) The user can retrieve the star from the network, by entering the star's tokenId.
 
 #### Truffle - Testing
@@ -69,6 +113,12 @@ You can download, and learn more about metamask here: [https://metamask.io/](htt
 
 [Redux](https://redux.js.org/)
 
+[Node](https://nodejs.org/en/)
+
+[Express](https://expressjs.com/)
+
+[MongoDB](https://www.mongodb.com/)
+
 [Heroku](https://www.heroku.com/)
 
 [Ethereum](https://www.ethereum.org/)
@@ -76,7 +126,6 @@ You can download, and learn more about metamask here: [https://metamask.io/](htt
 [Solidity Smart Contracts](https://github.com/ethereum/solidity)
 
 [Truffle](https://truffleframework.com/)
-
 
 ### Contribution
 
