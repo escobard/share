@@ -34,7 +34,11 @@ This is managed by a combination of Node.js, Express.js, Mongoose and various ot
 
 ### Blockchain
 
-The main criteria of the Blockchain layer is to store encrypted, non-critical transaction data in a centralized location.
+The main criteria of the Blockchain layer is to store encrypted, non-personal transaction data in a centralized location.
+
+Non-personal is loosely defined by:
+   - No personal data for either the owner or the charity, the only information allowed about the involved parties is the `transaction hash`.
+   - Application and or user critical `state data` such as `charityReceived` for when a charity has received the transaction's funds, or `isFeatured` for feed displays on the UI layer.
 
 Here is the main data structure of the blockchain:
 
@@ -52,8 +56,8 @@ Here is the main data structure of the blockchain:
                 height: 1,
                 body: {
                     transaction: "19xSGYkKgStMzqPthuJ4VW7C3XS2SUYTkE",
-                    donor: "19xSGYkKgStMzqPthuJ4VW7C3XS2SUYTkE",
-                    charity: "19xSGYkKgStMzqPthuJ4VW7C3XS2SUYTkE",
+                    charityReceived: false,
+                    isFeatured: false
                 },
                 time: "1541718988",
                 previousblockhash: "050a5ed6c537bbf8f63cff1c297617aad9f7f8b12d6b4c2f41a38371cc36ba80"
