@@ -36,9 +36,9 @@ This is managed by a combination of Node.js, Express.js, Mongoose and various ot
 
 The main criteria of the Blockchain layer is to store encrypted, non-critical transaction data in a centralized location.
 
-Here is the main `data structure of the blocks`:
+Here is the main data structure of the blockchain:
 
-```angular2html
+```
 [
             {
                 hash: "050a5ed6c537bbf8f63cff1c297617aad9f7f8b12d6b4c2f41a38371cc36ba80",
