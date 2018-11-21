@@ -69,6 +69,12 @@ You can download, and learn more about metamask here: [https://metamask.io/](htt
 
 [Redux](https://redux.js.org/)
 
+[Node](https://nodejs.org/en/)
+
+[Express](https://expressjs.com/)
+
+[MongoDB](https://www.mongodb.com/)
+
 [Heroku](https://www.heroku.com/)
 
 [Ethereum](https://www.ethereum.org/)
@@ -76,7 +82,6 @@ You can download, and learn more about metamask here: [https://metamask.io/](htt
 [Solidity Smart Contracts](https://github.com/ethereum/solidity)
 
 [Truffle](https://truffleframework.com/)
-
 
 ### Contribution
 
