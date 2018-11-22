@@ -23,45 +23,48 @@
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.5" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="gitignore" value="1" />
+          <entry key="gitignore" value="2" />
+          <entry key="jpg" value="1" />
           <entry key="md" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
+          <entry key="Image" value="1" />
           <entry key="Markdown" value="3" />
-          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="PLAIN_TEXT" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gitignore" value="5" />
-          <entry key="md" value="4206" />
-          <entry key="txt" value="346" />
+          <entry key="md" value="6058" />
+          <entry key="txt" value="679" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="2" />
-          <entry key="Markdown" value="4204" />
-          <entry key="PLAIN_TEXT" value="351" />
+          <entry key="Markdown" value="6056" />
+          <entry key="PLAIN_TEXT" value="684" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="FIRST">
-              <first_editor relative-caret-position="707">
-                <caret line="63" column="81" selection-start-line="63" selection-start-column="81" selection-end-line="63" selection-end-column="81" />
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="443">
+                <caret line="69" column="3" lean-forward="true" selection-start-line="68" selection-start-column="18" selection-end-line="69" selection-end-column="3" />
               </first_editor>
               <second_editor />
             </state>
@@ -95,10 +98,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-11" />
-    <option name="y" value="-11" />
-    <option name="width" value="3863" />
-    <option name="height" value="2123" />
+    <option name="x" value="-12" />
+    <option name="y" value="-12" />
+    <option name="width" value="3864" />
+    <option name="height" value="2124" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -114,6 +117,17 @@
             <path>
               <item name="Share" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+            <path>
+              <item name="Share" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="architecture" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="Share" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="architecture" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="UML" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
@@ -138,6 +152,11 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Documents\School\Share\architecture\UML" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -165,6 +184,7 @@
       <workItem from="1542677336091" duration="3554000" />
       <workItem from="1542766261618" duration="624000" />
       <workItem from="1542778955133" duration="2730000" />
+      <workItem from="1542855111136" duration="2509000" />
     </task>
     <task id="LOCAL-00001" summary="doc-readme - doc: updated base README.mmd file">
       <created>1542677455809</created>
@@ -201,18 +221,32 @@
       <option name="project" value="LOCAL" />
       <updated>1542686163044</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="master - doc: updated README.md with cleared data structure explanation, reducing exposure to personal data.">
+      <created>1542783554627</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1542783554627</updated>
+    </task>
+    <task id="LOCAL-00007" summary="uml-activity - doc: added architecture/UML directory and activity diagram for application usage flow.">
+      <created>1542855702062</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1542855702062</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10196000" />
+    <option name="totallyTimeSpent" value="14368000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="2575" height="1415" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49940827" visible="true" weight="0.19700551" />
-      <window_info id="Structure" order="1" sideWeight="0.5005917" side_tool="true" visible="true" weight="0.19700551" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49821216" visible="true" weight="0.19700551" />
+      <window_info id="Structure" order="1" sideWeight="0.50178784" side_tool="true" visible="true" weight="0.19700551" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -223,7 +257,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.34087363" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.34555382" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -242,10 +276,15 @@
     <MESSAGE value="doc-readme - doc: updated with base criteria, removed obsolete content" />
     <MESSAGE value="doc-readme - doc: updated with merging and contribution rules, created all branches" />
     <MESSAGE value="doc-readme - doc: updated ethereum criteria, updates issue #8, completes issue #2" />
-    <option name="LAST_COMMIT_MESSAGE" value="doc-readme - doc: updated ethereum criteria, updates issue #8, completes issue #2" />
+    <MESSAGE value="master - doc: updated README.md with cleared data structure explanation, reducing exposure to personal data." />
+    <MESSAGE value="uml-activity - doc: added architecture/UML directory and activity diagram for application usage flow." />
+    <option name="LAST_COMMIT_MESSAGE" value="uml-activity - doc: added architecture/UML directory and activity diagram for application usage flow." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/share/README.md" />
+    <entry file="file://$PROJECT_DIR$/architecture/UML/Share - Activity Diagram.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -255,9 +294,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="707">
-            <caret line="63" column="81" selection-start-line="63" selection-start-column="81" selection-end-line="63" selection-end-column="81" />
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="443">
+            <caret line="69" column="3" lean-forward="true" selection-start-line="68" selection-start-column="18" selection-end-line="69" selection-end-column="3" />
           </first_editor>
           <second_editor />
         </state>

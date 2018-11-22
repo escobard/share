@@ -36,9 +36,16 @@ This is managed by a combination of Node.js, Express.js, Mongoose and various ot
 
 The main criteria of the Blockchain layer is to store encrypted, non-personal transaction data in a centralized location.
 
-Non-personal is loosely defined by:
-   - No personal data for either the owner or the charity, the only information allowed about the involved parties is the `transaction hash`.
+Expanding on this concept:
+   - No personal data for either the owner or the charity, the only information allowed about the involved parties is the `transaction, and public address hashes`.
+        - donor and charity addresses are used for `data grouping` on a `mongoDB` level. 
    - Application and or user critical `state data` such as `charityReceived` for when a charity has received the transaction's funds, or `isFeatured` for feed displays on the UI layer.
+        - while not immediately obvious, this will be used to track the `state of an asset` in the supply chain.
+        - this is far more important with assets that have `multiple states` and `multiple actors`.
+        - to keep things simple, we will have `two states` to each donation, failed and completed.
+            - failed donations are rejected by our smart contract logic.
+            - donations that are not rejected by the smart contract logic are saved to the ShareChain, thus completing the lifecycle of the donation.
+   - Each completed donation is `uniquely identified` by the `height` of the `block on the blockchain`.
 
 Here is the main data structure of the blockchain:
 
@@ -56,7 +63,8 @@ Here is the main data structure of the blockchain:
                 height: 1,
                 body: {
                     transaction: "19xSGYkKgStMzqPthuJ4VW7C3XS2SUYTkE",
-                    charityReceived: false,
+                    donor: "19xSGYkKgStMzqPthuJ4VW7C3XS2SUYTkE",
+                    charity: "19xSGYkKgStMzqPthuJ4VW7C3XS2SUYTkE",
                     isFeatured: false
                 },
                 time: "1541718988",
