@@ -32,9 +32,9 @@ The main criteria of the API layer is to control the business logic of the produ
 
 This is managed by a combination of Node.js, Express.js, Mongoose and various other npm libraries.
 
-### Blockchain
+### ShareChain
 
-The main criteria of the Blockchain layer is to store encrypted, non-personal transaction data in a centralized location.
+The main criteria of the ShareChain layer is to store encrypted, non-personal transaction data in a centralized location.
 
 Expanding on this concept:
    - No personal data for either the owner or the charity, the only information allowed about the involved parties is the `transaction, and public address hashes`.
@@ -47,7 +47,7 @@ Expanding on this concept:
             - donations that are not rejected by the smart contract logic are saved to the ShareChain, thus completing the lifecycle of the donation.
    - Each completed donation is `uniquely identified` by the `height` of the `block on the blockchain`.
 
-Here is the main data structure of the blockchain:
+Here is the main data structure of each block, in the blockchain:
 
 ```
 [
@@ -65,6 +65,14 @@ Here is the main data structure of the blockchain:
                     transaction: "19xSGYkKgStMzqPthuJ4VW7C3XS2SUYTkE",
                     donor: "19xSGYkKgStMzqPthuJ4VW7C3XS2SUYTkE",
                     charity: "19xSGYkKgStMzqPthuJ4VW7C3XS2SUYTkE",
+                    shareToken:{
+                                   donorTransaction:"0xFC18Cbc391dE84dbd87dB83B20935D3e89F5dd91",
+                                   ownerTransaction:"0xFC18Cbc391dE84dbd87dB83B20935D3e89F5dd91",
+                                   lotteryTransaction:"0xFC18Cbc391dE84dbd87dB83B20935D3e89F5dd91",
+                                   charityTransaction:"0xFC18Cbc391dE84dbd87dB83B20935D3e89F5dd91",
+                                   donationAmount:"1000.00",
+                                   gasCost:"0.04"
+                               }
                     isFeatured: false
                 },
                 time: "1541718988",
@@ -74,6 +82,25 @@ Here is the main data structure of the blockchain:
 ```
 
 The `body properties` of the block are further encrypted with a SHA256 algorithm securing anonymity. 
+
+#### Share Tokens
+
+Each donation will generate a `Share Token`, which contains the `ethereum transaction hashes` for the `owner, charity, and donor` transactions, donation amount and donor message.
+
+This token is `further encrypted with an additional algorythym` - logic for this be determined, probably SHA256 layered with some salt. 
+
+Here is a JSON of the token':
+
+```$xslt
+{
+    donorTransaction:"0xFC18Cbc391dE84dbd87dB83B20935D3e89F5dd91",
+    ownerTransaction:"0xFC18Cbc391dE84dbd87dB83B20935D3e89F5dd91",
+    lotteryTransaction:"0xFC18Cbc391dE84dbd87dB83B20935D3e89F5dd91",
+    charityTransaction:"0xFC18Cbc391dE84dbd87dB83B20935D3e89F5dd91",
+    donationAmount:"1000.00",
+    gasCost:"0.04"
+}
+```
 
 ### Ethereum
 
