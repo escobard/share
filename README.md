@@ -65,6 +65,10 @@ Here is the main data structure of the blockchain:
                     transaction: "19xSGYkKgStMzqPthuJ4VW7C3XS2SUYTkE",
                     donor: "19xSGYkKgStMzqPthuJ4VW7C3XS2SUYTkE",
                     charity: "19xSGYkKgStMzqPthuJ4VW7C3XS2SUYTkE",
+                    shareToken:{
+                    tokenId:"",
+                    "",
+                    ""}
                     isFeatured: false
                 },
                 time: "1541718988",
@@ -74,6 +78,8 @@ Here is the main data structure of the blockchain:
 ```
 
 The `body properties` of the block are further encrypted with a SHA256 algorithm securing anonymity. 
+
+#### Share Tokens
 
 ### Ethereum
 
