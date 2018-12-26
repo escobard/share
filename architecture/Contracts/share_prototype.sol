@@ -8,13 +8,17 @@
 
     // Variable: donor - donor public address
 
-    // Variable: amount
+    // Variable: amount - initial amount
+
+    // Variable: lotteryAmount - total amount going to lottery
+
+    // Variable: donationAmount - total amount going to donation
 
     // Mapping: donationSku
 
     // State: Donated, enteredLottery, Fulfilled, amountRemaining
 
-    // Struct: Donation { donationSku, amount, state, owner, lottery, charity, donor  }
+    // Struct: Donation { donationSku, amount, lotteryAmount, donationAmount, state, owner, lottery, charity, donor  }
 
     // Modifier: 'isOwner' confirms that the caller is the owner
 
@@ -36,4 +40,3 @@
 
     // Function: 'handleFunds' handles all the dispatch functionality
 
-    // Function: 'enterLottery'
