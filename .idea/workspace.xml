@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39da7f77-135d-4deb-b731-486d97edb808" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/architecture/UML/Share - Activity Diagram.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/architecture/UML/Share - Activity Diagram.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/architecture/Contracts/share_prototype.sol" beforeDir="false" afterPath="$PROJECT_DIR$/architecture/Contracts/share_prototype.sol" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -49,16 +48,16 @@
         <counts>
           <entry key="gitignore" value="5" />
           <entry key="md" value="6409" />
-          <entry key="sol" value="368" />
-          <entry key="txt" value="905" />
+          <entry key="sol" value="1616" />
+          <entry key="txt" value="930" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="2" />
-          <entry key="JavaScript" value="368" />
+          <entry key="JavaScript" value="1616" />
           <entry key="Markdown" value="6407" />
-          <entry key="PLAIN_TEXT" value="910" />
+          <entry key="PLAIN_TEXT" value="935" />
         </counts>
       </usages-collector>
     </session>
@@ -70,46 +69,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/README.md">
-              <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-                <state split_layout="FIRST">
-                  <first_editor relative-caret-position="506">
-                    <caret line="23" column="65" selection-start-line="23" selection-start-column="65" selection-end-line="23" selection-end-column="65" />
-                  </first_editor>
-                  <second_editor />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/architecture/Contracts/contract_prototype.sol">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="132">
-                  <caret line="6" selection-start-line="6" selection-end-line="31" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/architecture/Contracts/share_prototype.sol">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="220">
-                  <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/architecture/UML/Share - Activity Diagram.jpg">
-              <provider selected="true" editor-type-id="images" />
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/.gitignore">
-              <provider selected="true" editor-type-id="text-editor">
-                <state>
-                  <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
+                <state relative-caret-position="792">
+                  <caret line="36" column="69" selection-start-line="36" selection-start-column="69" selection-end-line="36" selection-end-column="69" />
                 </state>
               </provider>
             </entry>
@@ -121,8 +85,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/architecture/Contracts/contract_prototype.sol">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="308">
-                  <caret line="14" column="40" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
+                <state relative-caret-position="704">
+                  <caret line="32" column="2" lean-forward="true" selection-start-line="32" selection-start-column="2" selection-end-line="32" selection-end-column="2" />
                 </state>
               </provider>
             </entry>
@@ -259,7 +223,7 @@
       <workItem from="1545627499330" duration="3291000" />
       <workItem from="1545851996980" duration="120000" />
       <workItem from="1545852136729" duration="766000" />
-      <workItem from="1545854829535" duration="2357000" />
+      <workItem from="1545854829535" duration="4447000" />
     </task>
     <task id="LOCAL-00001" summary="doc-readme - doc: updated base README.mmd file">
       <created>1542677455809</created>
@@ -331,11 +295,18 @@
       <option name="project" value="LOCAL" />
       <updated>1545856582877</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="uml-activity - activity: updated UML activity diagram w/ improved lottery logic">
+      <created>1545857612595</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1545857612595</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25069000" />
+    <option name="totallyTimeSpent" value="27159000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="2575" height="1415" extended-state="6" />
@@ -396,20 +367,11 @@
     <MESSAGE value="uml-activity - doc: added UML base diagram" />
     <MESSAGE value="uml-activity - sequence: added contract_prototype.sol layout for smart contract design, updated UML activity" />
     <MESSAGE value="uml-activity - activity: updated UML activity diagram to better represent lottery logic, started share_prototype.sol" />
-    <option name="LAST_COMMIT_MESSAGE" value="uml-activity - activity: updated UML activity diagram to better represent lottery logic, started share_prototype.sol" />
+    <MESSAGE value="uml-activity - activity: updated UML activity diagram w/ improved lottery logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="uml-activity - activity: updated UML activity diagram w/ improved lottery logic" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/share/README.md" />
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="506">
-            <caret line="23" column="65" selection-start-line="23" selection-start-column="65" selection-end-line="23" selection-end-column="65" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -417,20 +379,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/architecture/Contracts/share_prototype.sol">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/architecture/UML/Share - Activity Diagram.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="41">
+            <caret line="23" column="65" selection-start-line="23" selection-start-column="65" selection-end-line="23" selection-end-column="65" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/architecture/Contracts/contract_prototype.sol">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="40" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
+        <state relative-caret-position="704">
+          <caret line="32" column="2" lean-forward="true" selection-start-line="32" selection-start-column="2" selection-end-line="32" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/architecture/Contracts/share_prototype.sol">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="792">
+          <caret line="36" column="69" selection-start-line="36" selection-start-column="69" selection-end-line="36" selection-end-column="69" />
         </state>
       </provider>
     </entry>
