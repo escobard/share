@@ -12,7 +12,6 @@ To achieve this, the following technologies will be utilized:
 2) Github for source control and Waffle.io for scrum.
 2) React for the UI with `create-react-app` for quick bundling and deployment.
 3) Node with Express for the API with Mongoose as the ORM to connect to MongoDB.
-4) MongoDB to store the source copy of the blockchain.
 5) Ethereum network interaction with Truffle to test, compile, develop, and deploy smart contracts.
 
 Each of these will have a `github branch` which is how the `advancement of each part of the stack` will be tracked.
@@ -32,48 +31,11 @@ The main criteria of the API layer is to control the business logic of the produ
 
 This is managed by a combination of Node.js, Express.js, Mongoose and various other npm libraries.
 
-### Blockchain
+### Data
 
-The main criteria of the Blockchain layer is to store encrypted, non-personal transaction data in a centralized location.
+This section will contain the STRUCTURE and DATA expectations.
 
-Expanding on this concept:
-   - No personal data for either the owner or the charity, the only information allowed about the involved parties is the `transaction, and public address hashes`.
-        - donor and charity addresses are used for `data grouping` on a `mongoDB` level. 
-   - Application and or user critical `state data` such as `charityReceived` for when a charity has received the transaction's funds, or `isFeatured` for feed displays on the UI layer.
-        - while not immediately obvious, this will be used to track the `state of an asset` in the supply chain.
-        - this is far more important with assets that have `multiple states` and `multiple actors`.
-        - to keep things simple, we will have `two states` to each donation, failed and completed.
-            - failed donations are rejected by our smart contract logic.
-            - donations that are not rejected by the smart contract logic are saved to the ShareChain, thus completing the lifecycle of the donation.
-   - Each completed donation is `uniquely identified` by the `height` of the `block on the blockchain`.
-
-Here is the main data structure of the blockchain:
-
-```
-[
-            {
-                hash: "050a5ed6c537bbf8f63cff1c297617aad9f7f8b12d6b4c2f41a38371cc36ba80",
-                height: 0,
-                body: "Genesis block - First block in the chain",
-                time: "1541637545",
-                previousblockhash: ""
-            },
-            {
-                hash: "3d344d97bf037d045a8dcd46ed659e54d1f7160625ca0a8690e44ad6f4254eff",
-                height: 1,
-                body: {
-                    transaction: "19xSGYkKgStMzqPthuJ4VW7C3XS2SUYTkE",
-                    donor: "19xSGYkKgStMzqPthuJ4VW7C3XS2SUYTkE",
-                    charity: "19xSGYkKgStMzqPthuJ4VW7C3XS2SUYTkE",
-                    isFeatured: false
-                },
-                time: "1541718988",
-                previousblockhash: "050a5ed6c537bbf8f63cff1c297617aad9f7f8b12d6b4c2f41a38371cc36ba80"
-            }
-        ]
-```
-
-The `body properties` of the block are further encrypted with a SHA256 algorithm securing anonymity. 
+Previously tis was handled by mongodb, this can be handled far better by smart contracts
 
 ### Ethereum
 
