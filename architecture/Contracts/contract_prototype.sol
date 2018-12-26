@@ -1,6 +1,6 @@
 // Contract: Lemonade Stand
 
-// the point is to create commented blocks of code, with their purpose
+// the point is to create commented blocks of code, with their purpose in the supply chain
 
 // Variable: owner
 
