@@ -12,7 +12,6 @@ To achieve this, the following technologies will be utilized:
 2) Github for source control and Waffle.io for scrum.
 2) React for the UI with `create-react-app` for quick bundling and deployment.
 3) Node with Express for the API with Mongoose as the ORM to connect to MongoDB.
-4) MongoDB to store the source copy of the blockchain.
 5) Ethereum network interaction with Truffle to test, compile, develop, and deploy smart contracts.
 
 Each of these will have a `github branch` which is how the `advancement of each part of the stack` will be tracked.
@@ -31,6 +30,12 @@ These criteria will be expanded at a later date.
 The main criteria of the API layer is to control the business logic of the product and manage interactions between the Ethereum, UI, and Blockchain.
 
 This is managed by a combination of Node.js, Express.js, Mongoose and various other npm libraries.
+
+### Data
+
+This section will contain the STRUCTURE and DATA expectations.
+
+Previously tis was handled by mongodb, this can be handled far better by smart contracts
 
 ### ShareChain
 
@@ -82,6 +87,7 @@ Here is the main data structure of each block, in the blockchain:
 ```
 
 The `body properties` of the block are further encrypted with a SHA256 algorithm securing anonymity. 
+>>>>>>> master
 
 #### Share Tokens
 
