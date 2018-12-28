@@ -24,7 +24,7 @@
 
 // Constructor Function: Set 'owner' to the address that instantiated the contract
 
-// Function: 'addItem' allows owner to add new items to the inventory
+// Function: 'addItem' allows owner to add new items to the inventoory
 
 // Function: 'buyItem' allows user to buy item that is for sale.
 
