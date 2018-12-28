@@ -37,6 +37,77 @@ This section will contain the STRUCTURE and DATA expectations.
 
 Previously tis was handled by mongodb, this can be handled far better by smart contracts
 
+### ShareChain
+
+The main criteria of the ShareChain layer is to store encrypted, non-personal transaction data in a centralized location.
+
+Expanding on this concept:
+   - No personal data for either the owner or the charity, the only information allowed about the involved parties is the `transaction, and public address hashes`.
+        - donor and charity addresses are used for `data grouping` on a `mongoDB` level. 
+   - Application and or user critical `state data` such as `charityReceived` for when a charity has received the transaction's funds, or `isFeatured` for feed displays on the UI layer.
+        - while not immediately obvious, this will be used to track the `state of an asset` in the supply chain.
+        - this is far more important with assets that have `multiple states` and `multiple actors`.
+        - to keep things simple, we will have `two states` to each donation, failed and completed.
+            - failed donations are rejected by our smart contract logic.
+            - donations that are not rejected by the smart contract logic are saved to the ShareChain, thus completing the lifecycle of the donation.
+   - Each completed donation is `uniquely identified` by the `height` of the `block on the blockchain`.
+
+Here is the main data structure of each block, in the blockchain:
+
+```
+[
+            {
+                hash: "050a5ed6c537bbf8f63cff1c297617aad9f7f8b12d6b4c2f41a38371cc36ba80",
+                height: 0,
+                body: "Genesis block - First block in the chain",
+                time: "1541637545",
+                previousblockhash: ""
+            },
+            {
+                hash: "3d344d97bf037d045a8dcd46ed659e54d1f7160625ca0a8690e44ad6f4254eff",
+                height: 1,
+                body: {
+                    transaction: "19xSGYkKgStMzqPthuJ4VW7C3XS2SUYTkE",
+                    donor: "19xSGYkKgStMzqPthuJ4VW7C3XS2SUYTkE",
+                    charity: "19xSGYkKgStMzqPthuJ4VW7C3XS2SUYTkE",
+                    shareToken:{
+                                   donorTransaction:"0xFC18Cbc391dE84dbd87dB83B20935D3e89F5dd91",
+                                   ownerTransaction:"0xFC18Cbc391dE84dbd87dB83B20935D3e89F5dd91",
+                                   lotteryTransaction:"0xFC18Cbc391dE84dbd87dB83B20935D3e89F5dd91",
+                                   charityTransaction:"0xFC18Cbc391dE84dbd87dB83B20935D3e89F5dd91",
+                                   donationAmount:"1000.00",
+                                   gasCost:"0.04"
+                               }
+                    isFeatured: false
+                },
+                time: "1541718988",
+                previousblockhash: "050a5ed6c537bbf8f63cff1c297617aad9f7f8b12d6b4c2f41a38371cc36ba80"
+            }
+        ]
+```
+
+The `body properties` of the block are further encrypted with a SHA256 algorithm securing anonymity. 
+>>>>>>> master
+
+#### Share Tokens
+
+Each donation will generate a `Share Token`, which contains the `ethereum transaction hashes` for the `owner, charity, and donor` transactions, donation amount and donor message.
+
+This token is `further encrypted with an additional algorythym` - logic for this be determined, probably SHA256 layered with some salt. 
+
+Here is a JSON of the token':
+
+```$xslt
+{
+    donorTransaction:"0xFC18Cbc391dE84dbd87dB83B20935D3e89F5dd91",
+    ownerTransaction:"0xFC18Cbc391dE84dbd87dB83B20935D3e89F5dd91",
+    lotteryTransaction:"0xFC18Cbc391dE84dbd87dB83B20935D3e89F5dd91",
+    charityTransaction:"0xFC18Cbc391dE84dbd87dB83B20935D3e89F5dd91",
+    donationAmount:"1000.00",
+    gasCost:"0.04"
+}
+```
+
 ### Ethereum
 
 The main criteria with the Ethereum layer of this web application is to create logic to facilitate charitable contributions.
