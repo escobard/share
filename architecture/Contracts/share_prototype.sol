@@ -16,7 +16,7 @@
 
     // Mapping: donationSku
 
-    // State: Donated, enteredLottery, Fulfilled, amountRemaining
+    // State: ownerPaid, lotteryPaid, charityPaid, completed
 
     // Struct: Donation { donationSku, amount, lotteryAmount, donationAmount, state, owner, lottery, charity, donor  }
 
