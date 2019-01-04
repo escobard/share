@@ -2,27 +2,26 @@
 
     // Variable: owner
 
-    // Variable: lottery - smart contract public address
-
-    // Variable: charity - user public address
-
-    // Variable: donor - donor public address
+    // Variable: lottery - current total lottery amount
 
     // State: ownerPaid, lotteryPaid, charityPaid, completed
 
-    // Struct: Donation { donationSku, amount, lotteryAmount, donationAmount, state, owner, lottery, charity, donor  }
+    // Mapping: lotteryEntrees - these addresses will be used by the API
+
+    // Mapping: donations - contains a list of donations, stored via Donation.transactionHash
+
+    // Struct: Donation { transactionHash, amount, lotteryAmount, donationAmount, state, owner, lottery, charity, donor }
 
     // Modifier: 'isOwner' confirms that the caller is the owner
 
     // Modifier: 'isDonor' confirms that the caller is the donor
 
-    // Constructor Function: Set 'owner' to the address that instantiated the contract
-
-    // Function: 'dispatchOwner' dispatches 1% of the amount to the owner address, updates state
-
-    // Function: 'dispatchCharity' dispatches 95% of the amount to the charity address, updates state
-
-    // Function: 'dispatchLottery' dispatches 4% of the amount to lottery, updates state
+    // Modifier: 'isCharity'  confirms that the caller is the charity
 
     // Function: 'handleFunds' handles all the dispatch functionality
 
+    // Function: 'fetchDonation' returns donation data to the user, checks callers address for data protection
+
+    // Function: 'fetchLotteryEntrees' returns lottery entrees array to the API.
+
+    // Function: 'dispatchLottery' dispatches lottery to selected winners chosen by the API.
