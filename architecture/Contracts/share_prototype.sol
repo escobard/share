@@ -10,7 +10,7 @@
 
     // Mapping: donations - contains a list of donations, stored via Donation.transactionHash
 
-    // Struct: Donation { transactionHash, amount, lotteryAmount, donationAmount, state, owner, lottery, charity, donor }
+    // Struct: Donation { transactionHash, amount, ownerAmount, lotteryAmount, charityAmount, owner, lottery, charity, donor }
 
     // Modifier: 'isOwner' confirms that the caller is the owner
 
@@ -24,4 +24,4 @@
 
     // Function: 'fetchLotteryEntrees' returns lottery entrees array to the API.
 
-    // Function: 'dispatchLottery' dispatches lottery to selected winners chosen by the API.
+    // Function: 'awardLottery' awards lottery to selected winners chosen by the API.
