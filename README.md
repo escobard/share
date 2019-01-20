@@ -8,7 +8,7 @@ The main purpose of this application is to develop a production ready web applic
 
 To achieve this, the following technologies will be utilized:
 
-1) Heroku for automatic deployment and hosting of the UI, and (potentially) API layers.
+1) Heroku & GCP for automatic deployment / hosting of the UI / API layers.
 2) Github for source control and Waffle.io for scrum.
 2) React for the UI with `create-react-app` for quick bundling and deployment.
 3) Node with Express for the API with Mongoose as the ORM to connect to MongoDB.
@@ -81,10 +81,9 @@ You can download, and learn more about metamask here: [https://metamask.io/](htt
 4) Change the `URI on line 16 to infura` with your own `pod URI`
 5) Run the `truffle migrate --network rinkeby --reset` command.
 
-
 ### Heroku
 
-#### Deployment
+#### Deployment - UI
 
 To deploy to the heroku repository / staging, navigate to the `ui` directory and run the following commands:
 
@@ -95,11 +94,19 @@ git push heroku master
 heroku open
 ```
 
-If succesful, changes should appear here: https://share-ui.herokuapp.com/
+If successful, changes should appear here: [https://share-ui.herokuapp.com/](https://share-ui.herokuapp.com/)
 
 More on how it works here: [https://github.com/mars/create-react-app-buildpack](https://github.com/mars/create-react-app-buildpack)
 
 Issue tracking the initial deployment here: [https://github.com/escobard/share/issues/3](https://github.com/escobard/share/issues/3)
+
+### GCP
+
+#### Deployment - UI
+
+To deploy to GCP, follow the instructions here: [https://medium.com/google-cloud/how-to-deploy-a-static-react-site-to-google-cloud-platform-55ff0bd0f509](https://medium.com/google-cloud/how-to-deploy-a-static-react-site-to-google-cloud-platform-55ff0bd0f509)
+
+Once successful, app should be viewable here: [https://share-ui.appspot.com/]](https://share-ui.appspot.com/)
 
 ## Libraries, Frameworks & Tools
 
