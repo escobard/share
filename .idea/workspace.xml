@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="39da7f77-135d-4deb-b731-486d97edb808" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/ui/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/ui/src/App.js" afterDir="false" />
-    </list>
+    <list default="true" id="39da7f77-135d-4deb-b731-486d97edb808" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -108,7 +106,7 @@
         <entry file="file://$PROJECT_DIR$/ui/package.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="440">
-              <caret line="20" column="26" lean-forward="true" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
+              <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -116,8 +114,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ui/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="11" column="54" selection-start-line="11" selection-start-column="54" selection-end-line="11" selection-end-column="54" />
+            <state relative-caret-position="616">
+              <caret line="28" selection-start-line="11" selection-end-line="12" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -286,7 +284,7 @@
       <workItem from="1545973416623" duration="3854000" />
       <workItem from="1546556057917" duration="12375000" />
       <workItem from="1547850513775" duration="9000" />
-      <workItem from="1547852637092" duration="2329000" />
+      <workItem from="1547852637092" duration="2902000" />
     </task>
     <task id="LOCAL-00001" summary="doc-readme - doc: updated base README.mmd file">
       <created>1542677455809</created>
@@ -474,11 +472,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50179000" />
+    <option name="totallyTimeSpent" value="50752000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="2575" height="1415" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4874851" visible="true" weight="0.10480694" />
       <window_info id="Structure" order="1" sideWeight="0.5125149" side_tool="true" weight="0.10480694" />
@@ -597,14 +594,14 @@
     <entry file="file://$PROJECT_DIR$/ui/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
-          <caret line="20" column="26" lean-forward="true" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
+          <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ui/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="54" selection-start-line="11" selection-start-column="54" selection-end-line="11" selection-end-column="54" />
+        <state relative-caret-position="616">
+          <caret line="28" selection-start-line="11" selection-end-line="12" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
