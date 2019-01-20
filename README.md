@@ -97,6 +97,10 @@ heroku open
 
 If succesful, changes should appear here: https://share-ui.herokuapp.com/
 
+More on how it works here: [https://github.com/mars/create-react-app-buildpack](https://github.com/mars/create-react-app-buildpack)
+
+Issue tracking the initial deployment here: [https://github.com/escobard/share/issues/3](https://github.com/escobard/share/issues/3)
+
 ## Libraries, Frameworks & Tools
 
 [React](https://reactjs.org/)
