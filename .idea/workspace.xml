@@ -17,47 +17,52 @@
     <session id="1822383069">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="9" />
+          <entry key="project.closed" value="11" />
           <entry key="project.open.time.0" value="4" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="2" />
           <entry key="project.open.time.5" value="2" />
           <entry key="project.open.time.6" value="4" />
-          <entry key="project.open.time.7" value="3" />
+          <entry key="project.open.time.7" value="4" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="17" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="19" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="gitignore" value="4" />
-          <entry key="jpg" value="7" />
+          <entry key="gitignore" value="5" />
+          <entry key="jpg" value="9" />
+          <entry key="json" value="2" />
           <entry key="md" value="4" />
-          <entry key="sol" value="4" />
+          <entry key="sol" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Image" value="7" />
-          <entry key="JavaScript" value="4" />
+          <entry key="Image" value="9" />
+          <entry key="JSON" value="2" />
+          <entry key="JavaScript" value="5" />
           <entry key="Markdown" value="4" />
-          <entry key="PLAIN_TEXT" value="4" />
+          <entry key="PLAIN_TEXT" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gitignore" value="10" />
+          <entry key="json" value="1" />
           <entry key="md" value="6411" />
-          <entry key="sol" value="1957" />
-          <entry key="txt" value="1432" />
+          <entry key="sol" value="2836" />
+          <entry key="txt" value="1689" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="2" />
-          <entry key="JavaScript" value="1957" />
+          <entry key="JSON" value="1" />
+          <entry key="JavaScript" value="2836" />
           <entry key="Markdown" value="6409" />
-          <entry key="PLAIN_TEXT" value="1442" />
+          <entry key="PLAIN_TEXT" value="1699" />
         </counts>
       </usages-collector>
     </session>
@@ -67,11 +72,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/architecture/Contracts/share_prototype.sol">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+            <state relative-caret-position="88">
+              <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="5" selection-start-column="5" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -80,12 +94,26 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="352">
-                <caret line="37" column="13" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
+              <first_editor relative-caret-position="396">
+                <caret line="51" column="11" selection-start-line="51" selection-start-column="11" selection-end-line="51" selection-end-column="11" />
               </first_editor>
               <second_editor />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ui/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="132">
+              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/architecture/UML/UML- Base.jpg">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
     </leaf>
@@ -105,8 +133,9 @@
         <option value="$PROJECT_DIR$/share/README.md" />
         <option value="$PROJECT_DIR$/architecture/Contracts/contract_prototype.sol" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/architecture/Contracts/share_prototype.sol" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/architecture/Contracts/share_prototype.sol" />
+        <option value="$PROJECT_DIR$/ui/package.json" />
       </list>
     </option>
   </component>
@@ -116,11 +145,19 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/ui/node_modules" />
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/ui/package.json" />
+    </packageJsonPaths>
+  </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-2568" />
-    <option name="y" value="395" />
-    <option name="width" value="2576" />
-    <option name="height" value="1416" />
+    <option name="x" value="1" />
+    <option name="y" value="424" />
+    <option name="width" value="3864" />
+    <option name="height" value="2124" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -151,19 +188,7 @@
             <path>
               <item name="Share" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="architecture" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="Share" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="architecture" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="Contracts" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="Share" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="architecture" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="UML" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="ui" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
@@ -176,13 +201,14 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Udacity/blockchains-term2" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\Dan\AppData\Roaming\npm\node_modules\prettier" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Documents\School\Share\architecture\UML" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Documents\School\Share\architecture\UML" />
     </key>
   </component>
@@ -224,7 +250,9 @@
       <workItem from="1545854829535" duration="7272000" />
       <workItem from="1545969501972" duration="1628000" />
       <workItem from="1545973416623" duration="3854000" />
-      <workItem from="1546556057917" duration="1219000" />
+      <workItem from="1546556057917" duration="12375000" />
+      <workItem from="1547850513775" duration="9000" />
+      <workItem from="1547852637092" duration="1994000" />
     </task>
     <task id="LOCAL-00001" summary="doc-readme - doc: updated base README.mmd file">
       <created>1542677455809</created>
@@ -366,16 +394,52 @@
       <option name="project" value="LOCAL" />
       <updated>1546489234813</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="uml-state - doc: updated .gitignore file">
+      <created>1546559442613</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1546559442613</updated>
+    </task>
+    <task id="LOCAL-00022" summary="uml-class - feat: updated activity / sequence / state diagram with centralized lottery logic within share contract">
+      <created>1546567995246</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1546567995246</updated>
+    </task>
+    <task id="LOCAL-00023" summary="uml-class - doc: updated share_prototype with improved functional logic">
+      <created>1546572059708</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1546572059708</updated>
+    </task>
+    <task id="LOCAL-00024" summary="uml-class - doc: updated share_prototype with improved functional logic">
+      <created>1546576357455</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1546576357455</updated>
+    </task>
+    <task id="LOCAL-00025" summary="uml-class - feat: updated architecture folder with UML class diagram for the data structure">
+      <created>1546576474510</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1546576474510</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36685000" />
+    <option name="totallyTimeSpent" value="49844000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-2568" y="395" width="2576" height="1416" extended-state="6" />
+    <frame x="-7" y="-7" width="2575" height="1415" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4874851" visible="true" weight="0.10480694" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4874851" visible="true" weight="0.10480694" />
       <window_info id="Structure" order="1" sideWeight="0.5125149" side_tool="true" weight="0.10480694" />
       <window_info id="Favorites" order="2" sideWeight="0.5023401" side_tool="true" weight="0.10480694" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -387,7 +451,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.34555382" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.34555382" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -440,7 +504,10 @@
     <MESSAGE value="uml-state - feat: updated state variable names" />
     <MESSAGE value="uml-state - feat: added base state diagram, closing issue #20" />
     <MESSAGE value="uml-state - doc: updated .gitignore file" />
-    <option name="LAST_COMMIT_MESSAGE" value="uml-state - doc: updated .gitignore file" />
+    <MESSAGE value="uml-class - feat: updated activity / sequence / state diagram with centralized lottery logic within share contract" />
+    <MESSAGE value="uml-class - doc: updated share_prototype with improved functional logic" />
+    <MESSAGE value="uml-class - feat: updated architecture folder with UML class diagram for the data structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="uml-class - feat: updated architecture folder with UML class diagram for the data structure" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/share/README.md" />
@@ -459,20 +526,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/architecture/Contracts/share_prototype.sol">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/architecture/UML/UML- Base.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/architecture/UML/UML - Class.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/my-app/package.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="352">
-            <caret line="37" column="13" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
+          <first_editor relative-caret-position="396">
+            <caret line="51" column="11" selection-start-line="51" selection-start-column="11" selection-end-line="51" selection-end-column="11" />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/architecture/Contracts/share_prototype.sol">
+    <entry file="file://$PROJECT_DIR$/ui/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        <state relative-caret-position="132">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
         </state>
       </provider>
     </entry>
