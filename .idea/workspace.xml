@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="39da7f77-135d-4deb-b731-486d97edb808" name="Default Changelist" comment="" />
+    <list default="true" id="39da7f77-135d-4deb-b731-486d97edb808" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/public/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/src/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/src/App.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/src/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/src/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/src/serviceWorker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/yarn.lock" beforeDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -90,35 +106,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="396">
-                <caret line="51" column="11" selection-start-line="51" selection-start-column="11" selection-end-line="51" selection-end-column="11" />
+              <first_editor relative-caret-position="550">
+                <caret line="58" column="92" lean-forward="true" selection-start-line="58" selection-start-column="92" selection-end-line="58" selection-end-column="92" />
               </first_editor>
               <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ui/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ui/src/App.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="616">
-              <caret line="28" selection-start-line="11" selection-end-line="12" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -198,17 +193,6 @@
               <item name="Share" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
             </path>
-            <path>
-              <item name="Share" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="ui" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="Share" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="ui" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -284,7 +268,7 @@
       <workItem from="1545973416623" duration="3854000" />
       <workItem from="1546556057917" duration="12375000" />
       <workItem from="1547850513775" duration="9000" />
-      <workItem from="1547852637092" duration="2902000" />
+      <workItem from="1547852637092" duration="3672000" />
     </task>
     <task id="LOCAL-00001" summary="doc-readme - doc: updated base README.mmd file">
       <created>1542677455809</created>
@@ -472,12 +456,12 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50752000" />
+    <option name="totallyTimeSpent" value="51522000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="2575" height="1415" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4874851" visible="true" weight="0.10480694" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4874851" visible="true" weight="0.10480694" />
       <window_info id="Structure" order="1" sideWeight="0.5125149" side_tool="true" weight="0.10480694" />
       <window_info id="Favorites" order="2" sideWeight="0.5023401" side_tool="true" weight="0.10480694" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -486,10 +470,10 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3299532" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.34555382" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.34555382" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -581,16 +565,6 @@
     <entry file="file://$PROJECT_DIR$/client/my-app/package.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="396">
-            <caret line="51" column="11" selection-start-line="51" selection-start-column="11" selection-end-line="51" selection-end-column="11" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ui/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
@@ -600,11 +574,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ui/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="28" selection-start-line="11" selection-end-line="12" />
+        <state relative-caret-position="242">
+          <caret line="11" column="60" lean-forward="true" selection-start-line="11" selection-end-line="12" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="550">
+            <caret line="58" column="92" lean-forward="true" selection-start-line="58" selection-start-column="92" selection-end-line="58" selection-end-column="92" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
