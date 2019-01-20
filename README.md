@@ -81,6 +81,22 @@ You can download, and learn more about metamask here: [https://metamask.io/](htt
 4) Change the `URI on line 16 to infura` with your own `pod URI`
 5) Run the `truffle migrate --network rinkeby --reset` command.
 
+
+### Heroku
+
+#### Deployment
+
+To deploy to the heroku repository / staging, navigate to the `ui` directory and run the following commands:
+
+```
+git add .
+git commit -m "Commit to push to heroku repository"
+git push heroku master
+heroku open
+```
+
+If succesful, changes should appear here: https://share-ui.herokuapp.com/
+
 ## Libraries, Frameworks & Tools
 
 [React](https://reactjs.org/)
