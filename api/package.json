@@ -4,11 +4,16 @@
   "description": "api used to control interaction between ui and ethereum layer",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "start":"node index.js",
+    "test": "mocha ./tests --recursive"
   },
   "author": "escobard",
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0"
   }
 }
