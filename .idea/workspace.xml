@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39da7f77-135d-4deb-b731-486d97edb808" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/api/Procfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/api/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/constants/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/constants/routes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -32,9 +36,10 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="Procfile" value="1" />
           <entry key="gitignore" value="7" />
           <entry key="jpg" value="9" />
-          <entry key="js" value="19" />
+          <entry key="js" value="23" />
           <entry key="json" value="4" />
           <entry key="md" value="4" />
           <entry key="sol" value="5" />
@@ -45,20 +50,21 @@
         <counts>
           <entry key="Image" value="9" />
           <entry key="JSON" value="4" />
-          <entry key="JavaScript" value="24" />
+          <entry key="JavaScript" value="28" />
           <entry key="Markdown" value="4" />
-          <entry key="PLAIN_TEXT" value="7" />
+          <entry key="PLAIN_TEXT" value="8" />
           <entry key="YAML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="Procfile" value="78" />
           <entry key="gitignore" value="14" />
-          <entry key="js" value="589" />
+          <entry key="js" value="720" />
           <entry key="json" value="67" />
           <entry key="md" value="6974" />
           <entry key="sol" value="2836" />
-          <entry key="txt" value="2310" />
+          <entry key="txt" value="2436" />
           <entry key="yaml" value="7" />
         </counts>
       </usages-collector>
@@ -66,9 +72,9 @@
         <counts>
           <entry key="HTML" value="2" />
           <entry key="JSON" value="67" />
-          <entry key="JavaScript" value="3425" />
+          <entry key="JavaScript" value="3556" />
           <entry key="Markdown" value="6972" />
-          <entry key="PLAIN_TEXT" value="2324" />
+          <entry key="PLAIN_TEXT" value="2528" />
           <entry key="YAML" value="7" />
         </counts>
       </usages-collector>
@@ -86,11 +92,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.465669">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/README.md">
               <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
                 <state split_layout="FIRST">
-                  <first_editor relative-caret-position="660">
+                  <first_editor relative-caret-position="172">
                     <caret line="59" column="11" selection-start-line="59" selection-start-column="11" selection-end-line="59" selection-end-column="11" />
                   </first_editor>
                   <second_editor />
@@ -103,6 +109,15 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state>
                   <caret column="5" selection-start-column="5" selection-end-column="5" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/api/routes/index.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="110">
+                  <caret line="5" column="56" selection-start-line="5" selection-start-column="56" selection-end-line="5" selection-end-column="56" />
                 </state>
               </provider>
             </entry>
@@ -123,29 +138,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/api/index.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="242">
-                  <caret line="11" column="26" lean-forward="true" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/api/constants/routes.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="22">
-                  <caret line="1" column="31" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/api/.gitignore">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="22">
-                  <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
+                <state relative-caret-position="264">
+                  <caret line="12" column="2" lean-forward="true" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
                 </state>
               </provider>
             </entry>
@@ -187,13 +184,14 @@
         <option value="$PROJECT_DIR$/api/package.json" />
         <option value="$PROJECT_DIR$/api/constants/index.js" />
         <option value="$PROJECT_DIR$/api/routes/health.js" />
-        <option value="$PROJECT_DIR$/api/routes/index.js" />
         <option value="$PROJECT_DIR$/api/tests/routes/greetings.tests.js" />
         <option value="$PROJECT_DIR$/api/tests/routes/index..js" />
         <option value="$PROJECT_DIR$/api/routes/greetings.js" />
         <option value="$PROJECT_DIR$/api/.gitignore" />
-        <option value="$PROJECT_DIR$/api/index.js" />
         <option value="$PROJECT_DIR$/api/constants/routes.js" />
+        <option value="$PROJECT_DIR$/api/Procfile" />
+        <option value="$PROJECT_DIR$/api/routes/index.js" />
+        <option value="$PROJECT_DIR$/api/index.js" />
       </list>
     </option>
   </component>
@@ -551,11 +549,25 @@
       <option name="project" value="LOCAL" />
       <updated>1548049687710</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="api-heroku - feat: added base heroku commit, added port handler for heroku deploy">
+      <created>1548052513932</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1548052513932</updated>
+    </task>
+    <task id="LOCAL-00033" summary="api-heroku - fix: updated app to fix broken constants requirement">
+      <created>1548053381072</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1548053381072</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64137000" />
+    <option name="totallyTimeSpent" value="65120000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -570,7 +582,7 @@
     <frame x="-7" y="-7" width="2575" height="1415" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4874851" visible="true" weight="0.10480694" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4874851" visible="true" weight="0.10480694" />
       <window_info id="Structure" order="1" sideWeight="0.5125149" side_tool="true" weight="0.10480694" />
       <window_info id="Favorites" order="2" sideWeight="0.5023401" side_tool="true" weight="0.10480694" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -582,7 +594,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3299532" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.22932917" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.5670827" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.3299532" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -616,8 +628,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="uml-activity - sequence: added contract_prototype.sol layout for smart contract design, updated UML activity" />
-    <MESSAGE value="uml-activity - activity: updated UML activity diagram to better represent lottery logic, started share_prototype.sol" />
     <MESSAGE value="uml-activity - activity: updated UML activity diagram w/ improved lottery logic" />
     <MESSAGE value="uml-activity - activity: updated UML activity diagram w/ improved lottery logic, updated share_prototype.sol" />
     <MESSAGE value="uml-activity - sequence: completed share_prototype.sol, leaving lottery functionality for later" />
@@ -641,7 +651,9 @@
     <MESSAGE value="api-base - feat: improved route structure" />
     <MESSAGE value="api-base - feat: updated greetings route to work with tests" />
     <MESSAGE value="api-base - feat: vastly and simply improves tests with supertest" />
-    <option name="LAST_COMMIT_MESSAGE" value="api-base - feat: vastly and simply improves tests with supertest" />
+    <MESSAGE value="api-heroku - feat: added base heroku commit, added port handler for heroku deploy" />
+    <MESSAGE value="api-heroku - fix: updated app to fix broken constants requirement" />
+    <option name="LAST_COMMIT_MESSAGE" value="api-heroku - fix: updated app to fix broken constants requirement" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/share/README.md" />
@@ -710,13 +722,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/routes/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="46" selection-start-column="46" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -724,10 +729,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/api/Procfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/constants/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/api/routes/greetings.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
-          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
@@ -748,17 +767,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/index.js">
+    <entry file="file://$PROJECT_DIR$/api/routes/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="26" lean-forward="true" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+        <state relative-caret-position="110">
+          <caret line="5" column="56" selection-start-line="5" selection-start-column="56" selection-end-line="5" selection-end-column="56" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/constants/routes.js">
+    <entry file="file://$PROJECT_DIR$/api/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="1" column="31" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
+        <state relative-caret-position="264">
+          <caret line="12" column="2" lean-forward="true" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
         </state>
       </provider>
     </entry>
