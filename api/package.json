@@ -7,6 +7,10 @@
     "start": "node index.js",
     "test": "mocha ./tests --recursive"
   },
+  "engines": {
+    "node": "10.x",
+    "npm": "6.x"
+  },
   "author": "escobard",
   "license": "ISC",
   "dependencies": {
