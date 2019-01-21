@@ -49,6 +49,14 @@ Lastly, 1% of charitable donations are given back to the business.
 
 This will be expanded with usage instructions for the UI and for deployment with heroku later.
 
+### UI
+
+Refer to the README.md file within the `./ui` directory.
+
+### API
+
+Refer to the README.md file within the `./api` directory.
+
 ### Truffle
 
 Metamask must be installed to use the application to interact with the deployed smart contract. 

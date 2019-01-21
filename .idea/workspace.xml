@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="39da7f77-135d-4deb-b731-486d97edb808" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/routes/greetings.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/greetings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/tests/routes/index..js" beforeDir="false" afterPath="$PROJECT_DIR$/api/tests/routes/index..js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -32,10 +33,10 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="gitignore" value="5" />
+          <entry key="gitignore" value="6" />
           <entry key="jpg" value="9" />
-          <entry key="js" value="1" />
-          <entry key="json" value="2" />
+          <entry key="js" value="17" />
+          <entry key="json" value="4" />
           <entry key="md" value="4" />
           <entry key="sol" value="5" />
           <entry key="yaml" value="1" />
@@ -44,32 +45,37 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Image" value="9" />
-          <entry key="JSON" value="2" />
-          <entry key="JavaScript" value="6" />
+          <entry key="JSON" value="4" />
+          <entry key="JavaScript" value="22" />
           <entry key="Markdown" value="4" />
-          <entry key="PLAIN_TEXT" value="5" />
+          <entry key="PLAIN_TEXT" value="6" />
           <entry key="YAML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gitignore" value="10" />
-          <entry key="js" value="2" />
-          <entry key="json" value="1" />
+          <entry key="js" value="547" />
+          <entry key="json" value="67" />
           <entry key="md" value="6974" />
           <entry key="sol" value="2836" />
-          <entry key="txt" value="2037" />
+          <entry key="txt" value="2310" />
           <entry key="yaml" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="2" />
-          <entry key="JSON" value="1" />
-          <entry key="JavaScript" value="2838" />
+          <entry key="JSON" value="67" />
+          <entry key="JavaScript" value="3383" />
           <entry key="Markdown" value="6972" />
-          <entry key="PLAIN_TEXT" value="2047" />
+          <entry key="PLAIN_TEXT" value="2320" />
           <entry key="YAML" value="7" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.js.language.service.starts">
+        <counts>
+          <entry key="PrettierLanguageServiceImpl" value="1" />
         </counts>
       </usages-collector>
     </session>
@@ -78,52 +84,98 @@
     <favorites_list name="Share" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/architecture/Contracts/share_prototype.sol">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="5" selection-start-column="5" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="FIRST">
-              <first_editor relative-caret-position="220">
-                <caret line="10" column="62" selection-start-line="10" selection-start-column="62" selection-end-line="10" selection-end-column="62" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ui/app.yaml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/architecture/UML/UML- Base.jpg">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.465669">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/api/index.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="132">
+                  <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/api/routes/index.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state>
+                  <caret column="46" selection-start-column="46" selection-end-column="46" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/api/constants/routes.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="66">
+                  <caret line="3" column="27" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/.gitignore">
+              <provider selected="true" editor-type-id="text-editor">
+                <state>
+                  <caret column="5" selection-start-column="5" selection-end-column="5" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/api/package.json">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="132">
+                  <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/api/routes/health.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="242">
+                  <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/api/tests/routes/index..js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="374">
+                  <caret line="17" column="33" lean-forward="true" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/api/routes/greetings.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="88">
+                  <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>hello</find>
+      <find>var</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>greetings</replace>
+      <replace>const</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -145,6 +197,15 @@
         <option value="$PROJECT_DIR$/ui/src/App.js" />
         <option value="$PROJECT_DIR$/ui/app.yaml" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/api/package.json" />
+        <option value="$PROJECT_DIR$/api/constants/index.js" />
+        <option value="$PROJECT_DIR$/api/routes/health.js" />
+        <option value="$PROJECT_DIR$/api/constants/routes.js" />
+        <option value="$PROJECT_DIR$/api/routes/index.js" />
+        <option value="$PROJECT_DIR$/api/tests/routes/greetings.tests.js" />
+        <option value="$PROJECT_DIR$/api/index.js" />
+        <option value="$PROJECT_DIR$/api/tests/routes/index..js" />
+        <option value="$PROJECT_DIR$/api/routes/greetings.js" />
       </list>
     </option>
   </component>
@@ -155,10 +216,12 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/api/node_modules" />
     <handled-path value="$PROJECT_DIR$/ui/node_modules" />
   </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
+      <path value="$PROJECT_DIR$/api/package.json" />
       <path value="$PROJECT_DIR$/ui/package.json" />
     </packageJsonPaths>
   </component>
@@ -197,7 +260,32 @@
             <path>
               <item name="Share" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="ui" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="api" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="Share" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="api" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="constants" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="Share" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="api" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="routes" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="Share" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="api" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="tests" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="Share" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="api" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="tests" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="routes" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
@@ -208,6 +296,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/ui/package.json" />
+    <property name="nodejs.mocha.mocha_node_package_dir" value="$PROJECT_DIR$/api/node_modules/mocha" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -479,11 +568,25 @@
       <option name="project" value="LOCAL" />
       <updated>1548021682502</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="api-base - feat: created base app, added base package.json file">
+      <created>1548044063304</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1548044063304</updated>
+    </task>
+    <task id="LOCAL-00031" summary="api-base - feat: vastly and simply improves tests with supertest">
+      <created>1548049687710</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1548049687710</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55165000" />
+    <option name="totallyTimeSpent" value="62875000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -509,9 +612,10 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3299532" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.19110765" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.22932917" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.3299532" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -543,12 +647,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="doc-readme - doc: updated with base criteria, removed obsolete content" />
-    <MESSAGE value="doc-readme - doc: updated with merging and contribution rules, created all branches" />
-    <MESSAGE value="doc-readme - doc: updated ethereum criteria, updates issue #8, completes issue #2" />
-    <MESSAGE value="master - doc: updated README.md with cleared data structure explanation, reducing exposure to personal data." />
-    <MESSAGE value="uml-activity - doc: added architecture/UML directory and activity diagram for application usage flow." />
-    <MESSAGE value="uml-activity - doc: added UML base diagram" />
     <MESSAGE value="uml-activity - sequence: added contract_prototype.sol layout for smart contract design, updated UML activity" />
     <MESSAGE value="uml-activity - activity: updated UML activity diagram to better represent lottery logic, started share_prototype.sol" />
     <MESSAGE value="uml-activity - activity: updated UML activity diagram w/ improved lottery logic" />
@@ -568,7 +666,13 @@
     <MESSAGE value="ui-heroku - feat: deployed app to heroku" />
     <MESSAGE value="ui-gcp - doc: updated README.md with heroku deploy instructions with create-react-app" />
     <MESSAGE value="ui-gcp - feat: build app, added app.yaml file for the app engine to know how to map the urls" />
-    <option name="LAST_COMMIT_MESSAGE" value="ui-gcp - feat: build app, added app.yaml file for the app engine to know how to map the urls" />
+    <MESSAGE value="api-base - feat: created base app, added base package.json file" />
+    <MESSAGE value="api-base - chore: tested, working" />
+    <MESSAGE value="api-base - chore: added base greetings route test" />
+    <MESSAGE value="api-base - feat: improved route structure" />
+    <MESSAGE value="api-base - feat: updated greetings route to work with tests" />
+    <MESSAGE value="api-base - feat: vastly and simply improves tests with supertest" />
+    <option name="LAST_COMMIT_MESSAGE" value="api-base - feat: vastly and simply improves tests with supertest" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/share/README.md" />
@@ -580,29 +684,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/architecture/UML/Share - Activity Diagram.jpg" />
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="5" selection-start-column="5" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/architecture/Contracts/share_prototype.sol">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/architecture/UML/UML- Base.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/architecture/UML/UML - Class.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/my-app/package.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/client/my-app/package.json" />
     <entry file="file://$PROJECT_DIR$/ui/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
@@ -614,26 +699,90 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
           <caret line="11" column="60" lean-forward="true" selection-start-line="11" selection-end-line="12" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/app.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="220">
-            <caret line="10" column="62" selection-start-line="10" selection-start-column="62" selection-end-line="10" selection-end-column="62" />
+          <first_editor relative-caret-position="748">
+            <caret line="138" column="88" selection-start-line="138" selection-start-column="88" selection-end-line="138" selection-end-column="88" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/app.yaml" />
+    <entry file="file://$PROJECT_DIR$/architecture/UML/UML- Base.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/architecture/Contracts/share_prototype.sol">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/constants/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="27" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/routes/health.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/tests/routes/index..js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="17" column="33" lean-forward="true" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/node_modules/express/lib/router/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1115">
+          <caret line="634" column="14" selection-start-line="634" selection-start-column="14" selection-end-line="634" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="46" selection-start-column="46" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="5" selection-start-column="5" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/routes/greetings.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
         </state>
       </provider>
     </entry>
