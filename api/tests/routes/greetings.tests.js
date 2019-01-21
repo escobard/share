@@ -1,6 +1,6 @@
 const expect = require('chai').expect;
 
-const { hello } = require('../../routes/greetings');
+const greetings = require('../../routes/greetings');
 
 let req = {
     body: {},
@@ -16,7 +16,7 @@ let res = {
 describe('Greetings Route', function() {
     describe('Hello() function', function() {
         it('Should error out if no name provided ', function() {
-            hello(req, res);
+            greetings(req, res);
             expect(res.sendCalledWith).to.contain('error');
         });
     })
