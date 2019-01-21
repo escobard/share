@@ -1,0 +1,14 @@
+{
+  "name": "share-api",
+  "version": "0.0.1",
+  "description": "api used to control interaction between ui and ethereum layer",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "escobard",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
