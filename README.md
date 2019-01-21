@@ -97,7 +97,7 @@ To deploy to the heroku repository / staging, navigate to the `ui` directory and
 
 ```
 git add .
-git commit -m "Commit to push to heroku repository"
+git commit -m "meaningful commit message for heroku deploy"
 git push heroku master
 heroku open
 ```
@@ -107,6 +107,22 @@ If successful, changes should appear here: [https://share-ui.herokuapp.com/](htt
 More on how it works here: [https://github.com/mars/create-react-app-buildpack](https://github.com/mars/create-react-app-buildpack)
 
 Issue tracking the initial deployment here: [https://github.com/escobard/share/issues/3](https://github.com/escobard/share/issues/3)
+
+
+#### Deployment - API
+
+To deploy to the heroku repository / staging, navigate to the `api` directory and run the following commands:
+
+```angular2html
+git add .
+git commit -m "meaningful commit message for heroku deploy"
+git push heroku master
+heroku openn
+```
+
+If successful, changes should appear here: [https://share-controller.herokuapp.com/](https://share-controller.herokuapp.com/)
+
+Issue tracking the initial deployment here: [https://github.com/escobard/share/issues/27](https://github.com/escobard/share/issues/27)
 
 ### GCP
 
