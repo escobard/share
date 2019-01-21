@@ -9,4 +9,6 @@ app.use(bodyParser.json());
 
 require("./routes")(app)
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+let server = app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+
+module.exports = server;
