@@ -1,20 +1,32 @@
-const request = require('supertest');
-describe('Testing all routes', function () {
-    let server;
-    beforeEach(function () {
-        server = require('../../index');
-    });
-    afterEach(function () {
-        server.close();
-    });
-    it('responds to /', function testSlash(done) {
+const request = require("supertest");
+describe("Testing all routes", function() {
+  let server;
+  beforeEach(() => {
+    server = require("../../index");
+  });
+  afterEach(() => {
+    server.close();
+  });
+  it("responds to /", done => {
+    request(server)
+      .get("/")
+      .expect(200, done);
+  });
+  it("responds to /greetings post requests", done => {
         request(server)
-            .get('/')
-            .expect(200, done);
+            .post("/greetings")
+            .send({name: 'John'})
+            .expect(200, done)
     });
-    it('404 everything else', function testPath(done) {
+    it("rejects /greetings post requests with missing name property", done => {
         request(server)
-            .get('/foo/bar')
-            .expect(404, done);
+            .post("/greetings")
+            .send({})
+            .expect(400, done)
     });
+  it("404 everything else", done => {
+    request(server)
+      .get("/foo/bar")
+      .expect(404, done);
+  });
 });
