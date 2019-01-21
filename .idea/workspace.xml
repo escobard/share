@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="39da7f77-135d-4deb-b731-486d97edb808" name="Default Changelist" comment="">
+    <list default="true" id="39da7f77-135d-4deb-b731-486d97edb808" name="Default Changelist" comment="api-base - feat: created base app, added base package.json file">
+      <change afterPath="$PROJECT_DIR$/api/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -34,7 +34,7 @@
         <counts>
           <entry key="gitignore" value="5" />
           <entry key="jpg" value="9" />
-          <entry key="js" value="1" />
+          <entry key="js" value="2" />
           <entry key="json" value="2" />
           <entry key="md" value="4" />
           <entry key="sol" value="5" />
@@ -45,7 +45,7 @@
         <counts>
           <entry key="Image" value="9" />
           <entry key="JSON" value="2" />
-          <entry key="JavaScript" value="6" />
+          <entry key="JavaScript" value="7" />
           <entry key="Markdown" value="4" />
           <entry key="PLAIN_TEXT" value="5" />
           <entry key="YAML" value="1" />
@@ -58,7 +58,7 @@
           <entry key="json" value="1" />
           <entry key="md" value="6974" />
           <entry key="sol" value="2836" />
-          <entry key="txt" value="2037" />
+          <entry key="txt" value="2106" />
           <entry key="yaml" value="7" />
         </counts>
       </usages-collector>
@@ -68,7 +68,7 @@
           <entry key="JSON" value="1" />
           <entry key="JavaScript" value="2838" />
           <entry key="Markdown" value="6972" />
-          <entry key="PLAIN_TEXT" value="2047" />
+          <entry key="PLAIN_TEXT" value="2116" />
           <entry key="YAML" value="7" />
         </counts>
       </usages-collector>
@@ -98,22 +98,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="FIRST">
-              <first_editor relative-caret-position="220">
-                <caret line="10" column="62" selection-start-line="10" selection-start-column="62" selection-end-line="10" selection-end-column="62" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ui/app.yaml">
+        <entry file="file://$PROJECT_DIR$/api/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+            <state relative-caret-position="132">
+              <caret line="6" column="77" lean-forward="true" selection-start-line="6" selection-start-column="77" selection-end-line="6" selection-end-column="77" />
             </state>
           </provider>
         </entry>
@@ -145,6 +133,7 @@
         <option value="$PROJECT_DIR$/ui/src/App.js" />
         <option value="$PROJECT_DIR$/ui/app.yaml" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/api/index.js" />
       </list>
     </option>
   </component>
@@ -155,10 +144,12 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/api/node_modules" />
     <handled-path value="$PROJECT_DIR$/ui/node_modules" />
   </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
+      <path value="$PROJECT_DIR$/api/package.json" />
       <path value="$PROJECT_DIR$/ui/package.json" />
     </packageJsonPaths>
   </component>
@@ -197,7 +188,7 @@
             <path>
               <item name="Share" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="ui" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="api" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
@@ -483,7 +474,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55165000" />
+    <option name="totallyTimeSpent" value="58123000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -496,11 +487,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="2575" height="1415" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4874851" visible="true" weight="0.10480694" />
       <window_info id="Structure" order="1" sideWeight="0.5125149" side_tool="true" weight="0.10480694" />
       <window_info id="Favorites" order="2" sideWeight="0.5023401" side_tool="true" weight="0.10480694" />
+      <window_info anchor="bottom" id="Messages" weight="0.3299532" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -543,7 +534,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="doc-readme - doc: updated with base criteria, removed obsolete content" />
     <MESSAGE value="doc-readme - doc: updated with merging and contribution rules, created all branches" />
     <MESSAGE value="doc-readme - doc: updated ethereum criteria, updates issue #8, completes issue #2" />
     <MESSAGE value="master - doc: updated README.md with cleared data structure explanation, reducing exposure to personal data." />
@@ -568,7 +558,8 @@
     <MESSAGE value="ui-heroku - feat: deployed app to heroku" />
     <MESSAGE value="ui-gcp - doc: updated README.md with heroku deploy instructions with create-react-app" />
     <MESSAGE value="ui-gcp - feat: build app, added app.yaml file for the app engine to know how to map the urls" />
-    <option name="LAST_COMMIT_MESSAGE" value="ui-gcp - feat: build app, added app.yaml file for the app engine to know how to map the urls" />
+    <MESSAGE value="api-base - feat: created base app, added base package.json file" />
+    <option name="LAST_COMMIT_MESSAGE" value="api-base - feat: created base app, added base package.json file" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/share/README.md" />
@@ -580,29 +571,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/architecture/UML/Share - Activity Diagram.jpg" />
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="5" selection-start-column="5" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/architecture/Contracts/share_prototype.sol">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/architecture/UML/UML- Base.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/architecture/UML/UML - Class.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/my-app/package.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/client/my-app/package.json" />
     <entry file="file://$PROJECT_DIR$/ui/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
@@ -614,9 +589,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
           <caret line="11" column="60" lean-forward="true" selection-start-line="11" selection-end-line="12" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="748">
+            <caret line="138" column="88" selection-start-line="138" selection-start-column="88" selection-end-line="138" selection-end-column="88" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
@@ -627,13 +609,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="220">
-            <caret line="10" column="62" selection-start-line="10" selection-start-column="62" selection-end-line="10" selection-end-column="62" />
-          </first_editor>
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/architecture/Contracts/share_prototype.sol">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="5" selection-start-column="5" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="77" lean-forward="true" selection-start-line="6" selection-start-column="77" selection-end-line="6" selection-end-column="77" />
         </state>
       </provider>
     </entry>
