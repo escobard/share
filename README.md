@@ -25,6 +25,12 @@ The other purpose is to showcase my capabilities with the following:
 
 These criteria will be expanded at a later date.
 
+### UI
+
+The main criteria of the UI layer is to control the user experience directing the user to use the Share service.
+
+To accomplish this, a slick and modern UI layout will be adapted, similar to https://alice.si/
+
 ### API 
 
 The main criteria of the API layer is to control the business logic of the product and manage interactions between the Ethereum, UI, and Blockchain.
