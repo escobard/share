@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navigation snapshot renders should render correctly in "debug" mode 1`] = `
+<Menu
+  items={
+    Array [
+      Object {
+        "active": true,
+        "key": "home",
+        "name": "Home",
+      },
+    ]
+  }
+/>
+`;
