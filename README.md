@@ -160,7 +160,9 @@ Once successful, app should be viewable here: [https://share-api-229307.appspot.
 
 ### Circle CI
 
-File for config (beta testing) within `.circleci/config.yml`
+File for cicle ci docker container configurations within `.circleci/config.yml`
+
+project dashboard here: https://circleci.com/gh/escobard
 
 ## Libraries, Frameworks & Tools
 
