@@ -158,6 +158,10 @@ Follow UI instructions on how to sync bucket before deploying, API files under `
 
 Once successful, app should be viewable here: [https://share-api-229307.appspot.com](https://share-api-229307.appspot.com)
 
+### Circle CI
+
+File for config (beta testing) within `.circleci/config.yml`
+
 ## Libraries, Frameworks & Tools
 
 [React](https://reactjs.org/)
