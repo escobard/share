@@ -3,22 +3,37 @@ jobs: # a collection of steps
   build: # runs not using Workflows must have a `build` job as entry point
     working_directory: ~/ui # directory where steps will run
     docker: # run the steps with Docker
-    - image: circleci/node:10.14.1  # ...with this image as the primary container; this is where all `steps` will run
+      - image: circleci/node:10.14.1 # ...with this image as the primary container; this is where all `steps` will run
     steps: # a collection of executable commands
-    - checkout # special step to check out source code to working directory
+      - checkout # special step to check out source code to working directory
+      - run: # updates NPM, installs in container
+          name: update-npm
+          command: "cd ui && sudo npm install -g npm@latest"
+      - restore_cache: # special step to restore the dependency cache
+          # Read about caching dependencies: https://circleci.com/docs/2.0/caching/
+          key: dependency-cache-{{ checksum "ui/package.json" }}
+      - run: # installs UI dependencies
+          name: install-ui
+          command: "cd ui && npm install"
+      - save_cache: # special step to save the dependency cache
+          key: dependency-cache-{{ checksum "ui/package.json" }}
+          paths:
+            - ./node_modules
+      - run: # run tests
+          name: test
+          command: "cd ui && npm test"
+      - run: # builds project
+          name: build
+          command: "cd ui && npm build"
+deployment:
+  steps:
+    - checkout
     - run:
-        name: update-npm
-        command: 'cd ui && sudo npm install -g npm@latest'
-    - restore_cache: # special step to restore the dependency cache
-        # Read about caching dependencies: https://circleci.com/docs/2.0/caching/
-        key: dependency-cache-{{ checksum "ui/package.json" }}
+        name: create git repo
+        command: "cd ui && git init"
     - run:
-        name: install-ui
-        command: 'cd ui && npm install'
-    - save_cache: # special step to save the dependency cache
-        key: dependency-cache-{{ checksum "ui/package.json" }}
-        paths:
-        - ./node_modules
-    - run: # run tests
-        name: test
-        command: 'cd ui && npm test'
+        name: commit to new repo
+        command: "cd ui && git add . && git commit -m 'circle ci heroku staging deploy'"
+    - run:
+        name: Deploy Master to Heroku
+        command: "cd ui && git push https://heroku:$HEROKU_UI_APPgit.heroku.com/$HEROKU_UI_NAME.git master"
