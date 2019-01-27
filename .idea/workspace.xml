@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39da7f77-135d-4deb-b731-486d97edb808" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/src/components/Navigation/__snapshots__/Navigation.test.js.snap" beforeDir="false" afterPath="$PROJECT_DIR$/ui/src/components/Navigation/__snapshots__/Navigation.test.js.snap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/src/components/Section/__snapshots__/Section.test.js.snap" beforeDir="false" afterPath="$PROJECT_DIR$/ui/src/components/Section/__snapshots__/Section.test.js.snap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/src/components/ShareForm/__snapshots__/ShareForm.test.js.snap" beforeDir="false" afterPath="$PROJECT_DIR$/ui/src/components/ShareForm/__snapshots__/ShareForm.test.js.snap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/yarn.lock" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -41,7 +39,7 @@
           <entry key="js" value="49" />
           <entry key="json" value="12" />
           <entry key="lock" value="2" />
-          <entry key="md" value="4" />
+          <entry key="md" value="5" />
           <entry key="sol" value="5" />
           <entry key="yaml" value="4" />
         </counts>
@@ -52,7 +50,7 @@
           <entry key="Image" value="9" />
           <entry key="JSON" value="12" />
           <entry key="JavaScript" value="54" />
-          <entry key="Markdown" value="4" />
+          <entry key="Markdown" value="5" />
           <entry key="PLAIN_TEXT" value="8" />
           <entry key="YAML" value="4" />
           <entry key="yarn.lock" value="2" />
@@ -65,9 +63,9 @@
           <entry key="html" value="1" />
           <entry key="js" value="978" />
           <entry key="json" value="214" />
-          <entry key="md" value="7504" />
+          <entry key="md" value="7693" />
           <entry key="sol" value="2836" />
-          <entry key="txt" value="3632" />
+          <entry key="txt" value="3709" />
           <entry key="yaml" value="19" />
           <entry key="yml" value="625" />
         </counts>
@@ -77,8 +75,8 @@
           <entry key="HTML" value="3" />
           <entry key="JSON" value="214" />
           <entry key="JavaScript" value="3814" />
-          <entry key="Markdown" value="7502" />
-          <entry key="PLAIN_TEXT" value="3724" />
+          <entry key="Markdown" value="7691" />
+          <entry key="PLAIN_TEXT" value="3801" />
           <entry key="YAML" value="644" />
         </counts>
       </usages-collector>
@@ -96,11 +94,23 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="815">
                   <caret line="55" column="41" selection-start-line="55" selection-start-column="41" selection-end-line="55" selection-end-column="41" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/README.md">
+              <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+                <state split_layout="FIRST">
+                  <first_editor relative-caret-position="770">
+                    <caret line="166" column="173" selection-start-line="166" selection-start-column="173" selection-end-line="166" selection-end-column="173" />
+                  </first_editor>
+                  <second_editor />
                 </state>
               </provider>
             </entry>
@@ -209,8 +219,8 @@
         <option value="$PROJECT_DIR$/ui/package.json" />
         <option value="$PROJECT_DIR$/ui/src/App.js" />
         <option value="$PROJECT_DIR$/ui/src/components/ShareForm/index.js" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/.circleci/config.yml" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -361,7 +371,7 @@
       <workItem from="1547850513775" duration="9000" />
       <workItem from="1547852637092" duration="7315000" />
       <workItem from="1548217295379" duration="2172000" />
-      <workItem from="1548619282360" duration="5325000" />
+      <workItem from="1548619282360" duration="5506000" />
     </task>
     <task id="LOCAL-00001" summary="doc-readme - doc: updated base README.mmd file">
       <created>1542677455809</created>
@@ -664,11 +674,18 @@
       <option name="project" value="LOCAL" />
       <updated>1548387704573</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="circleci-ui - fix: removed yarn.lock file, testing to see if removing it is enough for circleci">
+      <created>1548626979486</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1548626979486</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83571000" />
+    <option name="totallyTimeSpent" value="83752000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -681,8 +698,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="2575" height="1415" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4874851" visible="true" weight="0.076438144" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4874851" visible="true" weight="0.076438144" />
       <window_info id="Structure" order="1" sideWeight="0.5125149" side_tool="true" weight="0.10480694" />
       <window_info id="Favorites" order="2" sideWeight="0.5023401" side_tool="true" weight="0.10480694" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -694,7 +712,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3299532" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.24726988" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.24726988" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.3299532" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -728,7 +746,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="api-heroku - fix: added missing app.yaml file for UI GP deploy" />
     <MESSAGE value="api-heroku - fix: added missing app.yaml file for api GCP deployment" />
     <MESSAGE value="api-heroku - fix: fixed missing file updates for heroku deploy" />
     <MESSAGE value="api-gcp - chore: updated yaml file for gcp deploy" />
@@ -753,7 +770,8 @@
     <MESSAGE value="circleci-ui - fix: removed master flag, pushing local" />
     <MESSAGE value="circleci-ui - fix: added --set-upstream handler" />
     <MESSAGE value="circleci-ui - fix: added -f flag to force re-write of heroku repo" />
-    <option name="LAST_COMMIT_MESSAGE" value="circleci-ui - fix: added -f flag to force re-write of heroku repo" />
+    <MESSAGE value="circleci-ui - fix: removed yarn.lock file, testing to see if removing it is enough for circleci" />
+    <option name="LAST_COMMIT_MESSAGE" value="circleci-ui - fix: removed yarn.lock file, testing to see if removing it is enough for circleci" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/share/README.md" />
@@ -899,16 +917,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="396">
-            <caret line="153" lean-forward="true" selection-start-line="153" selection-end-line="153" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/api/routes/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
@@ -958,6 +966,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="815">
           <caret line="55" column="41" selection-start-line="55" selection-start-column="41" selection-end-line="55" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="770">
+            <caret line="166" column="173" selection-start-line="166" selection-start-column="173" selection-end-line="166" selection-end-column="173" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

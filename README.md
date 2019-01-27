@@ -162,7 +162,9 @@ Once successful, app should be viewable here: [https://share-api-229307.appspot.
 
 File for cicle ci docker container configurations within `.circleci/config.yml`
 
-project dashboard here: https://circleci.com/gh/escobard
+Project dashboard here: https://circleci.com/gh/escobard
+
+As of January 27th, 2019, testing, production bundling, and deployment to heroku is all automated for the UI, once the master branch is updated within the github repository.
 
 ## Libraries, Frameworks & Tools
 
