@@ -24,7 +24,7 @@ jobs: # a collection of steps
           command: "cd ui && npm test"
       - run: # builds project
           name: build
-          command: "cd ui && npm build"
+          command: "cd ui && npm run build"
 deployment:
   steps:
     - checkout
