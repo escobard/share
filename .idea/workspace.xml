@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39da7f77-135d-4deb-b731-486d97edb808" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/yarn.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.circleci/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.circleci/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/ui/.gitignore" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -33,7 +34,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="Procfile" value="1" />
-          <entry key="gitignore" value="7" />
+          <entry key="gitignore" value="8" />
           <entry key="html" value="2" />
           <entry key="jpg" value="9" />
           <entry key="js" value="49" />
@@ -51,7 +52,7 @@
           <entry key="JSON" value="12" />
           <entry key="JavaScript" value="54" />
           <entry key="Markdown" value="5" />
-          <entry key="PLAIN_TEXT" value="8" />
+          <entry key="PLAIN_TEXT" value="9" />
           <entry key="YAML" value="4" />
           <entry key="yarn.lock" value="2" />
         </counts>
@@ -59,15 +60,15 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Procfile" value="78" />
-          <entry key="gitignore" value="14" />
+          <entry key="gitignore" value="48" />
           <entry key="html" value="1" />
           <entry key="js" value="978" />
           <entry key="json" value="214" />
           <entry key="md" value="7693" />
           <entry key="sol" value="2836" />
-          <entry key="txt" value="3709" />
+          <entry key="txt" value="3731" />
           <entry key="yaml" value="19" />
-          <entry key="yml" value="625" />
+          <entry key="yml" value="778" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -76,8 +77,8 @@
           <entry key="JSON" value="214" />
           <entry key="JavaScript" value="3814" />
           <entry key="Markdown" value="7691" />
-          <entry key="PLAIN_TEXT" value="3801" />
-          <entry key="YAML" value="644" />
+          <entry key="PLAIN_TEXT" value="3857" />
+          <entry key="YAML" value="797" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
@@ -97,17 +98,26 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="815">
-                  <caret line="55" column="41" selection-start-line="55" selection-start-column="41" selection-end-line="55" selection-end-column="41" />
+                <state relative-caret-position="683">
+                  <caret line="49" column="38" lean-forward="true" selection-start-line="49" selection-start-column="38" selection-end-line="49" selection-end-column="38" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/ui/.gitignore">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="528">
+                  <caret line="24" column="18" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/README.md">
               <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
                 <state split_layout="FIRST">
-                  <first_editor relative-caret-position="770">
+                  <first_editor relative-caret-position="836">
                     <caret line="166" column="173" selection-start-line="166" selection-start-column="173" selection-end-line="166" selection-end-column="173" />
                   </first_editor>
                   <second_editor />
@@ -179,7 +189,7 @@
     </replaceStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/ui" />
     <option name="WARN_ABOUT_DETACHED_HEAD" value="false" />
     <option name="PUSH_TAGS">
       <GitPushTagMode>
@@ -219,8 +229,9 @@
         <option value="$PROJECT_DIR$/ui/package.json" />
         <option value="$PROJECT_DIR$/ui/src/App.js" />
         <option value="$PROJECT_DIR$/ui/src/components/ShareForm/index.js" />
-        <option value="$PROJECT_DIR$/.circleci/config.yml" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/.circleci/config.yml" />
+        <option value="$PROJECT_DIR$/ui/.gitignore" />
       </list>
     </option>
   </component>
@@ -371,7 +382,7 @@
       <workItem from="1547850513775" duration="9000" />
       <workItem from="1547852637092" duration="7315000" />
       <workItem from="1548217295379" duration="2172000" />
-      <workItem from="1548619282360" duration="5506000" />
+      <workItem from="1548619282360" duration="6188000" />
     </task>
     <task id="LOCAL-00001" summary="doc-readme - doc: updated base README.mmd file">
       <created>1542677455809</created>
@@ -681,11 +692,18 @@
       <option name="project" value="LOCAL" />
       <updated>1548626979486</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="circleci-ui - feat: added logic to">
+      <created>1548627599465</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1548627599465</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83752000" />
+    <option name="totallyTimeSpent" value="84434000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -746,7 +764,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="api-heroku - fix: added missing app.yaml file for api GCP deployment" />
     <MESSAGE value="api-heroku - fix: fixed missing file updates for heroku deploy" />
     <MESSAGE value="api-gcp - chore: updated yaml file for gcp deploy" />
     <MESSAGE value="api-gcp - chore: updated package.json with engines json" />
@@ -771,7 +788,8 @@
     <MESSAGE value="circleci-ui - fix: added --set-upstream handler" />
     <MESSAGE value="circleci-ui - fix: added -f flag to force re-write of heroku repo" />
     <MESSAGE value="circleci-ui - fix: removed yarn.lock file, testing to see if removing it is enough for circleci" />
-    <option name="LAST_COMMIT_MESSAGE" value="circleci-ui - fix: removed yarn.lock file, testing to see if removing it is enough for circleci" />
+    <MESSAGE value="circleci-ui - feat: added logic to" />
+    <option name="LAST_COMMIT_MESSAGE" value="circleci-ui - feat: added logic to" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/share/README.md" />
@@ -962,20 +980,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="815">
-          <caret line="55" column="41" selection-start-line="55" selection-start-column="41" selection-end-line="55" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="770">
+          <first_editor relative-caret-position="836">
             <caret line="166" column="173" selection-start-line="166" selection-start-column="173" selection-end-line="166" selection-end-column="173" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="683">
+          <caret line="49" column="38" lean-forward="true" selection-start-line="49" selection-start-column="38" selection-end-line="49" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="24" column="18" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
         </state>
       </provider>
     </entry>
