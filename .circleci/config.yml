@@ -49,6 +49,9 @@ jobs: # a collection of steps
           name: create git repo
           command: "cd ui && git init"
       - run:
+          name: remove package package-lock.json & yarn-lock.json
+          command: "cd ui && rm package-lock.json yarn-lock.json"
+      - run:
           name: commit to new repo
           command: "cd ui && git add . && git commit -m 'circle ci heroku staging deploy'"
       - run:
