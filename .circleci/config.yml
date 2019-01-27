@@ -42,6 +42,9 @@ jobs: # a collection of steps
       - image: circleci/node:10.14.1 # ...with this image as the primary container; this is where all `steps` will run
     steps:
       - checkout
+      - run: # sets git user
+          name: set git user
+          command: "git config --global user.email 'escobard90@gmail.com' && git config --global user.name 'admin'"
       - run:
           name: create git repo
           command: "cd ui && git init"
