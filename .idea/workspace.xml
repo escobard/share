@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39da7f77-135d-4deb-b731-486d97edb808" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.circleci/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.circleci/config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/src/components/Navigation/__snapshots__/Navigation.test.js.snap" beforeDir="false" afterPath="$PROJECT_DIR$/ui/src/components/Navigation/__snapshots__/Navigation.test.js.snap" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/src/components/Section/__snapshots__/Section.test.js.snap" beforeDir="false" afterPath="$PROJECT_DIR$/ui/src/components/Section/__snapshots__/Section.test.js.snap" afterDir="false" />
@@ -68,7 +67,7 @@
           <entry key="json" value="214" />
           <entry key="md" value="7504" />
           <entry key="sol" value="2836" />
-          <entry key="txt" value="3584" />
+          <entry key="txt" value="3632" />
           <entry key="yaml" value="19" />
           <entry key="yml" value="625" />
         </counts>
@@ -79,7 +78,7 @@
           <entry key="JSON" value="214" />
           <entry key="JavaScript" value="3814" />
           <entry key="Markdown" value="7502" />
-          <entry key="PLAIN_TEXT" value="3676" />
+          <entry key="PLAIN_TEXT" value="3724" />
           <entry key="YAML" value="644" />
         </counts>
       </usages-collector>
@@ -362,7 +361,7 @@
       <workItem from="1547850513775" duration="9000" />
       <workItem from="1547852637092" duration="7315000" />
       <workItem from="1548217295379" duration="2172000" />
-      <workItem from="1548619282360" duration="5073000" />
+      <workItem from="1548619282360" duration="5325000" />
     </task>
     <task id="LOCAL-00001" summary="doc-readme - doc: updated base README.mmd file">
       <created>1542677455809</created>
@@ -669,7 +668,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83319000" />
+    <option name="totallyTimeSpent" value="83571000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -682,7 +681,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="2575" height="1415" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4874851" visible="true" weight="0.076438144" />
       <window_info id="Structure" order="1" sideWeight="0.5125149" side_tool="true" weight="0.10480694" />
@@ -730,7 +728,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="api-heroku - fix: updated app to fix broken constants requirement" />
     <MESSAGE value="api-heroku - fix: added missing app.yaml file for UI GP deploy" />
     <MESSAGE value="api-heroku - fix: added missing app.yaml file for api GCP deployment" />
     <MESSAGE value="api-heroku - fix: fixed missing file updates for heroku deploy" />
@@ -755,7 +752,8 @@
     <MESSAGE value="circleci-ui - fix: fixed typo of heroku app name" />
     <MESSAGE value="circleci-ui - fix: removed master flag, pushing local" />
     <MESSAGE value="circleci-ui - fix: added --set-upstream handler" />
-    <option name="LAST_COMMIT_MESSAGE" value="circleci-ui - fix: added --set-upstream handler" />
+    <MESSAGE value="circleci-ui - fix: added -f flag to force re-write of heroku repo" />
+    <option name="LAST_COMMIT_MESSAGE" value="circleci-ui - fix: added -f flag to force re-write of heroku repo" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/share/README.md" />
