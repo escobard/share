@@ -37,6 +37,9 @@ jobs: # a collection of steps
           name: build
           command: "cd ui && npm run build"
   deploy:
+    working_directory: ~/ui # directory where steps will run
+    docker: # run the steps with Docker
+      - image: circleci/node:10.14.1 # ...with this image as the primary container; this is where all `steps` will run
     steps:
       - checkout
       - run:

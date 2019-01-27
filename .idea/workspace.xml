@@ -68,9 +68,9 @@
           <entry key="json" value="214" />
           <entry key="md" value="7504" />
           <entry key="sol" value="2836" />
-          <entry key="txt" value="3288" />
+          <entry key="txt" value="3362" />
           <entry key="yaml" value="19" />
-          <entry key="yml" value="398" />
+          <entry key="yml" value="491" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -79,8 +79,8 @@
           <entry key="JSON" value="214" />
           <entry key="JavaScript" value="3814" />
           <entry key="Markdown" value="7502" />
-          <entry key="PLAIN_TEXT" value="3380" />
-          <entry key="YAML" value="417" />
+          <entry key="PLAIN_TEXT" value="3454" />
+          <entry key="YAML" value="510" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
@@ -100,8 +100,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="616">
-                  <caret line="28" column="10" lean-forward="true" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
+                <state relative-caret-position="771">
+                  <caret line="40" column="4" selection-start-line="40" selection-start-column="4" selection-end-line="40" selection-end-column="4" />
                 </state>
               </provider>
             </entry>
@@ -362,7 +362,7 @@
       <workItem from="1547850513775" duration="9000" />
       <workItem from="1547852637092" duration="7315000" />
       <workItem from="1548217295379" duration="2172000" />
-      <workItem from="1548619282360" duration="2719000" />
+      <workItem from="1548619282360" duration="3353000" />
     </task>
     <task id="LOCAL-00001" summary="doc-readme - doc: updated base README.mmd file">
       <created>1542677455809</created>
@@ -669,7 +669,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80965000" />
+    <option name="totallyTimeSpent" value="81599000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -730,8 +730,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="ui-gcp - feat: build app, added app.yaml file for the app engine to know how to map the urls" />
-    <MESSAGE value="api-base - feat: created base app, added base package.json file" />
     <MESSAGE value="api-base - chore: tested, working" />
     <MESSAGE value="api-base - chore: added base greetings route test" />
     <MESSAGE value="api-base - feat: improved route structure" />
@@ -755,7 +753,9 @@
     <MESSAGE value="ui-styles - feat: added correct circle ci yaml file for circle ci docker container, tests working!" />
     <MESSAGE value="circleci-ui - feat: added new deployment logic to build ui, and deploy to heroku" />
     <MESSAGE value="circleci-ui - fix: fixed typo" />
-    <option name="LAST_COMMIT_MESSAGE" value="circleci-ui - fix: fixed typo" />
+    <MESSAGE value="circleci-ui - fix: fixed indentation of" />
+    <MESSAGE value="circleci-ui - feat: added workflows for improved deployment handling" />
+    <option name="LAST_COMMIT_MESSAGE" value="circleci-ui - feat: added workflows for improved deployment handling" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/share/README.md" />
@@ -958,8 +958,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="28" column="10" lean-forward="true" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
+        <state relative-caret-position="771">
+          <caret line="40" column="4" selection-start-line="40" selection-start-column="4" selection-end-line="40" selection-end-column="4" />
         </state>
       </provider>
     </entry>
