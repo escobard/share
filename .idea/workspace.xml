@@ -3,11 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="39da7f77-135d-4deb-b731-486d97edb808" name="Default Changelist" comment="circleci-ui - fix: removed logic to delete package files, added lock files to .gitignore instead">
       <change beforePath="$PROJECT_DIR$/.circleci/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.circleci/config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/api/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/tests/routes/index..js" beforeDir="false" afterPath="$PROJECT_DIR$/api/tests/routes/index.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/tests/routes/index..js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/ui/.gitignore" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -40,7 +39,7 @@
         <counts>
           <entry key="Procfile" value="1" />
           <entry key="babelrc" value="1" />
-          <entry key="gitignore" value="8" />
+          <entry key="gitignore" value="10" />
           <entry key="html" value="2" />
           <entry key="jpg" value="9" />
           <entry key="js" value="55" />
@@ -58,7 +57,7 @@
           <entry key="JSON" value="16" />
           <entry key="JavaScript" value="60" />
           <entry key="Markdown" value="5" />
-          <entry key="PLAIN_TEXT" value="9" />
+          <entry key="PLAIN_TEXT" value="11" />
           <entry key="YAML" value="4" />
           <entry key="yarn.lock" value="2" />
         </counts>
@@ -66,13 +65,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Procfile" value="78" />
-          <entry key="gitignore" value="48" />
+          <entry key="gitignore" value="49" />
           <entry key="html" value="1" />
           <entry key="js" value="980" />
           <entry key="json" value="229" />
           <entry key="md" value="7693" />
           <entry key="sol" value="2836" />
-          <entry key="txt" value="3814" />
+          <entry key="txt" value="3889" />
           <entry key="yaml" value="19" />
           <entry key="yml" value="778" />
         </counts>
@@ -83,7 +82,7 @@
           <entry key="JSON" value="229" />
           <entry key="JavaScript" value="3816" />
           <entry key="Markdown" value="7691" />
-          <entry key="PLAIN_TEXT" value="3940" />
+          <entry key="PLAIN_TEXT" value="4016" />
           <entry key="YAML" value="797" />
         </counts>
       </usages-collector>
@@ -108,11 +107,29 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ui/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="440">
+              <caret line="20" selection-start-line="20" selection-end-line="24" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/package.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="154">
               <caret line="7" column="68" lean-forward="true" selection-start-line="7" selection-start-column="68" selection-end-line="7" selection-end-column="68" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/api/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="132">
+              <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -184,7 +201,6 @@
         <option value="$PROJECT_DIR$/api/tests/routes/greetings.tests.js" />
         <option value="$PROJECT_DIR$/api/tests/routes/index..js" />
         <option value="$PROJECT_DIR$/api/routes/greetings.js" />
-        <option value="$PROJECT_DIR$/api/.gitignore" />
         <option value="$PROJECT_DIR$/api/Procfile" />
         <option value="$PROJECT_DIR$/ui/app.yaml" />
         <option value="$PROJECT_DIR$/api/index.js" />
@@ -206,6 +222,7 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/api/routes/index.js" />
         <option value="$PROJECT_DIR$/api/package.json" />
+        <option value="$PROJECT_DIR$/api/.gitignore" />
       </list>
     </option>
   </component>
@@ -398,7 +415,7 @@
       <workItem from="1547852637092" duration="7315000" />
       <workItem from="1548217295379" duration="2172000" />
       <workItem from="1548619282360" duration="6824000" />
-      <workItem from="1548726165919" duration="5338000" />
+      <workItem from="1548726165919" duration="5435000" />
     </task>
     <task id="LOCAL-00001" summary="doc-readme - doc: updated base README.mmd file">
       <created>1542677455809</created>
@@ -726,7 +743,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90408000" />
+    <option name="totallyTimeSpent" value="90505000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -787,7 +804,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="api-gcp - chore: updated yaml file for gcp deploy" />
     <MESSAGE value="api-gcp - chore: updated package.json with engines json" />
     <MESSAGE value="api-gcp - chore: deleted package.json, updated app.yaml file for GCP" />
     <MESSAGE value="ui-semantics-base - feat: added header, and base semantic ui components to app.js" />
@@ -812,7 +828,8 @@
     <MESSAGE value="circleci-ui - fix: removed yarn.lock file, testing to see if removing it is enough for circleci" />
     <MESSAGE value="circleci-ui - feat: added logic to" />
     <MESSAGE value="circleci-ui - fix: removed logic to delete package files, added lock files to .gitignore instead" />
-    <option name="LAST_COMMIT_MESSAGE" value="circleci-ui - fix: removed logic to delete package files, added lock files to .gitignore instead" />
+    <MESSAGE value="api-coverage-circleci - feat: added coverage for api route tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="api-coverage-circleci - feat: added coverage for api route tests" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/share/README.md" />
@@ -846,13 +863,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/api/Procfile" />
-    <entry file="file://$PROJECT_DIR$/api/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -942,13 +952,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ui/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="24" column="18" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
@@ -1031,6 +1034,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
           <caret line="7" column="68" lean-forward="true" selection-start-line="7" selection-start-column="68" selection-end-line="7" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="20" selection-start-line="20" selection-end-line="24" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
         </state>
       </provider>
     </entry>
