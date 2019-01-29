@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="39da7f77-135d-4deb-b731-486d97edb808" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/api/Procfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/api/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/index.js" afterDir="false" />
@@ -40,7 +39,7 @@
         <counts>
           <entry key="Procfile" value="1" />
           <entry key="babelrc" value="1" />
-          <entry key="gitignore" value="10" />
+          <entry key="gitignore" value="11" />
           <entry key="html" value="2" />
           <entry key="jpg" value="9" />
           <entry key="js" value="55" />
@@ -59,7 +58,7 @@
           <entry key="JSON" value="16" />
           <entry key="JavaScript" value="60" />
           <entry key="Markdown" value="5" />
-          <entry key="PLAIN_TEXT" value="11" />
+          <entry key="PLAIN_TEXT" value="12" />
           <entry key="Solidity file" value="2" />
           <entry key="YAML" value="6" />
           <entry key="yarn.lock" value="2" />
@@ -74,7 +73,7 @@
           <entry key="json" value="229" />
           <entry key="md" value="7693" />
           <entry key="sol" value="2836" />
-          <entry key="txt" value="4148" />
+          <entry key="txt" value="4252" />
           <entry key="yaml" value="19" />
           <entry key="yml" value="967" />
         </counts>
@@ -85,7 +84,7 @@
           <entry key="JSON" value="229" />
           <entry key="JavaScript" value="3831" />
           <entry key="Markdown" value="7691" />
-          <entry key="PLAIN_TEXT" value="4275" />
+          <entry key="PLAIN_TEXT" value="4379" />
           <entry key="YAML" value="986" />
         </counts>
       </usages-collector>
@@ -105,7 +104,7 @@
         <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1256">
-              <caret line="80" column="34" lean-forward="true" selection-start-line="80" selection-start-column="34" selection-end-line="80" selection-end-column="34" />
+              <caret line="80" column="34" selection-start-line="80" selection-start-column="34" selection-end-line="80" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -119,11 +118,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/architecture/Contracts/share_prototype.sol">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="594">
-              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+              <caret line="27" selection-start-line="27" selection-end-line="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ethereum/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -131,8 +139,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+            <state>
+              <caret selection-end-line="8" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -218,6 +226,7 @@
         <option value="$PROJECT_DIR$/api/.gitignore" />
         <option value="$PROJECT_DIR$/api/tests/routes/index.test.js" />
         <option value="$PROJECT_DIR$/.circleci/config.yml" />
+        <option value="$PROJECT_DIR$/ethereum/.gitignore" />
       </list>
     </option>
   </component>
@@ -261,24 +270,13 @@
             <path>
               <item name="Share" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="api" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="ethereum" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
               <item name="Share" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="architecture" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="Share" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="architecture" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="Contracts" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="Share" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="architecture" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="UML" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="ethereum" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="migrations" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
               <item name="Share" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
@@ -709,7 +707,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92249000" />
+    <option name="totallyTimeSpent" value="92530000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -722,8 +720,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-2568" y="395" width="2576" height="1416" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4874851" visible="true" weight="0.076438144" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4874851" visible="true" weight="0.076438144" />
       <window_info id="Structure" order="1" sideWeight="0.5125149" side_tool="true" weight="0.10480694" />
       <window_info id="Favorites" order="2" sideWeight="0.5023401" side_tool="true" weight="0.10480694" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -735,7 +734,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3299532" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.45787832" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.45787832" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.3299532" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -770,8 +769,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="ui-tests - added test rules / coverage base within the package.json file" />
-    <MESSAGE value="ui-tests - fix: fixed missing components" />
     <MESSAGE value="ui-tests - feat: added base snapshot testing and snapshot rules" />
     <MESSAGE value="ui-tests - feat: added test files for all components" />
     <MESSAGE value="ui-tests - feat: added coverage flag to testing, 80 coverage set" />
@@ -795,7 +792,9 @@
     <MESSAGE value="api-coverage-circleci - chore: updated circleci yaml file typo, added health test, %100 coverage reached on api" />
     <MESSAGE value="api-coverage-circleci - chore: upading API local" />
     <MESSAGE value="api-coverage-circleci - fix: updating directory path on deploy-api working_directory" />
-    <option name="LAST_COMMIT_MESSAGE" value="api-coverage-circleci - fix: updating directory path on deploy-api working_directory" />
+    <MESSAGE value="ethereum-proj-5-migrate - feat: migrated base files into parent directory" />
+    <MESSAGE value="ethereum-proj-5-migrate - fix: updated with correct files" />
+    <option name="LAST_COMMIT_MESSAGE" value="ethereum-proj-5-migrate - fix: updated with correct files" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/share/README.md" />
@@ -961,13 +960,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/api/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
@@ -999,7 +991,7 @@
     <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1256">
-          <caret line="80" column="34" lean-forward="true" selection-start-line="80" selection-start-column="34" selection-end-line="80" selection-end-column="34" />
+          <caret line="80" column="34" selection-start-line="80" selection-start-column="34" selection-end-line="80" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -1013,7 +1005,21 @@
     <entry file="file://$PROJECT_DIR$/architecture/Contracts/share_prototype.sol">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="594">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="8" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ethereum/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
         </state>
       </provider>
     </entry>
