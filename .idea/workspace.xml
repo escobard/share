@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="39da7f77-135d-4deb-b731-486d97edb808" name="Default Changelist" comment="api-coverage-circleci - chore: updated">
-      <change beforePath="$PROJECT_DIR$/.circleci/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.circleci/config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="39da7f77-135d-4deb-b731-486d97edb808" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/api/Procfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/api/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/tests/routes/index.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/tests/routes/index.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/tests/routes/index..js" beforeDir="false" afterPath="$PROJECT_DIR$/api/tests/routes/index.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/ui/.gitignore" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -70,9 +72,9 @@
           <entry key="json" value="229" />
           <entry key="md" value="7693" />
           <entry key="sol" value="2836" />
-          <entry key="txt" value="4051" />
+          <entry key="txt" value="4077" />
           <entry key="yaml" value="19" />
-          <entry key="yml" value="966" />
+          <entry key="yml" value="967" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -81,8 +83,8 @@
           <entry key="JSON" value="229" />
           <entry key="JavaScript" value="3831" />
           <entry key="Markdown" value="7691" />
-          <entry key="PLAIN_TEXT" value="4178" />
-          <entry key="YAML" value="985" />
+          <entry key="PLAIN_TEXT" value="4204" />
+          <entry key="YAML" value="986" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
@@ -100,8 +102,35 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+            <state relative-caret-position="537">
+              <caret line="86" column="25" selection-start-line="86" selection-start-column="25" selection-end-line="86" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/Procfile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="9" selection-start-column="9" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="154">
+              <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -643,7 +672,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91084000" />
+    <option name="totallyTimeSpent" value="91178000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -704,7 +733,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="ui-semantics-base - feat: added header, and base semantic ui components to app.js" />
     <MESSAGE value="ui-semantics-base - refact: improved semantics of ui" />
     <MESSAGE value="ui-tests - added test rules / coverage base within the package.json file" />
     <MESSAGE value="ui-tests - fix: fixed missing components" />
@@ -729,7 +757,8 @@
     <MESSAGE value="api-coverage-circleci - feat: added coverage for api route tests" />
     <MESSAGE value="api-coverage-circleci - chore: updated .gitignore of /api" />
     <MESSAGE value="api-coverage-circleci - chore: updated circleci yaml file typo, added health test, %100 coverage reached on api" />
-    <option name="LAST_COMMIT_MESSAGE" value="api-coverage-circleci - chore: updated circleci yaml file typo, added health test, %100 coverage reached on api" />
+    <MESSAGE value="api-coverage-circleci - chore: upading API local" />
+    <option name="LAST_COMMIT_MESSAGE" value="api-coverage-circleci - chore: upading API local" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/share/README.md" />
@@ -762,7 +791,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/Procfile" />
+    <entry file="file://$PROJECT_DIR$/api/Procfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="9" selection-start-column="9" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -886,12 +921,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/.nyc_output/97faf110-d158-4413-8c6c-ec126096a379.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/.nyc_output/4711e350-2ed5-4533-84b1-2d6d6aed1ff0.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/api/.nyc_output/97faf110-d158-4413-8c6c-ec126096a379.json" />
+    <entry file="file://$PROJECT_DIR$/api/.nyc_output/4711e350-2ed5-4533-84b1-2d6d6aed1ff0.json" />
     <entry file="file://$PROJECT_DIR$/api/routes/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
@@ -899,9 +930,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/.babelrc">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/api/.babelrc" />
     <entry file="file://$PROJECT_DIR$/ui/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
@@ -911,15 +940,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/api/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+        <state relative-caret-position="176">
+          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/api/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
-          <caret line="7" column="68" selection-start-line="7" selection-start-column="68" selection-end-line="7" selection-end-column="68" />
+          <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -946,8 +975,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+        <state relative-caret-position="537">
+          <caret line="86" column="25" selection-start-line="86" selection-start-column="25" selection-end-line="86" selection-end-column="25" />
         </state>
       </provider>
     </entry>
