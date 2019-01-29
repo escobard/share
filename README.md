@@ -212,4 +212,4 @@ All merge requests must be directed to the `development branch`, to be merged in
 
 ## License
 
-As of November 19th, 2018, 2018, these files are open for all to use and contribute to. This repository is protected under the [MIT License](http://choosealicense.com/licenses/)
+As of November 19th, 2018, these files are open for all to use and contribute to. This repository is protected under the [MIT License](http://choosealicense.com/licenses/)
