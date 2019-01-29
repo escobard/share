@@ -1,17 +1,24 @@
-workflows: # tells circleCI to do these two jobs, making deployment required on build passing
+workflows: # tells circleCI to do all test jobs for ui and api, then deploy both apps to heroku
   version: 2
   build-deploy:
     jobs:
-    - build
-    - deploy:
+    - build-ui
+    - build-api
+    - deploy-ui:
         requires:
-        - build
+        - build-ui
+        filters:
+          branches:
+            only: master
+    - deploy-api:
+        requires:
+        - build-ui
         filters:
           branches:
             only: master
 version: 2 # use CircleCI 2.0
 jobs: # a collection of steps
-  build: # runs not using Workflows must have a `build` job as entry point
+  build-ui: # runs not using Workflows must have a `build` job as entry point
     working_directory: ~/ui # directory where steps will run
     docker: # run the steps with Docker
       - image: circleci/node:10.14.1 # ...with this image as the primary container; this is where all `steps` will run
@@ -36,7 +43,29 @@ jobs: # a collection of steps
       - run: # builds project
           name: build
           command: "cd ui && npm run build"
-  deploy:
+  build-api: # runs not using Workflows must have a `build` job as entry point
+    working_directory: ~/api # directory where steps will run
+    docker: # run the steps with Docker
+    - image: circleci/node:10.14.1 # ...with this image as the primary container; this is where all `steps` will run
+    steps: # a collection of executable commands
+    - checkout # special step to check out source code to working directory
+    - run: # updates NPM, installs in container
+        name: update-npm
+        command: "cd api && sudo npm install -g npm@latest"
+    - restore_cache: # special step to restore the dependency cache
+        # Read about caching dependencies: https://circleci.com/docs/2.0/caching/
+        key: dependency-cache-{{ checksum "api/package.json" }}
+    - run: # installs UI dependencies
+        name: install-ui
+        command: "cd api && npm install"
+    - save_cache: # special step to save the dependency cache
+        key: dependency-cache-{{ checksum "api/package.json" }}
+        paths:
+        - ./node_modules
+    - run: # run tests
+        name: test
+        command: "cd api && npm test"
+  deploy-ui:
     working_directory: ~/ui # directory where steps will run
     docker: # run the steps with Docker
       - image: circleci/node:10.14.1 # ...with this image as the primary container; this is where all `steps` will run
@@ -53,4 +82,22 @@ jobs: # a collection of steps
           command: "cd ui && git add . && git commit -m 'circle ci heroku staging deploy'"
       - run:
           name: Deploy Master to Heroku
-          command: "cd ui && git push -f --set-upstream https://heroku:$HEROKU_UI_KEY@git.heroku.com/$HEROKU_UI_APP.git master"
+          command: "cd ui && git push -f --set-upstream https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_UI_APP.git master"
+  deploy-api:
+    working_directory: ~api # directory where steps will run
+    docker: # run the steps with Docker
+    - image: circleci/node:10.14.1 # ...with this image as the primary container; this is where all `steps` will run
+    steps:
+    - checkout
+    - run: # sets git user
+        name: set git user
+        command: "git config --global user.email 'escobard90@gmail.com' && git config --global user.name 'admin'"
+    - run:
+        name: create git repo
+        command: "cd ui && git init"
+    - run:
+        name: commit to new repo
+        command: "cd ui && git add . && git commit -m 'circle ci heroku staging deploy'"
+    - run:
+        name: Deploy Master to Heroku
+        command: "cd ui && git push -f --set-upstream https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_API_APP.git master"
