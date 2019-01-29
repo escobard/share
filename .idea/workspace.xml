@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="39da7f77-135d-4deb-b731-486d97edb808" name="Default Changelist" comment="">
+    <list default="true" id="39da7f77-135d-4deb-b731-486d97edb808" name="Default Changelist" comment="ethereum-proj-5-migrate - feat: project files migrated from project 5, tests working!">
       <change afterPath="$PROJECT_DIR$/api/Procfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/api/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/tests/routes/index..js" beforeDir="false" afterPath="$PROJECT_DIR$/api/tests/routes/index.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ethereum/build/contracts/ERC721.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ethereum/build/contracts/ERC721Token.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ethereum/build/contracts/Migrations.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ethereum/build/contracts/StarNotary.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ethereum/truffle.js" beforeDir="false" afterPath="$PROJECT_DIR$/ethereum/truffle.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/ui/.gitignore" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -42,8 +48,8 @@
           <entry key="gitignore" value="11" />
           <entry key="html" value="2" />
           <entry key="jpg" value="9" />
-          <entry key="js" value="55" />
-          <entry key="json" value="15" />
+          <entry key="js" value="56" />
+          <entry key="json" value="16" />
           <entry key="lock" value="2" />
           <entry key="md" value="5" />
           <entry key="sol" value="7" />
@@ -55,8 +61,8 @@
         <counts>
           <entry key="HTML" value="2" />
           <entry key="Image" value="9" />
-          <entry key="JSON" value="16" />
-          <entry key="JavaScript" value="60" />
+          <entry key="JSON" value="17" />
+          <entry key="JavaScript" value="61" />
           <entry key="Markdown" value="5" />
           <entry key="PLAIN_TEXT" value="12" />
           <entry key="Solidity file" value="2" />
@@ -69,11 +75,11 @@
           <entry key="Procfile" value="78" />
           <entry key="gitignore" value="49" />
           <entry key="html" value="1" />
-          <entry key="js" value="995" />
+          <entry key="js" value="997" />
           <entry key="json" value="229" />
           <entry key="md" value="7693" />
           <entry key="sol" value="2836" />
-          <entry key="txt" value="4252" />
+          <entry key="txt" value="4353" />
           <entry key="yaml" value="19" />
           <entry key="yml" value="967" />
         </counts>
@@ -82,9 +88,9 @@
         <counts>
           <entry key="HTML" value="3" />
           <entry key="JSON" value="229" />
-          <entry key="JavaScript" value="3831" />
+          <entry key="JavaScript" value="3833" />
           <entry key="Markdown" value="7691" />
-          <entry key="PLAIN_TEXT" value="4379" />
+          <entry key="PLAIN_TEXT" value="4480" />
           <entry key="YAML" value="986" />
         </counts>
       </usages-collector>
@@ -127,11 +133,29 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ethereum/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="176">
               <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ethereum/truffle.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ethereum/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -227,6 +251,7 @@
         <option value="$PROJECT_DIR$/api/tests/routes/index.test.js" />
         <option value="$PROJECT_DIR$/.circleci/config.yml" />
         <option value="$PROJECT_DIR$/ethereum/.gitignore" />
+        <option value="$PROJECT_DIR$/ethereum/truffle.js" />
       </list>
     </option>
   </component>
@@ -238,11 +263,13 @@
   </component>
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/api/node_modules" />
+    <handled-path value="$PROJECT_DIR$/ethereum/node_modules" />
     <handled-path value="$PROJECT_DIR$/ui/node_modules" />
   </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
       <path value="$PROJECT_DIR$/api/package.json" />
+      <path value="$PROJECT_DIR$/ethereum/package.json" />
       <path value="$PROJECT_DIR$/ui/package.json" />
     </packageJsonPaths>
   </component>
@@ -707,7 +734,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92530000" />
+    <option name="totallyTimeSpent" value="93297000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -720,9 +747,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-2568" y="395" width="2576" height="1416" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4874851" visible="true" weight="0.076438144" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4874851" visible="true" weight="0.076438144" />
       <window_info id="Structure" order="1" sideWeight="0.5125149" side_tool="true" weight="0.10480694" />
       <window_info id="Favorites" order="2" sideWeight="0.5023401" side_tool="true" weight="0.10480694" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -734,8 +760,8 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3299532" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.45787832" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49960598" visible="true" weight="0.45787832" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.500394" side_tool="true" weight="0.45787832" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.3299532" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -769,7 +795,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="ui-tests - feat: added base snapshot testing and snapshot rules" />
     <MESSAGE value="ui-tests - feat: added test files for all components" />
     <MESSAGE value="ui-tests - feat: added coverage flag to testing, 80 coverage set" />
     <MESSAGE value="ui-styles - feat: added correct circle ci yaml file for circle ci docker container, tests working!" />
@@ -794,7 +819,8 @@
     <MESSAGE value="api-coverage-circleci - fix: updating directory path on deploy-api working_directory" />
     <MESSAGE value="ethereum-proj-5-migrate - feat: migrated base files into parent directory" />
     <MESSAGE value="ethereum-proj-5-migrate - fix: updated with correct files" />
-    <option name="LAST_COMMIT_MESSAGE" value="ethereum-proj-5-migrate - fix: updated with correct files" />
+    <MESSAGE value="ethereum-proj-5-migrate - fix updated gitignore files" />
+    <option name="LAST_COMMIT_MESSAGE" value="ethereum-proj-5-migrate - fix updated gitignore files" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/share/README.md" />
@@ -1020,6 +1046,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ethereum/truffle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ethereum/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
         </state>
       </provider>
     </entry>
