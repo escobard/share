@@ -8,12 +8,8 @@
       <change beforePath="$PROJECT_DIR$/api/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/tests/routes/index..js" beforeDir="false" afterPath="$PROJECT_DIR$/api/tests/routes/index.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ethereum/build/contracts/ERC721.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ethereum/build/contracts/ERC721Token.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ethereum/build/contracts/Migrations.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ethereum/build/contracts/StarNotary.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ethereum/truffle.js" beforeDir="false" afterPath="$PROJECT_DIR$/ethereum/truffle.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/ui/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/ui/src/App.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -33,28 +29,29 @@
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="2" />
           <entry key="project.open.time.11" value="1" />
+          <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.5" value="2" />
           <entry key="project.open.time.6" value="4" />
           <entry key="project.open.time.7" value="4" />
           <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.9" value="3" />
-          <entry key="project.opened" value="22" />
+          <entry key="project.opened" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="Procfile" value="1" />
+          <entry key="Procfile" value="2" />
           <entry key="babelrc" value="1" />
           <entry key="gitignore" value="11" />
           <entry key="html" value="2" />
           <entry key="jpg" value="9" />
-          <entry key="js" value="56" />
+          <entry key="js" value="59" />
           <entry key="json" value="16" />
           <entry key="lock" value="2" />
           <entry key="md" value="5" />
-          <entry key="sol" value="7" />
-          <entry key="yaml" value="4" />
-          <entry key="yml" value="2" />
+          <entry key="sol" value="9" />
+          <entry key="yaml" value="6" />
+          <entry key="yml" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -62,11 +59,11 @@
           <entry key="HTML" value="2" />
           <entry key="Image" value="9" />
           <entry key="JSON" value="17" />
-          <entry key="JavaScript" value="61" />
+          <entry key="JavaScript" value="64" />
           <entry key="Markdown" value="5" />
-          <entry key="PLAIN_TEXT" value="12" />
-          <entry key="Solidity file" value="2" />
-          <entry key="YAML" value="6" />
+          <entry key="PLAIN_TEXT" value="13" />
+          <entry key="Solidity file" value="4" />
+          <entry key="YAML" value="9" />
           <entry key="yarn.lock" value="2" />
         </counts>
       </usages-collector>
@@ -75,7 +72,7 @@
           <entry key="Procfile" value="78" />
           <entry key="gitignore" value="49" />
           <entry key="html" value="1" />
-          <entry key="js" value="997" />
+          <entry key="js" value="1016" />
           <entry key="json" value="229" />
           <entry key="md" value="7693" />
           <entry key="sol" value="2836" />
@@ -88,7 +85,7 @@
         <counts>
           <entry key="HTML" value="3" />
           <entry key="JSON" value="229" />
-          <entry key="JavaScript" value="3833" />
+          <entry key="JavaScript" value="3852" />
           <entry key="Markdown" value="7691" />
           <entry key="PLAIN_TEXT" value="4480" />
           <entry key="YAML" value="986" />
@@ -109,62 +106,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1256">
+            <state relative-caret-position="1189">
               <caret line="80" column="34" selection-start-line="80" selection-start-column="34" selection-end-line="80" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/architecture/Contracts/contract_prototype.sol">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="704">
-              <caret line="32" column="2" selection-start-line="32" selection-start-column="2" selection-end-line="32" selection-end-column="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/architecture/Contracts/share_prototype.sol">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="27" selection-start-line="27" selection-end-line="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ethereum/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ethereum/truffle.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ethereum/package.json">
+        <entry file="file://$PROJECT_DIR$/ui/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+            <state relative-caret-position="286">
+              <caret line="13" column="29" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/.gitignore">
+        <entry file="file://$PROJECT_DIR$/api/app.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="8" selection-end-column="11" />
+            <state relative-caret-position="22">
+              <caret line="1" column="9" lean-forward="true" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -179,10 +143,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/package.json">
+        <entry file="file://$PROJECT_DIR$/ui/app.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+            <state relative-caret-position="176">
+              <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -206,7 +170,7 @@
     </replaceStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/ui" />
     <option name="WARN_ABOUT_DETACHED_HEAD" value="false" />
     <option name="PUSH_TAGS">
       <GitPushTagMode>
@@ -241,7 +205,6 @@
         <option value="$PROJECT_DIR$/ui/src/components/Section/index.js" />
         <option value="$PROJECT_DIR$/ui/src/App.test.js" />
         <option value="$PROJECT_DIR$/ui/package.json" />
-        <option value="$PROJECT_DIR$/ui/src/App.js" />
         <option value="$PROJECT_DIR$/ui/src/components/ShareForm/index.js" />
         <option value="$PROJECT_DIR$/ui/.gitignore" />
         <option value="$PROJECT_DIR$/README.md" />
@@ -252,6 +215,7 @@
         <option value="$PROJECT_DIR$/.circleci/config.yml" />
         <option value="$PROJECT_DIR$/ethereum/.gitignore" />
         <option value="$PROJECT_DIR$/ethereum/truffle.js" />
+        <option value="$PROJECT_DIR$/ui/src/App.js" />
       </list>
     </option>
   </component>
@@ -274,10 +238,10 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-2560" />
-    <option name="y" value="403" />
-    <option name="width" value="2560" />
-    <option name="height" value="1400" />
+    <option name="x" value="-11" />
+    <option name="y" value="-11" />
+    <option name="width" value="3821" />
+    <option name="height" value="2090" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -287,6 +251,17 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Share" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Share" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
@@ -297,13 +272,12 @@
             <path>
               <item name="Share" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="ethereum" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name=".circleci" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
               <item name="Share" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="ethereum" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="migrations" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="api" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
               <item name="Share" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
@@ -315,17 +289,6 @@
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="ui" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Share" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Share" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -407,6 +370,7 @@
       <workItem from="1548217295379" duration="2172000" />
       <workItem from="1548619282360" duration="6824000" />
       <workItem from="1548726165919" duration="6014000" />
+      <workItem from="1548887661387" duration="807000" />
     </task>
     <task id="LOCAL-00001" summary="doc-readme - doc: updated base README.mmd file">
       <created>1542677455809</created>
@@ -734,7 +698,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="93297000" />
+    <option name="totallyTimeSpent" value="94384000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -746,9 +710,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-2568" y="395" width="2576" height="1416" extended-state="6" />
+    <frame x="-7" y="-7" width="2575" height="1415" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4874851" visible="true" weight="0.076438144" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4874851" visible="true" weight="0.076438144" />
       <window_info id="Structure" order="1" sideWeight="0.5125149" side_tool="true" weight="0.10480694" />
       <window_info id="Favorites" order="2" sideWeight="0.5023401" side_tool="true" weight="0.10480694" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -760,7 +725,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3299532" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49960598" visible="true" weight="0.45787832" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49960598" visible="true" weight="0.35179406" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.500394" side_tool="true" weight="0.45787832" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.3299532" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -839,13 +804,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/Procfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="9" selection-start-column="9" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -857,13 +815,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/app.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="1" column="9" lean-forward="true" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -921,13 +872,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ui/app.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
@@ -959,16 +903,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ui/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="2" lean-forward="true" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/api/.nyc_output/97faf110-d158-4413-8c6c-ec126096a379.json" />
     <entry file="file://$PROJECT_DIR$/api/.nyc_output/4711e350-2ed5-4533-84b1-2d6d6aed1ff0.json" />
     <entry file="file://$PROJECT_DIR$/api/routes/index.js">
@@ -983,13 +917,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
           <caret line="20" selection-start-line="20" selection-end-line="24" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -1014,34 +941,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1256">
-          <caret line="80" column="34" selection-start-line="80" selection-start-column="34" selection-end-line="80" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/architecture/Contracts/contract_prototype.sol">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="704">
-          <caret line="32" column="2" selection-start-line="32" selection-start-column="2" selection-end-line="32" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/architecture/Contracts/share_prototype.sol">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="8" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ethereum/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
@@ -1060,6 +959,81 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
           <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/architecture/Contracts/contract_prototype.sol">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="704">
+          <caret line="32" column="2" selection-start-line="32" selection-start-column="2" selection-end-line="32" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ethereum/test/ERC721TokenTest.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="8" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ethereum/test/StarNotaryTest.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/app.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" column="9" lean-forward="true" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/app.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/Procfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="9" selection-start-column="9" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/architecture/Contracts/share_prototype.sol">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ethereum/contracts/StarNotary.sol">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1189">
+          <caret line="80" column="34" selection-start-line="80" selection-start-column="34" selection-end-line="80" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="13" column="29" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -1,7 +1,6 @@
 const request = require("supertest");
 
-describe("Testing all routes", () =>{
-
+describe("Testing all routes", () => {
   let server;
 
   beforeEach(() => {
@@ -18,18 +17,29 @@ describe("Testing all routes", () =>{
       .expect(200, done);
   });
 
+  it("responds to /health", done => {
+    request(server)
+      .get("/health")
+      .expect(
+        {
+          healthy: true
+        },
+        done
+      );
+  });
+
   it("responds to /greetings post requests", done => {
-        request(server)
-            .post("/greetings")
-            .send({name: 'John'})
-            .expect(200, done)
-    });
+    request(server)
+      .post("/greetings")
+      .send({ name: "John" })
+      .expect(200, done);
+  });
 
   it("rejects /greetings post requests with missing name property", done => {
-        request(server)
-            .post("/greetings")
-            .send({})
-            .expect(400, done)
+    request(server)
+      .post("/greetings")
+      .send({})
+      .expect(400, done);
   });
 
   it("404 everything else", done => {
@@ -37,5 +47,4 @@ describe("Testing all routes", () =>{
       .get("/foo/bar")
       .expect(404, done);
   });
-
 });
