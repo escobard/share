@@ -12,7 +12,7 @@ workflows: # tells circleCI to do all test jobs for ui and api, then deploy both
             only: master
     - deploy-api:
         requires:
-        - build-ui
+        - build-api
         filters:
           branches:
             only: master
