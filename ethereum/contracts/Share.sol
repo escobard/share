@@ -27,9 +27,9 @@ contract Share {
         address charity;
         address donor;
         uint amount;
-        uint ownerAmount;
-        uint lotteryAmount;
         uint charityAmount;
+        uint lotteryAmount;
+        uint ownerAmount;
     }
 
     /// @notice Contains the mapping for the lottery entrees
@@ -44,7 +44,26 @@ contract Share {
 
     mapping(address => Donation) public Donations;
 
+    function handleFunds(address _lottery, address _charity) private{
 
+        // creates the amount variable, used to set the amount later on in this function
+        uint amount = msg.value;
+
+        // creates and dispatches the funds to respective actors, to be later stored in the Donor structure
+        uint charityAmount = dispatchCharity(_charity, amount);
+        uint lotteryAmount = dispatchLottery(_lottery, amount);
+
+        // dispatches the amount to the contract itself, previously this was the Owner but
+        // transaction costs to send funds to owner makes no sense - the 1% should be held
+        // within the smart contract
+        uint ownerAmount = dispatchOwner(Owner, amount);
+
+        // here we set the structure's addresses, need to actually create this function
+        setAddresses(Owner, _lottery, _charity, msg.sender);
+
+        // here we set the amounts to the donation structure, need to create this function
+        setAmounts(amount, charityAmount, lotteryAmount, ownerAmount);
+    }
 
 }
 
