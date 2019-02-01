@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="39da7f77-135d-4deb-b731-486d97edb808" name="Default Changelist" comment="ethereum-proj-5-migrate - feat: project files migrated from project 5, tests working!">
-      <change afterPath="$PROJECT_DIR$/ethereum/contracts/Share.sol" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.circleci/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.circleci/config.yml" afterDir="false" />
+    <list default="true" id="39da7f77-135d-4deb-b731-486d97edb808" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/api/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/architecture/Contracts/contract_prototype.sol" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ethereum/contracts/ERC721.sol" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ethereum/contracts/ERC721Token.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ethereum/contracts/Share.sol" beforeDir="false" afterPath="$PROJECT_DIR$/ethereum/contracts/Share.sol" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/ui/src/App.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -51,7 +45,7 @@
           <entry key="json" value="16" />
           <entry key="lock" value="2" />
           <entry key="md" value="7" />
-          <entry key="sol" value="16" />
+          <entry key="sol" value="17" />
           <entry key="yaml" value="6" />
           <entry key="yml" value="3" />
         </counts>
@@ -64,7 +58,7 @@
           <entry key="JavaScript" value="65" />
           <entry key="Markdown" value="7" />
           <entry key="PLAIN_TEXT" value="13" />
-          <entry key="Solidity file" value="11" />
+          <entry key="Solidity file" value="12" />
           <entry key="YAML" value="9" />
           <entry key="yarn.lock" value="2" />
         </counts>
@@ -77,8 +71,8 @@
           <entry key="js" value="1016" />
           <entry key="json" value="229" />
           <entry key="md" value="7693" />
-          <entry key="sol" value="2855" />
-          <entry key="txt" value="4353" />
+          <entry key="sol" value="4341" />
+          <entry key="txt" value="4522" />
           <entry key="yaml" value="20" />
           <entry key="yml" value="970" />
         </counts>
@@ -89,8 +83,8 @@
           <entry key="JSON" value="229" />
           <entry key="JavaScript" value="3852" />
           <entry key="Markdown" value="7691" />
-          <entry key="PLAIN_TEXT" value="4480" />
-          <entry key="Solidity file" value="19" />
+          <entry key="PLAIN_TEXT" value="4649" />
+          <entry key="Solidity file" value="1505" />
           <entry key="YAML" value="990" />
         </counts>
       </usages-collector>
@@ -108,29 +102,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="200">
-                  <caret line="62" column="14" lean-forward="true" selection-start-line="62" selection-start-column="14" selection-end-line="62" selection-end-column="14" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/ethereum/contracts/StarNotary.sol">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="418">
-                  <caret line="19" column="43" lean-forward="true" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/ethereum/contracts/Share.sol">
-              <provider selected="true" editor-type-id="text-editor">
-                <state>
-                  <caret column="24" selection-start-column="24" selection-end-column="24" />
+                <state relative-caret-position="-1328">
+                  <caret line="25" selection-start-line="25" selection-end-line="41" selection-end-column="5" />
                 </state>
               </provider>
             </entry>
@@ -140,10 +116,10 @@
       <split-second>
         <leaf>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/ethereum/contracts/StarNotary.sol">
+            <entry file="file://$PROJECT_DIR$/ethereum/contracts/Share.sol">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1914">
-                  <caret line="160" column="1" lean-forward="true" selection-start-line="160" selection-start-column="1" selection-end-line="160" selection-end-column="1" />
+                <state relative-caret-position="440">
+                  <caret line="20" column="91" selection-start-line="20" selection-start-column="91" selection-end-line="20" selection-end-column="91" />
                 </state>
               </provider>
             </entry>
@@ -240,8 +216,8 @@
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-11" />
     <option name="y" value="-11" />
-    <option name="width" value="3821" />
-    <option name="height" value="2090" />
+    <option name="width" value="3863" />
+    <option name="height" value="2123" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -323,10 +299,11 @@
     <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Documents\School\Share\ethereum\contracts" />
       <recent name="D:\Documents\School\Share\architecture\UML" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Documents\School\Share\architecture\UML" />
     </key>
   </component>
@@ -386,7 +363,7 @@
       <workItem from="1548217295379" duration="2172000" />
       <workItem from="1548619282360" duration="6824000" />
       <workItem from="1548726165919" duration="6014000" />
-      <workItem from="1548887661387" duration="3817000" />
+      <workItem from="1548887661387" duration="10380000" />
     </task>
     <task id="LOCAL-00001" summary="doc-readme - doc: updated base README.mmd file">
       <created>1542677455809</created>
@@ -710,11 +687,18 @@
       <option name="project" value="LOCAL" />
       <updated>1548627784493</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="ethereum-share-contract - feat: removed obsolete token boilerplates">
+      <created>1548897949262</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1548897949262</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97394000" />
+    <option name="totallyTimeSpent" value="103957000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -727,6 +711,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="2575" height="1415" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4874851" visible="true" weight="0.076438144" />
       <window_info id="Structure" order="1" sideWeight="0.5125149" side_tool="true" weight="0.10480694" />
@@ -775,9 +760,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="ui-tests - feat: added test files for all components" />
-    <MESSAGE value="ui-tests - feat: added coverage flag to testing, 80 coverage set" />
-    <MESSAGE value="ui-styles - feat: added correct circle ci yaml file for circle ci docker container, tests working!" />
     <MESSAGE value="circleci-ui - feat: added new deployment logic to build ui, and deploy to heroku" />
     <MESSAGE value="circleci-ui - fix: fixed typo" />
     <MESSAGE value="circleci-ui - fix: fixed indentation of" />
@@ -800,7 +782,10 @@
     <MESSAGE value="ethereum-proj-5-migrate - feat: migrated base files into parent directory" />
     <MESSAGE value="ethereum-proj-5-migrate - fix: updated with correct files" />
     <MESSAGE value="ethereum-proj-5-migrate - fix updated gitignore files" />
-    <option name="LAST_COMMIT_MESSAGE" value="ethereum-proj-5-migrate - fix updated gitignore files" />
+    <MESSAGE value="ethereum-share-contract - feat: removed obsolete token boilerplates" />
+    <MESSAGE value="ethereum-share-contract - refact: added boilerplate contract files from udacity" />
+    <MESSAGE value="ethereum-share-contract - feat: added base variables and mappings" />
+    <option name="LAST_COMMIT_MESSAGE" value="ethereum-share-contract - feat: added base variables and mappings" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/share/README.md" />
@@ -1043,13 +1028,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="62" column="14" lean-forward="true" selection-start-line="62" selection-start-column="14" selection-end-line="62" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/architecture/Contracts/share_prototype.sol">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
@@ -1065,17 +1043,24 @@
         <state relative-caret-position="-1980" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="71" column="10" lean-forward="true" selection-start-line="71" selection-start-column="10" selection-end-line="71" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ethereum/contracts/StarNotary.sol">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1914">
-          <caret line="160" column="1" lean-forward="true" selection-start-line="160" selection-start-column="1" selection-end-line="160" selection-end-column="1" />
+        <state relative-caret-position="-1328">
+          <caret line="25" selection-start-line="25" selection-end-line="41" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ethereum/contracts/Share.sol">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="24" selection-start-column="24" selection-end-column="24" />
+        <state relative-caret-position="440">
+          <caret line="20" column="91" selection-start-line="20" selection-start-column="91" selection-end-line="20" selection-end-column="91" />
         </state>
       </provider>
     </entry>
