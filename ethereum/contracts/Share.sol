@@ -51,16 +51,13 @@ contract Share {
 
         // creates the amount variable, used to set the amount later on in this function
         uint amount = msg.value;
+        uint charityAmount = amount * 0.95;
+        uint lotteryAmount = amount * 0.05;
+        uint ownerAmount = amount * 0.01;
 
-        // creates and dispatches the funds to respective actors, to be later stored in the Donor structure
-        uint charityAmount = dispatchCharity(_charity, amount);
-        uint lotteryAmount = dispatchLottery(_lottery, amount);
-
-        // dispatches the amount to the contract itself, previously this was the Owner but
-        // transaction costs to send funds to owner makes no sense - the 1% should be held
-        // within the smart contract
-        uint ownerAmount = dispatchOwner(Owner, amount);
-
+        dispatchFunds(_charity, charityAmount);
+        dispatchFunds(_lottery, lotteryAmount);
+        dispatchFunds(Owner, ownerAmount);
         // here we set the structure's addresses, need to actually create this function
         setAddresses(Owner, _lottery, _charity, msg.sender);
 
@@ -77,6 +74,12 @@ contract Share {
             return fetchedDonation;
         }
 
+    }
+
+    function dipatchFunds(address _receiver, uint _amount) private payable{
+
+        // transfers the specified value, to the specified party
+        _receiver.transfer(_amount);
     }
 
 };
