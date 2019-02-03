@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="39da7f77-135d-4deb-b731-486d97edb808" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="39da7f77-135d-4deb-b731-486d97edb808" name="Default Changelist" comment="ethereum-share-contract - feat: added base donation structure">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ethereum/contracts/Share.sol" beforeDir="false" afterPath="$PROJECT_DIR$/ethereum/contracts/Share.sol" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/ui/src/App.js" afterDir="false" />
@@ -30,22 +31,22 @@
           <entry key="project.open.time.6" value="4" />
           <entry key="project.open.time.7" value="4" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.open.time.9" value="3" />
-          <entry key="project.opened" value="23" />
+          <entry key="project.open.time.9" value="4" />
+          <entry key="project.opened" value="24" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="Procfile" value="2" />
           <entry key="babelrc" value="1" />
-          <entry key="gitignore" value="11" />
+          <entry key="gitignore" value="13" />
           <entry key="html" value="2" />
           <entry key="jpg" value="9" />
           <entry key="js" value="60" />
           <entry key="json" value="16" />
           <entry key="lock" value="2" />
           <entry key="md" value="7" />
-          <entry key="sol" value="17" />
+          <entry key="sol" value="28" />
           <entry key="yaml" value="6" />
           <entry key="yml" value="3" />
         </counts>
@@ -57,8 +58,8 @@
           <entry key="JSON" value="17" />
           <entry key="JavaScript" value="65" />
           <entry key="Markdown" value="7" />
-          <entry key="PLAIN_TEXT" value="13" />
-          <entry key="Solidity file" value="12" />
+          <entry key="PLAIN_TEXT" value="15" />
+          <entry key="Solidity file" value="23" />
           <entry key="YAML" value="9" />
           <entry key="yarn.lock" value="2" />
         </counts>
@@ -66,13 +67,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Procfile" value="78" />
-          <entry key="gitignore" value="49" />
+          <entry key="gitignore" value="54" />
           <entry key="html" value="1" />
           <entry key="js" value="1016" />
           <entry key="json" value="229" />
           <entry key="md" value="7693" />
-          <entry key="sol" value="4341" />
-          <entry key="txt" value="4522" />
+          <entry key="sol" value="6973" />
+          <entry key="txt" value="4672" />
           <entry key="yaml" value="20" />
           <entry key="yml" value="970" />
         </counts>
@@ -83,14 +84,14 @@
           <entry key="JSON" value="229" />
           <entry key="JavaScript" value="3852" />
           <entry key="Markdown" value="7691" />
-          <entry key="PLAIN_TEXT" value="4649" />
-          <entry key="Solidity file" value="1505" />
+          <entry key="PLAIN_TEXT" value="4804" />
+          <entry key="Solidity file" value="4137" />
           <entry key="YAML" value="990" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
         <counts>
-          <entry key="PrettierLanguageServiceImpl" value="6" />
+          <entry key="PrettierLanguageServiceImpl" value="7" />
         </counts>
       </usages-collector>
     </session>
@@ -99,14 +100,37 @@
     <favorites_list name="Share" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
+    <splitter split-orientation="horizontal" split-proportion="0.4880546">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/ethereum/contracts/StarNotary.sol">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-1328">
-                  <caret line="25" selection-start-line="25" selection-end-line="41" selection-end-column="5" />
+                <state relative-caret-position="1982">
+                  <caret line="108" lean-forward="true" selection-start-line="108" selection-end-line="108" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/ethereum/contracts/coffeebase/SupplyChain.sol">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="6116">
+                  <caret line="276" column="3" selection-start-line="276" selection-start-column="3" selection-end-line="276" selection-end-column="3" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/ethereum/contracts/coffeecore/Ownable.sol">
+              <provider selected="true" editor-type-id="text-editor" />
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/ethereum/contracts/coffeeaccesscontrol/DistributorRole.sol">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="506">
+                  <caret line="23" selection-start-line="23" selection-end-line="27" />
                 </state>
               </provider>
             </entry>
@@ -114,12 +138,12 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/ethereum/contracts/Share.sol">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="440">
-                  <caret line="20" column="91" selection-start-line="20" selection-start-column="91" selection-end-line="20" selection-end-column="91" />
+                <state relative-caret-position="616">
+                  <caret line="28" column="24" lean-forward="true" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
                 </state>
               </provider>
             </entry>
@@ -135,6 +159,7 @@
       <find>MyComponent</find>
       <find>Navigation</find>
       <find>dependencies</find>
+      <find>ownerOf</find>
     </findStrings>
     <replaceStrings>
       <replace>greetings</replace>
@@ -159,7 +184,6 @@
       <list>
         <option value="$PROJECT_DIR$/share/README.md" />
         <option value="$PROJECT_DIR$/architecture/Contracts/contract_prototype.sol" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/api/constants/index.js" />
         <option value="$PROJECT_DIR$/api/routes/health.js" />
         <option value="$PROJECT_DIR$/api/tests/routes/greetings.tests.js" />
@@ -191,6 +215,7 @@
         <option value="$PROJECT_DIR$/ui/app.yaml" />
         <option value="$PROJECT_DIR$/api/app.yaml" />
         <option value="$PROJECT_DIR$/architecture/Contracts/share_prototype.sol" />
+        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/ethereum/contracts/Share.sol" />
       </list>
     </option>
@@ -214,10 +239,9 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-11" />
-    <option name="y" value="-11" />
-    <option name="width" value="3863" />
-    <option name="height" value="2123" />
+    <option name="y" value="10" />
+    <option name="width" value="3821" />
+    <option name="height" value="2090" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -270,6 +294,27 @@
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="ethereum" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="contracts" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="Share" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="ethereum" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="contracts" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="coffeeaccesscontrol" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="Share" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="ethereum" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="contracts" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="coffeebase" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="Share" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="ethereum" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="contracts" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="coffeecore" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
               <item name="Share" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
@@ -363,7 +408,8 @@
       <workItem from="1548217295379" duration="2172000" />
       <workItem from="1548619282360" duration="6824000" />
       <workItem from="1548726165919" duration="6014000" />
-      <workItem from="1548887661387" duration="10380000" />
+      <workItem from="1548887661387" duration="12524000" />
+      <workItem from="1549199869465" duration="14915000" />
     </task>
     <task id="LOCAL-00001" summary="doc-readme - doc: updated base README.mmd file">
       <created>1542677455809</created>
@@ -698,7 +744,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="103957000" />
+    <option name="totallyTimeSpent" value="121016000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -713,7 +759,7 @@
     <frame x="-7" y="-7" width="2575" height="1415" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4874851" visible="true" weight="0.076438144" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4874851" visible="true" weight="0.076438144" />
       <window_info id="Structure" order="1" sideWeight="0.5125149" side_tool="true" weight="0.10480694" />
       <window_info id="Favorites" order="2" sideWeight="0.5023401" side_tool="true" weight="0.10480694" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -724,8 +770,8 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3299532" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49960598" visible="true" weight="0.35179406" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3299532" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49960598" weight="0.35179406" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.500394" side_tool="true" weight="0.45787832" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.3299532" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -755,14 +801,37 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="circleci-ui - feat: added new deployment logic to build ui, and deploy to heroku" />
-    <MESSAGE value="circleci-ui - fix: fixed typo" />
-    <MESSAGE value="circleci-ui - fix: fixed indentation of" />
     <MESSAGE value="circleci-ui - feat: added workflows for improved deployment handling" />
     <MESSAGE value="circleci-ui - fix: missing executor fix" />
     <MESSAGE value="circleci-ui - feat: added new command to set git user prior to heroku push" />
@@ -785,15 +854,12 @@
     <MESSAGE value="ethereum-share-contract - feat: removed obsolete token boilerplates" />
     <MESSAGE value="ethereum-share-contract - refact: added boilerplate contract files from udacity" />
     <MESSAGE value="ethereum-share-contract - feat: added base variables and mappings" />
-    <option name="LAST_COMMIT_MESSAGE" value="ethereum-share-contract - feat: added base variables and mappings" />
+    <MESSAGE value="ethereum-share-contract - feat: added base donation structure" />
+    <MESSAGE value="ethereum-share-contract - feat: added base fetch function logic" />
+    <MESSAGE value="ethereum-share-contract - feat: added dispatchFunds private function, need to add comments to all functions" />
+    <option name="LAST_COMMIT_MESSAGE" value="ethereum-share-contract - feat: added dispatchFunds private function, need to add comments to all functions" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/share/README.md" />
-    <entry file="file://$PROJECT_DIR$/architecture/UML/Share - Activity Diagram.jpg" />
-    <entry file="file://$PROJECT_DIR$/architecture/UML/UML - Class.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/my-app/package.json" />
     <entry file="file://$PROJECT_DIR$/architecture/UML/UML- Base.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -801,13 +867,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1115">
           <caret line="634" column="14" selection-start-line="634" selection-start-column="14" selection-end-line="634" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="5" selection-start-column="5" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -1021,13 +1080,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/architecture/Contracts/contract_prototype.sol">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="704">
-          <caret line="32" column="2" selection-start-line="32" selection-start-column="2" selection-end-line="32" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/architecture/Contracts/contract_prototype.sol" />
     <entry file="file://$PROJECT_DIR$/architecture/Contracts/share_prototype.sol">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
@@ -1035,14 +1088,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ethereum/contracts/ERC721.sol">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ethereum/contracts/ERC721Token.sol">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1980" />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/ethereum/contracts/ERC721.sol" />
+    <entry file="file://$PROJECT_DIR$/ethereum/contracts/ERC721Token.sol" />
     <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="398">
@@ -1050,17 +1097,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ethereum/contracts/coffeeaccesscontrol/FarmerRole.sol">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ethereum/contracts/coffeeaccesscontrol/RetailerRole.sol">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ethereum/contracts/coffeecore/Ownable.sol">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ethereum/contracts/coffeeaccesscontrol/ConsumerRole.sol">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ethereum/contracts/coffeeaccesscontrol/DistributorRole.sol">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="23" selection-start-line="23" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ethereum/contracts/coffeebase/SupplyChain.sol">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6116">
+          <caret line="276" column="3" selection-start-line="276" selection-start-column="3" selection-end-line="276" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ethereum/contracts/StarNotary.sol">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1328">
-          <caret line="25" selection-start-line="25" selection-end-line="41" selection-end-column="5" />
+        <state relative-caret-position="1982">
+          <caret line="108" lean-forward="true" selection-start-line="108" selection-end-line="108" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ethereum/contracts/Share.sol">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="20" column="91" selection-start-line="20" selection-start-column="91" selection-end-line="20" selection-end-column="91" />
+        <state relative-caret-position="616">
+          <caret line="28" column="24" lean-forward="true" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
         </state>
       </provider>
     </entry>

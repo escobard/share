@@ -8,6 +8,9 @@ contract Share {
     address Lottery;
     address Charity;
 
+    // assigns an ID to each donation
+    uint donationID = 0;
+
     /// @notice Contains the stucture of the star metadata
     /// @dev key of structure is the provided transaction hash, will be donationId in v2.0
     /// @param transactionHash address, contains donor to share transaction hash
@@ -19,9 +22,9 @@ contract Share {
     /// @param ownerAmount, contains the 1% of original amount sent to owner
     /// @param lotterAmount uint, contains the 4% of original amount sent to lottery
     /// @param charityAmount, contains the remaining 95% of original amount sent to charity
+    /// @param donationID, contains the value of the last submitted donation - is returned to ui
 
     struct Donation {
-        address transactionHash;
         address owner;
         address lottery;
         address charity;
@@ -30,21 +33,22 @@ contract Share {
         uint charityAmount;
         uint lotteryAmount;
         uint ownerAmount;
+        uint donationID;
     }
 
     /// @notice Contains the mapping for the lottery entrees
     /// @dev
     /// @param donor address, will be expanded for v2.0
 
-    mapping(address => Entrees) public lotteryEntrees;
+    mapping(address => address) public lotteryEntrees;
 
     /// @notice Contains the mapping for donation data
     /// @dev key of structure is the transactionHash, in v2.0 a donationId will be introduced
     /// @param Donation structure, contains donation metadata
 
-    mapping(address => Donation) public Donations;
+    mapping(uint => Donation) public Donations;
 
-    function handleFunds(address _lottery, address _charity) public {
+    function makeDonation() public {
 
         // owner, charity, and lottery accounts cannot utilize the handleFunds function
         require(msg.sender != (Owner || Lottery || Charity));
@@ -55,14 +59,16 @@ contract Share {
         uint lotteryAmount = amount * 0.05;
         uint ownerAmount = amount * 0.01;
 
-        dispatchFunds(_charity, charityAmount);
-        dispatchFunds(_lottery, lotteryAmount);
+        dispatchFunds(Charity, charityAmount);
+        dispatchFunds(Lottery, lotteryAmount);
         dispatchFunds(Owner, ownerAmount);
-        // here we set the structure's addresses, need to actually create this function
-        setAddresses(Owner, _lottery, _charity, msg.sender);
 
-        // here we set the amounts to the donation structure, need to create this function
-        setAmounts(amount, charityAmount, lotteryAmount, ownerAmount);
+        // updates donationID;
+        donationID = donationID + 1;
+
+        // stores all the data
+        Donations[donationID] = Donation(Owner, Lottery, Charity, msg.sender, amount, charityAmount, lotteryAmount, ownerAmount, donationID)
+
     }
 
     function fetchDonation(address _transaction) public view returns (struct){
