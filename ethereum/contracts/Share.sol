@@ -79,7 +79,6 @@ contract Share {
         if(msg.sender == (fetchedDonation.owner || fetchedDonation.lottery || fetchedDonation.charity || fetchedDonation.donor)){
             return fetchedDonation;
         }
-
     }
 
     function dipatchFunds(address _receiver, uint _amount) private payable{
