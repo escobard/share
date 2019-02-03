@@ -44,7 +44,10 @@ contract Share {
 
     mapping(address => Donation) public Donations;
 
-    function handleFunds(address _lottery, address _charity) private{
+    function handleFunds(address _lottery, address _charity) public {
+
+        // owner, charity, and lottery accounts cannot utilize the handleFunds function
+        require(msg.sender != (Owner || Lottery || Charity));
 
         // creates the amount variable, used to set the amount later on in this function
         uint amount = msg.value;
@@ -65,5 +68,16 @@ contract Share {
         setAmounts(amount, charityAmount, lotteryAmount, ownerAmount);
     }
 
-}
+    function fetchDonation(address _transaction) public view returns (struct){
+
+        // creates a temporary variable for the fetched donation
+        Donation memory fetchedDonation = Donations[_transaction];
+
+        if(msg.sender == (fetchedDonation.owner || fetchedDonation.lottery || fetchedDonation.charity || fetchedDonation.donor)){
+            return fetchedDonation;
+        }
+
+    }
+
+};
 
