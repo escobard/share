@@ -47,6 +47,11 @@ describe("Tests makeDonation()", () =>{
         assert.equal(response, 1);
     })
 
+    it("charity cannot create donation", =>(
+        let response = await this.makeDonation({from: donor, value: amount});
+
+        assert.equal(response, undefined);
+    ))
 
 
 

@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="39da7f77-135d-4deb-b731-486d97edb808" name="Default Changelist" comment="ethereum-share-contract - feat: added base donation structure">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+    <list default="true" id="39da7f77-135d-4deb-b731-486d97edb808" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ethereum/contracts/Share.sol" beforeDir="false" afterPath="$PROJECT_DIR$/ethereum/contracts/Share.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ethereum/test/ShareTest.js" beforeDir="false" afterPath="$PROJECT_DIR$/ethereum/test/ShareTest.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/ui/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/ui/src/App.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -17,133 +19,54 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="1822383069">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="12" />
-          <entry key="project.open.time.0" value="4" />
-          <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.10" value="2" />
-          <entry key="project.open.time.11" value="1" />
-          <entry key="project.open.time.16" value="1" />
-          <entry key="project.open.time.5" value="2" />
-          <entry key="project.open.time.6" value="4" />
-          <entry key="project.open.time.7" value="4" />
-          <entry key="project.open.time.8" value="1" />
-          <entry key="project.open.time.9" value="4" />
-          <entry key="project.opened" value="24" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="Procfile" value="2" />
-          <entry key="babelrc" value="1" />
-          <entry key="gitignore" value="13" />
-          <entry key="html" value="2" />
-          <entry key="jpg" value="9" />
-          <entry key="js" value="60" />
-          <entry key="json" value="16" />
-          <entry key="lock" value="2" />
-          <entry key="md" value="7" />
-          <entry key="sol" value="28" />
-          <entry key="yaml" value="6" />
-          <entry key="yml" value="3" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="HTML" value="2" />
-          <entry key="Image" value="9" />
-          <entry key="JSON" value="17" />
-          <entry key="JavaScript" value="65" />
-          <entry key="Markdown" value="7" />
-          <entry key="PLAIN_TEXT" value="15" />
-          <entry key="Solidity file" value="23" />
-          <entry key="YAML" value="9" />
-          <entry key="yarn.lock" value="2" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="Procfile" value="78" />
-          <entry key="gitignore" value="54" />
-          <entry key="html" value="1" />
-          <entry key="js" value="1016" />
-          <entry key="json" value="229" />
-          <entry key="md" value="7693" />
-          <entry key="sol" value="6973" />
-          <entry key="txt" value="4672" />
-          <entry key="yaml" value="20" />
-          <entry key="yml" value="970" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="HTML" value="3" />
-          <entry key="JSON" value="229" />
-          <entry key="JavaScript" value="3852" />
-          <entry key="Markdown" value="7691" />
-          <entry key="PLAIN_TEXT" value="4804" />
-          <entry key="Solidity file" value="4137" />
-          <entry key="YAML" value="990" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.js.language.service.starts">
-        <counts>
-          <entry key="PrettierLanguageServiceImpl" value="7" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
   <component name="FavoritesManager">
     <favorites_list name="Share" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.4880546">
+    <splitter split-orientation="horizontal" split-proportion="0.4530303">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/ethereum/contracts/StarNotary.sol">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1982">
-                  <caret line="108" lean-forward="true" selection-start-line="108" selection-end-line="108" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/ethereum/contracts/coffeebase/SupplyChain.sol">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="6116">
-                  <caret line="276" column="3" selection-start-line="276" selection-start-column="3" selection-end-line="276" selection-end-column="3" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/ethereum/contracts/coffeecore/Ownable.sol">
-              <provider selected="true" editor-type-id="text-editor" />
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/ethereum/contracts/coffeeaccesscontrol/DistributorRole.sol">
+            <entry file="file://$PROJECT_DIR$/ethereum/test/ShareTest.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="506">
-                  <caret line="23" selection-start-line="23" selection-end-line="27" />
+                  <caret line="52" column="40" selection-start-line="52" selection-start-column="40" selection-end-line="52" selection-end-column="40" />
                 </state>
               </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/.idea/encodings.xml">
+              <provider selected="true" editor-type-id="text-editor" />
             </entry>
           </file>
         </leaf>
       </split-first>
       <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+        <leaf>
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/ethereum/contracts/Share.sol">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="616">
-                  <caret line="28" column="24" lean-forward="true" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
+                <state relative-caret-position="520">
+                  <caret line="94" column="26" selection-start-line="94" selection-start-column="26" selection-end-line="94" selection-end-column="26" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/ethereum/test/StarNotaryTest.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="192">
+                  <caret line="68" column="16" lean-forward="true" selection-start-line="68" selection-start-column="16" selection-end-line="68" selection-end-column="16" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/ethereum/test/ERC721TokenTest.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="340">
+                  <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
                 </state>
               </provider>
             </entry>
@@ -160,6 +83,10 @@
       <find>Navigation</find>
       <find>dependencies</find>
       <find>ownerOf</find>
+      <find>_transaction</find>
+      <find>StarNotary</find>
+      <find>require(</find>
+      <find>wei</find>
     </findStrings>
     <replaceStrings>
       <replace>greetings</replace>
@@ -167,6 +94,8 @@
       <replace>Navigation</replace>
       <replace>Section</replace>
       <replace>ShareForm</replace>
+      <replace>_donationID</replace>
+      <replace>Share</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -191,7 +120,6 @@
         <option value="$PROJECT_DIR$/api/routes/greetings.js" />
         <option value="$PROJECT_DIR$/api/Procfile" />
         <option value="$PROJECT_DIR$/api/constants/routes.js" />
-        <option value="$PROJECT_DIR$/ui/public/index.html" />
         <option value="$PROJECT_DIR$/ui/src/components/Navigation/Navigation.tests.js" />
         <option value="$PROJECT_DIR$/ui/src/setupTests.js" />
         <option value="$PROJECT_DIR$/ui/src/components/Section/Section.test.js" />
@@ -211,36 +139,20 @@
         <option value="$PROJECT_DIR$/ethereum/truffle.js" />
         <option value="$PROJECT_DIR$/.circleci/config.yml" />
         <option value="$PROJECT_DIR$/api/index.js" />
-        <option value="$PROJECT_DIR$/ui/src/App.js" />
         <option value="$PROJECT_DIR$/ui/app.yaml" />
         <option value="$PROJECT_DIR$/api/app.yaml" />
         <option value="$PROJECT_DIR$/architecture/Contracts/share_prototype.sol" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/ui/public/index.html" />
+        <option value="$PROJECT_DIR$/ui/src/App.js" />
         <option value="$PROJECT_DIR$/ethereum/contracts/Share.sol" />
+        <option value="$PROJECT_DIR$/ethereum/test/ShareTest.js" />
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="NodeModulesDirectoryManager">
-    <handled-path value="$PROJECT_DIR$/api/node_modules" />
-    <handled-path value="$PROJECT_DIR$/ethereum/node_modules" />
-    <handled-path value="$PROJECT_DIR$/ui/node_modules" />
-  </component>
-  <component name="NodePackageJsonFileManager">
-    <packageJsonPaths>
-      <path value="$PROJECT_DIR$/api/package.json" />
-      <path value="$PROJECT_DIR$/ethereum/package.json" />
-      <path value="$PROJECT_DIR$/ui/package.json" />
-    </packageJsonPaths>
-  </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="10" />
-    <option name="width" value="3821" />
+    <option name="width" value="3825" />
     <option name="height" value="2090" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -251,81 +163,47 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Share" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Share" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
             <path>
-              <item name="Share" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="share" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
             </path>
             <path>
-              <item name="Share" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name=".circleci" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="Share" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="api" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="Share" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="architecture" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="Share" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="share" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="ethereum" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
-              <item name="Share" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="share" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="ethereum" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="contracts" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
-              <item name="Share" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="share" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="ethereum" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="contracts" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="coffeeaccesscontrol" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
-              <item name="Share" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="share" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="ethereum" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="contracts" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="coffeebase" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="test" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
             <path>
-              <item name="Share" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="ethereum" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="contracts" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="coffeecore" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="Share" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="ui" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="Share" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="ui" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Share" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Share" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -365,7 +243,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+    <configuration default="true" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/ui/package.json" />
       <command value="run" />
       <scripts>
@@ -409,7 +287,9 @@
       <workItem from="1548619282360" duration="6824000" />
       <workItem from="1548726165919" duration="6014000" />
       <workItem from="1548887661387" duration="12524000" />
-      <workItem from="1549199869465" duration="14915000" />
+      <workItem from="1549199869465" duration="17227000" />
+      <workItem from="1549384327365" duration="798000" />
+      <workItem from="1549385251924" duration="4234000" />
     </task>
     <task id="LOCAL-00001" summary="doc-readme - doc: updated base README.mmd file">
       <created>1542677455809</created>
@@ -744,7 +624,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121016000" />
+    <option name="totallyTimeSpent" value="128360000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -756,10 +636,30 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="2575" height="1415" extended-state="6" />
+    <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4874851" visible="true" weight="0.076438144" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4874851" visible="true" weight="0.12813738" />
+      <window_info id="Structure" order="1" sideWeight="0.5125149" side_tool="true" weight="0.10480694" />
+      <window_info id="Favorites" order="2" sideWeight="0.5023401" side_tool="true" weight="0.10480694" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3299532" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3299532" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32956153" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49867898" weight="0.3493635" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.501321" side_tool="true" weight="0.3493635" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.3299532" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4874851" visible="true" weight="0.12813738" />
       <window_info id="Structure" order="1" sideWeight="0.5125149" side_tool="true" weight="0.10480694" />
       <window_info id="Favorites" order="2" sideWeight="0.5023401" side_tool="true" weight="0.10480694" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -771,28 +671,9 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3299532" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3299532" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49960598" weight="0.35179406" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.500394" side_tool="true" weight="0.45787832" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49867898" weight="0.3493635" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.501321" side_tool="true" weight="0.3493635" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.3299532" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4874851" visible="true" weight="0.10480694" />
-      <window_info id="Structure" order="1" sideWeight="0.5125149" side_tool="true" visible="true" weight="0.10480694" />
-      <window_info id="Favorites" order="2" sideWeight="0.5023401" side_tool="true" weight="0.10480694" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.34555382" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -826,21 +707,23 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="circleci-ui - feat: added workflows for improved deployment handling" />
-    <MESSAGE value="circleci-ui - fix: missing executor fix" />
-    <MESSAGE value="circleci-ui - feat: added new command to set git user prior to heroku push" />
-    <MESSAGE value="circleci-ui - fix: fixed key and name for heroku push" />
-    <MESSAGE value="circleci-ui - fix: fixed typo of heroku app name" />
-    <MESSAGE value="circleci-ui - fix: removed master flag, pushing local" />
-    <MESSAGE value="circleci-ui - fix: added --set-upstream handler" />
-    <MESSAGE value="circleci-ui - fix: added -f flag to force re-write of heroku repo" />
-    <MESSAGE value="circleci-ui - fix: removed yarn.lock file, testing to see if removing it is enough for circleci" />
     <MESSAGE value="circleci-ui - feat: added logic to" />
     <MESSAGE value="circleci-ui - fix: removed logic to delete package files, added lock files to .gitignore instead" />
     <MESSAGE value="api-coverage-circleci - feat: added coverage for api route tests" />
@@ -857,35 +740,20 @@
     <MESSAGE value="ethereum-share-contract - feat: added base donation structure" />
     <MESSAGE value="ethereum-share-contract - feat: added base fetch function logic" />
     <MESSAGE value="ethereum-share-contract - feat: added dispatchFunds private function, need to add comments to all functions" />
-    <option name="LAST_COMMIT_MESSAGE" value="ethereum-share-contract - feat: added dispatchFunds private function, need to add comments to all functions" />
+    <MESSAGE value="ethereum-share-contract - feat: added donationID logic, updated handleFunds to makeDonation" />
+    <MESSAGE value="ethereum-share-contract - feat: contract logic completed, pushing to work on plane" />
+    <MESSAGE value="ethereum-share-contract - feat: updated share with constructor function, sets lottery / charity globals" />
+    <MESSAGE value="ethereum-share-contract - doc: update commentary for all functions, updated legacy syntax" />
+    <MESSAGE value="ethereum-contract-testing - test: added base test file" />
+    <MESSAGE value="ethereum-contract-testing - test: added all describe functions" />
+    <MESSAGE value="ethereum-contract-testing - test: added it test for successful case of contract creation" />
+    <MESSAGE value="ethereum-contract-testing - test: added it test for case when non-owner calls initializeContract()" />
+    <MESSAGE value="ethereum-contract-testing - test: added initializeContract / makeDonation() base logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="ethereum-contract-testing - test: added initializeContract / makeDonation() base logic" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/architecture/UML/UML- Base.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/node_modules/express/lib/router/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1115">
-          <caret line="634" column="14" selection-start-line="634" selection-start-column="14" selection-end-line="634" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/constants/routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package-lock.json" />
     <entry file="file://$PROJECT_DIR$/ui/yarn.lock" />
-    <entry file="file://$PROJECT_DIR$/ui/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ui/src/index.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1004,9 +872,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ethereum/test/ERC721TokenTest.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/api/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1021,23 +886,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ethereum/test/StarNotaryTest.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/api/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1103,25 +955,8 @@
     <entry file="file://$PROJECT_DIR$/ethereum/contracts/coffeeaccesscontrol/RetailerRole.sol">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/ethereum/contracts/coffeecore/Ownable.sol">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/ethereum/contracts/coffeeaccesscontrol/ConsumerRole.sol">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ethereum/contracts/coffeeaccesscontrol/DistributorRole.sol">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="23" selection-start-line="23" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ethereum/contracts/coffeebase/SupplyChain.sol">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6116">
-          <caret line="276" column="3" selection-start-line="276" selection-start-column="3" selection-end-line="276" selection-end-column="3" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
@@ -1130,17 +965,78 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ethereum/contracts/coffeebase/SupplyChain.sol">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4692">
+          <caret line="276" column="3" selection-start-line="276" selection-start-column="3" selection-end-line="276" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ethereum/contracts/coffeecore/Ownable.sol">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ethereum/contracts/coffeeaccesscontrol/DistributorRole.sol">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" selection-start-line="23" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ethereum/contracts/StarNotary.sol">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1982">
-          <caret line="108" lean-forward="true" selection-start-line="108" selection-end-line="108" />
+        <state relative-caret-position="34">
+          <caret line="109" column="14" lean-forward="true" selection-start-line="109" selection-start-column="14" selection-end-line="109" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/public/manifest.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="108" selection-start-line="5" selection-start-column="108" selection-end-line="5" selection-end-column="108" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="21" column="22" lean-forward="true" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ethereum/test/ERC721TokenTest.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/encodings.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ethereum/test/StarNotaryTest.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="68" column="16" lean-forward="true" selection-start-line="68" selection-start-column="16" selection-end-line="68" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ethereum/contracts/Share.sol">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="28" column="24" lean-forward="true" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
+        <state relative-caret-position="520">
+          <caret line="94" column="26" selection-start-line="94" selection-start-column="26" selection-end-line="94" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ethereum/test/ShareTest.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="52" column="40" selection-start-line="52" selection-start-column="40" selection-end-line="52" selection-end-column="40" />
         </state>
       </provider>
     </entry>
