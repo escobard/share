@@ -20,7 +20,7 @@ contract Share {
     /// @param donor address, contains the address of the contract owner - ether account always
     /// @param amount uint, contains the original amount donated - all amounts are after gas
     /// @param ownerAmount, contains the 1% of original amount sent to owner
-    /// @param lotterAmount uint, contains the 4% of original amount sent to lottery
+    /// @param lotteryAmount uint, contains the 4% of original amount sent to lottery
     /// @param charityAmount, contains the remaining 95% of original amount sent to charity
     /// @param donationID, contains the value of the last submitted donation - is returned to ui
 
@@ -48,9 +48,30 @@ contract Share {
 
     mapping(uint => Donation) public Donations;
 
-    function makeDonation() public {
+    /// @notice Initiates the contract once deployed, only available to owner
+    /// @dev Need to test the syntax here, unsure the require function works
+    /// @param address _lottery, contains the ethereum public key for lottery account
+    /// @param address _charity, contains the ethereum public key for charity account
+
+    function initiateContract(address _lottery, address _charity) public view returns (string){
+
+        // must test to ensure this works, unsure of syntax
+        require(msg.sender == this.owner)
+
+        Owner = msg.sender;
+        Lottery = _lottery;
+        Charity = _charity;
+
+        return "Contract initialized!"
+    }
+
+    /// @notice parent function for all contract functionality
+    /// @dev Should consider splitting this out further if necessary by reviewers
+
+    function makeDonation() public view returns (uint){
 
         // owner, charity, and lottery accounts cannot utilize the handleFunds function
+
         require(msg.sender != (Owner || Lottery || Charity));
 
         // creates the amount variable, used to set the amount later on in this function
@@ -61,25 +82,37 @@ contract Share {
 
         dispatchFunds(Charity, charityAmount);
         dispatchFunds(Lottery, lotteryAmount);
-        dispatchFunds(Owner, ownerAmount);
+
+        // dispatches remaining funds to owner, this ensures that all gas is covered
+        dispatchFunds(Owner, msg.value);
 
         // updates donationID;
         donationID = donationID + 1;
 
         // stores all the data
-        Donations[donationID] = Donation(Owner, Lottery, Charity, msg.sender, amount, charityAmount, lotteryAmount, ownerAmount, donationID)
+        Donations[donationID] = Donation(Owner, Lottery, Charity, msg.sender, amount, charityAmount, lotteryAmount, ownerAmount, donationID);
 
+        return donationID;
     }
 
-    function fetchDonation(address _transaction) public view returns (struct){
+    /// @notice returns the saved donation as a Structure (should be an array)
+    /// @dev this should be heavily tested via the API, should consider adding authentication for data
+    /// @param uint _donationID, utilized to fetch structure from storage
+
+    function fetchDonation(uint _donationID) public view returns (struct){
 
         // creates a temporary variable for the fetched donation
-        Donation memory fetchedDonation = Donations[_transaction];
+        Donation memory fetchedDonation = Donations[_donationID];
 
         if(msg.sender == (fetchedDonation.owner || fetchedDonation.lottery || fetchedDonation.charity || fetchedDonation.donor)){
             return fetchedDonation;
         }
     }
+
+    /// @notice child function of makeDonation(), handles the dispatching of funds
+    /// @dev re-usability and scalability to the max - need to try to make all functions this reusable
+    /// @param address _receiver, contains the ethereum public key for receiver account
+    /// @param uint _amount, contains the amount to be dispatched to the specified receiver
 
     function dipatchFunds(address _receiver, uint _amount) private payable{
 
