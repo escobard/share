@@ -47,16 +47,33 @@ describe("Tests makeDonation()", () =>{
         assert.equal(response, 1);
     })
 
+    // only charity needs to be tested, can add cases for
     it("charity cannot create donation", =>(
-        let response = await this.makeDonation({from: donor, value: amount});
+        let response = await this.makeDonation({from: charity, value: amount});
 
         assert.equal(response, undefined);
     ))
 
-
-
 });
 
-describe("Tests fetchDonation()", () =>{});
+describe("Tests fetchDonation()", () =>{
+    // initializes contract every time prior to makeDonation();
+
+    let charityAmount = amount * 0.95,
+        lotteryAmount = amount * 0.05,
+        ownerAmount = amount * 0.01,
+        donation = [ owner, lottery, charity, donor, amount, charityAmount, lotteryAmount, ownerAmount, 1];
+
+    beforeEach(async () =>{
+        await this.initiateContract(lottery, charity, {from: owner});
+        await this.makeDonation({from: charity, value: amount});
+    })
+
+    it("donor can fetch donation by donationID", () =>{
+        let response = await this.fetchDonation(1, {from: donor});
+        assert.deepEqual(response, donation);
+    })
+
+});
 
 }
