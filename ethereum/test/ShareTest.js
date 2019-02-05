@@ -69,10 +69,15 @@ describe("Tests fetchDonation()", () =>{
         await this.makeDonation({from: charity, value: amount});
     })
 
-    it("donor can fetch donation by donationID", () =>{
+    it("donor can fetch donation by donationID", () => {
         let response = await this.fetchDonation(1, {from: donor});
         assert.deepEqual(response, donation);
-    })
+    }
+
+    it("accounts not within the donation array cannot fetch donation", () => {
+        let response = await this.fetchDonation(1, {from: other});
+        assert.deepEqual(response, undefined);
+    }
 
 });
 
