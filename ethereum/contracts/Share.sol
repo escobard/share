@@ -10,7 +10,7 @@ contract Share {
     address Charity;
 
     // assigns an ID to each donation
-    uint donationID = 0;
+    uint donationID = 1;
 
     /// @notice sets the owner to the Owner variable upon contract init
     /// @dev can be expanded to account for many more constructor features
@@ -74,7 +74,7 @@ contract Share {
     /// @notice parent function for all contract functionality
     /// @dev Should consider splitting this out further if necessary by reviewers
 
-    function makeDonation() public view returns (uint){
+    function makeDonation() public payable{
 
         // owner, charity, and lottery accounts cannot utilize the handleFunds function
         require(msg.sender != Owner || msg.sender != Lottery || msg.sender != Charity);
@@ -85,19 +85,16 @@ contract Share {
         uint lotteryAmount = amount * 5 / 100;
         uint ownerAmount = amount * 5 / 100;
 
-        dispatchFunds(Charity, charityAmount);
-        dispatchFunds(Lottery, lotteryAmount);
+        Charity.transfer(charityAmount);
+        Lottery.transfer(lotteryAmount);
 
         // dispatches remaining funds to owner, this ensures that all gas is covered
-        dispatchFunds(Owner, msg.value);
-
-        // updates donationID;
-        donationID = donationID + 1;
+        Owner.transfer(msg.value);
 
         // stores all the data
         Donations[donationID] = Donation(Owner, Lottery, Charity, msg.sender, amount, charityAmount, lotteryAmount, ownerAmount, donationID);
-
-        return donationID;
+        
+        fetchDonationId(donationID);
     }
 
     /// @notice returns the saved donation as a Structure (should be an array)
@@ -114,15 +111,16 @@ contract Share {
         }
     }
 
-    /// @notice child function of makeDonation(), handles the dispatching of funds
-    /// @dev re-usability and scalability to the max - need to try to make all functions this reusable
-    /// @param address _receiver, contains the ethereum public key for receiver account
-    /// @param uint _amount, contains the amount to be dispatched to the specified receiver
+    /// @notice child function of makeDonation(), handles the returning of donationID
+    /// @dev can be vastly improved during 2.0
+    /// @return donationID, string to fetch donation
 
-    function dispatchFunds(address _receiver, uint _amount) private payable{
-
-        // transfers the specified value, to the specified party
-        _receiver.transfer(_amount);
+    function fetchDonationId(string _donationID) private view returns (string){
+        // updates donationID;
+        donationID = donationID + 1;
+        
+        // returns the previous donationID to fetch the proper donation
+        return _donationID;
     }
 
 }
