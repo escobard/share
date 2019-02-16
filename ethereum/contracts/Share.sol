@@ -1,4 +1,5 @@
 pragma solidity ^0.4.23;
+pragma experimental ABIEncoderV2;
 
 // add all imports for user privileges here
 
@@ -103,12 +104,12 @@ contract Share {
     /// @dev this should be heavily tested via the API, should consider adding authentication for data
     /// @param uint _donationID, utilized to fetch structure from storage
 
-    function fetchDonation(uint _donationID) public view returns (Donation[]){
+    function fetchDonation(uint _donationID) public view returns (Donation){
 
         // creates a temporary variable for the fetched donation
         Donation memory fetchedDonation = Donations[_donationID];
 
-        if(msg.sender == (fetchedDonation.owner || fetchedDonation.lottery || fetchedDonation.charity || fetchedDonation.donor)){
+        if(msg.sender == fetchedDonation.owner || msg.sender == fetchedDonation.lottery || msg.sender == fetchedDonation.charity || msg.sender == fetchedDonation.donor){
             return fetchedDonation;
         }
     }
