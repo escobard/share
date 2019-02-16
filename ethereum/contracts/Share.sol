@@ -11,6 +11,10 @@ contract Share {
     // assigns an ID to each donation
     uint donationID = 0;
 
+    constructor(bytes32 _name) public {
+        Owner = msg.sender;
+    }
+
     /// @notice Contains the stucture of the star metadata
     /// @dev key of structure is the provided transaction hash, will be donationId in v2.0
     /// @param transactionHash address, contains donor to share transaction hash
@@ -56,9 +60,8 @@ contract Share {
     function initiateContract(address _lottery, address _charity) public view returns (string){
 
         // must test to ensure this works, unsure of syntax
-        require(msg.sender == this.owner);
+        require(msg.sender == this.Owner);
 
-        Owner = msg.sender;
         Lottery = _lottery;
         Charity = _charity;
 
@@ -114,7 +117,7 @@ contract Share {
     /// @param address _receiver, contains the ethereum public key for receiver account
     /// @param uint _amount, contains the amount to be dispatched to the specified receiver
 
-    function dipatchFunds(address _receiver, uint _amount) private payable{
+    function dispatchFunds(address _receiver, uint _amount) private payable{
 
         // transfers the specified value, to the specified party
         _receiver.transfer(_amount);
