@@ -76,24 +76,25 @@ contract Share {
     function makeDonation() public payable{
 
         // owner, charity, and lottery accounts cannot utilize the handleFunds function
-        // require(msg.sender != Owner || msg.sender != Lottery || msg.sender != Charity);
+        require(msg.sender != Owner || msg.sender != Lottery || msg.sender != Charity);
 
         // creates the amount variable, used to set the amount later on in this function
         uint amount = msg.value;
         uint charityAmount = amount * 95 / 100;
-        uint lotteryAmount = amount * 5 / 100;
-        uint ownerAmount = amount * 5 / 100;
+        uint lotteryAmount = amount * 4 / 100;
+        uint ownerAmount = amount * 1 / 100;
 
         Charity.transfer(charityAmount);
         Lottery.transfer(lotteryAmount);
 
         // dispatches remaining funds to owner, this ensures that all gas is covered
-        Owner.transfer(msg.value);
+        Owner.transfer(ownerAmount);
 
         // stores all the data
-        // Donations[donationID] = Donation(Owner, Lottery, Charity, msg.sender, amount, charityAmount, lotteryAmount, ownerAmount, donationID);
+        Donations[donationID] = Donation(Owner, Lottery, Charity, msg.sender, amount, charityAmount, lotteryAmount, ownerAmount, donationID);
         
-        fetchDonationId(donationID);
+        // updates donationID;
+        donationID = donationID + 1;
     }
 
     /// @notice returns the saved donation as a Structure (should be an array)
@@ -108,18 +109,6 @@ contract Share {
         if(msg.sender == fetchedDonation.owner || msg.sender == fetchedDonation.lottery || msg.sender == fetchedDonation.charity || msg.sender == fetchedDonation.donor){
             return fetchedDonation;
         }
-    }
-
-    /// @notice child function of makeDonation(), handles the returning of donationID
-    /// @dev can be vastly improved during 2.0
-    /// @return donationID, string to fetch donation
-
-    function fetchDonationId(uint _donationID) private view returns (uint){
-        // updates donationID;
-        donationID = donationID + 1;
-        
-        // returns the previous donationID to fetch the proper donation
-        return _donationID;
     }
 
 }
