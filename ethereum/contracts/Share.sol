@@ -5,12 +5,12 @@ pragma experimental ABIEncoderV2;
 
 contract Share {
 
-    address Owner;
-    address Lottery;
-    address Charity;
+    address private Owner;
+    address private Lottery;
+    address private Charity;
 
     // assigns an ID to each donation
-    uint donationID = 1;
+    uint private donationID = 1;
 
     /// @notice sets the owner to the Owner variable upon contract init
     /// @dev can be expanded to account for many more constructor features
@@ -20,15 +20,14 @@ contract Share {
 
     /// @notice Contains the stucture of the star metadata
     /// @dev key of structure is the provided transaction hash, will be donationId in v2.0
-    /// @param transactionHash address, contains donor to share transaction hash
     /// @param owner address, contains the address of the contract owner
     /// @param lottery address, contains the address of the lottery - ether account for v1.0, contract for v2.0
     /// @param charity address, contains the address of the charity - an ether account for v1.0 and v2.0
     /// @param donor address, contains the address of the contract owner - ether account always
     /// @param amount uint, contains the original amount donated - all amounts are after gas
-    /// @param ownerAmount, contains the 1% of original amount sent to owner
-    /// @param lotteryAmount uint, contains the 4% of original amount sent to lottery
     /// @param charityAmount, contains the remaining 95% of original amount sent to charity
+    /// @param lotteryAmount uint, contains the 4% of original amount sent to lottery
+    /// @param ownerAmount, contains the 1% of original amount sent to owner
     /// @param donationID, contains the value of the last submitted donation - is returned to ui
 
     struct Donation {
@@ -57,8 +56,8 @@ contract Share {
 
     /// @notice Initiates the contract once deployed, only available to owner
     /// @dev Need to test the syntax here, unsure the require function works
-    /// @param address _lottery, contains the ethereum public key for lottery account
-    /// @param address _charity, contains the ethereum public key for charity account
+    /// @param _lottery address, contains the ethereum public key for lottery account
+    /// @param _charity address, contains the ethereum public key for charity account
 
     function initiateContract(address _lottery, address _charity) public view returns (string){
 
@@ -99,7 +98,7 @@ contract Share {
 
     /// @notice returns the saved donation as a Structure (should be an array)
     /// @dev this should be heavily tested via the API, should consider adding authentication for data
-    /// @param uint _donationID, utilized to fetch structure from storage
+    /// @param _donationID uint, utilized to fetch structure from storage
 
     function fetchDonation(uint _donationID) public view returns (Donation){
 
@@ -115,7 +114,7 @@ contract Share {
     /// @dev can be vastly improved during 2.0
     /// @return donationID, string to fetch donation
 
-    function fetchDonationId(string _donationID) private view returns (string){
+    function fetchDonationId(uint _donationID) private view returns (uint){
         // updates donationID;
         donationID = donationID + 1;
         
