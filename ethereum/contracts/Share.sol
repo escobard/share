@@ -56,13 +56,13 @@ contract Share {
     function initiateContract(address _lottery, address _charity) public view returns (string){
 
         // must test to ensure this works, unsure of syntax
-        require(msg.sender == this.owner)
+        require(msg.sender == this.owner);
 
         Owner = msg.sender;
         Lottery = _lottery;
         Charity = _charity;
 
-        return "Contract initialized!"
+        return "Contract initialized!";
     }
 
     /// @notice parent function for all contract functionality
@@ -99,7 +99,7 @@ contract Share {
     /// @dev this should be heavily tested via the API, should consider adding authentication for data
     /// @param uint _donationID, utilized to fetch structure from storage
 
-    function fetchDonation(uint _donationID) public view returns (struct){
+    function fetchDonation(uint _donationID) public view returns (Donation[]){
 
         // creates a temporary variable for the fetched donation
         Donation memory fetchedDonation = Donations[_donationID];
@@ -120,5 +120,5 @@ contract Share {
         _receiver.transfer(_amount);
     }
 
-};
+}
 
