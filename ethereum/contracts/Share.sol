@@ -11,7 +11,9 @@ contract Share {
     // assigns an ID to each donation
     uint donationID = 0;
 
-    constructor(bytes32 _name) public {
+    /// @notice sets the owner to the Owner variable upon contract init
+    /// @dev can be expanded to account for many more constructor features
+    constructor() public {
         Owner = msg.sender;
     }
 
@@ -60,7 +62,7 @@ contract Share {
     function initiateContract(address _lottery, address _charity) public view returns (string){
 
         // must test to ensure this works, unsure of syntax
-        require(msg.sender == this.Owner);
+        require(msg.sender == Owner);
 
         Lottery = _lottery;
         Charity = _charity;
@@ -74,14 +76,13 @@ contract Share {
     function makeDonation() public view returns (uint){
 
         // owner, charity, and lottery accounts cannot utilize the handleFunds function
-
-        require(msg.sender != (Owner || Lottery || Charity));
+        require(msg.sender != Owner || msg.sender != Lottery || msg.sender != Charity);
 
         // creates the amount variable, used to set the amount later on in this function
         uint amount = msg.value;
-        uint charityAmount = amount * 0.95;
-        uint lotteryAmount = amount * 0.05;
-        uint ownerAmount = amount * 0.01;
+        uint charityAmount = amount * 95 / 100;
+        uint lotteryAmount = amount * 5 / 100;
+        uint ownerAmount = amount * 5 / 100;
 
         dispatchFunds(Charity, charityAmount);
         dispatchFunds(Lottery, lotteryAmount);
