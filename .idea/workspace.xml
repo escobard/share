@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="39da7f77-135d-4deb-b731-486d97edb808" name="Default Changelist" comment="ethereum-proj-5-migrate - feat: project files migrated from project 5, tests working!">
-      <change afterPath="$PROJECT_DIR$/api/Procfile" afterDir="false" />
+    <list default="true" id="39da7f77-135d-4deb-b731-486d97edb808" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/api/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/package.json" afterDir="false" />
+<<<<<<< Updated upstream
+      <change beforePath="$PROJECT_DIR$/api/routes/makeDonation.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/makeDonation.js" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/api/constants/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/constants/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/tests/routes/index..js" beforeDir="false" afterPath="$PROJECT_DIR$/api/tests/routes/index.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/ui/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/routes/makeDonation.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/makeDonation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/ui/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/ui/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/src/components/ShareForm/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/ui/src/components/ShareForm/index.js" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,138 +25,108 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="1822383069">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="12" />
-          <entry key="project.open.time.0" value="4" />
-          <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.10" value="2" />
-          <entry key="project.open.time.11" value="1" />
-          <entry key="project.open.time.16" value="1" />
-          <entry key="project.open.time.5" value="2" />
-          <entry key="project.open.time.6" value="4" />
-          <entry key="project.open.time.7" value="4" />
-          <entry key="project.open.time.8" value="1" />
-          <entry key="project.open.time.9" value="3" />
-          <entry key="project.opened" value="23" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="Procfile" value="2" />
-          <entry key="babelrc" value="1" />
-          <entry key="gitignore" value="11" />
-          <entry key="html" value="2" />
-          <entry key="jpg" value="9" />
-          <entry key="js" value="59" />
-          <entry key="json" value="16" />
-          <entry key="lock" value="2" />
-          <entry key="md" value="5" />
-          <entry key="sol" value="9" />
-          <entry key="yaml" value="6" />
-          <entry key="yml" value="3" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="HTML" value="2" />
-          <entry key="Image" value="9" />
-          <entry key="JSON" value="17" />
-          <entry key="JavaScript" value="64" />
-          <entry key="Markdown" value="5" />
-          <entry key="PLAIN_TEXT" value="13" />
-          <entry key="Solidity file" value="4" />
-          <entry key="YAML" value="9" />
-          <entry key="yarn.lock" value="2" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="Procfile" value="78" />
-          <entry key="gitignore" value="49" />
-          <entry key="html" value="1" />
-          <entry key="js" value="1016" />
-          <entry key="json" value="229" />
-          <entry key="md" value="7693" />
-          <entry key="sol" value="2836" />
-          <entry key="txt" value="4353" />
-          <entry key="yaml" value="19" />
-          <entry key="yml" value="967" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="HTML" value="3" />
-          <entry key="JSON" value="229" />
-          <entry key="JavaScript" value="3852" />
-          <entry key="Markdown" value="7691" />
-          <entry key="PLAIN_TEXT" value="4480" />
-          <entry key="YAML" value="986" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.js.language.service.starts">
-        <counts>
-          <entry key="PrettierLanguageServiceImpl" value="6" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
   <component name="FavoritesManager">
     <favorites_list name="Share" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1189">
-              <caret line="80" column="34" selection-start-line="80" selection-start-column="34" selection-end-line="80" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ui/src/App.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="13" column="29" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/app.yaml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="1" column="9" lean-forward="true" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/Procfile">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="9" selection-start-column="9" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ui/app.yaml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+<<<<<<< Updated upstream
+        <leaf>
+=======
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+>>>>>>> Stashed changes
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/api/routes/index.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="136">
+<<<<<<< Updated upstream
+                  <caret line="9" column="2" lean-forward="true" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
+=======
+                  <caret line="8" column="2" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
+>>>>>>> Stashed changes
+                </state>
+              </provider>
+            </entry>
+          </file>
+<<<<<<< Updated upstream
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/api/constants/routes.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="68">
+                  <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/api/routes/index.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="153">
+                  <caret line="9" column="2" lean-forward="true" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
+=======
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/api/constants/routes.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="85">
+                  <caret line="5" selection-start-line="5" selection-end-line="5" />
+>>>>>>> Stashed changes
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+<<<<<<< Updated upstream
+            <entry file="file://$PROJECT_DIR$/api/routes/makeDonation.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="170">
+                  <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+=======
+            <entry file="file://$PROJECT_DIR$/api/routes/greetings.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="119">
+                  <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="40" />
+>>>>>>> Stashed changes
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+<<<<<<< Updated upstream
+            <entry file="file://$PROJECT_DIR$/api/routes/greetings.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="187">
+                  <caret line="11" lean-forward="true" selection-end-line="11" />
+=======
+            <entry file="file://$PROJECT_DIR$/api/routes/index.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="136">
+                  <caret line="8" column="2" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/api/routes/makeDonation.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="68">
+                  <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
+>>>>>>> Stashed changes
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -160,6 +135,12 @@
       <find>MyComponent</find>
       <find>Navigation</find>
       <find>dependencies</find>
+      <find>ownerOf</find>
+      <find>_transaction</find>
+      <find>StarNotary</find>
+      <find>require(</find>
+      <find>wei</find>
+      <find>deepEqual</find>
     </findStrings>
     <replaceStrings>
       <replace>greetings</replace>
@@ -167,10 +148,12 @@
       <replace>Navigation</replace>
       <replace>Section</replace>
       <replace>ShareForm</replace>
+      <replace>_donationID</replace>
+      <replace>Share</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/ui" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/api" />
     <option name="WARN_ABOUT_DETACHED_HEAD" value="false" />
     <option name="PUSH_TAGS">
       <GitPushTagMode>
@@ -184,63 +167,49 @@
       <list>
         <option value="$PROJECT_DIR$/share/README.md" />
         <option value="$PROJECT_DIR$/architecture/Contracts/contract_prototype.sol" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/architecture/Contracts/share_prototype.sol" />
         <option value="$PROJECT_DIR$/api/constants/index.js" />
         <option value="$PROJECT_DIR$/api/routes/health.js" />
         <option value="$PROJECT_DIR$/api/tests/routes/greetings.tests.js" />
         <option value="$PROJECT_DIR$/api/tests/routes/index..js" />
         <option value="$PROJECT_DIR$/api/routes/greetings.js" />
         <option value="$PROJECT_DIR$/api/Procfile" />
-        <option value="$PROJECT_DIR$/ui/app.yaml" />
-        <option value="$PROJECT_DIR$/api/index.js" />
-        <option value="$PROJECT_DIR$/api/constants/routes.js" />
-        <option value="$PROJECT_DIR$/api/app.yaml" />
-        <option value="$PROJECT_DIR$/ui/public/index.html" />
         <option value="$PROJECT_DIR$/ui/src/components/Navigation/Navigation.tests.js" />
         <option value="$PROJECT_DIR$/ui/src/setupTests.js" />
         <option value="$PROJECT_DIR$/ui/src/components/Section/Section.test.js" />
         <option value="$PROJECT_DIR$/ui/src/components/Navigation/Navigation.test.js" />
         <option value="$PROJECT_DIR$/ui/src/components/ShareForm/ShareForm.test.js" />
-        <option value="$PROJECT_DIR$/ui/src/components/Section/index.js" />
         <option value="$PROJECT_DIR$/ui/src/App.test.js" />
         <option value="$PROJECT_DIR$/ui/package.json" />
-        <option value="$PROJECT_DIR$/ui/src/components/ShareForm/index.js" />
         <option value="$PROJECT_DIR$/ui/.gitignore" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/api/routes/index.js" />
         <option value="$PROJECT_DIR$/api/package.json" />
         <option value="$PROJECT_DIR$/api/.gitignore" />
         <option value="$PROJECT_DIR$/api/tests/routes/index.test.js" />
-        <option value="$PROJECT_DIR$/.circleci/config.yml" />
         <option value="$PROJECT_DIR$/ethereum/.gitignore" />
         <option value="$PROJECT_DIR$/ethereum/truffle.js" />
+        <option value="$PROJECT_DIR$/.circleci/config.yml" />
+        <option value="$PROJECT_DIR$/api/index.js" />
+        <option value="$PROJECT_DIR$/ui/app.yaml" />
+        <option value="$PROJECT_DIR$/api/app.yaml" />
+        <option value="$PROJECT_DIR$/architecture/Contracts/share_prototype.sol" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/ui/public/index.html" />
+        <option value="$PROJECT_DIR$/ethereum/contracts/Share.sol" />
+        <option value="$PROJECT_DIR$/ethereum/test/ShareTest.js" />
+        <option value="$PROJECT_DIR$/ui/src/components/Section/index.js" />
+        <option value="$PROJECT_DIR$/ui/src/constants.js" />
+        <option value="$PROJECT_DIR$/ui/src/hocs/Section/index.js" />
+        <option value="$PROJECT_DIR$/ui/src/components/ShareForm/index.js" />
         <option value="$PROJECT_DIR$/ui/src/App.js" />
+        <option value="$PROJECT_DIR$/api/constants/routes.js" />
+        <option value="$PROJECT_DIR$/api/routes/index.js" />
+        <option value="$PROJECT_DIR$/api/routes/makeDonation.js" />
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="NodeModulesDirectoryManager">
-    <handled-path value="$PROJECT_DIR$/api/node_modules" />
-    <handled-path value="$PROJECT_DIR$/ethereum/node_modules" />
-    <handled-path value="$PROJECT_DIR$/ui/node_modules" />
-  </component>
-  <component name="NodePackageJsonFileManager">
-    <packageJsonPaths>
-      <path value="$PROJECT_DIR$/api/package.json" />
-      <path value="$PROJECT_DIR$/ethereum/package.json" />
-      <path value="$PROJECT_DIR$/ui/package.json" />
-    </packageJsonPaths>
-  </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-11" />
-    <option name="y" value="-11" />
-    <option name="width" value="3821" />
+    <option name="y" value="10" />
+    <option name="width" value="3825" />
     <option name="height" value="2090" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -251,44 +220,44 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="share" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+            <path>
+              <item name="share" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+<<<<<<< Updated upstream
+              <item name="api" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="share" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="api" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="constants" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="share" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="api" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="routes" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+=======
+              <item name="ethereum" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+>>>>>>> Stashed changes
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="Share" type="b2602c69:ProjectViewProjectNode" />
               <item name="Share" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope">
-        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
-          <expand>
-            <path>
-              <item name="Share" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-            </path>
-            <path>
-              <item name="Share" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name=".circleci" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="Share" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="api" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="Share" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="ui" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="Share" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="ui" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
@@ -307,10 +276,11 @@
     <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Documents\School\Share\ethereum\contracts" />
       <recent name="D:\Documents\School\Share\architecture\UML" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Documents\School\Share\architecture\UML" />
     </key>
   </component>
@@ -327,7 +297,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+    <configuration default="true" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/ui/package.json" />
       <command value="run" />
       <scripts>
@@ -370,42 +340,10 @@
       <workItem from="1548217295379" duration="2172000" />
       <workItem from="1548619282360" duration="6824000" />
       <workItem from="1548726165919" duration="6014000" />
-      <workItem from="1548887661387" duration="807000" />
-    </task>
-    <task id="LOCAL-00001" summary="doc-readme - doc: updated base README.mmd file">
-      <created>1542677455809</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1542677455809</updated>
-    </task>
-    <task id="LOCAL-00002" summary="doc-readme - chore: added .gitignore file, added .idea to file to ignore webstore IDE">
-      <created>1542677510088</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1542677510088</updated>
-    </task>
-    <task id="LOCAL-00003" summary="doc-readme - doc: updated with base criteria, removed obsolete content">
-      <created>1542679662846</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1542679662846</updated>
-    </task>
-    <task id="LOCAL-00004" summary="doc-readme - doc: updated with merging and contribution rules, created all branches">
-      <created>1542685675693</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1542685675693</updated>
-    </task>
-    <task id="LOCAL-00005" summary="doc-readme - doc: updated ethereum criteria, updates issue #8, completes issue #2">
-      <created>1542686163044</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1542686163044</updated>
+      <workItem from="1548887661387" duration="12524000" />
+      <workItem from="1549199869465" duration="17227000" />
+      <workItem from="1549384327365" duration="798000" />
+      <workItem from="1549385251924" duration="9970000" />
     </task>
     <task id="LOCAL-00006" summary="master - doc: updated README.md with cleared data structure explanation, reducing exposure to personal data.">
       <created>1542783554627</created>
@@ -694,11 +632,71 @@
       <option name="project" value="LOCAL" />
       <updated>1548627784493</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="ethereum-share-contract - feat: removed obsolete token boilerplates">
+      <created>1548897949262</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1548897949262</updated>
+    </task>
+    <task id="LOCAL-00048" summary="ethereum-contract-testing - feat: finished base tests, need to actually test when back online">
+      <created>1549392130521</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1549392130522</updated>
+    </task>
+    <task id="LOCAL-00049" summary="ui-form-setup - feat: added constants file, added port number for API, changed API port number to 4000 to allow for concurrency">
+      <created>1549393408065</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1549393408065</updated>
+    </task>
+    <task id="LOCAL-00050" summary="ui-form-setup - refact: moved Section component to HOC folder, fixed App.js call to render Section, fixed tests">
+      <created>1549393901438</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1549393901443</updated>
+    </task>
+    <task id="LOCAL-00051" summary="ui-form-setup - feat: added HOC logic to section file, broken">
+      <created>1549395045132</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1549395045132</updated>
+    </task>
+    <task id="LOCAL-00052" summary="ui-form-setup - fix: broken return flow with HOC fixed, rendering passed component!">
+      <created>1549395304354</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1549395304354</updated>
+    </task>
+    <task id="LOCAL-00053" summary="ui-form-setup - feat: added constant for API request logic on App.js">
+      <created>1549395657649</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1549395657650</updated>
+    </task>
+    <task id="LOCAL-00054" summary="ui-form-setup - feat: added state for form response handling">
+      <created>1549395908825</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1549395908825</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94384000" />
+<<<<<<< Updated upstream
+    <option name="totallyTimeSpent" value="134096000" />
+=======
+    <option name="totallyTimeSpent" value="130445000" />
+>>>>>>> Stashed changes
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -710,10 +708,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="2575" height="1415" extended-state="6" />
-    <editor active="true" />
+    <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4874851" visible="true" weight="0.076438144" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4874851" visible="true" weight="0.12813738" />
       <window_info id="Structure" order="1" sideWeight="0.5125149" side_tool="true" weight="0.10480694" />
       <window_info id="Favorites" order="2" sideWeight="0.5023401" side_tool="true" weight="0.10480694" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -724,29 +721,34 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3299532" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49960598" visible="true" weight="0.35179406" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.500394" side_tool="true" weight="0.45787832" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32956153" />
+<<<<<<< Updated upstream
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49867898" visible="true" weight="0.39886847" />
+=======
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49867898" visible="true" weight="0.3493635" />
+>>>>>>> Stashed changes
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.501321" side_tool="true" weight="0.3493635" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.3299532" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4874851" visible="true" weight="0.10480694" />
-      <window_info id="Structure" order="1" sideWeight="0.5125149" side_tool="true" visible="true" weight="0.10480694" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4874851" visible="true" weight="0.12813738" />
+      <window_info id="Structure" order="1" sideWeight="0.5125149" side_tool="true" weight="0.10480694" />
       <window_info id="Favorites" order="2" sideWeight="0.5023401" side_tool="true" weight="0.10480694" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3299532" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3299532" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.34555382" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3299532" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49867898" weight="0.3493635" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.501321" side_tool="true" weight="0.3493635" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.3299532" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -755,102 +757,76 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="ui-tests - feat: added test files for all components" />
-    <MESSAGE value="ui-tests - feat: added coverage flag to testing, 80 coverage set" />
-    <MESSAGE value="ui-styles - feat: added correct circle ci yaml file for circle ci docker container, tests working!" />
-    <MESSAGE value="circleci-ui - feat: added new deployment logic to build ui, and deploy to heroku" />
-    <MESSAGE value="circleci-ui - fix: fixed typo" />
-    <MESSAGE value="circleci-ui - fix: fixed indentation of" />
-    <MESSAGE value="circleci-ui - feat: added workflows for improved deployment handling" />
-    <MESSAGE value="circleci-ui - fix: missing executor fix" />
-    <MESSAGE value="circleci-ui - feat: added new command to set git user prior to heroku push" />
-    <MESSAGE value="circleci-ui - fix: fixed key and name for heroku push" />
-    <MESSAGE value="circleci-ui - fix: fixed typo of heroku app name" />
-    <MESSAGE value="circleci-ui - fix: removed master flag, pushing local" />
-    <MESSAGE value="circleci-ui - fix: added --set-upstream handler" />
-    <MESSAGE value="circleci-ui - fix: added -f flag to force re-write of heroku repo" />
-    <MESSAGE value="circleci-ui - fix: removed yarn.lock file, testing to see if removing it is enough for circleci" />
-    <MESSAGE value="circleci-ui - feat: added logic to" />
-    <MESSAGE value="circleci-ui - fix: removed logic to delete package files, added lock files to .gitignore instead" />
-    <MESSAGE value="api-coverage-circleci - feat: added coverage for api route tests" />
-    <MESSAGE value="api-coverage-circleci - chore: updated .gitignore of /api" />
-    <MESSAGE value="api-coverage-circleci - chore: updated circleci yaml file typo, added health test, %100 coverage reached on api" />
-    <MESSAGE value="api-coverage-circleci - chore: upading API local" />
-    <MESSAGE value="api-coverage-circleci - fix: updating directory path on deploy-api working_directory" />
-    <MESSAGE value="ethereum-proj-5-migrate - feat: migrated base files into parent directory" />
-    <MESSAGE value="ethereum-proj-5-migrate - fix: updated with correct files" />
-    <MESSAGE value="ethereum-proj-5-migrate - fix updated gitignore files" />
-    <option name="LAST_COMMIT_MESSAGE" value="ethereum-proj-5-migrate - fix updated gitignore files" />
+    <MESSAGE value="ethereum-share-contract - feat: added base variables and mappings" />
+    <MESSAGE value="ethereum-share-contract - feat: added base donation structure" />
+    <MESSAGE value="ethereum-share-contract - feat: added base fetch function logic" />
+    <MESSAGE value="ethereum-share-contract - feat: added dispatchFunds private function, need to add comments to all functions" />
+    <MESSAGE value="ethereum-share-contract - feat: added donationID logic, updated handleFunds to makeDonation" />
+    <MESSAGE value="ethereum-share-contract - feat: contract logic completed, pushing to work on plane" />
+    <MESSAGE value="ethereum-share-contract - feat: updated share with constructor function, sets lottery / charity globals" />
+    <MESSAGE value="ethereum-share-contract - doc: update commentary for all functions, updated legacy syntax" />
+    <MESSAGE value="ethereum-contract-testing - test: added base test file" />
+    <MESSAGE value="ethereum-contract-testing - test: added all describe functions" />
+    <MESSAGE value="ethereum-contract-testing - test: added it test for successful case of contract creation" />
+    <MESSAGE value="ethereum-contract-testing - test: added it test for case when non-owner calls initializeContract()" />
+    <MESSAGE value="ethereum-contract-testing - test: added initializeContract / makeDonation() base logic" />
+    <MESSAGE value="ethereum-contract-testing - test: added logic to test for makeDonation() when charity submits donation" />
+    <MESSAGE value="ethereum-contract-testing - test: added logic to test for fetchDonation(), added description globals to test edge cases" />
+    <MESSAGE value="ethereum-contract-testing - test: added logic to test for fetchDonation() when an unathorized address requests data" />
+    <MESSAGE value="ethereum-contract-testing - feat: finished base tests, need to actually test when back online" />
+    <MESSAGE value="ui-form-setup - feat: added Section component to app.js, fixed section render method" />
+    <MESSAGE value="ui-form-setup - feat: added constants file, added port number for API, changed API port number to 4000 to allow for concurrency" />
+    <MESSAGE value="ui-form-setup - refact: moved Section component to HOC folder, fixed App.js call to render Section, fixed tests" />
+    <MESSAGE value="ui-form-setup - feat: added HOC logic to section file, broken" />
+    <MESSAGE value="ui-form-setup - fix: broken return flow with HOC fixed, rendering passed component!" />
+    <MESSAGE value="ui-form-setup - feat: added constant for API request logic on App.js" />
+    <MESSAGE value="ui-form-setup - feat: added state for form response handling" />
+    <MESSAGE value="api-route-setup - feat: added route constant, and route file" />
+    <option name="LAST_COMMIT_MESSAGE" value="api-route-setup - feat: added route constant, and route file" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/share/README.md" />
-    <entry file="file://$PROJECT_DIR$/architecture/UML/Share - Activity Diagram.jpg" />
-    <entry file="file://$PROJECT_DIR$/architecture/UML/UML - Class.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/my-app/package.json" />
-    <entry file="file://$PROJECT_DIR$/architecture/UML/UML- Base.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/node_modules/express/lib/router/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1115">
-          <caret line="634" column="14" selection-start-line="634" selection-start-column="14" selection-end-line="634" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="5" selection-start-column="5" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/constants/routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package-lock.json" />
-    <entry file="file://$PROJECT_DIR$/ui/yarn.lock" />
-    <entry file="file://$PROJECT_DIR$/ui/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/src/index.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/src/setupTests.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/src/components/ShareForm/ShareForm.test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/src/components/Navigation/Navigation.test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="40" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ui/src/App.test.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -865,23 +841,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ui/src/components/ShareForm/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="24" column="30" lean-forward="true" selection-end-line="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="527">
-            <caret line="206" column="39" lean-forward="true" selection-start-line="206" selection-start-column="39" selection-end-line="206" selection-end-column="39" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ui/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="550">
@@ -889,10 +848,14 @@
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
+    <entry file="file://$PROJECT_DIR$/api/.nyc_output/97faf110-d158-4413-8c6c-ec126096a379.json" />
+    <entry file="file://$PROJECT_DIR$/api/.nyc_output/4711e350-2ed5-4533-84b1-2d6d6aed1ff0.json" />
+=======
     <entry file="file://$PROJECT_DIR$/api/routes/greetings.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        <state relative-caret-position="119">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="40" />
         </state>
       </provider>
     </entry>
@@ -907,30 +870,17 @@
     <entry file="file://$PROJECT_DIR$/api/.nyc_output/4711e350-2ed5-4533-84b1-2d6d6aed1ff0.json" />
     <entry file="file://$PROJECT_DIR$/api/routes/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="62" selection-start-line="7" selection-start-column="62" selection-end-line="7" selection-end-column="62" />
+        <state relative-caret-position="136">
+          <caret line="8" column="2" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
         </state>
       </provider>
     </entry>
+>>>>>>> Stashed changes
     <entry file="file://$PROJECT_DIR$/api/.babelrc" />
     <entry file="file://$PROJECT_DIR$/ui/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
           <caret line="20" selection-start-line="20" selection-end-line="24" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/routes/health.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -962,16 +912,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/architecture/Contracts/contract_prototype.sol">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="704">
-          <caret line="32" column="2" selection-start-line="32" selection-start-column="2" selection-end-line="32" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ethereum/test/ERC721TokenTest.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/api/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -986,8 +926,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ethereum/test/StarNotaryTest.js">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/ui/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="-256" />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="660">
+            <caret line="139" selection-start-line="139" selection-end-line="139" selection-end-column="43" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/app.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="32" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/Procfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-column="18" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/api/app.yaml">
       <provider selected="true" editor-type-id="text-editor">
@@ -996,44 +965,196 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ui/app.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/Procfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="9" selection-start-column="9" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/architecture/Contracts/contract_prototype.sol" />
     <entry file="file://$PROJECT_DIR$/architecture/Contracts/share_prototype.sol">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        <state relative-caret-position="110">
+          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ethereum/contracts/ERC721.sol" />
+    <entry file="file://$PROJECT_DIR$/ethereum/contracts/ERC721Token.sol" />
+    <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="71" column="10" lean-forward="true" selection-start-line="71" selection-start-column="10" selection-end-line="71" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ethereum/contracts/coffeeaccesscontrol/FarmerRole.sol">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ethereum/contracts/coffeeaccesscontrol/RetailerRole.sol">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ethereum/contracts/coffeeaccesscontrol/ConsumerRole.sol">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ethereum/contracts/coffeebase/SupplyChain.sol">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4692">
+          <caret line="276" column="3" selection-start-line="276" selection-start-column="3" selection-end-line="276" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ethereum/contracts/coffeecore/Ownable.sol">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ethereum/contracts/coffeeaccesscontrol/DistributorRole.sol">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" selection-start-line="23" selection-end-line="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ethereum/contracts/StarNotary.sol">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1189">
-          <caret line="80" column="34" selection-start-line="80" selection-start-column="34" selection-end-line="80" selection-end-column="34" />
+        <state relative-caret-position="34">
+          <caret line="109" column="14" lean-forward="true" selection-start-line="109" selection-start-column="14" selection-end-line="109" selection-end-column="14" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ui/public/manifest.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="108" selection-start-line="5" selection-start-column="108" selection-end-line="5" selection-end-column="108" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ethereum/contracts/Share.sol">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1921">
+          <caret line="113" column="37" lean-forward="true" selection-start-line="113" selection-start-column="37" selection-end-line="113" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ethereum/test/StarNotaryTest.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="515">
+          <caret line="118" column="24" lean-forward="true" selection-start-line="118" selection-start-column="24" selection-end-line="118" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ethereum/test/ERC721TokenTest.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ethereum/test/ShareTest.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1360">
+          <caret line="80" lean-forward="true" selection-start-line="80" selection-end-line="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/encodings.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/src/components/Section/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="15" column="12" lean-forward="true" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/src/index.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/ui/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="29" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
+        <state relative-caret-position="47">
+          <caret line="14" column="13" lean-forward="true" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding>
+            <element signature="e#73#92#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/src/hocs/Section/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="10" lean-forward="true" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/src/constants.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="59" selection-start-line="1" selection-start-column="59" selection-end-line="1" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/src/components/ShareForm/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/constants/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="2" lean-forward="true" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/routes/health.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/routes/greetings.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" lean-forward="true" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/routes/makeDonation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
         </state>
       </provider>
     </entry>
