@@ -20,9 +20,16 @@ contract("Share", accounts => {
 describe("Tests contract initiation", () =>{
     it('owner can initialize contract', async ()=> {
 
-        let response = await this.contract.initiateContract(lottery, charity, {from: owner})
-
-        assert.equal(response, "Contract initialized!");
+        let response = await this.contract.initiateContract(lottery, charity, {from: owner});
+        new Promise((resolve) =>{
+            resolve(response)
+        })
+        .then(async (resp) =>{
+            assert.equal(resp, "Contract initialized!");
+            assert.equal(await this.contract.Lottery(), lottery);
+            assert.equal(await this.contract.Charity(), charity);
+        })
+        
 
     });
 
@@ -68,7 +75,7 @@ describe("Tests fetchDonation()", () =>{
         ownerAmount = amount * 0.01,
         donation = [ owner, lottery, charity, donor, amount, charityAmount, lotteryAmount, ownerAmount, 1];
 
-    beforeEach(async () =>{
+    beforeEach(async () => {
         await this.contract.initiateContract(lottery, charity, {from: owner});
     })
 
@@ -76,7 +83,5 @@ describe("Tests fetchDonation()", () =>{
         await this.contract.makeDonation({from: donor, value: amount});
         assert.deepEqual(await this.contract.Donations(1), donation);
     })
-
-
 })
 })
