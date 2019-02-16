@@ -1,14 +1,14 @@
 pragma solidity ^0.4.23;
-pragma experimental ABIEncoderV2;
+
 
 // add all imports for user privileges here
 
 contract Share {
 
     address private Owner;
-    address private Lottery;
-    address private Charity;
-    bool private initialized = false;
+    address public Lottery;
+    address public Charity;
+    bool public initialized = false;
 
     // assigns an ID to each donation
     uint private donationID = 1;
@@ -60,7 +60,7 @@ contract Share {
     /// @param _lottery address, contains the ethereum public key for lottery account
     /// @param _charity address, contains the ethereum public key for charity account
 
-    function initiateContract(address _lottery, address _charity) public view returns (string){
+    function initiateContract(address _lottery, address _charity) public payable{
 
         // must test to ensure this works, unsure of syntax
         require(msg.sender == Owner);
@@ -68,8 +68,6 @@ contract Share {
         Lottery = _lottery;
         Charity = _charity;
         initialized = true;
-
-        return "Contract initialized!";
     }
 
     /// @notice parent function for all contract functionality
