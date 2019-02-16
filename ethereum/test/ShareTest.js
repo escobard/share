@@ -22,7 +22,7 @@ describe("Tests contract initiation", () =>{
 
         let response = await this.contract.initiateContract(lottery, charity, {from: owner})
 
-        assert.equal(response, "Contract initialized!")
+        assert.equal(response, "Contract initialized!");
 
     });
 
@@ -70,12 +70,11 @@ describe("Tests fetchDonation()", () =>{
 
     beforeEach(async () =>{
         await this.contract.initiateContract(lottery, charity, {from: owner});
-        await this.contract.makeDonation({from: donor, value: amount});
     })
 
     it("donor can fetch donation by donationID", async () => {
-        let response = await this.contract.Donations(1);
-        assert.deepEqual(response, donation);
+        await this.contract.makeDonation({from: donor, value: amount});
+        assert.deepEqual(await this.contract.Donations(1), donation);
     })
 
 

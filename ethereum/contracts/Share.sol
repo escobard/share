@@ -59,7 +59,7 @@ contract Share {
     /// @param _lottery address, contains the ethereum public key for lottery account
     /// @param _charity address, contains the ethereum public key for charity account
 
-    function initiateContract(uint _lottery, uint _charity) public view returns (string){
+    function initiateContract(address _lottery, address _charity) public view returns (string){
 
         // must test to ensure this works, unsure of syntax
         require(msg.sender == Owner);
@@ -96,7 +96,7 @@ contract Share {
         // updates donationID;
         donationID = donationID + 1;
     }
-
+    
     function fetchDonationID() public view returns (uint){
         return donationID;
     }
