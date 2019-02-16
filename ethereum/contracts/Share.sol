@@ -76,7 +76,7 @@ contract Share {
     function makeDonation() public payable{
 
         // owner, charity, and lottery accounts cannot utilize the handleFunds function
-        require(msg.sender != Owner || msg.sender != Lottery || msg.sender != Charity);
+        // require(msg.sender != Owner || msg.sender != Lottery || msg.sender != Charity);
 
         // creates the amount variable, used to set the amount later on in this function
         uint amount = msg.value;
@@ -91,7 +91,7 @@ contract Share {
         Owner.transfer(msg.value);
 
         // stores all the data
-        Donations[donationID] = Donation(Owner, Lottery, Charity, msg.sender, amount, charityAmount, lotteryAmount, ownerAmount, donationID);
+        // Donations[donationID] = Donation(Owner, Lottery, Charity, msg.sender, amount, charityAmount, lotteryAmount, ownerAmount, donationID);
         
         fetchDonationId(donationID);
     }
