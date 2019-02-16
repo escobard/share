@@ -2,8 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39da7f77-135d-4deb-b731-486d97edb808" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/api/routes/makeDonation.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/makeDonation.js" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/api/constants/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/constants/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/routes/makeDonation.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/makeDonation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/ui/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/ui/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/src/components/ShareForm/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/ui/src/components/ShareForm/index.js" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,16 +31,25 @@
   <component name="FileEditorManager">
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
+<<<<<<< Updated upstream
         <leaf>
+=======
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+>>>>>>> Stashed changes
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/api/routes/index.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="136">
+<<<<<<< Updated upstream
                   <caret line="9" column="2" lean-forward="true" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
+=======
+                  <caret line="8" column="2" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
+>>>>>>> Stashed changes
                 </state>
               </provider>
             </entry>
           </file>
+<<<<<<< Updated upstream
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/api/constants/routes.js">
               <provider selected="true" editor-type-id="text-editor">
@@ -48,6 +68,48 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="153">
                   <caret line="9" column="2" lean-forward="true" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
+=======
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/api/constants/routes.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="85">
+                  <caret line="5" selection-start-line="5" selection-end-line="5" />
+>>>>>>> Stashed changes
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+<<<<<<< Updated upstream
+            <entry file="file://$PROJECT_DIR$/api/routes/makeDonation.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="170">
+                  <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+=======
+            <entry file="file://$PROJECT_DIR$/api/routes/greetings.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="119">
+                  <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="40" />
+>>>>>>> Stashed changes
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+<<<<<<< Updated upstream
+            <entry file="file://$PROJECT_DIR$/api/routes/greetings.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="187">
+                  <caret line="11" lean-forward="true" selection-end-line="11" />
+=======
+            <entry file="file://$PROJECT_DIR$/api/routes/index.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="136">
+                  <caret line="8" column="2" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
                 </state>
               </provider>
             </entry>
@@ -55,17 +117,9 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/api/routes/makeDonation.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="170">
-                  <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/api/routes/greetings.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="187">
-                  <caret line="11" lean-forward="true" selection-end-line="11" />
+                <state relative-caret-position="68">
+                  <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
+>>>>>>> Stashed changes
                 </state>
               </provider>
             </entry>
@@ -176,6 +230,7 @@
             <path>
               <item name="share" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+<<<<<<< Updated upstream
               <item name="api" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
@@ -189,6 +244,9 @@
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="api" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="routes" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+=======
+              <item name="ethereum" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+>>>>>>> Stashed changes
             </path>
           </expand>
           <select />
@@ -634,7 +692,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< Updated upstream
     <option name="totallyTimeSpent" value="134096000" />
+=======
+    <option name="totallyTimeSpent" value="130445000" />
+>>>>>>> Stashed changes
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -647,7 +709,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4874851" visible="true" weight="0.12813738" />
       <window_info id="Structure" order="1" sideWeight="0.5125149" side_tool="true" weight="0.10480694" />
@@ -661,7 +722,11 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3299532" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32956153" />
+<<<<<<< Updated upstream
       <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49867898" visible="true" weight="0.39886847" />
+=======
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49867898" visible="true" weight="0.3493635" />
+>>>>>>> Stashed changes
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.501321" side_tool="true" weight="0.3493635" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.3299532" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -783,8 +848,34 @@
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/api/.nyc_output/97faf110-d158-4413-8c6c-ec126096a379.json" />
     <entry file="file://$PROJECT_DIR$/api/.nyc_output/4711e350-2ed5-4533-84b1-2d6d6aed1ff0.json" />
+=======
+    <entry file="file://$PROJECT_DIR$/api/routes/greetings.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/src/components/Section/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/.nyc_output/97faf110-d158-4413-8c6c-ec126096a379.json" />
+    <entry file="file://$PROJECT_DIR$/api/.nyc_output/4711e350-2ed5-4533-84b1-2d6d6aed1ff0.json" />
+    <entry file="file://$PROJECT_DIR$/api/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="2" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+>>>>>>> Stashed changes
     <entry file="file://$PROJECT_DIR$/api/.babelrc" />
     <entry file="file://$PROJECT_DIR$/ui/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
