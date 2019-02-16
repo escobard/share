@@ -59,30 +59,25 @@ describe("Tests makeDonation()", () =>{
     })
     */
 });
-/*
+
 describe("Tests fetchDonation()", () =>{
     // initializes contract every time prior to makeDonation();
 
     let charityAmount = amount * 0.95,
-        lotteryAmount = amount * 0.05,
+        lotteryAmount = amount * 0.04,
         ownerAmount = amount * 0.01,
         donation = [ owner, lottery, charity, donor, amount, charityAmount, lotteryAmount, ownerAmount, 1];
 
     beforeEach(async () =>{
-        await this.initiateContract(lottery, charity, {from: owner});
-        await this.makeDonation({from: charity, value: amount});
+        await this.contract.initiateContract(lottery, charity, {from: owner});
+        await this.contract.makeDonation({from: donor, value: amount});
     })
 
     it("donor can fetch donation by donationID", async () => {
-        let response = await this.fetchDonation(1, {from: donor});
+        let response = await this.contract.Donations(1);
         assert.deepEqual(response, donation);
     })
 
-    it("accounts not within the donation array cannot fetch donation", async () => {
-        let response = await this.fetchDonation(1, {from: other});
-        assert.deepEqual(response, undefined);
-    });
 
 })
-*/
 })

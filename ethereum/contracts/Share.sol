@@ -59,7 +59,7 @@ contract Share {
     /// @param _lottery address, contains the ethereum public key for lottery account
     /// @param _charity address, contains the ethereum public key for charity account
 
-    function initiateContract(address _lottery, address _charity) public view returns (string){
+    function initiateContract(uint _lottery, uint _charity) public view returns (string){
 
         // must test to ensure this works, unsure of syntax
         require(msg.sender == Owner);
@@ -95,20 +95,6 @@ contract Share {
         
         // updates donationID;
         donationID = donationID + 1;
-    }
-
-    /// @notice returns the saved donation as a Structure (should be an array)
-    /// @dev this should be heavily tested via the API, should consider adding authentication for data
-    /// @param _donationID uint, utilized to fetch structure from storage
-
-    function fetchDonation(uint _donationID) public view returns (Donation){
-
-        // creates a temporary variable for the fetched donation
-        Donation memory fetchedDonation = Donations[_donationID];
-
-        if(msg.sender == fetchedDonation.owner || msg.sender == fetchedDonation.lottery || msg.sender == fetchedDonation.charity || msg.sender == fetchedDonation.donor){
-            return fetchedDonation;
-        }
     }
 
     function fetchDonationID() public view returns (uint){
