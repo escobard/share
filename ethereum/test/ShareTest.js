@@ -18,15 +18,15 @@ contract("Share", accounts => {
 
 
 describe("Tests contract initiation", () =>{
-    it('owner can initialize contract', ()=> {
+    it('owner can initialize contract', async ()=> {
 
-        let reponse =
+        let reponse = await this.initiateContract(lottery, charity, {from: owner})
 
         assert.equal(response, "Contract initialized!")
 
     });
 
-    it('only owner can initialize contract', () =>{
+    it('only owner can initialize contract', async () =>{
 
         let response = await this.initiateContract(lottery, charity, {from: other})
 
@@ -41,18 +41,18 @@ describe("Tests makeDonation()", () =>{
         await this.initiateContract(lottery, charity, {from: owner});
     })
 
-    it("donor can create donation, checks donation iteration", =>{
+    it("donor can create donation, checks donation iteration", async () =>{
         let response = await this.makeDonation({from: donor, value: amount});
 
         assert.equal(response, 1);
     })
 
     // only charity needs to be tested, can add cases for
-    it("charity cannot create donation", =>(
+    it("charity cannot create donation", async () =>{
         let response = await this.makeDonation({from: charity, value: amount});
 
         assert.equal(response, undefined);
-    ))
+    })
 
 });
 
@@ -69,16 +69,16 @@ describe("Tests fetchDonation()", () =>{
         await this.makeDonation({from: charity, value: amount});
     })
 
-    it("donor can fetch donation by donationID", () => {
+    it("donor can fetch donation by donationID", async () => {
         let response = await this.fetchDonation(1, {from: donor});
         assert.deepEqual(response, donation);
-    }
+    })
 
-    it("accounts not within the donation array cannot fetch donation", () => {
+    it("accounts not within the donation array cannot fetch donation", async () => {
         let response = await this.fetchDonation(1, {from: other});
         assert.deepEqual(response, undefined);
-    }
+    });
 
-});
+})
 
-}
+})
