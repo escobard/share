@@ -44,9 +44,10 @@ describe("Tests makeDonation()", () =>{
     })
 
     it("donor can create donation, checks donation iteration", async () =>{
-        let response = await this.contract.makeDonation({from: donor, value: amount});
+        await this.contract.makeDonation({from: donor, value: amount});
+        let response = await this.contract.fetchDonationID();
 
-        assert.equal(response, 1);
+        assert.equal(response, 2);
     })
 
     /*

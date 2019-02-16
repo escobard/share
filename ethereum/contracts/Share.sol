@@ -111,5 +111,9 @@ contract Share {
         }
     }
 
+    function fetchDonationID() public view returns (uint){
+        return donationID;
+    }
+
 }
 
