@@ -8,6 +8,7 @@ contract Share {
     address private Owner;
     address private Lottery;
     address private Charity;
+    bool private initialized = false;
 
     // assigns an ID to each donation
     uint private donationID = 1;
@@ -66,6 +67,7 @@ contract Share {
 
         Lottery = _lottery;
         Charity = _charity;
+        initialized = true;
 
         return "Contract initialized!";
     }

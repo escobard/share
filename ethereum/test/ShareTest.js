@@ -28,6 +28,7 @@ describe("Tests contract initiation", () =>{
             assert.equal(resp, "Contract initialized!");
             assert.equal(await this.contract.Lottery(), lottery);
             assert.equal(await this.contract.Charity(), charity);
+            assert.equal(await this.contract.initialized(), true);
         })
         
 
