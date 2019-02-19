@@ -65,6 +65,52 @@ router.post("/", async (req, res) => {
             let donation = await share.methods.Donations(req.body.id).call();
 
             console.log('DONATION:', donation);
+
+            // handles the access control of the smart contract data
+            let authenticateUser = (address) =>{
+
+                let { owner, lottery, charity, donor, amount, charityAmount, lotteryAmount, ownerAmount, donationID } = donation;
+
+                switch (true) {
+
+                    // returns all data if requester is donation owner
+                    case(address === owner):{
+
+                        return { owner, lottery, charity, donor, amount, charityAmount, lotteryAmount, ownerAmount, donationID };
+
+                    }
+
+                    // returns lottery data if requester is lottery owner
+                    case(address === lottery):{
+
+                        return { lottery, donor, lotteryAmount, donationID };
+
+                    }
+
+                    // returns charity data if requester is charity owner
+                    case(address === charity):{
+
+                        return { charity, donor, charityAmount, donationID };
+
+                    }
+
+                    // returns donor data if requester is donor
+                    case(address === donor):{
+
+                        return { lottery, charity, donor, amount, charityAmount, lotteryAmount, donationID };
+
+                    }
+
+                    // returns an error if the address is not recognized
+                    default:{
+
+                        return "Access denied, address is invalid!"
+
+                    }
+
+                }
+            }
+
             res.status(200).json({donation});
 
         }
