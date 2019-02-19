@@ -72,7 +72,9 @@ router.post("/", async (req, res) => {
                 let donation = await share.methods.Donations(currentDonation).call();
 
                 console.log('DONATION:', donation);
-                res.status(200).json({donation});
+
+                // only the current donationID should be returned to the user
+                res.status(200).json(currentDonation);
 
         }
         else{
