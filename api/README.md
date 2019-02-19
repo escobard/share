@@ -4,8 +4,12 @@
 
 #### Local development
 
-`npm start`
+`npm run dev`
 
 #### Local testing
 
 `npm test`
+
+#### Production
+
+`npm start`

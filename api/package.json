@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "dev": "nodemon index.js",
     "test": "nyc mocha tests/routes/*.js"
   },
   "engines": {
@@ -14,7 +15,8 @@
   "author": "escobard",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "web3": "^1.0.0-beta.46"
   },
   "devDependencies": {
     "babel-plugin-istanbul": "^5.1.0",
