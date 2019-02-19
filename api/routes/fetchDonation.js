@@ -69,33 +69,38 @@ router.post("/", async (req, res) => {
             // handles the access control of the smart contract data
             let authenticateUser = (address) =>{
 
-                let { owner, lottery, charity, donor, amount, charityAmount, lotteryAmount, ownerAmount, donationID } = donation;
+                // needs to be set to lowercase, to ensure exact matching
+                address = address.toLowerCase();
 
+                let { owner, lottery, charity, donor, amount, charityAmount, lotteryAmount, ownerAmount, donationID } = donation;
+                console.log("DONATION DONOR:", donor);
+                console.log("DONATION ADDRESS:", address);
                 switch (true) {
 
                     // returns all data if requester is donation owner
-                    case(address === owner):{
+                    // must be set to lowercase, solidity stores all address hashes in uppercase
+                    case(address === owner.toLowerCase()):{
 
                         return { owner, lottery, charity, donor, amount, charityAmount, lotteryAmount, ownerAmount, donationID };
 
                     }
 
                     // returns lottery data if requester is lottery owner
-                    case(address === lottery):{
+                    case(address === lottery.toLowerCase()):{
 
                         return { lottery, donor, lotteryAmount, donationID };
 
                     }
 
                     // returns charity data if requester is charity owner
-                    case(address === charity):{
+                    case(address === charity.toLowerCase()):{
 
                         return { charity, donor, charityAmount, donationID };
 
                     }
 
                     // returns donor data if requester is donor
-                    case(address === donor):{
+                    case(address === donor.toLowerCase()):{
 
                         return { lottery, charity, donor, amount, charityAmount, lotteryAmount, donationID };
 
@@ -104,14 +109,16 @@ router.post("/", async (req, res) => {
                     // returns an error if the address is not recognized
                     default:{
 
-                        return "Access denied, address is invalid!"
+                        return "Access denied, address not found within the fetched donation. Are you sure you passed the correct donationID?"
 
                     }
 
                 }
             }
 
-            res.status(200).json({donation});
+            let fetchedDonation = authenticateUser(req.body.address);
+
+            res.status(200).json(fetchedDonation);
 
         }
         else{
