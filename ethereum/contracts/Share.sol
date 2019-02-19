@@ -78,6 +78,7 @@ contract Share {
         require(msg.sender != Owner || msg.sender != Lottery || msg.sender != Charity);
 
         // creates the amount variable, used to set the amount later on in this function
+        // these math. functions can be move to the API to avoid gas cost for calculations
         uint amount = msg.value;
         uint charityAmount = amount * 95 / 100;
         uint lotteryAmount = amount * 4 / 100;

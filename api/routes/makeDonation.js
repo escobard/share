@@ -23,7 +23,6 @@ if (typeof web3 !== 'undefined') {
             "https://rinkeby.infura.io/v3/8f06b06788e046f9ba989b606c0574f1"
         )
     );
-
     runtime = 'infura'
 }
 
@@ -73,7 +72,9 @@ router.post("/", async (req, res) => {
                 let donation = await share.methods.Donations(currentDonation).call();
 
                 console.log('DONATION:', donation);
-                res.status(200).json({donation});
+
+                // only the current donationID should be returned to the user
+                res.status(200).json(currentDonation);
 
         }
         else{
