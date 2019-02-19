@@ -1,6 +1,5 @@
 pragma solidity ^0.4.23;
 
-
 // add all imports for user privileges here
 
 contract Share {
@@ -98,6 +97,10 @@ contract Share {
     }
     
     function fetchDonationID() public view returns (uint){
+
+        // requires the owner to call this function, only owner address can access donationID atm
+        require(msg.sender == Owner);
+
         return donationID;
     }
 
