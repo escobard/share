@@ -23,7 +23,6 @@ if (typeof web3 !== 'undefined') {
             "https://rinkeby.infura.io/v3/8f06b06788e046f9ba989b606c0574f1"
         )
     );
-
     runtime = 'infura'
 }
 

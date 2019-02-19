@@ -9,4 +9,6 @@ module.exports = (app) => {
 
     // ethereum routes
     app.use(routes.makeDonation, require("../routes/makeDonation"));
+    app.use(routes.fetchDonation, require("../routes/fetchDonation"));
+
 };
