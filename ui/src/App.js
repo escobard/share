@@ -11,7 +11,6 @@ class App extends Component {
 
     return (
       <div className="App">
-          <h1>HELLO ATB </h1>
         <nav>
           <Navigation />
         </nav>

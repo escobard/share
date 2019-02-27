@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import {
   Button,
   Checkbox,
@@ -17,18 +17,42 @@ class ShareForm extends Component {
   };
 
   componentWillMount(){
+
+      let { fields } = this.props;
+      this.testKeys();
       if (fields){
+
+          this.setState({hasFields: true});
+
           fields.map((field, index) =>{
-              let { label, placeholder } = field;
+              let { name, label, placeholder, value, error } = field;
+
+
+
           })
       }
       else{
           return <p>No form fields passed to component</p>
       }
+
       this.setState({field2: 'TEST'})
   }
 
+  // purely used to test mounted values for now
+  componentDidMount(){
+      console.log(this.state)
+  }
+
   handleChange = (e, { value }) => this.setState({ value });
+
+  testKeys = () =>{
+      let testObj = {test: 'asdfa', test2: 'asdferfasf'};
+      Object.keys(testObj).map((key, index) =>{
+          let stateVariable = `${key + index}`;
+          this.setState({ [stateVariable] : index});
+      })
+  }
+
 /*
   renderFields = (fields) => {
       if (fields){
@@ -43,10 +67,9 @@ class ShareForm extends Component {
 */
   render() {
     const { value, hasFields } = this.state;
-
     return (
-        {hasFields
-                    ? <Form>
+        <Fragment>
+            {hasFields ? <Form>
                 <Form.Group widths="equal">
                     <Form.Field
                         control={Input}
@@ -99,8 +122,8 @@ class ShareForm extends Component {
                     label="I agree to the Terms and Conditions"
                 />
                 <Form.Field control={Button}>Submit</Form.Field>
-            </Form>
-                : <p>Form has no input props!</p>}
+            </Form> : <p>Form has no input props!</p>}
+      </Fragment>
 
     );
   }
