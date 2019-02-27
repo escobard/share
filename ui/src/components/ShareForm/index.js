@@ -12,6 +12,7 @@ import {
 import { options } from "./constants";
 
 class ShareForm extends Component {
+
   state = {
       hasFields: false,
   };
@@ -19,16 +20,14 @@ class ShareForm extends Component {
   componentWillMount(){
 
       let { fields } = this.props;
-      this.testKeys();
+
       if (fields){
 
           this.setState({hasFields: true});
 
           fields.map((field, index) =>{
-              let { name, label, placeholder, value, error } = field;
-
-
-
+              console.log('INDEX', index);
+              this.inputState(field, index);
           })
       }
       else{
@@ -45,11 +44,14 @@ class ShareForm extends Component {
 
   handleChange = (e, { value }) => this.setState({ value });
 
-  testKeys = () =>{
-      let testObj = {test: 'asdfa', test2: 'asdferfasf'};
-      Object.keys(testObj).map((key, index) =>{
+  inputState = (fieldObject, index) =>{
+      Object.keys(fieldObject).map((key) =>{
+
+          // uses index argument to create scalable state for each object in this.fields
           let stateVariable = `${key + index}`;
-          this.setState({ [stateVariable] : index});
+
+          // sets the state key name and value
+          this.setState({ [stateVariable] : fieldObject[key]});
       })
   }
 

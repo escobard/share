@@ -5,6 +5,8 @@ import "./App.css";
 import Navigation from "./components/Navigation";
 import ShareForm from "./components/ShareForm";
 
+let fields = [{ name: 'name', label: 'label', placeholder: 'placeholder', value: 'value', error: 'error' }];
+
 class App extends Component {
   
   render() {
@@ -15,7 +17,7 @@ class App extends Component {
           <Navigation />
         </nav>
         <section>
-            <ShareForm/>
+            <ShareForm fields={fields}/>
         </section>
         <footer>copyright 2019</footer>
       </div>
