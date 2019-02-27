@@ -116,6 +116,7 @@ router.post("/", async (req, res) => {
                 }
             }
 
+            // filters the donation, returning trimmed data to user depending on access control
             let fetchedDonation = authenticateUser(req.body.address);
 
             res.status(200).json(fetchedDonation);
