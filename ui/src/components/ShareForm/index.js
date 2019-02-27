@@ -13,10 +13,6 @@ import { options } from "./constants";
 
 class ShareForm extends Component {
 
-  state = {
-      hasFields: false,
-  };
-
   componentWillMount(){
 
       let { fields } = this.props;
@@ -46,28 +42,43 @@ class ShareForm extends Component {
   inputState = (fieldObject, index) =>{
       Object.keys(fieldObject).map((key) =>{
 
-          // uses index argument to create scalable state for each object in this.fields
-          let stateVariable = `${key + index}`;
+          // only creates state for the error / value variables
+          if (key === 'error' || key === 'value'){
 
-          // sets the state key name and value
-          this.setState({ [stateVariable] : fieldObject[key]});
+              // uses index argument to create scalable state for each object in this.fields
+              let stateVariable = `${key + index}`;
+
+              // sets the state key name and value
+              this.setState({ [stateVariable] : fieldObject[key]});
+          }
+
       })
   }
 
   renderFields = (fields) => {
           return fields.map((field, index) =>{
+
+              let { name, label, placeholder, value, error} = field;
+
+              // creates state key names from index
+              let fieldValue = `${value + index}`;
+
+              // expects a boolean
+              let fieldError = `${error + index}`;
+
               return(
-                  <Form.Field
+                  <Form.Input
                       key={index}
-                      control={Input}
-                      label="First name"
-                      placeholder="First name"
+                      name={name}
+                      label={label}
+                      placeholder={placeholder}
+                      value={this.state[fieldValue]}
+                      error={this.state[fieldError]}
                   />
                   )
 
           })
-
-    };
+  };
 
   render() {
     const { hasFields } = this.state;
