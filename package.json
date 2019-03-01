@@ -1,0 +1,27 @@
+{
+  "name": "share",
+  "version": "1.0.0",
+  "description": "ethereum peer-to-peer rewards platform with charitable contributions",
+  "main": "index.js",
+  "dependencies": {
+    "concurrent": "^0.3.2",
+    "prettier": "^1.16.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/escobard/share.git"
+  },
+  "keywords": [
+    "ethereum"
+  ],
+  "author": "Daniel Escobar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/escobard/share/issues"
+  },
+  "homepage": "https://github.com/escobard/share#readme"
+}
