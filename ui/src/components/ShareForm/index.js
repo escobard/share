@@ -98,6 +98,8 @@ class ShareForm extends Component {
     // TODO add state handling for this.props.formName to handle makeDonation / fetchDonation form display
 
     // TODO fragment hasFields and donationID conditionals
+
+    // TODO when DonationID logic exists, fire a trigger to app.js
     return (
       <Fragment>
 
