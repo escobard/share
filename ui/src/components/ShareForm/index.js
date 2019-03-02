@@ -2,12 +2,7 @@ import React, { Component, Fragment } from "react";
 import axios from "axios";
 import {
   Button,
-  Checkbox,
   Form,
-  Input,
-  Radio,
-  Select,
-  TextArea
 } from "semantic-ui-react";
 
 import { apiRoutes } from "../../constants";
@@ -38,14 +33,14 @@ class ShareForm extends Component {
   submitForm = (formName) =>{
 
 
-    let { value1, value2 } = this.state;
+    let { value0, value1  } = this.state;
 
     // TODO consider refactoring this to a helper file
     // TODO make a switch statement to handle both form cases
     axios.post(apiRoutes.makeDonation, {
-      address: value1,
-      amount: value2
-    })
+      address: value0,
+      amount: value1
+    }, { headers: {"Access-Control-Allow-Origin": "*"}})
       .then(function (response) {
         console.log(response);
       })
@@ -108,7 +103,7 @@ class ShareForm extends Component {
                 <Form.Group widths="equal">
                     {this.renderFields(fields)}
                 </Form.Group>
-                <Form.Field control={Button}>Submit</Form.Field>
+                <Form.Field onClick={() => this.submitForm()} control={Button}>Submit</Form.Field>
             </Form> : <p>Form has no input props!</p>}
       </Fragment>
 
