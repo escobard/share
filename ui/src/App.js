@@ -5,10 +5,11 @@ import "./App.css";
 import Navigation from "./components/Navigation";
 import ShareForm from "./components/ShareForm";
 
-let fields = [{ name: 'name', label: 'label', placeholder: 'placeholder', value: '', error: false },{ name: 'name', label: 'label', placeholder: 'placeholder', value: '', error: false }];
+import {fields} from "./constants"
 
-// TODO add state to handle form display here
 class App extends Component {
+  // TODO add state to handle form display here
+  // TODO need to add state to handle the donation ID
 
   // TODO need to create a function to handle the display of forms based on fetch status
   render() {

@@ -89,17 +89,6 @@ class ShareForm extends Component {
             {hasFields ? <Form>
                 <Form.Group widths="equal">
                     {this.renderFields(fields)}
-                    <Form.Field
-                        control={Input}
-                        label="Last name"
-                        placeholder="Last name"
-                    />
-                    <Form.Field
-                        control={Select}
-                        label="Gender"
-                        options={options}
-                        placeholder="Gender"
-                    />
                 </Form.Group>
                 <Form.Field control={Button}>Submit</Form.Field>
             </Form> : <p>Form has no input props!</p>}
