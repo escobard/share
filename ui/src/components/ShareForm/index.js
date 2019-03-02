@@ -37,6 +37,7 @@ class ShareForm extends Component {
       console.log(this.state)
   }
 
+  // TODO add handler to send data to API, this needs to have 2 cases, post and fetch
   handleChange = (e, { value }) => this.setState({ value });
 
   inputState = (fieldObject, index) =>{
