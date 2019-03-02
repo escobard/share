@@ -35,7 +35,7 @@ router.post("/", async (req, res) => {
         if (req.body.address) {
 
             // defines the smart contract ABI
-            let share = await new web3.eth.Contract(ShareABI, "0xbf381325a10cfa6a6b1a6a0a10a054138312d01e");
+            let share = await new web3.eth.Contract(ShareABI, "0xc6ec2b177b55416cabdfa27e41d66ec3aa4ad16a");
 
             // defines default address, based on runtime
             let accounts = await web3.eth.getAccounts()
@@ -78,6 +78,7 @@ router.post("/", async (req, res) => {
 
         }
         else{
+            console.log(req.body)
             res.status(400).json("Bad request, body of request missing address property")
         }
 

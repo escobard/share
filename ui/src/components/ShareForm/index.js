@@ -32,11 +32,11 @@ class ShareForm extends Component {
 
   submitForm = (formName) =>{
 
-
     let { value0, value1  } = this.state;
 
-    // TODO consider refactoring this to a helper file
     // TODO make a switch statement to handle both form cases
+
+    // TODO consider refactoring this to a helper file
     axios.post(apiRoutes.makeDonation, {
       address: value0,
       amount: value1
@@ -67,13 +67,17 @@ class ShareForm extends Component {
       })
   }
 
+  inputChange = (value, fieldValue) => {
+    this.setState({[fieldValue]: value})
+  }
+
   renderFields = (fields) => {
           return fields.map((field, index) =>{
 
               let { name, label, placeholder, value, error} = field;
 
               // creates state key names from index
-              let fieldValue = `${value + index}`;
+              let fieldValue = `${'value' + index}`;
 
               // expects a boolean
               let fieldError = `${error + index}`;
@@ -83,8 +87,8 @@ class ShareForm extends Component {
                       key={index}
                       name={name}
                       label={label}
+                      onChange={(e) =>{this.inputChange(e.target.value, fieldValue)}}
                       placeholder={placeholder}
-                      value={this.state[fieldValue]}
                       error={this.state[fieldError]}
                   />
                   )

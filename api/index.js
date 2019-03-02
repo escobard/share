@@ -7,8 +7,8 @@ const express = require("express"),
 
 app.use(bodyParser.json());
 
-// TODO this needs to be updated
-app.use(cors({origin: "*"}))
+// TODO this needs to be updated for prod
+app.use(cors({origin: "http://localhost:3000"}))
 
 require("./routes")(app);
 
