@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from "react";
+import axios from "axios";
 import {
   Button,
   Checkbox,
@@ -9,7 +10,7 @@ import {
   TextArea
 } from "semantic-ui-react";
 
-import { options } from "./constants";
+import { apiRoutes } from "../../constants";
 
 class ShareForm extends Component {
 
@@ -25,9 +26,6 @@ class ShareForm extends Component {
               this.inputState(field, index);
           })
       }
-      else{
-          return <p>No form fields passed to component</p>
-      }
 
       this.setState({field2: 'TEST'})
   }
@@ -37,7 +35,25 @@ class ShareForm extends Component {
       console.log(this.state)
   }
 
-  // TODO add handler to send data to API, this needs to have 2 cases, post and fetch
+  submitForm = (formName) =>{
+
+
+    let { value1, value2 } = this.state;
+
+    // TODO consider refactoring this to a helper file
+    // TODO make a switch statement to handle both form cases
+    axios.post(apiRoutes.makeDonation, {
+      address: value1,
+      amount: value2
+    })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
+  }
   handleChange = (e, { value }) => this.setState({ value });
 
   inputState = (fieldObject, index) =>{
@@ -84,6 +100,8 @@ class ShareForm extends Component {
   render() {
     const { hasFields } = this.state;
     let { fields } = this.props;
+
+    // TODO add state handling for this.props.formName to handle makeDonation / fetchDonation form display
     return (
         <Fragment>
             {hasFields ? <Form>
