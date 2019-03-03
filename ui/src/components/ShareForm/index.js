@@ -41,7 +41,12 @@ class ShareForm extends Component {
           { headers }
         )
         .then((response) => {
-          parent.setState({ donationID: response.data });
+
+          let { data } = response
+
+          // passes the donationID to parent
+          parent.props.makeDonation(data);
+
           console.log(response.data);
         })
         .catch((error) =>{
@@ -101,12 +106,9 @@ class ShareForm extends Component {
   };
 
   render() {
-    const { hasFields, donationID } = this.state;
+    const { hasFields } = this.state;
     let { fields, name  } = this.props;
 
-    // TODO fragment hasFields and donationID conditionals
-
-    // TODO when DonationID logic exists, fire a trigger to app.js
     return (
       <Fragment>
 
@@ -119,12 +121,6 @@ class ShareForm extends Component {
           </Form>
         ) : (
           <p>Form has no input props!</p>
-        )}
-
-        {donationID ? (
-          <p>DonationID: {donationID}</p>
-        ) : (
-          <p>Submit the form to create your donation!</p>
         )}
 
       </Fragment>
