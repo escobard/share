@@ -5,6 +5,7 @@ import { Button, Form } from "semantic-ui-react";
 import { apiRoutes } from "../../constants";
 
 class ShareForm extends Component {
+
   componentWillMount() {
     let { fields } = this.props;
 
@@ -27,26 +28,34 @@ class ShareForm extends Component {
   submitForm = formName => {
     let parent = this;
     let { value0, value1 } = this.state;
+    let headers = { "Access-Control-Allow-Origin": "*" }
 
-    // TODO make a switch statement to handle both form cases
+    switch (formName) {
+      case 'make': {    axios
+        .post(
+          apiRoutes.makeDonation,
+          {
+            address: value0,
+            amount: value1
+          },
+          { headers }
+        )
+        .then((response) => {
+          parent.setState({ donationID: response.data });
+          console.log(response.data);
+        })
+        .catch((error) =>{
+          console.log(error);
+        });
+        return;
+      }
+      case 'fetch': {}
+      default:{
+        console.log('No form name passed!')
+        return;
+      }
+    }
 
-    // TODO consider refactoring this to a helper file
-    axios
-      .post(
-        apiRoutes.makeDonation,
-        {
-          address: value0,
-          amount: value1
-        },
-        { headers: { "Access-Control-Allow-Origin": "*" } }
-      )
-      .then(function(response) {
-        parent.setState({ donationID: response.data });
-        console.log(response.data);
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
   };
 
   inputState = (fieldObject, index) => {
@@ -93,9 +102,7 @@ class ShareForm extends Component {
 
   render() {
     const { hasFields, donationID } = this.state;
-    let { fields } = this.props;
-
-    // TODO add state handling for this.props.formName to handle makeDonation / fetchDonation form display
+    let { fields, name  } = this.props;
 
     // TODO fragment hasFields and donationID conditionals
 
@@ -106,7 +113,7 @@ class ShareForm extends Component {
         {hasFields ? (
           <Form>
             <Form.Group widths="equal">{this.renderFields(fields)}</Form.Group>
-            <Form.Field onClick={() => this.submitForm()} control={Button}>
+            <Form.Field onClick={() => this.submitForm(name)} control={Button}>
               Submit
             </Form.Field>
           </Form>

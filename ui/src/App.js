@@ -18,7 +18,7 @@ class App extends Component {
           <Navigation />
         </nav>
         <section>
-            <ShareForm fields={fields}/>
+            <ShareForm name={'make'} fields={fields}/>
         </section>
         <footer>copyright 2019</footer>
       </div>
