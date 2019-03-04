@@ -35,7 +35,7 @@ router.post("/", async (req, res) => {
         if (req.body.address) {
 
             // defines the smart contract ABI
-            let share = await new web3.eth.Contract(ShareABI, "0xbf381325a10cfa6a6b1a6a0a10a054138312d01e");
+            let share = await new web3.eth.Contract(ShareABI, "0xcb91ee93708df782544a1dfc208e55c374dfe021");
 
             // checks if contract is initialized
             let contractInitialized = await share.methods.initialized.call();

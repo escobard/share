@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react";
 import axios from "axios";
 import { Button, Form } from "semantic-ui-react";
 
-import { apiRoutes } from "../../constants";
+import { apiRoutes, makeDonationFields } from "../../constants";
 
 class ShareForm extends Component {
 
@@ -28,39 +28,39 @@ class ShareForm extends Component {
   submitForm = formName => {
     let parent = this;
     let { value0, value1 } = this.state;
-    let headers = { "Access-Control-Allow-Origin": "*" }
+    let headers = { "Access-Control-Allow-Origin": "*" };
 
     switch (formName) {
-      case 'make': {    axios
-        .post(
-          apiRoutes.makeDonation,
-          {
-            address: value0,
-            amount: value1
-          },
-          { headers }
-        )
-        .then((response) => {
+      case "make": {
+        axios
+          .post(
+            apiRoutes.makeDonation,
+            {
+              address: value0,
+              amount: value1
+            },
+            { headers }
+          )
+          .then(response => {
+            let { data } = response;
 
-          let { data } = response
+            // passes the donationID to parent
+            parent.props.makeDonation(data);
 
-          // passes the donationID to parent
-          parent.props.makeDonation(data);
-
-          console.log(response.data);
-        })
-        .catch((error) =>{
-          console.log(error);
-        });
+            console.log(response.data);
+          })
+          .catch(error => {
+            console.log(error);
+          });
         return;
       }
-      case 'fetch': {}
-      default:{
-        console.log('No form name passed!')
+      case "fetch": {
+      }
+      default: {
+        console.log("No form name passed!");
         return;
       }
     }
-
   };
 
   inputState = (fieldObject, index) => {
@@ -107,11 +107,9 @@ class ShareForm extends Component {
 
   render() {
     const { hasFields } = this.state;
-    let { fields, name  } = this.props;
-
+    let { fields, name } = this.props;
     return (
       <Fragment>
-
         {hasFields ? (
           <Form>
             <Form.Group widths="equal">{this.renderFields(fields)}</Form.Group>
@@ -122,7 +120,6 @@ class ShareForm extends Component {
         ) : (
           <p>Form has no input props!</p>
         )}
-
       </Fragment>
     );
   }

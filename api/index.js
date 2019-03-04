@@ -1,6 +1,6 @@
 const express = require("express"),
   bodyParser = require("body-parser"),
-  cors = require('cors'),
+  cors = require("cors"),
   app = express(),
   routes = require("./constants/routes"),
   port = routes.port;
@@ -8,7 +8,7 @@ const express = require("express"),
 app.use(bodyParser.json());
 
 // TODO this needs to be updated for prod
-app.use(cors({origin: "http://localhost:3000"}))
+app.use(cors({ origin: "http://localhost:3000" }));
 
 require("./routes")(app);
 
