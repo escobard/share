@@ -47,7 +47,7 @@ class ShareForm extends Component {
             let { data } = response;
 
             // passes the donationID to parent
-            parent.props.makeDonation(data);
+            parent.props.makeDonation(data, value0);
 
             console.log(response.data);
           })
@@ -58,8 +58,9 @@ class ShareForm extends Component {
       }
       case "fetch": {
         axios
-          .get(
+          .post(
             fetchDonation,
+            {address: parent.props.donorAddress, id: value0},
             { headers }
           )
           .then(response => {
@@ -127,6 +128,7 @@ class ShareForm extends Component {
   render() {
     const { hasFields } = this.state;
     let { fields, name } = this.props;
+    console.log('STATE', this.state)
     return (
       <Fragment>
         {hasFields ? (

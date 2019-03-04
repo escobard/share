@@ -10,21 +10,29 @@ import { makeDonationFields, fetchDonationFields } from "./constants";
 class App extends Component {
   state = {
     donationID: false,
+    donorAddress: false,
     fetchedDonation: false
   };
 
-  makeDonation = donationID => {
-    this.setState({ donationID });
+  makeDonation = (donationID, donorAddress) => {
+    // TODO this value must be improved for v2.0, address is validated through first form, which then gives the user access to the second form, which will be either a makeDonation form, or a grant access to fetchDonation if the user's address has already created a donation, need to implement this logic in all layers
+    this.setState({ donationID, donorAddress });
   };
 
-  fetchDonation = fetchedDonation => {
-    this.setState({ fetchedDonation });
+  fetchDonation = donation => {
+
+    // needs to be turned into a usable array of data to work with react
+    var donationArray = Object.keys(donation).map((key) => {
+      return [key, donation[key]];
+    });
+
+    this.setState({ fetchedDonation: donationArray});
   };
 
   // TODO DonationID fetches should trigger a state update here to display fetchDonation form
 
   render() {
-    let { donationID, fetchedDonation } = this.state;
+    let { donationID, donorAddress, fetchedDonation } = this.state;
 
     console.log("PARENT", this.state.donationID);
     return (
@@ -45,6 +53,7 @@ class App extends Component {
                 fetchDonation={this.fetchDonation}
                 name={"fetch"}
                 fields={fetchDonationFields}
+                donorAddress={donorAddress}
               />
               {fetchedDonation ? (
                 <p>Donation data: {fetchedDonation}</p>
