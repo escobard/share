@@ -26,15 +26,17 @@ class ShareForm extends Component {
   }
 
   submitForm = formName => {
+
     let parent = this;
     let { value0, value1 } = this.state;
+    let { makeDonation, fetchDonation } = apiRoutes;
     let headers = { "Access-Control-Allow-Origin": "*" };
 
     switch (formName) {
       case "make": {
         axios
           .post(
-            apiRoutes.makeDonation,
+            makeDonation,
             {
               address: value0,
               amount: value1
@@ -55,6 +57,23 @@ class ShareForm extends Component {
         return;
       }
       case "fetch": {
+        axios
+          .get(
+            fetchDonation,
+            { headers }
+          )
+          .then(response => {
+            let { data } = response;
+
+            // passes the donationID to parent
+            parent.props.fetchDonation(data);
+
+            console.log(response.data);
+          })
+          .catch(error => {
+            console.log(error);
+          });
+        return;
       }
       default: {
         console.log("No form name passed!");

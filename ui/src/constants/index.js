@@ -5,7 +5,8 @@ const fetchDonationFields = [{ name: 'address', label: 'Address', placeholder: "
 const apiRoot = process.env.PORT || 'http://localhost:4000';
 
 const apiRoutes =  {
-  makeDonation: `${apiRoot + '/makeDonation'}`
+  makeDonation: `${apiRoot + '/makeDonation'}`,
+  fetchDonation: `${apiRoot + '/fetchDonation'}`
 };
 
 export {makeDonationFields, fetchDonationFields, apiRoutes};
