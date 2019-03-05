@@ -10,7 +10,7 @@ const router = require("express").Router();
 // utilized for local testing w/ ganache vs production w/ infura
 let runtime;
 let web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
-if (typeof web3 !== 'undefined') {
+if (process.env.NODE_ENV === 'dev') {
 
     web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
     runtime = 'ganache';
@@ -20,9 +20,10 @@ if (typeof web3 !== 'undefined') {
     // this needs to be a new infura provider, replacing the current one which is for the starNotary contract
     web3 = new Web3(
         new Web3.providers.HttpProvider(
-            "https://rinkeby.infura.io/v3/8f06b06788e046f9ba989b606c0574f1"
+            "https://rinkeby.infura.io/v3/47c181283cb345c19697f9403531914c"
         )
     );
+    console.log('INFURA')
     runtime = 'infura'
 }
 
@@ -41,9 +42,9 @@ router.post("/", async (req, res) => {
             let accounts = await web3.eth.getAccounts()
 
             // ganache address needs to be updated each time ganache-cli is initialized
-            let ownerAccount = runtime == 'ganache' ? accounts[0] : 'prodAddress',
-                charityAccount = runtime == 'ganache' ? accounts[1] : 'prodAddress',
-                lotteryAccount = runtime == 'ganache' ? accounts[2] : 'prodAddress';
+            let ownerAccount = runtime == 'ganache' ? accounts[0] : '0xCb82438B0443593191ec05D07Bb9dBf6Eb73594C',
+                charityAccount = runtime == 'ganache' ? accounts[1] : '0x9b41DB553536D504d16bC6B8d00BCA9255522242',
+                lotteryAccount = runtime == 'ganache' ? accounts[2] : '0x46a3e9029F58BEc0c7Ba45d1D296bC60Fc0b0aFC';
 
             // checks if contract is initialized
             let contractInitialized = await share.methods.initialized.call();

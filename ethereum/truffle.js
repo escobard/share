@@ -16,7 +16,7 @@ module.exports = {
     rinkeby:{
       provider: () =>{
         // this comes from the infura dashboar, unique per infura project
-        return new HDWalletProvider(mnemonic, 'https://rinkeby.infura.io/v3/8f06b06788e046f9ba989b606c0574f1')
+        return new HDWalletProvider(mnemonic, 'https://rinkeby.infura.io/v3/47c181283cb345c19697f9403531914c')
       },
       network_id: 4,
       gas: 7000000,
