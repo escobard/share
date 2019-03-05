@@ -1,10 +1,10 @@
 import React, { Component, Fragment } from "react";
-import { Icon, Label, Menu, Table } from "semantic-ui-react";
-
-import "./App.css";
 
 import Navigation from "./components/Navigation";
 import ShareForm from "./components/ShareForm";
+import DonationTable from "./components/DonationTable";
+
+import "./App.css";
 
 import { makeDonationFields, fetchDonationFields } from "./constants";
 
@@ -29,37 +29,6 @@ class App extends Component {
     this.setState({ fetchedDonation: donationArray });
   };
 
-  // TODO create a function to map the donation data, and display a semantics ui table with the data\
-  // TODO refactor this function into its own component afterwards
-
-  displayDonation = fetchedDonation => {
-
-    let mapArray = () => {
-      return fetchedDonation.map((donation, key) => {
-        return (
-          <Table.Row key={key}>
-            <Table.Cell>{donation[0]}</Table.Cell>
-            <Table.Cell>{donation[1]}</Table.Cell>
-          </Table.Row>
-        );
-      });
-    };
-
-    return (
-      <Fragment>
-        <Table celled>
-          <Table.Header>
-            <Table.Row>
-              <Table.HeaderCell>Description</Table.HeaderCell>
-              <Table.HeaderCell>Value</Table.HeaderCell>
-            </Table.Row>
-          </Table.Header>
-
-          <Table.Body>{mapArray()}</Table.Body>
-        </Table>
-      </Fragment>
-    );
-  };
   render() {
     let { donationID, donorAddress, fetchedDonation } = this.state;
 
@@ -85,7 +54,7 @@ class App extends Component {
                 donorAddress={donorAddress}
               />
               {fetchedDonation ? (
-                this.displayDonation(fetchedDonation)
+                <DonationTable donationData={fetchedDonation}/>
               ) : (
                 <p>Fetch your donation by ID using the form above</p>
               )}
