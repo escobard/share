@@ -35,7 +35,7 @@ router.post("/", async (req, res) => {
         if (req.body.address) {
 
             // defines the smart contract ABI
-            let share = await new web3.eth.Contract(ShareABI, "0xcb91ee93708df782544a1dfc208e55c374dfe021");
+            let share = await new web3.eth.Contract(ShareABI, "0x6ac663cb9e24aedbe799e619fd81170d01f76914");
 
             // defines default address, based on runtime
             let accounts = await web3.eth.getAccounts()

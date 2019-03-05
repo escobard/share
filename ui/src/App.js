@@ -1,9 +1,10 @@
 import React, { Component, Fragment } from "react";
 
-import "./App.css";
-
 import Navigation from "./components/Navigation";
 import ShareForm from "./components/ShareForm";
+import DonationTable from "./components/DonationTable";
+
+import "./App.css";
 
 import { makeDonationFields, fetchDonationFields } from "./constants";
 
@@ -20,21 +21,18 @@ class App extends Component {
   };
 
   fetchDonation = donation => {
-
     // needs to be turned into a usable array of data to work with react
-    var donationArray = Object.keys(donation).map((key) => {
+    let donationArray = Object.keys(donation).map(key => {
       return [key, donation[key]];
     });
 
-    this.setState({ fetchedDonation: donationArray});
+    this.setState({ fetchedDonation: donationArray });
   };
-
-  // TODO DonationID fetches should trigger a state update here to display fetchDonation form
 
   render() {
     let { donationID, donorAddress, fetchedDonation } = this.state;
 
-    console.log("PARENT", this.state.donationID);
+    console.log("PARENT", this.state);
     return (
       <div className="App">
         <nav>
@@ -56,7 +54,7 @@ class App extends Component {
                 donorAddress={donorAddress}
               />
               {fetchedDonation ? (
-                <p>Donation data: {fetchedDonation}</p>
+                <DonationTable donationData={fetchedDonation}/>
               ) : (
                 <p>Fetch your donation by ID using the form above</p>
               )}
