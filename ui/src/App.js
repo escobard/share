@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from "react";
+import { Icon, Label, Menu, Table } from "semantic-ui-react";
 
 import "./App.css";
 
@@ -20,21 +21,49 @@ class App extends Component {
   };
 
   fetchDonation = donation => {
-
     // needs to be turned into a usable array of data to work with react
-    var donationArray = Object.keys(donation).map((key) => {
+    let donationArray = Object.keys(donation).map(key => {
       return [key, donation[key]];
     });
 
-    this.setState({ fetchedDonation: donationArray});
+    this.setState({ fetchedDonation: donationArray });
   };
 
-  // TODO DonationID fetches should trigger a state update here to display fetchDonation form
+  // TODO create a function to map the donation data, and display a semantics ui table with the data\
+  // TODO refactor this function into its own component afterwards
 
+  displayDonation = fetchedDonation => {
+
+    let mapArray = () => {
+      return fetchedDonation.map((donation, key) => {
+        return (
+          <Table.Row key={key}>
+            <Table.Cell>{donation[0]}</Table.Cell>
+            <Table.Cell>{donation[1]}</Table.Cell>
+          </Table.Row>
+        );
+      });
+    };
+
+    return (
+      <Fragment>
+        <Table celled>
+          <Table.Header>
+            <Table.Row>
+              <Table.HeaderCell>Description</Table.HeaderCell>
+              <Table.HeaderCell>Value</Table.HeaderCell>
+            </Table.Row>
+          </Table.Header>
+
+          <Table.Body>{mapArray()}</Table.Body>
+        </Table>
+      </Fragment>
+    );
+  };
   render() {
     let { donationID, donorAddress, fetchedDonation } = this.state;
 
-    console.log("PARENT", this.state.donationID);
+    console.log("PARENT", this.state);
     return (
       <div className="App">
         <nav>
@@ -56,7 +85,7 @@ class App extends Component {
                 donorAddress={donorAddress}
               />
               {fetchedDonation ? (
-                <p>Donation data: {fetchedDonation}</p>
+                this.displayDonation(fetchedDonation)
               ) : (
                 <p>Fetch your donation by ID using the form above</p>
               )}
