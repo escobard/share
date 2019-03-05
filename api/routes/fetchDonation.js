@@ -10,7 +10,9 @@ Web3 = require("web3"),
 // utilized for local testing w/ ganache vs production w/ infura
 let runtime;
 let web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
-if (process.env.NODE_ENV === 'dev') {
+
+// TODO change to dev to fix
+if (process.env.NODE_ENV === 'devs') {
 
     web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
     runtime = 'ganache';
@@ -35,7 +37,7 @@ router.post("/", async (req, res) => {
         if (req.body.address) {
 
             // defines the smart contract ABI
-            let share = await new web3.eth.Contract(ShareABI, "0xcb91ee93708df782544a1dfc208e55c374dfe021");
+            let share = await new web3.eth.Contract(ShareABI, "0x5Fe24088bf36B689eEd9cCD8719dc266C69D8e43");
 
             // checks if contract is initialized
             let contractInitialized = await share.methods.initialized.call();
@@ -48,7 +50,7 @@ router.post("/", async (req, res) => {
             let ownerAccount = runtime == 'ganache' ? accounts[0] : '0xCb82438B0443593191ec05D07Bb9dBf6Eb73594C',
             charityAccount = runtime == 'ganache' ? accounts[1] : '0x9b41DB553536D504d16bC6B8d00BCA9255522242',
             lotteryAccount = runtime == 'ganache' ? accounts[2] : '0x46a3e9029F58BEc0c7Ba45d1D296bC60Fc0b0aFC';
-            
+
                 console.log('Initializing Contract...');
 
                 await share.methods.initiateContract(lotteryAccount, charityAccount).send({from: ownerAccount});

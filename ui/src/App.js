@@ -22,7 +22,7 @@ class App extends Component {
   fetchDonation = donation => {
 
     // needs to be turned into a usable array of data to work with react
-    var donationArray = Object.keys(donation).map((key) => {
+    let donationArray = Object.keys(donation).map((key) => {
       return [key, donation[key]];
     });
 
