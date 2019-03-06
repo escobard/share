@@ -67,8 +67,8 @@ function txBuilder({method, fromAddress, toAddress, nonce, functionSignature, va
  * @param txData: data object to pass to txBuilder.
  */
 
-let sender_account = "0xCb82438B0443593191ec05D07Bb9dBf6Eb73594C";
-let receiver_account = "0x30cA43c907144aAbdc6a7213E17472b1946C6f39"
+let sender_account = "0xa102c7EE530B635E56f133a20786091eB800f640";
+let receiver_account = "0x57486a5332ac3f2c82625a2a504ee6916f004e46"
 
 async function sendEther(contractMethod) {
   console.log('Account balance:',await web3.eth.getBalance(sender_account));
@@ -79,7 +79,7 @@ async function sendEther(contractMethod) {
   const gasLimit = '1000000';
 
   //get the current gas price (wei)
-  const gasPrice = '44652';
+  const gasPrice = '144652';
   console.log('gas price is', gasPrice);
   //get the nonce for the sending account
 
@@ -103,8 +103,9 @@ async function sendEther(contractMethod) {
     //optional logs for sanity checks
     console.log('Sending Signed Transaction');
     //send tx that was signed offline by txbuilder
-    await web3.eth.sendSignedTransaction('0x' + rawTx.toString('hex'))
+    let transaction = await web3.eth.sendSignedTransaction('0x' + rawTx.toString('hex'))
       .on('receipt', console.log);
+    console.log(transaction)
   } catch (error) {
     console.log(error);
   }

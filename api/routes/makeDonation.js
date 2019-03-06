@@ -37,7 +37,7 @@ try {
         // defines the smart contract ABI
         let share = await new web3.eth.Contract(
           ShareABI,
-          "0x30cA43c907144aAbdc6a7213E17472b1946C6f39"
+          "0x57486a5332ac3f2c82625a2a504ee6916f004e46"
         );
 
         // defines default address, based on runtime
