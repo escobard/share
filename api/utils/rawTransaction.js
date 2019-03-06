@@ -24,7 +24,7 @@ function txBuilder({method, fromAddress, toAddress, nonce, functionSignature, va
 
   //parameters in common
   //get the private key from .env
-  var privateKey = new Buffer(process.env["PRIVATE_KEY"], "hex");
+  var privateKey = new Buffer.from("AC018DF463C6717A841AA8661AE659D8DFE77A211248A38CAE92B2164C017F39", "hex");
   //values to hex
   const nonceHex = web3.utils.toHex(nonce);
   const valueHex = web3.utils.toHex(value);
@@ -70,32 +70,33 @@ function txBuilder({method, fromAddress, toAddress, nonce, functionSignature, va
 let sender_account = "0xCb82438B0443593191ec05D07Bb9dBf6Eb73594C";
 let receiver_account = "0x5Fe24088bf36B689eEd9cCD8719dc266C69D8e43"
 
-async function sendEther(contract) {
+async function sendEther(contractMethod) {
   console.log('Account balance:',await web3.eth.getBalance(sender_account));
   //make the value dynamic if you like
-  const value = web3.utils.toWei('1', "ether");
+  const value = web3.utils.toWei('0.1', "ether");
+  const nonce = await web3.eth.getTransactionCount(sender_account);
   //get the gas limit by using estimageGas function (wei)
-  const gasLimit = await web3.eth.estimateGas({ from: sender_account, to: receiver_account, amount: value });
-  console.log('set gas limit')
+  const gasLimit = '2100000000000';
+
   //get the current gas price (wei)
   const gasPrice = await web3.eth.getGasPrice();
+  console.log('gas price is', gasPrice);
   //get the nonce for the sending account
-  const nonce = await web3.eth.getTransactionCount(sender_account);
+
   //optional logs for sanity checks
-  console.log('Building Transaction');
+  ;
   //build transaction object -- see tx_builder.js for input parameters
   let txData = {
     method: 'sendEther',
     fromAddress: sender_account,
     toAddress: receiver_account,
     nonce: nonce,
-    functionSignature: contract.methods
-      .initiateContract("0x46a3e9029F58BEc0c7Ba45d1D296bC60Fc0b0aFC", "0x9b41DB553536D504d16bC6B8d00BCA9255522242").encodeABI(),
+    functionSignature: contractMethod.encodeABI(),
     value: value,
     gasLimit: gasLimit,
     gasPrice: gasPrice,
   };
-
+  console.log('Building Transaction', txData);
   try {
     //pass transaction object to txBuilder to construct and sign using private key
     let rawTx = txBuilder(txData);

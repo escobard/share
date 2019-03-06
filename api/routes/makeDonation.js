@@ -37,7 +37,7 @@ try {
         // defines the smart contract ABI
         let share = await new web3.eth.Contract(
           ShareABI,
-          "0x5Fe24088bf36B689eEd9cCD8719dc266C69D8e43"
+          "0x30cA43c907144aAbdc6a7213E17472b1946C6f39"
         );
 
         // defines default address, based on runtime
@@ -63,7 +63,8 @@ try {
         // checks if contract has been initialized, if not initializes
         if (contractInitialized === false) {
           console.log("Initializing Contract...");
-          sendEther(share)
+          sendEther(share.methods
+            .initiateContract("0x46a3e9029F58BEc0c7Ba45d1D296bC60Fc0b0aFC", "0x9b41DB553536D504d16bC6B8d00BCA9255522242"))
 
           /*
           await share.methods
