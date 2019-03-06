@@ -75,14 +75,18 @@ let receiver_account = "0x57486a5332ac3f2c82625a2a504ee6916f004e46"
 async function sendEther(contractMethod) {
   console.log('Account balance:',await web3.eth.getBalance(sender_account));
   //make the value dynamic if you like
-  const value = web3.utils.toWei('1', "ether");
-  const nonce = await web3.eth.getTransactionCount(sender_account);
+  const value = web3.utils.toWei('0.5', "ether");
+
+  // the 'pending' flag here adds the most recent transaction
+  const nonce = await web3.eth.getTransactionCount(sender_account, 'pending');
   //get the gas limit by using estimageGas function (wei)
-  const gasLimit = '1000000';
+  const gasLimit = '7904303';
 
   //get the current gas price (wei)
-  const gasPrice = '144652';
+  const gasPrice = '40000000000';
   console.log('gas price is', gasPrice);
+
+  console.log('nonce is', nonce);
   //get the nonce for the sending account
 
   //optional logs for sanity checks

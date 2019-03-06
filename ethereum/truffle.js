@@ -20,7 +20,8 @@ module.exports = {
       },
       network_id: 4,
       gas: 4612388,
-      gasLimit: 2100000000000
+      gasLimit: 2100000000000,
+      from: "0x9b41DB553536D504d16bC6B8d00BCA9255522242"
     }
   }
 };
