@@ -41,6 +41,7 @@ function txBuilder({method, fromAddress, toAddress, nonce, functionSignature, va
         gasPrice: priceHex,
         gasLimit: limitHex,
         to: toAddress,
+        from: fromAddress,
         value: valueHex,
         data: functionSignature
       };
@@ -48,6 +49,7 @@ function txBuilder({method, fromAddress, toAddress, nonce, functionSignature, va
   }
   //new ethereumjs-tx
   var tx = new Tx(rawTx);
+  console.log('raw TXT', tx);
   //sign transaction
   tx.sign(privateKey);
   //serialize transaction
@@ -67,13 +69,13 @@ function txBuilder({method, fromAddress, toAddress, nonce, functionSignature, va
  * @param txData: data object to pass to txBuilder.
  */
 
-let sender_account = "0xa102c7EE530B635E56f133a20786091eB800f640";
+let sender_account = "0xCb82438B0443593191ec05D07Bb9dBf6Eb73594C";
 let receiver_account = "0x57486a5332ac3f2c82625a2a504ee6916f004e46"
 
 async function sendEther(contractMethod) {
   console.log('Account balance:',await web3.eth.getBalance(sender_account));
   //make the value dynamic if you like
-  const value = web3.utils.toWei('0.5', "ether");
+  const value = web3.utils.toWei('1', "ether");
   const nonce = await web3.eth.getTransactionCount(sender_account);
   //get the gas limit by using estimageGas function (wei)
   const gasLimit = '1000000';
@@ -104,7 +106,8 @@ async function sendEther(contractMethod) {
     console.log('Sending Signed Transaction');
     //send tx that was signed offline by txbuilder
     let transaction = await web3.eth.sendSignedTransaction('0x' + rawTx.toString('hex'))
-      .on('receipt', console.log);
+      .on('transactionHash', console.log)
+    .on('receipt', console.log);
     console.log(transaction)
   } catch (error) {
     console.log(error);
