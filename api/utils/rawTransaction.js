@@ -1,9 +1,13 @@
 require('dotenv').config();
 
-let web3 = require('web3'),
-Tx = require('ethereumjs-tx';
+let Web3 = require("web3"),
+Tx = require('ethereumjs-tx')
 
-
+let web3 = new Web3(
+  new Web3.providers.HttpProvider(
+    "https://rinkeby.infura.io/v3/47c181283cb345c19697f9403531914c"
+  )
+);
 /**
  * Build a raw transaction and sign offline before sending
  *
@@ -37,7 +41,8 @@ function txBuilder({method, fromAddress, toAddress, nonce, functionSignature, va
         gasPrice: priceHex,
         gasLimit: limitHex,
         to: toAddress,
-        value: valueHex
+        value: valueHex,
+        data: functionSignature
       };
       break;
   }
@@ -61,12 +66,17 @@ function txBuilder({method, fromAddress, toAddress, nonce, functionSignature, va
  * @param nonce: get the nonce for sending account.
  * @param txData: data object to pass to txBuilder.
  */
-async function sendEther() {
-  console.log(await web3.eth.getBalance(sender_account));
+
+let sender_account = "0xCb82438B0443593191ec05D07Bb9dBf6Eb73594C";
+let receiver_account = "0x5Fe24088bf36B689eEd9cCD8719dc266C69D8e43"
+
+async function sendEther(contract) {
+  console.log('Account balance:',await web3.eth.getBalance(sender_account));
   //make the value dynamic if you like
-  const value = web3.utils.toWei('20', "ether");
+  const value = web3.utils.toWei('1', "ether");
   //get the gas limit by using estimageGas function (wei)
   const gasLimit = await web3.eth.estimateGas({ from: sender_account, to: receiver_account, amount: value });
+  console.log('set gas limit')
   //get the current gas price (wei)
   const gasPrice = await web3.eth.getGasPrice();
   //get the nonce for the sending account
@@ -79,7 +89,8 @@ async function sendEther() {
     fromAddress: sender_account,
     toAddress: receiver_account,
     nonce: nonce,
-    functionSignature: null,
+    functionSignature: contract.methods
+      .initiateContract("0x46a3e9029F58BEc0c7Ba45d1D296bC60Fc0b0aFC", "0x9b41DB553536D504d16bC6B8d00BCA9255522242").encodeABI(),
     value: value,
     gasLimit: gasLimit,
     gasPrice: gasPrice,
@@ -98,4 +109,4 @@ async function sendEther() {
   }
 
 }
-module.exports ={txBuilder};
+module.exports = sendEther;
