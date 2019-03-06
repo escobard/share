@@ -63,8 +63,10 @@ try {
         // checks if contract has been initialized, if not initializes
         if (contractInitialized === false) {
           console.log("Initializing Contract...");
+
+          // TODO must be heavily refactored
           sendEther(share.methods
-            .initiateContract("0x46a3e9029F58BEc0c7Ba45d1D296bC60Fc0b0aFC", "0x9b41DB553536D504d16bC6B8d00BCA9255522242"))
+            .initiateContract(lotteryAccount, charityAccount))
 
           /*
           await share.methods

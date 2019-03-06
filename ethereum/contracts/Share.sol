@@ -61,8 +61,7 @@ contract Share {
 
     function initiateContract(address _lottery, address _charity) public payable{
 
-        // must test to ensure this works, unsure of syntax
-        require(msg.sender == Owner);
+        require(msg.sender == Owner && initialized == false);
 
         Lottery = _lottery;
         Charity = _charity;

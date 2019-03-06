@@ -75,15 +75,16 @@ let receiver_account = "0x57486a5332ac3f2c82625a2a504ee6916f004e46"
 async function sendEther(contractMethod) {
   console.log('Account balance:',await web3.eth.getBalance(sender_account));
   //make the value dynamic if you like
-  const value = web3.utils.toWei('0.5', "ether");
+  const value = web3.utils.toWei('0.000001', "ether");
 
   // the 'pending' flag here adds the most recent transaction
   const nonce = await web3.eth.getTransactionCount(sender_account, 'pending');
-  //get the gas limit by using estimageGas function (wei)
+
+  //rinkeby gas limit and gas price can be checked on rinkeby.io
   const gasLimit = '7904303';
 
-  //get the current gas price (wei)
-  const gasPrice = '40000000000';
+  //rinkeby current gas price is 1 gwei, setting to 10 will ensure priority mining
+  const gasPrice = '10000000000';
   console.log('gas price is', gasPrice);
 
   console.log('nonce is', nonce);
