@@ -68,18 +68,18 @@ function txBuilder({method, fromAddress, toAddress, nonce, functionSignature, va
  */
 
 let sender_account = "0xCb82438B0443593191ec05D07Bb9dBf6Eb73594C";
-let receiver_account = "0x5Fe24088bf36B689eEd9cCD8719dc266C69D8e43"
+let receiver_account = "0x30cA43c907144aAbdc6a7213E17472b1946C6f39"
 
 async function sendEther(contractMethod) {
   console.log('Account balance:',await web3.eth.getBalance(sender_account));
   //make the value dynamic if you like
-  const value = web3.utils.toWei('0.1', "ether");
+  const value = web3.utils.toWei('0.5', "ether");
   const nonce = await web3.eth.getTransactionCount(sender_account);
   //get the gas limit by using estimageGas function (wei)
-  const gasLimit = '2100000000000';
+  const gasLimit = '1000000';
 
   //get the current gas price (wei)
-  const gasPrice = await web3.eth.getGasPrice();
+  const gasPrice = '44652';
   console.log('gas price is', gasPrice);
   //get the nonce for the sending account
 
