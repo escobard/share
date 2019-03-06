@@ -1,7 +1,8 @@
 try{
     const router = require("express").Router();
     Web3 = require("web3"),
-    ShareABI = require("../constants/share_abi");
+    ShareABI = require("../constants/share_abi"),
+    Tx = require('ethereumjs-tx');
 
 // should be split up into middlewares for share 2.0
 
@@ -10,7 +11,8 @@ try{
 
 // utilized for local testing w/ ganache vs production w/ infura
 let runtime;
-let web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+
+// TODO need to migrate everything from: https://medium.com/coinmonks/ethereum-tutorial-sending-transaction-via-nodejs-backend-7b623b885707
 
 // TODO change to dev to fix
 if (process.env.NODE_ENV === 'devs') {
