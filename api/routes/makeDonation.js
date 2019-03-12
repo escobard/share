@@ -34,15 +34,11 @@ try {
     if (web3) {
       // ensures request.body.address exists
       if (req.body.address_pu) {
-
         // smart contract address
         let contract_account = "0x57486a5332ac3f2c82625a2a504ee6916f004e46";
 
         // defines the smart contract ABI
-        let share = await new web3.eth.Contract(
-          ShareABI,
-          contract_account
-        );
+        let share = await new web3.eth.Contract(ShareABI, contract_account);
 
         // defines default address, based on runtime
         // let accounts = await web3.eth.getAccounts()
@@ -66,8 +62,6 @@ try {
         console.log("INITIALIZED?", contractInitialized);
         // checks if contract has been initialized, if not initializes
 
-
-
         // owner address
         let owner_public = "0xCb82438B0443593191ec05D07Bb9dBf6Eb73594C";
 
@@ -76,10 +70,11 @@ try {
 
         // TODO - the passing of private addresses outside of a wallet needs to be eliminated entirely with share v2.0
         // donor address private
-        let donorPriv = "EBDB03D10DC7131D24D8A7154839937352A11AB43CC9EFC11EE9747DA562BD72";
+        let donorPriv =
+          "EBDB03D10DC7131D24D8A7154839937352A11AB43CC9EFC11EE9747DA562BD72";
 
         if (contractInitialized === false) {
-          console.log("Initializing Contract...");
+          console.log("Initializing Contract...", req.body);
 
           // TODO must be heavily refactored
           await sendEther(
@@ -96,28 +91,49 @@ try {
             .send({ from: ownerAccount });*/
         }
 
-        console.log("Contract initialized! Creating Donation...");
-
+        console.log("Contract initialized! Creating Donation...", req.body);
+        /*
         await sendEther(
           share.methods.makeDonation(),
           donorPub,
           donorPriv,
           contract_account,
           req.body.amount
-        );
+        ); */
         console.log("Donation created! Fetching ID...");
-        /*
-        let donationID = await share.methods.fetchDonationID().call();
 
-        // reduces donationID by 1 number, to fetch most recent donation
+        // using sendTransaction workaround
+        let donationID = await web3.eth.call({
+          to: contract_account,
+          from: owner_public,
+          data: share.methods.fetchDonationID.encodeABI()
+        });
+
+        console.log('DONATION ID', donationID);
         let currentDonation = donationID - 1;
 
         console.log("Donation ID:", currentDonation);
-        let donation = await share.methods.Donations(currentDonation).call();
-        */
+
+        let donation =
+        /*
+
+                // reduces donationID by 1 number, to fetch most recent donation
+
+                let donation = await share.methods.Donations(currentDonation).call();
+                */
 
         // console.log("DONATION:", donation)
         /* TODO - GANACHE METHOD - refactor for local dev
+
+        let donationID = await share.methods.fetchDonationID().call();
+
+                /*
+                // reduces donationID by 1 number, to fetch most recent donation
+                let currentDonation = donationID - 1;
+
+                console.log("Donation ID:", currentDonation);
+                let donation = await share.methods.Donations(currentDonation).call();
+                
                 let amount = web3.utils.toWei(req.body.amount, "ether");
 
                 await share.methods
@@ -127,7 +143,7 @@ try {
 ;
                 */
         // only the current donationID should be returned to the user
-        res.status(200).json("Working up to this point!");
+        res.status(200).json(currentDonation);
       } else {
         console.log(req.body);
         res
