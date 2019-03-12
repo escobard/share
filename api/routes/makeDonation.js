@@ -106,7 +106,7 @@ try {
           req.body.amount
         );
         console.log("Donation created! Fetching ID...");
-
+        /*
         let donationID = await share.methods.fetchDonationID().call();
 
         // reduces donationID by 1 number, to fetch most recent donation
@@ -114,8 +114,9 @@ try {
 
         console.log("Donation ID:", currentDonation);
         let donation = await share.methods.Donations(currentDonation).call();
+        */
 
-        console.log("DONATION:", donation)
+        // console.log("DONATION:", donation)
         /* TODO - GANACHE METHOD - refactor for local dev
                 let amount = web3.utils.toWei(req.body.amount, "ether");
 
