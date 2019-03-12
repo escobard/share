@@ -20,13 +20,12 @@ class App extends Component {
   };
 
   fetchDonation = donation => {
-
     // needs to be turned into a usable array of data to work with react
-    let donationArray = Object.keys(donation).map((key) => {
+    let donationArray = Object.keys(donation).map(key => {
       return [key, donation[key]];
     });
 
-    this.setState({ fetchedDonation: donationArray});
+    this.setState({ fetchedDonation: donationArray });
   };
 
   // TODO DonationID fetches should trigger a state update here to display fetchDonation form

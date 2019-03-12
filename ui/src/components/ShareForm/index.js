@@ -28,18 +28,20 @@ class ShareForm extends Component {
   submitForm = formName => {
 
     let parent = this;
-    let { value0, value1 } = this.state;
+    let { value0, value1, value2 } = this.state;
     let { makeDonation, fetchDonation } = apiRoutes;
     let headers = { "Access-Control-Allow-Origin": "*" };
 
+    // TODO - refactor this to parent component
     switch (formName) {
       case "make": {
         axios
           .post(
             makeDonation,
             {
-              address: value0,
-              amount: value1
+              addressPub: value0,
+              addressPriv: value1,
+              amount: value2
             },
             { headers }
           )
