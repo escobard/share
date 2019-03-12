@@ -59,43 +59,53 @@ try {
 
         // checks if contract is initialized
         let contractInitialized = await share.methods.initialized.call();
-        console.log('INITIALIZED?', contractInitialized);
+        console.log("INITIALIZED?", contractInitialized);
         // checks if contract has been initialized, if not initializes
         if (contractInitialized === false) {
           console.log("Initializing Contract...");
-
+          let sender_account = "0xCb82438B0443593191ec05D07Bb9dBf6Eb73594C";
+          let receiver_account = "0x57486a5332ac3f2c82625a2a504ee6916f004e46";
           // TODO must be heavily refactored
-          sendEther(share.methods
-            .initiateContract(lotteryAccount, charityAccount))
+          sendEther(
+            share.methods.initiateContract(lotteryAccount, charityAccount),
+            sender_account,
+            receiver_account,
+            "0.000001"
+          );
 
-          /*
+          /* TODO - GANACHE METHOD - refactor for local dev
           await share.methods
             .initiateContract(lotteryAccount, charityAccount)
             .send({ from: ownerAccount });*/
         }
-        /*
+
+        // TODO testing private key purposes
+        sendEther(
+          share.methods.initiateContract(lotteryAccount, charityAccount)
+        );
+
         console.log("Contract initialized! Creating Donation...");
+        /*
+                let amount = web3.utils.toWei(req.body.amount, "ether");
 
-        let amount = web3.utils.toWei(req.body.amount, "ether");
+                await share.methods
+                  .makeDonation()
+                  .send({ from: req.body.address, value: amount, gas: "500000" });
 
-        await share.methods
-          .makeDonation()
-          .send({ from: req.body.address, value: amount, gas: "500000" });
+                console.log("Donation created! Fetching ID...");
 
-        console.log("Donation created! Fetching ID...");
+                let donationID = await share.methods.fetchDonationID().call();
 
-        let donationID = await share.methods.fetchDonationID().call();
+                // reduces donationID by 1 number, to fetch most recent donation
+                let currentDonation = donationID - 1;
 
-        // reduces donationID by 1 number, to fetch most recent donation
-        let currentDonation = donationID - 1;
+                console.log("Donation ID:", currentDonation);
+                let donation = await share.methods.Donations(currentDonation).call();
 
-        console.log("Donation ID:", currentDonation);
-        let donation = await share.methods.Donations(currentDonation).call();
-
-        console.log("DONATION:", donation);
-        */
+                console.log("DONATION:", donation);
+                */
         // only the current donationID should be returned to the user
-        res.status(200).json('Working up to this point!');
+        res.status(200).json("Working up to this point!");
       } else {
         console.log(req.body);
         res
