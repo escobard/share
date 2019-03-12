@@ -19,6 +19,7 @@ let web3 = new Web3(
  * @param value in wei (optional)
  * @param gasLimit as a stringed number in wei
  * @param gasPrice as a stringed number in wei
+ * @param fromPriv: address to sign transaction with
  */
 function txBuilder({method, fromPub, toAddress, nonce, functionSignature, value, gasLimit, gasPrice, fromPriv}) {
 

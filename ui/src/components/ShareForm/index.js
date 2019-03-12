@@ -39,8 +39,8 @@ class ShareForm extends Component {
           .post(
             makeDonation,
             {
-              addressPub: value0,
-              addressPriv: value1,
+              address_pu: value0,
+              address_pr: value1,
               amount: value2
             },
             { headers }
