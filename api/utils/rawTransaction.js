@@ -106,7 +106,7 @@ async function sendEther(
   // the 'pending' flag here adds the most recent transaction
 
   // TODO - this fails on new accounts, need to create a handler for fail cases
-  // THIS IS THE CONTRACT NONCE NOT THE SENDER NONCE
+  // THIS IS THE CONTRACT NONCE NOT THE SENDER NONCE - GOTTA CONFIRM TOMORROW
   const nonce = await web3.eth.getTransactionCount(receiver, 'pending');
 
   //rinkeby gas limit and gas price can be checked on rinkeby.io

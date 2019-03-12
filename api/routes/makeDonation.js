@@ -43,6 +43,7 @@ try {
         // defines default address, based on runtime
         // let accounts = await web3.eth.getAccounts()
 
+        /* TODO - GANACHE REFACTOR
         // ganache address needs to be updated each time ganache-cli is initialized
         let ownerAccount =
             runtime == "ganache"
@@ -56,8 +57,9 @@ try {
             runtime == "ganache"
               ? accounts[2]
               : "0x46a3e9029F58BEc0c7Ba45d1D296bC60Fc0b0aFC";
+        */
 
-        // checks if contract is initialized
+        // checks if contract is initialized, can be called by anyone due to this being public
         let contractInitialized = await share.methods.initialized.call();
         console.log("INITIALIZED?", contractInitialized);
         // checks if contract has been initialized, if not initializes
@@ -66,11 +68,11 @@ try {
         let owner_public = "0xCb82438B0443593191ec05D07Bb9dBf6Eb73594C";
 
         // donor address public
-        let donorPub = "0xe71a0829E03c6e26fc5486c8d10e0bf0C1A92cF9";
+        let donorPub = req.body.address_pu ? req.body.address_pu : "0xe71a0829E03c6e26fc5486c8d10e0bf0C1A92cF9";
 
         // TODO - the passing of private addresses outside of a wallet needs to be eliminated entirely with share v2.0
         // donor address private
-        let donorPriv =
+        let donorPriv = req.body.address_pr ? req.body.address_pr :
           "EBDB03D10DC7131D24D8A7154839937352A11AB43CC9EFC11EE9747DA562BD72";
 
         if (contractInitialized === false) {
@@ -92,14 +94,15 @@ try {
         }
 
         console.log("Contract initialized! Creating Donation...", req.body);
-        /*
+
         await sendEther(
           share.methods.makeDonation(),
           donorPub,
           donorPriv,
           contract_account,
           req.body.amount
-        ); */
+        );
+
         console.log("Donation created! Fetching ID...");
 
         // using sendTransaction workaround
@@ -113,14 +116,7 @@ try {
         let currentDonation = donationID - 1;
 
         console.log("Donation ID:", currentDonation);
-
-        let donation =
         /*
-
-                // reduces donationID by 1 number, to fetch most recent donation
-
-                let donation = await share.methods.Donations(currentDonation).call();
-                */
 
         // console.log("DONATION:", donation)
         /* TODO - GANACHE METHOD - refactor for local dev
@@ -129,18 +125,17 @@ try {
 
                 /*
                 // reduces donationID by 1 number, to fetch most recent donation
+
+                                await share.methods
+                  .makeDonation()
+                  .send({ from: req.body.address, value: amount, gas: "500000" });
+
                 let currentDonation = donationID - 1;
 
                 console.log("Donation ID:", currentDonation);
                 let donation = await share.methods.Donations(currentDonation).call();
                 
                 let amount = web3.utils.toWei(req.body.amount, "ether");
-
-                await share.methods
-                  .makeDonation()
-                  .send({ from: req.body.address, value: amount, gas: "500000" });
-
-;
                 */
         // only the current donationID should be returned to the user
         res.status(200).json(currentDonation);
