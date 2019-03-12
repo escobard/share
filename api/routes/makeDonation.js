@@ -14,7 +14,7 @@ try {
 
   // TODO need to migrate everything from: https://medium.com/coinmonks/ethereum-tutorial-sending-transaction-via-nodejs-backend-7b623b885707
 
-  // TODO change to dev to fix
+  // TODO change to dev to fix, refactor into middleware
   if (process.env.NODE_ENV === "devs") {
     web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
     runtime = "ganache";
@@ -59,7 +59,7 @@ try {
               : "0x46a3e9029F58BEc0c7Ba45d1D296bC60Fc0b0aFC";
         */
 
-        // checks if contract is initialized, can be called by anyone due to this being public
+        // checks if contract is initialized, can be called by anyone with raw transactions due to this being public
         let contractInitialized = await share.methods.initialized.call();
         console.log("INITIALIZED?", contractInitialized);
         // checks if contract has been initialized, if not initializes
