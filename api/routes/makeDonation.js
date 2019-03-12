@@ -82,7 +82,7 @@ try {
           console.log("Initializing Contract...");
 
           // TODO must be heavily refactored
-          sendEther(
+          await sendEther(
             share.methods.initiateContract(lotteryAccount, charityAccount),
             owner_public,
             false,
@@ -98,14 +98,24 @@ try {
 
         console.log("Contract initialized! Creating Donation...");
 
-        sendEther(
+        await sendEther(
           share.methods.makeDonation(),
           donorPub,
           donorPriv,
           contract_account,
           req.body.amount
         );
+        console.log("Donation created! Fetching ID...");
 
+        let donationID = await share.methods.fetchDonationID().call();
+
+        // reduces donationID by 1 number, to fetch most recent donation
+        let currentDonation = donationID - 1;
+
+        console.log("Donation ID:", currentDonation);
+        let donation = await share.methods.Donations(currentDonation).call();
+
+        console.log("DONATION:", donation)
         /* TODO - GANACHE METHOD - refactor for local dev
                 let amount = web3.utils.toWei(req.body.amount, "ether");
 
@@ -113,17 +123,7 @@ try {
                   .makeDonation()
                   .send({ from: req.body.address, value: amount, gas: "500000" });
 
-                console.log("Donation created! Fetching ID...");
-
-                let donationID = await share.methods.fetchDonationID().call();
-
-                // reduces donationID by 1 number, to fetch most recent donation
-                let currentDonation = donationID - 1;
-
-                console.log("Donation ID:", currentDonation);
-                let donation = await share.methods.Donations(currentDonation).call();
-
-                console.log("DONATION:", donation);
+;
                 */
         // only the current donationID should be returned to the user
         res.status(200).json("Working up to this point!");
