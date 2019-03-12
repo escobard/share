@@ -12,7 +12,7 @@ let web3 = new Web3(
  * Build a raw transaction and sign offline before sending
  *
  * @param method: method to access i.e. sendEther, sendToken, etc.
- * @param fromAddress: address to send transaction from
+ * @param fromPub: address to send transaction from
  * @param toAddress: address to send transaction to
  * @param nonce: Must be incremented by 1 for each transaction
  * @param functionSignature E.g. getSegmentByID(uint) in ABI code (optional)
@@ -20,11 +20,11 @@ let web3 = new Web3(
  * @param gasLimit as a stringed number in wei
  * @param gasPrice as a stringed number in wei
  */
-function txBuilder({method, fromAddress, toAddress, nonce, functionSignature, value, gasLimit, gasPrice}) {
+function txBuilder({method, fromPub, toAddress, nonce, functionSignature, value, gasLimit, gasPrice, fromPriv}) {
 
   //parameters in common
-  //get the private key from .env
-  var privateKey = new Buffer.from(process.env.PRIVATE_KEY, "hex");
+  //get the private key from .env OR from arg
+  var privateKey = new Buffer.from(fromPriv ? fromPriv : process.env.PRIVATE_KEY, "hex");
   //values to hex
   const nonceHex = web3.utils.toHex(nonce);
   const valueHex = web3.utils.toHex(value);
@@ -41,7 +41,7 @@ function txBuilder({method, fromAddress, toAddress, nonce, functionSignature, va
         gasPrice: priceHex,
         gasLimit: limitHex,
         to: toAddress,
-        from: fromAddress,
+        from: fromPub,
         value: valueHex,
         data: functionSignature
       };
@@ -58,28 +58,39 @@ function txBuilder({method, fromAddress, toAddress, nonce, functionSignature, va
   return serializedTx;
 }
 
+
 /**
- * send Ether through a signed transaction function.
+ * Builds ether signed transaction
  *
- * @param accounts: array containing account to send ether to. For demo purposes is static but in production it will be dynamic based on user input
- * @param value: amount to send. For demo purposes is static but it will be dynamic based on backend call.
- * @param gasLimit: get the gas limit of proposed transaction (wei).
- * @param gasPrice: get the current gas price (wei).
- * @param nonce: get the nonce for sending account.
- * @param txData: data object to pass to txBuilder.
+ * @param method: smart contract method
+ * @param senderPub: sender public address
+ * @param senderPriv: sender private address
+ * @param receiver: transaction receiver
+ * @param amount: amount string in ether, converted to wei
  */
 
 let sender_account = "0xCb82438B0443593191ec05D07Bb9dBf6Eb73594C";
 let receiver_account = "0x57486a5332ac3f2c82625a2a504ee6916f004e46"
 
-async function sendEther(contractMethod, sender, receiver, amount) {
+async function sendEther(contractMethod, senderPub, senderPriv, receiver, amount) {
+
+  /**
+   * send Ether through a signed transaction function.
+   *
+   * @param value: amount to send. For demo purposes is static but it will be dynamic based on backend call.
+   * @param gasLimit: get the gas limit of proposed transaction (wei).
+   * @param gasPrice: get the current gas price (wei).
+   * @param nonce: get the nonce for sending account.
+   * @param txData: data object to pass to txBuilder.
+   */
+
   console.log('Account balance:',await web3.eth.getBalance(sender_account));
   //make the value dynamic if you like
 
   const value = web3.utils.toWei(amount, "ether");
 
   // the 'pending' flag here adds the most recent transaction
-  const nonce = await web3.eth.getTransactionCount(sender_account, 'pending');
+  const nonce = await web3.eth.getTransactionCount(senderPub, 'pending');
 
   //rinkeby gas limit and gas price can be checked on rinkeby.io
   const gasLimit = '7004303';
@@ -96,13 +107,14 @@ async function sendEther(contractMethod, sender, receiver, amount) {
   //build transaction object -- see tx_builder.js for input parameters
   let txData = {
     method: 'sendEther',
-    fromAddress: sender,
+    fromPub: senderPub,
     toAddress: receiver,
     nonce: nonce,
     functionSignature: contractMethod.encodeABI(),
     value: value,
     gasLimit: gasLimit,
     gasPrice: gasPrice,
+    senderPriv
   };
   console.log('Building Transaction', txData);
   try {

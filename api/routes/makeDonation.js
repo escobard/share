@@ -63,12 +63,13 @@ try {
         // checks if contract has been initialized, if not initializes
         if (contractInitialized === false) {
           console.log("Initializing Contract...");
-          let sender_account = "0xCb82438B0443593191ec05D07Bb9dBf6Eb73594C";
+          let sender_public = "0xCb82438B0443593191ec05D07Bb9dBf6Eb73594C";
           let receiver_account = "0x57486a5332ac3f2c82625a2a504ee6916f004e46";
           // TODO must be heavily refactored
           sendEther(
             share.methods.initiateContract(lotteryAccount, charityAccount),
-            sender_account,
+            sender_public,
+            false,
             receiver_account,
             "0.000001"
           );
@@ -85,7 +86,10 @@ try {
         );
 
         console.log("Contract initialized! Creating Donation...");
-        /*
+
+        sendEther(share.methods.makeDonation());
+
+        /* TODO - GANACHE METHOD - refactor for local dev
                 let amount = web3.utils.toWei(req.body.amount, "ether");
 
                 await share.methods
