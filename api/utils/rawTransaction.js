@@ -76,7 +76,7 @@ async function sendEther(contractMethod, sender, receiver, amount) {
   console.log('Account balance:',await web3.eth.getBalance(sender_account));
   //make the value dynamic if you like
 
-  const value = web3.utils.toWei('0.000001', "ether");
+  const value = web3.utils.toWei(amount, "ether");
 
   // the 'pending' flag here adds the most recent transaction
   const nonce = await web3.eth.getTransactionCount(sender_account, 'pending');
