@@ -34,10 +34,14 @@ try {
     if (web3) {
       // ensures request.body.address exists
       if (req.body.address) {
+
+        // smart contract address
+        let contract_account = "0x57486a5332ac3f2c82625a2a504ee6916f004e46";
+
         // defines the smart contract ABI
         let share = await new web3.eth.Contract(
           ShareABI,
-          "0x57486a5332ac3f2c82625a2a504ee6916f004e46"
+          contract_account
         );
 
         // defines default address, based on runtime
@@ -61,16 +65,28 @@ try {
         let contractInitialized = await share.methods.initialized.call();
         console.log("INITIALIZED?", contractInitialized);
         // checks if contract has been initialized, if not initializes
+
+
+
+        // owner address
+        let owner_public = "0xCb82438B0443593191ec05D07Bb9dBf6Eb73594C";
+
+        // donor address public
+        let donorPub = "0xa102c7EE530B635E56f133a20786091eB800f640";
+
+        // TODO - the passing of private addresses outside of a wallet needs to be eliminated entirely with share v2.0
+        // donor address private
+        let donorPriv = "1E8722F6E86B4E856B4BA2F75F492F4123242713E4E57C3789AFDCF2F631954A";
+
         if (contractInitialized === false) {
           console.log("Initializing Contract...");
-          let sender_public = "0xCb82438B0443593191ec05D07Bb9dBf6Eb73594C";
-          let receiver_account = "0x57486a5332ac3f2c82625a2a504ee6916f004e46";
+
           // TODO must be heavily refactored
           sendEther(
             share.methods.initiateContract(lotteryAccount, charityAccount),
-            sender_public,
+            owner_public,
             false,
-            receiver_account,
+            contract_account,
             "0.000001"
           );
 
@@ -80,14 +96,15 @@ try {
             .send({ from: ownerAccount });*/
         }
 
-        // TODO testing private key purposes
-        sendEther(
-          share.methods.initiateContract(lotteryAccount, charityAccount)
-        );
-
         console.log("Contract initialized! Creating Donation...");
 
-        sendEther(share.methods.makeDonation());
+        sendEther(
+          share.methods.makeDonation(),
+          donorPub,
+          donorPriv,
+          contract_account,
+          req.body.address
+        );
 
         /* TODO - GANACHE METHOD - refactor for local dev
                 let amount = web3.utils.toWei(req.body.amount, "ether");

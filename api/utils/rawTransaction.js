@@ -69,9 +69,6 @@ function txBuilder({method, fromPub, toAddress, nonce, functionSignature, value,
  * @param amount: amount string in ether, converted to wei
  */
 
-let sender_account = "0xCb82438B0443593191ec05D07Bb9dBf6Eb73594C";
-let receiver_account = "0x57486a5332ac3f2c82625a2a504ee6916f004e46"
-
 async function sendEther(contractMethod, senderPub, senderPriv, receiver, amount) {
 
   /**
@@ -84,7 +81,7 @@ async function sendEther(contractMethod, senderPub, senderPriv, receiver, amount
    * @param txData: data object to pass to txBuilder.
    */
 
-  console.log('Account balance:',await web3.eth.getBalance(sender_account));
+  console.log('Account balance:',await web3.eth.getBalance(senderPub));
   //make the value dynamic if you like
 
   const value = web3.utils.toWei(amount, "ether");
@@ -116,6 +113,7 @@ async function sendEther(contractMethod, senderPub, senderPriv, receiver, amount
     gasPrice: gasPrice,
     senderPriv
   };
+
   console.log('Building Transaction', txData);
   try {
     //pass transaction object to txBuilder to construct and sign using private key
