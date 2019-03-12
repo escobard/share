@@ -72,11 +72,11 @@ try {
         let owner_public = "0xCb82438B0443593191ec05D07Bb9dBf6Eb73594C";
 
         // donor address public
-        let donorPub = "0xa102c7EE530B635E56f133a20786091eB800f640";
+        let donorPub = "0xe71a0829E03c6e26fc5486c8d10e0bf0C1A92cF9";
 
         // TODO - the passing of private addresses outside of a wallet needs to be eliminated entirely with share v2.0
         // donor address private
-        let donorPriv = "1E8722F6E86B4E856B4BA2F75F492F4123242713E4E57C3789AFDCF2F631954A";
+        let donorPriv = "EBDB03D10DC7131D24D8A7154839937352A11AB43CC9EFC11EE9747DA562BD72";
 
         if (contractInitialized === false) {
           console.log("Initializing Contract...");
