@@ -25,5 +25,21 @@ The other purpose is to showcase my capabilities with the following:
 
 Lastly, this product will be used as the boilerplate for both the 6B (as share 1.0) and Capstone (as share 2.0) projects.
 
-## Reviewer 
+## Reviewer Considerations
+
+Please note that the `6A` criteria were accepted for my concept before the `criteria for 6B` were fleshed out by the Udacity team.
+
+This means that `smart contract complexity` is much simpler than the rubric requirements as `my application access control is 100% managed by the API layer`.
+
+I am painfully aware of the `security limitations` of the current ethereum layer by asking the user to `provide their account's private key to create a donation`.
+
+All `client facing` transactions will be handled via the `ui` in the capstone project to fix this, and as a result `the ethereum / smart contract layer will be updated using optimal security practices`.
+
+As you can probably tell, this product does a lot more than is required by using `complex ui and api handling raw transactions, as well as CI / unit testing` components, which I built largely in preparation for the capstone project, the criteria of the `6B project` as secondary.
+
+The point is = I am aware that this submission is very late for `6B certifications`, which is why I am handing in an arguable incomplete project.
+
+My hope is = Pass the project as is, with some feedback on areas of improvement (in the smart contract layer) so I can earn my certification and start working on `7A / 7B`. 
+
+My promise to you = Use my new knowledge of raw transactions to build an end to end (ui, api, ethereum, data oracle) secure platform to handle the original concept vision, for my Capstone project.
 
