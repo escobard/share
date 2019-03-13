@@ -8,6 +8,7 @@ let web3 = new Web3(
     "https://rinkeby.infura.io/v3/47c181283cb345c19697f9403531914c"
   )
 );
+
 /**
  * Build a raw transaction and sign offline before sending
  *
@@ -21,6 +22,7 @@ let web3 = new Web3(
  * @param gasPrice as a stringed number in wei
  * @param fromPriv: address to sign transaction with
  */
+
 function txBuilder({
   method,
   fromPub,

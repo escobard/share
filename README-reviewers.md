@@ -43,3 +43,24 @@ My hope is = Pass the project as is, with some feedback on areas of improvement 
 
 My promise to you = Use my new knowledge of raw transactions to build an end to end (ui, api, ethereum, data oracle) secure platform to handle the original concept vision, for my Capstone project.
 
+## Reviewer Information
+
+Contract address:
+
+Node Version:
+
+Truffle Version:
+
+Web3 version: 
+
+## Reviewer Test Accounts - Click text for rinkeby.etherscan link
+
+Owner account:
+
+Charity account:
+
+Lottery account:
+
+Donor test account 1:
+
+Donor test account 2:
