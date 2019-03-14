@@ -62,7 +62,7 @@ class ShareForm extends Component {
         axios
           .post(
             fetchDonation,
-            {address_pu: value0, id: value1},
+            {address_pu: value0.toUpperCase(), id: value1},
             { headers }
           )
           .then(response => {

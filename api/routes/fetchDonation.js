@@ -1,6 +1,6 @@
-const router = require("express").Router();
-(Web3 = require("web3")),
-  (protocolSetup = require("../middlewares/protocolSetup"));
+const router = require("express").Router(),
+  protocolSetup = require("../middlewares/protocolSetup"),
+  sendEther = require("../utils/rawTransaction");
 
 router.post("/", protocolSetup, async (req, res) => {
   let {
@@ -8,7 +8,7 @@ router.post("/", protocolSetup, async (req, res) => {
     share,
     call,
     body: { address_pu, id },
-    accounts: { owner_pu, owner_pr, charity_pu, lottery_pu },
+    accounts: { owner_pu, charity_pu, lottery_pu },
     contract: { contract_pu }
   } = req;
   // ensures web3 instance is available, may want to consider moving all intial web3 logic outside of the route
@@ -31,12 +31,13 @@ router.post("/", protocolSetup, async (req, res) => {
         );
       }
 
-      console.log("Contract initialized! Fetching donationID");
+      console.log("Contract initialized! Fetching donationID", contractInitialized);
 
       let donationID = await call(
         contract_pu,
         owner_pu,
-        share.methods.fetchDonationID.encodeABI()
+        share.methods.fetchDonationID.encodeABI(),
+        web3
       );
 
       // checks if contract has not store any donations, donationID will be 1 by default
@@ -48,15 +49,18 @@ router.post("/", protocolSetup, async (req, res) => {
           );
       }
 
-      console.log("Initialization complete! Fetching donation...");
+      console.log("Initialization complete! Fetching donation...", donationID);
 
       let donation = await call(
         contract_pu,
         owner_pu,
-        share.methods.Donations(id).encodeABI()
+        share.methods.Donations(id).encodeABI(),
+        web3
       );
 
-      console.log("DONATION:", donation);
+      donation = web3.toAscii(donation);
+
+      console.log("DONATION:", donation );
 
 
       // TODO - refactor into utils/shareUtils.js
@@ -76,7 +80,7 @@ router.post("/", protocolSetup, async (req, res) => {
           ownerAmount,
           donationID
         } = donation;
-        console.log("DONATION DONOR:", donor);
+        console.log("DONATION DONOR:", donation[11]);
         console.log("DONATION ADDRESS:", address);
         switch (true) {
           // returns all data if requester is donation owner

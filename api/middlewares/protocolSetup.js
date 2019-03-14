@@ -3,7 +3,7 @@ let etherUtils = require("../utils/etherUtils");
 module.exports = async (req, res, next) => {
 
   // init utils class
-  let eUtils = new etherUtils();
+  let eUtils = new etherUtils;
 
   // set web3
   req.web3 = await eUtils.web3;
@@ -12,12 +12,14 @@ module.exports = async (req, res, next) => {
   req.share = await eUtils.setContract();
 
   // call util
-  req.call = eUtils.callContract();
+  req.call = await eUtils.callContract;
 
   // sets accounts
   req.accounts = eUtils.accounts;
 
   req.contract = eUtils.contract;
+
+
 
   next();
 };
