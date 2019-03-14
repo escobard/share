@@ -8,6 +8,7 @@ try {
     let {
       web3,
       share,
+      call,
       body: { address_pu, address_pr, amount },
       accounts: { owner_pu, owner_pr, charity_pu, lottery_pu },
       contract: { contract_pu }
@@ -17,7 +18,6 @@ try {
       // ensures request.body.address exists
 
       if (address_pu) {
-
         /* TODO - GANACHE REFACTOR
         // ganache address needs to be updated each time ganache-cli is initialized
         let ownerAccount =
@@ -41,27 +41,30 @@ try {
 
         console.log("INITIALIZED?", contractInitialized);
 
-       // donor address public
-       let donorPub = address_pu ? address_pu : "0xe71a0829E03c6e26fc5486c8d10e0bf0C1A92cF9";
+        // donor address public
+        let donorPub = address_pu
+          ? address_pu
+          : "0xe71a0829E03c6e26fc5486c8d10e0bf0C1A92cF9";
 
-       // TODO - the passing of private addresses outside of a wallet needs to be eliminated entirely with share v2.0
-       // donor address private
-       let donorPriv = address_pr ? address_pr :
-         "EBDB03D10DC7131D24D8A7154839937352A11AB43CC9EFC11EE9747DA562BD72";
+        // TODO - the passing of private addresses outside of a wallet needs to be eliminated entirely with share v2.0
+        // donor address private
+        let donorPriv = address_pr
+          ? address_pr
+          : "EBDB03D10DC7131D24D8A7154839937352A11AB43CC9EFC11EE9747DA562BD72";
 
-       if (contractInitialized === false) {
-         console.log("Initializing Contract...", req.body);
+        if (contractInitialized === false) {
+          console.log("Initializing Contract...", req.body);
 
-         // TODO must be heavily refactored
-         await sendEther(
-           share.methods.initiateContract(lottery_pu, charity_pu),
-           owner_pu,
-           false,
-           contract_pu,
-           "0.000001"
-         );
+          // TODO must be heavily refactored
+          await sendEther(
+            share.methods.initiateContract(lottery_pu, charity_pu),
+            owner_pu,
+            false,
+            contract_pu,
+            "0.000001"
+          );
 
-         /* TODO - GANACHE METHOD - refactor for local dev
+          /* TODO - GANACHE METHOD - refactor for local dev
          await share.methods
            .initiateContract(lotteryAccount, charityAccount)
            .send({ from: ownerAccount }); */
@@ -82,13 +85,13 @@ try {
         // TODO - refactor into utils directory, into its own util
 
         // using sendTransaction workaround
-        let donationID = await web3.eth.call({
-          to: contract_pu,
-          from: owner_pu,
-          data: share.methods.fetchDonationID.encodeABI()
-        });
+        let donationID = await call(
+          contract_pu,
+          owner_pu,
+          share.methods.fetchDonationID.encodeABI()
+        );
 
-        console.log('DONATION ID', donationID);
+        console.log("DONATION ID", donationID);
         let currentDonation = donationID - 1;
 
         console.log("Donation ID:", currentDonation);

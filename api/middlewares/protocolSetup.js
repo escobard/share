@@ -11,6 +11,9 @@ module.exports = async (req, res, next) => {
   // set contracts
   req.share = await eUtils.setContract();
 
+  // call util
+  req.call = eUtils.callContract;
+
   // sets accounts
   req.accounts = eUtils.accounts;
 

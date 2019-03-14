@@ -68,6 +68,12 @@ class etherUtils {
     return await web3.eth.Contract(contract_abi, contract_pu);
   }
 
+  async callContract(to, from, data){
+    let web3 = await this.web3;
+
+    return await web3.eth.call({ to, from, data});
+  }
+
 }
 
 module.exports=etherUtils;
