@@ -36,7 +36,7 @@ function txBuilder({
 }) {
   //parameters in common
   //get the private key from .env OR from arg
-  var privateKey = new Buffer.from(
+  let privateKey = new Buffer.from(
     fromPriv ? fromPriv : process.env.PRIVATE_KEY,
     "hex"
   );
@@ -63,12 +63,15 @@ function txBuilder({
       break;
   }
   //new ethereumjs-tx
-  var tx = new Tx(rawTx);
+  let tx = new Tx(rawTx);
+  
   console.log("raw TXT", tx);
+  
   //sign transaction
   tx.sign(privateKey);
+  
   //serialize transaction
-  var serializedTx = tx.serialize();
+  let serializedTx = tx.serialize();
 
   return serializedTx;
 }

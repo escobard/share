@@ -14,5 +14,7 @@ module.exports = async (req, res, next) => {
   // sets accounts
   req.accounts = eUtils.accounts;
 
+  req.contract = eUtils.contract;
+
   next();
 };
