@@ -5,19 +5,18 @@ try {
     sendEther = require("../utils/rawTransaction");
 
   router.post("/", protocolSetup, async (req, res) => {
-    let { web3 } = req;
+    let { web3, share, body: { address_pu } } = req;
     // ensures web3 instance is available, may want to consider moving all intial web3 logic outside of the route
     console.log('ACTIVATED', web3)
     if (web3) {
       // ensures request.body.address exists
 
-      if (req.body.address_pu) {
+      if (address_pu) {
         // smart contract address
         let contract_account = "0x57486a5332ac3f2c82625a2a504ee6916f004e46";
 
         // TODO - refactor into setContract()
         // defines the smart contract ABI
-        let share = await new web3.eth.Contract(ShareABI, contract_account);
 
         // defines default address, based on runtime
         // let accounts = await web3.eth.getAccounts()
