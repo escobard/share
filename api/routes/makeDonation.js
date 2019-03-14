@@ -1,7 +1,6 @@
 try {
   const router = require("express").Router(),
     protocolSetup = require("../middlewares/protocolSetup"),
-    ShareABI = require("../constants/share_abi"),
     sendEther = require("../utils/rawTransaction");
 
   router.post("/", protocolSetup, async (req, res) => {
@@ -82,7 +81,7 @@ try {
 
         console.log("Donation created! Fetching ID...");
 
-        // TODO - refactor into utils directory, into its own util
+        // TODO - refactor into utils/shareUtils.js
 
         // using sendTransaction workaround
         let donationID = await call(

@@ -12,7 +12,7 @@ module.exports = async (req, res, next) => {
   req.share = await eUtils.setContract();
 
   // call util
-  req.call = eUtils.callContract;
+  req.call = eUtils.callContract();
 
   // sets accounts
   req.accounts = eUtils.accounts;

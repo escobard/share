@@ -10,7 +10,7 @@
   "devDependencies": {},
   "scripts": {
     "test": "concurrently --names \"UI,API\" \"npm run test --prefix ui\" \"npm run test --prefix api\" ",
-    "build": "concurrently --names \"UI,API\" \"yarn install --prefix ui\" \"npm run install --prefix api\" ",
+    "init": "concurrently --names \"UI,API\" \"npm run install --prefix ui\" \"npm run install --prefix api\" ",
     "start": "concurrently --names \"UI,API\" \"npm run start --prefix ui\" \"npm run start --prefix api\" ",
     "dev": "concurrently --names \"UI,API\" \"npm run start --prefix ui\" \"npm run dev --prefix api\" "
   },
