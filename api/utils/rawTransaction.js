@@ -36,6 +36,7 @@ function txBuilder({
 }) {
   //parameters in common
   //get the private key from .env OR from arg
+  console.log('FROMPRIV', fromPriv)
   let privateKey = new Buffer.from(
     fromPriv ? fromPriv : process.env.PRIVATE_KEY,
     "hex"

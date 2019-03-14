@@ -13,7 +13,6 @@ try {
       contract: { contract_pu }
     } = req;
     // ensures web3 instance is available, may want to consider moving all intial web3 logic outside of the route
-    console.log("ACTIVATED", web3);
     if (web3) {
       // ensures request.body.address exists
 

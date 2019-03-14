@@ -39,7 +39,7 @@ class ShareForm extends Component {
           .post(
             makeDonation,
             {
-              address_pu: value0,
+              address_pu: value0.toUpperCase(),
               address_pr: value1,
               amount: value2
             },
