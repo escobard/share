@@ -74,7 +74,7 @@ contract Share {
     function makeDonation() public payable{
 
         // owner, charity, and lottery accounts cannot utilize the handleFunds function
-        require(msg.sender != Owner || msg.sender != Lottery || msg.sender != Charity);
+        require(msg.sender != Owner || msg.sender != Lottery || msg.sender != Charity || initialized == true);
 
         // creates the amount variable, used to set the amount later on in this function
         // these math. functions can be move to the API to avoid gas cost for calculations

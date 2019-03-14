@@ -1,8 +1,9 @@
 /**
  * Builds a temporary in memory util to create an intermediate web3 provider
  *
- * @param ow
- * @param fromPub: address to send transaction from
+ * @dev to be gradually improved over time with new route helpers
+ * @param contract: address of the smart contract
+ * @param
  */
 
 class etherUtils {
@@ -13,5 +14,7 @@ class etherUtils {
   web3Provider(){}
 
   setAccounts(){}
+
+  setContract(){}
 
 }
