@@ -25,8 +25,15 @@ const makeDonationFields = [
 const fetchDonationFields = [
   {
     name: "address",
-    label: "Address",
-    placeholder: "Donor's public address",
+    label: "Address Public",
+    placeholder: "Enter user's public address",
+    value: "",
+    error: false
+  },
+  {
+    name: "id",
+    label: "Donation ID",
+    placeholder: "Enter the Donation ID",
     value: "",
     error: false
   }
