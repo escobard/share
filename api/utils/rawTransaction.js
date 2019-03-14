@@ -113,10 +113,10 @@ async function sendEther(
 
   // TODO - this fails on new accounts, need to create a handler for fail cases
   // THIS IS THE CONTRACT NONCE NOT THE SENDER NONCE - GOTTA CONFIRM TOMORROW
-  const nonce = await web3.eth.getTransactionCount(receiver, 'pending');
+  const nonce = await web3.eth.getTransactionCount(senderPub, 'pending');
 
   //rinkeby gas limit and gas price can be checked on rinkeby.io
-  const gasLimit = "7004303";
+  const gasLimit = "6004303";
 
   //rinkeby current gas price is 1 gwei, setting to 10 will ensure priority mining
   const gasPrice = "20000000000";
@@ -130,13 +130,14 @@ async function sendEther(
   let txData = {
     method: "sendEther",
     fromPub: senderPub,
+    fromPriv: senderPriv,
     toAddress: receiver,
     nonce: nonce,
     functionSignature: contractMethod.encodeABI(),
     value: value,
     gasLimit: gasLimit,
     gasPrice: gasPrice,
-    senderPriv
+
   };
 
   console.log("Building Transaction", txData);
