@@ -9,7 +9,9 @@ import { makeDonationFields, fetchDonationFields } from "./constants";
 
 class App extends Component {
   state = {
-    donationID: false,
+
+    // TODO setting to true to always display fetch form in case reviewer does not want to make a donation
+    donationID: true,
     donorAddress: false,
     fetchedDonation: false
   };

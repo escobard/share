@@ -74,6 +74,7 @@ class etherUtils {
     return await web3.eth.call({ to, from, data});
   }
 
+  // TODO refactor rawTransaction util into this file
 }
 
 module.exports=etherUtils;

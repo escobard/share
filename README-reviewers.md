@@ -64,3 +64,26 @@ Lottery account:
 Donor test account 1:
 
 Donor test account 2:
+
+## Usage instructions:
+
+The application has two forms, both interact with the smart contract as outlined in the UML concept charts.
+
+### Make Donation
+
+This form expects 3 values:
+    - ethereum account public address.
+    - ethereum account private address.
+    - donation amount in ether.
+
+IMPORTANT: There is 0 validation on the UI form for v1.0, but this will be addressed in v2.0. If you want to make a donation, you are welcome to use the donor test accounts listed above.
+
+### Fetch donation
+
+This form expects 2 values:
+    - donor / charity / lottery public address.
+    - the donation ID.
+
+You can enter a donation ID number to fetch the donation data from the smart contract. If the address provided matches the donation ID, the API will return donation data relevant to the user, based on if the user is the charity, lottery, or donor of the specific donation.
+
+You can check the number of donations the contract currently has by visiting the link to the contract address above.
