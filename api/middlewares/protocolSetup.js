@@ -7,7 +7,6 @@ module.exports = async (req, res, next) => {
 
   // set web3
   req.web3 = await eUtils.web3;
-  console.log('web3')
 
   // set contracts
   req.share = await eUtils.setContract();
