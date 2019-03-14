@@ -25,20 +25,22 @@ class etherUtils {
       contract_abi: ShareABI
     }
 
-    this.web3Provider();
+    this.web3 = this.web3Provider();
 
   }
 
   async web3Provider(){
 
-    this.web3 = await new Web3(
+    let web3 = await new Web3(
       new Web3.providers.HttpProvider(
         "https://rinkeby.infura.io/v3/47c181283cb345c19697f9403531914c"
       )
     );
 
     this.runtime = "infura";
-    console.log("Infura provider initiated!");
+    return web3;
+
+    console.log("Infura provider initiated!", this.web3);
 
     /* TODO - GANACHE - connects to ganache if dev, commented out for v1.0
     if (process.env.NODE_ENV === "dev") {
@@ -59,7 +61,7 @@ class etherUtils {
 
   async setContract(){
 
-    let { contract_abi, contract_pu } = this.contract
+    let { contract: {contract_abi, contract_pu}} = this
 
     return await web3.eth.Contract(contract_abi, contract_pu);
   }
