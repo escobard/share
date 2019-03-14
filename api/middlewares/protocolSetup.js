@@ -6,8 +6,9 @@ module.exports = async (req, res, next) => {
   let eUtils = new etherUtils();
 
   // set web3
-  eUtils.
+  let web3 = await eUtils.web3;
 
   // set contracts
+  let share = await eUtils.setContract();
 
 };
