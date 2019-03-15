@@ -28,18 +28,20 @@ class ShareForm extends Component {
   submitForm = formName => {
 
     let parent = this;
-    let { value0, value1 } = this.state;
+    let { value0, value1, value2 } = this.state;
     let { makeDonation, fetchDonation } = apiRoutes;
     let headers = { "Access-Control-Allow-Origin": "*" };
 
+    // TODO - refactor this to parent component
     switch (formName) {
       case "make": {
         axios
           .post(
             makeDonation,
             {
-              address: value0,
-              amount: value1
+              address_pu: value0.toUpperCase(),
+              address_pr: value1,
+              amount: value2
             },
             { headers }
           )
@@ -60,7 +62,7 @@ class ShareForm extends Component {
         axios
           .post(
             fetchDonation,
-            {address: parent.props.donorAddress, id: value0},
+            {address_pu: value0.toUpperCase(), id: value1},
             { headers }
           )
           .then(response => {

@@ -1,5 +1,5 @@
 pragma solidity ^0.4.23;
-
+pragma experimental ABIEncoderV2;
 // add all imports for user privileges here
 
 contract Share {
@@ -28,7 +28,7 @@ contract Share {
     /// @param charityAmount, contains the remaining 95% of original amount sent to charity
     /// @param lotteryAmount uint, contains the 4% of original amount sent to lottery
     /// @param ownerAmount, contains the 1% of original amount sent to owner
-    /// @param donationID, contains the value of the last submitted donation - is returned to ui
+    /// @param id, contains the value of the last submitted donation - is returned to ui
 
     struct Donation {
         address owner;
@@ -39,7 +39,7 @@ contract Share {
         uint charityAmount;
         uint lotteryAmount;
         uint ownerAmount;
-        uint donationID;
+        uint id;
     }
 
     /// @notice Contains the mapping for the lottery entrees
@@ -52,7 +52,7 @@ contract Share {
     /// @dev key of structure is the transactionHash, in v2.0 a donationId will be introduced
     /// @param Donation structure, contains donation metadata
 
-    mapping(uint => Donation) public Donations;
+    mapping(uint => Donation) private Donations;
 
     /// @notice Initiates the contract once deployed, only available to owner
     /// @dev Need to test the syntax here, unsure the require function works
@@ -61,8 +61,7 @@ contract Share {
 
     function initiateContract(address _lottery, address _charity) public payable{
 
-        // must test to ensure this works, unsure of syntax
-        require(msg.sender == Owner);
+        require(msg.sender == Owner && initialized == false);
 
         Lottery = _lottery;
         Charity = _charity;
@@ -75,7 +74,7 @@ contract Share {
     function makeDonation() public payable{
 
         // owner, charity, and lottery accounts cannot utilize the handleFunds function
-        require(msg.sender != Owner || msg.sender != Lottery || msg.sender != Charity);
+        require(msg.sender != Owner || msg.sender != Lottery || msg.sender != Charity || initialized == true);
 
         // creates the amount variable, used to set the amount later on in this function
         // these math. functions can be move to the API to avoid gas cost for calculations
@@ -103,6 +102,23 @@ contract Share {
         require(msg.sender == Owner);
 
         return donationID;
+    }
+
+    function fetchDonation(uint _id) public view returns (address owner,
+        address lottery,
+        address charity,
+        address donor,
+        uint amount,
+        uint charityAmount,
+        uint lotteryAmount,
+        uint ownerAmount,
+        uint id){
+
+        // requires the owner to call this function, only owner address can access donationID atm
+        require(msg.sender == Owner);
+
+        Donation memory donation = Donations[_id];
+        return ( donation.owner, donation.lottery, donation.charity, donation.donor, donation.amount, donation.charityAmount, donation.lotteryAmount, donation.ownerAmount, donation.id);
     }
 
 }

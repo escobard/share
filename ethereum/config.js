@@ -1,3 +1,3 @@
-const mnemonic = "kiss vintage describe snake barrel dream almost chronic jewel vicious scene base";
+const mnemonic = "blast ankle swift novel silk liberty blue garage loan robot enjoy energy";
 
 module.exports = mnemonic;
