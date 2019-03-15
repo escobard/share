@@ -9,7 +9,7 @@ router.post("/", protocolSetup, async (req, res) => {
     call,
     body: { address_pu, id },
     accounts: { owner_pu, charity_pu, lottery_pu },
-    contract: { contract_pu }
+    contract: { contract_pu, contract_abi }
   } = req;
   // ensures web3 instance is available, may want to consider moving all intial web3 logic outside of the route
   if (web3) {
@@ -19,7 +19,7 @@ router.post("/", protocolSetup, async (req, res) => {
       let contractInitialized = await share.methods.initialized.call();
 
       if (contractInitialized === false) {
-        console.log("Initializing Contract...", req.body);
+        console.log("Initializing Contract...", req.accounts);
 
         // TODO must be heavily refactored
         await sendEther(
@@ -31,14 +31,10 @@ router.post("/", protocolSetup, async (req, res) => {
         );
       }
 
-      console.log("Contract initialized! Fetching donationID", contractInitialized);
+      console.log("Contract initialized! Fetching donationID", req.accounts);
 
-      let donationID = await call(
-        contract_pu,
-        owner_pu,
-        share.methods.fetchDonationID.encodeABI(),
-        web3
-      );
+      // this requires the OWNER to be the CALL FROM address otherwise throws an error as expected by access priviledge from smart contract
+      let donationID = await share.methods.fetchDonationID.call({from: owner_pu})
 
       // checks if contract has not store any donations, donationID will be 1 by default
       if (donationID === 1) {
@@ -51,17 +47,7 @@ router.post("/", protocolSetup, async (req, res) => {
 
       console.log("Initialization complete! Fetching donation...", donationID);
 
-      let donation = await call(
-        contract_pu,
-        owner_pu,
-        share.methods.Donations(id).encodeABI(),
-        web3
-      );
-
-      donation = web3.toAscii(donation);
-
-      console.log("DONATION:", donation );
-
+      let donation = await share.methods.Donations(id).call({from: owner_pu});
 
       // TODO - refactor into utils/shareUtils.js
       // handles the access control of the smart contract data
@@ -80,8 +66,6 @@ router.post("/", protocolSetup, async (req, res) => {
           ownerAmount,
           donationID
         } = donation;
-        console.log("DONATION DONOR:", donation[11]);
-        console.log("DONATION ADDRESS:", address);
         switch (true) {
           // returns all data if requester is donation owner
           // must be set to lowercase, solidity stores all address hashes in uppercase

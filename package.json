@@ -4,7 +4,9 @@
   "description": "ethereum peer-to-peer rewards platform with charitable contributions",
   "main": "index.js",
   "dependencies": {
+    "abi-decoder": "^1.2.0",
     "concurrently": "^4.1.0",
+    "ethereum-input-data-decoder": "^0.1.1",
     "prettier": "^1.16.4"
   },
   "devDependencies": {},

@@ -83,12 +83,8 @@ try {
 
         // TODO - refactor into utils/shareUtils.js
 
-        // using sendTransaction workaround
-        let donationID = await call(
-          contract_pu,
-          owner_pu,
-          share.methods.fetchDonationID.encodeABI()
-        );
+        // using ABI workaround instead of raw call transaction
+        let donationID = await share.methods.fetchDonationID.call({from: owner_pu})
 
         console.log("DONATION ID", donationID);
         let currentDonation = donationID - 1;

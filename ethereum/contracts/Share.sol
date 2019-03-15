@@ -52,7 +52,7 @@ contract Share {
     /// @dev key of structure is the transactionHash, in v2.0 a donationId will be introduced
     /// @param Donation structure, contains donation metadata
 
-    mapping(uint => Donation) public Donations;
+    mapping(uint => Donation) private Donations;
 
     /// @notice Initiates the contract once deployed, only available to owner
     /// @dev Need to test the syntax here, unsure the require function works
@@ -97,6 +97,14 @@ contract Share {
     }
     
     function fetchDonationID() public view returns (uint){
+
+        // requires the owner to call this function, only owner address can access donationID atm
+        require(msg.sender == Owner);
+
+        return donationID;
+    }
+
+    function fetchDonations() public view returns (uint){
 
         // requires the owner to call this function, only owner address can access donationID atm
         require(msg.sender == Owner);
