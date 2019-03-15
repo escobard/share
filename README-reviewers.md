@@ -55,15 +55,15 @@ Web3 version:
 
 ## Reviewer Test Accounts - Click text for rinkeby.etherscan link
 
-Owner account:
+Owner account: [https://rinkeby.etherscan.io/address/0xcb82438b0443593191ec05d07bb9dbf6eb73594c]
 
-Charity account:
+Charity account: [https://rinkeby.etherscan.io/address/0x9b41db553536d504d16bc6b8d00bca9255522242]
 
-Lottery account:
+Lottery account: [https://rinkeby.etherscan.io/address/0x46a3e9029f58bec0c7ba45d1d296bc60fc0b0afc]
 
-Donor test account 1:
+Donor test account 1: [https://rinkeby.etherscan.io/address/0xa102c7ee530b635e56f133a20786091eb800f640] - PRIVATE KEY: `1E8722F6E86B4E856B4BA2F75F492F4123242713E4E57C3789AFDCF2F631954A`
 
-Donor test account 2:
+Donor test account 2: [https://rinkeby.etherscan.io/address/0xe71a0829e03c6e26fc5486c8d10e0bf0c1a92cf9] - PRIVATE KEY: `EBDB03D10DC7131D24D8A7154839937352A11AB43CC9EFC11EE9747DA562BD72`
 
 ## Usage instructions:
 
