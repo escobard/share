@@ -22,11 +22,13 @@ class App extends Component {
   };
 
   fetchDonation = donation => {
+
+
     // needs to be turned into a usable array of data to work with react
     let donationArray = Object.keys(donation).map(key => {
       return [key, donation[key]];
     });
-
+    console.log('DONATION', donationArray)
     this.setState({ fetchedDonation: donationArray });
   };
 
