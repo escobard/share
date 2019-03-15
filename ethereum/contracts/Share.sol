@@ -1,5 +1,5 @@
 pragma solidity ^0.4.23;
-
+pragma experimental ABIEncoderV2;
 // add all imports for user privileges here
 
 contract Share {
@@ -28,7 +28,7 @@ contract Share {
     /// @param charityAmount, contains the remaining 95% of original amount sent to charity
     /// @param lotteryAmount uint, contains the 4% of original amount sent to lottery
     /// @param ownerAmount, contains the 1% of original amount sent to owner
-    /// @param donationID, contains the value of the last submitted donation - is returned to ui
+    /// @param id, contains the value of the last submitted donation - is returned to ui
 
     struct Donation {
         address owner;
@@ -39,7 +39,7 @@ contract Share {
         uint charityAmount;
         uint lotteryAmount;
         uint ownerAmount;
-        uint donationID;
+        uint id;
     }
 
     /// @notice Contains the mapping for the lottery entrees
@@ -104,12 +104,21 @@ contract Share {
         return donationID;
     }
 
-    function fetchDonations() public view returns (uint){
+    function fetchDonation(uint _id) public view returns (address owner,
+        address lottery,
+        address charity,
+        address donor,
+        uint amount,
+        uint charityAmount,
+        uint lotteryAmount,
+        uint ownerAmount,
+        uint id){
 
         // requires the owner to call this function, only owner address can access donationID atm
         require(msg.sender == Owner);
 
-        return donationID;
+        Donation memory donation = Donations[_id];
+        return ( donation.owner, donation.lottery, donation.charity, donation.donor, donation.amount, donation.charityAmount, donation.lotteryAmount, donation.ownerAmount, donation.id);
     }
 
 }

@@ -79,7 +79,7 @@ contract("Share", accounts => {
         
         it("donor can fetch donation by donationID", async () => {
                 await this.contract.makeDonation({from: donor, value: amount});
-                let fetchedDonation = await this.contract.Donations(1)
+                let fetchedDonation = await this.contract.fetchDonation(1, {from: owner})
                 console.log(fetchedDonation);
 
                 // need to assert each output, due to how number amounts are returned from solidity

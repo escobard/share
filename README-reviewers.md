@@ -84,6 +84,12 @@ This form expects 2 values:
     - donor / charity / lottery public address.
     - the donation ID.
 
+IMPORTANT: there is 0 validation on this form as well on the UI side, only valid entries will return valuable outputs.
+
 You can enter a donation ID number to fetch the donation data from the smart contract. If the address provided matches the donation ID, the API will return donation data relevant to the user, based on if the user is the charity, lottery, or donor of the specific donation.
 
 You can check the number of donations the contract currently has by visiting the link to the contract address above.
+
+Test address / donation ID:
+address: `0xCb82438B0443593191ec05D07Bb9dBf6Eb73594C`
+id: `1` - up to 8 so far, can fetch all via the owner address
