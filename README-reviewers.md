@@ -2,6 +2,21 @@
 
 This project's ethereum logic is based largely off the logic developed here: https://github.com/escobard/blockchains-nd-term1/tree/master/part4/project5
 
+## Installation
+
+1) run `npm install` in this directory.
+2) run `npm run init` in this directory.
+
+## Run locally
+
+1) for local staging, run `npm run start` in this directory.
+2) for local development, run `npm run dev` in this directory.
+
+## Test contracts with Truffle
+
+1) navigate to the ethereum directory with `cd ethereum`.
+2) run `truffle develop` then type `test`.
+
 ## Project Criteria
 
 The main purpose of this product is to develop a production ready web application, that interacts with the rinkeby test network to create a donation platform using the ethereum protocol.
