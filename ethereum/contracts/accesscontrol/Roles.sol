@@ -1,5 +1,7 @@
 pragma solidity ^0.4.24;
 
+// TODO - potentially use this for role addition, most likely not however as this needlessly complicates the contract
+
 /**
  * @title Roles
  * @dev Library for managing addresses assigned to a Role.
