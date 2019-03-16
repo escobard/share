@@ -5,7 +5,8 @@ This project's ethereum logic is based largely off the logic developed here: htt
 ## Installation
 
 1) run `npm install` in this directory.
-2) run `npm run init` in this directory.
+2) run `npm install` in the UI directory.
+3) run `npm install` in the API directory.
 
 ## Run locally
 
@@ -60,13 +61,13 @@ My promise to you = Use my new knowledge of raw transactions to build an end to 
 
 ## Reviewer Information
 
-Contract address:
+Contract address:[https://rinkeby.etherscan.io/address/0x57486a5332ac3f2c82625a2a504ee6916f004e46]
 
-Node Version:
+Node Version: v10.14.1 
 
-Truffle Version:
+Truffle Version: v4.1.15
 
-Web3 version: 
+Web3 version: ^1.0.0-beta.46
 
 ## Reviewer Test Accounts - Click text for rinkeby.etherscan link
 
