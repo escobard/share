@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node index.js",
     "dev": "SET NODE_ENV=dev & nodemon index.js",
-    "test": "nyc mocha tests/routes/*.js"
+    "test": "nyc mocha tests/routes/*.js",
+    "install": "npm run install"
   },
   "engines": {
     "node": "10.x",
