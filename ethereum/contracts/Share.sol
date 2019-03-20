@@ -2,12 +2,14 @@ pragma solidity ^0.4.23;
 pragma experimental ABIEncoderV2;
 // add all imports for user privileges here
 
+import * as charityUtil from "./accesscontrol/CharityRole.sol";
+
 contract Share {
 
     address private Owner;
-    address public Lottery;
-    address public Charity;
-    bool public initialized = false;
+    address private Lottery;
+    address private Charity;
+    bool private initialized = false;
 
     // assigns an ID to each donation
     uint private donationID = 1;
@@ -74,7 +76,7 @@ contract Share {
     function makeDonation() public payable{
 
         // owner, charity, and lottery accounts cannot utilize the handleFunds function
-        require(msg.sender != Owner || msg.sender != Lottery || msg.sender != Charity || initialized == true);
+        require(msg.sender != Owner || msg.sender != Lottery || charityUtil.isCharity(msg.sender) == false || msg.sender != Charity || initialized == true);
 
         // creates the amount variable, used to set the amount later on in this function
         // these math. functions can be move to the API to avoid gas cost for calculations
@@ -83,6 +85,7 @@ contract Share {
         uint lotteryAmount = amount * 4 / 100;
         uint ownerAmount = amount * 1 / 100;
 
+        // TODO - these can be refactored to ownable, since it utilizes the transfer of ownership principle
         Charity.transfer(charityAmount);
         Lottery.transfer(lotteryAmount);
 
