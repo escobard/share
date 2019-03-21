@@ -19,7 +19,7 @@ contract CharityRole is Ownable {
     Owner = msg.sender;
   }
 
-  function setCharity(address _charity) public payable {
+  function setCharity(address _charity) onlyOwner public payable {
 
     // ensures caller is owner
 
@@ -27,7 +27,7 @@ contract CharityRole is Ownable {
     initialized = true;
   }
 
-  function getCharity(address) public view returns (address){
+  function getCharity() onlyOwner public view returns (address){
 
     return Charity;
 

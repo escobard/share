@@ -3,14 +3,14 @@ pragma experimental ABIEncoderV2;
 // add all imports for user privileges here
 
 import "./accesscontrol/CharityRole.sol";
+import "./core/Ownable.sol";
 
-contract Share {
+contract Share is Ownable, CharityRole{
 
     address private Owner;
     address private Lottery;
     address private Charity;
     bool private initialized = false;
-    CharityRole private charityRole;
 
     // assigns an ID to each donation
     uint private donationID = 1;
@@ -63,25 +63,29 @@ contract Share {
     /// @param _charity address, contains the ethereum public key for charity account
 
     // TODO - this logic must also include the new contract
-    function initiateContract(address _lottery, address _charity) public payable{
+    function initiateContract(address _lottery, address _charity) onlyOwner public payable{
 
-        require(msg.sender == Owner && initialized == false);
+        require(initialized == false);
 
         // TODO - this logic must add the smart contract address for CharityRole
         // TODO - ei - Charity = CharityRole(_charity) - argument must contain address of contract
         Lottery = _lottery;
 
-        // requires the address of the charity smart contract, previously regular ether account
-        charityRole = CharityRole(_charity);
+        // sets the charity for the charityRole contract
+        setCharity(_charity);
+
+        // gets charity address
+        Charity = getCharity();
+
         initialized = true;
     }
 
     /// @notice parent function for all contract functionality
     /// @dev Should consider splitting this out further if necessary by reviewers
 
-    function makeDonation() public payable{
+    function makeDonation() notOwner public payable{
         // owner, charity, and lottery accounts cannot utilize the handleFunds function
-        require(msg.sender != Owner || msg.sender != Lottery || charityRole.isCharity(msg.sender, Charity) == false || msg.sender != Charity || initialized == true);
+        require(msg.sender != Lottery || isCharity(msg.sender, Charity) == false || msg.sender != Charity || initialized == true);
 
         // creates the amount variable, used to set the amount later on in this function
         // these math. functions can be move to the API to avoid gas cost for calculations

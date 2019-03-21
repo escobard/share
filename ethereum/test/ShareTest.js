@@ -1,6 +1,5 @@
 // this grabs the Share.sol file within /contracts
 const Share = artifacts.require("Share");
-
 // extracts the accounts array from the contract
 contract("Share", accounts => {
 
