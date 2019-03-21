@@ -8,7 +8,17 @@ pragma solidity ^0.4.24;
 // Define a contract 'CharityRole' to manage this role - checks if address is parent contracts charity
 contract CharityRole {
 
+  address private Owner;
+  address private Charity;
+
+  constructor() public {
+    Owner = msg.sender;
+  }
+
   function isCharity(address _sender, address _charity) public view returns (bool){
+
+    require()
+
     bool validateCharity = false;
 
     if(_sender == _charity){

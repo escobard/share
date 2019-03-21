@@ -5,20 +5,17 @@ pragma solidity ^0.4.24;
 // TODO - may include in the submission but most likely not, not necessary and overly complicates smart contract logic
 
 contract Ownable {
-    address private origOwner;
-
-    // Define an Event
-    event TransferOwnership(address indexed oldOwner, address indexed newOwner);
+    address private owner;
 
     /// Assign the contract to an owner
     constructor () internal {
-        origOwner = msg.sender;
-        emit TransferOwnership(address(0), origOwner);
+        owner = msg.sender;
+        emit TransferOwnership(address(0), owner);
     }
 
     /// Look up the address of the owner
     function owner() public view returns (address) {
-        return origOwner;
+        return owner;
     }
 
     /// Define a function modifier 'onlyOwner'
@@ -29,24 +26,6 @@ contract Ownable {
 
     /// Check if the calling address is the owner of the contract
     function isOwner() public view returns (bool) {
-        return msg.sender == origOwner;
-    }
-
-    /// Define a function to renounce ownerhip
-    function renounceOwnership() public onlyOwner {
-        emit TransferOwnership(origOwner, address(0));
-        origOwner = address(0);
-    }
-
-    /// Define a public function to transfer ownership
-    function transferOwnership(address newOwner) public onlyOwner {
-        _transferOwnership(newOwner);
-    }
-
-    /// Define an internal function to transfer ownership
-    function _transferOwnership(address newOwner) internal {
-        require(newOwner != address(0));
-        emit TransferOwnership(origOwner, newOwner);
-        origOwner = newOwner;
+        return msg.sender == owner;
     }
 }
