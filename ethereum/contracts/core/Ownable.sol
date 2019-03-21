@@ -6,6 +6,7 @@ pragma solidity ^0.4.24;
 
 contract Ownable {
     address private Owner;
+
     bool private initialized = false;
 
     constructor() internal {
@@ -15,8 +16,6 @@ contract Ownable {
     function getOwner() onlyOwner public view returns (address) {
         return Owner;
     }
-
-    function setLotter()
 
     modifier onlyOwner{
         require(isOwner());

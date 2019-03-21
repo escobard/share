@@ -32,7 +32,7 @@ contract Share is Ownable, CharityRole{
     /// @param lotteryAmount uint, contains the 4% of original amount sent to lottery
     /// @param ownerAmount, contains the 1% of original amount sent to owner
     /// @param id, contains the value of the last submitted donation - is returned to ui
-
+    // TODO - refactor into SupplyChain
     struct Donation {
         address owner;
         address lottery;
@@ -131,6 +131,10 @@ contract Share is Ownable, CharityRole{
 
         Donation memory donation = Donations[_id];
         return ( donation.owner, donation.lottery, donation.charity, donation.donor, donation.amount, donation.charityAmount, donation.lotteryAmount, donation.ownerAmount, donation.id);
+    }
+
+    function isInitialized() onlyOwner public view returns(bool){
+        return initialized;
     }
 
 }
