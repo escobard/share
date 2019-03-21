@@ -70,6 +70,8 @@ contract Share {
         // TODO - this logic must add the smart contract address for CharityRole
         // TODO - ei - Charity = CharityRole(_charity) - argument must contain address of contract
         Lottery = _lottery;
+
+        // requires the address of the charity smart contract, previously regular ether account
         charity = CharityRole(_charity);
         initialized = true;
     }

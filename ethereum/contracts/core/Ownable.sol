@@ -4,13 +4,12 @@ pragma solidity ^0.4.24;
 
 // TODO - may include in the submission but most likely not, not necessary and overly complicates smart contract logic
 
-contract Ownable {
+library Ownable {
     address private owner;
 
     /// Assign the contract to an owner
     constructor () internal {
         owner = msg.sender;
-        emit TransferOwnership(address(0), owner);
     }
 
     /// Look up the address of the owner
