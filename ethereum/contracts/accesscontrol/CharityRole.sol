@@ -7,14 +7,13 @@ import "../core/Ownable.sol";
 
 // TODO - deploy this, and grab address
 // Define a contract 'CharityRole' to manage this role - checks if address is parent contracts charity
-contract CharityRole {
+contract CharityRole is Ownable {
 
   address private Owner;
   address private Charity;
   bool private initialized = false;
 
   // adds ownable library to the contract
-  Ownable private ownable;
 
   constructor() internal {
     Owner = msg.sender;
@@ -23,7 +22,6 @@ contract CharityRole {
   function setCharity(address _charity) public payable {
 
     // ensures caller is owner
-    ownable.onlyOwner();
 
     Charity = _charity;
     initialized = true;
@@ -31,15 +29,11 @@ contract CharityRole {
 
   function getCharity(address) public view returns (address){
 
-    ownable.onlyOwner();
-
     return Charity;
 
   }
 
-  function isCharity(address _sender, address _charity) public view returns (bool){
-
-    ownable.onlyOwner();
+  function isCharity(address _sender, address _charity) onlyOwner public view returns (bool){
 
     bool validateCharity = false;
 

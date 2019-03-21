@@ -10,7 +10,7 @@ contract Share {
     address private Lottery;
     address private Charity;
     bool private initialized = false;
-    CharityRole private charity;
+    CharityRole private charityRole;
 
     // assigns an ID to each donation
     uint private donationID = 1;
@@ -72,7 +72,7 @@ contract Share {
         Lottery = _lottery;
 
         // requires the address of the charity smart contract, previously regular ether account
-        charity = CharityRole(_charity);
+        charityRole = CharityRole(_charity);
         initialized = true;
     }
 
@@ -81,7 +81,7 @@ contract Share {
 
     function makeDonation() public payable{
         // owner, charity, and lottery accounts cannot utilize the handleFunds function
-        require(msg.sender != Owner || msg.sender != Lottery || charity.isCharity(msg.sender, Charity) == false || msg.sender != Charity || initialized == true);
+        require(msg.sender != Owner || msg.sender != Lottery || charityRole.isCharity(msg.sender, Charity) == false || msg.sender != Charity || initialized == true);
 
         // creates the amount variable, used to set the amount later on in this function
         // these math. functions can be move to the API to avoid gas cost for calculations
@@ -99,11 +99,11 @@ contract Share {
 
         // stores all the data
         Donations[donationID] = Donation(Owner, Lottery, Charity, msg.sender, amount, charityAmount, lotteryAmount, ownerAmount, donationID);
-        
+
         // updates donationID;
         donationID = donationID + 1;
     }
-    
+
     function fetchDonationID() public view returns (uint){
 
         // requires the owner to call this function, only owner address can access donationID atm

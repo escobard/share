@@ -4,21 +4,22 @@ pragma solidity ^0.4.24;
 
 // TODO - may include in the submission but most likely not, not necessary and overly complicates smart contract logic
 
-library Ownable {
+contract Ownable {
     address private owner;
+    bool private initialized = false;
 
     /// Assign the contract to an owner
-    constructor () internal {
+    constructor() internal {
         owner = msg.sender;
     }
 
     /// Look up the address of the owner
-    function owner() public view returns (address) {
+    function getOwner() public view returns (address) {
         return owner;
     }
 
     /// Define a function modifier 'onlyOwner'
-    modifier onlyOwner() {
+    modifier onlyOwner{
         require(isOwner());
         _;
     }
