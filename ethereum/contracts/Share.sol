@@ -2,7 +2,7 @@ pragma solidity ^0.4.23;
 pragma experimental ABIEncoderV2;
 // add all imports for user privileges here
 
-import * as charityUtil from "./accesscontrol/CharityRole.sol";
+import "./accesscontrol/CharityRole.sol";
 
 contract Share {
 
@@ -10,6 +10,7 @@ contract Share {
     address private Lottery;
     address private Charity;
     bool private initialized = false;
+    CharityRole private charity;
 
     // assigns an ID to each donation
     uint private donationID = 1;
@@ -61,12 +62,15 @@ contract Share {
     /// @param _lottery address, contains the ethereum public key for lottery account
     /// @param _charity address, contains the ethereum public key for charity account
 
+    // TODO - this logic must also include the new contract
     function initiateContract(address _lottery, address _charity) public payable{
 
         require(msg.sender == Owner && initialized == false);
 
+        // TODO - this logic must add the smart contract address for CharityRole
+        // TODO - ei - Charity = CharityRole(_charity) - argument must contain address of contract
         Lottery = _lottery;
-        Charity = _charity;
+        charity = CharityRole(_charity);
         initialized = true;
     }
 
@@ -74,9 +78,8 @@ contract Share {
     /// @dev Should consider splitting this out further if necessary by reviewers
 
     function makeDonation() public payable{
-
         // owner, charity, and lottery accounts cannot utilize the handleFunds function
-        require(msg.sender != Owner || msg.sender != Lottery || charityUtil.isCharity(msg.sender) == false || msg.sender != Charity || initialized == true);
+        require(msg.sender != Owner || msg.sender != Lottery || charity.isCharity(msg.sender, Charity) == false || msg.sender != Charity || initialized == true);
 
         // creates the amount variable, used to set the amount later on in this function
         // these math. functions can be move to the API to avoid gas cost for calculations

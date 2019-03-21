@@ -4,6 +4,8 @@ const Share = artifacts.require("Share");
 // extracts the accounts array from the contract
 contract("Share", accounts => {
 
+    // TODO - Testing contract address by instance here: https://truffleframework.com/docs/truffle/testing/writing-tests-in-solidity#example
+
     // sets all addresses globally for re-use
     let owner = accounts[0];
     let lottery = accounts[1];
