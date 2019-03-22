@@ -16,7 +16,5 @@ module.exports = async (req, res, next) => {
 
   req.contract = eUtils.contract;
 
-
-
   next();
 };

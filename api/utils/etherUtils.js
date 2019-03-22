@@ -40,8 +40,6 @@ class etherUtils {
     this.runtime = "infura";
     return web3;
 
-    console.log("Infura provider initiated!", this.web3);
-
     /* TODO - GANACHE - connects to ganache if dev, commented out for v1.0
     if (process.env.NODE_ENV === "dev") {
       web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));

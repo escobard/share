@@ -1,5 +1,4 @@
 pragma solidity ^0.4.23;
-pragma experimental ABIEncoderV2;
 // add all imports for user privileges here
 
 // actor contracts
