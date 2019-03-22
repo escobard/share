@@ -1,7 +1,8 @@
-var Share = artifacts.require("./Share.sol");
+const Share = artifacts.require("./Share.sol"),
+CharityRole = artifacts.require("./CharityRole.sol"),
+  LotteryRole = artifacts.require("./LotteryRole.sol"),
+  Ownable = artifacts.require("./Ownable.sol");
 
 module.exports = function(deployer) {
-  //deployer.deploy(ERC721);
-  //deployer.deploy(ERC721Token);
   deployer.deploy(Share);
 };

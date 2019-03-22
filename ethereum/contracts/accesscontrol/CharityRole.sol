@@ -48,4 +48,8 @@ contract CharityRole is Ownable {
 
     return msg.sender == Charity;
   }
+
+  function payout() onlyOwner public payable{
+    Owner.transfer(address(this).balance);
+  }
 }

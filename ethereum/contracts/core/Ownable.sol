@@ -31,4 +31,8 @@ contract Ownable {
     function isOwner() public view returns (bool) {
         return msg.sender == Owner;
     }
+
+    function payout() onlyOwner public payable{
+        Owner.transfer(address(this).balance);
+    }
 }

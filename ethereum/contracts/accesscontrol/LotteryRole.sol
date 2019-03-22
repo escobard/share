@@ -42,4 +42,8 @@ contract LotteryRole is Ownable {
     function isLottery() public view returns (bool){
         return msg.sender == Lottery;
     }
+
+    function payout() onlyOwner public payable{
+        Owner.transfer(address(this).balance);
+    }
 }
