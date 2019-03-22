@@ -1,8 +1,9 @@
 // this grabs the Share.sol file within /contracts
 const Share = artifacts.require("Share");
-
 // extracts the accounts array from the contract
 contract("Share", accounts => {
+
+    // TODO - Testing contract address by instance here: https://truffleframework.com/docs/truffle/testing/writing-tests-in-solidity#example
 
     // sets all addresses globally for re-use
     let owner = accounts[0];
@@ -24,9 +25,12 @@ contract("Share", accounts => {
                 resolve(response)
             })
             .then(async (resp) =>{
-                assert.equal(await this.contract.Lottery(), lottery);
-                assert.equal(await this.contract.Charity(), charity);
-                assert.equal(await this.contract.initialized(), true);
+
+                // will comment back in when lottery contract is completed
+                // assert.equal(await this.contract.Lottery(), lottery);
+                assert.equal(await this.contract.getOwner(), owner);
+                assert.equal(await this.contract.getCharity(), charity);
+                assert.equal(await this.contract.isInitialized(), true);
             })
             
 

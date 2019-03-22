@@ -2,12 +2,16 @@ pragma solidity ^0.4.23;
 pragma experimental ABIEncoderV2;
 // add all imports for user privileges here
 
-contract Share {
+import "./accesscontrol/CharityRole.sol";
+import "./core/Ownable.sol";
+import "./accesscontrol/LotteryRole.sol";
+
+contract Share is Ownable, CharityRole, LotteryRole{
 
     address private Owner;
-    address public Lottery;
-    address public Charity;
-    bool public initialized = false;
+    address private Lottery;
+    address private Charity;
+    bool private initialized = false;
 
     // assigns an ID to each donation
     uint private donationID = 1;
@@ -29,7 +33,7 @@ contract Share {
     /// @param lotteryAmount uint, contains the 4% of original amount sent to lottery
     /// @param ownerAmount, contains the 1% of original amount sent to owner
     /// @param id, contains the value of the last submitted donation - is returned to ui
-
+    // TODO - refactor all data handling, updating, and transfer to a data management contract in the future
     struct Donation {
         address owner;
         address lottery;
@@ -59,22 +63,36 @@ contract Share {
     /// @param _lottery address, contains the ethereum public key for lottery account
     /// @param _charity address, contains the ethereum public key for charity account
 
-    function initiateContract(address _lottery, address _charity) public payable{
+    // TODO - this logic must also include the new contract
+    function initiateContract(address _lottery, address _charity) onlyOwner public payable{
 
-        require(msg.sender == Owner && initialized == false);
+        require(initialized == false);
 
+        // TODO - this logic must add the smart contract address for CharityRole
+        // TODO - ei - Charity = CharityRole(_charity) - argument must contain address of contract
         Lottery = _lottery;
-        Charity = _charity;
+
+        // sets the charity for the charityRole contract
+        setLottery(_lottery);
+
+        // gets charity address
+        Lottery = getLottery();
+
+        // sets the charity for the charityRole contract
+        setCharity(_charity);
+
+        // gets charity address
+        Charity = getCharity();
+
         initialized = true;
     }
 
     /// @notice parent function for all contract functionality
     /// @dev Should consider splitting this out further if necessary by reviewers
 
-    function makeDonation() public payable{
-
+    function makeDonation() notOwner notCharity notLottery public payable{
         // owner, charity, and lottery accounts cannot utilize the handleFunds function
-        require(msg.sender != Owner || msg.sender != Lottery || msg.sender != Charity || initialized == true);
+        require(initialized == true);
 
         // creates the amount variable, used to set the amount later on in this function
         // these math. functions can be move to the API to avoid gas cost for calculations
@@ -83,6 +101,7 @@ contract Share {
         uint lotteryAmount = amount * 4 / 100;
         uint ownerAmount = amount * 1 / 100;
 
+        // TODO - these can be refactored to ownable, since it utilizes the transfer of ownership principle
         Charity.transfer(charityAmount);
         Lottery.transfer(lotteryAmount);
 
@@ -91,11 +110,11 @@ contract Share {
 
         // stores all the data
         Donations[donationID] = Donation(Owner, Lottery, Charity, msg.sender, amount, charityAmount, lotteryAmount, ownerAmount, donationID);
-        
+
         // updates donationID;
         donationID = donationID + 1;
     }
-    
+
     function fetchDonationID() public view returns (uint){
 
         // requires the owner to call this function, only owner address can access donationID atm
@@ -119,6 +138,10 @@ contract Share {
 
         Donation memory donation = Donations[_id];
         return ( donation.owner, donation.lottery, donation.charity, donation.donor, donation.amount, donation.charityAmount, donation.lotteryAmount, donation.ownerAmount, donation.id);
+    }
+
+    function isInitialized() onlyOwner public view returns(bool){
+        return initialized;
     }
 
 }
