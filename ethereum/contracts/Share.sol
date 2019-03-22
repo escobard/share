@@ -2,6 +2,7 @@ pragma solidity ^0.4.23;
 pragma experimental ABIEncoderV2;
 // add all imports for user privileges here
 
+// actor contracts
 import "./accesscontrol/CharityRole.sol";
 import "./core/Ownable.sol";
 import "./accesscontrol/LotteryRole.sol";
