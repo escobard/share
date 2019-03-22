@@ -33,17 +33,19 @@ contract CharityRole is Ownable {
 
   }
 
-  function isCharity(address _sender, address _charity) onlyOwner public view returns (bool){
-
-    bool validateCharity = false;
-
-    if(_sender == _charity){
-      validateCharity = true;
-    }
-
-    return validateCharity;
+  // could be refactored into a util library
+  modifier onlyCharity{
+    require(isCharity());
+    _;
   }
 
-  // isNotCharity
+  modifier notCharity{
+    require(!isCharity());
+    _;
+  }
 
+  function isCharity() public view returns (bool){
+
+    return msg.sender == Charity;
+  }
 }

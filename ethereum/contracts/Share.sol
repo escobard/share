@@ -83,9 +83,9 @@ contract Share is Ownable, CharityRole{
     /// @notice parent function for all contract functionality
     /// @dev Should consider splitting this out further if necessary by reviewers
 
-    function makeDonation() notOwner public payable{
+    function makeDonation() notOwner notCharity public payable{
         // owner, charity, and lottery accounts cannot utilize the handleFunds function
-        require(msg.sender != Lottery || isCharity(msg.sender, Charity) == false || msg.sender != Charity || initialized == true);
+        require(msg.sender != Lottery == false || msg.sender != Charity || initialized == true);
 
         // creates the amount variable, used to set the amount later on in this function
         // these math. functions can be move to the API to avoid gas cost for calculations
