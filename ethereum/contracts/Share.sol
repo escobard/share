@@ -33,7 +33,7 @@ contract Share is Ownable, CharityRole, LotteryRole{
     /// @param lotteryAmount uint, contains the 4% of original amount sent to lottery
     /// @param ownerAmount, contains the 1% of original amount sent to owner
     /// @param id, contains the value of the last submitted donation - is returned to ui
-    // TODO - refactor all data handling, updating, and transfer to a data management contract in the future
+    // TODO - refactor all data handling, updating, and transfer to a BASE data management contract in the future
     struct Donation {
         address owner;
         address lottery;
