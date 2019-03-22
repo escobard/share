@@ -4,8 +4,9 @@ pragma experimental ABIEncoderV2;
 
 import "./accesscontrol/CharityRole.sol";
 import "./core/Ownable.sol";
+import "./accesscontrol/LotteryRole.sol";
 
-contract Share is Ownable, CharityRole{
+contract Share is Ownable, CharityRole, LotteryRole{
 
     address private Owner;
     address private Lottery;
@@ -32,7 +33,7 @@ contract Share is Ownable, CharityRole{
     /// @param lotteryAmount uint, contains the 4% of original amount sent to lottery
     /// @param ownerAmount, contains the 1% of original amount sent to owner
     /// @param id, contains the value of the last submitted donation - is returned to ui
-    // TODO - refactor into SupplyChain
+    // TODO - refactor all data handling, updating, and transfer to a data management contract in the future
     struct Donation {
         address owner;
         address lottery;
@@ -72,6 +73,12 @@ contract Share is Ownable, CharityRole{
         Lottery = _lottery;
 
         // sets the charity for the charityRole contract
+        setLottery(_lottery);
+
+        // gets charity address
+        Lottery = getLottery();
+
+        // sets the charity for the charityRole contract
         setCharity(_charity);
 
         // gets charity address
@@ -83,9 +90,9 @@ contract Share is Ownable, CharityRole{
     /// @notice parent function for all contract functionality
     /// @dev Should consider splitting this out further if necessary by reviewers
 
-    function makeDonation() notOwner notCharity public payable{
+    function makeDonation() notOwner notCharity notLottery public payable{
         // owner, charity, and lottery accounts cannot utilize the handleFunds function
-        require(msg.sender != Lottery == false || msg.sender != Charity || initialized == true);
+        require(initialized == true);
 
         // creates the amount variable, used to set the amount later on in this function
         // these math. functions can be move to the API to avoid gas cost for calculations

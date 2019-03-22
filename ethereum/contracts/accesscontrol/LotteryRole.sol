@@ -25,22 +25,21 @@ contract LotteryRole is Ownable {
     }
 
     function getLottery() onlyOwner public view returns (address){
-
         return Lottery;
-
     }
 
-    function isLottery(address _sender, address _lottery) onlyOwner public view returns (bool){
-
-        bool validateLottery = false;
-
-        if(_sender == _lottery){
-            validateLottery = true;
-        }
-
-        return validateLottery;
+    // could be refactored into a util library
+    modifier onlyLottery{
+        require(isLottery());
+        _;
     }
 
-    // isNotLottery
+    modifier notLottery{
+        require(!isLottery());
+        _;
+    }
 
+    function isLottery() public view returns (bool){
+        return msg.sender == Lottery;
+    }
 }
