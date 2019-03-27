@@ -12,14 +12,20 @@ contract Share is Ownable, CharityRole, LotteryRole{
     address private Lottery;
     address private Charity;
     bool private initialized = false;
+    Ownable private OwnableInstance;
+    CharityRole private CharityInstance;
+    LotteryRole private LotteryInstance;
 
     // assigns an ID to each donation
     uint private donationID = 1;
 
     /// @notice sets the owner to the Owner variable upon contract init
     /// @dev can be expanded to account for many more constructor features
-    constructor() public {
+    constructor(address _ownable, address _charityRole, address _lotteryRole) public {
         Owner = msg.sender;
+        OwnableInstance = Ownable(_ownable);
+        CharityInstance = CharityRole(_charityRole);
+        LotteryInstance = LotteryRole(_lotteryRole);
     }
 
     /// @notice Contains the stucture of the star metadata

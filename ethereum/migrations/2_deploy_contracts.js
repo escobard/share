@@ -19,7 +19,17 @@ module.exports = function(deployer) {
             })
           })
       })*/
-      deployer.deploy(CharityRole, Ownable.address, {gas: 2000000});
+
+      deployer.deploy(CharityRole, Ownable.address, {gas: 2000000})
+        .then(() =>{
+          deployer.deploy(LotteryRole, Ownable.address, {gas: 2000000})
+            .then(() =>{
+              deployer.deploy(Share, Ownable.address, CharityRole.address, LotteryRole.address, {gas: 2000000});
+            })
+            .catch(err =>{
+              return err;
+            })
+        })
 
       // deployer.deploy(Share);
     })

@@ -9,11 +9,13 @@ contract LotteryRole is Ownable {
     address private Owner;
     address private Lottery;
     bool private initialized = false;
+    Ownable private OwnableInstance;
 
     // adds ownable library to the contract
 
-    constructor() public {
+    constructor(address _ownable) public {
         Owner = msg.sender;
+        OwnableInstance = Ownable(_ownable);
     }
 
     function setLottery(address _lottery) onlyOwner public payable {
