@@ -12,7 +12,7 @@ contract LotteryRole is Ownable {
 
     // adds ownable library to the contract
 
-    constructor() internal {
+    constructor() public {
         Owner = msg.sender;
     }
 
