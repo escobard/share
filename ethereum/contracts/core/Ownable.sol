@@ -9,7 +9,7 @@ contract Ownable {
 
     bool private initialized = false;
 
-    constructor() internal {
+    constructor() public {
         Owner = msg.sender;
     }
 

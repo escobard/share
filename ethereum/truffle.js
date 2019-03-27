@@ -8,7 +8,9 @@ module.exports = {
       host: '127.0.0.1',
       // expects desktop ganache client, change to 8545 for cli
       port: 8545,
-      network_id: "*"
+      network_id: "*",
+      gas: 2000000,   // <--- Twice as much
+      gasPrice: 10000000000,
     },
       solc: {
         version: "0.4.25"
