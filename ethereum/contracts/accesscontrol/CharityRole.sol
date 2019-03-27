@@ -12,17 +12,17 @@ contract CharityRole is Ownable{
   address private Owner;
   address private Charity;
   bool private initialized = false;
+  Ownable private OwnableInstance;
 
   // adds ownable library to the contract
-
-  constructor() public {
+  constructor(address _ownable) public {
     Owner = msg.sender;
-    // Ownable(_ownable);
+    OwnableInstance = Ownable(_ownable);
   }
 
   // can be restricted to pure, not sure what that means yet
-  function setOwnable(address _ownable) public pure{
-    Ownable(_ownable);
+  function setOwnable(address _ownable) public {
+    OwnableInstance = Ownable(_ownable);
   }
 
   function setCharity(address _charity) onlyOwner public payable {

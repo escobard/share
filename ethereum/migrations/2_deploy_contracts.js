@@ -9,7 +9,7 @@ module.exports = function(deployer) {
   deployer.deploy(Ownable, {gas: 2000000})
     .then(() =>{
       /*
-      deployer.deploy(CharityRole)
+
       then(() =>{
         CharityRole.deployed()
           .then(instance =>{
@@ -19,7 +19,9 @@ module.exports = function(deployer) {
             })
           })
       })*/
-      deployer.deploy(Share);
+      deployer.deploy(CharityRole, Ownable.address, {gas: 2000000});
+
+      // deployer.deploy(Share);
     })
 
 
