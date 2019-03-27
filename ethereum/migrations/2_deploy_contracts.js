@@ -19,9 +19,10 @@ module.exports = function(deployer) {
             })
           })
       })*/
-
+      console.log('OWNABLE ADDRESS', Ownable.address);
       deployer.deploy(CharityRole, Ownable.address, {gas: 2000000})
         .then(() =>{
+          console.log('OWNABLE ADDRESS', Ownable.address);
           deployer.deploy(LotteryRole, Ownable.address, {gas: 2000000})
             .then(() =>{
               deployer.deploy(Share, Ownable.address, CharityRole.address, LotteryRole.address, {gas: 2000000});
@@ -29,6 +30,10 @@ module.exports = function(deployer) {
             .catch(err =>{
               return err;
             })
+        })
+        .catch(error => {
+          console.log(error);
+          return error;
         })
 
       // deployer.deploy(Share);
