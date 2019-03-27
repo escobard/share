@@ -9,7 +9,7 @@ module.exports = {
       // expects desktop ganache client, change to 8545 for cli
       port: 8545,
       network_id: "*",
-      gas: 2000000,   // <--- Twice as much
+      gas: 8000000,   // <--- Twice as much
       gasPrice: 10000000000,
     },
       solc: {

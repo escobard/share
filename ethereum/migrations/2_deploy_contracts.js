@@ -6,7 +6,9 @@ CharityRole = artifacts.require("./CharityRole.sol"),
 module.exports = function(deployer) {
 
   // TODO - clean up logic here, can be vastly improved by following: https://medium.com/coinmonks/using-truffle-framework-in-an-advanced-way-7e32c11c97a9
-  deployer.deploy(Ownable, {gas: 2000000})
+
+  // deploys initial Ownable contracts
+  deployer.deploy(Ownable, {gas: 1000000})
     .then(() =>{
       /*
 
@@ -20,14 +22,26 @@ module.exports = function(deployer) {
           })
       })*/
       console.log('OWNABLE ADDRESS', Ownable.address);
-      deployer.deploy(CharityRole, Ownable.address, {gas: 2000000})
+
+      // deploys Charity role contract, sets instance off Ownable.address
+      deployer.deploy(CharityRole, Ownable.address, {gas: 1000000})
         .then(() =>{
-          console.log('OWNABLE ADDRESS', Ownable.address);
-          deployer.deploy(LotteryRole, Ownable.address, {gas: 2000000})
+
+          deployer.deploy(LotteryRole, Ownable.address, {gas: 1000000})
             .then(() =>{
-              deployer.deploy(Share, Ownable.address, CharityRole.address, LotteryRole.address, {gas: 2000000});
+              console.log('CHARITY ROLE ADDRESS', CharityRole.address);
+              console.log('CHARITY ROLE ADDRESS', LotteryRole.address);
+              deployer.deploy(Share, Ownable.address, CharityRole.address, LotteryRole.address, {gas: 6000000})
+                .then(() =>{
+                  console.log('DEPLOYMENT DONE!')
+                })
+                .catch(err =>{
+                  console.log(err)
+                  return err;
+                })
             })
             .catch(err =>{
+              console.log(err)
               return err;
             })
         })
