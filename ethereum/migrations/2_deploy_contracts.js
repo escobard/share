@@ -25,7 +25,6 @@ module.exports = function(deployer) {
 
       // deploys Charity role contract, sets instance off Ownable.address
       deployer.deploy(CharityRole, Ownable.address, {gas: 1000000})
-        /*
         .then(() =>{
 
           deployer.deploy(LotteryRole, Ownable.address, {gas: 1000000})
@@ -42,15 +41,14 @@ module.exports = function(deployer) {
                 })
             })
             .catch(err =>{
-              console.log(err)
+              console.log('Lottery deployment error:', err)
               return err;
             })
         })
         .catch(error => {
-          console.log(error);
+          console.log('Charity deployment error:', error);
           return error;
         })
-*/
       // deployer.deploy(Share);
     })
 

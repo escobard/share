@@ -26,6 +26,8 @@ contract CharityRole {
   }
 
   function setCharity(address _charity) public payable {
+
+    // can't use modifiers with imported contracts, if importing instance to my knowledge
     require(ownable.isOwner());
     Charity = _charity;
     initialized = true;

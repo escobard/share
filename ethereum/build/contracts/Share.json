@@ -325,7 +325,7 @@
         "id": 60,
         "nodeType": "ImportDirective",
         "scope": 339,
-        "sourceUnit": 672,
+        "sourceUnit": 676,
         "src": "136:28:1",
         "symbolAliases": [],
         "unitAlias": ""
@@ -336,7 +336,7 @@
         "id": 61,
         "nodeType": "ImportDirective",
         "scope": 339,
-        "sourceUnit": 567,
+        "sourceUnit": 571,
         "src": "166:41:1",
         "symbolAliases": [],
         "unitAlias": ""
@@ -350,10 +350,10 @@
               "id": 62,
               "name": "Ownable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 671,
+              "referencedDeclaration": 675,
               "src": "229:7:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Ownable_$671",
+                "typeIdentifier": "t_contract$_Ownable_$675",
                 "typeString": "contract Ownable"
               }
             },
@@ -386,10 +386,10 @@
               "id": 66,
               "name": "LotteryRole",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 566,
+              "referencedDeclaration": 570,
               "src": "251:11:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_LotteryRole_$566",
+                "typeIdentifier": "t_contract$_LotteryRole_$570",
                 "typeString": "contract LotteryRole"
               }
             },
@@ -400,8 +400,8 @@
         ],
         "contractDependencies": [
           463,
-          566,
-          671
+          570,
+          675
         ],
         "contractKind": "contract",
         "documentation": null,
@@ -409,9 +409,9 @@
         "id": 338,
         "linearizedBaseContracts": [
           338,
-          566,
+          570,
           463,
-          671
+          675
         ],
         "name": "Share",
         "nodeType": "ContractDefinition",
@@ -547,7 +547,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_Ownable_$671",
+              "typeIdentifier": "t_contract$_Ownable_$675",
               "typeString": "contract Ownable"
             },
             "typeName": {
@@ -555,10 +555,10 @@
               "id": 77,
               "name": "Ownable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 671,
+              "referencedDeclaration": 675,
               "src": "398:7:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Ownable_$671",
+                "typeIdentifier": "t_contract$_Ownable_$675",
                 "typeString": "contract Ownable"
               }
             },
@@ -603,7 +603,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_LotteryRole_$566",
+              "typeIdentifier": "t_contract$_LotteryRole_$570",
               "typeString": "contract LotteryRole"
             },
             "typeName": {
@@ -611,10 +611,10 @@
               "id": 81,
               "name": "LotteryRole",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 566,
+              "referencedDeclaration": 570,
               "src": "478:11:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_LotteryRole_$566",
+                "typeIdentifier": "t_contract$_LotteryRole_$570",
                 "typeString": "contract LotteryRole"
               }
             },
@@ -701,7 +701,7 @@
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 686,
+                        "referencedDeclaration": 690,
                         "src": "846:3:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
@@ -1249,10 +1249,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        689,
-                        690
+                        693,
+                        694
                       ],
-                      "referencedDeclaration": 689,
+                      "referencedDeclaration": 693,
                       "src": "3425:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -1352,7 +1352,7 @@
                       "name": "setLottery",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 510,
+                      "referencedDeclaration": 512,
                       "src": "3738:10:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
@@ -1625,7 +1625,7 @@
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 634,
+                  "referencedDeclaration": 638,
                   "src": "3388:9:1",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -1782,10 +1782,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        689,
-                        690
+                        693,
+                        694
                       ],
-                      "referencedDeclaration": 689,
+                      "referencedDeclaration": 693,
                       "src": "4350:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -1851,7 +1851,7 @@
                       "name": "msg",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 686,
+                      "referencedDeclaration": 690,
                       "src": "4587:3:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_magic_message",
@@ -2554,7 +2554,7 @@
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 686,
+                            "referencedDeclaration": 690,
                             "src": "5163:3:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
@@ -2815,7 +2815,7 @@
                   "name": "notOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 644,
+                  "referencedDeclaration": 648,
                   "src": "4205:8:1",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -2914,7 +2914,7 @@
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 686,
+                            "referencedDeclaration": 690,
                             "src": "5498:3:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
@@ -2968,10 +2968,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        689,
-                        690
+                        693,
+                        694
                       ],
-                      "referencedDeclaration": 689,
+                      "referencedDeclaration": 693,
                       "src": "5490:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -3100,7 +3100,7 @@
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 686,
+                            "referencedDeclaration": 690,
                             "src": "5953:3:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
@@ -3154,10 +3154,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        689,
-                        690
+                        693,
+                        694
                       ],
-                      "referencedDeclaration": 689,
+                      "referencedDeclaration": 693,
                       "src": "5945:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -3877,7 +3877,7 @@
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 634,
+                  "referencedDeclaration": 638,
                   "src": "6255:9:1",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -3981,7 +3981,7 @@
         "id": 60,
         "nodeType": "ImportDirective",
         "scope": 339,
-        "sourceUnit": 672,
+        "sourceUnit": 676,
         "src": "136:28:1",
         "symbolAliases": [],
         "unitAlias": ""
@@ -3992,7 +3992,7 @@
         "id": 61,
         "nodeType": "ImportDirective",
         "scope": 339,
-        "sourceUnit": 567,
+        "sourceUnit": 571,
         "src": "166:41:1",
         "symbolAliases": [],
         "unitAlias": ""
@@ -4006,10 +4006,10 @@
               "id": 62,
               "name": "Ownable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 671,
+              "referencedDeclaration": 675,
               "src": "229:7:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Ownable_$671",
+                "typeIdentifier": "t_contract$_Ownable_$675",
                 "typeString": "contract Ownable"
               }
             },
@@ -4042,10 +4042,10 @@
               "id": 66,
               "name": "LotteryRole",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 566,
+              "referencedDeclaration": 570,
               "src": "251:11:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_LotteryRole_$566",
+                "typeIdentifier": "t_contract$_LotteryRole_$570",
                 "typeString": "contract LotteryRole"
               }
             },
@@ -4056,8 +4056,8 @@
         ],
         "contractDependencies": [
           463,
-          566,
-          671
+          570,
+          675
         ],
         "contractKind": "contract",
         "documentation": null,
@@ -4065,9 +4065,9 @@
         "id": 338,
         "linearizedBaseContracts": [
           338,
-          566,
+          570,
           463,
-          671
+          675
         ],
         "name": "Share",
         "nodeType": "ContractDefinition",
@@ -4203,7 +4203,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_Ownable_$671",
+              "typeIdentifier": "t_contract$_Ownable_$675",
               "typeString": "contract Ownable"
             },
             "typeName": {
@@ -4211,10 +4211,10 @@
               "id": 77,
               "name": "Ownable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 671,
+              "referencedDeclaration": 675,
               "src": "398:7:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Ownable_$671",
+                "typeIdentifier": "t_contract$_Ownable_$675",
                 "typeString": "contract Ownable"
               }
             },
@@ -4259,7 +4259,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_LotteryRole_$566",
+              "typeIdentifier": "t_contract$_LotteryRole_$570",
               "typeString": "contract LotteryRole"
             },
             "typeName": {
@@ -4267,10 +4267,10 @@
               "id": 81,
               "name": "LotteryRole",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 566,
+              "referencedDeclaration": 570,
               "src": "478:11:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_LotteryRole_$566",
+                "typeIdentifier": "t_contract$_LotteryRole_$570",
                 "typeString": "contract LotteryRole"
               }
             },
@@ -4357,7 +4357,7 @@
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 686,
+                        "referencedDeclaration": 690,
                         "src": "846:3:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
@@ -4905,10 +4905,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        689,
-                        690
+                        693,
+                        694
                       ],
-                      "referencedDeclaration": 689,
+                      "referencedDeclaration": 693,
                       "src": "3425:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -5008,7 +5008,7 @@
                       "name": "setLottery",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 510,
+                      "referencedDeclaration": 512,
                       "src": "3738:10:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
@@ -5281,7 +5281,7 @@
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 634,
+                  "referencedDeclaration": 638,
                   "src": "3388:9:1",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -5438,10 +5438,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        689,
-                        690
+                        693,
+                        694
                       ],
-                      "referencedDeclaration": 689,
+                      "referencedDeclaration": 693,
                       "src": "4350:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -5507,7 +5507,7 @@
                       "name": "msg",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 686,
+                      "referencedDeclaration": 690,
                       "src": "4587:3:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_magic_message",
@@ -6210,7 +6210,7 @@
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 686,
+                            "referencedDeclaration": 690,
                             "src": "5163:3:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
@@ -6471,7 +6471,7 @@
                   "name": "notOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 644,
+                  "referencedDeclaration": 648,
                   "src": "4205:8:1",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -6570,7 +6570,7 @@
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 686,
+                            "referencedDeclaration": 690,
                             "src": "5498:3:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
@@ -6624,10 +6624,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        689,
-                        690
+                        693,
+                        694
                       ],
-                      "referencedDeclaration": 689,
+                      "referencedDeclaration": 693,
                       "src": "5490:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -6756,7 +6756,7 @@
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 686,
+                            "referencedDeclaration": 690,
                             "src": "5953:3:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
@@ -6810,10 +6810,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        689,
-                        690
+                        693,
+                        694
                       ],
-                      "referencedDeclaration": 689,
+                      "referencedDeclaration": 693,
                       "src": "5945:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -7533,7 +7533,7 @@
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 634,
+                  "referencedDeclaration": 638,
                   "src": "6255:9:1",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -7605,5 +7605,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.2",
-  "updatedAt": "2019-03-28T19:14:34.478Z"
+  "updatedAt": "2019-03-28T19:30:11.316Z"
 }
