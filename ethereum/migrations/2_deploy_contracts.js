@@ -25,12 +25,13 @@ module.exports = function(deployer) {
 
       // deploys Charity role contract, sets instance off Ownable.address
       deployer.deploy(CharityRole, Ownable.address, {gas: 1000000})
+        /*
         .then(() =>{
 
           deployer.deploy(LotteryRole, Ownable.address, {gas: 1000000})
             .then(() =>{
               console.log('CHARITY ROLE ADDRESS', CharityRole.address);
-              console.log('CHARITY ROLE ADDRESS', LotteryRole.address);
+              console.log('LOTTERY ROLE ADDRESS', LotteryRole.address);
               deployer.deploy(Share, Ownable.address, CharityRole.address, LotteryRole.address, {gas: 6000000})
                 .then(() =>{
                   console.log('DEPLOYMENT DONE!')
@@ -49,7 +50,7 @@ module.exports = function(deployer) {
           console.log(error);
           return error;
         })
-
+*/
       // deployer.deploy(Share);
     })
 

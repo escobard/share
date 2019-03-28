@@ -23,9 +23,11 @@ contract Share is Ownable, CharityRole, LotteryRole{
     /// @dev can be expanded to account for many more constructor features
     constructor(address _ownable, address _charityRole, address _lotteryRole) public {
         Owner = msg.sender;
-        OwnableInstance = Ownable(_ownable);
-        CharityInstance = CharityRole(_charityRole);
-        LotteryInstance = LotteryRole(_lotteryRole);
+
+        // TODO - try to assign these to .this to utilize proper inheritence
+        // OwnableInstance = Ownable(_ownable);
+        // CharityInstance = CharityRole(_charityRole);
+        // LotteryInstance = LotteryRole(_lotteryRole);
     }
 
     /// @notice Contains the stucture of the star metadata

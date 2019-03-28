@@ -17,6 +17,7 @@ contract Ownable {
         return Owner;
     }
 
+    // changed to function, issues importing modifiers
     modifier onlyOwner{
         require(isOwner());
         _;
