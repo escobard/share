@@ -34,11 +34,12 @@ try {
         */
 
         // checks if contract is initialized, can be called by anyone with raw transactions due to this being public
-
+        console.log('CONTRACT ADDY', process.env.CONTRACT_ADDRESS);
         // TODO - refactor into its own middleware, using a new util for the contract itself, extend this with its own class
-        let contractInitialized = await share.methods.initialized.call();
+        let contractInitialized = await share.methods.isInitialized.call({from: owner_pu});
 
         console.log("INITIALIZED?", contractInitialized);
+
 
         // donor address public
         let donorPub = address_pu;
@@ -80,7 +81,9 @@ try {
         // TODO - refactor into utils/shareUtils.js
 
         // using ABI workaround instead of raw call transaction
-        let donationID = await share.methods.fetchDonationID.call({from: owner_pu})
+        let donationID = await share.methods.fetchDonationID.call({
+          from: owner_pu
+        });
 
         console.log("DONATION ID", donationID);
         let currentDonation = donationID - 1;

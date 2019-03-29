@@ -16,7 +16,7 @@ router.post("/", protocolSetup, async (req, res) => {
     // ensures request.body.address exists
     if (address_pu) {
       // checks if contract is initialized
-      let contractInitialized = await share.methods.initialized.call();
+      let contractInitialized = await share.methods.isInitialized.call({from: owner_pu});
 
       if (contractInitialized === false) {
         console.log("Initializing Contract...", req.accounts);

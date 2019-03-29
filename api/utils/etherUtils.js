@@ -13,6 +13,7 @@ class etherUtils {
 
   constructor() {
 
+    // TODO - refactor process.env variables with deconstruct
     this.accounts ={
       owner_pu: process.env.OWNER_PUBLIC,
       owner_pr: process.env.OWNER_PRIVATE,
@@ -63,7 +64,7 @@ class etherUtils {
 
     let web3 = await this.web3;
 
-    return await web3.eth.Contract(contract_abi, contract_pu);
+    return await new web3.eth.Contract(contract_abi, contract_pu);
   }
   // TODO refactor rawTransaction util into this file
 }
