@@ -7,28 +7,30 @@ import "../core/Ownable.sol";
 
 // TODO - deploy this, and grab address
 // Define a contract 'CharityRole' to manage this role - checks if address is parent contracts charity
-contract CharityRole is Ownable {
+contract CharityRole {
 
-  address private Owner;
   address private Charity;
-  bool private initialized = false;
+  Ownable private ownableContract;
 
-  // adds ownable library to the contract
-
-  constructor() internal {
-    Owner = msg.sender;
+  // adds ownableContract library to the contract
+  constructor(address _ownable) public {
+    ownableContract = Ownable(_ownable);
   }
 
-  function setCharity(address _charity) onlyOwner public payable {
+  // can be restricted to pure, not sure what that means yet
+  function setOwnable(address _ownable) public {
+    ownableContract = Ownable(_ownable);
+  }
 
-    // ensures caller is owner
+  function setCharity(address _charity, address _sender) public payable {
 
+    // can't use modifiers with imported contracts, if importing instance to my knowledge
+    require(ownableContract.isOwner(_sender));
     Charity = _charity;
-    initialized = true;
   }
 
-  function getCharity() onlyOwner public view returns (address){
-
+  function getCharity(address _sender) public view returns (address){
+    require(ownableContract.isOwner(_sender));
     return Charity;
 
   }
@@ -47,5 +49,11 @@ contract CharityRole is Ownable {
   function isCharity() public view returns (bool){
 
     return msg.sender == Charity;
+  }
+
+  function payout() public payable{
+    require(ownableContract.isOwner(msg.sender));
+    address Owner = ownableContract.getOwner();
+    Owner.transfer(address(this).balance);
   }
 }

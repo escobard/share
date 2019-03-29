@@ -1,5 +1,9 @@
 // this grabs the Share.sol file within /contracts
-const Share = artifacts.require("Share");
+const LotteryRole = artifacts.require("./LotteryRole.sol"),
+  CharityRole = artifacts.require('./CharityRole.sol'),
+  Share = artifacts.require('./Share.sol'),
+  Ownable = artifacts.require("./Ownable.sol");
+
 // extracts the accounts array from the contract
 contract("Share", accounts => {
 
@@ -14,11 +18,16 @@ contract("Share", accounts => {
     let amount = web3.toWei(0.1, "ether");
 
     beforeEach(async () => {
-        this.contract = await Share.new({ from: owner });
+        this.ownableContract = await Ownable.new({ from: owner});
+        this.charityContract = await CharityRole.new(this.ownableContract.address, { from: owner});
+        this.lotteryContract = await LotteryRole.new(this.ownableContract.address, { from: owner});
+        this.contract = await Share.new(this.ownableContract.address, this.charityContract.address, this.lotteryContract.address, { from: owner });
     });
 
     describe("Tests contract initiation", () =>{
         it('owner can initialize contract', async ()=> {
+            let initialized = await this.contract.isInitialized({from: owner});
+            console.log('INIT', initialized);
 
             let response = await this.contract.initiateContract(lottery, charity, {from: owner});
             return new Promise((resolve) =>{
@@ -27,13 +36,11 @@ contract("Share", accounts => {
             .then(async (resp) =>{
 
                 // will comment back in when lottery contract is completed
-                // assert.equal(await this.contract.Lottery(), lottery);
-                assert.equal(await this.contract.getOwner(), owner);
-                assert.equal(await this.contract.getCharity(), charity);
-                assert.equal(await this.contract.isInitialized(), true);
+                assert.equal(await this.ownableContract.getOwner({from: owner}), owner);
+                assert.equal(await this.charityContract.getCharity(owner, {from: owner}), charity);
+                assert.equal(await this.lotteryContract.getLottery(owner, {from: owner}), lottery);
+                assert.equal(await this.contract.isInitialized({from: owner}), true);
             })
-            
-
         });
 
         /* this doesn't work since it reverts as expected, to test contract errors check: https://ethereum.stackexchange.com/questions/48627/how-to-catch-revert-error-in-truffle-test-javascript

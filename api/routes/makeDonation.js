@@ -41,15 +41,11 @@ try {
         console.log("INITIALIZED?", contractInitialized);
 
         // donor address public
-        let donorPub = address_pu
-          ? address_pu
-          : "0xe71a0829E03c6e26fc5486c8d10e0bf0C1A92cF9";
+        let donorPub = address_pu;
 
         // TODO - the passing of private addresses outside of a wallet needs to be eliminated entirely with share v2.0
         // donor address private
-        let donorPriv = address_pr
-          ? address_pr
-          : "EBDB03D10DC7131D24D8A7154839937352A11AB43CC9EFC11EE9747DA562BD72";
+        let donorPriv = address_pr;
 
         if (contractInitialized === false) {
           console.log("Initializing Contract...", req.body);
