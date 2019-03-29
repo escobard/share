@@ -61,7 +61,13 @@ My promise to you = Use my new knowledge of raw transactions to build an end to 
 
 ## Reviewer Information
 
-Contract address:[https://rinkeby.etherscan.io/address/0x57486a5332ac3f2c82625a2a504ee6916f004e46]
+Share contract address:[https://rinkeby.etherscan.io/address/0xeda3e5df041a2a5477b4256be0f263084bf0eb6f]
+
+Ownable contract address:[https://rinkeby.etherscan.io/address/0x6d36c8a5f6323c2c350667570dcd2d3300b2383b]
+
+Charity contract address:[https://rinkeby.etherscan.io/address/0x77c5581244f283bdcb81965d3580983fcc035ed2]
+
+Lottery contract address:[https://rinkeby.etherscan.io/address/0xdfc9cff89ba6276c92f039746049c84e403d38d9]
 
 Node Version: v10.14.1 
 

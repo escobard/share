@@ -4,71 +4,6 @@ const abi = [
     "abi": [
       {
         "constant": true,
-        "inputs": [],
-        "name": "isLottery",
-        "outputs": [
-          {
-            "name": "",
-            "type": "bool"
-          }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-      },
-      {
-        "constant": false,
-        "inputs": [],
-        "name": "payout",
-        "outputs": [],
-        "payable": true,
-        "stateMutability": "payable",
-        "type": "function"
-      },
-      {
-        "constant": true,
-        "inputs": [],
-        "name": "isCharity",
-        "outputs": [
-          {
-            "name": "",
-            "type": "bool"
-          }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-      },
-      {
-        "constant": true,
-        "inputs": [],
-        "name": "getOwner",
-        "outputs": [
-          {
-            "name": "",
-            "type": "address"
-          }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-      },
-      {
-        "constant": true,
-        "inputs": [],
-        "name": "isOwner",
-        "outputs": [
-          {
-            "name": "",
-            "type": "bool"
-          }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-      },
-      {
-        "constant": true,
         "inputs": [
           {
             "name": "",
@@ -87,63 +22,20 @@ const abi = [
         "type": "function"
       },
       {
-        "constant": true,
-        "inputs": [],
-        "name": "getLottery",
-        "outputs": [
-          {
-            "name": "",
-            "type": "address"
-          }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-      },
-      {
-        "constant": true,
-        "inputs": [],
-        "name": "getCharity",
-        "outputs": [
-          {
-            "name": "",
-            "type": "address"
-          }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-      },
-      {
-        "constant": false,
         "inputs": [
           {
-            "name": "_lottery",
+            "name": "_ownable",
             "type": "address"
-          }
-        ],
-        "name": "setLottery",
-        "outputs": [],
-        "payable": true,
-        "stateMutability": "payable",
-        "type": "function"
-      },
-      {
-        "constant": false,
-        "inputs": [
+          },
           {
-            "name": "_charity",
+            "name": "_charityRole",
+            "type": "address"
+          },
+          {
+            "name": "_lotteryRole",
             "type": "address"
           }
         ],
-        "name": "setCharity",
-        "outputs": [],
-        "payable": true,
-        "stateMutability": "payable",
-        "type": "function"
-      },
-      {
-        "inputs": [],
         "payable": false,
         "stateMutability": "nonpayable",
         "type": "constructor"
@@ -255,20 +147,20 @@ const abi = [
         "type": "function"
       }
     ],
-    "bytecode": "0x608060405260008060146101000a81548160ff0219169083151502179055506000600260146101000a81548160ff0219169083151502179055506000600460146101000a81548160ff0219169083151502179055506000600760146101000a81548160ff021916908315150217905550600160085534801561008057600080fd5b50336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555033600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555033600360006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555033600560006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555061120d806101936000396000f3006080604052600436106100db576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806325698d89146100e0578063392e53cd1461010f57806340ea0a941461013e57806363bd1d4a146101485780636d7932d1146101525780637b641baf14610181578063893d20e8146101d75780638f32d59b1461022e57806395af60d51461025d5780639afb3dc114610288578063b650d1f9146103b1578063cbc2cce714610434578063d6f5ef0e1461048b578063f298083b146104e2578063fb6f71a314610518575b600080fd5b3480156100ec57600080fd5b506100f561054e565b604051808215151515815260200191505060405180910390f35b34801561011b57600080fd5b506101246105a6565b604051808215151515815260200191505060405180910390f35b6101466105d0565b005b610150610a22565b005b34801561015e57600080fd5b50610167610ab7565b604051808215151515815260200191505060405180910390f35b6101d5600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610b0f565b005b3480156101e357600080fd5b506101ec610c46565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561023a57600080fd5b50610243610c82565b604051808215151515815260200191505060405180910390f35b34801561026957600080fd5b50610272610cd9565b6040518082815260200191505060405180910390f35b34801561029457600080fd5b506102b360048036038101908080359060200190929190505050610d3f565b604051808a73ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018973ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018873ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018773ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001868152602001858152602001848152602001838152602001828152602001995050505050505050505060405180910390f35b3480156103bd57600080fd5b506103f2600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610fab565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561044057600080fd5b50610449610fde565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561049757600080fd5b506104a061101b565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b610516600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050611058565b005b61054c600480360381019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506110ca565b005b6000600460009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614905090565b60006105b0610c82565b15156105bb57600080fd5b600760149054906101000a900460ff16905090565b6000806000806105de610c82565b1515156105ea57600080fd5b6105f2610ab7565b1515156105fe57600080fd5b61060661054e565b15151561061257600080fd5b60011515600760149054906101000a900460ff16151514151561063457600080fd5b3493506064605f850281151561064657fe5b04925060646004850281151561065857fe5b04915060646001850281151561066a57fe5b049050600760009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc849081150290604051600060405180830381858888f193505050501580156106d5573d6000803e3d6000fd5b50600660009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc839081150290604051600060405180830381858888f1935050505015801561073e573d6000803e3d6000fd5b50600560009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc829081150290604051600060405180830381858888f193505050501580156107a7573d6000803e3d6000fd5b5061012060405190810160405280600560009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001600660009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001600760009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020013373ffffffffffffffffffffffffffffffffffffffff168152602001858152602001848152602001838152602001828152602001600854815250600a6000600854815260200190815260200160002060008201518160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060208201518160010160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060408201518160020160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060608201518160030160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506080820151816004015560a0820151816005015560c0820151816006015560e08201518160070155610100820151816008015590505060016008540160088190555050505050565b610a2a610c82565b1515610a3557600080fd5b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc3073ffffffffffffffffffffffffffffffffffffffff16319081150290604051600060405180830381858888f19350505050158015610ab4573d6000803e3d6000fd5b50565b6000600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614905090565b610b17610c82565b1515610b2257600080fd5b60001515600760149054906101000a900460ff161515141515610b4457600080fd5b81600660006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550610b8e82611058565b610b96610fde565b600660006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550610bdf816110ca565b610be761101b565b600760006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506001600760146101000a81548160ff0219169083151502179055505050565b6000610c50610c82565b1515610c5b57600080fd5b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614905090565b6000600560009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141515610d3757600080fd5b600854905090565b6000806000806000806000806000610d5561113c565b600560009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141515610db157600080fd5b600a60008c815260200190815260200160002061012060405190810160405290816000820160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020016001820160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020016002820160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020016003820160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001600482015481526020016005820154815260200160068201548152602001600782015481526020016008820154815250509050806000015181602001518260400151836060015184608001518560a001518660c001518760e00151886101000151995099509950995099509950995099509950509193959799909294969850565b60096020528060005260406000206000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000610fe8610c82565b1515610ff357600080fd5b600460009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b6000611025610c82565b151561103057600080fd5b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b611060610c82565b151561106b57600080fd5b80600460006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506001600460146101000a81548160ff02191690831515021790555050565b6110d2610c82565b15156110dd57600080fd5b80600260006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506001600260146101000a81548160ff02191690831515021790555050565b61012060405190810160405280600073ffffffffffffffffffffffffffffffffffffffff168152602001600073ffffffffffffffffffffffffffffffffffffffff168152602001600073ffffffffffffffffffffffffffffffffffffffff168152602001600073ffffffffffffffffffffffffffffffffffffffff168152602001600081526020016000815260200160008152602001600081526020016000815250905600a165627a7a723058203de3ae63dd0eb3f9c5ba25a3aeacee0ffc3d5237c3bef68e270158c95f38b87f0029",
-    "deployedBytecode": "0x6080604052600436106100db576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806325698d89146100e0578063392e53cd1461010f57806340ea0a941461013e57806363bd1d4a146101485780636d7932d1146101525780637b641baf14610181578063893d20e8146101d75780638f32d59b1461022e57806395af60d51461025d5780639afb3dc114610288578063b650d1f9146103b1578063cbc2cce714610434578063d6f5ef0e1461048b578063f298083b146104e2578063fb6f71a314610518575b600080fd5b3480156100ec57600080fd5b506100f561054e565b604051808215151515815260200191505060405180910390f35b34801561011b57600080fd5b506101246105a6565b604051808215151515815260200191505060405180910390f35b6101466105d0565b005b610150610a22565b005b34801561015e57600080fd5b50610167610ab7565b604051808215151515815260200191505060405180910390f35b6101d5600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610b0f565b005b3480156101e357600080fd5b506101ec610c46565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561023a57600080fd5b50610243610c82565b604051808215151515815260200191505060405180910390f35b34801561026957600080fd5b50610272610cd9565b6040518082815260200191505060405180910390f35b34801561029457600080fd5b506102b360048036038101908080359060200190929190505050610d3f565b604051808a73ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018973ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018873ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018773ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001868152602001858152602001848152602001838152602001828152602001995050505050505050505060405180910390f35b3480156103bd57600080fd5b506103f2600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610fab565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561044057600080fd5b50610449610fde565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561049757600080fd5b506104a061101b565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b610516600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050611058565b005b61054c600480360381019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506110ca565b005b6000600460009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614905090565b60006105b0610c82565b15156105bb57600080fd5b600760149054906101000a900460ff16905090565b6000806000806105de610c82565b1515156105ea57600080fd5b6105f2610ab7565b1515156105fe57600080fd5b61060661054e565b15151561061257600080fd5b60011515600760149054906101000a900460ff16151514151561063457600080fd5b3493506064605f850281151561064657fe5b04925060646004850281151561065857fe5b04915060646001850281151561066a57fe5b049050600760009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc849081150290604051600060405180830381858888f193505050501580156106d5573d6000803e3d6000fd5b50600660009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc839081150290604051600060405180830381858888f1935050505015801561073e573d6000803e3d6000fd5b50600560009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc829081150290604051600060405180830381858888f193505050501580156107a7573d6000803e3d6000fd5b5061012060405190810160405280600560009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001600660009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001600760009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020013373ffffffffffffffffffffffffffffffffffffffff168152602001858152602001848152602001838152602001828152602001600854815250600a6000600854815260200190815260200160002060008201518160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060208201518160010160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060408201518160020160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060608201518160030160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506080820151816004015560a0820151816005015560c0820151816006015560e08201518160070155610100820151816008015590505060016008540160088190555050505050565b610a2a610c82565b1515610a3557600080fd5b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc3073ffffffffffffffffffffffffffffffffffffffff16319081150290604051600060405180830381858888f19350505050158015610ab4573d6000803e3d6000fd5b50565b6000600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614905090565b610b17610c82565b1515610b2257600080fd5b60001515600760149054906101000a900460ff161515141515610b4457600080fd5b81600660006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550610b8e82611058565b610b96610fde565b600660006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550610bdf816110ca565b610be761101b565b600760006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506001600760146101000a81548160ff0219169083151502179055505050565b6000610c50610c82565b1515610c5b57600080fd5b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614905090565b6000600560009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141515610d3757600080fd5b600854905090565b6000806000806000806000806000610d5561113c565b600560009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141515610db157600080fd5b600a60008c815260200190815260200160002061012060405190810160405290816000820160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020016001820160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020016002820160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020016003820160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001600482015481526020016005820154815260200160068201548152602001600782015481526020016008820154815250509050806000015181602001518260400151836060015184608001518560a001518660c001518760e00151886101000151995099509950995099509950995099509950509193959799909294969850565b60096020528060005260406000206000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000610fe8610c82565b1515610ff357600080fd5b600460009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b6000611025610c82565b151561103057600080fd5b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b611060610c82565b151561106b57600080fd5b80600460006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506001600460146101000a81548160ff02191690831515021790555050565b6110d2610c82565b15156110dd57600080fd5b80600260006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506001600260146101000a81548160ff02191690831515021790555050565b61012060405190810160405280600073ffffffffffffffffffffffffffffffffffffffff168152602001600073ffffffffffffffffffffffffffffffffffffffff168152602001600073ffffffffffffffffffffffffffffffffffffffff168152602001600073ffffffffffffffffffffffffffffffffffffffff168152602001600081526020016000815260200160008152602001600081526020016000815250905600a165627a7a723058203de3ae63dd0eb3f9c5ba25a3aeacee0ffc3d5237c3bef68e270158c95f38b87f0029",
-    "sourceMap": "211:5691:1:-;;;275:5:5;248:32;;;;;;;;;;;;;;;;;;;;712:5:2;685:32;;;;;;;;;;;;;;;;;;;;332:5:3;305:32;;;;;;;;;;;;;;;;;;;;386:5:1;359:32;;;;;;;;;;;;;;;;;;;;465:1;439:27;;624:58;8:9:-1;5:2;;;30:1;27;20:12;5:2;624:58:1;331:10:5;323:5;;:18;;;;;;;;;;;;;;;;;;807:10:2;799:5;;:18;;;;;;;;;;;;;;;;;;435:10:3;427:5;;:18;;;;;;;;;;;;;;;;;;664:10:1;656:5;;:18;;;;;;;;;;;;;;;;;;211:5691;;;;;;",
-    "deployedSourceMap": "211:5691:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;946:94:3;;8:9:-1;5:2;;;30:1;27;20:12;5:2;946:94:3;;;;;;;;;;;;;;;;;;;;;;;;;;;5800:97:1;;8:9:-1;5:2;;;30:1;27;20:12;5:2;5800:97:1;;;;;;;;;;;;;;;;;;;;;;;;;;;3751:1136;;;;;;1048:98:3;;;;;;1268:90:2;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1268:90:2;;;;;;;;;;;;;;;;;;;;;;;;;;;2896:698:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;357:91:5;;8:9:-1;5:2;;;30:1;27;20:12;5:2;357:91:5;;;;;;;;;;;;;;;;;;;;;;;;;;;673;;8:9:-1;5:2;;;30:1;27;20:12;5:2;673:91:5;;;;;;;;;;;;;;;;;;;;;;;;;;;4895:231:1;;8:9:-1;5:2;;;30:1;27;20:12;5:2;4895:231:1;;;;;;;;;;;;;;;;;;;;;;;5134:658;;8:9:-1;5:2;;;30:1;27;20:12;5:2;5134:658:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2176:49;;8:9:-1;5:2;;;30:1;27;20:12;5:2;2176:49:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;638:94:3;;8:9:-1;5:2;;;30:1;27;20:12;5:2;638:94:3;;;;;;;;;;;;;;;;;;;;;;;;;;;990:92:2;;8:9:-1;5:2;;;30:1;27;20:12;5:2;990:92:2;;;;;;;;;;;;;;;;;;;;;;;;;;;461:169:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;829:155:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;946:94:3;988:4;1025:7;;;;;;;;;;;1011:21;;:10;:21;;;1004:28;;946:94;:::o;5800:97:1:-;5855:4;493:9:5;:7;:9::i;:::-;485:18;;;;;;;;5878:11:1;;;;;;;;;;;5871:18;;5800:97;:::o;3751:1136::-;4143:11;4177:18;4226;4274:16;568:9:5;:7;:9::i;:::-;567:10;559:19;;;;;;;;1236:11:2;:9;:11::i;:::-;1235:12;1227:21;;;;;;;;906:11:3;:9;:11::i;:::-;905:12;897:21;;;;;;;;3943:4:1;3928:19;;:11;;;;;;;;;;;:19;;;3920:28;;;;;;;;4157:9;4143:23;;4212:3;4207:2;4198:6;:11;:17;;;;;;;;4177:38;;4260:3;4256:1;4247:6;:10;:16;;;;;;;;4226:37;;4306:3;4302:1;4293:6;:10;:16;;;;;;;;4274:35;;4431:7;;;;;;;;;;;:16;;:31;4448:13;4431:31;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;4431:31:1;4473:7;;;;;;;;;;;:16;;:31;4490:13;4473:31;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;4473:31:1;4603:5;;;;;;;;;;;:14;;:27;4618:11;4603:27;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;4603:27:1;4699:108;;;;;;;;;4708:5;;;;;;;;;;;4699:108;;;;;;4715:7;;;;;;;;;;;4699:108;;;;;;4724:7;;;;;;;;;;;4699:108;;;;;;4733:10;4699:108;;;;;;4745:6;4699:108;;;;4753:13;4699:108;;;;4768:13;4699:108;;;;4783:11;4699:108;;;;4796:10;;4699:108;;;4675:9;:21;4685:10;;4675:21;;;;;;;;;;;:132;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4878:1;4865:10;;:14;4852:10;:27;;;;3751:1136;;;;:::o;1048:98:3:-;493:9:5;:7;:9::i;:::-;485:18;;;;;;;;1101:5:3;;;;;;;;;;;:14;;:37;1124:4;1116:21;;;1101:37;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;1101:37:3;1048:98::o;1268:90:2:-;1310:4;1345:7;;;;;;;;;;;1331:21;;:10;:21;;;1324:28;;1268:90;:::o;2896:698:1:-;493:9:5;:7;:9::i;:::-;485:18;;;;;;;;3018:5:1;3003:20;;:11;;;;;;;;;;;:20;;;2995:29;;;;;;;;3229:8;3219:7;;:18;;;;;;;;;;;;;;;;;;3308:20;3319:8;3308:10;:20::i;:::-;3384:12;:10;:12::i;:::-;3374:7;;:22;;;;;;;;;;;;;;;;;;3467:20;3478:8;3467:10;:20::i;:::-;3543:12;:10;:12::i;:::-;3533:7;;:22;;;;;;;;;;;;;;;;;;3582:4;3568:11;;:18;;;;;;;;;;;;;;;;;;2896:698;;:::o;357:91:5:-;408:7;493:9;:7;:9::i;:::-;485:18;;;;;;;;435:5;;;;;;;;;;;428:12;;357:91;:::o;673:::-;713:4;751:5;;;;;;;;;;;737:19;;:10;:19;;;730:26;;673:91;:::o;4895:231:1:-;4943:4;5082:5;;;;;;;;;;;5068:19;;:10;:19;;;5060:28;;;;;;;;5108:10;;5101:17;;4895:231;:::o;5134:658::-;5188:13;5212:15;5238;5264:13;5288:11;5310:18;5339;5368:16;5395:7;5556:24;;:::i;:::-;5537:5;;;;;;;;;;;5523:19;;:10;:19;;;5515:28;;;;;;;;5583:9;:14;5593:3;5583:14;;;;;;;;;;;5556:41;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;5617:8;:14;;;5633:8;:16;;;5651:8;:16;;;5669:8;:14;;;5685:8;:15;;;5702:8;:22;;;5726:8;:22;;;5750:8;:20;;;5772:8;:11;;;5608:176;;;;;;;;;;;;;;;;;;5134:658;;;;;;;;;;;;:::o;2176:49::-;;;;;;;;;;;;;;;;;;;;;;:::o;638:94:3:-;691:7;493:9:5;:7;:9::i;:::-;485:18;;;;;;;;717:7:3;;;;;;;;;;;710:14;;638:94;:::o;990:92:2:-;1043:7;493:9:5;:7;:9::i;:::-;485:18;;;;;;;;1067:7:2;;;;;;;;;;;1060:14;;990:92;:::o;461:169:3:-;493:9:5;:7;:9::i;:::-;485:18;;;;;;;;585:8:3;575:7;;:18;;;;;;;;;;;;;;;;;;618:4;604:11;;:18;;;;;;;;;;;;;;;;;;461:169;:::o;829:155:2:-;493:9:5;:7;:9::i;:::-;485:18;;;;;;;;945:8:2;935:7;;:18;;;;;;;;;;;;;;;;;;974:4;960:11;;:18;;;;;;;;;;;;;;;;;;829:155;:::o;211:5691:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
-    "source": "pragma solidity ^0.4.23;\r\n// add all imports for user privileges here\r\n\r\n// actor contracts\r\nimport \"./accesscontrol/CharityRole.sol\";\r\nimport \"./core/Ownable.sol\";\r\nimport \"./accesscontrol/LotteryRole.sol\";\r\n\r\ncontract Share is Ownable, CharityRole, LotteryRole{\r\n\r\n    address private Owner;\r\n    address private Lottery;\r\n    address private Charity;\r\n    bool private initialized = false;\r\n\r\n    // assigns an ID to each donation\r\n    uint private donationID = 1;\r\n\r\n    /// @notice sets the owner to the Owner variable upon contract init\r\n    /// @dev can be expanded to account for many more constructor features\r\n    constructor() public {\r\n        Owner = msg.sender;\r\n    }\r\n\r\n    /// @notice Contains the stucture of the star metadata\r\n    /// @dev key of structure is the provided transaction hash, will be donationId in v2.0\r\n    /// @param owner address, contains the address of the contract owner\r\n    /// @param lottery address, contains the address of the lottery - ether account for v1.0, contract for v2.0\r\n    /// @param charity address, contains the address of the charity - an ether account for v1.0 and v2.0\r\n    /// @param donor address, contains the address of the contract owner - ether account always\r\n    /// @param amount uint, contains the original amount donated - all amounts are after gas\r\n    /// @param charityAmount, contains the remaining 95% of original amount sent to charity\r\n    /// @param lotteryAmount uint, contains the 4% of original amount sent to lottery\r\n    /// @param ownerAmount, contains the 1% of original amount sent to owner\r\n    /// @param id, contains the value of the last submitted donation - is returned to ui\r\n    // TODO - refactor all data handling, updating, and transfer to a data management contract in the future\r\n    struct Donation {\r\n        address owner;\r\n        address lottery;\r\n        address charity;\r\n        address donor;\r\n        uint amount;\r\n        uint charityAmount;\r\n        uint lotteryAmount;\r\n        uint ownerAmount;\r\n        uint id;\r\n    }\r\n\r\n    /// @notice Contains the mapping for the lottery entrees\r\n    /// @dev\r\n    /// @param donor address, will be expanded for v2.0\r\n\r\n    mapping(address => address) public lotteryEntrees;\r\n\r\n    /// @notice Contains the mapping for donation data\r\n    /// @dev key of structure is the transactionHash, in v2.0 a donationId will be introduced\r\n    /// @param Donation structure, contains donation metadata\r\n\r\n    mapping(uint => Donation) private Donations;\r\n\r\n    /// @notice Initiates the contract once deployed, only available to owner\r\n    /// @dev Need to test the syntax here, unsure the require function works\r\n    /// @param _lottery address, contains the ethereum public key for lottery account\r\n    /// @param _charity address, contains the ethereum public key for charity account\r\n\r\n    // TODO - this logic must also include the new contract\r\n    function initiateContract(address _lottery, address _charity) onlyOwner public payable{\r\n\r\n        require(initialized == false);\r\n\r\n        // TODO - this logic must add the smart contract address for CharityRole\r\n        // TODO - ei - Charity = CharityRole(_charity) - argument must contain address of contract\r\n        Lottery = _lottery;\r\n\r\n        // sets the charity for the charityRole contract\r\n        setLottery(_lottery);\r\n\r\n        // gets charity address\r\n        Lottery = getLottery();\r\n\r\n        // sets the charity for the charityRole contract\r\n        setCharity(_charity);\r\n\r\n        // gets charity address\r\n        Charity = getCharity();\r\n\r\n        initialized = true;\r\n    }\r\n\r\n    /// @notice parent function for all contract functionality\r\n    /// @dev Should consider splitting this out further if necessary by reviewers\r\n\r\n    function makeDonation() notOwner notCharity notLottery public payable{\r\n        // owner, charity, and lottery accounts cannot utilize the handleFunds function\r\n        require(initialized == true);\r\n\r\n        // creates the amount variable, used to set the amount later on in this function\r\n        // these math. functions can be move to the API to avoid gas cost for calculations\r\n        uint amount = msg.value;\r\n        uint charityAmount = amount * 95 / 100;\r\n        uint lotteryAmount = amount * 4 / 100;\r\n        uint ownerAmount = amount * 1 / 100;\r\n\r\n        // TODO - these can be refactored to ownable, since it utilizes the transfer of ownership principle\r\n        Charity.transfer(charityAmount);\r\n        Lottery.transfer(lotteryAmount);\r\n\r\n        // dispatches remaining funds to owner, this ensures that all gas is covered\r\n        Owner.transfer(ownerAmount);\r\n\r\n        // stores all the data\r\n        Donations[donationID] = Donation(Owner, Lottery, Charity, msg.sender, amount, charityAmount, lotteryAmount, ownerAmount, donationID);\r\n\r\n        // updates donationID;\r\n        donationID = donationID + 1;\r\n    }\r\n\r\n    function fetchDonationID() public view returns (uint){\r\n\r\n        // requires the owner to call this function, only owner address can access donationID atm\r\n        require(msg.sender == Owner);\r\n\r\n        return donationID;\r\n    }\r\n\r\n    function fetchDonation(uint _id) public view returns (address owner,\r\n        address lottery,\r\n        address charity,\r\n        address donor,\r\n        uint amount,\r\n        uint charityAmount,\r\n        uint lotteryAmount,\r\n        uint ownerAmount,\r\n        uint id){\r\n\r\n        // requires the owner to call this function, only owner address can access donationID atm\r\n        require(msg.sender == Owner);\r\n\r\n        Donation memory donation = Donations[_id];\r\n        return ( donation.owner, donation.lottery, donation.charity, donation.donor, donation.amount, donation.charityAmount, donation.lotteryAmount, donation.ownerAmount, donation.id);\r\n    }\r\n\r\n    function isInitialized() onlyOwner public view returns(bool){\r\n        return initialized;\r\n    }\r\n\r\n}\r\n\r\n",
+    "bytecode": "0x60806040526000600260146101000a81548160ff021916908315150217905550600160065534801561003057600080fd5b50604051606080611661833981018060405281019080805190602001909291908051906020019092919080519060200190929190505050336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555082600360006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555081600460006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555080600560006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505050506114e58061017c6000396000f300608060405260043610610078576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063392e53cd1461007d57806340ea0a94146100ac5780637b641baf146100b657806395af60d51461010c5780639afb3dc114610137578063b650d1f914610260575b600080fd5b34801561008957600080fd5b506100926102e3565b604051808215151515815260200191505060405180910390f35b6100b46103fd565b005b61010a600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610aa6565b005b34801561011857600080fd5b50610121611069565b6040518082815260200191505060405180910390f35b34801561014357600080fd5b50610162600480360381019080803590602001909291905050506110ce565b604051808a73ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018973ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018873ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018773ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001868152602001858152602001848152602001838152602001828152602001995050505050505050505060405180910390f35b34801561026c57600080fd5b506102a1600480360381019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506113e1565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6000600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16632f54bf6e336040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001915050602060405180830381600087803b1580156103a257600080fd5b505af11580156103b6573d6000803e3d6000fd5b505050506040513d60208110156103cc57600080fd5b810190808051906020019092919050505015156103e857600080fd5b600260149054906101000a900460ff16905090565b60008060008060011515600260149054906101000a900460ff16151514801561051b5750600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16632f54bf6e336040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001915050602060405180830381600087803b1580156104de57600080fd5b505af11580156104f2573d6000803e3d6000fd5b505050506040513d602081101561050857600080fd5b8101908080519060200190929190505050155b80156105e55750600460009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16636d7932d16040518163ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401602060405180830381600087803b1580156105a857600080fd5b505af11580156105bc573d6000803e3d6000fd5b505050506040513d60208110156105d257600080fd5b8101908080519060200190929190505050155b80156106af5750600560009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166325698d896040518163ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401602060405180830381600087803b15801561067257600080fd5b505af1158015610686573d6000803e3d6000fd5b505050506040513d602081101561069c57600080fd5b8101908080519060200190929190505050155b15156106ba57600080fd5b3493506064605f85028115156106cc57fe5b0492506064600485028115156106de57fe5b0491506064600185028115156106f057fe5b049050600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc849081150290604051600060405180830381858888f1935050505015801561075b573d6000803e3d6000fd5b50600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc839081150290604051600060405180830381858888f193505050501580156107c4573d6000803e3d6000fd5b506000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc829081150290604051600060405180830381858888f1935050505015801561082c573d6000803e3d6000fd5b50610120604051908101604052806000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020013373ffffffffffffffffffffffffffffffffffffffff16815260200185815260200184815260200183815260200182815260200160065481525060086000600654815260200190815260200160002060008201518160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060208201518160010160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060408201518160020160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060608201518160030160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506080820151816004015560a0820151816005015560c0820151816006015560e08201518160070155610100820151816008015590505060016006540160068190555050505050565b60001515600260149054906101000a900460ff161515148015610bbd5750600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16632f54bf6e336040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001915050602060405180830381600087803b158015610b8157600080fd5b505af1158015610b95573d6000803e3d6000fd5b505050506040513d6020811015610bab57600080fd5b81019080805190602001909291905050505b1515610bc857600080fd5b600560009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166310ca8c8183336040518363ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200192505050600060405180830381600087803b158015610cb957600080fd5b505af1158015610ccd573d6000803e3d6000fd5b50505050600560009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16631e88c9c0336040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001915050602060405180830381600087803b158015610d8e57600080fd5b505af1158015610da2573d6000803e3d6000fd5b505050506040513d6020811015610db857600080fd5b8101908080519060200190929190505050600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550600460009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16633fc7027782336040518363ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200192505050600060405180830381600087803b158015610efa57600080fd5b505af1158015610f0e573d6000803e3d6000fd5b50505050600460009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16631bf230cd336040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001915050602060405180830381600087803b158015610fcf57600080fd5b505af1158015610fe3573d6000803e3d6000fd5b505050506040513d6020811015610ff957600080fd5b8101908080519060200190929190505050600260006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506001600260146101000a81548160ff0219169083151502179055505050565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156110c657600080fd5b600654905090565b60008060008060008060008060006110e4611414565b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16632f54bf6e336040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001915050602060405180830381600087803b1580156111a157600080fd5b505af11580156111b5573d6000803e3d6000fd5b505050506040513d60208110156111cb57600080fd5b810190808051906020019092919050505015156111e757600080fd5b600860008c815260200190815260200160002061012060405190810160405290816000820160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020016001820160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020016002820160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020016003820160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001600482015481526020016005820154815260200160068201548152602001600782015481526020016008820154815250509050806000015181602001518260400151836060015184608001518560a001518660c001518760e00151886101000151995099509950995099509950995099509950509193959799909294969850565b60076020528060005260406000206000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b61012060405190810160405280600073ffffffffffffffffffffffffffffffffffffffff168152602001600073ffffffffffffffffffffffffffffffffffffffff168152602001600073ffffffffffffffffffffffffffffffffffffffff168152602001600073ffffffffffffffffffffffffffffffffffffffff168152602001600081526020016000815260200160008152602001600081526020016000815250905600a165627a7a72305820c7b51f216f9b5fad205e3e3693ca0f510cc98bbe56ef0ced5556056bd44205670029",
+    "deployedBytecode": "0x608060405260043610610078576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063392e53cd1461007d57806340ea0a94146100ac5780637b641baf146100b657806395af60d51461010c5780639afb3dc114610137578063b650d1f914610260575b600080fd5b34801561008957600080fd5b506100926102e3565b604051808215151515815260200191505060405180910390f35b6100b46103fd565b005b61010a600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610aa6565b005b34801561011857600080fd5b50610121611069565b6040518082815260200191505060405180910390f35b34801561014357600080fd5b50610162600480360381019080803590602001909291905050506110ce565b604051808a73ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018973ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018873ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018773ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001868152602001858152602001848152602001838152602001828152602001995050505050505050505060405180910390f35b34801561026c57600080fd5b506102a1600480360381019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506113e1565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6000600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16632f54bf6e336040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001915050602060405180830381600087803b1580156103a257600080fd5b505af11580156103b6573d6000803e3d6000fd5b505050506040513d60208110156103cc57600080fd5b810190808051906020019092919050505015156103e857600080fd5b600260149054906101000a900460ff16905090565b60008060008060011515600260149054906101000a900460ff16151514801561051b5750600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16632f54bf6e336040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001915050602060405180830381600087803b1580156104de57600080fd5b505af11580156104f2573d6000803e3d6000fd5b505050506040513d602081101561050857600080fd5b8101908080519060200190929190505050155b80156105e55750600460009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16636d7932d16040518163ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401602060405180830381600087803b1580156105a857600080fd5b505af11580156105bc573d6000803e3d6000fd5b505050506040513d60208110156105d257600080fd5b8101908080519060200190929190505050155b80156106af5750600560009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166325698d896040518163ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401602060405180830381600087803b15801561067257600080fd5b505af1158015610686573d6000803e3d6000fd5b505050506040513d602081101561069c57600080fd5b8101908080519060200190929190505050155b15156106ba57600080fd5b3493506064605f85028115156106cc57fe5b0492506064600485028115156106de57fe5b0491506064600185028115156106f057fe5b049050600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc849081150290604051600060405180830381858888f1935050505015801561075b573d6000803e3d6000fd5b50600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc839081150290604051600060405180830381858888f193505050501580156107c4573d6000803e3d6000fd5b506000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc829081150290604051600060405180830381858888f1935050505015801561082c573d6000803e3d6000fd5b50610120604051908101604052806000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020013373ffffffffffffffffffffffffffffffffffffffff16815260200185815260200184815260200183815260200182815260200160065481525060086000600654815260200190815260200160002060008201518160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060208201518160010160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060408201518160020160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060608201518160030160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506080820151816004015560a0820151816005015560c0820151816006015560e08201518160070155610100820151816008015590505060016006540160068190555050505050565b60001515600260149054906101000a900460ff161515148015610bbd5750600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16632f54bf6e336040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001915050602060405180830381600087803b158015610b8157600080fd5b505af1158015610b95573d6000803e3d6000fd5b505050506040513d6020811015610bab57600080fd5b81019080805190602001909291905050505b1515610bc857600080fd5b600560009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166310ca8c8183336040518363ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200192505050600060405180830381600087803b158015610cb957600080fd5b505af1158015610ccd573d6000803e3d6000fd5b50505050600560009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16631e88c9c0336040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001915050602060405180830381600087803b158015610d8e57600080fd5b505af1158015610da2573d6000803e3d6000fd5b505050506040513d6020811015610db857600080fd5b8101908080519060200190929190505050600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550600460009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16633fc7027782336040518363ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200192505050600060405180830381600087803b158015610efa57600080fd5b505af1158015610f0e573d6000803e3d6000fd5b50505050600460009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16631bf230cd336040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001915050602060405180830381600087803b158015610fcf57600080fd5b505af1158015610fe3573d6000803e3d6000fd5b505050506040513d6020811015610ff957600080fd5b8101908080519060200190929190505050600260006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506001600260146101000a81548160ff0219169083151502179055505050565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156110c657600080fd5b600654905090565b60008060008060008060008060006110e4611414565b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16632f54bf6e336040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001915050602060405180830381600087803b1580156111a157600080fd5b505af11580156111b5573d6000803e3d6000fd5b505050506040513d60208110156111cb57600080fd5b810190808051906020019092919050505015156111e757600080fd5b600860008c815260200190815260200160002061012060405190810160405290816000820160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020016001820160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020016002820160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020016003820160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001600482015481526020016005820154815260200160068201548152602001600782015481526020016008820154815250509050806000015181602001518260400151836060015184608001518560a001518660c001518760e00151886101000151995099509950995099509950995099509950509193959799909294969850565b60076020528060005260406000206000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b61012060405190810160405280600073ffffffffffffffffffffffffffffffffffffffff168152602001600073ffffffffffffffffffffffffffffffffffffffff168152602001600073ffffffffffffffffffffffffffffffffffffffff168152602001600073ffffffffffffffffffffffffffffffffffffffff168152602001600081526020016000815260200160008152602001600081526020016000815250905600a165627a7a72305820c7b51f216f9b5fad205e3e3693ca0f510cc98bbe56ef0ced5556056bd44205670029",
+    "sourceMap": "211:6320:1:-;;;350:5;323:32;;;;;;;;;;;;;;;;;;;;551:1;525:27;;710:344;8:9:-1;5:2;;;30:1;27;20:12;5:2;710:344:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;810:10;802:5;;:18;;;;;;;;;;;;;;;;;;929:8;903:15;;:35;;;;;;;;;;;;;;;;;;979:12;949:15;;:43;;;;;;;;;;;;;;;;;;1033:12;1003:15;;:43;;;;;;;;;;;;;;;;;;710:344;;;211:6320;;;;;;",
+    "deployedSourceMap": "211:6320:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;6384:142;;8:9:-1;5:2;;;30:1;27;20:12;5:2;6384:142:1;;;;;;;;;;;;;;;;;;;;;;;;;;;4236:1217;;;;;;3273:806;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;5461:231;;8:9:-1;5:2;;;30:1;27;20:12;5:2;5461:231:1;;;;;;;;;;;;;;;;;;;;;;;5700:676;;8:9:-1;5:2;;;30:1;27;20:12;5:2;5700:676:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2553:49;;8:9:-1;5:2;;;30:1;27;20:12;5:2;2553:49:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;6384:142;6429:4;6453:15;;;;;;;;;;;:23;;;6477:10;6453:35;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;6453:35:1;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;6453:35:1;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;6453:35:1;;;;;;;;;;;;;;;;6445:44;;;;;;;;6507:11;;;;;;;;;;;6500:18;;6384:142;:::o;4236:1217::-;4701:11;4735:18;4784;4832:16;4397:4;4382:19;;:11;;;;;;;;;;;:19;;;:59;;;;;4406:15;;;;;;;;;;;:23;;;4430:10;4406:35;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;4406:35:1;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;4406:35:1;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;4406:35:1;;;;;;;;;;;;;;;;4405:36;4382:59;:91;;;;;4446:15;;;;;;;;;;;:25;;;:27;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;4446:27:1;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;4446:27:1;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;4446:27:1;;;;;;;;;;;;;;;;4445:28;4382:91;:123;;;;;4478:15;;;;;;;;;;;:25;;;:27;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;4478:27:1;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;4478:27:1;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;4478:27:1;;;;;;;;;;;;;;;;4477:28;4382:123;4374:132;;;;;;;;4715:9;4701:23;;4770:3;4765:2;4756:6;:11;:17;;;;;;;;4735:38;;4818:3;4814:1;4805:6;:10;:16;;;;;;;;4784:37;;4864:3;4860:1;4851:6;:10;:16;;;;;;;;4832:35;;4997:7;;;;;;;;;;;:16;;:31;5014:13;4997:31;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;4997:31:1;5039:7;;;;;;;;;;;:16;;:31;5056:13;5039:31;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;5039:31:1;5169:5;;;;;;;;;;;:14;;:27;5184:11;5169:27;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;5169:27:1;5265:108;;;;;;;;;5274:5;;;;;;;;;;;5265:108;;;;;;5281:7;;;;;;;;;;;5265:108;;;;;;5290:7;;;;;;;;;;;5265:108;;;;;;5299:10;5265:108;;;;;;5311:6;5265:108;;;;5319:13;5265:108;;;;5334:13;5265:108;;;;5349:11;5265:108;;;;5362:10;;5265:108;;;5241:9;:21;5251:10;;5241:21;;;;;;;;;;;:132;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;5444:1;5431:10;;:14;5418:10;:27;;;;4236:1217;;;;:::o;3273:806::-;3385:5;3370:20;;:11;;;;;;;;;;;:20;;;:59;;;;;3394:15;;;;;;;;;;;:23;;;3418:10;3394:35;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;3394:35:1;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;3394:35:1;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;3394:35:1;;;;;;;;;;;;;;;;3370:59;3362:68;;;;;;;;3685:15;;;;;;;;;;;:26;;;3712:8;3722:10;3685:48;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;3685:48:1;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;3685:48:1;;;;3789:15;;;;;;;;;;;:26;;;3816:10;3789:38;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;3789:38:1;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;3789:38:1;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;3789:38:1;;;;;;;;;;;;;;;;3779:7;;:48;;;;;;;;;;;;;;;;;;3898:15;;;;;;;;;;;:26;;;3925:8;3935:10;3898:48;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;3898:48:1;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;3898:48:1;;;;4002:15;;;;;;;;;;;:26;;;4029:10;4002:38;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;4002:38:1;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;4002:38:1;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;4002:38:1;;;;;;;;;;;;;;;;3992:7;;:48;;;;;;;;;;;;;;;;;;4067:4;4053:11;;:18;;;;;;;;;;;;;;;;;;3273:806;;:::o;5461:231::-;5509:4;5648:5;;;;;;;;;;;5634:19;;:10;:19;;;5626:28;;;;;;;;5674:10;;5667:17;;5461:231;:::o;5700:676::-;5754:13;5778:15;5804;5830:13;5854:11;5876:18;5905;5934:16;5961:7;6138:24;;:::i;:::-;6089:15;;;;;;;;;;;:23;;;6113:10;6089:35;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;6089:35:1;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;6089:35:1;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;6089:35:1;;;;;;;;;;;;;;;;6081:44;;;;;;;;6165:9;:14;6175:3;6165:14;;;;;;;;;;;6138:41;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;6201:8;:14;;;6217:8;:16;;;6235:8;:16;;;6253:8;:14;;;6269:8;:15;;;6286:8;:22;;;6310:8;:22;;;6334:8;:20;;;6356:8;:11;;;6192:176;;;;;;;;;;;;;;;;;;5700:676;;;;;;;;;;;;:::o;2553:49::-;;;;;;;;;;;;;;;;;;;;;;:::o;211:6320::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+    "source": "pragma solidity ^0.4.23;\r\n// add all imports for user privileges here\r\n\r\n// actor contracts\r\nimport \"./accesscontrol/CharityRole.sol\";\r\nimport \"./core/Ownable.sol\";\r\nimport \"./accesscontrol/LotteryRole.sol\";\r\n\r\ncontract Share {\r\n\r\n    address private Owner;\r\n    address private Lottery;\r\n    address private Charity;\r\n    bool private initialized = false;\r\n    Ownable private ownableContract;\r\n    CharityRole private charityContract;\r\n    LotteryRole private lotteryContract;\r\n\r\n    // assigns an ID to each donation\r\n    uint private donationID = 1;\r\n\r\n    /// @notice sets the owner to the Owner variable upon contract init\r\n    /// @dev can be expanded to account for many more constructor features\r\n    constructor(address _ownable, address _charityRole, address _lotteryRole) public {\r\n        Owner = msg.sender;\r\n\r\n        // sets the address for the instance of each helper contract\r\n        ownableContract = Ownable(_ownable);\r\n        charityContract = CharityRole(_charityRole);\r\n        lotteryContract = LotteryRole(_lotteryRole);\r\n    }\r\n\r\n    /// @notice Contains the stucture of the star metadata\r\n    /// @dev key of structure is the provided transaction hash, will be donationId in v2.0\r\n    /// @param owner address, contains the address of the contract owner\r\n    /// @param lottery address, contains the address of the lottery - ether account for v1.0, contract for v2.0\r\n    /// @param charity address, contains the address of the charity - an ether account for v1.0 and v2.0\r\n    /// @param donor address, contains the address of the contract owner - ether account always\r\n    /// @param amount uint, contains the original amount donated - all amounts are after gas\r\n    /// @param charityAmount, contains the remaining 95% of original amount sent to charity\r\n    /// @param lotteryAmount uint, contains the 4% of original amount sent to lottery\r\n    /// @param ownerAmount, contains the 1% of original amount sent to owner\r\n    /// @param id, contains the value of the last submitted donation - is returned to ui\r\n    // TODO - refactor all data handling, updating, and transfer to a BASE data management contract in the future\r\n    struct Donation {\r\n        address owner;\r\n        address lottery;\r\n        address charity;\r\n        address donor;\r\n        uint amount;\r\n        uint charityAmount;\r\n        uint lotteryAmount;\r\n        uint ownerAmount;\r\n        uint id;\r\n    }\r\n\r\n    /// @notice Contains the mapping for the lottery entrees\r\n    /// @dev\r\n    /// @param donor address, will be expanded for v2.0\r\n\r\n    mapping(address => address) public lotteryEntrees;\r\n\r\n    /// @notice Contains the mapping for donation data\r\n    /// @dev key of structure is the transactionHash, in v2.0 a donationId will be introduced\r\n    /// @param Donation structure, contains donation metadata\r\n\r\n    mapping(uint => Donation) private Donations;\r\n\r\n    /// @notice Initiates the contract once deployed, only available to owner\r\n    /// @dev Need to test the syntax here, unsure the require function works\r\n    /// @param _lottery address, contains the ethereum public key for lottery account\r\n    /// @param _charity address, contains the ethereum public key for charity account\r\n\r\n    // TODO - this logic must also include the new contract\r\n    function initiateContract(address _lottery, address _charity) public payable{\r\n\r\n        require(initialized == false && ownableContract.isOwner(msg.sender));\r\n\r\n        // TODO - this logic must add the smart contract address for CharityRole\r\n        // TODO - ei - Charity = CharityRole(_charity) - argument must contain address of contract\r\n\r\n        // sets the lottery for the lotteryRole contract\r\n        lotteryContract.setLottery(_lottery, msg.sender);\r\n\r\n        // gets lottery address\r\n        Lottery = lotteryContract.getLottery(msg.sender);\r\n\r\n        // sets the charity for the charityRole contract\r\n        charityContract.setCharity(_charity, msg.sender);\r\n\r\n        // gets charity address\r\n        Charity = charityContract.getCharity(msg.sender);\r\n\r\n        initialized = true;\r\n    }\r\n\r\n    /// @notice parent function for all contract functionality\r\n    /// @dev Should consider splitting this out further if necessary by reviewers\r\n\r\n    function makeDonation() public payable{\r\n        // owner, charity, and lottery accounts cannot utilize the handleFunds function\r\n        require(initialized == true && !ownableContract.isOwner(msg.sender) && !charityContract.isCharity() && !lotteryContract.isLottery());\r\n\r\n        // creates the amount variable, used to set the amount later on in this function\r\n        // these math. functions can be move to the API to avoid gas cost for calculations\r\n        uint amount = msg.value;\r\n        uint charityAmount = amount * 95 / 100;\r\n        uint lotteryAmount = amount * 4 / 100;\r\n        uint ownerAmount = amount * 1 / 100;\r\n\r\n        // TODO - these can be refactored to ownableContract, since it utilizes the transfer of ownership principle\r\n        Charity.transfer(charityAmount);\r\n        Lottery.transfer(lotteryAmount);\r\n\r\n        // dispatches remaining funds to owner, this ensures that all gas is covered\r\n        Owner.transfer(ownerAmount);\r\n\r\n        // stores all the data\r\n        Donations[donationID] = Donation(Owner, Lottery, Charity, msg.sender, amount, charityAmount, lotteryAmount, ownerAmount, donationID);\r\n\r\n        // updates donationID;\r\n        donationID = donationID + 1;\r\n    }\r\n\r\n    function fetchDonationID() public view returns (uint){\r\n\r\n        // requires the owner to call this function, only owner address can access donationID atm\r\n        require(msg.sender == Owner);\r\n\r\n        return donationID;\r\n    }\r\n\r\n    function fetchDonation(uint _id) public view returns (address owner,\r\n        address lottery,\r\n        address charity,\r\n        address donor,\r\n        uint amount,\r\n        uint charityAmount,\r\n        uint lotteryAmount,\r\n        uint ownerAmount,\r\n        uint id){\r\n\r\n        // requires the owner to call this function, only owner address can access donationID atm\r\n        require(ownableContract.isOwner(msg.sender));\r\n\r\n        Donation memory donation = Donations[_id];\r\n\r\n        return ( donation.owner, donation.lottery, donation.charity, donation.donor, donation.amount, donation.charityAmount, donation.lotteryAmount, donation.ownerAmount, donation.id);\r\n    }\r\n\r\n    function isInitialized() public view returns(bool){\r\n        require(ownableContract.isOwner(msg.sender));\r\n        return initialized;\r\n    }\r\n\r\n}\r\n\r\n",
     "sourcePath": "D:\\Documents\\School\\Share\\ethereum\\contracts\\Share.sol",
     "ast": {
       "absolutePath": "/D/Documents/School/Share/ethereum/contracts/Share.sol",
       "exportedSymbols": {
         "Share": [
-          326
+          382
         ]
       },
-      "id": 327,
+      "id": 383,
       "nodeType": "SourceUnit",
       "nodes": [
         {
@@ -287,8 +179,8 @@ const abi = [
           "file": "./accesscontrol/CharityRole.sol",
           "id": 59,
           "nodeType": "ImportDirective",
-          "scope": 327,
-          "sourceUnit": 420,
+          "scope": 383,
+          "sourceUnit": 508,
           "src": "93:41:1",
           "symbolAliases": [],
           "unitAlias": ""
@@ -298,8 +190,8 @@ const abi = [
           "file": "./core/Ownable.sol",
           "id": 60,
           "nodeType": "ImportDirective",
-          "scope": 327,
-          "sourceUnit": 618,
+          "scope": 383,
+          "sourceUnit": 731,
           "src": "136:28:1",
           "symbolAliases": [],
           "unitAlias": ""
@@ -309,94 +201,32 @@ const abi = [
           "file": "./accesscontrol/LotteryRole.sol",
           "id": 61,
           "nodeType": "ImportDirective",
-          "scope": 327,
-          "sourceUnit": 513,
+          "scope": 383,
+          "sourceUnit": 621,
           "src": "166:41:1",
           "symbolAliases": [],
           "unitAlias": ""
         },
         {
-          "baseContracts": [
-            {
-              "arguments": null,
-              "baseName": {
-                "contractScope": null,
-                "id": 62,
-                "name": "Ownable",
-                "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 617,
-                "src": "229:7:1",
-                "typeDescriptions": {
-                  "typeIdentifier": "t_contract$_Ownable_$617",
-                  "typeString": "contract Ownable"
-                }
-              },
-              "id": 63,
-              "nodeType": "InheritanceSpecifier",
-              "src": "229:7:1"
-            },
-            {
-              "arguments": null,
-              "baseName": {
-                "contractScope": null,
-                "id": 64,
-                "name": "CharityRole",
-                "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 419,
-                "src": "238:11:1",
-                "typeDescriptions": {
-                  "typeIdentifier": "t_contract$_CharityRole_$419",
-                  "typeString": "contract CharityRole"
-                }
-              },
-              "id": 65,
-              "nodeType": "InheritanceSpecifier",
-              "src": "238:11:1"
-            },
-            {
-              "arguments": null,
-              "baseName": {
-                "contractScope": null,
-                "id": 66,
-                "name": "LotteryRole",
-                "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 512,
-                "src": "251:11:1",
-                "typeDescriptions": {
-                  "typeIdentifier": "t_contract$_LotteryRole_$512",
-                  "typeString": "contract LotteryRole"
-                }
-              },
-              "id": 67,
-              "nodeType": "InheritanceSpecifier",
-              "src": "251:11:1"
-            }
-          ],
-          "contractDependencies": [
-            419,
-            512,
-            617
-          ],
+          "baseContracts": [],
+          "contractDependencies": [],
           "contractKind": "contract",
           "documentation": null,
           "fullyImplemented": true,
-          "id": 326,
+          "id": 382,
           "linearizedBaseContracts": [
-            326,
-            512,
-            419,
-            617
+            382
           ],
           "name": "Share",
           "nodeType": "ContractDefinition",
           "nodes": [
             {
               "constant": false,
-              "id": 69,
+              "id": 63,
               "name": "Owner",
               "nodeType": "VariableDeclaration",
-              "scope": 326,
-              "src": "271:21:1",
+              "scope": 382,
+              "src": "235:21:1",
               "stateVariable": true,
               "storageLocation": "default",
               "typeDescriptions": {
@@ -404,10 +234,10 @@ const abi = [
                 "typeString": "address"
               },
               "typeName": {
-                "id": 68,
+                "id": 62,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
-                "src": "271:7:1",
+                "src": "235:7:1",
                 "typeDescriptions": {
                   "typeIdentifier": "t_address",
                   "typeString": "address"
@@ -418,11 +248,11 @@ const abi = [
             },
             {
               "constant": false,
-              "id": 71,
+              "id": 65,
               "name": "Lottery",
               "nodeType": "VariableDeclaration",
-              "scope": 326,
-              "src": "299:23:1",
+              "scope": 382,
+              "src": "263:23:1",
               "stateVariable": true,
               "storageLocation": "default",
               "typeDescriptions": {
@@ -430,10 +260,10 @@ const abi = [
                 "typeString": "address"
               },
               "typeName": {
-                "id": 70,
+                "id": 64,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
-                "src": "299:7:1",
+                "src": "263:7:1",
                 "typeDescriptions": {
                   "typeIdentifier": "t_address",
                   "typeString": "address"
@@ -444,11 +274,11 @@ const abi = [
             },
             {
               "constant": false,
-              "id": 73,
+              "id": 67,
               "name": "Charity",
               "nodeType": "VariableDeclaration",
-              "scope": 326,
-              "src": "329:23:1",
+              "scope": 382,
+              "src": "293:23:1",
               "stateVariable": true,
               "storageLocation": "default",
               "typeDescriptions": {
@@ -456,10 +286,10 @@ const abi = [
                 "typeString": "address"
               },
               "typeName": {
-                "id": 72,
+                "id": 66,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
-                "src": "329:7:1",
+                "src": "293:7:1",
                 "typeDescriptions": {
                   "typeIdentifier": "t_address",
                   "typeString": "address"
@@ -470,11 +300,11 @@ const abi = [
             },
             {
               "constant": false,
-              "id": 76,
+              "id": 70,
               "name": "initialized",
               "nodeType": "VariableDeclaration",
-              "scope": 326,
-              "src": "359:32:1",
+              "scope": 382,
+              "src": "323:32:1",
               "stateVariable": true,
               "storageLocation": "default",
               "typeDescriptions": {
@@ -482,10 +312,10 @@ const abi = [
                 "typeString": "bool"
               },
               "typeName": {
-                "id": 74,
+                "id": 68,
                 "name": "bool",
                 "nodeType": "ElementaryTypeName",
-                "src": "359:4:1",
+                "src": "323:4:1",
                 "typeDescriptions": {
                   "typeIdentifier": "t_bool",
                   "typeString": "bool"
@@ -494,14 +324,14 @@ const abi = [
               "value": {
                 "argumentTypes": null,
                 "hexValue": "66616c7365",
-                "id": 75,
+                "id": 69,
                 "isConstant": false,
                 "isLValue": false,
                 "isPure": true,
                 "kind": "bool",
                 "lValueRequested": false,
                 "nodeType": "Literal",
-                "src": "386:5:1",
+                "src": "350:5:1",
                 "subdenomination": null,
                 "typeDescriptions": {
                   "typeIdentifier": "t_bool",
@@ -513,11 +343,95 @@ const abi = [
             },
             {
               "constant": false,
+              "id": 72,
+              "name": "ownableContract",
+              "nodeType": "VariableDeclaration",
+              "scope": 382,
+              "src": "362:31:1",
+              "stateVariable": true,
+              "storageLocation": "default",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Ownable_$730",
+                "typeString": "contract Ownable"
+              },
+              "typeName": {
+                "contractScope": null,
+                "id": 71,
+                "name": "Ownable",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 730,
+                "src": "362:7:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_contract$_Ownable_$730",
+                  "typeString": "contract Ownable"
+                }
+              },
+              "value": null,
+              "visibility": "private"
+            },
+            {
+              "constant": false,
+              "id": 74,
+              "name": "charityContract",
+              "nodeType": "VariableDeclaration",
+              "scope": 382,
+              "src": "400:35:1",
+              "stateVariable": true,
+              "storageLocation": "default",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_CharityRole_$507",
+                "typeString": "contract CharityRole"
+              },
+              "typeName": {
+                "contractScope": null,
+                "id": 73,
+                "name": "CharityRole",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 507,
+                "src": "400:11:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_contract$_CharityRole_$507",
+                  "typeString": "contract CharityRole"
+                }
+              },
+              "value": null,
+              "visibility": "private"
+            },
+            {
+              "constant": false,
+              "id": 76,
+              "name": "lotteryContract",
+              "nodeType": "VariableDeclaration",
+              "scope": 382,
+              "src": "442:35:1",
+              "stateVariable": true,
+              "storageLocation": "default",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_LotteryRole_$620",
+                "typeString": "contract LotteryRole"
+              },
+              "typeName": {
+                "contractScope": null,
+                "id": 75,
+                "name": "LotteryRole",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 620,
+                "src": "442:11:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_contract$_LotteryRole_$620",
+                  "typeString": "contract LotteryRole"
+                }
+              },
+              "value": null,
+              "visibility": "private"
+            },
+            {
+              "constant": false,
               "id": 79,
               "name": "donationID",
               "nodeType": "VariableDeclaration",
-              "scope": 326,
-              "src": "439:27:1",
+              "scope": 382,
+              "src": "525:27:1",
               "stateVariable": true,
               "storageLocation": "default",
               "typeDescriptions": {
@@ -528,7 +442,7 @@ const abi = [
                 "id": 77,
                 "name": "uint",
                 "nodeType": "ElementaryTypeName",
-                "src": "439:4:1",
+                "src": "525:4:1",
                 "typeDescriptions": {
                   "typeIdentifier": "t_uint256",
                   "typeString": "uint256"
@@ -544,7 +458,7 @@ const abi = [
                 "kind": "number",
                 "lValueRequested": false,
                 "nodeType": "Literal",
-                "src": "465:1:1",
+                "src": "551:1:1",
                 "subdenomination": null,
                 "typeDescriptions": {
                   "typeIdentifier": "t_rational_1_by_1",
@@ -556,26 +470,26 @@ const abi = [
             },
             {
               "body": {
-                "id": 87,
+                "id": 111,
                 "nodeType": "Block",
-                "src": "645:37:1",
+                "src": "791:263:1",
                 "statements": [
                   {
                     "expression": {
                       "argumentTypes": null,
-                      "id": 85,
+                      "id": 91,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftHandSide": {
                         "argumentTypes": null,
-                        "id": 82,
+                        "id": 88,
                         "name": "Owner",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 69,
-                        "src": "656:5:1",
+                        "referencedDeclaration": 63,
+                        "src": "802:5:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -587,18 +501,18 @@ const abi = [
                         "argumentTypes": null,
                         "expression": {
                           "argumentTypes": null,
-                          "id": 83,
+                          "id": 89,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 632,
-                          "src": "664:3:1",
+                          "referencedDeclaration": 745,
+                          "src": "810:3:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
                           }
                         },
-                        "id": 84,
+                        "id": 90,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -606,26 +520,272 @@ const abi = [
                         "memberName": "sender",
                         "nodeType": "MemberAccess",
                         "referencedDeclaration": null,
-                        "src": "664:10:1",
+                        "src": "810:10:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         }
                       },
-                      "src": "656:18:1",
+                      "src": "802:18:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "id": 86,
+                    "id": 92,
                     "nodeType": "ExpressionStatement",
-                    "src": "656:18:1"
+                    "src": "802:18:1"
+                  },
+                  {
+                    "expression": {
+                      "argumentTypes": null,
+                      "id": 97,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "leftHandSide": {
+                        "argumentTypes": null,
+                        "id": 93,
+                        "name": "ownableContract",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 72,
+                        "src": "903:15:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Ownable_$730",
+                          "typeString": "contract Ownable"
+                        }
+                      },
+                      "nodeType": "Assignment",
+                      "operator": "=",
+                      "rightHandSide": {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 95,
+                            "name": "_ownable",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 81,
+                            "src": "929:8:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          ],
+                          "id": 94,
+                          "name": "Ownable",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 730,
+                          "src": "921:7:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_contract$_Ownable_$730_$",
+                            "typeString": "type(contract Ownable)"
+                          }
+                        },
+                        "id": 96,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "921:17:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Ownable_$730",
+                          "typeString": "contract Ownable"
+                        }
+                      },
+                      "src": "903:35:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Ownable_$730",
+                        "typeString": "contract Ownable"
+                      }
+                    },
+                    "id": 98,
+                    "nodeType": "ExpressionStatement",
+                    "src": "903:35:1"
+                  },
+                  {
+                    "expression": {
+                      "argumentTypes": null,
+                      "id": 103,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "leftHandSide": {
+                        "argumentTypes": null,
+                        "id": 99,
+                        "name": "charityContract",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 74,
+                        "src": "949:15:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_CharityRole_$507",
+                          "typeString": "contract CharityRole"
+                        }
+                      },
+                      "nodeType": "Assignment",
+                      "operator": "=",
+                      "rightHandSide": {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 101,
+                            "name": "_charityRole",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 83,
+                            "src": "979:12:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          ],
+                          "id": 100,
+                          "name": "CharityRole",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 507,
+                          "src": "967:11:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_contract$_CharityRole_$507_$",
+                            "typeString": "type(contract CharityRole)"
+                          }
+                        },
+                        "id": 102,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "967:25:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_CharityRole_$507",
+                          "typeString": "contract CharityRole"
+                        }
+                      },
+                      "src": "949:43:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_CharityRole_$507",
+                        "typeString": "contract CharityRole"
+                      }
+                    },
+                    "id": 104,
+                    "nodeType": "ExpressionStatement",
+                    "src": "949:43:1"
+                  },
+                  {
+                    "expression": {
+                      "argumentTypes": null,
+                      "id": 109,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "leftHandSide": {
+                        "argumentTypes": null,
+                        "id": 105,
+                        "name": "lotteryContract",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 76,
+                        "src": "1003:15:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_LotteryRole_$620",
+                          "typeString": "contract LotteryRole"
+                        }
+                      },
+                      "nodeType": "Assignment",
+                      "operator": "=",
+                      "rightHandSide": {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 107,
+                            "name": "_lotteryRole",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 85,
+                            "src": "1033:12:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          ],
+                          "id": 106,
+                          "name": "LotteryRole",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 620,
+                          "src": "1021:11:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_contract$_LotteryRole_$620_$",
+                            "typeString": "type(contract LotteryRole)"
+                          }
+                        },
+                        "id": 108,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "1021:25:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_LotteryRole_$620",
+                          "typeString": "contract LotteryRole"
+                        }
+                      },
+                      "src": "1003:43:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_LotteryRole_$620",
+                        "typeString": "contract LotteryRole"
+                      }
+                    },
+                    "id": 110,
+                    "nodeType": "ExpressionStatement",
+                    "src": "1003:43:1"
                   }
                 ]
               },
               "documentation": "@dev can be expanded to account for many more constructor features",
-              "id": 88,
+              "id": 112,
               "implemented": true,
               "isConstructor": true,
               "isDeclaredConst": false,
@@ -633,35 +793,114 @@ const abi = [
               "name": "",
               "nodeType": "FunctionDefinition",
               "parameters": {
-                "id": 80,
+                "id": 86,
                 "nodeType": "ParameterList",
-                "parameters": [],
-                "src": "635:2:1"
+                "parameters": [
+                  {
+                    "constant": false,
+                    "id": 81,
+                    "name": "_ownable",
+                    "nodeType": "VariableDeclaration",
+                    "scope": 112,
+                    "src": "722:16:1",
+                    "stateVariable": false,
+                    "storageLocation": "default",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    },
+                    "typeName": {
+                      "id": 80,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "722:7:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "value": null,
+                    "visibility": "internal"
+                  },
+                  {
+                    "constant": false,
+                    "id": 83,
+                    "name": "_charityRole",
+                    "nodeType": "VariableDeclaration",
+                    "scope": 112,
+                    "src": "740:20:1",
+                    "stateVariable": false,
+                    "storageLocation": "default",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    },
+                    "typeName": {
+                      "id": 82,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "740:7:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "value": null,
+                    "visibility": "internal"
+                  },
+                  {
+                    "constant": false,
+                    "id": 85,
+                    "name": "_lotteryRole",
+                    "nodeType": "VariableDeclaration",
+                    "scope": 112,
+                    "src": "762:20:1",
+                    "stateVariable": false,
+                    "storageLocation": "default",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    },
+                    "typeName": {
+                      "id": 84,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "762:7:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "value": null,
+                    "visibility": "internal"
+                  }
+                ],
+                "src": "721:62:1"
               },
               "payable": false,
               "returnParameters": {
-                "id": 81,
+                "id": 87,
                 "nodeType": "ParameterList",
                 "parameters": [],
-                "src": "645:0:1"
+                "src": "791:0:1"
               },
-              "scope": 326,
-              "src": "624:58:1",
+              "scope": 382,
+              "src": "710:344:1",
               "stateMutability": "nonpayable",
               "superFunction": null,
               "visibility": "public"
             },
             {
               "canonicalName": "Share.Donation",
-              "id": 107,
+              "id": 131,
               "members": [
                 {
                   "constant": false,
-                  "id": 90,
+                  "id": 114,
                   "name": "owner",
                   "nodeType": "VariableDeclaration",
-                  "scope": 107,
-                  "src": "1811:13:1",
+                  "scope": 131,
+                  "src": "2188:13:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -669,10 +908,10 @@ const abi = [
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 89,
+                    "id": 113,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1811:7:1",
+                    "src": "2188:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -683,11 +922,11 @@ const abi = [
                 },
                 {
                   "constant": false,
-                  "id": 92,
+                  "id": 116,
                   "name": "lottery",
                   "nodeType": "VariableDeclaration",
-                  "scope": 107,
-                  "src": "1835:15:1",
+                  "scope": 131,
+                  "src": "2212:15:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -695,10 +934,10 @@ const abi = [
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 91,
+                    "id": 115,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1835:7:1",
+                    "src": "2212:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -709,11 +948,11 @@ const abi = [
                 },
                 {
                   "constant": false,
-                  "id": 94,
+                  "id": 118,
                   "name": "charity",
                   "nodeType": "VariableDeclaration",
-                  "scope": 107,
-                  "src": "1861:15:1",
+                  "scope": 131,
+                  "src": "2238:15:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -721,10 +960,10 @@ const abi = [
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 93,
+                    "id": 117,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1861:7:1",
+                    "src": "2238:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -735,11 +974,11 @@ const abi = [
                 },
                 {
                   "constant": false,
-                  "id": 96,
+                  "id": 120,
                   "name": "donor",
                   "nodeType": "VariableDeclaration",
-                  "scope": 107,
-                  "src": "1887:13:1",
+                  "scope": 131,
+                  "src": "2264:13:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -747,10 +986,10 @@ const abi = [
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 95,
+                    "id": 119,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1887:7:1",
+                    "src": "2264:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -761,11 +1000,11 @@ const abi = [
                 },
                 {
                   "constant": false,
-                  "id": 98,
+                  "id": 122,
                   "name": "amount",
                   "nodeType": "VariableDeclaration",
-                  "scope": 107,
-                  "src": "1911:11:1",
+                  "scope": 131,
+                  "src": "2288:11:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -773,10 +1012,10 @@ const abi = [
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 97,
+                    "id": 121,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1911:4:1",
+                    "src": "2288:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -787,11 +1026,11 @@ const abi = [
                 },
                 {
                   "constant": false,
-                  "id": 100,
+                  "id": 124,
                   "name": "charityAmount",
                   "nodeType": "VariableDeclaration",
-                  "scope": 107,
-                  "src": "1933:18:1",
+                  "scope": 131,
+                  "src": "2310:18:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -799,10 +1038,10 @@ const abi = [
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 99,
+                    "id": 123,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1933:4:1",
+                    "src": "2310:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -813,11 +1052,11 @@ const abi = [
                 },
                 {
                   "constant": false,
-                  "id": 102,
+                  "id": 126,
                   "name": "lotteryAmount",
                   "nodeType": "VariableDeclaration",
-                  "scope": 107,
-                  "src": "1962:18:1",
+                  "scope": 131,
+                  "src": "2339:18:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -825,10 +1064,10 @@ const abi = [
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 101,
+                    "id": 125,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1962:4:1",
+                    "src": "2339:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -839,11 +1078,11 @@ const abi = [
                 },
                 {
                   "constant": false,
-                  "id": 104,
+                  "id": 128,
                   "name": "ownerAmount",
                   "nodeType": "VariableDeclaration",
-                  "scope": 107,
-                  "src": "1991:16:1",
+                  "scope": 131,
+                  "src": "2368:16:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -851,10 +1090,10 @@ const abi = [
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 103,
+                    "id": 127,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1991:4:1",
+                    "src": "2368:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -865,11 +1104,11 @@ const abi = [
                 },
                 {
                   "constant": false,
-                  "id": 106,
+                  "id": 130,
                   "name": "id",
                   "nodeType": "VariableDeclaration",
-                  "scope": 107,
-                  "src": "2018:7:1",
+                  "scope": 131,
+                  "src": "2395:7:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -877,10 +1116,10 @@ const abi = [
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 105,
+                    "id": 129,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2018:4:1",
+                    "src": "2395:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -892,17 +1131,17 @@ const abi = [
               ],
               "name": "Donation",
               "nodeType": "StructDefinition",
-              "scope": 326,
-              "src": "1784:249:1",
+              "scope": 382,
+              "src": "2161:249:1",
               "visibility": "public"
             },
             {
               "constant": false,
-              "id": 111,
+              "id": 135,
               "name": "lotteryEntrees",
               "nodeType": "VariableDeclaration",
-              "scope": 326,
-              "src": "2176:49:1",
+              "scope": 382,
+              "src": "2553:49:1",
               "stateVariable": true,
               "storageLocation": "default",
               "typeDescriptions": {
@@ -910,28 +1149,28 @@ const abi = [
                 "typeString": "mapping(address => address)"
               },
               "typeName": {
-                "id": 110,
+                "id": 134,
                 "keyType": {
-                  "id": 108,
+                  "id": 132,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
-                  "src": "2184:7:1",
+                  "src": "2561:7:1",
                   "typeDescriptions": {
                     "typeIdentifier": "t_address",
                     "typeString": "address"
                   }
                 },
                 "nodeType": "Mapping",
-                "src": "2176:27:1",
+                "src": "2553:27:1",
                 "typeDescriptions": {
                   "typeIdentifier": "t_mapping$_t_address_$_t_address_$",
                   "typeString": "mapping(address => address)"
                 },
                 "valueType": {
-                  "id": 109,
+                  "id": 133,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
-                  "src": "2195:7:1",
+                  "src": "2572:7:1",
                   "typeDescriptions": {
                     "typeIdentifier": "t_address",
                     "typeString": "address"
@@ -943,44 +1182,44 @@ const abi = [
             },
             {
               "constant": false,
-              "id": 115,
+              "id": 139,
               "name": "Donations",
               "nodeType": "VariableDeclaration",
-              "scope": 326,
-              "src": "2450:43:1",
+              "scope": 382,
+              "src": "2827:43:1",
               "stateVariable": true,
               "storageLocation": "default",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Donation_$107_storage_$",
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Donation_$131_storage_$",
                 "typeString": "mapping(uint256 => struct Share.Donation)"
               },
               "typeName": {
-                "id": 114,
+                "id": 138,
                 "keyType": {
-                  "id": 112,
+                  "id": 136,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
-                  "src": "2458:4:1",
+                  "src": "2835:4:1",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
                   }
                 },
                 "nodeType": "Mapping",
-                "src": "2450:25:1",
+                "src": "2827:25:1",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Donation_$107_storage_$",
+                  "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Donation_$131_storage_$",
                   "typeString": "mapping(uint256 => struct Share.Donation)"
                 },
                 "valueType": {
                   "contractScope": null,
-                  "id": 113,
+                  "id": 137,
                   "name": "Donation",
                   "nodeType": "UserDefinedTypeName",
-                  "referencedDeclaration": 107,
-                  "src": "2466:8:1",
+                  "referencedDeclaration": 131,
+                  "src": "2843:8:1",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_Donation_$107_storage_ptr",
+                    "typeIdentifier": "t_struct$_Donation_$131_storage_ptr",
                     "typeString": "struct Share.Donation"
                   }
                 }
@@ -990,9 +1229,9 @@ const abi = [
             },
             {
               "body": {
-                "id": 156,
+                "id": 194,
                 "nodeType": "Block",
-                "src": "2982:612:1",
+                "src": "3349:730:1",
                 "statements": [
                   {
                     "expression": {
@@ -1004,45 +1243,145 @@ const abi = [
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
                           },
-                          "id": 127,
+                          "id": 155,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftExpression": {
                             "argumentTypes": null,
-                            "id": 125,
-                            "name": "initialized",
-                            "nodeType": "Identifier",
-                            "overloadedDeclarations": [],
-                            "referencedDeclaration": 76,
-                            "src": "3003:11:1",
+                            "commonType": {
+                              "typeIdentifier": "t_bool",
+                              "typeString": "bool"
+                            },
+                            "id": 149,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "leftExpression": {
+                              "argumentTypes": null,
+                              "id": 147,
+                              "name": "initialized",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 70,
+                              "src": "3370:11:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_bool",
+                                "typeString": "bool"
+                              }
+                            },
+                            "nodeType": "BinaryOperation",
+                            "operator": "==",
+                            "rightExpression": {
+                              "argumentTypes": null,
+                              "hexValue": "66616c7365",
+                              "id": 148,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "bool",
+                              "lValueRequested": false,
+                              "nodeType": "Literal",
+                              "src": "3385:5:1",
+                              "subdenomination": null,
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_bool",
+                                "typeString": "bool"
+                              },
+                              "value": "false"
+                            },
+                            "src": "3370:20:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bool",
                               "typeString": "bool"
                             }
                           },
                           "nodeType": "BinaryOperation",
-                          "operator": "==",
+                          "operator": "&&",
                           "rightExpression": {
                             "argumentTypes": null,
-                            "hexValue": "66616c7365",
-                            "id": 126,
+                            "arguments": [
+                              {
+                                "argumentTypes": null,
+                                "expression": {
+                                  "argumentTypes": null,
+                                  "id": 152,
+                                  "name": "msg",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 745,
+                                  "src": "3418:3:1",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_magic_message",
+                                    "typeString": "msg"
+                                  }
+                                },
+                                "id": 153,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "memberName": "sender",
+                                "nodeType": "MemberAccess",
+                                "referencedDeclaration": null,
+                                "src": "3418:10:1",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              ],
+                              "expression": {
+                                "argumentTypes": null,
+                                "id": 150,
+                                "name": "ownableContract",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 72,
+                                "src": "3394:15:1",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_contract$_Ownable_$730",
+                                  "typeString": "contract Ownable"
+                                }
+                              },
+                              "id": 151,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberName": "isOwner",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": 714,
+                              "src": "3394:23:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_function_external_view$_t_address_$returns$_t_bool_$",
+                                "typeString": "function (address) view external returns (bool)"
+                              }
+                            },
+                            "id": 154,
                             "isConstant": false,
                             "isLValue": false,
-                            "isPure": true,
-                            "kind": "bool",
+                            "isPure": false,
+                            "kind": "functionCall",
                             "lValueRequested": false,
-                            "nodeType": "Literal",
-                            "src": "3018:5:1",
-                            "subdenomination": null,
+                            "names": [],
+                            "nodeType": "FunctionCall",
+                            "src": "3394:35:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bool",
                               "typeString": "bool"
-                            },
-                            "value": "false"
+                            }
                           },
-                          "src": "3003:20:1",
+                          "src": "3370:59:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
@@ -1056,21 +1395,21 @@ const abi = [
                             "typeString": "bool"
                           }
                         ],
-                        "id": 124,
+                        "id": 146,
                         "name": "require",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [
-                          635,
-                          636
+                          748,
+                          749
                         ],
-                        "referencedDeclaration": 635,
-                        "src": "2995:7:1",
+                        "referencedDeclaration": 748,
+                        "src": "3362:7:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
                           "typeString": "function (bool) pure"
                         }
                       },
-                      "id": 128,
+                      "id": 156,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -1078,61 +1417,15 @@ const abi = [
                       "lValueRequested": false,
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "2995:29:1",
+                      "src": "3362:68:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_tuple$__$",
                         "typeString": "tuple()"
                       }
                     },
-                    "id": 129,
+                    "id": 157,
                     "nodeType": "ExpressionStatement",
-                    "src": "2995:29:1"
-                  },
-                  {
-                    "expression": {
-                      "argumentTypes": null,
-                      "id": 132,
-                      "isConstant": false,
-                      "isLValue": false,
-                      "isPure": false,
-                      "lValueRequested": false,
-                      "leftHandSide": {
-                        "argumentTypes": null,
-                        "id": 130,
-                        "name": "Lottery",
-                        "nodeType": "Identifier",
-                        "overloadedDeclarations": [],
-                        "referencedDeclaration": 71,
-                        "src": "3219:7:1",
-                        "typeDescriptions": {
-                          "typeIdentifier": "t_address",
-                          "typeString": "address"
-                        }
-                      },
-                      "nodeType": "Assignment",
-                      "operator": "=",
-                      "rightHandSide": {
-                        "argumentTypes": null,
-                        "id": 131,
-                        "name": "_lottery",
-                        "nodeType": "Identifier",
-                        "overloadedDeclarations": [],
-                        "referencedDeclaration": 117,
-                        "src": "3229:8:1",
-                        "typeDescriptions": {
-                          "typeIdentifier": "t_address",
-                          "typeString": "address"
-                        }
-                      },
-                      "src": "3219:18:1",
-                      "typeDescriptions": {
-                        "typeIdentifier": "t_address",
-                        "typeString": "address"
-                      }
-                    },
-                    "id": 133,
-                    "nodeType": "ExpressionStatement",
-                    "src": "3219:18:1"
+                    "src": "3362:68:1"
                   },
                   {
                     "expression": {
@@ -1140,12 +1433,41 @@ const abi = [
                       "arguments": [
                         {
                           "argumentTypes": null,
-                          "id": 135,
+                          "id": 161,
                           "name": "_lottery",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 117,
-                          "src": "3319:8:1",
+                          "referencedDeclaration": 141,
+                          "src": "3712:8:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 162,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 745,
+                            "src": "3722:3:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 163,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "sender",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "3722:10:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
@@ -1157,20 +1479,40 @@ const abi = [
                           {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
+                          },
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
                           }
                         ],
-                        "id": 134,
-                        "name": "setLottery",
-                        "nodeType": "Identifier",
-                        "overloadedDeclarations": [],
-                        "referencedDeclaration": 456,
-                        "src": "3308:10:1",
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 158,
+                          "name": "lotteryContract",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 76,
+                          "src": "3685:15:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_contract$_LotteryRole_$620",
+                            "typeString": "contract LotteryRole"
+                          }
+                        },
+                        "id": 160,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "setLottery",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 545,
+                        "src": "3685:26:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
-                          "typeString": "function (address)"
+                          "typeIdentifier": "t_function_external_payable$_t_address_$_t_address_$returns$__$",
+                          "typeString": "function (address,address) payable external"
                         }
                       },
-                      "id": 136,
+                      "id": 164,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -1178,32 +1520,32 @@ const abi = [
                       "lValueRequested": false,
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "3308:20:1",
+                      "src": "3685:48:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_tuple$__$",
                         "typeString": "tuple()"
                       }
                     },
-                    "id": 137,
+                    "id": 165,
                     "nodeType": "ExpressionStatement",
-                    "src": "3308:20:1"
+                    "src": "3685:48:1"
                   },
                   {
                     "expression": {
                       "argumentTypes": null,
-                      "id": 141,
+                      "id": 172,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftHandSide": {
                         "argumentTypes": null,
-                        "id": 138,
+                        "id": 166,
                         "name": "Lottery",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 71,
-                        "src": "3374:7:1",
+                        "referencedDeclaration": 65,
+                        "src": "3779:7:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -1213,21 +1555,72 @@ const abi = [
                       "operator": "=",
                       "rightHandSide": {
                         "argumentTypes": null,
-                        "arguments": [],
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 169,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 745,
+                              "src": "3816:3:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 170,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "3816:10:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          }
+                        ],
                         "expression": {
-                          "argumentTypes": [],
-                          "id": 139,
-                          "name": "getLottery",
-                          "nodeType": "Identifier",
-                          "overloadedDeclarations": [],
-                          "referencedDeclaration": 466,
-                          "src": "3384:10:1",
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 167,
+                            "name": "lotteryContract",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 76,
+                            "src": "3789:15:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_LotteryRole_$620",
+                              "typeString": "contract LotteryRole"
+                            }
+                          },
+                          "id": 168,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "getLottery",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 562,
+                          "src": "3789:26:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_function_internal_view$__$returns$_t_address_$",
-                            "typeString": "function () view returns (address)"
+                            "typeIdentifier": "t_function_external_view$_t_address_$returns$_t_address_$",
+                            "typeString": "function (address) view external returns (address)"
                           }
                         },
-                        "id": 140,
+                        "id": 171,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -1235,21 +1628,21 @@ const abi = [
                         "lValueRequested": false,
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "3384:12:1",
+                        "src": "3789:38:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         }
                       },
-                      "src": "3374:22:1",
+                      "src": "3779:48:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "id": 142,
+                    "id": 173,
                     "nodeType": "ExpressionStatement",
-                    "src": "3374:22:1"
+                    "src": "3779:48:1"
                   },
                   {
                     "expression": {
@@ -1257,12 +1650,41 @@ const abi = [
                       "arguments": [
                         {
                           "argumentTypes": null,
-                          "id": 144,
+                          "id": 177,
                           "name": "_charity",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 119,
-                          "src": "3478:8:1",
+                          "referencedDeclaration": 143,
+                          "src": "3925:8:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 178,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 745,
+                            "src": "3935:3:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 179,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "sender",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "3935:10:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
@@ -1274,20 +1696,40 @@ const abi = [
                           {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
+                          },
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
                           }
                         ],
-                        "id": 143,
-                        "name": "setCharity",
-                        "nodeType": "Identifier",
-                        "overloadedDeclarations": [],
-                        "referencedDeclaration": 363,
-                        "src": "3467:10:1",
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 174,
+                          "name": "charityContract",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 74,
+                          "src": "3898:15:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_contract$_CharityRole_$507",
+                            "typeString": "contract CharityRole"
+                          }
+                        },
+                        "id": 176,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "setCharity",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 432,
+                        "src": "3898:26:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
-                          "typeString": "function (address)"
+                          "typeIdentifier": "t_function_external_payable$_t_address_$_t_address_$returns$__$",
+                          "typeString": "function (address,address) payable external"
                         }
                       },
-                      "id": 145,
+                      "id": 180,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -1295,32 +1737,32 @@ const abi = [
                       "lValueRequested": false,
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "3467:20:1",
+                      "src": "3898:48:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_tuple$__$",
                         "typeString": "tuple()"
                       }
                     },
-                    "id": 146,
+                    "id": 181,
                     "nodeType": "ExpressionStatement",
-                    "src": "3467:20:1"
+                    "src": "3898:48:1"
                   },
                   {
                     "expression": {
                       "argumentTypes": null,
-                      "id": 150,
+                      "id": 188,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftHandSide": {
                         "argumentTypes": null,
-                        "id": 147,
+                        "id": 182,
                         "name": "Charity",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 73,
-                        "src": "3533:7:1",
+                        "referencedDeclaration": 67,
+                        "src": "3992:7:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -1330,21 +1772,72 @@ const abi = [
                       "operator": "=",
                       "rightHandSide": {
                         "argumentTypes": null,
-                        "arguments": [],
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 185,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 745,
+                              "src": "4029:3:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 186,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "4029:10:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          }
+                        ],
                         "expression": {
-                          "argumentTypes": [],
-                          "id": 148,
-                          "name": "getCharity",
-                          "nodeType": "Identifier",
-                          "overloadedDeclarations": [],
-                          "referencedDeclaration": 373,
-                          "src": "3543:10:1",
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 183,
+                            "name": "charityContract",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 74,
+                            "src": "4002:15:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_CharityRole_$507",
+                              "typeString": "contract CharityRole"
+                            }
+                          },
+                          "id": 184,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "getCharity",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 449,
+                          "src": "4002:26:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_function_internal_view$__$returns$_t_address_$",
-                            "typeString": "function () view returns (address)"
+                            "typeIdentifier": "t_function_external_view$_t_address_$returns$_t_address_$",
+                            "typeString": "function (address) view external returns (address)"
                           }
                         },
-                        "id": 149,
+                        "id": 187,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -1352,38 +1845,38 @@ const abi = [
                         "lValueRequested": false,
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "3543:12:1",
+                        "src": "4002:38:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         }
                       },
-                      "src": "3533:22:1",
+                      "src": "3992:48:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "id": 151,
+                    "id": 189,
                     "nodeType": "ExpressionStatement",
-                    "src": "3533:22:1"
+                    "src": "3992:48:1"
                   },
                   {
                     "expression": {
                       "argumentTypes": null,
-                      "id": 154,
+                      "id": 192,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftHandSide": {
                         "argumentTypes": null,
-                        "id": 152,
+                        "id": 190,
                         "name": "initialized",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 76,
-                        "src": "3568:11:1",
+                        "referencedDeclaration": 70,
+                        "src": "4053:11:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -1394,14 +1887,14 @@ const abi = [
                       "rightHandSide": {
                         "argumentTypes": null,
                         "hexValue": "74727565",
-                        "id": 153,
+                        "id": 191,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "bool",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "3582:4:1",
+                        "src": "4067:4:1",
                         "subdenomination": null,
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
@@ -1409,57 +1902,37 @@ const abi = [
                         },
                         "value": "true"
                       },
-                      "src": "3568:18:1",
+                      "src": "4053:18:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
                       }
                     },
-                    "id": 155,
+                    "id": 193,
                     "nodeType": "ExpressionStatement",
-                    "src": "3568:18:1"
+                    "src": "4053:18:1"
                   }
                 ]
               },
               "documentation": "@param _charity address, contains the ethereum public key for charity account",
-              "id": 157,
+              "id": 195,
               "implemented": true,
               "isConstructor": false,
               "isDeclaredConst": false,
-              "modifiers": [
-                {
-                  "arguments": null,
-                  "id": 122,
-                  "modifierName": {
-                    "argumentTypes": null,
-                    "id": 121,
-                    "name": "onlyOwner",
-                    "nodeType": "Identifier",
-                    "overloadedDeclarations": [],
-                    "referencedDeclaration": 580,
-                    "src": "2958:9:1",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_modifier$__$",
-                      "typeString": "modifier ()"
-                    }
-                  },
-                  "nodeType": "ModifierInvocation",
-                  "src": "2958:9:1"
-                }
-              ],
+              "modifiers": [],
               "name": "initiateContract",
               "nodeType": "FunctionDefinition",
               "parameters": {
-                "id": 120,
+                "id": 144,
                 "nodeType": "ParameterList",
                 "parameters": [
                   {
                     "constant": false,
-                    "id": 117,
+                    "id": 141,
                     "name": "_lottery",
                     "nodeType": "VariableDeclaration",
-                    "scope": 157,
-                    "src": "2922:16:1",
+                    "scope": 195,
+                    "src": "3299:16:1",
                     "stateVariable": false,
                     "storageLocation": "default",
                     "typeDescriptions": {
@@ -1467,10 +1940,10 @@ const abi = [
                       "typeString": "address"
                     },
                     "typeName": {
-                      "id": 116,
+                      "id": 140,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
-                      "src": "2922:7:1",
+                      "src": "3299:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -1481,11 +1954,11 @@ const abi = [
                   },
                   {
                     "constant": false,
-                    "id": 119,
+                    "id": 143,
                     "name": "_charity",
                     "nodeType": "VariableDeclaration",
-                    "scope": 157,
-                    "src": "2940:16:1",
+                    "scope": 195,
+                    "src": "3317:16:1",
                     "stateVariable": false,
                     "storageLocation": "default",
                     "typeDescriptions": {
@@ -1493,10 +1966,10 @@ const abi = [
                       "typeString": "address"
                     },
                     "typeName": {
-                      "id": 118,
+                      "id": 142,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
-                      "src": "2940:7:1",
+                      "src": "3317:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -1506,26 +1979,26 @@ const abi = [
                     "visibility": "internal"
                   }
                 ],
-                "src": "2921:36:1"
+                "src": "3298:36:1"
               },
               "payable": true,
               "returnParameters": {
-                "id": 123,
+                "id": 145,
                 "nodeType": "ParameterList",
                 "parameters": [],
-                "src": "2982:0:1"
+                "src": "3349:0:1"
               },
-              "scope": 326,
-              "src": "2896:698:1",
+              "scope": 382,
+              "src": "3273:806:1",
               "stateMutability": "payable",
               "superFunction": null,
               "visibility": "public"
             },
             {
               "body": {
-                "id": 242,
+                "id": 291,
                 "nodeType": "Block",
-                "src": "3820:1067:1",
+                "src": "4274:1179:1",
                 "statements": [
                   {
                     "expression": {
@@ -1537,45 +2010,323 @@ const abi = [
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
                           },
-                          "id": 169,
+                          "id": 218,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftExpression": {
                             "argumentTypes": null,
-                            "id": 167,
-                            "name": "initialized",
-                            "nodeType": "Identifier",
-                            "overloadedDeclarations": [],
-                            "referencedDeclaration": 76,
-                            "src": "3928:11:1",
+                            "commonType": {
+                              "typeIdentifier": "t_bool",
+                              "typeString": "bool"
+                            },
+                            "id": 213,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "leftExpression": {
+                              "argumentTypes": null,
+                              "commonType": {
+                                "typeIdentifier": "t_bool",
+                                "typeString": "bool"
+                              },
+                              "id": 208,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "leftExpression": {
+                                "argumentTypes": null,
+                                "commonType": {
+                                  "typeIdentifier": "t_bool",
+                                  "typeString": "bool"
+                                },
+                                "id": 201,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "leftExpression": {
+                                  "argumentTypes": null,
+                                  "id": 199,
+                                  "name": "initialized",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 70,
+                                  "src": "4382:11:1",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_bool",
+                                    "typeString": "bool"
+                                  }
+                                },
+                                "nodeType": "BinaryOperation",
+                                "operator": "==",
+                                "rightExpression": {
+                                  "argumentTypes": null,
+                                  "hexValue": "74727565",
+                                  "id": 200,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "kind": "bool",
+                                  "lValueRequested": false,
+                                  "nodeType": "Literal",
+                                  "src": "4397:4:1",
+                                  "subdenomination": null,
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_bool",
+                                    "typeString": "bool"
+                                  },
+                                  "value": "true"
+                                },
+                                "src": "4382:19:1",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_bool",
+                                  "typeString": "bool"
+                                }
+                              },
+                              "nodeType": "BinaryOperation",
+                              "operator": "&&",
+                              "rightExpression": {
+                                "argumentTypes": null,
+                                "id": 207,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "nodeType": "UnaryOperation",
+                                "operator": "!",
+                                "prefix": true,
+                                "src": "4405:36:1",
+                                "subExpression": {
+                                  "argumentTypes": null,
+                                  "arguments": [
+                                    {
+                                      "argumentTypes": null,
+                                      "expression": {
+                                        "argumentTypes": null,
+                                        "id": 204,
+                                        "name": "msg",
+                                        "nodeType": "Identifier",
+                                        "overloadedDeclarations": [],
+                                        "referencedDeclaration": 745,
+                                        "src": "4430:3:1",
+                                        "typeDescriptions": {
+                                          "typeIdentifier": "t_magic_message",
+                                          "typeString": "msg"
+                                        }
+                                      },
+                                      "id": 205,
+                                      "isConstant": false,
+                                      "isLValue": false,
+                                      "isPure": false,
+                                      "lValueRequested": false,
+                                      "memberName": "sender",
+                                      "nodeType": "MemberAccess",
+                                      "referencedDeclaration": null,
+                                      "src": "4430:10:1",
+                                      "typeDescriptions": {
+                                        "typeIdentifier": "t_address",
+                                        "typeString": "address"
+                                      }
+                                    }
+                                  ],
+                                  "expression": {
+                                    "argumentTypes": [
+                                      {
+                                        "typeIdentifier": "t_address",
+                                        "typeString": "address"
+                                      }
+                                    ],
+                                    "expression": {
+                                      "argumentTypes": null,
+                                      "id": 202,
+                                      "name": "ownableContract",
+                                      "nodeType": "Identifier",
+                                      "overloadedDeclarations": [],
+                                      "referencedDeclaration": 72,
+                                      "src": "4406:15:1",
+                                      "typeDescriptions": {
+                                        "typeIdentifier": "t_contract$_Ownable_$730",
+                                        "typeString": "contract Ownable"
+                                      }
+                                    },
+                                    "id": 203,
+                                    "isConstant": false,
+                                    "isLValue": false,
+                                    "isPure": false,
+                                    "lValueRequested": false,
+                                    "memberName": "isOwner",
+                                    "nodeType": "MemberAccess",
+                                    "referencedDeclaration": 714,
+                                    "src": "4406:23:1",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_function_external_view$_t_address_$returns$_t_bool_$",
+                                      "typeString": "function (address) view external returns (bool)"
+                                    }
+                                  },
+                                  "id": 206,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "kind": "functionCall",
+                                  "lValueRequested": false,
+                                  "names": [],
+                                  "nodeType": "FunctionCall",
+                                  "src": "4406:35:1",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_bool",
+                                    "typeString": "bool"
+                                  }
+                                },
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_bool",
+                                  "typeString": "bool"
+                                }
+                              },
+                              "src": "4382:59:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_bool",
+                                "typeString": "bool"
+                              }
+                            },
+                            "nodeType": "BinaryOperation",
+                            "operator": "&&",
+                            "rightExpression": {
+                              "argumentTypes": null,
+                              "id": 212,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "nodeType": "UnaryOperation",
+                              "operator": "!",
+                              "prefix": true,
+                              "src": "4445:28:1",
+                              "subExpression": {
+                                "argumentTypes": null,
+                                "arguments": [],
+                                "expression": {
+                                  "argumentTypes": [],
+                                  "expression": {
+                                    "argumentTypes": null,
+                                    "id": 209,
+                                    "name": "charityContract",
+                                    "nodeType": "Identifier",
+                                    "overloadedDeclarations": [],
+                                    "referencedDeclaration": 74,
+                                    "src": "4446:15:1",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_contract$_CharityRole_$507",
+                                      "typeString": "contract CharityRole"
+                                    }
+                                  },
+                                  "id": 210,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "memberName": "isCharity",
+                                  "nodeType": "MemberAccess",
+                                  "referencedDeclaration": 479,
+                                  "src": "4446:25:1",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_function_external_view$__$returns$_t_bool_$",
+                                    "typeString": "function () view external returns (bool)"
+                                  }
+                                },
+                                "id": 211,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "kind": "functionCall",
+                                "lValueRequested": false,
+                                "names": [],
+                                "nodeType": "FunctionCall",
+                                "src": "4446:27:1",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_bool",
+                                  "typeString": "bool"
+                                }
+                              },
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_bool",
+                                "typeString": "bool"
+                              }
+                            },
+                            "src": "4382:91:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bool",
                               "typeString": "bool"
                             }
                           },
                           "nodeType": "BinaryOperation",
-                          "operator": "==",
+                          "operator": "&&",
                           "rightExpression": {
                             "argumentTypes": null,
-                            "hexValue": "74727565",
-                            "id": 168,
+                            "id": 217,
                             "isConstant": false,
                             "isLValue": false,
-                            "isPure": true,
-                            "kind": "bool",
+                            "isPure": false,
                             "lValueRequested": false,
-                            "nodeType": "Literal",
-                            "src": "3943:4:1",
-                            "subdenomination": null,
+                            "nodeType": "UnaryOperation",
+                            "operator": "!",
+                            "prefix": true,
+                            "src": "4477:28:1",
+                            "subExpression": {
+                              "argumentTypes": null,
+                              "arguments": [],
+                              "expression": {
+                                "argumentTypes": [],
+                                "expression": {
+                                  "argumentTypes": null,
+                                  "id": 214,
+                                  "name": "lotteryContract",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 76,
+                                  "src": "4478:15:1",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_contract$_LotteryRole_$620",
+                                    "typeString": "contract LotteryRole"
+                                  }
+                                },
+                                "id": 215,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "memberName": "isLottery",
+                                "nodeType": "MemberAccess",
+                                "referencedDeclaration": 592,
+                                "src": "4478:25:1",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_function_external_view$__$returns$_t_bool_$",
+                                  "typeString": "function () view external returns (bool)"
+                                }
+                              },
+                              "id": 216,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "kind": "functionCall",
+                              "lValueRequested": false,
+                              "names": [],
+                              "nodeType": "FunctionCall",
+                              "src": "4478:27:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_bool",
+                                "typeString": "bool"
+                              }
+                            },
                             "typeDescriptions": {
                               "typeIdentifier": "t_bool",
                               "typeString": "bool"
-                            },
-                            "value": "true"
+                            }
                           },
-                          "src": "3928:19:1",
+                          "src": "4382:123:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
@@ -1589,21 +2340,21 @@ const abi = [
                             "typeString": "bool"
                           }
                         ],
-                        "id": 166,
+                        "id": 198,
                         "name": "require",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [
-                          635,
-                          636
+                          748,
+                          749
                         ],
-                        "referencedDeclaration": 635,
-                        "src": "3920:7:1",
+                        "referencedDeclaration": 748,
+                        "src": "4374:7:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
                           "typeString": "function (bool) pure"
                         }
                       },
-                      "id": 170,
+                      "id": 219,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -1611,28 +2362,28 @@ const abi = [
                       "lValueRequested": false,
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "3920:28:1",
+                      "src": "4374:132:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_tuple$__$",
                         "typeString": "tuple()"
                       }
                     },
-                    "id": 171,
+                    "id": 220,
                     "nodeType": "ExpressionStatement",
-                    "src": "3920:28:1"
+                    "src": "4374:132:1"
                   },
                   {
                     "assignments": [
-                      173
+                      222
                     ],
                     "declarations": [
                       {
                         "constant": false,
-                        "id": 173,
+                        "id": 222,
                         "name": "amount",
                         "nodeType": "VariableDeclaration",
-                        "scope": 243,
-                        "src": "4143:11:1",
+                        "scope": 292,
+                        "src": "4701:11:1",
                         "stateVariable": false,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -1640,10 +2391,10 @@ const abi = [
                           "typeString": "uint256"
                         },
                         "typeName": {
-                          "id": 172,
+                          "id": 221,
                           "name": "uint",
                           "nodeType": "ElementaryTypeName",
-                          "src": "4143:4:1",
+                          "src": "4701:4:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -1653,23 +2404,23 @@ const abi = [
                         "visibility": "internal"
                       }
                     ],
-                    "id": 176,
+                    "id": 225,
                     "initialValue": {
                       "argumentTypes": null,
                       "expression": {
                         "argumentTypes": null,
-                        "id": 174,
+                        "id": 223,
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 632,
-                        "src": "4157:3:1",
+                        "referencedDeclaration": 745,
+                        "src": "4715:3:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
                           "typeString": "msg"
                         }
                       },
-                      "id": 175,
+                      "id": 224,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -1677,27 +2428,27 @@ const abi = [
                       "memberName": "value",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": null,
-                      "src": "4157:9:1",
+                      "src": "4715:9:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
                     "nodeType": "VariableDeclarationStatement",
-                    "src": "4143:23:1"
+                    "src": "4701:23:1"
                   },
                   {
                     "assignments": [
-                      178
+                      227
                     ],
                     "declarations": [
                       {
                         "constant": false,
-                        "id": 178,
+                        "id": 227,
                         "name": "charityAmount",
                         "nodeType": "VariableDeclaration",
-                        "scope": 243,
-                        "src": "4177:18:1",
+                        "scope": 292,
+                        "src": "4735:18:1",
                         "stateVariable": false,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -1705,10 +2456,10 @@ const abi = [
                           "typeString": "uint256"
                         },
                         "typeName": {
-                          "id": 177,
+                          "id": 226,
                           "name": "uint",
                           "nodeType": "ElementaryTypeName",
-                          "src": "4177:4:1",
+                          "src": "4735:4:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -1718,14 +2469,14 @@ const abi = [
                         "visibility": "internal"
                       }
                     ],
-                    "id": 184,
+                    "id": 233,
                     "initialValue": {
                       "argumentTypes": null,
                       "commonType": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       },
-                      "id": 183,
+                      "id": 232,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -1736,19 +2487,19 @@ const abi = [
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         },
-                        "id": 181,
+                        "id": 230,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
                           "argumentTypes": null,
-                          "id": 179,
+                          "id": 228,
                           "name": "amount",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 173,
-                          "src": "4198:6:1",
+                          "referencedDeclaration": 222,
+                          "src": "4756:6:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -1759,14 +2510,14 @@ const abi = [
                         "rightExpression": {
                           "argumentTypes": null,
                           "hexValue": "3935",
-                          "id": 180,
+                          "id": 229,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "kind": "number",
                           "lValueRequested": false,
                           "nodeType": "Literal",
-                          "src": "4207:2:1",
+                          "src": "4765:2:1",
                           "subdenomination": null,
                           "typeDescriptions": {
                             "typeIdentifier": "t_rational_95_by_1",
@@ -1774,7 +2525,7 @@ const abi = [
                           },
                           "value": "95"
                         },
-                        "src": "4198:11:1",
+                        "src": "4756:11:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -1785,14 +2536,14 @@ const abi = [
                       "rightExpression": {
                         "argumentTypes": null,
                         "hexValue": "313030",
-                        "id": 182,
+                        "id": 231,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "number",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "4212:3:1",
+                        "src": "4770:3:1",
                         "subdenomination": null,
                         "typeDescriptions": {
                           "typeIdentifier": "t_rational_100_by_1",
@@ -1800,27 +2551,27 @@ const abi = [
                         },
                         "value": "100"
                       },
-                      "src": "4198:17:1",
+                      "src": "4756:17:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
                     "nodeType": "VariableDeclarationStatement",
-                    "src": "4177:38:1"
+                    "src": "4735:38:1"
                   },
                   {
                     "assignments": [
-                      186
+                      235
                     ],
                     "declarations": [
                       {
                         "constant": false,
-                        "id": 186,
+                        "id": 235,
                         "name": "lotteryAmount",
                         "nodeType": "VariableDeclaration",
-                        "scope": 243,
-                        "src": "4226:18:1",
+                        "scope": 292,
+                        "src": "4784:18:1",
                         "stateVariable": false,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -1828,10 +2579,10 @@ const abi = [
                           "typeString": "uint256"
                         },
                         "typeName": {
-                          "id": 185,
+                          "id": 234,
                           "name": "uint",
                           "nodeType": "ElementaryTypeName",
-                          "src": "4226:4:1",
+                          "src": "4784:4:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -1841,14 +2592,14 @@ const abi = [
                         "visibility": "internal"
                       }
                     ],
-                    "id": 192,
+                    "id": 241,
                     "initialValue": {
                       "argumentTypes": null,
                       "commonType": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       },
-                      "id": 191,
+                      "id": 240,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -1859,19 +2610,19 @@ const abi = [
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         },
-                        "id": 189,
+                        "id": 238,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
                           "argumentTypes": null,
-                          "id": 187,
+                          "id": 236,
                           "name": "amount",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 173,
-                          "src": "4247:6:1",
+                          "referencedDeclaration": 222,
+                          "src": "4805:6:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -1882,14 +2633,14 @@ const abi = [
                         "rightExpression": {
                           "argumentTypes": null,
                           "hexValue": "34",
-                          "id": 188,
+                          "id": 237,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "kind": "number",
                           "lValueRequested": false,
                           "nodeType": "Literal",
-                          "src": "4256:1:1",
+                          "src": "4814:1:1",
                           "subdenomination": null,
                           "typeDescriptions": {
                             "typeIdentifier": "t_rational_4_by_1",
@@ -1897,7 +2648,7 @@ const abi = [
                           },
                           "value": "4"
                         },
-                        "src": "4247:10:1",
+                        "src": "4805:10:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -1908,14 +2659,14 @@ const abi = [
                       "rightExpression": {
                         "argumentTypes": null,
                         "hexValue": "313030",
-                        "id": 190,
+                        "id": 239,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "number",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "4260:3:1",
+                        "src": "4818:3:1",
                         "subdenomination": null,
                         "typeDescriptions": {
                           "typeIdentifier": "t_rational_100_by_1",
@@ -1923,27 +2674,27 @@ const abi = [
                         },
                         "value": "100"
                       },
-                      "src": "4247:16:1",
+                      "src": "4805:16:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
                     "nodeType": "VariableDeclarationStatement",
-                    "src": "4226:37:1"
+                    "src": "4784:37:1"
                   },
                   {
                     "assignments": [
-                      194
+                      243
                     ],
                     "declarations": [
                       {
                         "constant": false,
-                        "id": 194,
+                        "id": 243,
                         "name": "ownerAmount",
                         "nodeType": "VariableDeclaration",
-                        "scope": 243,
-                        "src": "4274:16:1",
+                        "scope": 292,
+                        "src": "4832:16:1",
                         "stateVariable": false,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -1951,10 +2702,10 @@ const abi = [
                           "typeString": "uint256"
                         },
                         "typeName": {
-                          "id": 193,
+                          "id": 242,
                           "name": "uint",
                           "nodeType": "ElementaryTypeName",
-                          "src": "4274:4:1",
+                          "src": "4832:4:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -1964,14 +2715,14 @@ const abi = [
                         "visibility": "internal"
                       }
                     ],
-                    "id": 200,
+                    "id": 249,
                     "initialValue": {
                       "argumentTypes": null,
                       "commonType": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       },
-                      "id": 199,
+                      "id": 248,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -1982,19 +2733,19 @@ const abi = [
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         },
-                        "id": 197,
+                        "id": 246,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
                           "argumentTypes": null,
-                          "id": 195,
+                          "id": 244,
                           "name": "amount",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 173,
-                          "src": "4293:6:1",
+                          "referencedDeclaration": 222,
+                          "src": "4851:6:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -2005,14 +2756,14 @@ const abi = [
                         "rightExpression": {
                           "argumentTypes": null,
                           "hexValue": "31",
-                          "id": 196,
+                          "id": 245,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "kind": "number",
                           "lValueRequested": false,
                           "nodeType": "Literal",
-                          "src": "4302:1:1",
+                          "src": "4860:1:1",
                           "subdenomination": null,
                           "typeDescriptions": {
                             "typeIdentifier": "t_rational_1_by_1",
@@ -2020,7 +2771,7 @@ const abi = [
                           },
                           "value": "1"
                         },
-                        "src": "4293:10:1",
+                        "src": "4851:10:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -2031,14 +2782,14 @@ const abi = [
                       "rightExpression": {
                         "argumentTypes": null,
                         "hexValue": "313030",
-                        "id": 198,
+                        "id": 247,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "number",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "4306:3:1",
+                        "src": "4864:3:1",
                         "subdenomination": null,
                         "typeDescriptions": {
                           "typeIdentifier": "t_rational_100_by_1",
@@ -2046,14 +2797,14 @@ const abi = [
                         },
                         "value": "100"
                       },
-                      "src": "4293:16:1",
+                      "src": "4851:16:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
                     "nodeType": "VariableDeclarationStatement",
-                    "src": "4274:35:1"
+                    "src": "4832:35:1"
                   },
                   {
                     "expression": {
@@ -2061,12 +2812,12 @@ const abi = [
                       "arguments": [
                         {
                           "argumentTypes": null,
-                          "id": 204,
+                          "id": 253,
                           "name": "charityAmount",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 178,
-                          "src": "4448:13:1",
+                          "referencedDeclaration": 227,
+                          "src": "5014:13:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -2082,18 +2833,18 @@ const abi = [
                         ],
                         "expression": {
                           "argumentTypes": null,
-                          "id": 201,
+                          "id": 250,
                           "name": "Charity",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 73,
-                          "src": "4431:7:1",
+                          "referencedDeclaration": 67,
+                          "src": "4997:7:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
                           }
                         },
-                        "id": 203,
+                        "id": 252,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -2101,13 +2852,13 @@ const abi = [
                         "memberName": "transfer",
                         "nodeType": "MemberAccess",
                         "referencedDeclaration": null,
-                        "src": "4431:16:1",
+                        "src": "4997:16:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_transfer_nonpayable$_t_uint256_$returns$__$",
                           "typeString": "function (uint256)"
                         }
                       },
-                      "id": 205,
+                      "id": 254,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -2115,15 +2866,15 @@ const abi = [
                       "lValueRequested": false,
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "4431:31:1",
+                      "src": "4997:31:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_tuple$__$",
                         "typeString": "tuple()"
                       }
                     },
-                    "id": 206,
+                    "id": 255,
                     "nodeType": "ExpressionStatement",
-                    "src": "4431:31:1"
+                    "src": "4997:31:1"
                   },
                   {
                     "expression": {
@@ -2131,12 +2882,12 @@ const abi = [
                       "arguments": [
                         {
                           "argumentTypes": null,
-                          "id": 210,
+                          "id": 259,
                           "name": "lotteryAmount",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 186,
-                          "src": "4490:13:1",
+                          "referencedDeclaration": 235,
+                          "src": "5056:13:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -2152,18 +2903,18 @@ const abi = [
                         ],
                         "expression": {
                           "argumentTypes": null,
-                          "id": 207,
+                          "id": 256,
                           "name": "Lottery",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 71,
-                          "src": "4473:7:1",
+                          "referencedDeclaration": 65,
+                          "src": "5039:7:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
                           }
                         },
-                        "id": 209,
+                        "id": 258,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -2171,13 +2922,13 @@ const abi = [
                         "memberName": "transfer",
                         "nodeType": "MemberAccess",
                         "referencedDeclaration": null,
-                        "src": "4473:16:1",
+                        "src": "5039:16:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_transfer_nonpayable$_t_uint256_$returns$__$",
                           "typeString": "function (uint256)"
                         }
                       },
-                      "id": 211,
+                      "id": 260,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -2185,15 +2936,15 @@ const abi = [
                       "lValueRequested": false,
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "4473:31:1",
+                      "src": "5039:31:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_tuple$__$",
                         "typeString": "tuple()"
                       }
                     },
-                    "id": 212,
+                    "id": 261,
                     "nodeType": "ExpressionStatement",
-                    "src": "4473:31:1"
+                    "src": "5039:31:1"
                   },
                   {
                     "expression": {
@@ -2201,12 +2952,12 @@ const abi = [
                       "arguments": [
                         {
                           "argumentTypes": null,
-                          "id": 216,
+                          "id": 265,
                           "name": "ownerAmount",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 194,
-                          "src": "4618:11:1",
+                          "referencedDeclaration": 243,
+                          "src": "5184:11:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -2222,18 +2973,18 @@ const abi = [
                         ],
                         "expression": {
                           "argumentTypes": null,
-                          "id": 213,
+                          "id": 262,
                           "name": "Owner",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 69,
-                          "src": "4603:5:1",
+                          "referencedDeclaration": 63,
+                          "src": "5169:5:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
                           }
                         },
-                        "id": 215,
+                        "id": 264,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -2241,13 +2992,13 @@ const abi = [
                         "memberName": "transfer",
                         "nodeType": "MemberAccess",
                         "referencedDeclaration": null,
-                        "src": "4603:14:1",
+                        "src": "5169:14:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_transfer_nonpayable$_t_uint256_$returns$__$",
                           "typeString": "function (uint256)"
                         }
                       },
-                      "id": 217,
+                      "id": 266,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -2255,20 +3006,20 @@ const abi = [
                       "lValueRequested": false,
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "4603:27:1",
+                      "src": "5169:27:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_tuple$__$",
                         "typeString": "tuple()"
                       }
                     },
-                    "id": 218,
+                    "id": 267,
                     "nodeType": "ExpressionStatement",
-                    "src": "4603:27:1"
+                    "src": "5169:27:1"
                   },
                   {
                     "expression": {
                       "argumentTypes": null,
-                      "id": 234,
+                      "id": 283,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -2277,26 +3028,26 @@ const abi = [
                         "argumentTypes": null,
                         "baseExpression": {
                           "argumentTypes": null,
-                          "id": 219,
+                          "id": 268,
                           "name": "Donations",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 115,
-                          "src": "4675:9:1",
+                          "referencedDeclaration": 139,
+                          "src": "5241:9:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Donation_$107_storage_$",
+                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Donation_$131_storage_$",
                             "typeString": "mapping(uint256 => struct Share.Donation storage ref)"
                           }
                         },
-                        "id": 221,
+                        "id": 270,
                         "indexExpression": {
                           "argumentTypes": null,
-                          "id": 220,
+                          "id": 269,
                           "name": "donationID",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 79,
-                          "src": "4685:10:1",
+                          "src": "5251:10:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -2307,9 +3058,9 @@ const abi = [
                         "isPure": false,
                         "lValueRequested": true,
                         "nodeType": "IndexAccess",
-                        "src": "4675:21:1",
+                        "src": "5241:21:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Donation_$107_storage",
+                          "typeIdentifier": "t_struct$_Donation_$131_storage",
                           "typeString": "struct Share.Donation storage ref"
                         }
                       },
@@ -2320,12 +3071,12 @@ const abi = [
                         "arguments": [
                           {
                             "argumentTypes": null,
-                            "id": 223,
+                            "id": 272,
                             "name": "Owner",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 69,
-                            "src": "4708:5:1",
+                            "referencedDeclaration": 63,
+                            "src": "5274:5:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
@@ -2333,12 +3084,12 @@ const abi = [
                           },
                           {
                             "argumentTypes": null,
-                            "id": 224,
+                            "id": 273,
                             "name": "Lottery",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 71,
-                            "src": "4715:7:1",
+                            "referencedDeclaration": 65,
+                            "src": "5281:7:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
@@ -2346,12 +3097,12 @@ const abi = [
                           },
                           {
                             "argumentTypes": null,
-                            "id": 225,
+                            "id": 274,
                             "name": "Charity",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 73,
-                            "src": "4724:7:1",
+                            "referencedDeclaration": 67,
+                            "src": "5290:7:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
@@ -2361,18 +3112,18 @@ const abi = [
                             "argumentTypes": null,
                             "expression": {
                               "argumentTypes": null,
-                              "id": 226,
+                              "id": 275,
                               "name": "msg",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 632,
-                              "src": "4733:3:1",
+                              "referencedDeclaration": 745,
+                              "src": "5299:3:1",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_magic_message",
                                 "typeString": "msg"
                               }
                             },
-                            "id": 227,
+                            "id": 276,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -2380,7 +3131,7 @@ const abi = [
                             "memberName": "sender",
                             "nodeType": "MemberAccess",
                             "referencedDeclaration": null,
-                            "src": "4733:10:1",
+                            "src": "5299:10:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
@@ -2388,12 +3139,12 @@ const abi = [
                           },
                           {
                             "argumentTypes": null,
-                            "id": 228,
+                            "id": 277,
                             "name": "amount",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 173,
-                            "src": "4745:6:1",
+                            "referencedDeclaration": 222,
+                            "src": "5311:6:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -2401,12 +3152,12 @@ const abi = [
                           },
                           {
                             "argumentTypes": null,
-                            "id": 229,
+                            "id": 278,
                             "name": "charityAmount",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 178,
-                            "src": "4753:13:1",
+                            "referencedDeclaration": 227,
+                            "src": "5319:13:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -2414,12 +3165,12 @@ const abi = [
                           },
                           {
                             "argumentTypes": null,
-                            "id": 230,
+                            "id": 279,
                             "name": "lotteryAmount",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 186,
-                            "src": "4768:13:1",
+                            "referencedDeclaration": 235,
+                            "src": "5334:13:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -2427,12 +3178,12 @@ const abi = [
                           },
                           {
                             "argumentTypes": null,
-                            "id": 231,
+                            "id": 280,
                             "name": "ownerAmount",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 194,
-                            "src": "4783:11:1",
+                            "referencedDeclaration": 243,
+                            "src": "5349:11:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -2440,12 +3191,12 @@ const abi = [
                           },
                           {
                             "argumentTypes": null,
-                            "id": 232,
+                            "id": 281,
                             "name": "donationID",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 79,
-                            "src": "4796:10:1",
+                            "src": "5362:10:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -2491,18 +3242,18 @@ const abi = [
                               "typeString": "uint256"
                             }
                           ],
-                          "id": 222,
+                          "id": 271,
                           "name": "Donation",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 107,
-                          "src": "4699:8:1",
+                          "referencedDeclaration": 131,
+                          "src": "5265:8:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_struct$_Donation_$107_storage_ptr_$",
+                            "typeIdentifier": "t_type$_t_struct$_Donation_$131_storage_ptr_$",
                             "typeString": "type(struct Share.Donation storage pointer)"
                           }
                         },
-                        "id": 233,
+                        "id": 282,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -2510,38 +3261,38 @@ const abi = [
                         "lValueRequested": false,
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "4699:108:1",
+                        "src": "5265:108:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Donation_$107_memory",
+                          "typeIdentifier": "t_struct$_Donation_$131_memory",
                           "typeString": "struct Share.Donation memory"
                         }
                       },
-                      "src": "4675:132:1",
+                      "src": "5241:132:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Donation_$107_storage",
+                        "typeIdentifier": "t_struct$_Donation_$131_storage",
                         "typeString": "struct Share.Donation storage ref"
                       }
                     },
-                    "id": 235,
+                    "id": 284,
                     "nodeType": "ExpressionStatement",
-                    "src": "4675:132:1"
+                    "src": "5241:132:1"
                   },
                   {
                     "expression": {
                       "argumentTypes": null,
-                      "id": 240,
+                      "id": 289,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftHandSide": {
                         "argumentTypes": null,
-                        "id": 236,
+                        "id": 285,
                         "name": "donationID",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 79,
-                        "src": "4852:10:1",
+                        "src": "5418:10:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -2555,19 +3306,19 @@ const abi = [
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         },
-                        "id": 239,
+                        "id": 288,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
                           "argumentTypes": null,
-                          "id": 237,
+                          "id": 286,
                           "name": "donationID",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 79,
-                          "src": "4865:10:1",
+                          "src": "5431:10:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -2578,14 +3329,14 @@ const abi = [
                         "rightExpression": {
                           "argumentTypes": null,
                           "hexValue": "31",
-                          "id": 238,
+                          "id": 287,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "kind": "number",
                           "lValueRequested": false,
                           "nodeType": "Literal",
-                          "src": "4878:1:1",
+                          "src": "5444:1:1",
                           "subdenomination": null,
                           "typeDescriptions": {
                             "typeIdentifier": "t_rational_1_by_1",
@@ -2593,114 +3344,56 @@ const abi = [
                           },
                           "value": "1"
                         },
-                        "src": "4865:14:1",
+                        "src": "5431:14:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
-                      "src": "4852:27:1",
+                      "src": "5418:27:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "id": 241,
+                    "id": 290,
                     "nodeType": "ExpressionStatement",
-                    "src": "4852:27:1"
+                    "src": "5418:27:1"
                   }
                 ]
               },
               "documentation": "@dev Should consider splitting this out further if necessary by reviewers",
-              "id": 243,
+              "id": 292,
               "implemented": true,
               "isConstructor": false,
               "isDeclaredConst": false,
-              "modifiers": [
-                {
-                  "arguments": null,
-                  "id": 160,
-                  "modifierName": {
-                    "argumentTypes": null,
-                    "id": 159,
-                    "name": "notOwner",
-                    "nodeType": "Identifier",
-                    "overloadedDeclarations": [],
-                    "referencedDeclaration": 590,
-                    "src": "3775:8:1",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_modifier$__$",
-                      "typeString": "modifier ()"
-                    }
-                  },
-                  "nodeType": "ModifierInvocation",
-                  "src": "3775:8:1"
-                },
-                {
-                  "arguments": null,
-                  "id": 162,
-                  "modifierName": {
-                    "argumentTypes": null,
-                    "id": 161,
-                    "name": "notCharity",
-                    "nodeType": "Identifier",
-                    "overloadedDeclarations": [],
-                    "referencedDeclaration": 392,
-                    "src": "3784:10:1",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_modifier$__$",
-                      "typeString": "modifier ()"
-                    }
-                  },
-                  "nodeType": "ModifierInvocation",
-                  "src": "3784:10:1"
-                },
-                {
-                  "arguments": null,
-                  "id": 164,
-                  "modifierName": {
-                    "argumentTypes": null,
-                    "id": 163,
-                    "name": "notLottery",
-                    "nodeType": "Identifier",
-                    "overloadedDeclarations": [],
-                    "referencedDeclaration": 485,
-                    "src": "3795:10:1",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_modifier$__$",
-                      "typeString": "modifier ()"
-                    }
-                  },
-                  "nodeType": "ModifierInvocation",
-                  "src": "3795:10:1"
-                }
-              ],
+              "modifiers": [],
               "name": "makeDonation",
               "nodeType": "FunctionDefinition",
               "parameters": {
-                "id": 158,
+                "id": 196,
                 "nodeType": "ParameterList",
                 "parameters": [],
-                "src": "3772:2:1"
+                "src": "4257:2:1"
               },
               "payable": true,
               "returnParameters": {
-                "id": 165,
+                "id": 197,
                 "nodeType": "ParameterList",
                 "parameters": [],
-                "src": "3820:0:1"
+                "src": "4274:0:1"
               },
-              "scope": 326,
-              "src": "3751:1136:1",
+              "scope": 382,
+              "src": "4236:1217:1",
               "stateMutability": "payable",
               "superFunction": null,
               "visibility": "public"
             },
             {
               "body": {
-                "id": 257,
+                "id": 306,
                 "nodeType": "Block",
-                "src": "4948:178:1",
+                "src": "5514:178:1",
                 "statements": [
                   {
                     "expression": {
@@ -2712,7 +3405,7 @@ const abi = [
                             "typeIdentifier": "t_address",
                             "typeString": "address"
                           },
-                          "id": 252,
+                          "id": 301,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -2721,18 +3414,18 @@ const abi = [
                             "argumentTypes": null,
                             "expression": {
                               "argumentTypes": null,
-                              "id": 249,
+                              "id": 298,
                               "name": "msg",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 632,
-                              "src": "5068:3:1",
+                              "referencedDeclaration": 745,
+                              "src": "5634:3:1",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_magic_message",
                                 "typeString": "msg"
                               }
                             },
-                            "id": 250,
+                            "id": 299,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -2740,7 +3433,7 @@ const abi = [
                             "memberName": "sender",
                             "nodeType": "MemberAccess",
                             "referencedDeclaration": null,
-                            "src": "5068:10:1",
+                            "src": "5634:10:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
@@ -2750,18 +3443,18 @@ const abi = [
                           "operator": "==",
                           "rightExpression": {
                             "argumentTypes": null,
-                            "id": 251,
+                            "id": 300,
                             "name": "Owner",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 69,
-                            "src": "5082:5:1",
+                            "referencedDeclaration": 63,
+                            "src": "5648:5:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
                             }
                           },
-                          "src": "5068:19:1",
+                          "src": "5634:19:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
@@ -2775,21 +3468,21 @@ const abi = [
                             "typeString": "bool"
                           }
                         ],
-                        "id": 248,
+                        "id": 297,
                         "name": "require",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [
-                          635,
-                          636
+                          748,
+                          749
                         ],
-                        "referencedDeclaration": 635,
-                        "src": "5060:7:1",
+                        "referencedDeclaration": 748,
+                        "src": "5626:7:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
                           "typeString": "function (bool) pure"
                         }
                       },
-                      "id": 253,
+                      "id": 302,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -2797,39 +3490,39 @@ const abi = [
                       "lValueRequested": false,
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "5060:28:1",
+                      "src": "5626:28:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_tuple$__$",
                         "typeString": "tuple()"
                       }
                     },
-                    "id": 254,
+                    "id": 303,
                     "nodeType": "ExpressionStatement",
-                    "src": "5060:28:1"
+                    "src": "5626:28:1"
                   },
                   {
                     "expression": {
                       "argumentTypes": null,
-                      "id": 255,
+                      "id": 304,
                       "name": "donationID",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 79,
-                      "src": "5108:10:1",
+                      "src": "5674:10:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "functionReturnParameters": 247,
-                    "id": 256,
+                    "functionReturnParameters": 296,
+                    "id": 305,
                     "nodeType": "Return",
-                    "src": "5101:17:1"
+                    "src": "5667:17:1"
                   }
                 ]
               },
               "documentation": null,
-              "id": 258,
+              "id": 307,
               "implemented": true,
               "isConstructor": false,
               "isDeclaredConst": true,
@@ -2837,23 +3530,23 @@ const abi = [
               "name": "fetchDonationID",
               "nodeType": "FunctionDefinition",
               "parameters": {
-                "id": 244,
+                "id": 293,
                 "nodeType": "ParameterList",
                 "parameters": [],
-                "src": "4919:2:1"
+                "src": "5485:2:1"
               },
               "payable": false,
               "returnParameters": {
-                "id": 247,
+                "id": 296,
                 "nodeType": "ParameterList",
                 "parameters": [
                   {
                     "constant": false,
-                    "id": 246,
+                    "id": 295,
                     "name": "",
                     "nodeType": "VariableDeclaration",
-                    "scope": 258,
-                    "src": "4943:4:1",
+                    "scope": 307,
+                    "src": "5509:4:1",
                     "stateVariable": false,
                     "storageLocation": "default",
                     "typeDescriptions": {
@@ -2861,10 +3554,10 @@ const abi = [
                       "typeString": "uint256"
                     },
                     "typeName": {
-                      "id": 245,
+                      "id": 294,
                       "name": "uint",
                       "nodeType": "ElementaryTypeName",
-                      "src": "4943:4:1",
+                      "src": "5509:4:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -2874,19 +3567,19 @@ const abi = [
                     "visibility": "internal"
                   }
                 ],
-                "src": "4942:6:1"
+                "src": "5508:6:1"
               },
-              "scope": 326,
-              "src": "4895:231:1",
+              "scope": 382,
+              "src": "5461:231:1",
               "stateMutability": "view",
               "superFunction": null,
               "visibility": "public"
             },
             {
               "body": {
-                "id": 314,
+                "id": 364,
                 "nodeType": "Block",
-                "src": "5403:389:1",
+                "src": "5969:407:1",
                 "statements": [
                   {
                     "expression": {
@@ -2894,60 +3587,80 @@ const abi = [
                       "arguments": [
                         {
                           "argumentTypes": null,
-                          "commonType": {
-                            "typeIdentifier": "t_address",
-                            "typeString": "address"
-                          },
-                          "id": 285,
-                          "isConstant": false,
-                          "isLValue": false,
-                          "isPure": false,
-                          "lValueRequested": false,
-                          "leftExpression": {
-                            "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "expression": {
+                                "argumentTypes": null,
+                                "id": 333,
+                                "name": "msg",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 745,
+                                "src": "6113:3:1",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_magic_message",
+                                  "typeString": "msg"
+                                }
+                              },
+                              "id": 334,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberName": "sender",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": null,
+                              "src": "6113:10:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              }
+                            ],
                             "expression": {
                               "argumentTypes": null,
-                              "id": 282,
-                              "name": "msg",
+                              "id": 331,
+                              "name": "ownableContract",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 632,
-                              "src": "5523:3:1",
+                              "referencedDeclaration": 72,
+                              "src": "6089:15:1",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_magic_message",
-                                "typeString": "msg"
+                                "typeIdentifier": "t_contract$_Ownable_$730",
+                                "typeString": "contract Ownable"
                               }
                             },
-                            "id": 283,
+                            "id": 332,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
-                            "memberName": "sender",
+                            "memberName": "isOwner",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": null,
-                            "src": "5523:10:1",
+                            "referencedDeclaration": 714,
+                            "src": "6089:23:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_address",
-                              "typeString": "address"
+                              "typeIdentifier": "t_function_external_view$_t_address_$returns$_t_bool_$",
+                              "typeString": "function (address) view external returns (bool)"
                             }
                           },
-                          "nodeType": "BinaryOperation",
-                          "operator": "==",
-                          "rightExpression": {
-                            "argumentTypes": null,
-                            "id": 284,
-                            "name": "Owner",
-                            "nodeType": "Identifier",
-                            "overloadedDeclarations": [],
-                            "referencedDeclaration": 69,
-                            "src": "5537:5:1",
-                            "typeDescriptions": {
-                              "typeIdentifier": "t_address",
-                              "typeString": "address"
-                            }
-                          },
-                          "src": "5523:19:1",
+                          "id": 335,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "6089:35:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
@@ -2961,21 +3674,21 @@ const abi = [
                             "typeString": "bool"
                           }
                         ],
-                        "id": 281,
+                        "id": 330,
                         "name": "require",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [
-                          635,
-                          636
+                          748,
+                          749
                         ],
-                        "referencedDeclaration": 635,
-                        "src": "5515:7:1",
+                        "referencedDeclaration": 748,
+                        "src": "6081:7:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
                           "typeString": "function (bool) pure"
                         }
                       },
-                      "id": 286,
+                      "id": 336,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -2983,43 +3696,43 @@ const abi = [
                       "lValueRequested": false,
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "5515:28:1",
+                      "src": "6081:44:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_tuple$__$",
                         "typeString": "tuple()"
                       }
                     },
-                    "id": 287,
+                    "id": 337,
                     "nodeType": "ExpressionStatement",
-                    "src": "5515:28:1"
+                    "src": "6081:44:1"
                   },
                   {
                     "assignments": [
-                      289
+                      339
                     ],
                     "declarations": [
                       {
                         "constant": false,
-                        "id": 289,
+                        "id": 339,
                         "name": "donation",
                         "nodeType": "VariableDeclaration",
-                        "scope": 315,
-                        "src": "5556:24:1",
+                        "scope": 365,
+                        "src": "6138:24:1",
                         "stateVariable": false,
                         "storageLocation": "memory",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Donation_$107_memory_ptr",
+                          "typeIdentifier": "t_struct$_Donation_$131_memory_ptr",
                           "typeString": "struct Share.Donation"
                         },
                         "typeName": {
                           "contractScope": null,
-                          "id": 288,
+                          "id": 338,
                           "name": "Donation",
                           "nodeType": "UserDefinedTypeName",
-                          "referencedDeclaration": 107,
-                          "src": "5556:8:1",
+                          "referencedDeclaration": 131,
+                          "src": "6138:8:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Donation_$107_storage_ptr",
+                            "typeIdentifier": "t_struct$_Donation_$131_storage_ptr",
                             "typeString": "struct Share.Donation"
                           }
                         },
@@ -3027,31 +3740,31 @@ const abi = [
                         "visibility": "internal"
                       }
                     ],
-                    "id": 293,
+                    "id": 343,
                     "initialValue": {
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 290,
+                        "id": 340,
                         "name": "Donations",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 115,
-                        "src": "5583:9:1",
+                        "referencedDeclaration": 139,
+                        "src": "6165:9:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Donation_$107_storage_$",
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Donation_$131_storage_$",
                           "typeString": "mapping(uint256 => struct Share.Donation storage ref)"
                         }
                       },
-                      "id": 292,
+                      "id": 342,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 291,
+                        "id": 341,
                         "name": "_id",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 260,
-                        "src": "5593:3:1",
+                        "referencedDeclaration": 309,
+                        "src": "6175:3:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -3062,14 +3775,14 @@ const abi = [
                       "isPure": false,
                       "lValueRequested": false,
                       "nodeType": "IndexAccess",
-                      "src": "5583:14:1",
+                      "src": "6165:14:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Donation_$107_storage",
+                        "typeIdentifier": "t_struct$_Donation_$131_storage",
                         "typeString": "struct Share.Donation storage ref"
                       }
                     },
                     "nodeType": "VariableDeclarationStatement",
-                    "src": "5556:41:1"
+                    "src": "6138:41:1"
                   },
                   {
                     "expression": {
@@ -3079,26 +3792,26 @@ const abi = [
                           "argumentTypes": null,
                           "expression": {
                             "argumentTypes": null,
-                            "id": 294,
+                            "id": 344,
                             "name": "donation",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 289,
-                            "src": "5617:8:1",
+                            "referencedDeclaration": 339,
+                            "src": "6201:8:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_Donation_$107_memory_ptr",
+                              "typeIdentifier": "t_struct$_Donation_$131_memory_ptr",
                               "typeString": "struct Share.Donation memory"
                             }
                           },
-                          "id": 295,
+                          "id": 345,
                           "isConstant": false,
                           "isLValue": true,
                           "isPure": false,
                           "lValueRequested": false,
                           "memberName": "owner",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 90,
-                          "src": "5617:14:1",
+                          "referencedDeclaration": 114,
+                          "src": "6201:14:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
@@ -3108,26 +3821,26 @@ const abi = [
                           "argumentTypes": null,
                           "expression": {
                             "argumentTypes": null,
-                            "id": 296,
+                            "id": 346,
                             "name": "donation",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 289,
-                            "src": "5633:8:1",
+                            "referencedDeclaration": 339,
+                            "src": "6217:8:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_Donation_$107_memory_ptr",
+                              "typeIdentifier": "t_struct$_Donation_$131_memory_ptr",
                               "typeString": "struct Share.Donation memory"
                             }
                           },
-                          "id": 297,
+                          "id": 347,
                           "isConstant": false,
                           "isLValue": true,
                           "isPure": false,
                           "lValueRequested": false,
                           "memberName": "lottery",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 92,
-                          "src": "5633:16:1",
+                          "referencedDeclaration": 116,
+                          "src": "6217:16:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
@@ -3137,26 +3850,26 @@ const abi = [
                           "argumentTypes": null,
                           "expression": {
                             "argumentTypes": null,
-                            "id": 298,
+                            "id": 348,
                             "name": "donation",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 289,
-                            "src": "5651:8:1",
+                            "referencedDeclaration": 339,
+                            "src": "6235:8:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_Donation_$107_memory_ptr",
+                              "typeIdentifier": "t_struct$_Donation_$131_memory_ptr",
                               "typeString": "struct Share.Donation memory"
                             }
                           },
-                          "id": 299,
+                          "id": 349,
                           "isConstant": false,
                           "isLValue": true,
                           "isPure": false,
                           "lValueRequested": false,
                           "memberName": "charity",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 94,
-                          "src": "5651:16:1",
+                          "referencedDeclaration": 118,
+                          "src": "6235:16:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
@@ -3166,26 +3879,26 @@ const abi = [
                           "argumentTypes": null,
                           "expression": {
                             "argumentTypes": null,
-                            "id": 300,
+                            "id": 350,
                             "name": "donation",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 289,
-                            "src": "5669:8:1",
+                            "referencedDeclaration": 339,
+                            "src": "6253:8:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_Donation_$107_memory_ptr",
+                              "typeIdentifier": "t_struct$_Donation_$131_memory_ptr",
                               "typeString": "struct Share.Donation memory"
                             }
                           },
-                          "id": 301,
+                          "id": 351,
                           "isConstant": false,
                           "isLValue": true,
                           "isPure": false,
                           "lValueRequested": false,
                           "memberName": "donor",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 96,
-                          "src": "5669:14:1",
+                          "referencedDeclaration": 120,
+                          "src": "6253:14:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
@@ -3195,26 +3908,26 @@ const abi = [
                           "argumentTypes": null,
                           "expression": {
                             "argumentTypes": null,
-                            "id": 302,
+                            "id": 352,
                             "name": "donation",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 289,
-                            "src": "5685:8:1",
+                            "referencedDeclaration": 339,
+                            "src": "6269:8:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_Donation_$107_memory_ptr",
+                              "typeIdentifier": "t_struct$_Donation_$131_memory_ptr",
                               "typeString": "struct Share.Donation memory"
                             }
                           },
-                          "id": 303,
+                          "id": 353,
                           "isConstant": false,
                           "isLValue": true,
                           "isPure": false,
                           "lValueRequested": false,
                           "memberName": "amount",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 98,
-                          "src": "5685:15:1",
+                          "referencedDeclaration": 122,
+                          "src": "6269:15:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -3224,26 +3937,26 @@ const abi = [
                           "argumentTypes": null,
                           "expression": {
                             "argumentTypes": null,
-                            "id": 304,
+                            "id": 354,
                             "name": "donation",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 289,
-                            "src": "5702:8:1",
+                            "referencedDeclaration": 339,
+                            "src": "6286:8:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_Donation_$107_memory_ptr",
+                              "typeIdentifier": "t_struct$_Donation_$131_memory_ptr",
                               "typeString": "struct Share.Donation memory"
                             }
                           },
-                          "id": 305,
+                          "id": 355,
                           "isConstant": false,
                           "isLValue": true,
                           "isPure": false,
                           "lValueRequested": false,
                           "memberName": "charityAmount",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 100,
-                          "src": "5702:22:1",
+                          "referencedDeclaration": 124,
+                          "src": "6286:22:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -3253,26 +3966,26 @@ const abi = [
                           "argumentTypes": null,
                           "expression": {
                             "argumentTypes": null,
-                            "id": 306,
+                            "id": 356,
                             "name": "donation",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 289,
-                            "src": "5726:8:1",
+                            "referencedDeclaration": 339,
+                            "src": "6310:8:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_Donation_$107_memory_ptr",
+                              "typeIdentifier": "t_struct$_Donation_$131_memory_ptr",
                               "typeString": "struct Share.Donation memory"
                             }
                           },
-                          "id": 307,
+                          "id": 357,
                           "isConstant": false,
                           "isLValue": true,
                           "isPure": false,
                           "lValueRequested": false,
                           "memberName": "lotteryAmount",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 102,
-                          "src": "5726:22:1",
+                          "referencedDeclaration": 126,
+                          "src": "6310:22:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -3282,26 +3995,26 @@ const abi = [
                           "argumentTypes": null,
                           "expression": {
                             "argumentTypes": null,
-                            "id": 308,
+                            "id": 358,
                             "name": "donation",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 289,
-                            "src": "5750:8:1",
+                            "referencedDeclaration": 339,
+                            "src": "6334:8:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_Donation_$107_memory_ptr",
+                              "typeIdentifier": "t_struct$_Donation_$131_memory_ptr",
                               "typeString": "struct Share.Donation memory"
                             }
                           },
-                          "id": 309,
+                          "id": 359,
                           "isConstant": false,
                           "isLValue": true,
                           "isPure": false,
                           "lValueRequested": false,
                           "memberName": "ownerAmount",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 104,
-                          "src": "5750:20:1",
+                          "referencedDeclaration": 128,
+                          "src": "6334:20:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -3311,54 +4024,54 @@ const abi = [
                           "argumentTypes": null,
                           "expression": {
                             "argumentTypes": null,
-                            "id": 310,
+                            "id": 360,
                             "name": "donation",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 289,
-                            "src": "5772:8:1",
+                            "referencedDeclaration": 339,
+                            "src": "6356:8:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_Donation_$107_memory_ptr",
+                              "typeIdentifier": "t_struct$_Donation_$131_memory_ptr",
                               "typeString": "struct Share.Donation memory"
                             }
                           },
-                          "id": 311,
+                          "id": 361,
                           "isConstant": false,
                           "isLValue": true,
                           "isPure": false,
                           "lValueRequested": false,
                           "memberName": "id",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 106,
-                          "src": "5772:11:1",
+                          "referencedDeclaration": 130,
+                          "src": "6356:11:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         }
                       ],
-                      "id": 312,
+                      "id": 362,
                       "isConstant": false,
                       "isInlineArray": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "nodeType": "TupleExpression",
-                      "src": "5615:169:1",
+                      "src": "6199:169:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_tuple$_t_address_$_t_address_$_t_address_$_t_address_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$",
                         "typeString": "tuple(address,address,address,address,uint256,uint256,uint256,uint256,uint256)"
                       }
                     },
-                    "functionReturnParameters": 280,
-                    "id": 313,
+                    "functionReturnParameters": 329,
+                    "id": 363,
                     "nodeType": "Return",
-                    "src": "5608:176:1"
+                    "src": "6192:176:1"
                   }
                 ]
               },
               "documentation": null,
-              "id": 315,
+              "id": 365,
               "implemented": true,
               "isConstructor": false,
               "isDeclaredConst": true,
@@ -3366,16 +4079,16 @@ const abi = [
               "name": "fetchDonation",
               "nodeType": "FunctionDefinition",
               "parameters": {
-                "id": 261,
+                "id": 310,
                 "nodeType": "ParameterList",
                 "parameters": [
                   {
                     "constant": false,
-                    "id": 260,
+                    "id": 309,
                     "name": "_id",
                     "nodeType": "VariableDeclaration",
-                    "scope": 315,
-                    "src": "5157:8:1",
+                    "scope": 365,
+                    "src": "5723:8:1",
                     "stateVariable": false,
                     "storageLocation": "default",
                     "typeDescriptions": {
@@ -3383,10 +4096,10 @@ const abi = [
                       "typeString": "uint256"
                     },
                     "typeName": {
-                      "id": 259,
+                      "id": 308,
                       "name": "uint",
                       "nodeType": "ElementaryTypeName",
-                      "src": "5157:4:1",
+                      "src": "5723:4:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -3396,20 +4109,20 @@ const abi = [
                     "visibility": "internal"
                   }
                 ],
-                "src": "5156:10:1"
+                "src": "5722:10:1"
               },
               "payable": false,
               "returnParameters": {
-                "id": 280,
+                "id": 329,
                 "nodeType": "ParameterList",
                 "parameters": [
                   {
                     "constant": false,
-                    "id": 263,
+                    "id": 312,
                     "name": "owner",
                     "nodeType": "VariableDeclaration",
-                    "scope": 315,
-                    "src": "5188:13:1",
+                    "scope": 365,
+                    "src": "5754:13:1",
                     "stateVariable": false,
                     "storageLocation": "default",
                     "typeDescriptions": {
@@ -3417,10 +4130,10 @@ const abi = [
                       "typeString": "address"
                     },
                     "typeName": {
-                      "id": 262,
+                      "id": 311,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
-                      "src": "5188:7:1",
+                      "src": "5754:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -3431,11 +4144,11 @@ const abi = [
                   },
                   {
                     "constant": false,
-                    "id": 265,
+                    "id": 314,
                     "name": "lottery",
                     "nodeType": "VariableDeclaration",
-                    "scope": 315,
-                    "src": "5212:15:1",
+                    "scope": 365,
+                    "src": "5778:15:1",
                     "stateVariable": false,
                     "storageLocation": "default",
                     "typeDescriptions": {
@@ -3443,10 +4156,10 @@ const abi = [
                       "typeString": "address"
                     },
                     "typeName": {
-                      "id": 264,
+                      "id": 313,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
-                      "src": "5212:7:1",
+                      "src": "5778:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -3457,11 +4170,11 @@ const abi = [
                   },
                   {
                     "constant": false,
-                    "id": 267,
+                    "id": 316,
                     "name": "charity",
                     "nodeType": "VariableDeclaration",
-                    "scope": 315,
-                    "src": "5238:15:1",
+                    "scope": 365,
+                    "src": "5804:15:1",
                     "stateVariable": false,
                     "storageLocation": "default",
                     "typeDescriptions": {
@@ -3469,10 +4182,10 @@ const abi = [
                       "typeString": "address"
                     },
                     "typeName": {
-                      "id": 266,
+                      "id": 315,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
-                      "src": "5238:7:1",
+                      "src": "5804:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -3483,11 +4196,11 @@ const abi = [
                   },
                   {
                     "constant": false,
-                    "id": 269,
+                    "id": 318,
                     "name": "donor",
                     "nodeType": "VariableDeclaration",
-                    "scope": 315,
-                    "src": "5264:13:1",
+                    "scope": 365,
+                    "src": "5830:13:1",
                     "stateVariable": false,
                     "storageLocation": "default",
                     "typeDescriptions": {
@@ -3495,10 +4208,10 @@ const abi = [
                       "typeString": "address"
                     },
                     "typeName": {
-                      "id": 268,
+                      "id": 317,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
-                      "src": "5264:7:1",
+                      "src": "5830:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -3509,11 +4222,11 @@ const abi = [
                   },
                   {
                     "constant": false,
-                    "id": 271,
+                    "id": 320,
                     "name": "amount",
                     "nodeType": "VariableDeclaration",
-                    "scope": 315,
-                    "src": "5288:11:1",
+                    "scope": 365,
+                    "src": "5854:11:1",
                     "stateVariable": false,
                     "storageLocation": "default",
                     "typeDescriptions": {
@@ -3521,10 +4234,10 @@ const abi = [
                       "typeString": "uint256"
                     },
                     "typeName": {
-                      "id": 270,
+                      "id": 319,
                       "name": "uint",
                       "nodeType": "ElementaryTypeName",
-                      "src": "5288:4:1",
+                      "src": "5854:4:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -3535,11 +4248,11 @@ const abi = [
                   },
                   {
                     "constant": false,
-                    "id": 273,
+                    "id": 322,
                     "name": "charityAmount",
                     "nodeType": "VariableDeclaration",
-                    "scope": 315,
-                    "src": "5310:18:1",
+                    "scope": 365,
+                    "src": "5876:18:1",
                     "stateVariable": false,
                     "storageLocation": "default",
                     "typeDescriptions": {
@@ -3547,10 +4260,10 @@ const abi = [
                       "typeString": "uint256"
                     },
                     "typeName": {
-                      "id": 272,
+                      "id": 321,
                       "name": "uint",
                       "nodeType": "ElementaryTypeName",
-                      "src": "5310:4:1",
+                      "src": "5876:4:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -3561,11 +4274,11 @@ const abi = [
                   },
                   {
                     "constant": false,
-                    "id": 275,
+                    "id": 324,
                     "name": "lotteryAmount",
                     "nodeType": "VariableDeclaration",
-                    "scope": 315,
-                    "src": "5339:18:1",
+                    "scope": 365,
+                    "src": "5905:18:1",
                     "stateVariable": false,
                     "storageLocation": "default",
                     "typeDescriptions": {
@@ -3573,10 +4286,10 @@ const abi = [
                       "typeString": "uint256"
                     },
                     "typeName": {
-                      "id": 274,
+                      "id": 323,
                       "name": "uint",
                       "nodeType": "ElementaryTypeName",
-                      "src": "5339:4:1",
+                      "src": "5905:4:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -3587,11 +4300,11 @@ const abi = [
                   },
                   {
                     "constant": false,
-                    "id": 277,
+                    "id": 326,
                     "name": "ownerAmount",
                     "nodeType": "VariableDeclaration",
-                    "scope": 315,
-                    "src": "5368:16:1",
+                    "scope": 365,
+                    "src": "5934:16:1",
                     "stateVariable": false,
                     "storageLocation": "default",
                     "typeDescriptions": {
@@ -3599,10 +4312,10 @@ const abi = [
                       "typeString": "uint256"
                     },
                     "typeName": {
-                      "id": 276,
+                      "id": 325,
                       "name": "uint",
                       "nodeType": "ElementaryTypeName",
-                      "src": "5368:4:1",
+                      "src": "5934:4:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -3613,11 +4326,11 @@ const abi = [
                   },
                   {
                     "constant": false,
-                    "id": 279,
+                    "id": 328,
                     "name": "id",
                     "nodeType": "VariableDeclaration",
-                    "scope": 315,
-                    "src": "5395:7:1",
+                    "scope": 365,
+                    "src": "5961:7:1",
                     "stateVariable": false,
                     "storageLocation": "default",
                     "typeDescriptions": {
@@ -3625,10 +4338,10 @@ const abi = [
                       "typeString": "uint256"
                     },
                     "typeName": {
-                      "id": 278,
+                      "id": 327,
                       "name": "uint",
                       "nodeType": "ElementaryTypeName",
-                      "src": "5395:4:1",
+                      "src": "5961:4:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -3638,87 +4351,192 @@ const abi = [
                     "visibility": "internal"
                   }
                 ],
-                "src": "5187:216:1"
+                "src": "5753:216:1"
               },
-              "scope": 326,
-              "src": "5134:658:1",
+              "scope": 382,
+              "src": "5700:676:1",
               "stateMutability": "view",
               "superFunction": null,
               "visibility": "public"
             },
             {
               "body": {
-                "id": 324,
+                "id": 380,
                 "nodeType": "Block",
-                "src": "5860:37:1",
+                "src": "6434:92:1",
                 "statements": [
                   {
                     "expression": {
                       "argumentTypes": null,
-                      "id": 322,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "expression": {
+                                "argumentTypes": null,
+                                "id": 373,
+                                "name": "msg",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 745,
+                                "src": "6477:3:1",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_magic_message",
+                                  "typeString": "msg"
+                                }
+                              },
+                              "id": 374,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberName": "sender",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": null,
+                              "src": "6477:10:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 371,
+                              "name": "ownableContract",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 72,
+                              "src": "6453:15:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_contract$_Ownable_$730",
+                                "typeString": "contract Ownable"
+                              }
+                            },
+                            "id": 372,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "isOwner",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 714,
+                            "src": "6453:23:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_external_view$_t_address_$returns$_t_bool_$",
+                              "typeString": "function (address) view external returns (bool)"
+                            }
+                          },
+                          "id": 375,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "6453:35:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        ],
+                        "id": 370,
+                        "name": "require",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [
+                          748,
+                          749
+                        ],
+                        "referencedDeclaration": 748,
+                        "src": "6445:7:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                          "typeString": "function (bool) pure"
+                        }
+                      },
+                      "id": 376,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "6445:44:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_tuple$__$",
+                        "typeString": "tuple()"
+                      }
+                    },
+                    "id": 377,
+                    "nodeType": "ExpressionStatement",
+                    "src": "6445:44:1"
+                  },
+                  {
+                    "expression": {
+                      "argumentTypes": null,
+                      "id": 378,
                       "name": "initialized",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 76,
-                      "src": "5878:11:1",
+                      "referencedDeclaration": 70,
+                      "src": "6507:11:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
                       }
                     },
-                    "functionReturnParameters": 321,
-                    "id": 323,
+                    "functionReturnParameters": 369,
+                    "id": 379,
                     "nodeType": "Return",
-                    "src": "5871:18:1"
+                    "src": "6500:18:1"
                   }
                 ]
               },
               "documentation": null,
-              "id": 325,
+              "id": 381,
               "implemented": true,
               "isConstructor": false,
               "isDeclaredConst": true,
-              "modifiers": [
-                {
-                  "arguments": null,
-                  "id": 318,
-                  "modifierName": {
-                    "argumentTypes": null,
-                    "id": 317,
-                    "name": "onlyOwner",
-                    "nodeType": "Identifier",
-                    "overloadedDeclarations": [],
-                    "referencedDeclaration": 580,
-                    "src": "5825:9:1",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_modifier$__$",
-                      "typeString": "modifier ()"
-                    }
-                  },
-                  "nodeType": "ModifierInvocation",
-                  "src": "5825:9:1"
-                }
-              ],
+              "modifiers": [],
               "name": "isInitialized",
               "nodeType": "FunctionDefinition",
               "parameters": {
-                "id": 316,
+                "id": 366,
                 "nodeType": "ParameterList",
                 "parameters": [],
-                "src": "5822:2:1"
+                "src": "6406:2:1"
               },
               "payable": false,
               "returnParameters": {
-                "id": 321,
+                "id": 369,
                 "nodeType": "ParameterList",
                 "parameters": [
                   {
                     "constant": false,
-                    "id": 320,
+                    "id": 368,
                     "name": "",
                     "nodeType": "VariableDeclaration",
-                    "scope": 325,
-                    "src": "5855:4:1",
+                    "scope": 381,
+                    "src": "6429:4:1",
                     "stateVariable": false,
                     "storageLocation": "default",
                     "typeDescriptions": {
@@ -3726,10 +4544,10 @@ const abi = [
                       "typeString": "bool"
                     },
                     "typeName": {
-                      "id": 319,
+                      "id": 367,
                       "name": "bool",
                       "nodeType": "ElementaryTypeName",
-                      "src": "5855:4:1",
+                      "src": "6429:4:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
@@ -3739,29 +4557,29 @@ const abi = [
                     "visibility": "internal"
                   }
                 ],
-                "src": "5854:6:1"
+                "src": "6428:6:1"
               },
-              "scope": 326,
-              "src": "5800:97:1",
+              "scope": 382,
+              "src": "6384:142:1",
               "stateMutability": "view",
               "superFunction": null,
               "visibility": "public"
             }
           ],
-          "scope": 327,
-          "src": "211:5691:1"
+          "scope": 383,
+          "src": "211:6320:1"
         }
       ],
-      "src": "0:5906:1"
+      "src": "0:6535:1"
     },
     "legacyAST": {
       "absolutePath": "/D/Documents/School/Share/ethereum/contracts/Share.sol",
       "exportedSymbols": {
         "Share": [
-          326
+          382
         ]
       },
-      "id": 327,
+      "id": 383,
       "nodeType": "SourceUnit",
       "nodes": [
         {
@@ -3780,8 +4598,8 @@ const abi = [
           "file": "./accesscontrol/CharityRole.sol",
           "id": 59,
           "nodeType": "ImportDirective",
-          "scope": 327,
-          "sourceUnit": 420,
+          "scope": 383,
+          "sourceUnit": 508,
           "src": "93:41:1",
           "symbolAliases": [],
           "unitAlias": ""
@@ -3791,8 +4609,8 @@ const abi = [
           "file": "./core/Ownable.sol",
           "id": 60,
           "nodeType": "ImportDirective",
-          "scope": 327,
-          "sourceUnit": 618,
+          "scope": 383,
+          "sourceUnit": 731,
           "src": "136:28:1",
           "symbolAliases": [],
           "unitAlias": ""
@@ -3802,94 +4620,32 @@ const abi = [
           "file": "./accesscontrol/LotteryRole.sol",
           "id": 61,
           "nodeType": "ImportDirective",
-          "scope": 327,
-          "sourceUnit": 513,
+          "scope": 383,
+          "sourceUnit": 621,
           "src": "166:41:1",
           "symbolAliases": [],
           "unitAlias": ""
         },
         {
-          "baseContracts": [
-            {
-              "arguments": null,
-              "baseName": {
-                "contractScope": null,
-                "id": 62,
-                "name": "Ownable",
-                "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 617,
-                "src": "229:7:1",
-                "typeDescriptions": {
-                  "typeIdentifier": "t_contract$_Ownable_$617",
-                  "typeString": "contract Ownable"
-                }
-              },
-              "id": 63,
-              "nodeType": "InheritanceSpecifier",
-              "src": "229:7:1"
-            },
-            {
-              "arguments": null,
-              "baseName": {
-                "contractScope": null,
-                "id": 64,
-                "name": "CharityRole",
-                "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 419,
-                "src": "238:11:1",
-                "typeDescriptions": {
-                  "typeIdentifier": "t_contract$_CharityRole_$419",
-                  "typeString": "contract CharityRole"
-                }
-              },
-              "id": 65,
-              "nodeType": "InheritanceSpecifier",
-              "src": "238:11:1"
-            },
-            {
-              "arguments": null,
-              "baseName": {
-                "contractScope": null,
-                "id": 66,
-                "name": "LotteryRole",
-                "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 512,
-                "src": "251:11:1",
-                "typeDescriptions": {
-                  "typeIdentifier": "t_contract$_LotteryRole_$512",
-                  "typeString": "contract LotteryRole"
-                }
-              },
-              "id": 67,
-              "nodeType": "InheritanceSpecifier",
-              "src": "251:11:1"
-            }
-          ],
-          "contractDependencies": [
-            419,
-            512,
-            617
-          ],
+          "baseContracts": [],
+          "contractDependencies": [],
           "contractKind": "contract",
           "documentation": null,
           "fullyImplemented": true,
-          "id": 326,
+          "id": 382,
           "linearizedBaseContracts": [
-            326,
-            512,
-            419,
-            617
+            382
           ],
           "name": "Share",
           "nodeType": "ContractDefinition",
           "nodes": [
             {
               "constant": false,
-              "id": 69,
+              "id": 63,
               "name": "Owner",
               "nodeType": "VariableDeclaration",
-              "scope": 326,
-              "src": "271:21:1",
+              "scope": 382,
+              "src": "235:21:1",
               "stateVariable": true,
               "storageLocation": "default",
               "typeDescriptions": {
@@ -3897,10 +4653,10 @@ const abi = [
                 "typeString": "address"
               },
               "typeName": {
-                "id": 68,
+                "id": 62,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
-                "src": "271:7:1",
+                "src": "235:7:1",
                 "typeDescriptions": {
                   "typeIdentifier": "t_address",
                   "typeString": "address"
@@ -3911,11 +4667,11 @@ const abi = [
             },
             {
               "constant": false,
-              "id": 71,
+              "id": 65,
               "name": "Lottery",
               "nodeType": "VariableDeclaration",
-              "scope": 326,
-              "src": "299:23:1",
+              "scope": 382,
+              "src": "263:23:1",
               "stateVariable": true,
               "storageLocation": "default",
               "typeDescriptions": {
@@ -3923,10 +4679,10 @@ const abi = [
                 "typeString": "address"
               },
               "typeName": {
-                "id": 70,
+                "id": 64,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
-                "src": "299:7:1",
+                "src": "263:7:1",
                 "typeDescriptions": {
                   "typeIdentifier": "t_address",
                   "typeString": "address"
@@ -3937,11 +4693,11 @@ const abi = [
             },
             {
               "constant": false,
-              "id": 73,
+              "id": 67,
               "name": "Charity",
               "nodeType": "VariableDeclaration",
-              "scope": 326,
-              "src": "329:23:1",
+              "scope": 382,
+              "src": "293:23:1",
               "stateVariable": true,
               "storageLocation": "default",
               "typeDescriptions": {
@@ -3949,10 +4705,10 @@ const abi = [
                 "typeString": "address"
               },
               "typeName": {
-                "id": 72,
+                "id": 66,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
-                "src": "329:7:1",
+                "src": "293:7:1",
                 "typeDescriptions": {
                   "typeIdentifier": "t_address",
                   "typeString": "address"
@@ -3963,11 +4719,11 @@ const abi = [
             },
             {
               "constant": false,
-              "id": 76,
+              "id": 70,
               "name": "initialized",
               "nodeType": "VariableDeclaration",
-              "scope": 326,
-              "src": "359:32:1",
+              "scope": 382,
+              "src": "323:32:1",
               "stateVariable": true,
               "storageLocation": "default",
               "typeDescriptions": {
@@ -3975,10 +4731,10 @@ const abi = [
                 "typeString": "bool"
               },
               "typeName": {
-                "id": 74,
+                "id": 68,
                 "name": "bool",
                 "nodeType": "ElementaryTypeName",
-                "src": "359:4:1",
+                "src": "323:4:1",
                 "typeDescriptions": {
                   "typeIdentifier": "t_bool",
                   "typeString": "bool"
@@ -3987,14 +4743,14 @@ const abi = [
               "value": {
                 "argumentTypes": null,
                 "hexValue": "66616c7365",
-                "id": 75,
+                "id": 69,
                 "isConstant": false,
                 "isLValue": false,
                 "isPure": true,
                 "kind": "bool",
                 "lValueRequested": false,
                 "nodeType": "Literal",
-                "src": "386:5:1",
+                "src": "350:5:1",
                 "subdenomination": null,
                 "typeDescriptions": {
                   "typeIdentifier": "t_bool",
@@ -4006,11 +4762,95 @@ const abi = [
             },
             {
               "constant": false,
+              "id": 72,
+              "name": "ownableContract",
+              "nodeType": "VariableDeclaration",
+              "scope": 382,
+              "src": "362:31:1",
+              "stateVariable": true,
+              "storageLocation": "default",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Ownable_$730",
+                "typeString": "contract Ownable"
+              },
+              "typeName": {
+                "contractScope": null,
+                "id": 71,
+                "name": "Ownable",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 730,
+                "src": "362:7:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_contract$_Ownable_$730",
+                  "typeString": "contract Ownable"
+                }
+              },
+              "value": null,
+              "visibility": "private"
+            },
+            {
+              "constant": false,
+              "id": 74,
+              "name": "charityContract",
+              "nodeType": "VariableDeclaration",
+              "scope": 382,
+              "src": "400:35:1",
+              "stateVariable": true,
+              "storageLocation": "default",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_CharityRole_$507",
+                "typeString": "contract CharityRole"
+              },
+              "typeName": {
+                "contractScope": null,
+                "id": 73,
+                "name": "CharityRole",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 507,
+                "src": "400:11:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_contract$_CharityRole_$507",
+                  "typeString": "contract CharityRole"
+                }
+              },
+              "value": null,
+              "visibility": "private"
+            },
+            {
+              "constant": false,
+              "id": 76,
+              "name": "lotteryContract",
+              "nodeType": "VariableDeclaration",
+              "scope": 382,
+              "src": "442:35:1",
+              "stateVariable": true,
+              "storageLocation": "default",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_LotteryRole_$620",
+                "typeString": "contract LotteryRole"
+              },
+              "typeName": {
+                "contractScope": null,
+                "id": 75,
+                "name": "LotteryRole",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 620,
+                "src": "442:11:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_contract$_LotteryRole_$620",
+                  "typeString": "contract LotteryRole"
+                }
+              },
+              "value": null,
+              "visibility": "private"
+            },
+            {
+              "constant": false,
               "id": 79,
               "name": "donationID",
               "nodeType": "VariableDeclaration",
-              "scope": 326,
-              "src": "439:27:1",
+              "scope": 382,
+              "src": "525:27:1",
               "stateVariable": true,
               "storageLocation": "default",
               "typeDescriptions": {
@@ -4021,7 +4861,7 @@ const abi = [
                 "id": 77,
                 "name": "uint",
                 "nodeType": "ElementaryTypeName",
-                "src": "439:4:1",
+                "src": "525:4:1",
                 "typeDescriptions": {
                   "typeIdentifier": "t_uint256",
                   "typeString": "uint256"
@@ -4037,7 +4877,7 @@ const abi = [
                 "kind": "number",
                 "lValueRequested": false,
                 "nodeType": "Literal",
-                "src": "465:1:1",
+                "src": "551:1:1",
                 "subdenomination": null,
                 "typeDescriptions": {
                   "typeIdentifier": "t_rational_1_by_1",
@@ -4049,26 +4889,26 @@ const abi = [
             },
             {
               "body": {
-                "id": 87,
+                "id": 111,
                 "nodeType": "Block",
-                "src": "645:37:1",
+                "src": "791:263:1",
                 "statements": [
                   {
                     "expression": {
                       "argumentTypes": null,
-                      "id": 85,
+                      "id": 91,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftHandSide": {
                         "argumentTypes": null,
-                        "id": 82,
+                        "id": 88,
                         "name": "Owner",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 69,
-                        "src": "656:5:1",
+                        "referencedDeclaration": 63,
+                        "src": "802:5:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -4080,18 +4920,18 @@ const abi = [
                         "argumentTypes": null,
                         "expression": {
                           "argumentTypes": null,
-                          "id": 83,
+                          "id": 89,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 632,
-                          "src": "664:3:1",
+                          "referencedDeclaration": 745,
+                          "src": "810:3:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
                           }
                         },
-                        "id": 84,
+                        "id": 90,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -4099,26 +4939,272 @@ const abi = [
                         "memberName": "sender",
                         "nodeType": "MemberAccess",
                         "referencedDeclaration": null,
-                        "src": "664:10:1",
+                        "src": "810:10:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         }
                       },
-                      "src": "656:18:1",
+                      "src": "802:18:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "id": 86,
+                    "id": 92,
                     "nodeType": "ExpressionStatement",
-                    "src": "656:18:1"
+                    "src": "802:18:1"
+                  },
+                  {
+                    "expression": {
+                      "argumentTypes": null,
+                      "id": 97,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "leftHandSide": {
+                        "argumentTypes": null,
+                        "id": 93,
+                        "name": "ownableContract",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 72,
+                        "src": "903:15:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Ownable_$730",
+                          "typeString": "contract Ownable"
+                        }
+                      },
+                      "nodeType": "Assignment",
+                      "operator": "=",
+                      "rightHandSide": {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 95,
+                            "name": "_ownable",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 81,
+                            "src": "929:8:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          ],
+                          "id": 94,
+                          "name": "Ownable",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 730,
+                          "src": "921:7:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_contract$_Ownable_$730_$",
+                            "typeString": "type(contract Ownable)"
+                          }
+                        },
+                        "id": 96,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "921:17:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Ownable_$730",
+                          "typeString": "contract Ownable"
+                        }
+                      },
+                      "src": "903:35:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Ownable_$730",
+                        "typeString": "contract Ownable"
+                      }
+                    },
+                    "id": 98,
+                    "nodeType": "ExpressionStatement",
+                    "src": "903:35:1"
+                  },
+                  {
+                    "expression": {
+                      "argumentTypes": null,
+                      "id": 103,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "leftHandSide": {
+                        "argumentTypes": null,
+                        "id": 99,
+                        "name": "charityContract",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 74,
+                        "src": "949:15:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_CharityRole_$507",
+                          "typeString": "contract CharityRole"
+                        }
+                      },
+                      "nodeType": "Assignment",
+                      "operator": "=",
+                      "rightHandSide": {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 101,
+                            "name": "_charityRole",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 83,
+                            "src": "979:12:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          ],
+                          "id": 100,
+                          "name": "CharityRole",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 507,
+                          "src": "967:11:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_contract$_CharityRole_$507_$",
+                            "typeString": "type(contract CharityRole)"
+                          }
+                        },
+                        "id": 102,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "967:25:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_CharityRole_$507",
+                          "typeString": "contract CharityRole"
+                        }
+                      },
+                      "src": "949:43:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_CharityRole_$507",
+                        "typeString": "contract CharityRole"
+                      }
+                    },
+                    "id": 104,
+                    "nodeType": "ExpressionStatement",
+                    "src": "949:43:1"
+                  },
+                  {
+                    "expression": {
+                      "argumentTypes": null,
+                      "id": 109,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "leftHandSide": {
+                        "argumentTypes": null,
+                        "id": 105,
+                        "name": "lotteryContract",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 76,
+                        "src": "1003:15:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_LotteryRole_$620",
+                          "typeString": "contract LotteryRole"
+                        }
+                      },
+                      "nodeType": "Assignment",
+                      "operator": "=",
+                      "rightHandSide": {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 107,
+                            "name": "_lotteryRole",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 85,
+                            "src": "1033:12:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          ],
+                          "id": 106,
+                          "name": "LotteryRole",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 620,
+                          "src": "1021:11:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_contract$_LotteryRole_$620_$",
+                            "typeString": "type(contract LotteryRole)"
+                          }
+                        },
+                        "id": 108,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "1021:25:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_LotteryRole_$620",
+                          "typeString": "contract LotteryRole"
+                        }
+                      },
+                      "src": "1003:43:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_LotteryRole_$620",
+                        "typeString": "contract LotteryRole"
+                      }
+                    },
+                    "id": 110,
+                    "nodeType": "ExpressionStatement",
+                    "src": "1003:43:1"
                   }
                 ]
               },
               "documentation": "@dev can be expanded to account for many more constructor features",
-              "id": 88,
+              "id": 112,
               "implemented": true,
               "isConstructor": true,
               "isDeclaredConst": false,
@@ -4126,35 +5212,114 @@ const abi = [
               "name": "",
               "nodeType": "FunctionDefinition",
               "parameters": {
-                "id": 80,
+                "id": 86,
                 "nodeType": "ParameterList",
-                "parameters": [],
-                "src": "635:2:1"
+                "parameters": [
+                  {
+                    "constant": false,
+                    "id": 81,
+                    "name": "_ownable",
+                    "nodeType": "VariableDeclaration",
+                    "scope": 112,
+                    "src": "722:16:1",
+                    "stateVariable": false,
+                    "storageLocation": "default",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    },
+                    "typeName": {
+                      "id": 80,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "722:7:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "value": null,
+                    "visibility": "internal"
+                  },
+                  {
+                    "constant": false,
+                    "id": 83,
+                    "name": "_charityRole",
+                    "nodeType": "VariableDeclaration",
+                    "scope": 112,
+                    "src": "740:20:1",
+                    "stateVariable": false,
+                    "storageLocation": "default",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    },
+                    "typeName": {
+                      "id": 82,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "740:7:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "value": null,
+                    "visibility": "internal"
+                  },
+                  {
+                    "constant": false,
+                    "id": 85,
+                    "name": "_lotteryRole",
+                    "nodeType": "VariableDeclaration",
+                    "scope": 112,
+                    "src": "762:20:1",
+                    "stateVariable": false,
+                    "storageLocation": "default",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    },
+                    "typeName": {
+                      "id": 84,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "762:7:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "value": null,
+                    "visibility": "internal"
+                  }
+                ],
+                "src": "721:62:1"
               },
               "payable": false,
               "returnParameters": {
-                "id": 81,
+                "id": 87,
                 "nodeType": "ParameterList",
                 "parameters": [],
-                "src": "645:0:1"
+                "src": "791:0:1"
               },
-              "scope": 326,
-              "src": "624:58:1",
+              "scope": 382,
+              "src": "710:344:1",
               "stateMutability": "nonpayable",
               "superFunction": null,
               "visibility": "public"
             },
             {
               "canonicalName": "Share.Donation",
-              "id": 107,
+              "id": 131,
               "members": [
                 {
                   "constant": false,
-                  "id": 90,
+                  "id": 114,
                   "name": "owner",
                   "nodeType": "VariableDeclaration",
-                  "scope": 107,
-                  "src": "1811:13:1",
+                  "scope": 131,
+                  "src": "2188:13:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -4162,10 +5327,10 @@ const abi = [
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 89,
+                    "id": 113,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1811:7:1",
+                    "src": "2188:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -4176,11 +5341,11 @@ const abi = [
                 },
                 {
                   "constant": false,
-                  "id": 92,
+                  "id": 116,
                   "name": "lottery",
                   "nodeType": "VariableDeclaration",
-                  "scope": 107,
-                  "src": "1835:15:1",
+                  "scope": 131,
+                  "src": "2212:15:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -4188,10 +5353,10 @@ const abi = [
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 91,
+                    "id": 115,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1835:7:1",
+                    "src": "2212:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -4202,11 +5367,11 @@ const abi = [
                 },
                 {
                   "constant": false,
-                  "id": 94,
+                  "id": 118,
                   "name": "charity",
                   "nodeType": "VariableDeclaration",
-                  "scope": 107,
-                  "src": "1861:15:1",
+                  "scope": 131,
+                  "src": "2238:15:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -4214,10 +5379,10 @@ const abi = [
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 93,
+                    "id": 117,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1861:7:1",
+                    "src": "2238:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -4228,11 +5393,11 @@ const abi = [
                 },
                 {
                   "constant": false,
-                  "id": 96,
+                  "id": 120,
                   "name": "donor",
                   "nodeType": "VariableDeclaration",
-                  "scope": 107,
-                  "src": "1887:13:1",
+                  "scope": 131,
+                  "src": "2264:13:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -4240,10 +5405,10 @@ const abi = [
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 95,
+                    "id": 119,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1887:7:1",
+                    "src": "2264:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -4254,11 +5419,11 @@ const abi = [
                 },
                 {
                   "constant": false,
-                  "id": 98,
+                  "id": 122,
                   "name": "amount",
                   "nodeType": "VariableDeclaration",
-                  "scope": 107,
-                  "src": "1911:11:1",
+                  "scope": 131,
+                  "src": "2288:11:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -4266,10 +5431,10 @@ const abi = [
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 97,
+                    "id": 121,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1911:4:1",
+                    "src": "2288:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -4280,11 +5445,11 @@ const abi = [
                 },
                 {
                   "constant": false,
-                  "id": 100,
+                  "id": 124,
                   "name": "charityAmount",
                   "nodeType": "VariableDeclaration",
-                  "scope": 107,
-                  "src": "1933:18:1",
+                  "scope": 131,
+                  "src": "2310:18:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -4292,10 +5457,10 @@ const abi = [
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 99,
+                    "id": 123,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1933:4:1",
+                    "src": "2310:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -4306,11 +5471,11 @@ const abi = [
                 },
                 {
                   "constant": false,
-                  "id": 102,
+                  "id": 126,
                   "name": "lotteryAmount",
                   "nodeType": "VariableDeclaration",
-                  "scope": 107,
-                  "src": "1962:18:1",
+                  "scope": 131,
+                  "src": "2339:18:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -4318,10 +5483,10 @@ const abi = [
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 101,
+                    "id": 125,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1962:4:1",
+                    "src": "2339:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -4332,11 +5497,11 @@ const abi = [
                 },
                 {
                   "constant": false,
-                  "id": 104,
+                  "id": 128,
                   "name": "ownerAmount",
                   "nodeType": "VariableDeclaration",
-                  "scope": 107,
-                  "src": "1991:16:1",
+                  "scope": 131,
+                  "src": "2368:16:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -4344,10 +5509,10 @@ const abi = [
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 103,
+                    "id": 127,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1991:4:1",
+                    "src": "2368:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -4358,11 +5523,11 @@ const abi = [
                 },
                 {
                   "constant": false,
-                  "id": 106,
+                  "id": 130,
                   "name": "id",
                   "nodeType": "VariableDeclaration",
-                  "scope": 107,
-                  "src": "2018:7:1",
+                  "scope": 131,
+                  "src": "2395:7:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -4370,10 +5535,10 @@ const abi = [
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 105,
+                    "id": 129,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2018:4:1",
+                    "src": "2395:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -4385,17 +5550,17 @@ const abi = [
               ],
               "name": "Donation",
               "nodeType": "StructDefinition",
-              "scope": 326,
-              "src": "1784:249:1",
+              "scope": 382,
+              "src": "2161:249:1",
               "visibility": "public"
             },
             {
               "constant": false,
-              "id": 111,
+              "id": 135,
               "name": "lotteryEntrees",
               "nodeType": "VariableDeclaration",
-              "scope": 326,
-              "src": "2176:49:1",
+              "scope": 382,
+              "src": "2553:49:1",
               "stateVariable": true,
               "storageLocation": "default",
               "typeDescriptions": {
@@ -4403,28 +5568,28 @@ const abi = [
                 "typeString": "mapping(address => address)"
               },
               "typeName": {
-                "id": 110,
+                "id": 134,
                 "keyType": {
-                  "id": 108,
+                  "id": 132,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
-                  "src": "2184:7:1",
+                  "src": "2561:7:1",
                   "typeDescriptions": {
                     "typeIdentifier": "t_address",
                     "typeString": "address"
                   }
                 },
                 "nodeType": "Mapping",
-                "src": "2176:27:1",
+                "src": "2553:27:1",
                 "typeDescriptions": {
                   "typeIdentifier": "t_mapping$_t_address_$_t_address_$",
                   "typeString": "mapping(address => address)"
                 },
                 "valueType": {
-                  "id": 109,
+                  "id": 133,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
-                  "src": "2195:7:1",
+                  "src": "2572:7:1",
                   "typeDescriptions": {
                     "typeIdentifier": "t_address",
                     "typeString": "address"
@@ -4436,44 +5601,44 @@ const abi = [
             },
             {
               "constant": false,
-              "id": 115,
+              "id": 139,
               "name": "Donations",
               "nodeType": "VariableDeclaration",
-              "scope": 326,
-              "src": "2450:43:1",
+              "scope": 382,
+              "src": "2827:43:1",
               "stateVariable": true,
               "storageLocation": "default",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Donation_$107_storage_$",
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Donation_$131_storage_$",
                 "typeString": "mapping(uint256 => struct Share.Donation)"
               },
               "typeName": {
-                "id": 114,
+                "id": 138,
                 "keyType": {
-                  "id": 112,
+                  "id": 136,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
-                  "src": "2458:4:1",
+                  "src": "2835:4:1",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
                   }
                 },
                 "nodeType": "Mapping",
-                "src": "2450:25:1",
+                "src": "2827:25:1",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Donation_$107_storage_$",
+                  "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Donation_$131_storage_$",
                   "typeString": "mapping(uint256 => struct Share.Donation)"
                 },
                 "valueType": {
                   "contractScope": null,
-                  "id": 113,
+                  "id": 137,
                   "name": "Donation",
                   "nodeType": "UserDefinedTypeName",
-                  "referencedDeclaration": 107,
-                  "src": "2466:8:1",
+                  "referencedDeclaration": 131,
+                  "src": "2843:8:1",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_Donation_$107_storage_ptr",
+                    "typeIdentifier": "t_struct$_Donation_$131_storage_ptr",
                     "typeString": "struct Share.Donation"
                   }
                 }
@@ -4483,9 +5648,9 @@ const abi = [
             },
             {
               "body": {
-                "id": 156,
+                "id": 194,
                 "nodeType": "Block",
-                "src": "2982:612:1",
+                "src": "3349:730:1",
                 "statements": [
                   {
                     "expression": {
@@ -4497,45 +5662,145 @@ const abi = [
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
                           },
-                          "id": 127,
+                          "id": 155,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftExpression": {
                             "argumentTypes": null,
-                            "id": 125,
-                            "name": "initialized",
-                            "nodeType": "Identifier",
-                            "overloadedDeclarations": [],
-                            "referencedDeclaration": 76,
-                            "src": "3003:11:1",
+                            "commonType": {
+                              "typeIdentifier": "t_bool",
+                              "typeString": "bool"
+                            },
+                            "id": 149,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "leftExpression": {
+                              "argumentTypes": null,
+                              "id": 147,
+                              "name": "initialized",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 70,
+                              "src": "3370:11:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_bool",
+                                "typeString": "bool"
+                              }
+                            },
+                            "nodeType": "BinaryOperation",
+                            "operator": "==",
+                            "rightExpression": {
+                              "argumentTypes": null,
+                              "hexValue": "66616c7365",
+                              "id": 148,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "bool",
+                              "lValueRequested": false,
+                              "nodeType": "Literal",
+                              "src": "3385:5:1",
+                              "subdenomination": null,
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_bool",
+                                "typeString": "bool"
+                              },
+                              "value": "false"
+                            },
+                            "src": "3370:20:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bool",
                               "typeString": "bool"
                             }
                           },
                           "nodeType": "BinaryOperation",
-                          "operator": "==",
+                          "operator": "&&",
                           "rightExpression": {
                             "argumentTypes": null,
-                            "hexValue": "66616c7365",
-                            "id": 126,
+                            "arguments": [
+                              {
+                                "argumentTypes": null,
+                                "expression": {
+                                  "argumentTypes": null,
+                                  "id": 152,
+                                  "name": "msg",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 745,
+                                  "src": "3418:3:1",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_magic_message",
+                                    "typeString": "msg"
+                                  }
+                                },
+                                "id": 153,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "memberName": "sender",
+                                "nodeType": "MemberAccess",
+                                "referencedDeclaration": null,
+                                "src": "3418:10:1",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              ],
+                              "expression": {
+                                "argumentTypes": null,
+                                "id": 150,
+                                "name": "ownableContract",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 72,
+                                "src": "3394:15:1",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_contract$_Ownable_$730",
+                                  "typeString": "contract Ownable"
+                                }
+                              },
+                              "id": 151,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberName": "isOwner",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": 714,
+                              "src": "3394:23:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_function_external_view$_t_address_$returns$_t_bool_$",
+                                "typeString": "function (address) view external returns (bool)"
+                              }
+                            },
+                            "id": 154,
                             "isConstant": false,
                             "isLValue": false,
-                            "isPure": true,
-                            "kind": "bool",
+                            "isPure": false,
+                            "kind": "functionCall",
                             "lValueRequested": false,
-                            "nodeType": "Literal",
-                            "src": "3018:5:1",
-                            "subdenomination": null,
+                            "names": [],
+                            "nodeType": "FunctionCall",
+                            "src": "3394:35:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bool",
                               "typeString": "bool"
-                            },
-                            "value": "false"
+                            }
                           },
-                          "src": "3003:20:1",
+                          "src": "3370:59:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
@@ -4549,21 +5814,21 @@ const abi = [
                             "typeString": "bool"
                           }
                         ],
-                        "id": 124,
+                        "id": 146,
                         "name": "require",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [
-                          635,
-                          636
+                          748,
+                          749
                         ],
-                        "referencedDeclaration": 635,
-                        "src": "2995:7:1",
+                        "referencedDeclaration": 748,
+                        "src": "3362:7:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
                           "typeString": "function (bool) pure"
                         }
                       },
-                      "id": 128,
+                      "id": 156,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -4571,61 +5836,15 @@ const abi = [
                       "lValueRequested": false,
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "2995:29:1",
+                      "src": "3362:68:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_tuple$__$",
                         "typeString": "tuple()"
                       }
                     },
-                    "id": 129,
+                    "id": 157,
                     "nodeType": "ExpressionStatement",
-                    "src": "2995:29:1"
-                  },
-                  {
-                    "expression": {
-                      "argumentTypes": null,
-                      "id": 132,
-                      "isConstant": false,
-                      "isLValue": false,
-                      "isPure": false,
-                      "lValueRequested": false,
-                      "leftHandSide": {
-                        "argumentTypes": null,
-                        "id": 130,
-                        "name": "Lottery",
-                        "nodeType": "Identifier",
-                        "overloadedDeclarations": [],
-                        "referencedDeclaration": 71,
-                        "src": "3219:7:1",
-                        "typeDescriptions": {
-                          "typeIdentifier": "t_address",
-                          "typeString": "address"
-                        }
-                      },
-                      "nodeType": "Assignment",
-                      "operator": "=",
-                      "rightHandSide": {
-                        "argumentTypes": null,
-                        "id": 131,
-                        "name": "_lottery",
-                        "nodeType": "Identifier",
-                        "overloadedDeclarations": [],
-                        "referencedDeclaration": 117,
-                        "src": "3229:8:1",
-                        "typeDescriptions": {
-                          "typeIdentifier": "t_address",
-                          "typeString": "address"
-                        }
-                      },
-                      "src": "3219:18:1",
-                      "typeDescriptions": {
-                        "typeIdentifier": "t_address",
-                        "typeString": "address"
-                      }
-                    },
-                    "id": 133,
-                    "nodeType": "ExpressionStatement",
-                    "src": "3219:18:1"
+                    "src": "3362:68:1"
                   },
                   {
                     "expression": {
@@ -4633,12 +5852,41 @@ const abi = [
                       "arguments": [
                         {
                           "argumentTypes": null,
-                          "id": 135,
+                          "id": 161,
                           "name": "_lottery",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 117,
-                          "src": "3319:8:1",
+                          "referencedDeclaration": 141,
+                          "src": "3712:8:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 162,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 745,
+                            "src": "3722:3:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 163,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "sender",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "3722:10:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
@@ -4650,20 +5898,40 @@ const abi = [
                           {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
+                          },
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
                           }
                         ],
-                        "id": 134,
-                        "name": "setLottery",
-                        "nodeType": "Identifier",
-                        "overloadedDeclarations": [],
-                        "referencedDeclaration": 456,
-                        "src": "3308:10:1",
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 158,
+                          "name": "lotteryContract",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 76,
+                          "src": "3685:15:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_contract$_LotteryRole_$620",
+                            "typeString": "contract LotteryRole"
+                          }
+                        },
+                        "id": 160,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "setLottery",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 545,
+                        "src": "3685:26:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
-                          "typeString": "function (address)"
+                          "typeIdentifier": "t_function_external_payable$_t_address_$_t_address_$returns$__$",
+                          "typeString": "function (address,address) payable external"
                         }
                       },
-                      "id": 136,
+                      "id": 164,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -4671,32 +5939,32 @@ const abi = [
                       "lValueRequested": false,
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "3308:20:1",
+                      "src": "3685:48:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_tuple$__$",
                         "typeString": "tuple()"
                       }
                     },
-                    "id": 137,
+                    "id": 165,
                     "nodeType": "ExpressionStatement",
-                    "src": "3308:20:1"
+                    "src": "3685:48:1"
                   },
                   {
                     "expression": {
                       "argumentTypes": null,
-                      "id": 141,
+                      "id": 172,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftHandSide": {
                         "argumentTypes": null,
-                        "id": 138,
+                        "id": 166,
                         "name": "Lottery",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 71,
-                        "src": "3374:7:1",
+                        "referencedDeclaration": 65,
+                        "src": "3779:7:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -4706,21 +5974,72 @@ const abi = [
                       "operator": "=",
                       "rightHandSide": {
                         "argumentTypes": null,
-                        "arguments": [],
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 169,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 745,
+                              "src": "3816:3:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 170,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "3816:10:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          }
+                        ],
                         "expression": {
-                          "argumentTypes": [],
-                          "id": 139,
-                          "name": "getLottery",
-                          "nodeType": "Identifier",
-                          "overloadedDeclarations": [],
-                          "referencedDeclaration": 466,
-                          "src": "3384:10:1",
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 167,
+                            "name": "lotteryContract",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 76,
+                            "src": "3789:15:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_LotteryRole_$620",
+                              "typeString": "contract LotteryRole"
+                            }
+                          },
+                          "id": 168,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "getLottery",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 562,
+                          "src": "3789:26:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_function_internal_view$__$returns$_t_address_$",
-                            "typeString": "function () view returns (address)"
+                            "typeIdentifier": "t_function_external_view$_t_address_$returns$_t_address_$",
+                            "typeString": "function (address) view external returns (address)"
                           }
                         },
-                        "id": 140,
+                        "id": 171,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -4728,21 +6047,21 @@ const abi = [
                         "lValueRequested": false,
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "3384:12:1",
+                        "src": "3789:38:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         }
                       },
-                      "src": "3374:22:1",
+                      "src": "3779:48:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "id": 142,
+                    "id": 173,
                     "nodeType": "ExpressionStatement",
-                    "src": "3374:22:1"
+                    "src": "3779:48:1"
                   },
                   {
                     "expression": {
@@ -4750,12 +6069,41 @@ const abi = [
                       "arguments": [
                         {
                           "argumentTypes": null,
-                          "id": 144,
+                          "id": 177,
                           "name": "_charity",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 119,
-                          "src": "3478:8:1",
+                          "referencedDeclaration": 143,
+                          "src": "3925:8:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 178,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 745,
+                            "src": "3935:3:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 179,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "sender",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "3935:10:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
@@ -4767,20 +6115,40 @@ const abi = [
                           {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
+                          },
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
                           }
                         ],
-                        "id": 143,
-                        "name": "setCharity",
-                        "nodeType": "Identifier",
-                        "overloadedDeclarations": [],
-                        "referencedDeclaration": 363,
-                        "src": "3467:10:1",
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 174,
+                          "name": "charityContract",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 74,
+                          "src": "3898:15:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_contract$_CharityRole_$507",
+                            "typeString": "contract CharityRole"
+                          }
+                        },
+                        "id": 176,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "setCharity",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 432,
+                        "src": "3898:26:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
-                          "typeString": "function (address)"
+                          "typeIdentifier": "t_function_external_payable$_t_address_$_t_address_$returns$__$",
+                          "typeString": "function (address,address) payable external"
                         }
                       },
-                      "id": 145,
+                      "id": 180,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -4788,32 +6156,32 @@ const abi = [
                       "lValueRequested": false,
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "3467:20:1",
+                      "src": "3898:48:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_tuple$__$",
                         "typeString": "tuple()"
                       }
                     },
-                    "id": 146,
+                    "id": 181,
                     "nodeType": "ExpressionStatement",
-                    "src": "3467:20:1"
+                    "src": "3898:48:1"
                   },
                   {
                     "expression": {
                       "argumentTypes": null,
-                      "id": 150,
+                      "id": 188,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftHandSide": {
                         "argumentTypes": null,
-                        "id": 147,
+                        "id": 182,
                         "name": "Charity",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 73,
-                        "src": "3533:7:1",
+                        "referencedDeclaration": 67,
+                        "src": "3992:7:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -4823,21 +6191,72 @@ const abi = [
                       "operator": "=",
                       "rightHandSide": {
                         "argumentTypes": null,
-                        "arguments": [],
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 185,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 745,
+                              "src": "4029:3:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 186,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "4029:10:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          }
+                        ],
                         "expression": {
-                          "argumentTypes": [],
-                          "id": 148,
-                          "name": "getCharity",
-                          "nodeType": "Identifier",
-                          "overloadedDeclarations": [],
-                          "referencedDeclaration": 373,
-                          "src": "3543:10:1",
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 183,
+                            "name": "charityContract",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 74,
+                            "src": "4002:15:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_CharityRole_$507",
+                              "typeString": "contract CharityRole"
+                            }
+                          },
+                          "id": 184,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "getCharity",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 449,
+                          "src": "4002:26:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_function_internal_view$__$returns$_t_address_$",
-                            "typeString": "function () view returns (address)"
+                            "typeIdentifier": "t_function_external_view$_t_address_$returns$_t_address_$",
+                            "typeString": "function (address) view external returns (address)"
                           }
                         },
-                        "id": 149,
+                        "id": 187,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -4845,38 +6264,38 @@ const abi = [
                         "lValueRequested": false,
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "3543:12:1",
+                        "src": "4002:38:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         }
                       },
-                      "src": "3533:22:1",
+                      "src": "3992:48:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "id": 151,
+                    "id": 189,
                     "nodeType": "ExpressionStatement",
-                    "src": "3533:22:1"
+                    "src": "3992:48:1"
                   },
                   {
                     "expression": {
                       "argumentTypes": null,
-                      "id": 154,
+                      "id": 192,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftHandSide": {
                         "argumentTypes": null,
-                        "id": 152,
+                        "id": 190,
                         "name": "initialized",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 76,
-                        "src": "3568:11:1",
+                        "referencedDeclaration": 70,
+                        "src": "4053:11:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -4887,14 +6306,14 @@ const abi = [
                       "rightHandSide": {
                         "argumentTypes": null,
                         "hexValue": "74727565",
-                        "id": 153,
+                        "id": 191,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "bool",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "3582:4:1",
+                        "src": "4067:4:1",
                         "subdenomination": null,
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
@@ -4902,57 +6321,37 @@ const abi = [
                         },
                         "value": "true"
                       },
-                      "src": "3568:18:1",
+                      "src": "4053:18:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
                       }
                     },
-                    "id": 155,
+                    "id": 193,
                     "nodeType": "ExpressionStatement",
-                    "src": "3568:18:1"
+                    "src": "4053:18:1"
                   }
                 ]
               },
               "documentation": "@param _charity address, contains the ethereum public key for charity account",
-              "id": 157,
+              "id": 195,
               "implemented": true,
               "isConstructor": false,
               "isDeclaredConst": false,
-              "modifiers": [
-                {
-                  "arguments": null,
-                  "id": 122,
-                  "modifierName": {
-                    "argumentTypes": null,
-                    "id": 121,
-                    "name": "onlyOwner",
-                    "nodeType": "Identifier",
-                    "overloadedDeclarations": [],
-                    "referencedDeclaration": 580,
-                    "src": "2958:9:1",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_modifier$__$",
-                      "typeString": "modifier ()"
-                    }
-                  },
-                  "nodeType": "ModifierInvocation",
-                  "src": "2958:9:1"
-                }
-              ],
+              "modifiers": [],
               "name": "initiateContract",
               "nodeType": "FunctionDefinition",
               "parameters": {
-                "id": 120,
+                "id": 144,
                 "nodeType": "ParameterList",
                 "parameters": [
                   {
                     "constant": false,
-                    "id": 117,
+                    "id": 141,
                     "name": "_lottery",
                     "nodeType": "VariableDeclaration",
-                    "scope": 157,
-                    "src": "2922:16:1",
+                    "scope": 195,
+                    "src": "3299:16:1",
                     "stateVariable": false,
                     "storageLocation": "default",
                     "typeDescriptions": {
@@ -4960,10 +6359,10 @@ const abi = [
                       "typeString": "address"
                     },
                     "typeName": {
-                      "id": 116,
+                      "id": 140,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
-                      "src": "2922:7:1",
+                      "src": "3299:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -4974,11 +6373,11 @@ const abi = [
                   },
                   {
                     "constant": false,
-                    "id": 119,
+                    "id": 143,
                     "name": "_charity",
                     "nodeType": "VariableDeclaration",
-                    "scope": 157,
-                    "src": "2940:16:1",
+                    "scope": 195,
+                    "src": "3317:16:1",
                     "stateVariable": false,
                     "storageLocation": "default",
                     "typeDescriptions": {
@@ -4986,10 +6385,10 @@ const abi = [
                       "typeString": "address"
                     },
                     "typeName": {
-                      "id": 118,
+                      "id": 142,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
-                      "src": "2940:7:1",
+                      "src": "3317:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -4999,26 +6398,26 @@ const abi = [
                     "visibility": "internal"
                   }
                 ],
-                "src": "2921:36:1"
+                "src": "3298:36:1"
               },
               "payable": true,
               "returnParameters": {
-                "id": 123,
+                "id": 145,
                 "nodeType": "ParameterList",
                 "parameters": [],
-                "src": "2982:0:1"
+                "src": "3349:0:1"
               },
-              "scope": 326,
-              "src": "2896:698:1",
+              "scope": 382,
+              "src": "3273:806:1",
               "stateMutability": "payable",
               "superFunction": null,
               "visibility": "public"
             },
             {
               "body": {
-                "id": 242,
+                "id": 291,
                 "nodeType": "Block",
-                "src": "3820:1067:1",
+                "src": "4274:1179:1",
                 "statements": [
                   {
                     "expression": {
@@ -5030,45 +6429,323 @@ const abi = [
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
                           },
-                          "id": 169,
+                          "id": 218,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftExpression": {
                             "argumentTypes": null,
-                            "id": 167,
-                            "name": "initialized",
-                            "nodeType": "Identifier",
-                            "overloadedDeclarations": [],
-                            "referencedDeclaration": 76,
-                            "src": "3928:11:1",
+                            "commonType": {
+                              "typeIdentifier": "t_bool",
+                              "typeString": "bool"
+                            },
+                            "id": 213,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "leftExpression": {
+                              "argumentTypes": null,
+                              "commonType": {
+                                "typeIdentifier": "t_bool",
+                                "typeString": "bool"
+                              },
+                              "id": 208,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "leftExpression": {
+                                "argumentTypes": null,
+                                "commonType": {
+                                  "typeIdentifier": "t_bool",
+                                  "typeString": "bool"
+                                },
+                                "id": 201,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "leftExpression": {
+                                  "argumentTypes": null,
+                                  "id": 199,
+                                  "name": "initialized",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 70,
+                                  "src": "4382:11:1",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_bool",
+                                    "typeString": "bool"
+                                  }
+                                },
+                                "nodeType": "BinaryOperation",
+                                "operator": "==",
+                                "rightExpression": {
+                                  "argumentTypes": null,
+                                  "hexValue": "74727565",
+                                  "id": 200,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "kind": "bool",
+                                  "lValueRequested": false,
+                                  "nodeType": "Literal",
+                                  "src": "4397:4:1",
+                                  "subdenomination": null,
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_bool",
+                                    "typeString": "bool"
+                                  },
+                                  "value": "true"
+                                },
+                                "src": "4382:19:1",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_bool",
+                                  "typeString": "bool"
+                                }
+                              },
+                              "nodeType": "BinaryOperation",
+                              "operator": "&&",
+                              "rightExpression": {
+                                "argumentTypes": null,
+                                "id": 207,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "nodeType": "UnaryOperation",
+                                "operator": "!",
+                                "prefix": true,
+                                "src": "4405:36:1",
+                                "subExpression": {
+                                  "argumentTypes": null,
+                                  "arguments": [
+                                    {
+                                      "argumentTypes": null,
+                                      "expression": {
+                                        "argumentTypes": null,
+                                        "id": 204,
+                                        "name": "msg",
+                                        "nodeType": "Identifier",
+                                        "overloadedDeclarations": [],
+                                        "referencedDeclaration": 745,
+                                        "src": "4430:3:1",
+                                        "typeDescriptions": {
+                                          "typeIdentifier": "t_magic_message",
+                                          "typeString": "msg"
+                                        }
+                                      },
+                                      "id": 205,
+                                      "isConstant": false,
+                                      "isLValue": false,
+                                      "isPure": false,
+                                      "lValueRequested": false,
+                                      "memberName": "sender",
+                                      "nodeType": "MemberAccess",
+                                      "referencedDeclaration": null,
+                                      "src": "4430:10:1",
+                                      "typeDescriptions": {
+                                        "typeIdentifier": "t_address",
+                                        "typeString": "address"
+                                      }
+                                    }
+                                  ],
+                                  "expression": {
+                                    "argumentTypes": [
+                                      {
+                                        "typeIdentifier": "t_address",
+                                        "typeString": "address"
+                                      }
+                                    ],
+                                    "expression": {
+                                      "argumentTypes": null,
+                                      "id": 202,
+                                      "name": "ownableContract",
+                                      "nodeType": "Identifier",
+                                      "overloadedDeclarations": [],
+                                      "referencedDeclaration": 72,
+                                      "src": "4406:15:1",
+                                      "typeDescriptions": {
+                                        "typeIdentifier": "t_contract$_Ownable_$730",
+                                        "typeString": "contract Ownable"
+                                      }
+                                    },
+                                    "id": 203,
+                                    "isConstant": false,
+                                    "isLValue": false,
+                                    "isPure": false,
+                                    "lValueRequested": false,
+                                    "memberName": "isOwner",
+                                    "nodeType": "MemberAccess",
+                                    "referencedDeclaration": 714,
+                                    "src": "4406:23:1",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_function_external_view$_t_address_$returns$_t_bool_$",
+                                      "typeString": "function (address) view external returns (bool)"
+                                    }
+                                  },
+                                  "id": 206,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "kind": "functionCall",
+                                  "lValueRequested": false,
+                                  "names": [],
+                                  "nodeType": "FunctionCall",
+                                  "src": "4406:35:1",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_bool",
+                                    "typeString": "bool"
+                                  }
+                                },
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_bool",
+                                  "typeString": "bool"
+                                }
+                              },
+                              "src": "4382:59:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_bool",
+                                "typeString": "bool"
+                              }
+                            },
+                            "nodeType": "BinaryOperation",
+                            "operator": "&&",
+                            "rightExpression": {
+                              "argumentTypes": null,
+                              "id": 212,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "nodeType": "UnaryOperation",
+                              "operator": "!",
+                              "prefix": true,
+                              "src": "4445:28:1",
+                              "subExpression": {
+                                "argumentTypes": null,
+                                "arguments": [],
+                                "expression": {
+                                  "argumentTypes": [],
+                                  "expression": {
+                                    "argumentTypes": null,
+                                    "id": 209,
+                                    "name": "charityContract",
+                                    "nodeType": "Identifier",
+                                    "overloadedDeclarations": [],
+                                    "referencedDeclaration": 74,
+                                    "src": "4446:15:1",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_contract$_CharityRole_$507",
+                                      "typeString": "contract CharityRole"
+                                    }
+                                  },
+                                  "id": 210,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "memberName": "isCharity",
+                                  "nodeType": "MemberAccess",
+                                  "referencedDeclaration": 479,
+                                  "src": "4446:25:1",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_function_external_view$__$returns$_t_bool_$",
+                                    "typeString": "function () view external returns (bool)"
+                                  }
+                                },
+                                "id": 211,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "kind": "functionCall",
+                                "lValueRequested": false,
+                                "names": [],
+                                "nodeType": "FunctionCall",
+                                "src": "4446:27:1",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_bool",
+                                  "typeString": "bool"
+                                }
+                              },
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_bool",
+                                "typeString": "bool"
+                              }
+                            },
+                            "src": "4382:91:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bool",
                               "typeString": "bool"
                             }
                           },
                           "nodeType": "BinaryOperation",
-                          "operator": "==",
+                          "operator": "&&",
                           "rightExpression": {
                             "argumentTypes": null,
-                            "hexValue": "74727565",
-                            "id": 168,
+                            "id": 217,
                             "isConstant": false,
                             "isLValue": false,
-                            "isPure": true,
-                            "kind": "bool",
+                            "isPure": false,
                             "lValueRequested": false,
-                            "nodeType": "Literal",
-                            "src": "3943:4:1",
-                            "subdenomination": null,
+                            "nodeType": "UnaryOperation",
+                            "operator": "!",
+                            "prefix": true,
+                            "src": "4477:28:1",
+                            "subExpression": {
+                              "argumentTypes": null,
+                              "arguments": [],
+                              "expression": {
+                                "argumentTypes": [],
+                                "expression": {
+                                  "argumentTypes": null,
+                                  "id": 214,
+                                  "name": "lotteryContract",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 76,
+                                  "src": "4478:15:1",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_contract$_LotteryRole_$620",
+                                    "typeString": "contract LotteryRole"
+                                  }
+                                },
+                                "id": 215,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "memberName": "isLottery",
+                                "nodeType": "MemberAccess",
+                                "referencedDeclaration": 592,
+                                "src": "4478:25:1",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_function_external_view$__$returns$_t_bool_$",
+                                  "typeString": "function () view external returns (bool)"
+                                }
+                              },
+                              "id": 216,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "kind": "functionCall",
+                              "lValueRequested": false,
+                              "names": [],
+                              "nodeType": "FunctionCall",
+                              "src": "4478:27:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_bool",
+                                "typeString": "bool"
+                              }
+                            },
                             "typeDescriptions": {
                               "typeIdentifier": "t_bool",
                               "typeString": "bool"
-                            },
-                            "value": "true"
+                            }
                           },
-                          "src": "3928:19:1",
+                          "src": "4382:123:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
@@ -5082,21 +6759,21 @@ const abi = [
                             "typeString": "bool"
                           }
                         ],
-                        "id": 166,
+                        "id": 198,
                         "name": "require",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [
-                          635,
-                          636
+                          748,
+                          749
                         ],
-                        "referencedDeclaration": 635,
-                        "src": "3920:7:1",
+                        "referencedDeclaration": 748,
+                        "src": "4374:7:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
                           "typeString": "function (bool) pure"
                         }
                       },
-                      "id": 170,
+                      "id": 219,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -5104,28 +6781,28 @@ const abi = [
                       "lValueRequested": false,
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "3920:28:1",
+                      "src": "4374:132:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_tuple$__$",
                         "typeString": "tuple()"
                       }
                     },
-                    "id": 171,
+                    "id": 220,
                     "nodeType": "ExpressionStatement",
-                    "src": "3920:28:1"
+                    "src": "4374:132:1"
                   },
                   {
                     "assignments": [
-                      173
+                      222
                     ],
                     "declarations": [
                       {
                         "constant": false,
-                        "id": 173,
+                        "id": 222,
                         "name": "amount",
                         "nodeType": "VariableDeclaration",
-                        "scope": 243,
-                        "src": "4143:11:1",
+                        "scope": 292,
+                        "src": "4701:11:1",
                         "stateVariable": false,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -5133,10 +6810,10 @@ const abi = [
                           "typeString": "uint256"
                         },
                         "typeName": {
-                          "id": 172,
+                          "id": 221,
                           "name": "uint",
                           "nodeType": "ElementaryTypeName",
-                          "src": "4143:4:1",
+                          "src": "4701:4:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -5146,23 +6823,23 @@ const abi = [
                         "visibility": "internal"
                       }
                     ],
-                    "id": 176,
+                    "id": 225,
                     "initialValue": {
                       "argumentTypes": null,
                       "expression": {
                         "argumentTypes": null,
-                        "id": 174,
+                        "id": 223,
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 632,
-                        "src": "4157:3:1",
+                        "referencedDeclaration": 745,
+                        "src": "4715:3:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
                           "typeString": "msg"
                         }
                       },
-                      "id": 175,
+                      "id": 224,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -5170,27 +6847,27 @@ const abi = [
                       "memberName": "value",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": null,
-                      "src": "4157:9:1",
+                      "src": "4715:9:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
                     "nodeType": "VariableDeclarationStatement",
-                    "src": "4143:23:1"
+                    "src": "4701:23:1"
                   },
                   {
                     "assignments": [
-                      178
+                      227
                     ],
                     "declarations": [
                       {
                         "constant": false,
-                        "id": 178,
+                        "id": 227,
                         "name": "charityAmount",
                         "nodeType": "VariableDeclaration",
-                        "scope": 243,
-                        "src": "4177:18:1",
+                        "scope": 292,
+                        "src": "4735:18:1",
                         "stateVariable": false,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -5198,10 +6875,10 @@ const abi = [
                           "typeString": "uint256"
                         },
                         "typeName": {
-                          "id": 177,
+                          "id": 226,
                           "name": "uint",
                           "nodeType": "ElementaryTypeName",
-                          "src": "4177:4:1",
+                          "src": "4735:4:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -5211,14 +6888,14 @@ const abi = [
                         "visibility": "internal"
                       }
                     ],
-                    "id": 184,
+                    "id": 233,
                     "initialValue": {
                       "argumentTypes": null,
                       "commonType": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       },
-                      "id": 183,
+                      "id": 232,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -5229,19 +6906,19 @@ const abi = [
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         },
-                        "id": 181,
+                        "id": 230,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
                           "argumentTypes": null,
-                          "id": 179,
+                          "id": 228,
                           "name": "amount",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 173,
-                          "src": "4198:6:1",
+                          "referencedDeclaration": 222,
+                          "src": "4756:6:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -5252,14 +6929,14 @@ const abi = [
                         "rightExpression": {
                           "argumentTypes": null,
                           "hexValue": "3935",
-                          "id": 180,
+                          "id": 229,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "kind": "number",
                           "lValueRequested": false,
                           "nodeType": "Literal",
-                          "src": "4207:2:1",
+                          "src": "4765:2:1",
                           "subdenomination": null,
                           "typeDescriptions": {
                             "typeIdentifier": "t_rational_95_by_1",
@@ -5267,7 +6944,7 @@ const abi = [
                           },
                           "value": "95"
                         },
-                        "src": "4198:11:1",
+                        "src": "4756:11:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -5278,14 +6955,14 @@ const abi = [
                       "rightExpression": {
                         "argumentTypes": null,
                         "hexValue": "313030",
-                        "id": 182,
+                        "id": 231,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "number",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "4212:3:1",
+                        "src": "4770:3:1",
                         "subdenomination": null,
                         "typeDescriptions": {
                           "typeIdentifier": "t_rational_100_by_1",
@@ -5293,27 +6970,27 @@ const abi = [
                         },
                         "value": "100"
                       },
-                      "src": "4198:17:1",
+                      "src": "4756:17:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
                     "nodeType": "VariableDeclarationStatement",
-                    "src": "4177:38:1"
+                    "src": "4735:38:1"
                   },
                   {
                     "assignments": [
-                      186
+                      235
                     ],
                     "declarations": [
                       {
                         "constant": false,
-                        "id": 186,
+                        "id": 235,
                         "name": "lotteryAmount",
                         "nodeType": "VariableDeclaration",
-                        "scope": 243,
-                        "src": "4226:18:1",
+                        "scope": 292,
+                        "src": "4784:18:1",
                         "stateVariable": false,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -5321,10 +6998,10 @@ const abi = [
                           "typeString": "uint256"
                         },
                         "typeName": {
-                          "id": 185,
+                          "id": 234,
                           "name": "uint",
                           "nodeType": "ElementaryTypeName",
-                          "src": "4226:4:1",
+                          "src": "4784:4:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -5334,14 +7011,14 @@ const abi = [
                         "visibility": "internal"
                       }
                     ],
-                    "id": 192,
+                    "id": 241,
                     "initialValue": {
                       "argumentTypes": null,
                       "commonType": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       },
-                      "id": 191,
+                      "id": 240,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -5352,19 +7029,19 @@ const abi = [
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         },
-                        "id": 189,
+                        "id": 238,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
                           "argumentTypes": null,
-                          "id": 187,
+                          "id": 236,
                           "name": "amount",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 173,
-                          "src": "4247:6:1",
+                          "referencedDeclaration": 222,
+                          "src": "4805:6:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -5375,14 +7052,14 @@ const abi = [
                         "rightExpression": {
                           "argumentTypes": null,
                           "hexValue": "34",
-                          "id": 188,
+                          "id": 237,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "kind": "number",
                           "lValueRequested": false,
                           "nodeType": "Literal",
-                          "src": "4256:1:1",
+                          "src": "4814:1:1",
                           "subdenomination": null,
                           "typeDescriptions": {
                             "typeIdentifier": "t_rational_4_by_1",
@@ -5390,7 +7067,7 @@ const abi = [
                           },
                           "value": "4"
                         },
-                        "src": "4247:10:1",
+                        "src": "4805:10:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -5401,14 +7078,14 @@ const abi = [
                       "rightExpression": {
                         "argumentTypes": null,
                         "hexValue": "313030",
-                        "id": 190,
+                        "id": 239,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "number",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "4260:3:1",
+                        "src": "4818:3:1",
                         "subdenomination": null,
                         "typeDescriptions": {
                           "typeIdentifier": "t_rational_100_by_1",
@@ -5416,27 +7093,27 @@ const abi = [
                         },
                         "value": "100"
                       },
-                      "src": "4247:16:1",
+                      "src": "4805:16:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
                     "nodeType": "VariableDeclarationStatement",
-                    "src": "4226:37:1"
+                    "src": "4784:37:1"
                   },
                   {
                     "assignments": [
-                      194
+                      243
                     ],
                     "declarations": [
                       {
                         "constant": false,
-                        "id": 194,
+                        "id": 243,
                         "name": "ownerAmount",
                         "nodeType": "VariableDeclaration",
-                        "scope": 243,
-                        "src": "4274:16:1",
+                        "scope": 292,
+                        "src": "4832:16:1",
                         "stateVariable": false,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -5444,10 +7121,10 @@ const abi = [
                           "typeString": "uint256"
                         },
                         "typeName": {
-                          "id": 193,
+                          "id": 242,
                           "name": "uint",
                           "nodeType": "ElementaryTypeName",
-                          "src": "4274:4:1",
+                          "src": "4832:4:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -5457,14 +7134,14 @@ const abi = [
                         "visibility": "internal"
                       }
                     ],
-                    "id": 200,
+                    "id": 249,
                     "initialValue": {
                       "argumentTypes": null,
                       "commonType": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       },
-                      "id": 199,
+                      "id": 248,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -5475,19 +7152,19 @@ const abi = [
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         },
-                        "id": 197,
+                        "id": 246,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
                           "argumentTypes": null,
-                          "id": 195,
+                          "id": 244,
                           "name": "amount",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 173,
-                          "src": "4293:6:1",
+                          "referencedDeclaration": 222,
+                          "src": "4851:6:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -5498,14 +7175,14 @@ const abi = [
                         "rightExpression": {
                           "argumentTypes": null,
                           "hexValue": "31",
-                          "id": 196,
+                          "id": 245,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "kind": "number",
                           "lValueRequested": false,
                           "nodeType": "Literal",
-                          "src": "4302:1:1",
+                          "src": "4860:1:1",
                           "subdenomination": null,
                           "typeDescriptions": {
                             "typeIdentifier": "t_rational_1_by_1",
@@ -5513,7 +7190,7 @@ const abi = [
                           },
                           "value": "1"
                         },
-                        "src": "4293:10:1",
+                        "src": "4851:10:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -5524,14 +7201,14 @@ const abi = [
                       "rightExpression": {
                         "argumentTypes": null,
                         "hexValue": "313030",
-                        "id": 198,
+                        "id": 247,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "number",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "4306:3:1",
+                        "src": "4864:3:1",
                         "subdenomination": null,
                         "typeDescriptions": {
                           "typeIdentifier": "t_rational_100_by_1",
@@ -5539,14 +7216,14 @@ const abi = [
                         },
                         "value": "100"
                       },
-                      "src": "4293:16:1",
+                      "src": "4851:16:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
                     "nodeType": "VariableDeclarationStatement",
-                    "src": "4274:35:1"
+                    "src": "4832:35:1"
                   },
                   {
                     "expression": {
@@ -5554,12 +7231,12 @@ const abi = [
                       "arguments": [
                         {
                           "argumentTypes": null,
-                          "id": 204,
+                          "id": 253,
                           "name": "charityAmount",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 178,
-                          "src": "4448:13:1",
+                          "referencedDeclaration": 227,
+                          "src": "5014:13:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -5575,18 +7252,18 @@ const abi = [
                         ],
                         "expression": {
                           "argumentTypes": null,
-                          "id": 201,
+                          "id": 250,
                           "name": "Charity",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 73,
-                          "src": "4431:7:1",
+                          "referencedDeclaration": 67,
+                          "src": "4997:7:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
                           }
                         },
-                        "id": 203,
+                        "id": 252,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -5594,13 +7271,13 @@ const abi = [
                         "memberName": "transfer",
                         "nodeType": "MemberAccess",
                         "referencedDeclaration": null,
-                        "src": "4431:16:1",
+                        "src": "4997:16:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_transfer_nonpayable$_t_uint256_$returns$__$",
                           "typeString": "function (uint256)"
                         }
                       },
-                      "id": 205,
+                      "id": 254,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -5608,15 +7285,15 @@ const abi = [
                       "lValueRequested": false,
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "4431:31:1",
+                      "src": "4997:31:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_tuple$__$",
                         "typeString": "tuple()"
                       }
                     },
-                    "id": 206,
+                    "id": 255,
                     "nodeType": "ExpressionStatement",
-                    "src": "4431:31:1"
+                    "src": "4997:31:1"
                   },
                   {
                     "expression": {
@@ -5624,12 +7301,12 @@ const abi = [
                       "arguments": [
                         {
                           "argumentTypes": null,
-                          "id": 210,
+                          "id": 259,
                           "name": "lotteryAmount",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 186,
-                          "src": "4490:13:1",
+                          "referencedDeclaration": 235,
+                          "src": "5056:13:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -5645,18 +7322,18 @@ const abi = [
                         ],
                         "expression": {
                           "argumentTypes": null,
-                          "id": 207,
+                          "id": 256,
                           "name": "Lottery",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 71,
-                          "src": "4473:7:1",
+                          "referencedDeclaration": 65,
+                          "src": "5039:7:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
                           }
                         },
-                        "id": 209,
+                        "id": 258,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -5664,13 +7341,13 @@ const abi = [
                         "memberName": "transfer",
                         "nodeType": "MemberAccess",
                         "referencedDeclaration": null,
-                        "src": "4473:16:1",
+                        "src": "5039:16:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_transfer_nonpayable$_t_uint256_$returns$__$",
                           "typeString": "function (uint256)"
                         }
                       },
-                      "id": 211,
+                      "id": 260,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -5678,15 +7355,15 @@ const abi = [
                       "lValueRequested": false,
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "4473:31:1",
+                      "src": "5039:31:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_tuple$__$",
                         "typeString": "tuple()"
                       }
                     },
-                    "id": 212,
+                    "id": 261,
                     "nodeType": "ExpressionStatement",
-                    "src": "4473:31:1"
+                    "src": "5039:31:1"
                   },
                   {
                     "expression": {
@@ -5694,12 +7371,12 @@ const abi = [
                       "arguments": [
                         {
                           "argumentTypes": null,
-                          "id": 216,
+                          "id": 265,
                           "name": "ownerAmount",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 194,
-                          "src": "4618:11:1",
+                          "referencedDeclaration": 243,
+                          "src": "5184:11:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -5715,18 +7392,18 @@ const abi = [
                         ],
                         "expression": {
                           "argumentTypes": null,
-                          "id": 213,
+                          "id": 262,
                           "name": "Owner",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 69,
-                          "src": "4603:5:1",
+                          "referencedDeclaration": 63,
+                          "src": "5169:5:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
                           }
                         },
-                        "id": 215,
+                        "id": 264,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -5734,13 +7411,13 @@ const abi = [
                         "memberName": "transfer",
                         "nodeType": "MemberAccess",
                         "referencedDeclaration": null,
-                        "src": "4603:14:1",
+                        "src": "5169:14:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_transfer_nonpayable$_t_uint256_$returns$__$",
                           "typeString": "function (uint256)"
                         }
                       },
-                      "id": 217,
+                      "id": 266,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -5748,20 +7425,20 @@ const abi = [
                       "lValueRequested": false,
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "4603:27:1",
+                      "src": "5169:27:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_tuple$__$",
                         "typeString": "tuple()"
                       }
                     },
-                    "id": 218,
+                    "id": 267,
                     "nodeType": "ExpressionStatement",
-                    "src": "4603:27:1"
+                    "src": "5169:27:1"
                   },
                   {
                     "expression": {
                       "argumentTypes": null,
-                      "id": 234,
+                      "id": 283,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -5770,26 +7447,26 @@ const abi = [
                         "argumentTypes": null,
                         "baseExpression": {
                           "argumentTypes": null,
-                          "id": 219,
+                          "id": 268,
                           "name": "Donations",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 115,
-                          "src": "4675:9:1",
+                          "referencedDeclaration": 139,
+                          "src": "5241:9:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Donation_$107_storage_$",
+                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Donation_$131_storage_$",
                             "typeString": "mapping(uint256 => struct Share.Donation storage ref)"
                           }
                         },
-                        "id": 221,
+                        "id": 270,
                         "indexExpression": {
                           "argumentTypes": null,
-                          "id": 220,
+                          "id": 269,
                           "name": "donationID",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 79,
-                          "src": "4685:10:1",
+                          "src": "5251:10:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -5800,9 +7477,9 @@ const abi = [
                         "isPure": false,
                         "lValueRequested": true,
                         "nodeType": "IndexAccess",
-                        "src": "4675:21:1",
+                        "src": "5241:21:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Donation_$107_storage",
+                          "typeIdentifier": "t_struct$_Donation_$131_storage",
                           "typeString": "struct Share.Donation storage ref"
                         }
                       },
@@ -5813,12 +7490,12 @@ const abi = [
                         "arguments": [
                           {
                             "argumentTypes": null,
-                            "id": 223,
+                            "id": 272,
                             "name": "Owner",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 69,
-                            "src": "4708:5:1",
+                            "referencedDeclaration": 63,
+                            "src": "5274:5:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
@@ -5826,12 +7503,12 @@ const abi = [
                           },
                           {
                             "argumentTypes": null,
-                            "id": 224,
+                            "id": 273,
                             "name": "Lottery",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 71,
-                            "src": "4715:7:1",
+                            "referencedDeclaration": 65,
+                            "src": "5281:7:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
@@ -5839,12 +7516,12 @@ const abi = [
                           },
                           {
                             "argumentTypes": null,
-                            "id": 225,
+                            "id": 274,
                             "name": "Charity",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 73,
-                            "src": "4724:7:1",
+                            "referencedDeclaration": 67,
+                            "src": "5290:7:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
@@ -5854,18 +7531,18 @@ const abi = [
                             "argumentTypes": null,
                             "expression": {
                               "argumentTypes": null,
-                              "id": 226,
+                              "id": 275,
                               "name": "msg",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 632,
-                              "src": "4733:3:1",
+                              "referencedDeclaration": 745,
+                              "src": "5299:3:1",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_magic_message",
                                 "typeString": "msg"
                               }
                             },
-                            "id": 227,
+                            "id": 276,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -5873,7 +7550,7 @@ const abi = [
                             "memberName": "sender",
                             "nodeType": "MemberAccess",
                             "referencedDeclaration": null,
-                            "src": "4733:10:1",
+                            "src": "5299:10:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
@@ -5881,12 +7558,12 @@ const abi = [
                           },
                           {
                             "argumentTypes": null,
-                            "id": 228,
+                            "id": 277,
                             "name": "amount",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 173,
-                            "src": "4745:6:1",
+                            "referencedDeclaration": 222,
+                            "src": "5311:6:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -5894,12 +7571,12 @@ const abi = [
                           },
                           {
                             "argumentTypes": null,
-                            "id": 229,
+                            "id": 278,
                             "name": "charityAmount",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 178,
-                            "src": "4753:13:1",
+                            "referencedDeclaration": 227,
+                            "src": "5319:13:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -5907,12 +7584,12 @@ const abi = [
                           },
                           {
                             "argumentTypes": null,
-                            "id": 230,
+                            "id": 279,
                             "name": "lotteryAmount",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 186,
-                            "src": "4768:13:1",
+                            "referencedDeclaration": 235,
+                            "src": "5334:13:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -5920,12 +7597,12 @@ const abi = [
                           },
                           {
                             "argumentTypes": null,
-                            "id": 231,
+                            "id": 280,
                             "name": "ownerAmount",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 194,
-                            "src": "4783:11:1",
+                            "referencedDeclaration": 243,
+                            "src": "5349:11:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -5933,12 +7610,12 @@ const abi = [
                           },
                           {
                             "argumentTypes": null,
-                            "id": 232,
+                            "id": 281,
                             "name": "donationID",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 79,
-                            "src": "4796:10:1",
+                            "src": "5362:10:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -5984,18 +7661,18 @@ const abi = [
                               "typeString": "uint256"
                             }
                           ],
-                          "id": 222,
+                          "id": 271,
                           "name": "Donation",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 107,
-                          "src": "4699:8:1",
+                          "referencedDeclaration": 131,
+                          "src": "5265:8:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_struct$_Donation_$107_storage_ptr_$",
+                            "typeIdentifier": "t_type$_t_struct$_Donation_$131_storage_ptr_$",
                             "typeString": "type(struct Share.Donation storage pointer)"
                           }
                         },
-                        "id": 233,
+                        "id": 282,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -6003,38 +7680,38 @@ const abi = [
                         "lValueRequested": false,
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "4699:108:1",
+                        "src": "5265:108:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Donation_$107_memory",
+                          "typeIdentifier": "t_struct$_Donation_$131_memory",
                           "typeString": "struct Share.Donation memory"
                         }
                       },
-                      "src": "4675:132:1",
+                      "src": "5241:132:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Donation_$107_storage",
+                        "typeIdentifier": "t_struct$_Donation_$131_storage",
                         "typeString": "struct Share.Donation storage ref"
                       }
                     },
-                    "id": 235,
+                    "id": 284,
                     "nodeType": "ExpressionStatement",
-                    "src": "4675:132:1"
+                    "src": "5241:132:1"
                   },
                   {
                     "expression": {
                       "argumentTypes": null,
-                      "id": 240,
+                      "id": 289,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftHandSide": {
                         "argumentTypes": null,
-                        "id": 236,
+                        "id": 285,
                         "name": "donationID",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 79,
-                        "src": "4852:10:1",
+                        "src": "5418:10:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -6048,19 +7725,19 @@ const abi = [
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         },
-                        "id": 239,
+                        "id": 288,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
                           "argumentTypes": null,
-                          "id": 237,
+                          "id": 286,
                           "name": "donationID",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 79,
-                          "src": "4865:10:1",
+                          "src": "5431:10:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -6071,14 +7748,14 @@ const abi = [
                         "rightExpression": {
                           "argumentTypes": null,
                           "hexValue": "31",
-                          "id": 238,
+                          "id": 287,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "kind": "number",
                           "lValueRequested": false,
                           "nodeType": "Literal",
-                          "src": "4878:1:1",
+                          "src": "5444:1:1",
                           "subdenomination": null,
                           "typeDescriptions": {
                             "typeIdentifier": "t_rational_1_by_1",
@@ -6086,114 +7763,56 @@ const abi = [
                           },
                           "value": "1"
                         },
-                        "src": "4865:14:1",
+                        "src": "5431:14:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
-                      "src": "4852:27:1",
+                      "src": "5418:27:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "id": 241,
+                    "id": 290,
                     "nodeType": "ExpressionStatement",
-                    "src": "4852:27:1"
+                    "src": "5418:27:1"
                   }
                 ]
               },
               "documentation": "@dev Should consider splitting this out further if necessary by reviewers",
-              "id": 243,
+              "id": 292,
               "implemented": true,
               "isConstructor": false,
               "isDeclaredConst": false,
-              "modifiers": [
-                {
-                  "arguments": null,
-                  "id": 160,
-                  "modifierName": {
-                    "argumentTypes": null,
-                    "id": 159,
-                    "name": "notOwner",
-                    "nodeType": "Identifier",
-                    "overloadedDeclarations": [],
-                    "referencedDeclaration": 590,
-                    "src": "3775:8:1",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_modifier$__$",
-                      "typeString": "modifier ()"
-                    }
-                  },
-                  "nodeType": "ModifierInvocation",
-                  "src": "3775:8:1"
-                },
-                {
-                  "arguments": null,
-                  "id": 162,
-                  "modifierName": {
-                    "argumentTypes": null,
-                    "id": 161,
-                    "name": "notCharity",
-                    "nodeType": "Identifier",
-                    "overloadedDeclarations": [],
-                    "referencedDeclaration": 392,
-                    "src": "3784:10:1",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_modifier$__$",
-                      "typeString": "modifier ()"
-                    }
-                  },
-                  "nodeType": "ModifierInvocation",
-                  "src": "3784:10:1"
-                },
-                {
-                  "arguments": null,
-                  "id": 164,
-                  "modifierName": {
-                    "argumentTypes": null,
-                    "id": 163,
-                    "name": "notLottery",
-                    "nodeType": "Identifier",
-                    "overloadedDeclarations": [],
-                    "referencedDeclaration": 485,
-                    "src": "3795:10:1",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_modifier$__$",
-                      "typeString": "modifier ()"
-                    }
-                  },
-                  "nodeType": "ModifierInvocation",
-                  "src": "3795:10:1"
-                }
-              ],
+              "modifiers": [],
               "name": "makeDonation",
               "nodeType": "FunctionDefinition",
               "parameters": {
-                "id": 158,
+                "id": 196,
                 "nodeType": "ParameterList",
                 "parameters": [],
-                "src": "3772:2:1"
+                "src": "4257:2:1"
               },
               "payable": true,
               "returnParameters": {
-                "id": 165,
+                "id": 197,
                 "nodeType": "ParameterList",
                 "parameters": [],
-                "src": "3820:0:1"
+                "src": "4274:0:1"
               },
-              "scope": 326,
-              "src": "3751:1136:1",
+              "scope": 382,
+              "src": "4236:1217:1",
               "stateMutability": "payable",
               "superFunction": null,
               "visibility": "public"
             },
             {
               "body": {
-                "id": 257,
+                "id": 306,
                 "nodeType": "Block",
-                "src": "4948:178:1",
+                "src": "5514:178:1",
                 "statements": [
                   {
                     "expression": {
@@ -6205,7 +7824,7 @@ const abi = [
                             "typeIdentifier": "t_address",
                             "typeString": "address"
                           },
-                          "id": 252,
+                          "id": 301,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -6214,18 +7833,18 @@ const abi = [
                             "argumentTypes": null,
                             "expression": {
                               "argumentTypes": null,
-                              "id": 249,
+                              "id": 298,
                               "name": "msg",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 632,
-                              "src": "5068:3:1",
+                              "referencedDeclaration": 745,
+                              "src": "5634:3:1",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_magic_message",
                                 "typeString": "msg"
                               }
                             },
-                            "id": 250,
+                            "id": 299,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -6233,7 +7852,7 @@ const abi = [
                             "memberName": "sender",
                             "nodeType": "MemberAccess",
                             "referencedDeclaration": null,
-                            "src": "5068:10:1",
+                            "src": "5634:10:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
@@ -6243,18 +7862,18 @@ const abi = [
                           "operator": "==",
                           "rightExpression": {
                             "argumentTypes": null,
-                            "id": 251,
+                            "id": 300,
                             "name": "Owner",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 69,
-                            "src": "5082:5:1",
+                            "referencedDeclaration": 63,
+                            "src": "5648:5:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
                             }
                           },
-                          "src": "5068:19:1",
+                          "src": "5634:19:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
@@ -6268,21 +7887,21 @@ const abi = [
                             "typeString": "bool"
                           }
                         ],
-                        "id": 248,
+                        "id": 297,
                         "name": "require",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [
-                          635,
-                          636
+                          748,
+                          749
                         ],
-                        "referencedDeclaration": 635,
-                        "src": "5060:7:1",
+                        "referencedDeclaration": 748,
+                        "src": "5626:7:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
                           "typeString": "function (bool) pure"
                         }
                       },
-                      "id": 253,
+                      "id": 302,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -6290,39 +7909,39 @@ const abi = [
                       "lValueRequested": false,
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "5060:28:1",
+                      "src": "5626:28:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_tuple$__$",
                         "typeString": "tuple()"
                       }
                     },
-                    "id": 254,
+                    "id": 303,
                     "nodeType": "ExpressionStatement",
-                    "src": "5060:28:1"
+                    "src": "5626:28:1"
                   },
                   {
                     "expression": {
                       "argumentTypes": null,
-                      "id": 255,
+                      "id": 304,
                       "name": "donationID",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 79,
-                      "src": "5108:10:1",
+                      "src": "5674:10:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "functionReturnParameters": 247,
-                    "id": 256,
+                    "functionReturnParameters": 296,
+                    "id": 305,
                     "nodeType": "Return",
-                    "src": "5101:17:1"
+                    "src": "5667:17:1"
                   }
                 ]
               },
               "documentation": null,
-              "id": 258,
+              "id": 307,
               "implemented": true,
               "isConstructor": false,
               "isDeclaredConst": true,
@@ -6330,23 +7949,23 @@ const abi = [
               "name": "fetchDonationID",
               "nodeType": "FunctionDefinition",
               "parameters": {
-                "id": 244,
+                "id": 293,
                 "nodeType": "ParameterList",
                 "parameters": [],
-                "src": "4919:2:1"
+                "src": "5485:2:1"
               },
               "payable": false,
               "returnParameters": {
-                "id": 247,
+                "id": 296,
                 "nodeType": "ParameterList",
                 "parameters": [
                   {
                     "constant": false,
-                    "id": 246,
+                    "id": 295,
                     "name": "",
                     "nodeType": "VariableDeclaration",
-                    "scope": 258,
-                    "src": "4943:4:1",
+                    "scope": 307,
+                    "src": "5509:4:1",
                     "stateVariable": false,
                     "storageLocation": "default",
                     "typeDescriptions": {
@@ -6354,10 +7973,10 @@ const abi = [
                       "typeString": "uint256"
                     },
                     "typeName": {
-                      "id": 245,
+                      "id": 294,
                       "name": "uint",
                       "nodeType": "ElementaryTypeName",
-                      "src": "4943:4:1",
+                      "src": "5509:4:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -6367,19 +7986,19 @@ const abi = [
                     "visibility": "internal"
                   }
                 ],
-                "src": "4942:6:1"
+                "src": "5508:6:1"
               },
-              "scope": 326,
-              "src": "4895:231:1",
+              "scope": 382,
+              "src": "5461:231:1",
               "stateMutability": "view",
               "superFunction": null,
               "visibility": "public"
             },
             {
               "body": {
-                "id": 314,
+                "id": 364,
                 "nodeType": "Block",
-                "src": "5403:389:1",
+                "src": "5969:407:1",
                 "statements": [
                   {
                     "expression": {
@@ -6387,60 +8006,80 @@ const abi = [
                       "arguments": [
                         {
                           "argumentTypes": null,
-                          "commonType": {
-                            "typeIdentifier": "t_address",
-                            "typeString": "address"
-                          },
-                          "id": 285,
-                          "isConstant": false,
-                          "isLValue": false,
-                          "isPure": false,
-                          "lValueRequested": false,
-                          "leftExpression": {
-                            "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "expression": {
+                                "argumentTypes": null,
+                                "id": 333,
+                                "name": "msg",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 745,
+                                "src": "6113:3:1",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_magic_message",
+                                  "typeString": "msg"
+                                }
+                              },
+                              "id": 334,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberName": "sender",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": null,
+                              "src": "6113:10:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              }
+                            ],
                             "expression": {
                               "argumentTypes": null,
-                              "id": 282,
-                              "name": "msg",
+                              "id": 331,
+                              "name": "ownableContract",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 632,
-                              "src": "5523:3:1",
+                              "referencedDeclaration": 72,
+                              "src": "6089:15:1",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_magic_message",
-                                "typeString": "msg"
+                                "typeIdentifier": "t_contract$_Ownable_$730",
+                                "typeString": "contract Ownable"
                               }
                             },
-                            "id": 283,
+                            "id": 332,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
-                            "memberName": "sender",
+                            "memberName": "isOwner",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": null,
-                            "src": "5523:10:1",
+                            "referencedDeclaration": 714,
+                            "src": "6089:23:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_address",
-                              "typeString": "address"
+                              "typeIdentifier": "t_function_external_view$_t_address_$returns$_t_bool_$",
+                              "typeString": "function (address) view external returns (bool)"
                             }
                           },
-                          "nodeType": "BinaryOperation",
-                          "operator": "==",
-                          "rightExpression": {
-                            "argumentTypes": null,
-                            "id": 284,
-                            "name": "Owner",
-                            "nodeType": "Identifier",
-                            "overloadedDeclarations": [],
-                            "referencedDeclaration": 69,
-                            "src": "5537:5:1",
-                            "typeDescriptions": {
-                              "typeIdentifier": "t_address",
-                              "typeString": "address"
-                            }
-                          },
-                          "src": "5523:19:1",
+                          "id": 335,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "6089:35:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
@@ -6454,21 +8093,21 @@ const abi = [
                             "typeString": "bool"
                           }
                         ],
-                        "id": 281,
+                        "id": 330,
                         "name": "require",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [
-                          635,
-                          636
+                          748,
+                          749
                         ],
-                        "referencedDeclaration": 635,
-                        "src": "5515:7:1",
+                        "referencedDeclaration": 748,
+                        "src": "6081:7:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
                           "typeString": "function (bool) pure"
                         }
                       },
-                      "id": 286,
+                      "id": 336,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -6476,43 +8115,43 @@ const abi = [
                       "lValueRequested": false,
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "5515:28:1",
+                      "src": "6081:44:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_tuple$__$",
                         "typeString": "tuple()"
                       }
                     },
-                    "id": 287,
+                    "id": 337,
                     "nodeType": "ExpressionStatement",
-                    "src": "5515:28:1"
+                    "src": "6081:44:1"
                   },
                   {
                     "assignments": [
-                      289
+                      339
                     ],
                     "declarations": [
                       {
                         "constant": false,
-                        "id": 289,
+                        "id": 339,
                         "name": "donation",
                         "nodeType": "VariableDeclaration",
-                        "scope": 315,
-                        "src": "5556:24:1",
+                        "scope": 365,
+                        "src": "6138:24:1",
                         "stateVariable": false,
                         "storageLocation": "memory",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Donation_$107_memory_ptr",
+                          "typeIdentifier": "t_struct$_Donation_$131_memory_ptr",
                           "typeString": "struct Share.Donation"
                         },
                         "typeName": {
                           "contractScope": null,
-                          "id": 288,
+                          "id": 338,
                           "name": "Donation",
                           "nodeType": "UserDefinedTypeName",
-                          "referencedDeclaration": 107,
-                          "src": "5556:8:1",
+                          "referencedDeclaration": 131,
+                          "src": "6138:8:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Donation_$107_storage_ptr",
+                            "typeIdentifier": "t_struct$_Donation_$131_storage_ptr",
                             "typeString": "struct Share.Donation"
                           }
                         },
@@ -6520,31 +8159,31 @@ const abi = [
                         "visibility": "internal"
                       }
                     ],
-                    "id": 293,
+                    "id": 343,
                     "initialValue": {
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 290,
+                        "id": 340,
                         "name": "Donations",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 115,
-                        "src": "5583:9:1",
+                        "referencedDeclaration": 139,
+                        "src": "6165:9:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Donation_$107_storage_$",
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Donation_$131_storage_$",
                           "typeString": "mapping(uint256 => struct Share.Donation storage ref)"
                         }
                       },
-                      "id": 292,
+                      "id": 342,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 291,
+                        "id": 341,
                         "name": "_id",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 260,
-                        "src": "5593:3:1",
+                        "referencedDeclaration": 309,
+                        "src": "6175:3:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -6555,14 +8194,14 @@ const abi = [
                       "isPure": false,
                       "lValueRequested": false,
                       "nodeType": "IndexAccess",
-                      "src": "5583:14:1",
+                      "src": "6165:14:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Donation_$107_storage",
+                        "typeIdentifier": "t_struct$_Donation_$131_storage",
                         "typeString": "struct Share.Donation storage ref"
                       }
                     },
                     "nodeType": "VariableDeclarationStatement",
-                    "src": "5556:41:1"
+                    "src": "6138:41:1"
                   },
                   {
                     "expression": {
@@ -6572,26 +8211,26 @@ const abi = [
                           "argumentTypes": null,
                           "expression": {
                             "argumentTypes": null,
-                            "id": 294,
+                            "id": 344,
                             "name": "donation",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 289,
-                            "src": "5617:8:1",
+                            "referencedDeclaration": 339,
+                            "src": "6201:8:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_Donation_$107_memory_ptr",
+                              "typeIdentifier": "t_struct$_Donation_$131_memory_ptr",
                               "typeString": "struct Share.Donation memory"
                             }
                           },
-                          "id": 295,
+                          "id": 345,
                           "isConstant": false,
                           "isLValue": true,
                           "isPure": false,
                           "lValueRequested": false,
                           "memberName": "owner",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 90,
-                          "src": "5617:14:1",
+                          "referencedDeclaration": 114,
+                          "src": "6201:14:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
@@ -6601,26 +8240,26 @@ const abi = [
                           "argumentTypes": null,
                           "expression": {
                             "argumentTypes": null,
-                            "id": 296,
+                            "id": 346,
                             "name": "donation",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 289,
-                            "src": "5633:8:1",
+                            "referencedDeclaration": 339,
+                            "src": "6217:8:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_Donation_$107_memory_ptr",
+                              "typeIdentifier": "t_struct$_Donation_$131_memory_ptr",
                               "typeString": "struct Share.Donation memory"
                             }
                           },
-                          "id": 297,
+                          "id": 347,
                           "isConstant": false,
                           "isLValue": true,
                           "isPure": false,
                           "lValueRequested": false,
                           "memberName": "lottery",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 92,
-                          "src": "5633:16:1",
+                          "referencedDeclaration": 116,
+                          "src": "6217:16:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
@@ -6630,26 +8269,26 @@ const abi = [
                           "argumentTypes": null,
                           "expression": {
                             "argumentTypes": null,
-                            "id": 298,
+                            "id": 348,
                             "name": "donation",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 289,
-                            "src": "5651:8:1",
+                            "referencedDeclaration": 339,
+                            "src": "6235:8:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_Donation_$107_memory_ptr",
+                              "typeIdentifier": "t_struct$_Donation_$131_memory_ptr",
                               "typeString": "struct Share.Donation memory"
                             }
                           },
-                          "id": 299,
+                          "id": 349,
                           "isConstant": false,
                           "isLValue": true,
                           "isPure": false,
                           "lValueRequested": false,
                           "memberName": "charity",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 94,
-                          "src": "5651:16:1",
+                          "referencedDeclaration": 118,
+                          "src": "6235:16:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
@@ -6659,26 +8298,26 @@ const abi = [
                           "argumentTypes": null,
                           "expression": {
                             "argumentTypes": null,
-                            "id": 300,
+                            "id": 350,
                             "name": "donation",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 289,
-                            "src": "5669:8:1",
+                            "referencedDeclaration": 339,
+                            "src": "6253:8:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_Donation_$107_memory_ptr",
+                              "typeIdentifier": "t_struct$_Donation_$131_memory_ptr",
                               "typeString": "struct Share.Donation memory"
                             }
                           },
-                          "id": 301,
+                          "id": 351,
                           "isConstant": false,
                           "isLValue": true,
                           "isPure": false,
                           "lValueRequested": false,
                           "memberName": "donor",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 96,
-                          "src": "5669:14:1",
+                          "referencedDeclaration": 120,
+                          "src": "6253:14:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
@@ -6688,26 +8327,26 @@ const abi = [
                           "argumentTypes": null,
                           "expression": {
                             "argumentTypes": null,
-                            "id": 302,
+                            "id": 352,
                             "name": "donation",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 289,
-                            "src": "5685:8:1",
+                            "referencedDeclaration": 339,
+                            "src": "6269:8:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_Donation_$107_memory_ptr",
+                              "typeIdentifier": "t_struct$_Donation_$131_memory_ptr",
                               "typeString": "struct Share.Donation memory"
                             }
                           },
-                          "id": 303,
+                          "id": 353,
                           "isConstant": false,
                           "isLValue": true,
                           "isPure": false,
                           "lValueRequested": false,
                           "memberName": "amount",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 98,
-                          "src": "5685:15:1",
+                          "referencedDeclaration": 122,
+                          "src": "6269:15:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -6717,26 +8356,26 @@ const abi = [
                           "argumentTypes": null,
                           "expression": {
                             "argumentTypes": null,
-                            "id": 304,
+                            "id": 354,
                             "name": "donation",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 289,
-                            "src": "5702:8:1",
+                            "referencedDeclaration": 339,
+                            "src": "6286:8:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_Donation_$107_memory_ptr",
+                              "typeIdentifier": "t_struct$_Donation_$131_memory_ptr",
                               "typeString": "struct Share.Donation memory"
                             }
                           },
-                          "id": 305,
+                          "id": 355,
                           "isConstant": false,
                           "isLValue": true,
                           "isPure": false,
                           "lValueRequested": false,
                           "memberName": "charityAmount",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 100,
-                          "src": "5702:22:1",
+                          "referencedDeclaration": 124,
+                          "src": "6286:22:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -6746,26 +8385,26 @@ const abi = [
                           "argumentTypes": null,
                           "expression": {
                             "argumentTypes": null,
-                            "id": 306,
+                            "id": 356,
                             "name": "donation",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 289,
-                            "src": "5726:8:1",
+                            "referencedDeclaration": 339,
+                            "src": "6310:8:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_Donation_$107_memory_ptr",
+                              "typeIdentifier": "t_struct$_Donation_$131_memory_ptr",
                               "typeString": "struct Share.Donation memory"
                             }
                           },
-                          "id": 307,
+                          "id": 357,
                           "isConstant": false,
                           "isLValue": true,
                           "isPure": false,
                           "lValueRequested": false,
                           "memberName": "lotteryAmount",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 102,
-                          "src": "5726:22:1",
+                          "referencedDeclaration": 126,
+                          "src": "6310:22:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -6775,26 +8414,26 @@ const abi = [
                           "argumentTypes": null,
                           "expression": {
                             "argumentTypes": null,
-                            "id": 308,
+                            "id": 358,
                             "name": "donation",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 289,
-                            "src": "5750:8:1",
+                            "referencedDeclaration": 339,
+                            "src": "6334:8:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_Donation_$107_memory_ptr",
+                              "typeIdentifier": "t_struct$_Donation_$131_memory_ptr",
                               "typeString": "struct Share.Donation memory"
                             }
                           },
-                          "id": 309,
+                          "id": 359,
                           "isConstant": false,
                           "isLValue": true,
                           "isPure": false,
                           "lValueRequested": false,
                           "memberName": "ownerAmount",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 104,
-                          "src": "5750:20:1",
+                          "referencedDeclaration": 128,
+                          "src": "6334:20:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -6804,54 +8443,54 @@ const abi = [
                           "argumentTypes": null,
                           "expression": {
                             "argumentTypes": null,
-                            "id": 310,
+                            "id": 360,
                             "name": "donation",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 289,
-                            "src": "5772:8:1",
+                            "referencedDeclaration": 339,
+                            "src": "6356:8:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_Donation_$107_memory_ptr",
+                              "typeIdentifier": "t_struct$_Donation_$131_memory_ptr",
                               "typeString": "struct Share.Donation memory"
                             }
                           },
-                          "id": 311,
+                          "id": 361,
                           "isConstant": false,
                           "isLValue": true,
                           "isPure": false,
                           "lValueRequested": false,
                           "memberName": "id",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 106,
-                          "src": "5772:11:1",
+                          "referencedDeclaration": 130,
+                          "src": "6356:11:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         }
                       ],
-                      "id": 312,
+                      "id": 362,
                       "isConstant": false,
                       "isInlineArray": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "nodeType": "TupleExpression",
-                      "src": "5615:169:1",
+                      "src": "6199:169:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_tuple$_t_address_$_t_address_$_t_address_$_t_address_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$",
                         "typeString": "tuple(address,address,address,address,uint256,uint256,uint256,uint256,uint256)"
                       }
                     },
-                    "functionReturnParameters": 280,
-                    "id": 313,
+                    "functionReturnParameters": 329,
+                    "id": 363,
                     "nodeType": "Return",
-                    "src": "5608:176:1"
+                    "src": "6192:176:1"
                   }
                 ]
               },
               "documentation": null,
-              "id": 315,
+              "id": 365,
               "implemented": true,
               "isConstructor": false,
               "isDeclaredConst": true,
@@ -6859,16 +8498,16 @@ const abi = [
               "name": "fetchDonation",
               "nodeType": "FunctionDefinition",
               "parameters": {
-                "id": 261,
+                "id": 310,
                 "nodeType": "ParameterList",
                 "parameters": [
                   {
                     "constant": false,
-                    "id": 260,
+                    "id": 309,
                     "name": "_id",
                     "nodeType": "VariableDeclaration",
-                    "scope": 315,
-                    "src": "5157:8:1",
+                    "scope": 365,
+                    "src": "5723:8:1",
                     "stateVariable": false,
                     "storageLocation": "default",
                     "typeDescriptions": {
@@ -6876,10 +8515,10 @@ const abi = [
                       "typeString": "uint256"
                     },
                     "typeName": {
-                      "id": 259,
+                      "id": 308,
                       "name": "uint",
                       "nodeType": "ElementaryTypeName",
-                      "src": "5157:4:1",
+                      "src": "5723:4:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -6889,20 +8528,20 @@ const abi = [
                     "visibility": "internal"
                   }
                 ],
-                "src": "5156:10:1"
+                "src": "5722:10:1"
               },
               "payable": false,
               "returnParameters": {
-                "id": 280,
+                "id": 329,
                 "nodeType": "ParameterList",
                 "parameters": [
                   {
                     "constant": false,
-                    "id": 263,
+                    "id": 312,
                     "name": "owner",
                     "nodeType": "VariableDeclaration",
-                    "scope": 315,
-                    "src": "5188:13:1",
+                    "scope": 365,
+                    "src": "5754:13:1",
                     "stateVariable": false,
                     "storageLocation": "default",
                     "typeDescriptions": {
@@ -6910,10 +8549,10 @@ const abi = [
                       "typeString": "address"
                     },
                     "typeName": {
-                      "id": 262,
+                      "id": 311,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
-                      "src": "5188:7:1",
+                      "src": "5754:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -6924,11 +8563,11 @@ const abi = [
                   },
                   {
                     "constant": false,
-                    "id": 265,
+                    "id": 314,
                     "name": "lottery",
                     "nodeType": "VariableDeclaration",
-                    "scope": 315,
-                    "src": "5212:15:1",
+                    "scope": 365,
+                    "src": "5778:15:1",
                     "stateVariable": false,
                     "storageLocation": "default",
                     "typeDescriptions": {
@@ -6936,10 +8575,10 @@ const abi = [
                       "typeString": "address"
                     },
                     "typeName": {
-                      "id": 264,
+                      "id": 313,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
-                      "src": "5212:7:1",
+                      "src": "5778:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -6950,11 +8589,11 @@ const abi = [
                   },
                   {
                     "constant": false,
-                    "id": 267,
+                    "id": 316,
                     "name": "charity",
                     "nodeType": "VariableDeclaration",
-                    "scope": 315,
-                    "src": "5238:15:1",
+                    "scope": 365,
+                    "src": "5804:15:1",
                     "stateVariable": false,
                     "storageLocation": "default",
                     "typeDescriptions": {
@@ -6962,10 +8601,10 @@ const abi = [
                       "typeString": "address"
                     },
                     "typeName": {
-                      "id": 266,
+                      "id": 315,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
-                      "src": "5238:7:1",
+                      "src": "5804:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -6976,11 +8615,11 @@ const abi = [
                   },
                   {
                     "constant": false,
-                    "id": 269,
+                    "id": 318,
                     "name": "donor",
                     "nodeType": "VariableDeclaration",
-                    "scope": 315,
-                    "src": "5264:13:1",
+                    "scope": 365,
+                    "src": "5830:13:1",
                     "stateVariable": false,
                     "storageLocation": "default",
                     "typeDescriptions": {
@@ -6988,10 +8627,10 @@ const abi = [
                       "typeString": "address"
                     },
                     "typeName": {
-                      "id": 268,
+                      "id": 317,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
-                      "src": "5264:7:1",
+                      "src": "5830:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -7002,11 +8641,11 @@ const abi = [
                   },
                   {
                     "constant": false,
-                    "id": 271,
+                    "id": 320,
                     "name": "amount",
                     "nodeType": "VariableDeclaration",
-                    "scope": 315,
-                    "src": "5288:11:1",
+                    "scope": 365,
+                    "src": "5854:11:1",
                     "stateVariable": false,
                     "storageLocation": "default",
                     "typeDescriptions": {
@@ -7014,10 +8653,10 @@ const abi = [
                       "typeString": "uint256"
                     },
                     "typeName": {
-                      "id": 270,
+                      "id": 319,
                       "name": "uint",
                       "nodeType": "ElementaryTypeName",
-                      "src": "5288:4:1",
+                      "src": "5854:4:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -7028,11 +8667,11 @@ const abi = [
                   },
                   {
                     "constant": false,
-                    "id": 273,
+                    "id": 322,
                     "name": "charityAmount",
                     "nodeType": "VariableDeclaration",
-                    "scope": 315,
-                    "src": "5310:18:1",
+                    "scope": 365,
+                    "src": "5876:18:1",
                     "stateVariable": false,
                     "storageLocation": "default",
                     "typeDescriptions": {
@@ -7040,10 +8679,10 @@ const abi = [
                       "typeString": "uint256"
                     },
                     "typeName": {
-                      "id": 272,
+                      "id": 321,
                       "name": "uint",
                       "nodeType": "ElementaryTypeName",
-                      "src": "5310:4:1",
+                      "src": "5876:4:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -7054,11 +8693,11 @@ const abi = [
                   },
                   {
                     "constant": false,
-                    "id": 275,
+                    "id": 324,
                     "name": "lotteryAmount",
                     "nodeType": "VariableDeclaration",
-                    "scope": 315,
-                    "src": "5339:18:1",
+                    "scope": 365,
+                    "src": "5905:18:1",
                     "stateVariable": false,
                     "storageLocation": "default",
                     "typeDescriptions": {
@@ -7066,10 +8705,10 @@ const abi = [
                       "typeString": "uint256"
                     },
                     "typeName": {
-                      "id": 274,
+                      "id": 323,
                       "name": "uint",
                       "nodeType": "ElementaryTypeName",
-                      "src": "5339:4:1",
+                      "src": "5905:4:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -7080,11 +8719,11 @@ const abi = [
                   },
                   {
                     "constant": false,
-                    "id": 277,
+                    "id": 326,
                     "name": "ownerAmount",
                     "nodeType": "VariableDeclaration",
-                    "scope": 315,
-                    "src": "5368:16:1",
+                    "scope": 365,
+                    "src": "5934:16:1",
                     "stateVariable": false,
                     "storageLocation": "default",
                     "typeDescriptions": {
@@ -7092,10 +8731,10 @@ const abi = [
                       "typeString": "uint256"
                     },
                     "typeName": {
-                      "id": 276,
+                      "id": 325,
                       "name": "uint",
                       "nodeType": "ElementaryTypeName",
-                      "src": "5368:4:1",
+                      "src": "5934:4:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -7106,11 +8745,11 @@ const abi = [
                   },
                   {
                     "constant": false,
-                    "id": 279,
+                    "id": 328,
                     "name": "id",
                     "nodeType": "VariableDeclaration",
-                    "scope": 315,
-                    "src": "5395:7:1",
+                    "scope": 365,
+                    "src": "5961:7:1",
                     "stateVariable": false,
                     "storageLocation": "default",
                     "typeDescriptions": {
@@ -7118,10 +8757,10 @@ const abi = [
                       "typeString": "uint256"
                     },
                     "typeName": {
-                      "id": 278,
+                      "id": 327,
                       "name": "uint",
                       "nodeType": "ElementaryTypeName",
-                      "src": "5395:4:1",
+                      "src": "5961:4:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -7131,87 +8770,192 @@ const abi = [
                     "visibility": "internal"
                   }
                 ],
-                "src": "5187:216:1"
+                "src": "5753:216:1"
               },
-              "scope": 326,
-              "src": "5134:658:1",
+              "scope": 382,
+              "src": "5700:676:1",
               "stateMutability": "view",
               "superFunction": null,
               "visibility": "public"
             },
             {
               "body": {
-                "id": 324,
+                "id": 380,
                 "nodeType": "Block",
-                "src": "5860:37:1",
+                "src": "6434:92:1",
                 "statements": [
                   {
                     "expression": {
                       "argumentTypes": null,
-                      "id": 322,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "expression": {
+                                "argumentTypes": null,
+                                "id": 373,
+                                "name": "msg",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 745,
+                                "src": "6477:3:1",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_magic_message",
+                                  "typeString": "msg"
+                                }
+                              },
+                              "id": 374,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberName": "sender",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": null,
+                              "src": "6477:10:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 371,
+                              "name": "ownableContract",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 72,
+                              "src": "6453:15:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_contract$_Ownable_$730",
+                                "typeString": "contract Ownable"
+                              }
+                            },
+                            "id": 372,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "isOwner",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 714,
+                            "src": "6453:23:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_external_view$_t_address_$returns$_t_bool_$",
+                              "typeString": "function (address) view external returns (bool)"
+                            }
+                          },
+                          "id": 375,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "6453:35:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        ],
+                        "id": 370,
+                        "name": "require",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [
+                          748,
+                          749
+                        ],
+                        "referencedDeclaration": 748,
+                        "src": "6445:7:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                          "typeString": "function (bool) pure"
+                        }
+                      },
+                      "id": 376,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "6445:44:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_tuple$__$",
+                        "typeString": "tuple()"
+                      }
+                    },
+                    "id": 377,
+                    "nodeType": "ExpressionStatement",
+                    "src": "6445:44:1"
+                  },
+                  {
+                    "expression": {
+                      "argumentTypes": null,
+                      "id": 378,
                       "name": "initialized",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 76,
-                      "src": "5878:11:1",
+                      "referencedDeclaration": 70,
+                      "src": "6507:11:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
                       }
                     },
-                    "functionReturnParameters": 321,
-                    "id": 323,
+                    "functionReturnParameters": 369,
+                    "id": 379,
                     "nodeType": "Return",
-                    "src": "5871:18:1"
+                    "src": "6500:18:1"
                   }
                 ]
               },
               "documentation": null,
-              "id": 325,
+              "id": 381,
               "implemented": true,
               "isConstructor": false,
               "isDeclaredConst": true,
-              "modifiers": [
-                {
-                  "arguments": null,
-                  "id": 318,
-                  "modifierName": {
-                    "argumentTypes": null,
-                    "id": 317,
-                    "name": "onlyOwner",
-                    "nodeType": "Identifier",
-                    "overloadedDeclarations": [],
-                    "referencedDeclaration": 580,
-                    "src": "5825:9:1",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_modifier$__$",
-                      "typeString": "modifier ()"
-                    }
-                  },
-                  "nodeType": "ModifierInvocation",
-                  "src": "5825:9:1"
-                }
-              ],
+              "modifiers": [],
               "name": "isInitialized",
               "nodeType": "FunctionDefinition",
               "parameters": {
-                "id": 316,
+                "id": 366,
                 "nodeType": "ParameterList",
                 "parameters": [],
-                "src": "5822:2:1"
+                "src": "6406:2:1"
               },
               "payable": false,
               "returnParameters": {
-                "id": 321,
+                "id": 369,
                 "nodeType": "ParameterList",
                 "parameters": [
                   {
                     "constant": false,
-                    "id": 320,
+                    "id": 368,
                     "name": "",
                     "nodeType": "VariableDeclaration",
-                    "scope": 325,
-                    "src": "5855:4:1",
+                    "scope": 381,
+                    "src": "6429:4:1",
                     "stateVariable": false,
                     "storageLocation": "default",
                     "typeDescriptions": {
@@ -7219,10 +8963,10 @@ const abi = [
                       "typeString": "bool"
                     },
                     "typeName": {
-                      "id": 319,
+                      "id": 367,
                       "name": "bool",
                       "nodeType": "ElementaryTypeName",
-                      "src": "5855:4:1",
+                      "src": "6429:4:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
@@ -7232,20 +8976,20 @@ const abi = [
                     "visibility": "internal"
                   }
                 ],
-                "src": "5854:6:1"
+                "src": "6428:6:1"
               },
-              "scope": 326,
-              "src": "5800:97:1",
+              "scope": 382,
+              "src": "6384:142:1",
               "stateMutability": "view",
               "superFunction": null,
               "visibility": "public"
             }
           ],
-          "scope": 327,
-          "src": "211:5691:1"
+          "scope": 383,
+          "src": "211:6320:1"
         }
       ],
-      "src": "0:5906:1"
+      "src": "0:6535:1"
     },
     "compiler": {
       "name": "solc",
@@ -7255,12 +8999,12 @@ const abi = [
       "4": {
         "events": {},
         "links": {},
-        "address": "0x02bc640a739b4315ab833d14d636a546f6a73fd1",
-        "transactionHash": "0x43d83eaebd670b4946fd227a3826105f134afdb2757bc46ee5e2a4734714fd8f"
+        "address": "0xeda3e5df041a2a5477b4256be0f263084bf0eb6f",
+        "transactionHash": "0x46fb497c50bdaccab3193587689e9f4c8ae0f50f7156cd10ce55b5f9b2588853"
       }
     },
     "schemaVersion": "2.0.2",
-    "updatedAt": "2019-03-22T03:07:42.958Z"
+    "updatedAt": "2019-03-29T01:42:25.874Z"
   }
 ];
 
