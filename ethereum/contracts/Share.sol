@@ -86,10 +86,10 @@ contract Share {
         Lottery = lotteryContract.getLottery(msg.sender);
 
         // sets the charity for the charityRole contract
-        // charityContract.setCharity(_charity);
+        charityContract.setCharity(_charity, msg.sender);
 
         // gets charity address
-        // Charity = charityContract.getCharity();
+        Charity = charityContract.getCharity(msg.sender);
 
         initialized = true;
     }

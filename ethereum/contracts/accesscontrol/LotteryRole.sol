@@ -45,8 +45,8 @@ contract LotteryRole{
         return msg.sender == Lottery;
     }
 
-    function payout(address _sender) public payable{
-        require(ownableContract.isOwner(_sender));
+    function payout() public payable{
+        require(ownableContract.isOwner(msg.sender));
         address Owner = ownableContract.getOwner();
 
         Owner.transfer(address(this).balance);
