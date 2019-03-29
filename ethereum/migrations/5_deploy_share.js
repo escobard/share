@@ -5,6 +5,6 @@ const LotteryRole = artifacts.require("./LotteryRole.sol"),
 
 module.exports = function(deployer) {
   // deploys initial Ownable contracts
-  deployer.deploy(Share, Ownable.address, CharityRole.address, LotteryRole.address, {gas: 7000000})
+  deployer.deploy(Share, Ownable.address, CharityRole.address, LotteryRole.address, {gas: 3000000})
 
 };

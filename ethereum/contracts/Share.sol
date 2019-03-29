@@ -24,7 +24,7 @@ contract Share {
     constructor(address _ownable, address _charityRole, address _lotteryRole) public {
         Owner = msg.sender;
 
-        // TODO - try to assign these to .this to utilize proper inheritence
+        // sets the address for the instance of each helper contract
         ownableContract = Ownable(_ownable);
         charityContract = CharityRole(_charityRole);
         lotteryContract = LotteryRole(_lotteryRole);
@@ -74,7 +74,7 @@ contract Share {
     // TODO - this logic must also include the new contract
     function initiateContract(address _lottery, address _charity) public payable{
 
-        require(initialized == false && ownableContract.isOwner());
+        require(initialized == false);
 
         // TODO - this logic must add the smart contract address for CharityRole
         // TODO - ei - Charity = CharityRole(_charity) - argument must contain address of contract
