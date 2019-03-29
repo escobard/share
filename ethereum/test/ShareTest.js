@@ -36,7 +36,9 @@ contract("Share", accounts => {
             .then(async (resp) =>{
 
                 // will comment back in when lottery contract is completed
-                // assert.equal(await this.contract.Lottery(), lottery);
+                assert.equal(await this.ownableContract.getOwner({from: owner}), owner);
+                assert.equal(await this.charityContract.getCharity(owner, {from: owner}), charity);
+                assert.equal(await this.lotteryContract.getLottery(owner, {from: owner}), lottery);
                 assert.equal(await this.contract.isInitialized({from: owner}), true);
             })
         });
