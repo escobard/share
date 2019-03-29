@@ -47,7 +47,7 @@ router.post("/", protocolSetup, async (req, res) => {
 
       console.log("Initialization complete! Fetching donation...", donationID);
 
-      let donation = await share.methods.Donations(id).call({from: owner_pu});
+      let donation = await share.methods.fetchDonation(id).call({from: owner_pu});
 
       // TODO - refactor into utils/shareUtils.js
       // handles the access control of the smart contract data

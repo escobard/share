@@ -55,15 +55,16 @@ try {
           await sendEther(
             share.methods.initiateContract(lottery_pu, charity_pu),
             owner_pu,
-            false,
+            owner_pr,
             contract_pu,
-            "0.000001"
+            "0.001"
           );
 
           /* TODO - GANACHE METHOD - refactor for local dev
          await share.methods
            .initiateContract(lotteryAccount, charityAccount)
            .send({ from: ownerAccount }); */
+          res.status(200).json('Initializing contract, send another donation!');
         }
 
         console.log("Contract initialized! Creating Donation...", req.body);
@@ -102,6 +103,7 @@ try {
                                 await share.methods
                   .makeDonation()
                   .send({ from: req.body.address, value: amount, gas: "500000" });
+
 
                 let currentDonation = donationID - 1;
 
