@@ -74,16 +74,16 @@ contract Share {
     // TODO - this logic must also include the new contract
     function initiateContract(address _lottery, address _charity) public payable{
 
-        require(initialized == false);
+        require(initialized == false && ownableContract.isOwner(msg.sender));
 
         // TODO - this logic must add the smart contract address for CharityRole
         // TODO - ei - Charity = CharityRole(_charity) - argument must contain address of contract
 
         // sets the lottery for the lotteryRole contract
-        // lotteryContract.setLottery(_lottery);
+        lotteryContract.setLottery(_lottery, msg.sender);
 
         // gets lottery address
-        // Lottery = lotteryContract.getLottery();
+        Lottery = lotteryContract.getLottery(msg.sender);
 
         // sets the charity for the charityRole contract
         // charityContract.setCharity(_charity);
@@ -99,7 +99,7 @@ contract Share {
 
     function makeDonation() public payable{
         // owner, charity, and lottery accounts cannot utilize the handleFunds function
-        require(initialized == true && !ownableContract.isOwner(msg.sender) && !charityContract.isCharity()&& !lotteryContract.isLottery());
+        require(initialized == true && !ownableContract.isOwner(msg.sender) && !charityContract.isCharity() && !lotteryContract.isLottery());
 
         // creates the amount variable, used to set the amount later on in this function
         // these math. functions can be move to the API to avoid gas cost for calculations

@@ -6,27 +6,26 @@ import "../core/Ownable.sol";
 // Define a contract 'LotteryRole' to manage this role - checks if address is parent contracts lottery
 contract LotteryRole{
 
-    address private Owner;
     address private Lottery;
-    bool private initialized = false;
     Ownable private ownableContract;
 
     // adds ownableContract library to the contract
 
     constructor(address _ownable) public {
-        Owner = msg.sender;
         ownableContract = Ownable(_ownable);
     }
 
-    function setLottery(address _lottery) public payable {
+    function setLottery(address _lottery, address _sender) public payable {
 
+        // must be used like this, msg.sender grabs the CONTRACT address, not the OWNER address
+        require(ownableContract.isOwner(_sender));
         // ensures caller is owner
-        require(ownableContract.isOwner(msg.sender));
         Lottery = _lottery;
-        initialized = true;
     }
 
-    function getLottery() public view returns (address){
+    function getLottery(address _sender) public view returns (address){
+
+        require(ownableContract.isOwner(_sender));
         return Lottery;
     }
 
@@ -46,8 +45,10 @@ contract LotteryRole{
         return msg.sender == Lottery;
     }
 
-    function payout() public payable{
-        require(ownableContract.isOwner(msg.sender));
+    function payout(address _sender) public payable{
+        require(ownableContract.isOwner(_sender));
+        address Owner = ownableContract.getOwner();
+
         Owner.transfer(address(this).balance);
     }
 }
