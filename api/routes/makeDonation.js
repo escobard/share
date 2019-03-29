@@ -34,11 +34,12 @@ try {
         */
 
         // checks if contract is initialized, can be called by anyone with raw transactions due to this being public
-
+        console.log('CONTRACT ADDY', process.env.CONTRACT_ADDRESS);
         // TODO - refactor into its own middleware, using a new util for the contract itself, extend this with its own class
-        let contractInitialized = await share.methods.initialized.call();
+        let contractInitialized = await share.methods.isInitialized.call({from: owner_pu});
 
         console.log("INITIALIZED?", contractInitialized);
+
 
         // donor address public
         let donorPub = address_pu;
@@ -54,15 +55,16 @@ try {
           await sendEther(
             share.methods.initiateContract(lottery_pu, charity_pu),
             owner_pu,
-            false,
+            owner_pr,
             contract_pu,
-            "0.000001"
+            "0.001"
           );
 
           /* TODO - GANACHE METHOD - refactor for local dev
          await share.methods
            .initiateContract(lotteryAccount, charityAccount)
            .send({ from: ownerAccount }); */
+          res.status(200).json('Initializing contract, send another donation!');
         }
 
         console.log("Contract initialized! Creating Donation...", req.body);
@@ -80,7 +82,9 @@ try {
         // TODO - refactor into utils/shareUtils.js
 
         // using ABI workaround instead of raw call transaction
-        let donationID = await share.methods.fetchDonationID.call({from: owner_pu})
+        let donationID = await share.methods.fetchDonationID.call({
+          from: owner_pu
+        });
 
         console.log("DONATION ID", donationID);
         let currentDonation = donationID - 1;
@@ -99,6 +103,7 @@ try {
                                 await share.methods
                   .makeDonation()
                   .send({ from: req.body.address, value: amount, gas: "500000" });
+
 
                 let currentDonation = donationID - 1;
 

@@ -61,7 +61,13 @@ My promise to you = Use my new knowledge of raw transactions to build an end to 
 
 ## Reviewer Information
 
-Contract address:[https://rinkeby.etherscan.io/address/0x57486a5332ac3f2c82625a2a504ee6916f004e46]
+Share contract address:[https://rinkeby.etherscan.io/address/0x8b9ca2c57a03d154f37c1276f313f1124ca45a72]
+
+Ownable contract address:[https://rinkeby.etherscan.io/address/0x84806f1790c4e4cd0699e402f0b47f887b6223ba]
+
+Charity contract address:[https://rinkeby.etherscan.io/address/0xc8c307be39ecb269758d1f4a41532298db880ace]
+
+Lottery contract address:[https://rinkeby.etherscan.io/address/0x946f7ab8a3d7e2ae10b850ef667c3732fa61fa62]
 
 Node Version: v10.14.1 
 
@@ -107,5 +113,5 @@ You can enter a donation ID number to fetch the donation data from the smart con
 You can check the number of donations the contract currently has by visiting the link to the contract address above.
 
 Test address / donation ID:
-address: `0xCb82438B0443593191ec05D07Bb9dBf6Eb73594C`
+address: `0xe71a0829e03c6e26fc5486c8d10e0bf0c1a92cf9`
 id: `1` - up to 8 so far, can fetch all via the owner address

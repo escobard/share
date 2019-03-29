@@ -10,6 +10,7 @@ module.exports = async (req, res, next) => {
 
   // set contracts
   req.share = await eUtils.setContract();
+  console.log('IS INIT', req.share.options)
 
   // sets accounts
   req.accounts = eUtils.accounts;

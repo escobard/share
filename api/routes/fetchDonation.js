@@ -16,7 +16,7 @@ router.post("/", protocolSetup, async (req, res) => {
     // ensures request.body.address exists
     if (address_pu) {
       // checks if contract is initialized
-      let contractInitialized = await share.methods.initialized.call();
+      let contractInitialized = await share.methods.isInitialized.call({from: owner_pu});
 
       if (contractInitialized === false) {
         console.log("Initializing Contract...", req.accounts);
@@ -47,7 +47,7 @@ router.post("/", protocolSetup, async (req, res) => {
 
       console.log("Initialization complete! Fetching donation...", donationID);
 
-      let donation = await share.methods.Donations(id).call({from: owner_pu});
+      let donation = await share.methods.fetchDonation(id).call({from: owner_pu});
 
       // TODO - refactor into utils/shareUtils.js
       // handles the access control of the smart contract data
