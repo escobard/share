@@ -26,10 +26,10 @@ contract("Share", accounts => {
 
     describe("Tests contract initiation", () =>{
         it('owner can initialize contract', async ()=> {
-            let initialized = await this.contract.initialized({from: owner});
+            let initialized = await this.contract.isInitialized({from: owner});
             console.log('INIT', initialized);
 
-            let response = await this.contract.initiateContract(lottery, charity, {from: owner, value: amount});
+            let response = await this.contract.initiateContract(lottery, charity, {from: owner});
             return new Promise((resolve) =>{
                 resolve(response)
             })

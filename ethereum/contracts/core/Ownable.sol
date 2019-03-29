@@ -19,18 +19,18 @@ contract Ownable {
 
     // changed to function, issues importing modifiers
     modifier onlyOwner{
-        require(isOwner());
+        require(isOwner(msg.sender));
         _;
     }
 
     modifier notOwner{
-        require(!isOwner());
+        require(!isOwner(msg.sender));
         _;
     }
 
     /// Check if the calling address is the Owner of the contract
-    function isOwner() public view returns (bool) {
-        return msg.sender == Owner;
+    function isOwner(address _sender) public view returns (bool) {
+        return _sender == Owner;
     }
 
     function payout() onlyOwner public payable{

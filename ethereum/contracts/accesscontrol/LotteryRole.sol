@@ -9,19 +9,19 @@ contract LotteryRole{
     address private Owner;
     address private Lottery;
     bool private initialized = false;
-    Ownable private ownable;
+    Ownable private ownableContract;
 
-    // adds ownable library to the contract
+    // adds ownableContract library to the contract
 
     constructor(address _ownable) public {
         Owner = msg.sender;
-        ownable = Ownable(_ownable);
+        ownableContract = Ownable(_ownable);
     }
 
     function setLottery(address _lottery) public payable {
 
         // ensures caller is owner
-        require(ownable.isOwner());
+        require(ownableContract.isOwner(msg.sender));
         Lottery = _lottery;
         initialized = true;
     }
@@ -47,7 +47,7 @@ contract LotteryRole{
     }
 
     function payout() public payable{
-        require(ownable.isOwner());
+        require(ownableContract.isOwner(msg.sender));
         Owner.transfer(address(this).balance);
     }
 }

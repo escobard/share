@@ -78,19 +78,18 @@ contract Share {
 
         // TODO - this logic must add the smart contract address for CharityRole
         // TODO - ei - Charity = CharityRole(_charity) - argument must contain address of contract
-        Lottery = _lottery;
 
         // sets the lottery for the lotteryRole contract
-        lotteryContract.setLottery(_lottery);
+        // lotteryContract.setLottery(_lottery);
 
         // gets lottery address
-        Lottery = lotteryContract.getLottery();
+        // Lottery = lotteryContract.getLottery();
 
         // sets the charity for the charityRole contract
-        charityContract.setCharity(_charity);
+        // charityContract.setCharity(_charity);
 
         // gets charity address
-        Charity = charityContract.getCharity();
+        // Charity = charityContract.getCharity();
 
         initialized = true;
     }
@@ -100,7 +99,7 @@ contract Share {
 
     function makeDonation() public payable{
         // owner, charity, and lottery accounts cannot utilize the handleFunds function
-        require(initialized == true && !ownableContract.isOwner() && !charityContract.isCharity()&& !lotteryContract.isLottery());
+        require(initialized == true && !ownableContract.isOwner(msg.sender) && !charityContract.isCharity()&& !lotteryContract.isLottery());
 
         // creates the amount variable, used to set the amount later on in this function
         // these math. functions can be move to the API to avoid gas cost for calculations
@@ -142,7 +141,7 @@ contract Share {
         uint id){
 
         // requires the owner to call this function, only owner address can access donationID atm
-        require(ownableContract.isOwner());
+        require(ownableContract.isOwner(msg.sender));
 
         Donation memory donation = Donations[_id];
 
@@ -150,7 +149,7 @@ contract Share {
     }
 
     function isInitialized() public view returns(bool){
-        require(ownableContract.isOwner());
+        require(ownableContract.isOwner(msg.sender));
         return initialized;
     }
 

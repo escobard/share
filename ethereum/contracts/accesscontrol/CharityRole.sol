@@ -12,29 +12,29 @@ contract CharityRole {
   address private Owner;
   address private Charity;
   bool private initialized = false;
-  Ownable private ownable;
+  Ownable private ownableContract;
 
-  // adds ownable library to the contract
+  // adds ownableContract library to the contract
   constructor(address _ownable) public {
     Owner = msg.sender;
-    ownable = Ownable(_ownable);
+    ownableContract = Ownable(_ownable);
   }
 
   // can be restricted to pure, not sure what that means yet
   function setOwnable(address _ownable) public {
-    ownable = Ownable(_ownable);
+    ownableContract = Ownable(_ownable);
   }
 
   function setCharity(address _charity) public payable {
 
     // can't use modifiers with imported contracts, if importing instance to my knowledge
-    require(ownable.isOwner());
+    require(ownableContract.isOwner(msg.sender));
     Charity = _charity;
     initialized = true;
   }
 
   function getCharity() public view returns (address){
-    require(ownable.isOwner());
+    require(ownableContract.isOwner(msg.sender));
     return Charity;
 
   }
@@ -56,7 +56,7 @@ contract CharityRole {
   }
 
   function payout() public payable{
-    require(ownable.isOwner());
+    require(ownableContract.isOwner(msg.sender));
     Owner.transfer(address(this).balance);
   }
 }
