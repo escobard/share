@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 
 import Navigation from "./components/Navigation";
-import ShareForm from "./components/ShareForm";
+import Form from "./components/Form";
 import DonationTable from "./components/DonationTable";
 
 import "./App.css";
@@ -41,7 +41,7 @@ class App extends Component {
           <Navigation />
         </nav>
         <section>
-          <ShareForm
+          <Form
             makeDonation={this.makeDonation}
             name={"make"}
             fields={makeDonationFields}
@@ -49,11 +49,10 @@ class App extends Component {
           {donationID ? (
             <Fragment>
               <p>DonationID: {donationID}</p>
-              <ShareForm
+              <Form
                 fetchDonation={this.fetchDonation}
                 name={"fetch"}
                 fields={fetchDonationFields}
-                donorAddress={donorAddress}
               />
               {fetchedDonation ? (
                 <DonationTable donationData={fetchedDonation}/>

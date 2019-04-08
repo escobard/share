@@ -2,9 +2,15 @@ import React, { Component, Fragment } from "react";
 import axios from "axios";
 import { Button, Form } from "semantic-ui-react";
 
-import { apiRoutes, makeDonationFields } from "../../constants";
+import { apiRoutes } from "../../constants";
 
-class ShareForm extends Component {
+/* Handles the rendering of a form
+* @param {string} props.name, required, determines the axios POST request logic - to be scrapped after refactor
+* @param {object[]} props.fields, required, determines rendered form fields
+* @param {function} props.fetchDonation / props.makeDonation, one required, determines axios post logic
+* @returns {Component}, Form
+*/
+class Form extends Component {
 
   componentWillMount() {
     let { fields } = this.props;
@@ -32,7 +38,7 @@ class ShareForm extends Component {
     let { makeDonation, fetchDonation } = apiRoutes;
     let headers = { "Access-Control-Allow-Origin": "*" };
 
-    // TODO - refactor this to parent component
+    // TODO - refactor this to parent component, use makeDonation / fetchDonation parent functions
     switch (formName) {
       case "make": {
         axios
@@ -130,7 +136,9 @@ class ShareForm extends Component {
   render() {
     const { hasFields } = this.state;
     let { fields, name } = this.props;
-    console.log('STATE', this.state)
+
+    // console.log('STATE', this.state)
+
     return (
       <Fragment>
         {hasFields ? (
@@ -148,4 +156,4 @@ class ShareForm extends Component {
   }
 }
 
-export default ShareForm;
+export default Form;
