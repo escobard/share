@@ -4,13 +4,14 @@ import { Button, Form } from "semantic-ui-react";
 
 import { apiRoutes } from "../../constants";
 
-/* Handles the rendering of a form
-* @param {string} props.name, required, determines the axios POST request logic - to be scrapped after refactor
-* @param {object[]} props.fields, required, determines rendered form fields
-* @param {function} props.fetchDonation / props.makeDonation, one required, determines axios post logic
-* @returns {Component}, Form
-*/
-class Form extends Component {
+/** Handles the rendering of a form, dynamically renders fields based on props.fields
+ * @param {string} props.name, required, determines the axios POST request logic - to be scrapped after refactor
+ * @param {object[]} props.fields, required, determines rendered form fields
+ * @param {function} props.fetchDonation / props.makeDonation, one required, determines axios post logic
+ * @returns {Component}, Form
+**/
+
+class DynamicForm extends Component {
 
   componentWillMount() {
     let { fields } = this.props;
@@ -30,6 +31,11 @@ class Form extends Component {
   componentDidMount() {
     console.log(this.state);
   }
+
+  /** Submits the form, handles trigger for POST request to API
+   * @dev the argument needs to be re-worked after refactor to parent component
+   * @param {string} formName, determines the type of POST request sent to API
+  **/
 
   submitForm = formName => {
 
@@ -91,10 +97,17 @@ class Form extends Component {
     }
   };
 
+  /** Creates the input state dynamically, based on passed props.fields data
+   * @param {object} fieldObject, contains the .error / .value keys necessary to create form state
+   * @param {int} index, number for each object in props.fields, used to create dynamic state uniqueness
+  **/
+
   inputState = (fieldObject, index) => {
     Object.keys(fieldObject).map(key => {
+
       // only creates state for the error / value variables
       if (key === "error" || key === "value") {
+
         // uses index argument to create scalable state for each object in this.fields
         let stateVariable = `${key + index}`;
 
@@ -104,13 +117,18 @@ class Form extends Component {
     });
   };
 
-  inputChange = (value, fieldValue) => {
-    this.setState({ [fieldValue]: value });
+  /** Handles the change of each field's input, when the user types into a field
+   * @param {string} value, new field value
+   * @param {string} fieldKey, state.fieldKey, determines which state to update dynamically
+  **/
+
+  inputChange = (value, fieldKey) => {
+    this.setState({ [fieldKey]: value });
   };
 
   renderFields = fields => {
     return fields.map((field, index) => {
-      let { name, label, placeholder, value, error } = field;
+      let { name, label, placeholder, error } = field;
 
       // creates state key names from index
       let fieldValue = `${"value" + index}`;
@@ -156,4 +174,4 @@ class Form extends Component {
   }
 }
 
-export default Form;
+export default DynamicForm;
