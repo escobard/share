@@ -20,11 +20,12 @@ class App extends Component {
 
   /** Submits the donation POST request to the API
    * @param {object} request, contains all request data
-   **/
+  **/
 
   makeDonation = (request) => {
     // TODO this value must be improved for v2.0, address is validated through first form, which then gives the user access to the second form, which will be either a makeDonation form, or a grant access to fetchDonation if the user's address has already created a donation, need to implement this logic in all layers
 
+    // TODO - refactor into constants
     let headers = { "Access-Control-Allow-Origin": "*" };
 
     axios
@@ -36,7 +37,7 @@ class App extends Component {
       .then(response => {
         let { data } = response
 
-        console.log('makeDonation API response', data);
+        console.log('makeDonation API response: ', data);
         this.setState({ donationID: data, donorAddress: request.address_pu });
       })
       .catch(error => {
@@ -46,13 +47,37 @@ class App extends Component {
 
   };
 
-  fetchDonation = donation => {
-    // needs to be turned into a usable array of data to work with react
-    let donationArray = Object.keys(donation).map(key => {
-      return [key, donation[key]];
-    });
+  /** Submits the fetch donation POST request to the API
+   * @param {object} request, contains all request data
+   **/
 
-    this.setState({ fetchedDonation: donationArray });
+  fetchDonation = request => {
+
+    let headers = { "Access-Control-Allow-Origin": "*" };
+
+    axios
+      .post(
+        apiRoutes.fetchDonation,
+        request,
+        { headers }
+      )
+      .then(response => {
+        let { data } = response;
+
+        // needs to be turned into a usable array of data to work with react
+        let donationArray = Object.keys(data).map(key => {
+          return [key, data[key]];
+        });
+
+        this.setState({ fetchedDonation: donationArray });
+
+        console.log('fetchDonation APi response: ', response.data);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+
+
   };
 
   render() {
@@ -67,7 +92,6 @@ class App extends Component {
         <section>
           <Form
             makeDonation={this.makeDonation}
-            name={"make"}
             fields={makeDonationFields}
           />
           {donationID ? (
@@ -75,7 +99,6 @@ class App extends Component {
               <p>DonationID: {donationID}</p>
               <Form
                 fetchDonation={this.fetchDonation}
-                name={"fetch"}
                 fields={fetchDonationFields}
               />
               {fetchedDonation ? (
