@@ -126,6 +126,11 @@ class DynamicForm extends Component {
     this.setState({ [fieldKey]: value });
   };
 
+  /** Dynamically renders all fields, based on props.fields
+   * @param {object[]} fields, each object contains field name, label, placeholder, error
+   * @returns {Component} Form.Input
+   **/
+
   renderFields = fields => {
     return fields.map((field, index) => {
       let { name, label, placeholder, error } = field;
