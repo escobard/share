@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from "react";
+import axios from "axios";
 
 import Navigation from "./components/Navigation";
 import Form from "./components/Form";
@@ -6,7 +7,7 @@ import DonationTable from "./components/DonationTable";
 
 import "./App.css";
 
-import { makeDonationFields, fetchDonationFields } from "./constants";
+import { makeDonationFields, fetchDonationFields, apiRoutes } from "./constants";
 
 class App extends Component {
   state = {
@@ -17,9 +18,32 @@ class App extends Component {
     fetchedDonation: false
   };
 
-  makeDonation = (donationID, donorAddress) => {
+  /** Submits the donation POST request to the API
+   * @param {object} request, contains all request data
+   **/
+
+  makeDonation = (request) => {
     // TODO this value must be improved for v2.0, address is validated through first form, which then gives the user access to the second form, which will be either a makeDonation form, or a grant access to fetchDonation if the user's address has already created a donation, need to implement this logic in all layers
-    this.setState({ donationID, donorAddress });
+
+    let headers = { "Access-Control-Allow-Origin": "*" };
+
+    axios
+      .post(
+        apiRoutes.makeDonation,
+        request,
+        { headers }
+      )
+      .then(response => {
+        let { data } = response
+
+        console.log('makeDonation API response', data);
+        this.setState({ donationID: data, donorAddress: request.address_pu });
+      })
+      .catch(error => {
+        console.log(error);
+      });
+
+
   };
 
   fetchDonation = donation => {

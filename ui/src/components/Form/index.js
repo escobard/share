@@ -38,11 +38,24 @@ class DynamicForm extends Component {
   **/
 
   submitForm = formName => {
-
     let parent = this;
+    let { makeDonation, fetchDonation } = this.props;
     let { value0, value1, value2 } = this.state;
     let { makeDonation, fetchDonation } = apiRoutes;
-    let headers = { "Access-Control-Allow-Origin": "*" };
+
+    if (makeDonation){
+      makeDonation({
+        address_pu: value0.toUpperCase(),
+        address_pr: value1,
+        amount: value2
+      });
+    }
+
+    if (fetchDonation){
+      fetchDonation({
+
+      })
+    }
 
     // TODO - refactor this to parent component, use makeDonation / fetchDonation parent functions
     switch (formName) {
@@ -160,7 +173,7 @@ class DynamicForm extends Component {
     const { hasFields } = this.state;
     let { fields, name } = this.props;
 
-    // console.log('STATE', this.state)
+    console.log('STATE', this.state)
 
     return (
       <Fragment>
