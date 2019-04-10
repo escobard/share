@@ -53,9 +53,10 @@ class DynamicForm extends Component {
       this.validateField(value1, value1.length !== 64, 'Must be valid private key');
       this.validateField(value2, value2.length > 1, 'Cannot donate more than a single ether');
 
+      // TODO - split into its own function
       // sets messagesState
       if (messageErrors.length > 0){
-        this.setState({ messageState: 'error' });
+        this.setState({ messageState: 'error', messageHeader: ""});
       }
       else{
         this.setState({ messageState: 'success' });
@@ -72,6 +73,18 @@ class DynamicForm extends Component {
       fetchDonation({address_pu: value0.toUpperCase(), id: value1})
     }
   };
+
+  /** Sets the message value after form validation checks
+   * @param {string} state, state of message component
+   * @param {string} header, message header string
+   * @param {string} content, message content string
+   **/
+
+  setMessage = (state, header, content) =>{
+
+    this.setState({ messageState: state, messageHeader: header, messageContent: content });
+
+  }
 
   /** Validates a form value
    * @dev can be split out into a validation class to re-use in api / ui layers
