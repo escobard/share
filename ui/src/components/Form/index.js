@@ -10,7 +10,7 @@ import { Button, Form, Message } from "semantic-ui-react";
 
 class DynamicForm extends Component {
   state = {
-    messageHeader: "Share - make donation instructions",
+    messageHeader: "Share - makeDonation() instructions",
     messageContent: "Enter a valid public and private key in the fields above, and an ether value to donate",
     messageState: "",
     messageErrors: []
@@ -56,10 +56,11 @@ class DynamicForm extends Component {
       // TODO - split into its own function
       // sets messagesState
       if (messageErrors.length > 0){
-        this.setState({ messageState: 'error', messageHeader: ""});
+
+        this.setMessage('error', 'makeDonation() error(s)', `Contains the following error(s): ${messageErrors.join()}` );
       }
       else{
-        this.setState({ messageState: 'success' });
+        this.setMessage('success', 'makeDonation() success!', `Find your donation ID below` );
       }
 
       makeDonation({
