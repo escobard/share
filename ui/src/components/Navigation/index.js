@@ -5,6 +5,6 @@ import { items } from "./constants"
 
 // needs to all sections as anchor links
 // look for css highlight options when section is selected
-const Navigation = () => <Menu items={items} />;
+const Navigation = () => <Menu widths={1} items={items} />;
 
 export default Navigation;

@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { Button, Form, Message } from "semantic-ui-react";
 
-
 /** Handles the rendering of a form, dynamically renders fields based on props.fields
  * @param {object[]} props.fields, required, determines rendered form fields
  * @param {function} props.fetchDonation / props.makeDonation, one required, determines axios post logic
@@ -11,8 +10,7 @@ import { Button, Form, Message } from "semantic-ui-react";
 class DynamicForm extends Component {
   state = {
     messageHeader: "Share - makeDonation() instructions",
-    messageContent: "Enter a valid public and private key in the fields above, and an ether value to donate",
-    messageColor: "",
+    messageContent: "Enter a valid public / private key in the fields above, and an ether value to make your donation.",
     messageErrors: []
   }
 
@@ -167,17 +165,16 @@ class DynamicForm extends Component {
 
     console.log('STATE', this.state);
 
-
     return (
       <Fragment>
         {hasFields ? (
           <Form>
             <Form.Group widths="equal">{this.renderFields(fields)}</Form.Group>
-            <Message color={messageColor} header={messageHeader} content={messageContent}/>
+
             <Form.Field onClick={() => this.submitForm(name)} control={Button}>
               Submit
             </Form.Field>
-
+            <Message color={messageColor} header={messageHeader} content={messageContent}/>
           </Form>
         ) : (
           <p>Form has no input props!</p>
