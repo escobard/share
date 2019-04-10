@@ -12,7 +12,8 @@ class DynamicForm extends Component {
   state = {
     messageHeader: "",
     messageContent: "",
-    messageState: ""
+    messageState: "",
+    messageErrors: []
   }
 
   componentWillMount() {
@@ -41,13 +42,18 @@ class DynamicForm extends Component {
 
   submitForm = () => {
     let { makeDonation, fetchDonation } = this.props;
-    let { value0, value1, value2 } = this.state;
+    let { value0, value1, value2, messageErrors } = this.state;
 
     if (makeDonation){
 
-      this.validateField(value0, value0.length === 42, 'Must be valid public key');
-      this.validateField(value1, value1.length === 64, 'Must be valid private key');
+      this.validateField(value0, value0.length !== 42, 'Must be valid public key');
+      this.validateField(value1, value1.length !== 64, 'Must be valid private key');
       this.validateField(value2, value2.length > 1, 'Cannot donate more than a single ether');
+
+      // sets messagesState
+      if (messageErrors.length > 0){
+        this.setState({  })
+      }
 
       makeDonation({
         address_pu: value0.toUpperCase(),
@@ -66,11 +72,13 @@ class DynamicForm extends Component {
    * @param {*} value, property to validate
    * @param {function} condition, functional condition to validate / invalidate value
    * @param {string} error, string of error to add to this.state.errors
-   **/
+  **/
 
   validateField = (value, condition, error) =>{
 
-
+    if(condition){
+      this.setState({messageErrors: this.state.messageErrors.push(error)});
+    }
 
   }
 
@@ -106,7 +114,7 @@ class DynamicForm extends Component {
   /** Dynamically renders all fields, based on props.fields
    * @param {object[]} fields, each object contains field name, label, placeholder, error
    * @returns {Component} Form.Input
-   **/
+  **/
 
   renderFields = fields => {
     return fields.map((field, index) => {
