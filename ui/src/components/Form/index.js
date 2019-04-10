@@ -9,6 +9,11 @@ import { Button, Form, Message } from "semantic-ui-react";
 **/
 
 class DynamicForm extends Component {
+  state = {
+    messageHeader: "",
+    messageContent: "",
+    messageState: ""
+  }
 
   componentWillMount() {
     let { fields } = this.props;
@@ -29,6 +34,7 @@ class DynamicForm extends Component {
     console.log(this.state);
   }
 
+  // TODO - refactor to parent component in the future for re-usability
   /** Submits the form, handles trigger for POST request to API
    * @dev the argument needs to be re-worked after refactor to parent component
   **/
@@ -38,6 +44,10 @@ class DynamicForm extends Component {
     let { value0, value1, value2 } = this.state;
 
     if (makeDonation){
+
+      this.validateField(value0, value0.length === 42, 'Must be valid public key');
+      this.validateField(value1, value1.length === 64, 'Must be valid private key');
+      this.validateField(value2, value2.length > 1, 'Cannot donate more than a single ether');
 
       makeDonation({
         address_pu: value0.toUpperCase(),
@@ -52,13 +62,15 @@ class DynamicForm extends Component {
   };
 
   /** Validates a form value
-   * @dev can be split out into a validation class later
+   * @dev can be split out into a validation class to re-use in api / ui layers
    * @param {*} value, property to validate
    * @param {function} condition, functional condition to validate / invalidate value
    * @param {string} error, string of error to add to this.state.errors
    **/
 
   validateField = (value, condition, error) =>{
+
+
 
   }
 
@@ -122,7 +134,7 @@ class DynamicForm extends Component {
   };
 
   render() {
-    const { hasFields } = this.state;
+    const { hasFields, messageState, messageHeader, messageContent } = this.state;
     let { fields, name } = this.props;
 
     console.log('STATE', this.state);
