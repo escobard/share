@@ -15,7 +15,8 @@ class App extends Component {
     // TODO setting to true to always display fetch form in case reviewer does not want to make a donation
     donationID: true,
     donorAddress: false,
-    fetchedDonation: false
+    fetchedDonation: false,
+    formMessage: ""
   };
 
   /** Submits the donation POST request to the API

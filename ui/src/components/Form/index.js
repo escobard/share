@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-import { Button, Form } from "semantic-ui-react";
+import { Button, Form, Message } from "semantic-ui-react";
 
 
 /** Handles the rendering of a form, dynamically renders fields based on props.fields
@@ -38,6 +38,7 @@ class DynamicForm extends Component {
     let { value0, value1, value2 } = this.state;
 
     if (makeDonation){
+
       makeDonation({
         address_pu: value0.toUpperCase(),
         address_pr: value1,
@@ -49,6 +50,17 @@ class DynamicForm extends Component {
       fetchDonation({address_pu: value0.toUpperCase(), id: value1})
     }
   };
+
+  /** Validates a form value
+   * @dev can be split out into a validation class later
+   * @param {*} value, property to validate
+   * @param {function} condition, functional condition to validate / invalidate value
+   * @param {string} error, string of error to add to this.state.errors
+   **/
+
+  validateField = (value, condition, error) =>{
+
+  }
 
   /** Creates the input state dynamically, based on passed props.fields data
    * @param {object} fieldObject, contains the .error / .value keys necessary to create form state
@@ -113,7 +125,7 @@ class DynamicForm extends Component {
     const { hasFields } = this.state;
     let { fields, name } = this.props;
 
-    console.log('STATE', this.state)
+    console.log('STATE', this.state);
 
     return (
       <Fragment>
@@ -123,6 +135,7 @@ class DynamicForm extends Component {
             <Form.Field onClick={() => this.submitForm(name)} control={Button}>
               Submit
             </Form.Field>
+            <Message messageState header={messageHeader} content={messageContent}/>
           </Form>
         ) : (
           <p>Form has no input props!</p>
