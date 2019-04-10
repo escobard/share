@@ -52,7 +52,10 @@ class DynamicForm extends Component {
 
       // sets messagesState
       if (messageErrors.length > 0){
-        this.setState({  })
+        this.setState({ messageState: 'error' });
+      }
+      else{
+        this.setState({ messageState: 'success' });
       }
 
       makeDonation({
