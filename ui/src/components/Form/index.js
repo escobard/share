@@ -10,11 +10,16 @@ import { Button, Form, Message } from "semantic-ui-react";
 
 class DynamicForm extends Component {
   state = {
-    messageHeader: "",
-    messageContent: "",
+    messageHeader: "Share - make donation instructions",
+    messageContent: "Enter a valid public and private key in the fields above, and an ether value to donate",
     messageState: "",
     messageErrors: []
   }
+
+  /** Triggers logic to dynamically generate inputState
+   * @param {object[]} props.fields, required, determines form value state
+   * @returns {Component}, Form
+  **/
 
   componentWillMount() {
     let { fields } = this.props;
@@ -25,9 +30,7 @@ class DynamicForm extends Component {
       fields.map((field, index) => {
         this.inputState(field, index);
       });
-    }
-
-    this.setState({ field2: "TEST" });
+    };
   }
 
   // purely used to test mounted values for now
@@ -155,10 +158,11 @@ class DynamicForm extends Component {
         {hasFields ? (
           <Form>
             <Form.Group widths="equal">{this.renderFields(fields)}</Form.Group>
+            <Message messageState header={messageHeader} content={messageContent}/>
             <Form.Field onClick={() => this.submitForm(name)} control={Button}>
               Submit
             </Form.Field>
-            <Message messageState header={messageHeader} content={messageContent}/>
+
           </Form>
         ) : (
           <p>Form has no input props!</p>
