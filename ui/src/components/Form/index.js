@@ -12,7 +12,7 @@ class DynamicForm extends Component {
   state = {
     messageHeader: "Share - makeDonation() instructions",
     messageContent: "Enter a valid public and private key in the fields above, and an ether value to donate",
-    messageState: "",
+    messageColor: "",
     messageErrors: []
   }
 
@@ -49,18 +49,18 @@ class DynamicForm extends Component {
 
     if (makeDonation){
 
-      this.validateField(value0, value0.length !== 42, 'Must be valid public key');
-      this.validateField(value1, value1.length !== 64, 'Must be valid private key');
-      this.validateField(value2, value2.length > 1, 'Cannot donate more than a single ether');
+      this.validateField(value0, value0.length !== 42, 'must be valid public key');
+      this.validateField(value1, value1.length !== 64, ' must be valid private key');
+      this.validateField(value2, parseInt(value2) > 1, ' cannot donate more than a single ether');
 
       // TODO - split into its own function
       // sets messagesState
       if (messageErrors.length > 0){
 
-        this.setMessage('error', 'makeDonation() error(s)', `Contains the following error(s): ${messageErrors.join()}` );
+        this.setMessage('red', 'makeDonation() error(s)', `Contains the following error(s): ${messageErrors.join()}.` );
       }
       else{
-        this.setMessage('success', 'makeDonation() success!', `Find your donation ID below` );
+        this.setMessage('green', 'makeDonation() success!', `Find your donation ID below.` );
       }
 
       makeDonation({
@@ -83,7 +83,7 @@ class DynamicForm extends Component {
 
   setMessage = (state, header, content) =>{
 
-    this.setState({ messageState: state, messageHeader: header, messageContent: content });
+    this.setState({ messageColor: state, messageHeader: header, messageContent: content });
 
   }
 
@@ -162,17 +162,18 @@ class DynamicForm extends Component {
   };
 
   render() {
-    const { hasFields, messageState, messageHeader, messageContent } = this.state;
+    const { hasFields, messageColor, messageHeader, messageContent } = this.state;
     let { fields, name } = this.props;
 
     console.log('STATE', this.state);
+
 
     return (
       <Fragment>
         {hasFields ? (
           <Form>
             <Form.Group widths="equal">{this.renderFields(fields)}</Form.Group>
-            <Message messageState header={messageHeader} content={messageContent}/>
+            <Message color={messageColor} header={messageHeader} content={messageContent}/>
             <Form.Field onClick={() => this.submitForm(name)} control={Button}>
               Submit
             </Form.Field>
