@@ -1,5 +1,6 @@
 const request = require("supertest");
 
+// TODO - base tests for API to be updated for all Share routes
 describe("Testing all routes", () => {
   let server;
 
@@ -26,20 +27,6 @@ describe("Testing all routes", () => {
         },
         done
       );
-  });
-
-  it("responds to /greetings post requests", done => {
-    request(server)
-      .post("/greetings")
-      .send({ name: "John" })
-      .expect(200, done);
-  });
-
-  it("rejects /greetings post requests with missing name property", done => {
-    request(server)
-      .post("/greetings")
-      .send({})
-      .expect(400, done);
   });
 
   it("404 everything else", done => {

@@ -56,7 +56,7 @@ jobs: # a collection of steps
         # Read about caching dependencies: https://circleci.com/docs/2.0/caching/
         key: dependency-cache-{{ checksum "api/package.json" }}
     - run: # installs UI dependencies
-        name: install-ui
+        name: install-api
         command: "cd api && npm install"
     - save_cache: # special step to save the dependency cache
         key: dependency-cache-{{ checksum "api/package.json" }}
