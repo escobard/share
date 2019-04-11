@@ -10,14 +10,14 @@ const makeDonationFields = [
     name: "addressPriv",
     label: "Address Private",
     placeholder: "Donor's private address - only used to SIGN raw transactions within API, not stored or cached",
-    value: "",
+    value:"",
     error: false
   },
   {
     name: "amount",
     label: "Amount",
     placeholder: "Donation amount in ether",
-    value: "",
+    value:"",
     error: false
   }
 ];

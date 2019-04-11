@@ -1,11 +1,11 @@
 
 import React from 'react';
 import { shallow } from 'enzyme';
-import Section from './index';
+import ShareForm from './index';
 
-describe('Section snapshot renders', () => {
+describe('Form snapshot renders', () => {
     it('should render correctly in mode', () => {
-        const component = shallow(<Section />);
+        const component = shallow(<ShareForm />);
 
         expect(component).toMatchSnapshot();
     });

@@ -1,0 +1,36 @@
+@import "variables";
+
+// sample mixins - remove the outline-button mixin later, use as sample
+// more on mixins: https://scotch.io/tutorials/how-to-use-sass-mixins
+
+
+/** Builds sections styles based on section type
+  * @param {string} type, determines type of section styles
+ **/
+@mixin sectionType($type) {
+  @if $type == float {
+    padding: $space-xxlrg;
+    width: 98%;
+    display: block;
+    float: none;
+    margin: 1% auto;
+    border: 1px solid $semantic-gray;
+    border-radius: $space-small;
+  }
+}
+
+@mixin nav-links() {
+  div {
+    &:nth-child(2) {
+      margin-top: 0;
+    }
+  }
+}
+
+@mixin svg-icon($width: $space-xxlrg, $height: $space-xxlrg, $color: $white) {
+  margin: auto;
+  display: block !important;
+  width: $width !important;
+  height: $height !important;
+  color: $color !important;
+}
