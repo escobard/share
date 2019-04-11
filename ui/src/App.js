@@ -84,14 +84,26 @@ class App extends Component {
         </nav>
 
         <section className="float">
-          <Form makeDonation={this.makeDonation} fields={makeDonationFields} donationID={donationID}/>
+          <Form
+            makeDonation={this.makeDonation}
+            fields={makeDonationFields}
+            donationID={donationID}
+            messageHeader={"Make Donation form instructions"}
+            messageValue={
+              "Enter a valid public key in the Address Public field, the public address' private key in the Address Private field, and an ether value smaller than 1 in the Amount field."
+            }
+          />
         </section>
 
         <section className="float">
-              <Form
-                fetchDonation={this.fetchDonation}
-                fields={fetchDonationFields}
-              />
+          <Form
+            fetchDonation={this.fetchDonation}
+            fields={fetchDonationFields}
+            messageHeader={"Fetch Donation form instructions"}
+            messageValue={
+              "Enter a valid donor public key in the Address Public field and a valid donationID in the donationID field."
+            }
+          />
         </section>
 
         {fetchedDonation ? (
