@@ -42,7 +42,7 @@ class DynamicForm extends Component {
   **/
 
   submitForm = () => {
-    let { makeDonation, fetchDonation } = this.props;
+    let { makeDonation, fetchDonation, donationID } = this.props;
     let { value0, value1, value2, messageErrors } = this.state;
 
     if (makeDonation){
@@ -58,7 +58,7 @@ class DynamicForm extends Component {
         this.setMessage('red', 'makeDonation() error(s)', `Contains the following error(s): ${messageErrors.join()}.` );
       }
       else{
-        this.setMessage('green', 'makeDonation() success!', `Find your donation ID below.` );
+        this.setMessage('green', 'makeDonation() success!', `Here is your donationID: ${donationID}` );
       }
 
       makeDonation({
@@ -170,7 +170,6 @@ class DynamicForm extends Component {
         {hasFields ? (
           <Form>
             <Form.Group widths="equal">{this.renderFields(fields)}</Form.Group>
-
             <Form.Field onClick={() => this.submitForm(name)} control={Button}>
               Submit
             </Form.Field>

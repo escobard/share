@@ -1,4 +1,5 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
+import { Message } from "semantic-ui-react";
 import axios from "axios";
 
 import Navigation from "./components/Navigation";
@@ -16,9 +17,10 @@ import {
 class App extends Component {
   state = {
     // TODO setting to true to always display fetch form in case reviewer does not want to make a donation
-    donationID: true,
+    donationID: false,
     donorAddress: false,
     fetchedDonation: false,
+
     formMessage: ""
   };
 
@@ -72,7 +74,7 @@ class App extends Component {
   };
 
   render() {
-    let { donationID, donorAddress, fetchedDonation } = this.state;
+    let { donationID, fetchedDonation } = this.state;
 
     console.log("PARENT", this.state);
     return (
@@ -82,29 +84,21 @@ class App extends Component {
         </nav>
 
         <section className="float">
-          <Form makeDonation={this.makeDonation} fields={makeDonationFields} />
+          <Form makeDonation={this.makeDonation} fields={makeDonationFields} donationID={donationID}/>
         </section>
 
         <section className="float">
-          <p>Section for donation message:{donationID}</p>
-        </section>
-
-        <section className="float">
-          {donationID ? (
               <Form
                 fetchDonation={this.fetchDonation}
                 fields={fetchDonationFields}
               />
-          ) : null}
         </section>
 
-        <section className="float">
         {fetchedDonation ? (
-          <DonationTable donationData={fetchedDonation} />
-        ) : (
-          <p>Fetch your donation by ID using the form above</p>
-        )}
-        </section>
+          <section className="float">
+            <DonationTable donationData={fetchedDonation} />
+          </section>
+        ) : null}
 
         <footer> Copyright &copy; 2019, git@escobard</footer>
       </main>
