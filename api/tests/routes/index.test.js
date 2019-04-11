@@ -12,12 +12,6 @@ describe("Testing all routes", () => {
     server.close();
   });
 
-  it("responds to /", done => {
-    request(server)
-      .get("/")
-      .expect(200, done);
-  });
-
   it("responds to /health", done => {
     request(server)
       .get("/health")
