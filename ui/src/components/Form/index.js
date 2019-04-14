@@ -82,6 +82,7 @@ class DynamicForm extends Component {
           "makeDonation() error(s)",
           `Contains the following error(s): ${messageErrors.join()}.`
         );
+        return;
       } else {
         this.setMessage(
           "green",
@@ -118,6 +119,7 @@ class DynamicForm extends Component {
           "fetchDonation() error(s)",
           `Contains the following error(s): ${messageErrors.join()}.`
         );
+        return;
       } else {
         this.setMessage(
           "green",
@@ -140,7 +142,8 @@ class DynamicForm extends Component {
     this.setState({
       messageColor: state,
       messageHeader: header,
-      messageContent: content
+      messageContent: content,
+      messageErrors: []
     });
   };
 
