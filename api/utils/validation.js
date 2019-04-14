@@ -4,7 +4,7 @@
 
 class Validation{
   constructor(){
-    this.validationErrors = [];
+    this.errors = [];
   }
 
   /** Checks if a value exists
@@ -13,28 +13,33 @@ class Validation{
    */
 
   exists(value, error){
-
+    if (value === null || undefined){
+      this.setError(error);
+    }
   }
 
-  /** Checks if a value exists
-   * @param {*} value, property to validate
+  /** Adds errors to this.errors
    * @param {string} error, error added to the errors array
    */
 
-  set errors(error){
+  setError(error){
     this.errors.push(error)
   }
 
-  get errors(){
+  /** Returns errors array
+   * @returns {string[]}, validationErrors
+   */
 
-    // set to stop endless get loop cases
-    if (this.validationErrors === []) {
-      return this.validationErrors;
-    }
-
-    return this.validationErrors;
+  getErrors(){
+    return this.errors;
   }
 
+  /** Clears errors array
+   * @return {[]}, clears validation array
+   */
+  clearErrors(){
+    this.errors = [];
+  }
 }
 
 
