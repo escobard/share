@@ -19,6 +19,16 @@ class Validation{
     }
   }
 
+  /** Checks if a value is a string
+   * @param {string} value, property to validate
+   * @param {string} error, error added to the errors array
+   */
+  isString(value, error){
+    if (typeof value !== 'string'){
+      this.setError(error)
+    }
+  }
+
   /** Checks if a value exists
    * @param {string} public_address, ether public address hash to validate
    * @param {function} web3, web3 instance to validate public address
