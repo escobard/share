@@ -36,11 +36,7 @@ function txBuilder({
 }) {
   //parameters in common
   //get the private key from .env OR from arg
-  console.log("FROMPRIV", fromPriv);
-  let privateKey = new Buffer.from(
-    fromPriv ? fromPriv : process.env.PRIVATE_KEY,
-    "hex"
-  );
+  let privateKey = new Buffer.from(fromPriv, "hex");
   //values to hex
   const nonceHex = web3.utils.toHex(nonce);
   const valueHex = web3.utils.toHex(value);
@@ -164,16 +160,14 @@ async function sendRawTransaction(
       }
     );
 
-    console.log('Raw transaction succesful:', transaction);
+    console.log("Raw transaction successful:", transaction);
     return transaction;
-
   } catch (error) {
-
-    console.log('Raw transaction failed', error);
+    console.log("Raw transaction failed", error);
     res.status(400).json({
-      status: 'Raw transaction failed',
+      status: "Raw transaction failed",
       error
-    })
+    });
   }
 }
 module.exports = sendRawTransaction;

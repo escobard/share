@@ -6,10 +6,10 @@ const Validation = require("../utils/validation");
 module.exports = async (req, res, next) => {
   let {address_pu, address_pr, web3} = req.body;
   let validation = new Validation();
-  let { isValidPublic, isValidPrivate } = validation;
+  let { isValidPublic, isValidPair } = validation;
 
-  isValidPublic(address_pu, web3, 'Public address is invalid');
-  isValidPrivate(address_pr, address_pu, web3, 'Private Key is invalid');
+  await isValidPublic(address_pu, web3, 'Public address is invalid');
+  await isValidPair(address_pr, address_pu, 'Private Key is invalid');
 
   let etherErrors = getErrors();
 
