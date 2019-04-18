@@ -3,7 +3,7 @@ try {
     makeDonationBaseValidation = require("../middlewares/makeDonationBaseValidation"),
     protocolSetup = require("../middlewares/protocolSetup"),
     makeDonationEtherValidation = require("../middlewares/makeDonationEtherValidation"),
-    sendEther = require("../utils/rawTransaction");
+    sendRawTransaction = require("../utils/rawTransaction");
 
   router.post("/", makeDonationBaseValidation, protocolSetup, makeDonationEtherValidation, async (req, res) => {
     let {
@@ -53,12 +53,13 @@ try {
           console.log("Initializing Contract...", req.body);
 
           // TODO must be heavily refactored
-          await sendEther(
+          await sendRawTransaction(
             share.methods.initiateContract(lottery_pu, charity_pu),
             owner_pu,
             owner_pr,
             contract_pu,
-            "0.001"
+            "0.001",
+            res
           );
 
           /* TODO - GANACHE METHOD - refactor for local dev
@@ -70,12 +71,13 @@ try {
 
         console.log("Contract initialized! Creating Donation...", req.body);
 
-        await sendEther(
+        await sendRawTransaction(
           share.methods.makeDonation(),
           donorPub,
           donorPriv,
           contract_pu,
-          amount
+          amount,
+          res
         );
 
         console.log("Donation created! Fetching ID...");

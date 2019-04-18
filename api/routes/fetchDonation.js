@@ -1,6 +1,6 @@
 const router = require("express").Router(),
   protocolSetup = require("../middlewares/protocolSetup"),
-  sendEther = require("../utils/rawTransaction");
+  sendRawTransaction = require("../utils/rawTransaction");
 
 router.post("/", protocolSetup, async (req, res) => {
   let {
@@ -22,7 +22,7 @@ router.post("/", protocolSetup, async (req, res) => {
         console.log("Initializing Contract...", req.accounts);
 
         // TODO must be heavily refactored
-        await sendEther(
+        await sendRawTransaction(
           share.methods.initiateContract(lottery_pu, charity_pu),
           owner_pu,
           false,

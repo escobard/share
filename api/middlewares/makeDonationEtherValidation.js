@@ -9,7 +9,7 @@ module.exports = async (req, res, next) => {
   let { isValidPublic, isValidPrivate } = validation;
 
   isValidPublic(address_pu, web3, 'Public address is invalid');
-  isValidPrivate();
+  isValidPrivate(address_pr, address_pu, web3, 'Private Key is invalid');
 
   let etherErrors = getErrors();
 
