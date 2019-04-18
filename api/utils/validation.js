@@ -29,6 +29,15 @@ class Validation{
     }
   }
 
+  /** Checks if a value is a number
+   * @param {string} value, property to validate
+   * @param {string} error, error added to the errors array
+   */
+  isNumber(value, error){
+    if (typeof value !== 'number'){
+      this.setError(error)
+    }
+  }
   /** Checks if a value exists
    * @param {string} public_address, ether public address hash to validate
    * @param {function} web3, web3 instance to validate public address
