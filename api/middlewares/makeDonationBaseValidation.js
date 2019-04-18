@@ -6,7 +6,7 @@ const Validation = require("../utils/validation");
 module.exports = async (req, res, next) => {
   let {address_pu, address_pr, amount} = req.body;
   let validation = new Validation();
-  let {exists, getErrors, isString, isNumber } = validation;
+  let { exists, getErrors, isString, isNumber } = validation;
 
   // null case values validation
   exists(address_pu, 'Public address must exist');

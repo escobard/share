@@ -1,13 +1,14 @@
 try {
   const router = require("express").Router(),
+    makeDonationBaseValidation = require("../middlewares/makeDonationBaseValidation"),
     protocolSetup = require("../middlewares/protocolSetup"),
+    makeDonationEtherValidation = require("../middlewares/makeDonationEtherValidation"),
     sendEther = require("../utils/rawTransaction");
 
-  router.post("/", protocolSetup, async (req, res) => {
+  router.post("/", makeDonationBaseValidation, protocolSetup, makeDonationEtherValidation, async (req, res) => {
     let {
       web3,
       share,
-      call,
       body: { address_pu, address_pr, amount },
       accounts: { owner_pu, owner_pr, charity_pu, lottery_pu },
       contract: { contract_pu }
