@@ -1,3 +1,4 @@
+
 /** Utility to validate request values
  * @dev add methods as necessary, keep as simple and re-usable as possible
  */
@@ -16,6 +17,21 @@ class Validation{
     if (value === null || undefined){
       this.setError(error);
     }
+  }
+
+  /** Checks if a value exists
+   * @param {string} public_address, ether public address hash to validate
+   * @param {function} web3, web3 instance to validate public address
+   * @param {string} error, error added to the errors array
+   */
+  async isValidPublic(public_address, web3, error){
+
+    let validateAddress = web3.utis.isAddress(public_address);
+
+    if (validateAddress === false){
+      this.setError(error);
+    }
+
   }
 
   /** Adds errors to this.errors

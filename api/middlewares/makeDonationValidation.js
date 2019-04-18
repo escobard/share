@@ -1,5 +1,8 @@
 const Validation = require("../utils/validation");
 
+/** Utility to validate null request values
+ * @dev split apart from ether address validation, to fail fast if null
+ */
 module.exports = async (req, res, next) => {
   let {address_pu, address_pr, amount} = req.body;
   let validation = new Validation();
@@ -19,10 +22,6 @@ module.exports = async (req, res, next) => {
       errors: nullErrors.join()
     });
   }
-
-  // existing value validation
-
-  // rejects request in case of invalid values
 
   next();
 };
