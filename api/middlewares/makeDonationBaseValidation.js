@@ -17,7 +17,7 @@ module.exports = async (req, res, next) => {
   let nullErrors = getErrors();
 
   if (nullErrors.length >= 1){
-    res.status(400).json({
+    return res.status(400).json({
       status: 'Null validation errors:',
       errors: nullErrors.join()
     });
