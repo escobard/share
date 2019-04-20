@@ -1,3 +1,12 @@
+## Devops
+
+### Introduction
+
+The devops `layer` was constructed for the purpose of supporting `continuous deployment and integration`. 
+
+Docker will be introduced as part of `Phase 4`, along with deployment to Docker and AWS.
+
+Instructions on deployment to Heroku and GCP can be found below.
 
 ### Heroku
 
