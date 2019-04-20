@@ -1,6 +1,10 @@
-# Share - An Ethereum peer-to-peer rewards platform with charitable contributions 
+# Share - An Ethereum automated charitable contributions product
 
-This project's ethereum logic is based largely off the logic developed here: https://github.com/escobard/blockchains-nd-term1/tree/master/part4/project5
+This proof of concept is built with the purpose of delivering a product that automatically handles peer-to-charity contributions facilitated by the ethereum protocol.
+
+In addition to automated transaction handling, this product also:
+    - takes 4% of every donation and places it in a lottery which awards 5 random donors at the end of every month.
+    - retains 1% of every donation to fund product advancement. 
 
 ## Project Criteria
 
@@ -52,9 +56,6 @@ This will be expanded with usage instructions for the UI and for deployment with
 ### UI
 
 Refer to the README.md file within the `./ui` directory.
-
-### API
-
 
 ### Truffle
 
