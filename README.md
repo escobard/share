@@ -6,28 +6,20 @@ In addition to automated transaction handling, this product also:
     - takes 4% of every donation and places it in a lottery which awards 5 random donors at the end of every month.
     - retains 1% of every donation to fund product advancement. 
 
-## Project Criteria
+To deliver the value outlined above, the following technologies are utilized:
 
-The main purpose of this application is to develop a production ready web application, that interacts with the rinkeby test network to create a donation platform using the ethereum protocol.
+## Project Technology
 
-To achieve this, the following technologies are utilized:
+The technology below was chosen to rapidly deliver a production ready web application, that interacts with the rinkeby test network to create a donation platform using the ethereum protocol.
 
 1) Heroku & GCP for automatic deployment / hosting of the UI / API layers.
-2) Github for source control and Waffle.io for scrum.
-2) React for the UI with `create-react-app` for quick bundling and deployment.
-3) Node with Express for the API with Mongoose as the ORM to connect to a (potential) MongoDB oracle.
-5) Ethereum network interaction with Truffle to test, compile, develop, and deploy smart contracts.
+2) CircleCI for continuous integration and deployment.
+2) Github for source control and Github Projects for scrum.
+2) React for the UI with `create-react-app`.
+3) Node with Express for the restful API.
+5) Connection to the ethereum protocol is handled with Truffle to test, compile, develop, and deploy solidity smart contracts.
 
-Each of these will have a `github branch` which is how the `advancement of each part of the stack` will be tracked.
-
-The other purpose is to showcase my capabilities with the following:
- - automatic deployment pipelines
- - continuous integration between host and repository
- - proper scrum usage
- - real-world usage of blockchain technology
- - use various JavaScript libraries, frameworks, and tools to interact with the Ethereum protocol.
-
-Lastly, this product will be used as the boilerplate for both the 6B (as share 1.0 ) and Capstone (as share 2.0) projects.
+More thorough documentation on each layer can be found below.
 
 ### UI
 
