@@ -1,11 +1,15 @@
+# Ethereum
 
+## Introduction
 
-The main criteria with the Ethereum layer of this web application is to create logic to facilitate charitable contributions.
+The purpose of Ethereum layer is to `facilitate the transfer of ethereum` between the donor, lottery, and charity ethereum accounts. 
 
-The secondary purpose of the Ethereum logic is to collect 4% of charitable contributions in a lottery that will be gifted at the end of the month to select users.
-
-Lastly, 1% of charitable donations are given back to the business.
-
+In addition, the `smart contracts` automate the following processes:
+    - retains 1% of every donation to fund product advancement. 
+    - takes 4% of every donation and places it in a lottery which awards 5 random donors at the end of every month (award automation not yet developed, part of Share 2.0).
+    
+## Usage - Expanded
+    
 #### Truffle - Testing
 
 1) Navigate to the `/ethereum` folder
