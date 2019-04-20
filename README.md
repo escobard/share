@@ -10,7 +10,7 @@ To deliver the value outlined above, the following technologies are utilized:
 
 ## Project Technology
 
-The technology below was chosen to rapidly deliver a production ready web application, that interacts with the rinkeby test network to create a donation platform using the ethereum protocol.
+The technology below was chosen to rapidly deliver a production ready web application, that interacts with the rinkeby test network.
 
 1) Heroku & GCP for automatic deployment / hosting of the UI / API layers.
 2) CircleCI for continuous integration and deployment.
@@ -23,15 +23,15 @@ More thorough documentation on each layer can be found below.
 
 ### UI
 
-The main criteria of the UI layer is to control the user experience directing the user to use the Share service.
+UI concept can be found here: [documents/ui.md](documents/ui.md)
 
-To accomplish this, a slick and modern UI layout will be adapted, similar to https://alice.si/
+UI local usage doc can be found here: [ui/README.md](ui/README.md)
 
 ### API 
 
-API concept can be found here: [documents/v2/api-concept.md](documents/v2/api-concept.md)
+API concept can be found here: [documents/api.md](documents/api.md)
 
-API usage doc can be found here: [api/README.md](api/README.md)
+API local usage doc can be found here: [api/README.md](api/README.md)
 
 ### Ethereum
 
