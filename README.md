@@ -33,15 +33,9 @@ To accomplish this, a slick and modern UI layout will be adapted, similar to htt
 
 ### API 
 
-The main criteria of the API layer is to control the business logic of the product and manage interactions between the Ethereum, UI, and Blockchain.
+API concept can be found here: [documents/v2/api-concept.md](documents/v2/api-concept.md)
 
-This is managed by a combination of Node.js, Express.js, Mongoose and various other npm libraries.
-
-### Data
-
-This section will contain the STRUCTURE and DATA expectations.
-
-Previously this was handled by mongodb, this can be handled far better by smart contracts
+API usage doc can be found here: [api/README.md](api/README.md)
 
 ### Ethereum
 
@@ -61,7 +55,6 @@ Refer to the README.md file within the `./ui` directory.
 
 ### API
 
-Refer to the README.md file within the `./api` directory.
 
 ### Truffle
 
