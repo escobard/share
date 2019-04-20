@@ -3,8 +3,9 @@
 This proof of concept is built with the purpose of delivering a product that automatically handles peer-to-charity contributions facilitated by the ethereum protocol.
 
 In addition to automated transaction handling, this product also:
-    - takes 4% of every donation and places it in a lottery which awards 5 random donors at the end of every month.
-    - retains 1% of every donation to fund product advancement. 
+
+1) takes 4% of every donation and places it in a lottery which awards 5 random donors at the end of every month.
+2) retains 1% of every donation to fund product advancement. 
 
 To deliver the value outlined above, the following technologies are utilized:
 
@@ -12,7 +13,7 @@ To deliver the value outlined above, the following technologies are utilized:
 
 The technology below was chosen to rapidly deliver a production ready web application, that interacts with the rinkeby test network.
 
-1) Heroku & GCP for automatic deployment / hosting of the UI / API layers.
+1) Heroku for automatic deployment / hosting of the UI / API layers.
 2) CircleCI for continuous integration and deployment.
 2) Github for source control and Github Projects for scrum.
 2) React for the UI with `create-react-app`.
@@ -23,25 +24,29 @@ More thorough documentation on each layer can be found below.
 
 ### UI
 
-UI documentation can be found here: [documents/ui.md](documents/ui.md)
+UI documentation can be found here: [documentation/ui.md](https://github.com/escobard/share/blob/master/documentation/ui.md)
 
-UI local usage doc can be found here: [ui/README.md](ui/README.md)
+UI local usage doc can be found here: [ui/README.md](https://github.com/escobard/share/blob/master/ui/README.md)
 
 ### API 
 
-API documentation can be found here: [documents/api.md](documents/api.md)
+API documentation can be found here: [documentation/api.md](https://github.com/escobard/share/blob/master/documentation/api.md)
 
-API local usage doc can be found here: [api/README.md](api/README.md)
+API local usage doc can be found here: [api/README.md](https://github.com/escobard/share/blob/master/api/README.md)
 
 ### Ethereum
 
-Ethereum documentation can be found here: [documents/ethereum.md](documents/ethereum.md)
+Ethereum documentation can be found here: [documentation/ethereum.md](https://github.com/escobard/share/blob/master/documentation/ethereum.md)
 
-Truffle local usage doc can be found here: [ethereum/README.md](ethereum/README.md)
+Truffle local usage doc can be found here: [ethereum/README.md](https://github.com/escobard/share/blob/master/ethereum/README.md)
 
 ### Devops
 
-Devops documentation can be found here: [documents/v2/devops-concept.md](documents/v2/devops-concept.md)
+Devops documentation can be found here: [documentation/devops.md](https://github.com/escobard/share/blob/master/documentation/devops.md)
+
+### Contribution
+
+Contribution documentation can be found here: [documentation/contribution.md](https://github.com/escobard/share/blob/master/documentation/contribution.md)
 
 ## Libraries, Frameworks & Tools
 
@@ -63,29 +68,7 @@ Devops documentation can be found here: [documents/v2/devops-concept.md](documen
 
 [Truffle](https://truffleframework.com/)
 
-### Contribution
 
-Contribution is allowed at the discretion of the product owner.
-
-All commits should reference the `parent branch (ei doc, ui, etc) and issue (ei doc-readme)`.
-
-Commits should reference to the issue by `number by using # tags`
-
-Commits should follow the [Udacity commiy style guide](https://udacity.github.io/git-styleguide/) for optimal organization.
-
-### Forking
-
-All files in this repository are protected under the MIT license, but feel free to fork, star, or share this application as you see fit.
-
-For commercial or educational use, please paste a link to this repository to give proper credit.
-
-### Merging
-
-All pull requests to the `development branch` must be derived from the `doc, devops, ui, ether` branches.
-
-Sub branches must be merged into the `parent branch (doc, devops, ui, etc`, and a separate pull request to development must be made after testing on the parent branch.
-
-All merge requests must be directed to the `development branch`, to be merged into the `master branch` at the discretion of the product owner.
 
 ## License
 
