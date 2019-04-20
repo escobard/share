@@ -1,17 +1,23 @@
 # Share - UI
 
-For more UI documentation, visit [documents/api.md](documents/api.md)
+For more UI documentation, visit [documents/ui.md](documents/ui.md)
 
-### Usage
+## Usage
 
-#### Local development
+The donor must fill out the make donation form with a valid `public and private address`, and an ethereum amount.
+
+The product then delivers a `donationId` upon the transactions' success.
+
+This `donationId` can be used to fetch the `donationReceipt` by using the fetch donation form by providing the `donor's public address and the donationId`.
+
+### Local development
 
 `npm start`
 
-#### Local testing
+### Local testing
 
 `npm test`
 
-#### Production
+### Production
 
 `npm build`

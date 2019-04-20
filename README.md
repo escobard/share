@@ -23,13 +23,13 @@ More thorough documentation on each layer can be found below.
 
 ### UI
 
-UI concept can be found here: [documents/ui.md](documents/ui.md)
+UI documentation can be found here: [documents/ui.md](documents/ui.md)
 
 UI local usage doc can be found here: [ui/README.md](ui/README.md)
 
 ### API 
 
-API concept can be found here: [documents/api.md](documents/api.md)
+API documentation can be found here: [documents/api.md](documents/api.md)
 
 API local usage doc can be found here: [api/README.md](api/README.md)
 
