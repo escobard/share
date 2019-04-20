@@ -29,7 +29,7 @@ class App extends Component {
    **/
 
   makeDonation = request => {
-    // TODO this value must be improved for v2.0, address is validated through first form, which then gives the user access to the second form, which will be either a makeDonation form, or a grant access to fetchDonation if the user's address has already created a donation, need to implement this logic in all layers
+    // TODO this value must be improved for v2, address is validated through first form, which then gives the user access to the second form, which will be either a makeDonation form, or a grant access to fetchDonation if the user's address has already created a donation, need to implement this logic in all layers
 
     // TODO - refactor into constants
     let headers = { "Access-Control-Allow-Origin": "*" };

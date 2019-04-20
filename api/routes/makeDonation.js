@@ -43,7 +43,7 @@ try {
       // donor address public
       let donorPub = address_pu;
 
-      // TODO - the passing of private addresses outside of a wallet needs to be eliminated entirely with share v2.0
+      // TODO - the passing of private addresses outside of a wallet needs to be eliminated entirely with share v2
       // donor address private
       let donorPriv = address_pr;
 
