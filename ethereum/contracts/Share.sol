@@ -31,10 +31,10 @@ contract Share {
     }
 
     /// @notice Contains the stucture of the star metadata
-    /// @dev key of structure is the provided transaction hash, will be donationId in v2.0
+    /// @dev key of structure is the provided transaction hash, will be donationId in v2
     /// @param owner address, contains the address of the contract owner
-    /// @param lottery address, contains the address of the lottery - ether account for v1.0, contract for v2.0
-    /// @param charity address, contains the address of the charity - an ether account for v1.0 and v2.0
+    /// @param lottery address, contains the address of the lottery - ether account for v1, contract for v2
+    /// @param charity address, contains the address of the charity - an ether account for v1 and v2
     /// @param donor address, contains the address of the contract owner - ether account always
     /// @param amount uint, contains the original amount donated - all amounts are after gas
     /// @param charityAmount, contains the remaining 95% of original amount sent to charity
@@ -56,12 +56,12 @@ contract Share {
 
     /// @notice Contains the mapping for the lottery entrees
     /// @dev
-    /// @param donor address, will be expanded for v2.0
+    /// @param donor address, will be expanded for v2
 
     mapping(address => address) public lotteryEntrees;
 
     /// @notice Contains the mapping for donation data
-    /// @dev key of structure is the transactionHash, in v2.0 a donationId will be introduced
+    /// @dev key of structure is the transactionHash, in v2 a donationId will be introduced
     /// @param Donation structure, contains donation metadata
 
     mapping(uint => Donation) private Donations;

@@ -12,7 +12,7 @@ let web3 = new Web3(
 /**
  * Build a raw transaction and sign offline before sending
  *
- * @param method: method to access i.e. sendEther, sendToken, etc.
+ * @param method: method to access i.e. sendRawTransaction, sendToken, etc.
  * @param fromPub: address to send transaction from
  * @param toAddress: address to send transaction to
  * @param nonce: Must be incremented by 1 for each transaction
@@ -36,11 +36,7 @@ function txBuilder({
 }) {
   //parameters in common
   //get the private key from .env OR from arg
-  console.log('FROMPRIV', fromPriv)
-  let privateKey = new Buffer.from(
-    fromPriv ? fromPriv : process.env.PRIVATE_KEY,
-    "hex"
-  );
+  let privateKey = new Buffer.from(fromPriv, "hex");
   //values to hex
   const nonceHex = web3.utils.toHex(nonce);
   const valueHex = web3.utils.toHex(value);
@@ -51,7 +47,7 @@ function txBuilder({
 
   //You can easily add more cases for anything you want
   switch (method) {
-    case "sendEther":
+    case "sendRawTransaction":
       rawTx = {
         nonce: nonceHex,
         gasPrice: priceHex,
@@ -65,12 +61,12 @@ function txBuilder({
   }
   //new ethereumjs-tx
   let tx = new Tx(rawTx);
-  
+
   console.log("raw TXT", tx);
-  
+
   //sign transaction
   tx.sign(privateKey);
-  
+
   //serialize transaction
   let serializedTx = tx.serialize();
 
@@ -87,12 +83,13 @@ function txBuilder({
  * @param amount: amount string in ether, converted to wei
  */
 
-async function sendEther(
+async function sendRawTransaction(
   contractMethod,
   senderPub,
   senderPriv,
   receiver,
-  amount
+  amount,
+  res
 ) {
   /**
    * send Ether through a signed transaction function.
@@ -128,7 +125,7 @@ async function sendEther(
   //optional logs for sanity checks
   //build transaction object -- see tx_builder.js for input parameters
   let txData = {
-    method: "sendEther",
+    method: "sendRawTransaction",
     fromPub: senderPub,
     fromPriv: senderPriv,
     toAddress: receiver,
@@ -136,11 +133,12 @@ async function sendEther(
     functionSignature: contractMethod.encodeABI(),
     value: value,
     gasLimit: gasLimit,
-    gasPrice: gasPrice,
-
+    gasPrice: gasPrice
   };
 
   console.log("Building Transaction", txData);
+
+  // sending of raw transaction error handler
   try {
     //pass transaction object to txBuilder to construct and sign using private key
     let rawTx = txBuilder(txData);
@@ -149,16 +147,27 @@ async function sendEther(
     console.log("Sending Signed Transaction");
 
     //send tx that was signed offline by txbuilder
+    let transaction = await web3.eth.sendSignedTransaction(
+      "0x" + rawTx.toString("hex"),
+      (err, hash) => {
+        // throws errors to decline request
+        if (err) {
+          throw err;
+        }
+        if (hash) {
+          console.log("Raw transaction hash:", hash);
+        }
+      }
+    );
 
-    let transaction = await web3.eth
-      .sendSignedTransaction("0x" + rawTx.toString("hex"))
-      .on("transactionHash", console.log)
-      .on("receipt", console.log);
-
-    console.log(transaction);
+    console.log("Raw transaction successful:", transaction);
     return transaction;
   } catch (error) {
-    console.log(error);
+    console.log("Raw transaction failed", error);
+    res.status(400).json({
+      status: "Raw transaction failed",
+      error
+    });
   }
 }
-module.exports = sendEther;
+module.exports = sendRawTransaction;

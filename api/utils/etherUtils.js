@@ -41,7 +41,7 @@ class etherUtils {
     this.runtime = "infura";
     return web3;
 
-    /* TODO - GANACHE - connects to ganache if dev, commented out for v1.0
+    /* TODO - GANACHE - connects to ganache if dev, commented out for v1
     if (process.env.NODE_ENV === "dev") {
       web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
       runtime = "ganache";

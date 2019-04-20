@@ -1,6 +1,8 @@
 import React, { Component, Fragment } from "react";
 import { Button, Form, Message } from "semantic-ui-react";
 
+import "./styles.scss";
+
 /** Handles the rendering of a form, dynamically renders fields based on props.fields
  * @param {object[]} props.fields, required, determines rendered form fields
  * @param {function} props.fetchDonation / props.makeDonation, one required, determines axios post logic
@@ -82,6 +84,7 @@ class DynamicForm extends Component {
           "makeDonation() error(s)",
           `Contains the following error(s): ${messageErrors.join()}.`
         );
+        return;
       } else {
         this.setMessage(
           "green",
@@ -118,6 +121,7 @@ class DynamicForm extends Component {
           "fetchDonation() error(s)",
           `Contains the following error(s): ${messageErrors.join()}.`
         );
+        return;
       } else {
         this.setMessage(
           "green",
@@ -140,7 +144,8 @@ class DynamicForm extends Component {
     this.setState({
       messageColor: state,
       messageHeader: header,
-      messageContent: content
+      messageContent: content,
+      messageErrors: []
     });
   };
 
@@ -248,6 +253,11 @@ class DynamicForm extends Component {
       <Fragment>
         {hasFields ? (
           <Form>
+            <Message
+              color={messageColor}
+              header={messageHeader}
+              content={messageContent}
+            />
             <Form.Group widths="equal">{this.renderFields(fields)}</Form.Group>
             <Form.Field
               disabled={isDisabled}
@@ -256,11 +266,6 @@ class DynamicForm extends Component {
             >
               Submit
             </Form.Field>
-            <Message
-              color={messageColor}
-              header={messageHeader}
-              content={messageContent}
-            />
           </Form>
         ) : (
           <p>Form has no input props!</p>
