@@ -51,15 +51,13 @@ class App extends Component {
           makeDonationTitle: "makeDonation() success",
           makeDonationMessage: `Donation created! Here is your donation's ID: ${data}`
         });
-
       })
       .catch(error => {
-
         console.log("makeDonation error response:", error);
         this.setState({
           makeDonationTitle: "makeDonation() error(s)",
           makeDonationMessage: `API rejection: ${error}`
-        })
+        });
       });
   };
 
@@ -69,7 +67,6 @@ class App extends Component {
 
   fetchDonation = request => {
     let headers = { "Access-Control-Allow-Origin": "*" };
-
     axios
       .post(apiRoutes.fetchDonation, request, { headers })
       .then(response => {
@@ -80,12 +77,24 @@ class App extends Component {
           return [key, data[key]];
         });
 
-        this.setState({ fetchedDonation: donationArray });
+        console.log("fetchDonation API response: ", response.data);
+        this.setState({
+          fetchedDonation: donationArray,
+          fetchDonationTitle: "fetchDonation success",
+          // donationId logic here needs to be revised, should grab donationId from fetched donation.
+          fetchDonationMessage: `Donation #${"donationId"} fetched, find your donation data below.`
+        });
 
-        console.log("fetchDonation APi response: ", response.data);
+
       })
       .catch(error => {
-        console.log(error);
+
+        console.log("fetchDonation error response:", error);
+        this.setState({
+          fetchDonationTitle: "fetchDonation error(s)",
+          fetchDonationMessage: `API rejection: ${error}`
+        });
+
       });
   };
 
