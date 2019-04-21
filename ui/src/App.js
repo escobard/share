@@ -15,7 +15,6 @@ import {
 } from "./constants";
 
 class App extends Component {
-
   state = {
     // TODO setting to true to always display fetch form in case reviewer does not want to make a donation
     makeDonationTitle: "Make Donation form instructions",
@@ -46,10 +45,21 @@ class App extends Component {
         let { data } = response;
 
         console.log("makeDonation API response: ", data);
-        this.setState({ donationID: data, donorAddress: request.address_pu });
+        this.setState({
+          donationID: data,
+          donorAddress: request.address_pu,
+          makeDonationTitle: "makeDonation() success",
+          makeDonationMessage: `Donation created! Here is your donation's ID: ${data}`
+        });
+
       })
       .catch(error => {
-        console.log(error);
+
+        console.log("makeDonation error response:", error);
+        this.setState({
+          makeDonationTitle: "makeDonation() error(s)",
+          makeDonationMessage: `API rejection: ${error}`
+        })
       });
   };
 
