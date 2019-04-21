@@ -6,22 +6,14 @@ const Validation = require("../utils/validation");
 module.exports = async (req, res, next) => {
   let { address_pu, address_pr, amount } = req.body;
   let validation = new Validation();
-  let {
-    exists,
-    getErrors,
-    isString,
-    isNumber,
-    exactLength,
-    customValidation
-  } = validation;
 
   // null case values validation
-  exists(address_pu, "Public address must exist");
-  exists(address_pr, " Private address must exist");
-  exists(amount, " Amount must exist");
+  validation.exists(address_pu, "Public address must exist");
+  validation.exists(address_pr, " Private address must exist");
+  validation.exists(amount, " Amount must exist");
 
   // rejects request in case of null values
-  let nullErrors = getErrors();
+  let nullErrors = validation.getErrors();
 
   if (nullErrors.length >= 1) {
     return res.status(400).json({
@@ -31,36 +23,36 @@ module.exports = async (req, res, next) => {
   }
 
   // data type validation
-  isString(address_pu, "Public address must be a string");
-  isString(address_pr, " Private address must be a string");
-  isNumber(amount, " Amount must be a number");
+  validation.isString(address_pu, "Public address must be a string");
+  validation.isString(address_pr, " Private address must be a string");
+  validation.isNumber(amount, " Amount must be a number");
 
-  let dataTypeErrors = getErrors();
+  let dataTypeErrors = validation.getErrors();
 
   if (dataTypeErrors.length >= 1) {
-    res.status(400).json({
+    return res.status(400).json({
       status: "Data type validation errors:",
       errors: dataTypeErrors.join()
     });
   }
 
   // business logic validation
-  exactLength(
+  validation.exactLength(
     address_pu,
     42,
     "Public address must contain exactly 42 characters"
   );
-  exactLength(
+  validation.exactLength(
     address_pr,
     64,
     " Private address must contain exactly 64 characters"
   );
-  customValidation(amount > 1, " Amount cannot be greater than 1");
+  validation.customValidation(amount > 1, " Amount cannot be greater than 1");
 
-  let businessErrors = getErrors();
+  let businessErrors = validation.getErrors();
 
   if (businessErrors.length >= 1) {
-    res.status(400).json({
+    return res.status(400).json({
       status: "Business Logic validation errors:",
       errors: dataTypeErrors.join()
     });

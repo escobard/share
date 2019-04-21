@@ -8,16 +8,6 @@ class Validation{
   constructor(){
 
     this.errors = [];
-
-    // need to explicitly set this due to how its called (not entirely sure why)
-    this.exists = this.exists.bind(this);
-    this.isString = this.isString.bind(this);
-    this.isNumber = this.isNumber.bind(this);
-    this.isValidPublic = this.isValidPublic.bind(this);
-    this.isValidPair = this.isValidPublic.bind(this);
-    this.setError = this.setError.bind(this);
-    this.getErrors = this.getErrors.bind(this);
-    console.log('CONSTRUCTOR THIS', this)
   }
 
   /** Checks if a value exists
@@ -26,7 +16,6 @@ class Validation{
    */
 
   exists(value, error){
-    console.log('THIS', this);
     if (value === null || undefined){
       this.setError(error);
     }
@@ -128,7 +117,6 @@ class Validation{
    */
 
   getErrors(){
-    console.log('THIS', this)
     return this.errors;
   }
 
