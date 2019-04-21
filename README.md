@@ -11,7 +11,7 @@ In addition to automated transaction handling, this product also:
 
 
 
-## Project Technology
+## Product Technology
 
 The following technology was chosen to rapidly deliver a production ready decentralized product:
 
@@ -22,7 +22,7 @@ The following technology was chosen to rapidly deliver a production ready decent
 3) Node with Express for the restful API.
 5) Truffle to test, compile, develop, and deploy solidity smart contracts.
 
-More thorough documentation on the product concept can be found here: [documentation/concept.md](https://github.com/escobard/share/blob/master/documentation/concept.md)
+More documentation on product concept can be found here: [documentation/concept.md](https://github.com/escobard/share/blob/master/documentation/concept.md)
 
 ### UI
 

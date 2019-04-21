@@ -15,12 +15,18 @@ import {
 } from "./constants";
 
 class App extends Component {
+
   state = {
     // TODO setting to true to always display fetch form in case reviewer does not want to make a donation
+    makeDonationTitle: "Make Donation form instructions",
+    makeDonationMessage:
+      "Enter a valid public key in the Address Public field, the public address' private key in the Address Private field, and an ether value smaller than 1 in the Amount field.",
+    fetchDonationTitle: "Fetch Donation form instructions",
+    fetchDonationMessage:
+      "Enter a valid donor public key in the Address Public field and a valid donationID in the donationID field.",
     donationID: false,
     donorAddress: false,
     fetchedDonation: false,
-
     formMessage: ""
   };
 
@@ -74,9 +80,16 @@ class App extends Component {
   };
 
   render() {
-    let { donationID, fetchedDonation } = this.state;
+    let {
+      makeDonationTitle,
+      makeDonationMessage,
+      fetchDonationTitle,
+      fetchDonationMessage,
+      donationID,
+      fetchedDonation
+    } = this.state;
 
-    console.log("PARENT", this.state);
+    console.log("App state", this.state);
     return (
       <main className="application">
         <nav>
@@ -88,10 +101,8 @@ class App extends Component {
             makeDonation={this.makeDonation}
             fields={makeDonationFields}
             donationID={donationID}
-            messageHeader={"Make Donation form instructions"}
-            messageValue={
-              "Enter a valid public key in the Address Public field, the public address' private key in the Address Private field, and an ether value smaller than 1 in the Amount field."
-            }
+            messageHeader={makeDonationTitle}
+            messageValue={makeDonationMessage}
           />
         </section>
 
@@ -99,10 +110,8 @@ class App extends Component {
           <Form
             fetchDonation={this.fetchDonation}
             fields={fetchDonationFields}
-            messageHeader={"Fetch Donation form instructions"}
-            messageValue={
-              "Enter a valid donor public key in the Address Public field and a valid donationID in the donationID field."
-            }
+            messageHeader={fetchDonationTitle}
+            messageValue={fetchDonationMessage}
           />
         </section>
 

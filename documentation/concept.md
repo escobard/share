@@ -9,7 +9,7 @@ In addition to automated transaction handling, this product also:
 1) takes 4% of every donation and places it in a lottery which awards 5 random donors at the end of every month.
 2) retains 1% of every donation to fund product advancement. 
 
-## Project Technology
+## Product Technology
 
 The following technology was chosen to rapidly deliver a production ready decentralized product:
 
@@ -20,7 +20,7 @@ The following technology was chosen to rapidly deliver a production ready decent
 3) Node with Express for the restful API.
 5) Truffle to test, compile, develop, and deploy solidity smart contracts.
 
-## Project highlights
+## Product highlights
 
 1) UI:
     - `sass` styled UI, including utilization of mixins, variables, global vs component level styles.
