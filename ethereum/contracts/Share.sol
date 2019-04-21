@@ -125,7 +125,7 @@ contract Share {
     function fetchDonationID() public view returns (uint){
 
         // requires the owner to call this function, only owner address can access donationID atm
-        require(msg.sender == Owner);
+        require(ownableContract.isOwner(msg.sender));
 
         return donationID;
     }

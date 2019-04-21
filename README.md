@@ -9,6 +9,10 @@ In addition to automated transaction handling, this product also:
 
 To deliver the value outlined above, the following technologies are utilized:
 
+## Usage
+
+
+
 ## Project Technology
 
 The technology below was chosen to rapidly deliver a production ready web application, that interacts with the rinkeby test network.
@@ -67,9 +71,3 @@ Contribution documentation can be found here: [documentation/contribution.md](ht
 [Solidity Smart Contracts](https://github.com/ethereum/solidity)
 
 [Truffle](https://truffleframework.com/)
-
-
-
-## License
-
-As of November 19th, 2018, these files are open for all to use and contribute to. This repository is protected under the [MIT License](http://choosealicense.com/licenses/)

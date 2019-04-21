@@ -39,7 +39,6 @@ try {
 
       console.log("INITIALIZED?", contractInitialized);
 
-
       // donor address public
       let donorPub = address_pu;
 
