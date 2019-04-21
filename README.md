@@ -7,24 +7,22 @@ In addition to automated transaction handling, this product also:
 1) takes 4% of every donation and places it in a lottery which awards 5 random donors at the end of every month.
 2) retains 1% of every donation to fund product advancement. 
 
-To deliver the value outlined above, the following technologies are utilized:
-
 ## Usage
 
 
 
 ## Project Technology
 
-The technology below was chosen to rapidly deliver a production ready web application, that interacts with the rinkeby test network.
+The following technology was chosen to rapidly deliver a production ready decentralized product:
 
 1) Heroku for automatic deployment / hosting of the UI / API layers.
 2) CircleCI for continuous integration and deployment.
 2) Github for source control and Github Projects for scrum.
 2) React for the UI with `create-react-app`.
 3) Node with Express for the restful API.
-5) Connection to the ethereum protocol is handled with Truffle to test, compile, develop, and deploy solidity smart contracts.
+5) Truffle to test, compile, develop, and deploy solidity smart contracts.
 
-More thorough documentation on each layer can be found below.
+More thorough documentation on the product concept can be found here: [documentation/concept.md](https://github.com/escobard/share/blob/master/documentation/concept.md)
 
 ### UI
 
