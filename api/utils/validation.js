@@ -9,7 +9,7 @@ class Validation{
 
     this.errors = [];
 
-    // need to explicitely set this
+    // need to explicitly set this due to how its called (not entirely sure why)
     this.exists = this.exists.bind(this);
     this.isString = this.isString.bind(this);
     this.isNumber = this.isNumber.bind(this);
@@ -36,6 +36,7 @@ class Validation{
    * @param {string} value, property to validate
    * @param {string} error, error added to the errors array
    */
+
   isString(value, error){
     if (typeof value !== 'string'){
       this.setError(error)
@@ -46,8 +47,21 @@ class Validation{
    * @param {string} value, property to validate
    * @param {string} error, error added to the errors array
    */
+
   isNumber(value, error){
     if (typeof value !== 'number'){
+      this.setError(error)
+    }
+  }
+
+  /** Checks if a value is a number
+   * @param {string} value, property to validate
+   * @param {int} length, exact length expected
+   * @param {string} error, error added to the errors array
+   */
+
+  exactLength(value, length, error){
+    if (value.length !== length){
       this.setError(error)
     }
   }
@@ -57,6 +71,7 @@ class Validation{
    * @param {function} web3, web3 instance to validate public address
    * @param {string} error, error added to the errors array
    */
+
   async isValidPublic(public_address, web3, error){
 
     let validateAddress = web3.utils.isAddress(public_address);
@@ -73,6 +88,7 @@ class Validation{
    * @param {hash} public_address, ether public address to validate pair
    * @param {string} error, error added to the errors array
    */
+
   async isValidPair(private_address, public_address, error){
 
     // converts private address to hex buffer (needed for wallet generation)
@@ -108,6 +124,7 @@ class Validation{
   /** Clears errors array
    * @return {[]}, clears validation array
    */
+
   clearErrors(){
     this.errors = [];
   }

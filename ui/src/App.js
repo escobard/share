@@ -119,10 +119,7 @@ class App extends Component {
     console.log("App state", this.state);
     return (
       <main className="application">
-        <nav>
-          <Navigation />
-        </nav>
-
+        <Navigation />
         <section className="float">
           <Form
             makeDonation={this.makeDonation}

@@ -8,7 +8,8 @@ import "./styles.scss";
  * @param {function} props.fetchDonation / props.makeDonation, one required, determines axios post logic
  * @param {string} donationID, optional, returned donationID from makeDonation()
  * @param {string} messageHeader, optional, base messageHeader value with instructions
- * @param {string} messageContent, optional, base messageContent value with instructions
+ * @param {string} messageValue, optional, base messageContent value with instructions
+ * @param {string} messageStatus, optional, updates message color
  * @returns {Component}, Form
  **/
 
