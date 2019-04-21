@@ -66,6 +66,17 @@ class Validation{
     }
   }
 
+  /** Custom validation function
+   * @param {function} condition, must return true to trigger error case
+   * @param {string} error, error added to the errors array
+   */
+
+  customValidation(condition, error){
+    if (condition){
+      this.setError(error)
+    }
+  }
+
   /** Checks if public address is valid ether address
    * @param {hash} public_address, ether public address hash to validate
    * @param {function} web3, web3 instance to validate public address
