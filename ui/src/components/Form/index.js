@@ -17,7 +17,6 @@ class DynamicForm extends Component {
     messageHeader: this.props.messageHeader,
     messageContent: this.props.messageValue,
     messageErrors: [],
-    isDisabled: true
   };
 
   /** Triggers logic to dynamically generate inputState
@@ -53,6 +52,9 @@ class DynamicForm extends Component {
 
     if (makeDonation) {
 
+      // turns number string into actual number
+      value2 = parseFloat(value2);
+
       this.validateField(
         value0,
         value0.length !== 42,
@@ -67,14 +69,14 @@ class DynamicForm extends Component {
 
       this.validateField(
         value2,
-        typeof value2 !== "number",
+        isNaN(value2),
         " Amount must be a number"
       );
 
       this.validateField(
         value2,
-        parseInt(value2) > 1,
-        " Amount cannot donate more than a single ether"
+        value2 > 1,
+        " Amount cannot be more than 1 ether"
       );
 
       // sets messagesState
@@ -103,6 +105,9 @@ class DynamicForm extends Component {
 
     if (fetchDonation) {
 
+      // turns number string into actual number
+      value1 = parseInt(value1);
+
       this.validateField(
         value0,
         value0.length !== 42,
@@ -111,7 +116,7 @@ class DynamicForm extends Component {
 
       this.validateField(
         value1,
-        typeof value1 !== "number",
+        isNaN(value1),
         " Amount must be a number"
       );
 
@@ -152,7 +157,7 @@ class DynamicForm extends Component {
   /** Validates a form value
    * @dev can be split out into a validation class to re-use in api / ui layers
    * @param {*} value, property to validate
-   * @param {function} condition, functional condition to validate / invalidate value
+   * @param {*} condition, functional condition to validate / invalidate value
    * @param {string} error, string of error to add to this.state.errors
    **/
 
@@ -186,23 +191,6 @@ class DynamicForm extends Component {
    **/
 
   inputChange = (value, fieldKey) => {
-    let { makeDonation, fetchDonation } = this.props;
-    let { value0, value1, value2 } = this.state;
-
-    // TODO - all logic dependent on makeDonation / fetchDonation needs to be better handled - could be refactored to parent component, or handled here, but all logic dependent on one or the other should be handled in a single function, not across so many
-
-    // ensures that all fields are filled, otherwise disables submit button
-    if (makeDonation) {
-      if (value0.length >= 1 && value1.length >= 1 && value2.length >= 1) {
-        this.setState({ isDisabled: false });
-      }
-    }
-
-    if (fetchDonation) {
-      if (value0.length >= 1 && value1.length >= 1) {
-        this.setState({ isDisabled: false });
-      }
-    }
 
     this.setState({ [fieldKey]: value });
   };
@@ -243,7 +231,6 @@ class DynamicForm extends Component {
       messageColor,
       messageHeader,
       messageContent,
-      isDisabled
     } = this.state;
     let { fields, name } = this.props;
 
@@ -260,7 +247,6 @@ class DynamicForm extends Component {
             />
             <Form.Group widths="equal">{this.renderFields(fields)}</Form.Group>
             <Form.Field
-              disabled={isDisabled}
               onClick={() => this.submitForm(name)}
               control={Button}
             >
