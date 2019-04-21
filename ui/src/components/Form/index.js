@@ -17,6 +17,7 @@ class DynamicForm extends Component {
     messageHeader: this.props.messageHeader,
     messageContent: this.props.messageValue,
     messageErrors: [],
+    messageStatus: this.props.messageStatus,
   };
 
   /** Triggers logic to dynamically generate inputState
@@ -90,8 +91,8 @@ class DynamicForm extends Component {
       } else {
         this.setMessage(
           "green",
-          "makeDonation() success!",
-          `Here is your donationID: ${donationID}`
+          "makeDonation() validated",
+          `Making donation...`
         );
       }
 
@@ -130,8 +131,8 @@ class DynamicForm extends Component {
       } else {
         this.setMessage(
           "green",
-          "fetchDonation() success!",
-          `Find your fetched donation data below`
+          "fetchDonation() validated",
+          `Fetching donation...`
         );
       }
 
@@ -147,7 +148,7 @@ class DynamicForm extends Component {
 
   setMessage = (state, header, content) => {
     this.setState({
-      messageColor: state,
+      messageStatus: state,
       messageHeader: header,
       messageContent: content,
       messageErrors: []
@@ -228,7 +229,7 @@ class DynamicForm extends Component {
   render() {
     const {
       hasFields,
-      messageColor,
+      messageStatus,
       messageHeader,
       messageContent,
     } = this.state;
@@ -241,7 +242,7 @@ class DynamicForm extends Component {
         {hasFields ? (
           <Form>
             <Message
-              color={messageColor}
+              color={messageStatus}
               header={messageHeader}
               content={messageContent}
             />

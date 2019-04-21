@@ -20,9 +20,11 @@ class App extends Component {
     makeDonationTitle: "Make Donation form instructions",
     makeDonationMessage:
       "Enter a valid public key in the Address Public field, the public address' private key in the Address Private field, and an ether value smaller than 1 in the Amount field.",
+    makeDonationStatus: null,
     fetchDonationTitle: "Fetch Donation form instructions",
     fetchDonationMessage:
       "Enter a valid donor public key in the Address Public field and a valid donationID in the donationID field.",
+    fetchDonationStatus: null,
     donationID: false,
     donorAddress: false,
     fetchedDonation: false,
@@ -49,14 +51,16 @@ class App extends Component {
           donationID: data,
           donorAddress: request.address_pu,
           makeDonationTitle: "makeDonation() success",
-          makeDonationMessage: `Donation created! Here is your donation's ID: ${data}`
+          makeDonationMessage: `Donation created! Here is your donation's ID: ${data}`,
+          makeDonationStatus: "green"
         });
       })
       .catch(error => {
         console.log("makeDonation error response:", error);
         this.setState({
           makeDonationTitle: "makeDonation() error(s)",
-          makeDonationMessage: `API rejection: ${error}`
+          makeDonationMessage: `API rejection: ${error}`,
+          makeDonationStatus: "red"
         });
       });
   };
@@ -82,7 +86,8 @@ class App extends Component {
           fetchedDonation: donationArray,
           fetchDonationTitle: "fetchDonation success",
           // donationId logic here needs to be revised, should grab donationId from fetched donation.
-          fetchDonationMessage: `Donation #${"donationId"} fetched, find your donation data below.`
+          fetchDonationMessage: `Donation #${"donationId"} fetched, find your donation data below.`,
+          fetchDonationStatus: "green"
         });
 
 
@@ -92,7 +97,8 @@ class App extends Component {
         console.log("fetchDonation error response:", error);
         this.setState({
           fetchDonationTitle: "fetchDonation error(s)",
-          fetchDonationMessage: `API rejection: ${error}`
+          fetchDonationMessage: `API rejection: ${error}`,
+          fetchDonationStatus: "red"
         });
 
       });
@@ -102,8 +108,10 @@ class App extends Component {
     let {
       makeDonationTitle,
       makeDonationMessage,
+      makeDonationStatus,
       fetchDonationTitle,
       fetchDonationMessage,
+      fetchDonationStatus,
       donationID,
       fetchedDonation
     } = this.state;
@@ -122,6 +130,7 @@ class App extends Component {
             donationID={donationID}
             messageHeader={makeDonationTitle}
             messageValue={makeDonationMessage}
+            messageStatus={makeDonationStatus}
           />
         </section>
 
@@ -131,6 +140,7 @@ class App extends Component {
             fields={fetchDonationFields}
             messageHeader={fetchDonationTitle}
             messageValue={fetchDonationMessage}
+            messagegStatus={fetchDonationStatus}
           />
         </section>
 
