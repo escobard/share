@@ -74,7 +74,9 @@ class Validation{
 
   async isValidPublic(public_address, web3, error){
 
-    let validateAddress = web3.utils.isAddress(public_address);
+    console.log("WEB3", web3)
+
+    let validateAddress = await web3.utils.isAddress(public_address);
 
     if (validateAddress === false){
       this.setError(error);
