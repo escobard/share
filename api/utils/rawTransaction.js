@@ -126,7 +126,7 @@ async function sendRawTransaction(
     gasPrice: gasPrice
   };
 
-  console.log("Building Transaction", txData);
+  // console.log("Building Transaction", txData);
 
   // sending of raw transaction error handler
   try {
@@ -134,20 +134,19 @@ async function sendRawTransaction(
     let rawTx = txBuilder(txData);
 
     //optional logs for sanity checks
-    console.log("Sending Signed Transaction");
+    console.log("Sending Signed Transaction...");
 
     //send tx that was signed offline by txbuilder
     let transaction = await web3.eth.sendSignedTransaction(
       "0x" + rawTx.toString("hex")
     );
 
-    console.log("Raw transaction successful:", transaction);
+    console.log("Raw transaction successful:", transaction.transactionHash);
     return transaction;
   } catch (error) {
     console.error("Raw transaction failed", error);
     return res.status(400).json({
-      status: "Raw transaction failed",
-      error
+      status: "Raw transaction failed"
     });
   }
 }
