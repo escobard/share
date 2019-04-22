@@ -16,6 +16,7 @@ module.exports = async (req, res, next) => {
   let nullErrors = validation.getErrors();
 
   if (nullErrors.length >= 1) {
+    console.error("Null validation errors:", nullErrors);
     return res.status(400).json({
       status: "Null validation errors:",
       errors: nullErrors.join()
@@ -30,6 +31,7 @@ module.exports = async (req, res, next) => {
   let dataTypeErrors = validation.getErrors();
 
   if (dataTypeErrors.length >= 1) {
+    console.error("Data type validation errors:", dataTypeErrors);
     return res.status(400).json({
       status: "Data type validation errors:",
       errors: dataTypeErrors.join()
@@ -52,6 +54,7 @@ module.exports = async (req, res, next) => {
   let businessErrors = validation.getErrors();
 
   if (businessErrors.length >= 1) {
+    console.error("Business Logic validation errors:", businessErrors);
     return res.status(400).json({
       status: "Business Logic validation errors:",
       errors: dataTypeErrors.join()
