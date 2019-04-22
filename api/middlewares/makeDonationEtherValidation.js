@@ -8,13 +8,14 @@ module.exports = async (req, res, next) => {
   let validation = new Validation();
 
   await validation.isValidPublic(address_pu, web3, 'Public address is invalid');
-  await validation.isValidPair(address_pr, address_pu, 'Private Key is invalid');
+  await validation.isValidPair(address_pr, address_pu, ' Private Key is invalid');
 
   let etherErrors = validation.getErrors();
 
   if (etherErrors.length >= 1){
+    console.error("Ether validation errors:", etherErrors);
     return res.status(400).json({
-      status: 'Ether errors:',
+      status: 'Ether validation errors:',
       errors: etherErrors.join()
     });
   }
