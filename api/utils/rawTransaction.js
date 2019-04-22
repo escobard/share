@@ -144,9 +144,11 @@ async function sendRawTransaction(
     console.log("Raw transaction successful:", transaction.transactionHash);
     return transaction;
   } catch (error) {
-    console.error("Raw transaction failed", error);
+    console.error("Raw transaction failed", error.message);
+
     return res.status(400).json({
-      status: "Raw transaction failed"
+      status: "Raw transaction failed",
+      error: error.message
     });
   }
 }
