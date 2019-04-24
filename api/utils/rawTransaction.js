@@ -34,14 +34,16 @@ function txBuilder({
   gasPrice,
   fromPriv
 }) {
-  //parameters in common
-  //get the private key from .env OR from arg
+
+  //get the private key
   let privateKey = new Buffer.from(fromPriv, "hex");
+
   //values to hex
   const nonceHex = web3.utils.toHex(nonce);
   const valueHex = web3.utils.toHex(value);
   const limitHex = web3.utils.toHex(gasLimit);
   const priceHex = web3.utils.toHex(gasPrice);
+
   //tx object
   let rawTx;
 
@@ -88,6 +90,7 @@ async function sendRawTransaction(
   amount,
   res
 ) {
+
   /**
    * send Ether through a signed transaction function.
    *

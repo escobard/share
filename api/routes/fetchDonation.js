@@ -1,12 +1,13 @@
 const router = require("express").Router(),
+  fetchDonationBaseValidation = require("../middlewares/fetchDonationBaseValidation"),
   protocolSetup = require("../middlewares/protocolSetup"),
+  fetchDonationEtherValidation = require("../middlewares/fetchDonationEtherValidation"),
   sendRawTransaction = require("../utils/rawTransaction");
 
-router.post("/", protocolSetup, async (req, res) => {
+router.post("/", fetchDonationBaseValidation, protocolSetup, fetchDonationEtherValidation, async (req, res) => {
   let {
     web3,
     share,
-    call,
     body: { address_pu, id },
     accounts: { owner_pu, charity_pu, lottery_pu },
     contract: { contract_pu, contract_abi }
