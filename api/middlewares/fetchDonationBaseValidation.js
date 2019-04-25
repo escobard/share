@@ -4,7 +4,7 @@ const Validation = require("../utils/validation");
  * @dev split apart from ether address validation, to fail fast if null
  */
 module.exports = async (req, res, next) => {
-  let { address_pu } = req.body;
+  let { address_pu, id } = req.body;
   let validation = new Validation();
 
   // null case values validation

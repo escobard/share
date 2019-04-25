@@ -19,7 +19,7 @@ module.exports = async (req, res, next) => {
   await validation.isValidPublic(address_pu, web3, "Public address is invalid");
   await validation.customValidation(
     id >= donationID,
-    " Donation does not exist"
+    " DonationID does not exist"
   );
 
   let etherErrors = validation.getErrors();
@@ -40,7 +40,7 @@ module.exports = async (req, res, next) => {
       (donation.donor.toLowerCase() ||
         donation.owner.toLowerCase() ||
         donation.charity.toLowerCase()),
-    " Public address must exist within fetched donation"
+    " Public address provided must exist within fetched donation"
   );
 
   let etherBusinessErrors = validation.getErrors();
