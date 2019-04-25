@@ -35,7 +35,7 @@ router.post("/", fetchDonationBaseValidation, protocolSetup, fetchDonationEtherV
       console.log("Contract initialized! Fetching donationID", req.accounts);
 
       // this requires the OWNER to be the CALL FROM address otherwise throws an error as expected by access priviledge from smart contract
-      let donationID = await share.methods.fetchDonationID.call({from: owner_pu})
+      let donationID = await share.methods.fetchDonationID.call({from: owner_pu});
 
       // checks if contract has not store any donations, donationID will be 1 by default
       if (donationID === 1) {
