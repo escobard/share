@@ -140,7 +140,7 @@ class DynamicForm extends Component {
         );
       }
 
-      fetchDonation({ address_pu: value0.toUpperCase(), id: value1 });
+      fetchDonation({ address_pu: value0, id: value1 });
     }
   };
 

@@ -10,6 +10,9 @@ module.exports = async (req, res, next) => {
     accounts: { owner_pu },
     share
   } = req;
+
+  // setting address to lowercase, to avoid validation errors
+
   let validation = new Validation();
 
   let donationID = await share.methods.fetchDonationID.call({
@@ -34,7 +37,7 @@ module.exports = async (req, res, next) => {
 
   // handles ether business logic
   let donation = await share.methods.fetchDonation(id).call({ from: owner_pu });
-  console.log('DONATION', donation.owner === address_pu);
+  console.log('DONATION', donation.donor === address_pu);
 
 // adding 3 seperate validation cases, custom validation only handles a SINGLE boolean
   await validation.customValidation(
@@ -52,7 +55,7 @@ module.exports = async (req, res, next) => {
     address_pu !== donation.charity,
     " Public address provided must exist within fetched donation"
   );
-
+  console.log('ADDRESS / ID', address_pu, id)
   let etherBusinessErrors = validation.getErrors();
 
   // if only 2 errors are thrown, that means that 1/3 addresses is within the returned donation

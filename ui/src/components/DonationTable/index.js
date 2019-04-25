@@ -1,6 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import { Table } from "semantic-ui-react";
 
+import "./styles.scss"
+
 class DonationTable extends Component {
 
   displayDonation = fetchedDonation => {
@@ -9,8 +11,8 @@ class DonationTable extends Component {
       return fetchedDonation.map((donation, key) => {
         return (
           <Table.Row key={key}>
-            <Table.Cell>{donation[0]}</Table.Cell>
-            <Table.Cell>{donation[1]}</Table.Cell>
+            <Table.Cell width={8}>{donation[0]}</Table.Cell>
+            <Table.Cell width={8}>{donation[1]}</Table.Cell>
           </Table.Row>
         );
       });
@@ -21,7 +23,7 @@ class DonationTable extends Component {
         <Table celled>
           <Table.Header>
             <Table.Row>
-              <Table.HeaderCell>Description</Table.HeaderCell>
+              <Table.HeaderCell>Key</Table.HeaderCell>
               <Table.HeaderCell>Value</Table.HeaderCell>
             </Table.Row>
           </Table.Header>
