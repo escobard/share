@@ -34,18 +34,29 @@ module.exports = async (req, res, next) => {
 
   // handles ether business logic
   let donation = await share.methods.fetchDonation(id).call({ from: owner_pu });
+  console.log('DONATION', donation.owner === address_pu);
+
+// adding 3 seperate validation cases, custom validation only handles a SINGLE boolean
+  await validation.customValidation(
+    address_pu !== donation.donor,
+    " Public address provided must exist within fetched donation"
+  );
 
   await validation.customValidation(
-    address_pu !==
-      (donation.donor.toLowerCase() ||
-        donation.owner.toLowerCase() ||
-        donation.charity.toLowerCase()),
+    address_pu !== donation.donor,
+    " Public address provided must exist within fetched donation"
+  );
+
+
+  await validation.customValidation(
+    address_pu !== donation.charity,
     " Public address provided must exist within fetched donation"
   );
 
   let etherBusinessErrors = validation.getErrors();
 
-  if (etherBusinessErrors.length >= 1) {
+  // if only 2 errors are thrown, that means that 1/3 addresses is within the returned donation
+  if (etherBusinessErrors.length === 3) {
     console.error("Ether business validation errors:", etherErrors);
     return res.status(400).json({
       status: "Ether business validation errors:",

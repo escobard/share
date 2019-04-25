@@ -86,12 +86,12 @@ router.post("/", fetchDonationBaseValidation, protocolSetup, fetchDonationEtherV
 
           // returns lottery data if requester is lottery owner
           case address === lottery.toLowerCase(): {
-            return { lottery, donor, lotteryAmount, donationID };
+            return { lottery, donor, lotteryAmount, id };
           }
 
           // returns charity data if requester is charity owner
           case address === charity.toLowerCase(): {
-            return { charity, donor, charityAmount, donationID };
+            return { charity, donor, charityAmount, id };
           }
 
           // returns donor data if requester is donor
@@ -103,7 +103,7 @@ router.post("/", fetchDonationBaseValidation, protocolSetup, fetchDonationEtherV
               amount,
               charityAmount,
               lotteryAmount,
-              donationID
+              id
             };
           }
 
