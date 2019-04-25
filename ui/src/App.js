@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Message } from "semantic-ui-react";
 import axios from "axios";
 
 import Navigation from "./components/Navigation";
@@ -15,6 +14,7 @@ import {
 } from "./constants";
 
 class App extends Component {
+
   state = {
     // TODO setting to true to always display fetch form in case reviewer does not want to make a donation
     makeDonationTitle: "Make Donation form instructions",
@@ -104,6 +104,36 @@ class App extends Component {
       });
   };
 
+  /** Sets the message value after form validation checks
+   * @param {string} formName, name of the form to update parent state
+   * @param {string} state, state of message component
+   * @param {string} header, message header string
+   * @param {string} content, message content string
+   **/
+
+  setMessage = (formName, state, header, content) => {
+    switch (formName) {
+      case 'makeDonation':{
+        return this.setState({
+          makeDonationStatus: state,
+          makeDonationTitle: header,
+          makeDonationMessage: content,
+        });
+      }
+      case 'fetchDonation':{
+        return this.setState({
+          fetchDonationStatus: state,
+          fetchDonationTitle: header,
+          fetchDonationMessage: content,
+        });
+      }
+      default: {
+        return;
+      }
+    }
+
+  };
+
   render() {
     let {
       makeDonationTitle,
@@ -128,6 +158,7 @@ class App extends Component {
             messageHeader={makeDonationTitle}
             messageValue={makeDonationMessage}
             messageStatus={makeDonationStatus}
+            setMessage={this.setMessage}
           />
         </section>
 
@@ -137,7 +168,8 @@ class App extends Component {
             fields={fetchDonationFields}
             messageHeader={fetchDonationTitle}
             messageValue={fetchDonationMessage}
-            messagegStatus={fetchDonationStatus}
+            messageStatus={fetchDonationStatus}
+            setMessage={this.setMessage}
           />
         </section>
 

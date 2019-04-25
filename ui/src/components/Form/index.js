@@ -15,10 +15,7 @@ import "./styles.scss";
 
 class DynamicForm extends Component {
   state = {
-    messageHeader: this.props.messageHeader,
-    messageContent: this.props.messageValue,
     messageErrors: [],
-    messageStatus: this.props.messageStatus,
   };
 
   /** Triggers logic to dynamically generate inputState
@@ -83,14 +80,17 @@ class DynamicForm extends Component {
 
       // sets messagesState
       if (messageErrors.length > 0) {
-        this.setMessage(
+        this.props.setMessage(
+          'makeDonation',
           "red",
           "makeDonation() error(s)",
           `Contains the following error(s): ${messageErrors.join()}.`
         );
+        this.emptyErrors();
         return;
       } else {
-        this.setMessage(
+        this.props.setMessage(
+          'makeDonation',
           "green",
           "makeDonation() validated",
           `Making donation...`
@@ -123,14 +123,17 @@ class DynamicForm extends Component {
       );
 
       if (messageErrors.length > 0) {
-        this.setMessage(
+        this.props.setMessage(
+          'fetchDonation',
           "red",
           "fetchDonation() error(s)",
           `Contains the following error(s): ${messageErrors.join()}.`
         );
+        this.emptyErrors();
         return;
       } else {
-        this.setMessage(
+        this.props.setMessage(
+          'fetchDonation',
           "green",
           "fetchDonation() validated",
           `Fetching donation...`
@@ -142,16 +145,11 @@ class DynamicForm extends Component {
   };
 
   /** Sets the message value after form validation checks
-   * @param {string} state, state of message component
-   * @param {string} header, message header string
-   * @param {string} content, message content string
+    * @returns updates state
    **/
 
-  setMessage = (state, header, content) => {
+  emptyErrors = () => {
     this.setState({
-      messageStatus: state,
-      messageHeader: header,
-      messageContent: content,
       messageErrors: []
     });
   };
@@ -230,11 +228,8 @@ class DynamicForm extends Component {
   render() {
     const {
       hasFields,
-      messageStatus,
-      messageHeader,
-      messageContent,
     } = this.state;
-    let { fields, name } = this.props;
+    let { fields, name, messageHeader, messageValue, messageStatus  } = this.props;
 
     console.log("STATE", this.state);
 
@@ -245,7 +240,7 @@ class DynamicForm extends Component {
             <Message
               color={messageStatus}
               header={messageHeader}
-              content={messageContent}
+              content={messageValue}
             />
             <Form.Group widths="equal">{this.renderFields(fields)}</Form.Group>
             <Form.Field
