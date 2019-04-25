@@ -34,14 +34,16 @@ function txBuilder({
   gasPrice,
   fromPriv
 }) {
-  //parameters in common
-  //get the private key from .env OR from arg
+
+  //get the private key
   let privateKey = new Buffer.from(fromPriv, "hex");
+
   //values to hex
   const nonceHex = web3.utils.toHex(nonce);
   const valueHex = web3.utils.toHex(value);
   const limitHex = web3.utils.toHex(gasLimit);
   const priceHex = web3.utils.toHex(gasPrice);
+
   //tx object
   let rawTx;
 
@@ -61,9 +63,6 @@ function txBuilder({
   }
   //new ethereumjs-tx
   let tx = new Tx(rawTx);
-
-  console.log("raw TXT", tx);
-
   //sign transaction
   tx.sign(privateKey);
 
@@ -91,6 +90,7 @@ async function sendRawTransaction(
   amount,
   res
 ) {
+
   /**
    * send Ether through a signed transaction function.
    *
@@ -101,15 +101,12 @@ async function sendRawTransaction(
    * @param txData: data object to pass to txBuilder.
    */
 
-  console.log("Account balance:", await web3.eth.getBalance(senderPub));
-  //make the value dynamic if you like
-
-  const value = web3.utils.toWei(amount, "ether");
+  // converted to string
+  const value = web3.utils.toWei(amount.toString(), "ether");
 
   // the 'pending' flag here adds the most recent transaction
 
   // TODO - this fails on new accounts, need to create a handler for fail cases
-  // THIS IS THE CONTRACT NONCE NOT THE SENDER NONCE - GOTTA CONFIRM TOMORROW
   const nonce = await web3.eth.getTransactionCount(senderPub);
 
   //rinkeby gas limit and gas price can be checked on rinkeby.io
@@ -117,10 +114,6 @@ async function sendRawTransaction(
 
   //rinkeby current gas price is 1 gwei, setting to 10 will ensure priority mining
   const gasPrice = "80000000000";
-  console.log("gas price is", gasPrice);
-
-  console.log("nonce is", nonce);
-  //get the nonce for the sending account
 
   //optional logs for sanity checks
   //build transaction object -- see tx_builder.js for input parameters
@@ -136,7 +129,7 @@ async function sendRawTransaction(
     gasPrice: gasPrice
   };
 
-  console.log("Building Transaction", txData);
+  // console.log("Building Transaction", txData);
 
   // sending of raw transaction error handler
   try {
@@ -144,29 +137,21 @@ async function sendRawTransaction(
     let rawTx = txBuilder(txData);
 
     //optional logs for sanity checks
-    console.log("Sending Signed Transaction");
+    console.log("Sending Signed Transaction...");
 
     //send tx that was signed offline by txbuilder
     let transaction = await web3.eth.sendSignedTransaction(
-      "0x" + rawTx.toString("hex"),
-      (err, hash) => {
-        // throws errors to decline request
-        if (err) {
-          throw err;
-        }
-        if (hash) {
-          console.log("Raw transaction hash:", hash);
-        }
-      }
+      "0x" + rawTx.toString("hex")
     );
 
-    console.log("Raw transaction successful:", transaction);
+    console.log("Raw transaction successful:", transaction.transactionHash);
     return transaction;
   } catch (error) {
-    console.log("Raw transaction failed", error);
-    res.status(400).json({
+    console.error("Raw transaction failed", error.message);
+
+    return res.status(400).json({
       status: "Raw transaction failed",
-      error
+      error: error.message
     });
   }
 }

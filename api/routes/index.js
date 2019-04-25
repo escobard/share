@@ -2,7 +2,7 @@ const routes = require('../constants/routes');
 
 module.exports = (app) => {
 
-    // base routes
+    // lifecycle checks
     app.use(routes.health, require('../routes/health'));
 
     // ether routes

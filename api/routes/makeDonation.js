@@ -13,32 +13,14 @@ try {
       accounts: { owner_pu, owner_pr, charity_pu, lottery_pu },
       contract: { contract_pu }
     } = req;
+
     // ensures web3 instance is available, may want to consider moving all intial web3 logic outside of the route
     if (web3) {
-      // ensures request.body.address exists
-      /* TODO - GANACHE REFACTOR
-             // ganache address needs to be updated each time ganache-cli is initialized
-             let ownerAccount =
-                 runtime == "ganache"
-                   ? accounts[0]
-                   : "0xCb82438B0443593191ec05D07Bb9dBf6Eb73594C",
-               charityAccount =
-                 runtime == "ganache"
-                   ? accounts[1]
-                   : "0x9b41DB553536D504d16bC6B8d00BCA9255522242",
-               lotteryAccount =
-                 runtime == "ganache"
-                   ? accounts[2]
-                   : "0x46a3e9029F58BEc0c7Ba45d1D296bC60Fc0b0aFC";
-             */
 
-      // checks if contract is initialized, can be called by anyone with raw transactions due to this being public
-      console.log('CONTRACT ADDY', process.env.CONTRACT_ADDRESS);
       // TODO - refactor into its own middleware, using a new util for the contract itself, extend this with its own class
       let contractInitialized = await share.methods.isInitialized.call({from: owner_pu});
 
       console.log("INITIALIZED?", contractInitialized);
-
 
       // donor address public
       let donorPub = address_pu;
@@ -59,15 +41,10 @@ try {
           "0.001",
           res
         );
-
-        /* TODO - GANACHE METHOD - refactor for local dev
-       await share.methods
-         .initiateContract(lotteryAccount, charityAccount)
-         .send({ from: ownerAccount }); */
         res.status(200).json('Initializing contract, send another donation!');
       }
 
-      console.log("Contract initialized! Creating Donation...", req.body);
+      console.log("Contract initialized! Creating Donation...");
 
       await sendRawTransaction(
         share.methods.makeDonation(),
@@ -87,33 +64,10 @@ try {
         from: owner_pu
       });
 
-      console.log("DONATION ID", donationID);
+      // TODO - fix smart contract logic so that fetchDonation returns currentDonationID, not next donationID
       let currentDonation = donationID - 1;
 
       console.log("Donation ID:", currentDonation);
-      /*
-
-      // console.log("DONATION:", donation)
-      /* TODO - GANACHE METHOD - refactor for local dev
-
-      let donationID = await share.methods.fetchDonationID().call();
-
-              /*
-              // reduces donationID by 1 number, to fetch most recent donation
-
-                              await share.methods
-                .makeDonation()
-                .send({ from: req.body.address, value: amount, gas: "500000" });
-
-
-              let currentDonation = donationID - 1;
-
-              console.log("Donation ID:", currentDonation);
-              let donation = await share.methods.Donations(currentDonation).call();
-
-              let amount = web3.utils.toWei(req.body.amount, "ether");
-              */
-      // only the current donationID should be returned to the user
 
       res.status(200).json(currentDonation);
     } else {

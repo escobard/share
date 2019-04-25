@@ -8,16 +8,14 @@ import "./styles.scss";
  * @param {function} props.fetchDonation / props.makeDonation, one required, determines axios post logic
  * @param {string} donationID, optional, returned donationID from makeDonation()
  * @param {string} messageHeader, optional, base messageHeader value with instructions
- * @param {string} messageContent, optional, base messageContent value with instructions
+ * @param {string} messageValue, optional, base messageContent value with instructions
+ * @param {string} messageStatus, optional, updates message color
  * @returns {Component}, Form
  **/
 
 class DynamicForm extends Component {
   state = {
-    messageHeader: this.props.messageHeader,
-    messageContent: this.props.messageValue,
     messageErrors: [],
-    isDisabled: true
   };
 
   /** Triggers logic to dynamically generate inputState
@@ -53,6 +51,9 @@ class DynamicForm extends Component {
 
     if (makeDonation) {
 
+      // turns number string into actual number
+      value2 = parseFloat(value2);
+
       this.validateField(
         value0,
         value0.length !== 42,
@@ -67,29 +68,32 @@ class DynamicForm extends Component {
 
       this.validateField(
         value2,
-        typeof value2 !== "number",
+        isNaN(value2),
         " Amount must be a number"
       );
 
       this.validateField(
         value2,
-        parseInt(value2) > 1,
-        " Amount cannot donate more than a single ether"
+        value2 > 1,
+        " Amount cannot be more than 1 ether"
       );
 
       // sets messagesState
       if (messageErrors.length > 0) {
-        this.setMessage(
+        this.props.setMessage(
+          'makeDonation',
           "red",
           "makeDonation() error(s)",
           `Contains the following error(s): ${messageErrors.join()}.`
         );
+        this.emptyErrors();
         return;
       } else {
-        this.setMessage(
+        this.props.setMessage(
+          'makeDonation',
           "green",
-          "makeDonation() success!",
-          `Here is your donationID: ${donationID}`
+          "makeDonation() validated",
+          `Making donation...`
         );
       }
 
@@ -103,6 +107,9 @@ class DynamicForm extends Component {
 
     if (fetchDonation) {
 
+      // turns number string into actual number
+      value1 = parseInt(value1);
+
       this.validateField(
         value0,
         value0.length !== 42,
@@ -111,40 +118,38 @@ class DynamicForm extends Component {
 
       this.validateField(
         value1,
-        typeof value1 !== "number",
+        isNaN(value1),
         " Amount must be a number"
       );
 
       if (messageErrors.length > 0) {
-        this.setMessage(
+        this.props.setMessage(
+          'fetchDonation',
           "red",
           "fetchDonation() error(s)",
           `Contains the following error(s): ${messageErrors.join()}.`
         );
+        this.emptyErrors();
         return;
       } else {
-        this.setMessage(
+        this.props.setMessage(
+          'fetchDonation',
           "green",
-          "fetchDonation() success!",
-          `Find your fetched donation data below`
+          "fetchDonation() validated",
+          `Fetching donation...`
         );
       }
 
-      fetchDonation({ address_pu: value0.toUpperCase(), id: value1 });
+      fetchDonation({ address_pu: value0, id: value1 });
     }
   };
 
   /** Sets the message value after form validation checks
-   * @param {string} state, state of message component
-   * @param {string} header, message header string
-   * @param {string} content, message content string
+    * @returns updates state
    **/
 
-  setMessage = (state, header, content) => {
+  emptyErrors = () => {
     this.setState({
-      messageColor: state,
-      messageHeader: header,
-      messageContent: content,
       messageErrors: []
     });
   };
@@ -152,7 +157,7 @@ class DynamicForm extends Component {
   /** Validates a form value
    * @dev can be split out into a validation class to re-use in api / ui layers
    * @param {*} value, property to validate
-   * @param {function} condition, functional condition to validate / invalidate value
+   * @param {*} condition, functional condition to validate / invalidate value
    * @param {string} error, string of error to add to this.state.errors
    **/
 
@@ -186,23 +191,6 @@ class DynamicForm extends Component {
    **/
 
   inputChange = (value, fieldKey) => {
-    let { makeDonation, fetchDonation } = this.props;
-    let { value0, value1, value2 } = this.state;
-
-    // TODO - all logic dependent on makeDonation / fetchDonation needs to be better handled - could be refactored to parent component, or handled here, but all logic dependent on one or the other should be handled in a single function, not across so many
-
-    // ensures that all fields are filled, otherwise disables submit button
-    if (makeDonation) {
-      if (value0.length >= 1 && value1.length >= 1 && value2.length >= 1) {
-        this.setState({ isDisabled: false });
-      }
-    }
-
-    if (fetchDonation) {
-      if (value0.length >= 1 && value1.length >= 1) {
-        this.setState({ isDisabled: false });
-      }
-    }
 
     this.setState({ [fieldKey]: value });
   };
@@ -240,12 +228,8 @@ class DynamicForm extends Component {
   render() {
     const {
       hasFields,
-      messageColor,
-      messageHeader,
-      messageContent,
-      isDisabled
     } = this.state;
-    let { fields, name } = this.props;
+    let { fields, name, messageHeader, messageValue, messageStatus  } = this.props;
 
     console.log("STATE", this.state);
 
@@ -254,13 +238,12 @@ class DynamicForm extends Component {
         {hasFields ? (
           <Form>
             <Message
-              color={messageColor}
+              color={messageStatus}
               header={messageHeader}
-              content={messageContent}
+              content={messageValue}
             />
             <Form.Group widths="equal">{this.renderFields(fields)}</Form.Group>
             <Form.Field
-              disabled={isDisabled}
               onClick={() => this.submitForm(name)}
               control={Button}
             >

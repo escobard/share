@@ -1,4 +1,4 @@
-const Wallet = require('ethereumjs-wallet');
+const eutils = require('ethereumjs-util');
 
 /** Utility to validate request values
  * @dev add methods as necessary, keep as simple and re-usable as possible
@@ -8,16 +8,6 @@ class Validation{
   constructor(){
 
     this.errors = [];
-
-    // need to explicitely set this
-    this.exists = this.exists.bind(this);
-    this.isString = this.isString.bind(this);
-    this.isNumber = this.isNumber.bind(this);
-    this.isValidPublic = this.isValidPublic.bind(this);
-    this.isValidPair = this.isValidPublic.bind(this);
-    this.setError = this.setError.bind(this);
-    this.getErrors = this.getErrors.bind(this);
-    console.log('CONSTRUCTOR THIS', this)
   }
 
   /** Checks if a value exists
@@ -26,7 +16,6 @@ class Validation{
    */
 
   exists(value, error){
-    console.log('THIS', this);
     if (value === null || undefined){
       this.setError(error);
     }
@@ -36,6 +25,7 @@ class Validation{
    * @param {string} value, property to validate
    * @param {string} error, error added to the errors array
    */
+
   isString(value, error){
     if (typeof value !== 'string'){
       this.setError(error)
@@ -46,8 +36,32 @@ class Validation{
    * @param {string} value, property to validate
    * @param {string} error, error added to the errors array
    */
+
   isNumber(value, error){
     if (typeof value !== 'number'){
+      this.setError(error)
+    }
+  }
+
+  /** Checks if a value is a number
+   * @param {string} value, property to validate
+   * @param {int} length, exact length expected
+   * @param {string} error, error added to the errors array
+   */
+
+  exactLength(value, length, error){
+    if (value.length !== length){
+      this.setError(error)
+    }
+  }
+
+  /** Custom validation function
+   * @param {function} condition, must return true to trigger error case
+   * @param {string} error, error added to the errors array
+   */
+
+  customValidation(condition, error){
+    if (condition){
       this.setError(error)
     }
   }
@@ -57,9 +71,10 @@ class Validation{
    * @param {function} web3, web3 instance to validate public address
    * @param {string} error, error added to the errors array
    */
+
   async isValidPublic(public_address, web3, error){
 
-    let validateAddress = web3.utils.isAddress(public_address);
+    let validateAddress = await web3.utils.isAddress(public_address);
 
     if (validateAddress === false){
       this.setError(error);
@@ -69,21 +84,29 @@ class Validation{
 
   /** Checks if valid public / key value pair
    * @dev this may be very valuable to some
-   * @param {hash} private_address, ether private address to create wallet
+   * @param {hash} private_key, ether private address to create wallet
    * @param {hash} public_address, ether public address to validate pair
    * @param {string} error, error added to the errors array
    */
-  async isValidPair(private_address, public_address, error){
 
-    // converts private address to hex buffer (needed for wallet generation)
-    const rawPrivate = Buffer.from(private_address, hex);
+  async isValidPair(private_key, public_address, error){
 
-    const tempWallet = Wallet.fromPrivateKey(rawPrivate);
+    // creates a buffer from the private address
+    const privateHex = Buffer.from(private_key, 'hex');
 
-    const uncompressedPublic = tempWallet.getPublicKeyString();
+    // creates a public key buffer from the private key buffer
+    const publicKey = eutils.privateToPublic(privateHex);
+    
+    // outputs the public address string from public address key buffer 
+    const publicAddress = eutils.pubToAddress(publicKey).toString('hex');
 
-    // this needs to be heavily debugged, expecting public compressed vs uncompressed theory to be accurate
-    if (!uncompressedPublic.includes(public_address)){
+    // converts publicAddress to lowercase
+    public_address = public_address.toLowerCase();
+
+    // removes 0x ethereum protocol prefix
+    public_address = public_address.replace('0x', '');
+
+    if (!publicAddress.includes(public_address)){
       this.setError(error)
     }
   }
@@ -101,13 +124,13 @@ class Validation{
    */
 
   getErrors(){
-    console.log('THIS', this)
     return this.errors;
   }
 
   /** Clears errors array
    * @return {[]}, clears validation array
    */
+
   clearErrors(){
     this.errors = [];
   }

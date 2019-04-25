@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageSection snapshot renders should render correctly in mode 1`] = `
+<Grid
+  centered={true}
+  columns={2}
+>
+  <GridColumn>
+    <Image
+      as="img"
+      src="/images/wireframe/image.png"
+      ui={true}
+    />
+  </GridColumn>
+</Grid>
+`;

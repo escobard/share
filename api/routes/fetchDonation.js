@@ -1,12 +1,13 @@
 const router = require("express").Router(),
+  fetchDonationBaseValidation = require("../middlewares/fetchDonationBaseValidation"),
   protocolSetup = require("../middlewares/protocolSetup"),
+  fetchDonationEtherValidation = require("../middlewares/fetchDonationEtherValidation"),
   sendRawTransaction = require("../utils/rawTransaction");
 
-router.post("/", protocolSetup, async (req, res) => {
+router.post("/", fetchDonationBaseValidation, protocolSetup, fetchDonationEtherValidation, async (req, res) => {
   let {
     web3,
     share,
-    call,
     body: { address_pu, id },
     accounts: { owner_pu, charity_pu, lottery_pu },
     contract: { contract_pu, contract_abi }
@@ -34,7 +35,7 @@ router.post("/", protocolSetup, async (req, res) => {
       console.log("Contract initialized! Fetching donationID", req.accounts);
 
       // this requires the OWNER to be the CALL FROM address otherwise throws an error as expected by access priviledge from smart contract
-      let donationID = await share.methods.fetchDonationID.call({from: owner_pu})
+      let donationID = await share.methods.fetchDonationID.call({from: owner_pu});
 
       // checks if contract has not store any donations, donationID will be 1 by default
       if (donationID === 1) {
@@ -85,12 +86,12 @@ router.post("/", protocolSetup, async (req, res) => {
 
           // returns lottery data if requester is lottery owner
           case address === lottery.toLowerCase(): {
-            return { lottery, donor, lotteryAmount, donationID };
+            return { lottery, donor, lotteryAmount, id };
           }
 
           // returns charity data if requester is charity owner
           case address === charity.toLowerCase(): {
-            return { charity, donor, charityAmount, donationID };
+            return { charity, donor, charityAmount, id };
           }
 
           // returns donor data if requester is donor
@@ -102,7 +103,7 @@ router.post("/", protocolSetup, async (req, res) => {
               amount,
               charityAmount,
               lotteryAmount,
-              donationID
+              id
             };
           }
 
