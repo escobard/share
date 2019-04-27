@@ -79,6 +79,8 @@ contract Share {
         uint lotteryAmount = amount * 4 / 100;
         uint ownerAmount = amount * 1 / 100;
 
+        donationBase.setProcessed(Owner, donationID);
+
         // TODO - these can be refactored to ownerRole, since it utilizes the transfer of ownership principle
         Charity.transfer(charityAmount);
         Lottery.transfer(lotteryAmount);

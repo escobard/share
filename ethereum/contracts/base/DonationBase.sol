@@ -33,7 +33,7 @@ contract DonationBase {
         SentToOwner,
         Stored
     }
-    State state = State.Resting;
+    State private state = State.Resting;
     /// @notice Contains the stucture of the star metadata
     /// @dev key of structure is the provided transaction hash, will be donationId in v2
     /// @param owner address, contains the address of the contract owner
@@ -64,6 +64,26 @@ contract DonationBase {
         uint _donationID
     )public payable{
         require(ownerRole.isOwner(_owner));
+
+        require(state == State.Resting);
+
+        Donation memory donation;
+
+        donation.donationState = state;
+
+        state = State.Received;
+
+        Donations[_donationID] = donation;
+
+    }
+
+    function setProcessed(
+        address _owner,
+        uint _donationID
+    )public payable{
+        require(ownerRole.isOwner(_owner));
+
+        require(state == State.Received);
 
         Donation memory donation;
 
