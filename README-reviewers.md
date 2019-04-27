@@ -63,7 +63,7 @@ My promise to you = Use my new knowledge of raw transactions to build an end to 
 
 Share contract address:[https://rinkeby.etherscan.io/address/0x8b9ca2c57a03d154f37c1276f313f1124ca45a72]
 
-OwnableRole contract address:[https://rinkeby.etherscan.io/address/0x84806f1790c4e4cd0699e402f0b47f887b6223ba]
+OwnerRole contract address:[https://rinkeby.etherscan.io/address/0x84806f1790c4e4cd0699e402f0b47f887b6223ba]
 
 Charity contract address:[https://rinkeby.etherscan.io/address/0xc8c307be39ecb269758d1f4a41532298db880ace]
 

@@ -1,8 +1,8 @@
 const CharityRole = artifacts.require("./CharityRole.sol"),
-  OwnableRole = artifacts.require("./OwnableRole.sol");
+  OwnerRole = artifacts.require("./OwnerRole.sol");
 
 module.exports = function(deployer) {
-  // deploys initial OwnableRole contracts
-  deployer.deploy(CharityRole, OwnableRole.address, {gas: 3000000})
+  // deploys initial OwnerRole contracts
+  deployer.deploy(CharityRole, OwnerRole.address, {gas: 3000000})
 
 };

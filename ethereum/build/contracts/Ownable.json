@@ -1,5 +1,5 @@
 {
-  "contractName": "OwnableRole",
+  "contractName": "OwnerRole",
   "abi": [
     {
       "inputs": [],
@@ -54,12 +54,12 @@
   "deployedBytecode": "0x608060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680632f54bf6e1461005c57806363bd1d4a146100b7578063893d20e8146100c1575b600080fd5b34801561006857600080fd5b5061009d600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610118565b604051808215151515815260200191505060405180910390f35b6100bf610171565b005b3480156100cd57600080fd5b506100d6610206565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff16149050919050565b61017a33610118565b151561018557600080fd5b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc3073ffffffffffffffffffffffffffffffffffffffff16319081150290604051600060405180830381858888f19350505050158015610203573d6000803e3d6000fd5b50565b600061021133610118565b151561021c57600080fd5b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff169050905600a165627a7a723058206305125c682da8541e494e25b92472e4882c4dd46d5c9794557e0cf31ffc70f10029",
   "sourceMap": "194:765:3:-;;;275:5;248:32;;;;;;;;;;;;;;;;;;;;289:58;8:9:-1;5:2;;;30:1;27;20:12;5:2;289:58:3;329:10;321:5;;:18;;;;;;;;;;;;;;;;;;194:765;;;;;;",
   "deployedSourceMap": "194:765:3:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;747:103;;8:9:-1;5:2;;;30:1;27;20:12;5:2;747:103:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;858:98;;;;;;355:91;;8:9:-1;5:2;;;30:1;27;20:12;5:2;355:91:3;;;;;;;;;;;;;;;;;;;;;;;;;;;747:103;802:4;837:5;;;;;;;;;;;826:16;;:7;:16;;;819:23;;747:103;;;:::o;858:98::-;547:19;555:10;547:7;:19::i;:::-;539:28;;;;;;;;911:5;;;;;;;;;;;:14;;:37;934:4;926:21;;;911:37;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;911:37:3;858:98::o;355:91::-;406:7;547:19;555:10;547:7;:19::i;:::-;539:28;;;;;;;;433:5;;;;;;;;;;;426:12;;355:91;:::o",
-  "source": "pragma solidity ^0.4.24;\r\n\r\n/// Provides basic authorization control\r\n\r\n// TODO - may include in the submission but most likely not, not necessary and overly complicates smart contract logic\r\n\r\ncontract OwnableRole {\r\n    address private Owner;\r\n\r\n    bool private initialized = false;\r\n\r\n    constructor() public {\r\n        Owner = msg.sender;\r\n    }\r\n\r\n    function getOwner() onlyOwner public view returns (address) {\r\n        return Owner;\r\n    }\r\n\r\n    // changed to function, issues importing modifiers\r\n    modifier onlyOwner{\r\n        require(isOwner(msg.sender));\r\n        _;\r\n    }\r\n\r\n    modifier notOwner{\r\n        require(!isOwner(msg.sender));\r\n        _;\r\n    }\r\n\r\n    /// Check if the calling address is the Owner of the contract\r\n    function isOwner(address _sender) public view returns (bool) {\r\n        return _sender == Owner;\r\n    }\r\n\r\n    function payout() onlyOwner public payable{\r\n        Owner.transfer(address(this).balance);\r\n    }\r\n}\r\n",
-  "sourcePath": "D:\\Documents\\School\\Share\\ethereum\\contracts\\core\\OwnableRole.sol",
+  "source": "pragma solidity ^0.4.24;\r\n\r\n/// Provides basic authorization control\r\n\r\n// TODO - may include in the submission but most likely not, not necessary and overly complicates smart contract logic\r\n\r\ncontract OwnerRole {\r\n    address private Owner;\r\n\r\n    bool private initialized = false;\r\n\r\n    constructor() public {\r\n        Owner = msg.sender;\r\n    }\r\n\r\n    function getOwner() onlyOwner public view returns (address) {\r\n        return Owner;\r\n    }\r\n\r\n    // changed to function, issues importing modifiers\r\n    modifier onlyOwner{\r\n        require(isOwner(msg.sender));\r\n        _;\r\n    }\r\n\r\n    modifier notOwner{\r\n        require(!isOwner(msg.sender));\r\n        _;\r\n    }\r\n\r\n    /// Check if the calling address is the Owner of the contract\r\n    function isOwner(address _sender) public view returns (bool) {\r\n        return _sender == Owner;\r\n    }\r\n\r\n    function payout() onlyOwner public payable{\r\n        Owner.transfer(address(this).balance);\r\n    }\r\n}\r\n",
+  "sourcePath": "D:\\Documents\\School\\Share\\ethereum\\contracts\\core\\OwnerRole.sol",
   "ast": {
-    "absolutePath": "/D/Documents/School/Share/ethereum/contracts/core/OwnableRole.sol",
+    "absolutePath": "/D/Documents/School/Share/ethereum/contracts/core/OwnerRole.sol",
     "exportedSymbols": {
-      "OwnableRole": [
+      "OwnerRole": [
         640
       ]
     },
@@ -87,7 +87,7 @@
         "linearizedBaseContracts": [
           640
         ],
-        "name": "OwnableRole",
+        "name": "OwnerRole",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
@@ -807,16 +807,16 @@
                               "referencedDeclaration": 668,
                               "src": "934:4:3",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_contract$_OwnableRole_$640",
-                                "typeString": "contract OwnableRole"
+                                "typeIdentifier": "t_contract$_OwnerRole_$640",
+                                "typeString": "contract OwnerRole"
                               }
                             }
                           ],
                           "expression": {
                             "argumentTypes": [
                               {
-                                "typeIdentifier": "t_contract$_OwnableRole_$640",
-                                "typeString": "contract OwnableRole"
+                                "typeIdentifier": "t_contract$_OwnerRole_$640",
+                                "typeString": "contract OwnerRole"
                               }
                             ],
                             "id": 632,
@@ -970,9 +970,9 @@
     "src": "0:961:3"
   },
   "legacyAST": {
-    "absolutePath": "/D/Documents/School/Share/ethereum/contracts/core/OwnableRole.sol",
+    "absolutePath": "/D/Documents/School/Share/ethereum/contracts/core/OwnerRole.sol",
     "exportedSymbols": {
-      "OwnableRole": [
+      "OwnerRole": [
         640
       ]
     },
@@ -1000,7 +1000,7 @@
         "linearizedBaseContracts": [
           640
         ],
-        "name": "OwnableRole",
+        "name": "OwnerRole",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
@@ -1720,16 +1720,16 @@
                               "referencedDeclaration": 668,
                               "src": "934:4:3",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_contract$_OwnableRole_$640",
-                                "typeString": "contract OwnableRole"
+                                "typeIdentifier": "t_contract$_OwnerRole_$640",
+                                "typeString": "contract OwnerRole"
                               }
                             }
                           ],
                           "expression": {
                             "argumentTypes": [
                               {
-                                "typeIdentifier": "t_contract$_OwnableRole_$640",
-                                "typeString": "contract OwnableRole"
+                                "typeIdentifier": "t_contract$_OwnerRole_$640",
+                                "typeString": "contract OwnerRole"
                               }
                             ],
                             "id": 632,

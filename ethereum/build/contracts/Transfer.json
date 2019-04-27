@@ -72,7 +72,7 @@
   "deployedBytecode": "0x",
   "sourceMap": "",
   "deployedSourceMap": "",
-  "source": "pragma solidity ^0.4.23;\r\n\r\nimport \"../core/OwnableRole.sol\";\r\n\r\ncontract Transfer is OwnableRole {\r\n\r\n    address private Owner;\r\n\r\n    constructor() internal {\r\n        Owner = msg.sender;\r\n    }\r\n\r\n    function pay(address _address, uint amount) onlyOwner public payable{\r\n        _address.transfer(amount);\r\n    }\r\n\r\n}",
+  "source": "pragma solidity ^0.4.23;\r\n\r\nimport \"../core/OwnerRole.sol\";\r\n\r\ncontract Transfer is OwnerRole {\r\n\r\n    address private Owner;\r\n\r\n    constructor() internal {\r\n        Owner = msg.sender;\r\n    }\r\n\r\n    function pay(address _address, uint amount) onlyOwner public payable{\r\n        _address.transfer(amount);\r\n    }\r\n\r\n}",
   "sourcePath": "D:\\Documents\\School\\Share\\ethereum\\contracts\\base\\Transfer.sol",
   "ast": {
     "absolutePath": "/D/Documents/School/Share/ethereum/contracts/base/Transfer.sol",
@@ -96,8 +96,8 @@
         "src": "0:24:4"
       },
       {
-        "absolutePath": "/D/Documents/School/Share/ethereum/contracts/core/OwnableRole.sol",
-        "file": "../core/OwnableRole.sol",
+        "absolutePath": "/D/Documents/School/Share/ethereum/contracts/core/OwnerRole.sol",
+        "file": "../core/OwnerRole.sol",
         "id": 623,
         "nodeType": "ImportDirective",
         "scope": 654,
@@ -113,13 +113,13 @@
             "baseName": {
               "contractScope": null,
               "id": 624,
-              "name": "OwnableRole",
+              "name": "OwnerRole",
               "nodeType": "UserDefinedTypeName",
               "referencedDeclaration": 730,
               "src": "82:7:4",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_OwnableRole_$730",
-                "typeString": "contract OwnableRole"
+                "typeIdentifier": "t_contract$_OwnerRole_$730",
+                "typeString": "contract OwnerRole"
               }
             },
             "id": 625,
@@ -471,8 +471,8 @@
         "src": "0:24:4"
       },
       {
-        "absolutePath": "/D/Documents/School/Share/ethereum/contracts/core/OwnableRole.sol",
-        "file": "../core/OwnableRole.sol",
+        "absolutePath": "/D/Documents/School/Share/ethereum/contracts/core/OwnerRole.sol",
+        "file": "../core/OwnerRole.sol",
         "id": 623,
         "nodeType": "ImportDirective",
         "scope": 654,
@@ -488,13 +488,13 @@
             "baseName": {
               "contractScope": null,
               "id": 624,
-              "name": "OwnableRole",
+              "name": "OwnerRole",
               "nodeType": "UserDefinedTypeName",
               "referencedDeclaration": 730,
               "src": "82:7:4",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_OwnableRole_$730",
-                "typeString": "contract OwnableRole"
+                "typeIdentifier": "t_contract$_OwnerRole_$730",
+                "typeString": "contract OwnerRole"
               }
             },
             "id": 625,

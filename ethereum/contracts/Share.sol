@@ -3,7 +3,7 @@ pragma solidity ^0.4.23;
 
 // actor contracts
 import "./accesscontrol/CharityRole.sol";
-import "./accesscontrol/OwnableRole.sol";
+import "./accesscontrol/OwnerRole.sol";
 import "./accesscontrol/LotteryRole.sol";
 
 contract Share {
@@ -12,7 +12,7 @@ contract Share {
     address private Lottery;
     address private Charity;
     bool private initialized = false;
-    OwnableRole private ownableContract;
+    OwnerRole private ownerRole;
     CharityRole private charityContract;
     LotteryRole private lotteryContract;
 
@@ -21,11 +21,11 @@ contract Share {
 
     /// @notice sets the owner to the Owner variable upon contract init
     /// @dev can be expanded to account for many more constructor features
-    constructor(address _ownable, address _charityRole, address _lotteryRole) public {
+    constructor(address _ownerRole, address _charityRole, address _lotteryRole) public {
         Owner = msg.sender;
 
         // sets the address for the instance of each helper contract
-        ownableContract = OwnableRole(_ownable);
+        ownerRole = OwnerRole(_ownerRole);
         charityContract = CharityRole(_charityRole);
         lotteryContract = LotteryRole(_lotteryRole);
     }
@@ -74,7 +74,7 @@ contract Share {
     // TODO - this logic must also include the new contract
     function initiateContract(address _lottery, address _charity) public payable{
 
-        require(initialized == false && ownableContract.isOwner(msg.sender));
+        require(initialized == false && ownerRole.isOwner(msg.sender));
 
         // TODO - this logic must add the smart contract address for CharityRole
         // TODO - ei - Charity = CharityRole(_charity) - argument must contain address of contract
@@ -99,7 +99,7 @@ contract Share {
 
     function makeDonation() public payable{
         // owner, charity, and lottery accounts cannot utilize the handleFunds function
-        require(initialized == true && !ownableContract.isOwner(msg.sender) && !charityContract.isCharity() && !lotteryContract.isLottery());
+        require(initialized == true && !ownerRole.isOwner(msg.sender) && !charityContract.isCharity() && !lotteryContract.isLottery());
 
         // creates the amount variable, used to set the amount later on in this function
         // these math. functions can be move to the API to avoid gas cost for calculations
@@ -108,7 +108,7 @@ contract Share {
         uint lotteryAmount = amount * 4 / 100;
         uint ownerAmount = amount * 1 / 100;
 
-        // TODO - these can be refactored to ownableContract, since it utilizes the transfer of ownership principle
+        // TODO - these can be refactored to ownerRole, since it utilizes the transfer of ownership principle
         Charity.transfer(charityAmount);
         Lottery.transfer(lotteryAmount);
 
@@ -125,7 +125,7 @@ contract Share {
     function fetchDonationID() public view returns (uint){
 
         // requires the owner to call this function, only owner address can access donationID atm
-        require(ownableContract.isOwner(msg.sender));
+        require(ownerRole.isOwner(msg.sender));
 
         return donationID;
     }
@@ -141,7 +141,7 @@ contract Share {
         uint id){
 
         // requires the owner to call this function, only owner address can access donationID atm
-        require(ownableContract.isOwner(msg.sender));
+        require(ownerRole.isOwner(msg.sender));
 
         Donation memory donation = Donations[_id];
 
@@ -149,7 +149,7 @@ contract Share {
     }
 
     function isInitialized() public view returns(bool){
-        require(ownableContract.isOwner(msg.sender));
+        require(ownerRole.isOwner(msg.sender));
         return initialized;
     }
 

@@ -2,7 +2,7 @@
 const LotteryRole = artifacts.require("./LotteryRole.sol"),
   CharityRole = artifacts.require('./CharityRole.sol'),
   Share = artifacts.require('./Share.sol'),
-  OwnableRole = artifacts.require("./OwnableRole.sol");
+  OwnerRole = artifacts.require("./OwnerRole.sol");
 
 // extracts the accounts array from the contract
 contract("Share", accounts => {
@@ -18,10 +18,10 @@ contract("Share", accounts => {
     let amount = web3.toWei(0.1, "ether");
 
     beforeEach(async () => {
-        this.ownableContract = await OwnableRole.new({ from: owner});
-        this.charityContract = await CharityRole.new(this.ownableContract.address, { from: owner});
-        this.lotteryContract = await LotteryRole.new(this.ownableContract.address, { from: owner});
-        this.contract = await Share.new(this.ownableContract.address, this.charityContract.address, this.lotteryContract.address, { from: owner });
+        this.ownerRole = await OwnerRole.new({ from: owner});
+        this.charityContract = await CharityRole.new(this.ownerRole.address, { from: owner});
+        this.lotteryContract = await LotteryRole.new(this.ownerRole.address, { from: owner});
+        this.contract = await Share.new(this.ownerRole.address, this.charityContract.address, this.lotteryContract.address, { from: owner });
     });
 
     describe("Tests contract initiation", () =>{
@@ -36,7 +36,7 @@ contract("Share", accounts => {
             .then(async (resp) =>{
 
                 // will comment back in when lottery contract is completed
-                assert.equal(await this.ownableContract.getOwner({from: owner}), owner);
+                assert.equal(await this.ownerRole.getOwner({from: owner}), owner);
                 assert.equal(await this.charityContract.getCharity(owner, {from: owner}), charity);
                 assert.equal(await this.lotteryContract.getLottery(owner, {from: owner}), lottery);
                 assert.equal(await this.contract.isInitialized({from: owner}), true);
