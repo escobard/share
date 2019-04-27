@@ -9,9 +9,13 @@ In addition to automated transaction handling, this product also:
 
 ## Usage
 
-The product can be accessed here: https://share-ui.herokuapp.com/
+The product can be accessed here: http://localhost:3000/
 
-Follow the instructions within the messages to utilize.
+Follow the instructions within the messages to utilize, expanded instructions below.
+
+### Make donation form
+
+Enter a valid `public address`, the `public address' private key` and an ether amount `smaller than 1`.
 
 Feel free to use the following test account for a working `public / private` pair:
 
@@ -22,6 +26,19 @@ public address: 0xa102c7EE530B635E56f133a20786091eB800f640
 private key: 1E8722F6E86B4E856B4BA2F75F492F4123242713E4E57C3789AFDCF2F631954A
 
 ```
+
+### Fetch Donation 
+
+Enter a valid `public address`, and a `donationID which has been created with the public address`.
+
+Feel free to use the following test account for a working `public / donationID` pair:
+
+```angular2html
+
+public address: 0xa102c7EE530B635E56f133a20786091eB800f640
+
+donationId: 1
+``` 
 
 ## Product Technology
 
