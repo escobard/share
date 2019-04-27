@@ -73,10 +73,10 @@ contract Share {
         // owner, charity, and lottery accounts cannot utilize the handleFunds function
         require(initialized == true && !ownerRole.isOwner(msg.sender) && !charityRole.isCharity() && !lotteryRole.isLottery());
 
-        // creates the amount variable, used to set the amount later on in this function
-        // these math. functions can be move to the API to avoid gas cost for calculations
+        donorRole.setDonor(msg.sender, Owner);
+        address Donor = donorRole.getDonor(Owner);
 
-        donationBase.setReceived(Owner, Lottery, Charity, msg.sender, donationID);
+        donationBase.setReceived(Owner, Lottery, Charity, Donor, donationID);
 
         uint amount = msg.value;
         uint charityAmount = amount * 95 / 100;
@@ -101,14 +101,14 @@ contract Share {
 
 
         // add lotteryEntrees struct
-        donationBase.setLottery(Owner, msg.sender, donationID);
+        donationBase.setLottery(Owner, Donor, donationID);
 
         // TODO - figure out why state updates are not updating donationID, pointless extra memory usage by setting donation twice
         donationBase.setDonation(
             Owner,
             Lottery,
             Charity,
-            msg.sender,
+            Donor,
             amount,
             charityAmount,
             lotteryAmount,
