@@ -5,9 +5,11 @@ pragma solidity ^0.4.23;
 import "./accesscontrol/CharityRole.sol";
 import "./accesscontrol/OwnerRole.sol";
 import "./accesscontrol/LotteryRole.sol";
+import "./accesscontrol/DonorRole.sol";
 
 // base contract
 import "./base/DonationBase.sol";
+
 
 contract Share {
 
@@ -18,6 +20,7 @@ contract Share {
     OwnerRole private ownerRole;
     CharityRole private charityRole;
     LotteryRole private lotteryRole;
+    DonorRole private donorRole;
     DonationBase private donationBase;
 
     // assigns an ID to each donation
