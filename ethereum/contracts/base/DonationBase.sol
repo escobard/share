@@ -6,7 +6,7 @@ contract DonationBase {
     /// @dev
     /// @param donor address, will be expanded for v2
 
-    mapping(address => address) public lotteryEntrees;
+    mapping(address => address) public LotteryEntrees;
 
     /// @notice Contains the mapping for donation data
     /// @dev key of structure is the transactionHash, in v2 a donationId will be introduced
