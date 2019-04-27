@@ -23,10 +23,18 @@ contract DonationBase {
 
     mapping(uint => Donation) private Donations;
 
-    /// @notice Initiates the contract once deployed, only available to owner
-    /// @dev Need to test the syntax here, unsure the require function works
-    /// @param _lottery address, contains the ethereum public key for lottery account
-    /// @param _charity address, contains the ethereum public key for charity account
+    enum State
+    {
+        Received,  // 0
+        Processed,  // 1
+        SentToCharity,     // 2
+        SentToLottery,    // 3
+        SentToOwner,       // 4
+        Shipped,    // 5
+        Received,   // 6
+        Purchased   // 7
+    }
+
 
     /// @notice Contains the stucture of the star metadata
     /// @dev key of structure is the provided transaction hash, will be donationId in v2
@@ -51,6 +59,16 @@ contract DonationBase {
         uint ownerAmount;
         uint id;
     }
+
+    event Harvested(uint upc);
+    event Processed(uint upc);
+    event Packed(uint upc);
+    event ForSale(uint upc);
+    event Sold(uint upc);
+    event Shipped(uint upc);
+    event Received(uint upc);
+    event Purchased(uint upc);
+
 
     function setDonation(
         address _owner,

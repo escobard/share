@@ -127,7 +127,7 @@ contract Share {
         ownerAmount = donationBase.getDonationOwnerAmount(msg.sender, _donationID);
         id = donationBase.getDonationId(msg.sender, _donationID);
 
-        return ( donation.owner, donation.lottery, donation.charity, donation.donor, donation.amount, donation.charityAmount, donation.lotteryAmount, donation.ownerAmount, donation.id);
+        return ( owner, lottery, charity, donor, amount, charityAmount, lotteryAmount, ownerAmount, id);
     }
 
     function isInitialized() public view returns(bool){
