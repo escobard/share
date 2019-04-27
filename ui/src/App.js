@@ -19,7 +19,7 @@ class App extends Component {
     // TODO setting to true to always display fetch form in case reviewer does not want to make a donation
     makeDonationTitle: "Make Donation form instructions",
     makeDonationMessage:
-      "Enter a valid public key in the Address Public field, the public address' private key in the Address Private field, and an ether value smaller than 1 in the Amount field.",
+      "Enter a valid public key in the Address Public field, the public address' private key in the Private Key field, and an ether value smaller than 1 in the Amount field.",
     makeDonationStatus: null,
     fetchDonationTitle: "Fetch Donation form instructions",
     fetchDonationMessage:

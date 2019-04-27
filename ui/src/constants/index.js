@@ -7,8 +7,8 @@ const makeDonationFields = [
     error: false
   },
   {
-    name: "addressPriv",
-    label: "Address Private",
+    name: "privKey",
+    label: "Private Key",
     placeholder:
       "Donor's private address - only used to SIGN raw transactions within API, not stored or cached",
     value: "",

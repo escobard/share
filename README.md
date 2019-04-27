@@ -13,7 +13,15 @@ The product can be accessed here: https://share-ui.herokuapp.com/
 
 Follow the instructions within the messages to utilize.
 
-    
+Feel free to use the following test account for a working `public / private` pair:
+
+```angular2html
+
+public address: 0xa102c7EE530B635E56f133a20786091eB800f640
+
+private key: 1E8722F6E86B4E856B4BA2F75F492F4123242713E4E57C3789AFDCF2F631954A
+
+```
 
 ## Product Technology
 
