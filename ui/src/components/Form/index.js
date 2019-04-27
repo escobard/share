@@ -30,15 +30,15 @@ class DynamicForm extends Component {
       this.setState({ hasFields: true });
 
       fields.map((field, index) => {
-        this.inputState(field, index);
+        return this.inputState(field, index);
       });
     }
   }
 
-  // purely used to test mounted values for now
+  /* purely used to test mounted values for now
   componentDidMount() {
     console.log(this.state);
-  }
+  } */
 
   // TODO - refactor to parent component in the future for re-usability
   /** Submits the form, handles trigger for POST request to API
@@ -46,7 +46,7 @@ class DynamicForm extends Component {
    **/
 
   submitForm = () => {
-    let { makeDonation, fetchDonation, donationID } = this.props;
+    let { makeDonation, fetchDonation } = this.props;
     let { value0, value1, value2, messageErrors } = this.state;
 
     if (makeDonation) {
@@ -173,14 +173,14 @@ class DynamicForm extends Component {
    **/
 
   inputState = (fieldObject, index) => {
-    Object.keys(fieldObject).map(key => {
+   Object.keys(fieldObject).map(key => {
       // only creates state for the error / value variables
       if (key === "error" || key === "value") {
         // uses index argument to create scalable state for each object in this.fields
         let stateVariable = `${key + index}`;
 
         // sets the state key name and value
-        this.setState({ [stateVariable]: fieldObject[key] });
+        return this.setState({ [stateVariable]: fieldObject[key] });
       }
     });
   };
@@ -231,7 +231,7 @@ class DynamicForm extends Component {
     } = this.state;
     let { fields, name, messageHeader, messageValue, messageStatus  } = this.props;
 
-    console.log("STATE", this.state);
+    // console.log("STATE", this.state);
 
     return (
       <Fragment>
