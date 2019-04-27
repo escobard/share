@@ -16,63 +16,27 @@ contract Share {
     address private Charity;
     bool private initialized = false;
     OwnerRole private ownerRole;
-    CharityRole private charityContract;
-    LotteryRole private lotteryContract;
+    CharityRole private charityRole;
+    LotteryRole private lotteryRole;
 
     // assigns an ID to each donation
     uint private donationID = 1;
 
     /// @notice sets the owner to the Owner variable upon contract init
     /// @dev can be expanded to account for many more constructor features
-    constructor(address _ownerRole, address _charityRole, address _lotteryRole) public {
+    /// @param _ownerRole address, contains the address of the OwnerRole contract
+    /// @param _charityRole address, contains the address of the CharityRole contract
+    /// @param _lotteryRole address, contains the address of the LotteryRole contract
+    /// @param _donationBase address, contains the address of the DonationBase contract
+    constructor(address _ownerRole, address _charityRole, address _lotteryRole, address _donationBase) public {
         Owner = msg.sender;
 
         // sets the address for the instance of each helper contract
         ownerRole = OwnerRole(_ownerRole);
-        charityContract = CharityRole(_charityRole);
-        lotteryContract = LotteryRole(_lotteryRole);
+        charityRole = CharityRole(_charityRole);
+        lotteryRole = LotteryRole(_lotteryRole);
+        donationBase = DonationBase(_donationBase);
     }
-
-    /// @notice Contains the stucture of the star metadata
-    /// @dev key of structure is the provided transaction hash, will be donationId in v2
-    /// @param owner address, contains the address of the contract owner
-    /// @param lottery address, contains the address of the lottery - ether account for v1, contract for v2
-    /// @param charity address, contains the address of the charity - an ether account for v1 and v2
-    /// @param donor address, contains the address of the contract owner - ether account always
-    /// @param amount uint, contains the original amount donated - all amounts are after gas
-    /// @param charityAmount, contains the remaining 95% of original amount sent to charity
-    /// @param lotteryAmount uint, contains the 4% of original amount sent to lottery
-    /// @param ownerAmount, contains the 1% of original amount sent to owner
-    /// @param id, contains the value of the last submitted donation - is returned to ui
-    // TODO - refactor all data handling, updating, and transfer to a BASE data management contract in the future
-    struct Donation {
-        address owner;
-        address lottery;
-        address charity;
-        address donor;
-        uint amount;
-        uint charityAmount;
-        uint lotteryAmount;
-        uint ownerAmount;
-        uint id;
-    }
-
-    /// @notice Contains the mapping for the lottery entrees
-    /// @dev
-    /// @param donor address, will be expanded for v2
-
-    mapping(address => address) public lotteryEntrees;
-
-    /// @notice Contains the mapping for donation data
-    /// @dev key of structure is the transactionHash, in v2 a donationId will be introduced
-    /// @param Donation structure, contains donation metadata
-
-    mapping(uint => Donation) private Donations;
-
-    /// @notice Initiates the contract once deployed, only available to owner
-    /// @dev Need to test the syntax here, unsure the require function works
-    /// @param _lottery address, contains the ethereum public key for lottery account
-    /// @param _charity address, contains the ethereum public key for charity account
 
     // TODO - this logic must also include the new contract
     function initiateContract(address _lottery, address _charity) public payable{
@@ -83,16 +47,16 @@ contract Share {
         // TODO - ei - Charity = CharityRole(_charity) - argument must contain address of contract
 
         // sets the lottery for the lotteryRole contract
-        lotteryContract.setLottery(_lottery, msg.sender);
+        lotteryRole.setLottery(_lottery, msg.sender);
 
         // gets lottery address
-        Lottery = lotteryContract.getLottery(msg.sender);
+        Lottery = lotteryRole.getLottery(msg.sender);
 
         // sets the charity for the charityRole contract
-        charityContract.setCharity(_charity, msg.sender);
+        charityRole.setCharity(_charity, msg.sender);
 
         // gets charity address
-        Charity = charityContract.getCharity(msg.sender);
+        Charity = charityRole.getCharity(msg.sender);
 
         initialized = true;
     }
@@ -102,7 +66,7 @@ contract Share {
 
     function makeDonation() public payable{
         // owner, charity, and lottery accounts cannot utilize the handleFunds function
-        require(initialized == true && !ownerRole.isOwner(msg.sender) && !charityContract.isCharity() && !lotteryContract.isLottery());
+        require(initialized == true && !ownerRole.isOwner(msg.sender) && !charityRole.isCharity() && !lotteryRole.isLottery());
 
         // creates the amount variable, used to set the amount later on in this function
         // these math. functions can be move to the API to avoid gas cost for calculations
@@ -120,6 +84,8 @@ contract Share {
 
         // stores all the data
         Donations[donationID] = Donation(Owner, Lottery, Charity, msg.sender, amount, charityAmount, lotteryAmount, ownerAmount, donationID);
+
+        // add lotteryEntrees struct
 
         // updates donationID;
         donationID = donationID + 1;
