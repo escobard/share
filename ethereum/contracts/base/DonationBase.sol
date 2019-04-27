@@ -62,7 +62,7 @@ contract DonationBase {
     function setReceived(
         address _owner,
         uint _donationID
-    ){
+    )public payable{
         require(ownerRole.isOwner(_owner));
 
         Donation memory donation;
@@ -172,5 +172,13 @@ contract DonationBase {
     ) public view returns(uint){
         require(ownerRole.isOwner(_owner));
         return Donations[_donationID].id;
+    }
+
+    function getDonationState(
+        address _owner,
+        uint _donationID
+    ) public view returns(uint){
+        require(ownerRole.isOwner(_owner));
+        return Donations[_donationID].donationState;
     }
 }

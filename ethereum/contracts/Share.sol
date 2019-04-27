@@ -71,6 +71,9 @@ contract Share {
 
         // creates the amount variable, used to set the amount later on in this function
         // these math. functions can be move to the API to avoid gas cost for calculations
+
+        donationBase.setReceived(Owner, donationID);
+
         uint amount = msg.value;
         uint charityAmount = amount * 95 / 100;
         uint lotteryAmount = amount * 4 / 100;
@@ -135,8 +138,9 @@ contract Share {
         lotteryAmount = donationBase.getDonationLotteryAmount(msg.sender, _donationID);
         ownerAmount = donationBase.getDonationOwnerAmount(msg.sender, _donationID);
         id = donationBase.getDonationId(msg.sender, _donationID);
+        donationState = donationBase.getDonationId(msg.sender, _donationID);
 
-        return ( owner, lottery, charity, donor, amount, charityAmount, lotteryAmount, ownerAmount, id);
+        return ( owner, lottery, charity, donor, amount, charityAmount, lotteryAmount, ownerAmount, id, donationState);
     }
 
     function isInitialized() public view returns(bool){
