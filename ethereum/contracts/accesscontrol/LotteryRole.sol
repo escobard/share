@@ -1,6 +1,6 @@
 pragma solidity ^0.4.24;
 
-import "../accesscontrol/OwnableRoleRole.sol";
+import "../accesscontrol/OwnableRole.sol";
 
 // TODO - deploy this, and grab address
 // Define a contract 'LotteryRole' to manage this role - checks if address is parent contracts lottery

@@ -4,7 +4,7 @@ pragma solidity ^0.4.24;
 
 // TODO - may include in the submission but most likely not, not necessary and overly complicates smart contract logic
 
-contract OwnableRoleRole {
+contract OwnableRole {
     address private Owner;
 
     bool private initialized = false;

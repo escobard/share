@@ -1,6 +1,6 @@
 pragma solidity ^0.4.23;
 
-import "../accesscontrol/OwnableRoleRole.sol";
+import "../accesscontrol/OwnableRole.sol";
 
 contract Transfer is OwnableRole {
 

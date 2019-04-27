@@ -3,7 +3,7 @@ pragma solidity ^0.4.23;
 
 // actor contracts
 import "./accesscontrol/CharityRole.sol";
-import "./accesscontrol/OwnableRoleRole.sol";
+import "./accesscontrol/OwnableRole.sol";
 import "./accesscontrol/LotteryRole.sol";
 
 contract Share {
