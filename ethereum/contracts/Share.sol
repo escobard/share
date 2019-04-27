@@ -3,7 +3,7 @@ pragma solidity ^0.4.23;
 
 // actor contracts
 import "./accesscontrol/CharityRole.sol";
-import "./core/Ownable.sol";
+import "./accesscontrol/OwnableRoleRole.sol";
 import "./accesscontrol/LotteryRole.sol";
 
 contract Share {
@@ -12,7 +12,7 @@ contract Share {
     address private Lottery;
     address private Charity;
     bool private initialized = false;
-    Ownable private ownableContract;
+    OwnableRole private ownableContract;
     CharityRole private charityContract;
     LotteryRole private lotteryContract;
 
@@ -25,7 +25,7 @@ contract Share {
         Owner = msg.sender;
 
         // sets the address for the instance of each helper contract
-        ownableContract = Ownable(_ownable);
+        ownableContract = OwnableRole(_ownable);
         charityContract = CharityRole(_charityRole);
         lotteryContract = LotteryRole(_lotteryRole);
     }

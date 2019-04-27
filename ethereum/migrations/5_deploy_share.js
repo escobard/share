@@ -1,10 +1,10 @@
 const LotteryRole = artifacts.require("./LotteryRole.sol"),
   CharityRole = artifacts.require('./CharityRole.sol'),
   Share = artifacts.require('./Share.sol'),
-  Ownable = artifacts.require("./Ownable.sol");
+  OwnableRole = artifacts.require("./OwnableRole.sol");
 
 module.exports = function(deployer) {
-  // deploys initial Ownable contracts
-  deployer.deploy(Share, Ownable.address, CharityRole.address, LotteryRole.address, {gas: 3000000})
+  // deploys initial OwnableRole contracts
+  deployer.deploy(Share, OwnableRole.address, CharityRole.address, LotteryRole.address, {gas: 3000000})
 
 };

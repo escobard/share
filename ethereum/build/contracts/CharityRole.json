@@ -20,7 +20,7 @@
           "type": "address"
         }
       ],
-      "name": "setOwnable",
+      "name": "setOwnableRole",
       "outputs": [],
       "payable": false,
       "stateMutability": "nonpayable",
@@ -91,7 +91,7 @@
   "deployedBytecode": "0x60806040526004361061006d576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680631bf230cd146100725780633fc70277146100f557806363bd1d4a1461014b5780636d7932d114610155578063c4618d1814610184575b600080fd5b34801561007e57600080fd5b506100b3600480360381019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506101c7565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b610149600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506102f5565b005b61015361043c565b005b34801561016157600080fd5b5061016a610665565b604051808215151515815260200191505060405180910390f35b34801561019057600080fd5b506101c5600480360381019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506106bc565b005b6000600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16632f54bf6e836040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001915050602060405180830381600087803b15801561028657600080fd5b505af115801561029a573d6000803e3d6000fd5b505050506040513d60208110156102b057600080fd5b810190808051906020019092919050505015156102cc57600080fd5b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff169050919050565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16632f54bf6e826040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001915050602060405180830381600087803b1580156103b257600080fd5b505af11580156103c6573d6000803e3d6000fd5b505050506040513d60208110156103dc57600080fd5b810190808051906020019092919050505015156103f857600080fd5b816000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505050565b6000600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16632f54bf6e336040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001915050602060405180830381600087803b1580156104fb57600080fd5b505af115801561050f573d6000803e3d6000fd5b505050506040513d602081101561052557600080fd5b8101908080519060200190929190505050151561054157600080fd5b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663893d20e86040518163ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401602060405180830381600087803b1580156105c757600080fd5b505af11580156105db573d6000803e3d6000fd5b505050506040513d60208110156105f157600080fd5b810190808051906020019092919050505090508073ffffffffffffffffffffffffffffffffffffffff166108fc3073ffffffffffffffffffffffffffffffffffffffff16319081150290604051600060405180830381858888f19350505050158015610661573d6000803e3d6000fd5b5050565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614905090565b80600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505600a165627a7a72305820d5d05354596feeebb028ff19cf64e7bf068f892b4312e7cf8c04c154c201c76e0029",
   "sourceMap": "592:1255:1:-;;;737:85;8:9:-1;5:2;;;30:1;27;20:12;5:2;737:85:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;807:8;781:15;;:35;;;;;;;;;;;;;;;;;;737:85;592:1255;;;;;;",
   "deployedSourceMap": "592:1255:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1237:143;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1237:143:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;989:242;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1662:182;;;;;;1566:90;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1566:90:1;;;;;;;;;;;;;;;;;;;;;;;;;;;890:93;;8:9:-1;5:2;;;30:1;27;20:12;5:2;890:93:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;1237:143;1295:7;1318:15;;;;;;;;;;;:23;;;1342:7;1318:32;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1318:32:1;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;1318:32:1;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1318:32:1;;;;;;;;;;;;;;;;1310:41;;;;;;;;1365:7;;;;;;;;;;;1358:14;;1237:143;;;:::o;989:242::-;1167:15;;;;;;;;;;;:23;;;1191:7;1167:32;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1167:32:1;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;1167:32:1;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1167:32:1;;;;;;;;;;;;;;;;1159:41;;;;;;;;1217:8;1207:7;;:18;;;;;;;;;;;;;;;;;;989:242;;:::o;1662:182::-;1752:13;1709:15;;;;;;;;;;;:23;;;1733:10;1709:35;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1709:35:1;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;1709:35:1;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1709:35:1;;;;;;;;;;;;;;;;1701:44;;;;;;;;1768:15;;;;;;;;;;;:24;;;:26;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1768:26:1;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;1768:26:1;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1768:26:1;;;;;;;;;;;;;;;;1752:42;;1801:5;:14;;:37;1824:4;1816:21;;;1801:37;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;1801:37:1;1662:182;:::o;1566:90::-;1608:4;1643:7;;;;;;;;;;;1629:21;;:10;:21;;;1622:28;;1566:90;:::o;890:93::-;968:8;942:15;;:35;;;;;;;;;;;;;;;;;;890:93;:::o",
-  "source": "pragma solidity ^0.4.24;\r\n\r\n// TODO - use this as the boilerplate for owner, charity, lottery, donor role files\r\n// TODO - check requirements and explanation for each directory: https://classroom.udacity.com/nanodegrees/nd1309-beta/parts/03713f8a-c233-479e-9105-9809fb260489/modules/b32541ea-7b86-4689-b42a-7ba8c2689905/lessons/da5331bc-e6ae-4372-b18a-71fa7cc77b67/concepts/25b82382-c290-4289-8ac5-d948aad0a349\r\n\r\nimport \"../core/Ownable.sol\";\r\n\r\n// TODO - deploy this, and grab address\r\n// Define a contract 'CharityRole' to manage this role - checks if address is parent contracts charity\r\ncontract CharityRole {\r\n\r\n  address private Charity;\r\n  Ownable private ownableContract;\r\n\r\n  // adds ownableContract library to the contract\r\n  constructor(address _ownable) public {\r\n    ownableContract = Ownable(_ownable);\r\n  }\r\n\r\n  // can be restricted to pure, not sure what that means yet\r\n  function setOwnable(address _ownable) public {\r\n    ownableContract = Ownable(_ownable);\r\n  }\r\n\r\n  function setCharity(address _charity, address _sender) public payable {\r\n\r\n    // can't use modifiers with imported contracts, if importing instance to my knowledge\r\n    require(ownableContract.isOwner(_sender));\r\n    Charity = _charity;\r\n  }\r\n\r\n  function getCharity(address _sender) public view returns (address){\r\n    require(ownableContract.isOwner(_sender));\r\n    return Charity;\r\n\r\n  }\r\n\r\n  // could be refactored into a util library\r\n  modifier onlyCharity{\r\n    require(isCharity());\r\n    _;\r\n  }\r\n\r\n  modifier notCharity{\r\n    require(!isCharity());\r\n    _;\r\n  }\r\n\r\n  function isCharity() public view returns (bool){\r\n\r\n    return msg.sender == Charity;\r\n  }\r\n\r\n  function payout() public payable{\r\n    require(ownableContract.isOwner(msg.sender));\r\n    address Owner = ownableContract.getOwner();\r\n    Owner.transfer(address(this).balance);\r\n  }\r\n}",
+  "source": "pragma solidity ^0.4.24;\r\n\r\n// TODO - use this as the boilerplate for owner, charity, lottery, donor role files\r\n// TODO - check requirements and explanation for each directory: https://classroom.udacity.com/nanodegrees/nd1309-beta/parts/03713f8a-c233-479e-9105-9809fb260489/modules/b32541ea-7b86-4689-b42a-7ba8c2689905/lessons/da5331bc-e6ae-4372-b18a-71fa7cc77b67/concepts/25b82382-c290-4289-8ac5-d948aad0a349\r\n\r\nimport \"../core/OwnableRole.sol\";\r\n\r\n// TODO - deploy this, and grab address\r\n// Define a contract 'CharityRole' to manage this role - checks if address is parent contracts charity\r\ncontract CharityRole {\r\n\r\n  address private Charity;\r\n  OwnableRole private ownableContract;\r\n\r\n  // adds ownableContract library to the contract\r\n  constructor(address _ownable) public {\r\n    ownableContract = OwnableRole(_ownable);\r\n  }\r\n\r\n  // can be restricted to pure, not sure what that means yet\r\n  function setOwnableRole(address _ownable) public {\r\n    ownableContract = OwnableRole(_ownable);\r\n  }\r\n\r\n  function setCharity(address _charity, address _sender) public payable {\r\n\r\n    // can't use modifiers with imported contracts, if importing instance to my knowledge\r\n    require(ownableContract.isOwner(_sender));\r\n    Charity = _charity;\r\n  }\r\n\r\n  function getCharity(address _sender) public view returns (address){\r\n    require(ownableContract.isOwner(_sender));\r\n    return Charity;\r\n\r\n  }\r\n\r\n  // could be refactored into a util library\r\n  modifier onlyCharity{\r\n    require(isCharity());\r\n    _;\r\n  }\r\n\r\n  modifier notCharity{\r\n    require(!isCharity());\r\n    _;\r\n  }\r\n\r\n  function isCharity() public view returns (bool){\r\n\r\n    return msg.sender == Charity;\r\n  }\r\n\r\n  function payout() public payable{\r\n    require(ownableContract.isOwner(msg.sender));\r\n    address Owner = ownableContract.getOwner();\r\n    Owner.transfer(address(this).balance);\r\n  }\r\n}",
   "sourcePath": "D:\\Documents\\School\\Share\\ethereum\\contracts\\accesscontrol\\CharityRole.sol",
   "ast": {
     "absolutePath": "/D/Documents/School/Share/ethereum/contracts/accesscontrol/CharityRole.sol",
@@ -115,8 +115,8 @@
         "src": "0:24:1"
       },
       {
-        "absolutePath": "/D/Documents/School/Share/ethereum/contracts/core/Ownable.sol",
-        "file": "../core/Ownable.sol",
+        "absolutePath": "/D/Documents/School/Share/ethereum/contracts/core/OwnableRole.sol",
+        "file": "../core/OwnableRole.sol",
         "id": 328,
         "nodeType": "ImportDirective",
         "scope": 451,
@@ -174,19 +174,19 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_Ownable_$640",
-              "typeString": "contract Ownable"
+              "typeIdentifier": "t_contract$_OwnableRole_$640",
+              "typeString": "contract OwnableRole"
             },
             "typeName": {
               "contractScope": null,
               "id": 331,
-              "name": "Ownable",
+              "name": "OwnableRole",
               "nodeType": "UserDefinedTypeName",
               "referencedDeclaration": 640,
               "src": "648:7:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Ownable_$640",
-                "typeString": "contract Ownable"
+                "typeIdentifier": "t_contract$_OwnableRole_$640",
+                "typeString": "contract OwnableRole"
               }
             },
             "value": null,
@@ -215,8 +215,8 @@
                       "referencedDeclaration": 332,
                       "src": "781:15:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Ownable_$640",
-                        "typeString": "contract Ownable"
+                        "typeIdentifier": "t_contract$_OwnableRole_$640",
+                        "typeString": "contract OwnableRole"
                       }
                     },
                     "nodeType": "Assignment",
@@ -246,14 +246,14 @@
                           }
                         ],
                         "id": 338,
-                        "name": "Ownable",
+                        "name": "OwnableRole",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 640,
                         "src": "799:7:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_Ownable_$640_$",
-                          "typeString": "type(contract Ownable)"
+                          "typeIdentifier": "t_type$_t_contract$_OwnableRole_$640_$",
+                          "typeString": "type(contract OwnableRole)"
                         }
                       },
                       "id": 340,
@@ -266,14 +266,14 @@
                       "nodeType": "FunctionCall",
                       "src": "799:17:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Ownable_$640",
-                        "typeString": "contract Ownable"
+                        "typeIdentifier": "t_contract$_OwnableRole_$640",
+                        "typeString": "contract OwnableRole"
                       }
                     },
                     "src": "781:35:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_Ownable_$640",
-                      "typeString": "contract Ownable"
+                      "typeIdentifier": "t_contract$_OwnableRole_$640",
+                      "typeString": "contract OwnableRole"
                     }
                   },
                   "id": 342,
@@ -359,8 +359,8 @@
                       "referencedDeclaration": 332,
                       "src": "942:15:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Ownable_$640",
-                        "typeString": "contract Ownable"
+                        "typeIdentifier": "t_contract$_OwnableRole_$640",
+                        "typeString": "contract OwnableRole"
                       }
                     },
                     "nodeType": "Assignment",
@@ -390,14 +390,14 @@
                           }
                         ],
                         "id": 350,
-                        "name": "Ownable",
+                        "name": "OwnableRole",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 640,
                         "src": "960:7:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_Ownable_$640_$",
-                          "typeString": "type(contract Ownable)"
+                          "typeIdentifier": "t_type$_t_contract$_OwnableRole_$640_$",
+                          "typeString": "type(contract OwnableRole)"
                         }
                       },
                       "id": 352,
@@ -410,14 +410,14 @@
                       "nodeType": "FunctionCall",
                       "src": "960:17:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Ownable_$640",
-                        "typeString": "contract Ownable"
+                        "typeIdentifier": "t_contract$_OwnableRole_$640",
+                        "typeString": "contract OwnableRole"
                       }
                     },
                     "src": "942:35:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_Ownable_$640",
-                      "typeString": "contract Ownable"
+                      "typeIdentifier": "t_contract$_OwnableRole_$640",
+                      "typeString": "contract OwnableRole"
                     }
                   },
                   "id": 354,
@@ -432,7 +432,7 @@
             "isConstructor": false,
             "isDeclaredConst": false,
             "modifiers": [],
-            "name": "setOwnable",
+            "name": "setOwnableRole",
             "nodeType": "FunctionDefinition",
             "parameters": {
               "id": 347,
@@ -523,8 +523,8 @@
                             "referencedDeclaration": 332,
                             "src": "1167:15:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_Ownable_$640",
-                              "typeString": "contract Ownable"
+                              "typeIdentifier": "t_contract$_OwnableRole_$640",
+                              "typeString": "contract OwnableRole"
                             }
                           },
                           "id": 365,
@@ -766,8 +766,8 @@
                             "referencedDeclaration": 332,
                             "src": "1318:15:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_Ownable_$640",
-                              "typeString": "contract Ownable"
+                              "typeIdentifier": "t_contract$_OwnableRole_$640",
+                              "typeString": "contract OwnableRole"
                             }
                           },
                           "id": 384,
@@ -1344,8 +1344,8 @@
                             "referencedDeclaration": 332,
                             "src": "1709:15:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_Ownable_$640",
-                              "typeString": "contract Ownable"
+                              "typeIdentifier": "t_contract$_OwnableRole_$640",
+                              "typeString": "contract OwnableRole"
                             }
                           },
                           "id": 427,
@@ -1463,8 +1463,8 @@
                         "referencedDeclaration": 332,
                         "src": "1768:15:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Ownable_$640",
-                          "typeString": "contract Ownable"
+                          "typeIdentifier": "t_contract$_OwnableRole_$640",
+                          "typeString": "contract OwnableRole"
                         }
                       },
                       "id": 436,
@@ -1680,8 +1680,8 @@
         "src": "0:24:1"
       },
       {
-        "absolutePath": "/D/Documents/School/Share/ethereum/contracts/core/Ownable.sol",
-        "file": "../core/Ownable.sol",
+        "absolutePath": "/D/Documents/School/Share/ethereum/contracts/core/OwnableRole.sol",
+        "file": "../core/OwnableRole.sol",
         "id": 328,
         "nodeType": "ImportDirective",
         "scope": 451,
@@ -1739,19 +1739,19 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_Ownable_$640",
-              "typeString": "contract Ownable"
+              "typeIdentifier": "t_contract$_OwnableRole_$640",
+              "typeString": "contract OwnableRole"
             },
             "typeName": {
               "contractScope": null,
               "id": 331,
-              "name": "Ownable",
+              "name": "OwnableRole",
               "nodeType": "UserDefinedTypeName",
               "referencedDeclaration": 640,
               "src": "648:7:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Ownable_$640",
-                "typeString": "contract Ownable"
+                "typeIdentifier": "t_contract$_OwnableRole_$640",
+                "typeString": "contract OwnableRole"
               }
             },
             "value": null,
@@ -1780,8 +1780,8 @@
                       "referencedDeclaration": 332,
                       "src": "781:15:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Ownable_$640",
-                        "typeString": "contract Ownable"
+                        "typeIdentifier": "t_contract$_OwnableRole_$640",
+                        "typeString": "contract OwnableRole"
                       }
                     },
                     "nodeType": "Assignment",
@@ -1811,14 +1811,14 @@
                           }
                         ],
                         "id": 338,
-                        "name": "Ownable",
+                        "name": "OwnableRole",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 640,
                         "src": "799:7:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_Ownable_$640_$",
-                          "typeString": "type(contract Ownable)"
+                          "typeIdentifier": "t_type$_t_contract$_OwnableRole_$640_$",
+                          "typeString": "type(contract OwnableRole)"
                         }
                       },
                       "id": 340,
@@ -1831,14 +1831,14 @@
                       "nodeType": "FunctionCall",
                       "src": "799:17:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Ownable_$640",
-                        "typeString": "contract Ownable"
+                        "typeIdentifier": "t_contract$_OwnableRole_$640",
+                        "typeString": "contract OwnableRole"
                       }
                     },
                     "src": "781:35:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_Ownable_$640",
-                      "typeString": "contract Ownable"
+                      "typeIdentifier": "t_contract$_OwnableRole_$640",
+                      "typeString": "contract OwnableRole"
                     }
                   },
                   "id": 342,
@@ -1924,8 +1924,8 @@
                       "referencedDeclaration": 332,
                       "src": "942:15:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Ownable_$640",
-                        "typeString": "contract Ownable"
+                        "typeIdentifier": "t_contract$_OwnableRole_$640",
+                        "typeString": "contract OwnableRole"
                       }
                     },
                     "nodeType": "Assignment",
@@ -1955,14 +1955,14 @@
                           }
                         ],
                         "id": 350,
-                        "name": "Ownable",
+                        "name": "OwnableRole",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 640,
                         "src": "960:7:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_Ownable_$640_$",
-                          "typeString": "type(contract Ownable)"
+                          "typeIdentifier": "t_type$_t_contract$_OwnableRole_$640_$",
+                          "typeString": "type(contract OwnableRole)"
                         }
                       },
                       "id": 352,
@@ -1975,14 +1975,14 @@
                       "nodeType": "FunctionCall",
                       "src": "960:17:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Ownable_$640",
-                        "typeString": "contract Ownable"
+                        "typeIdentifier": "t_contract$_OwnableRole_$640",
+                        "typeString": "contract OwnableRole"
                       }
                     },
                     "src": "942:35:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_Ownable_$640",
-                      "typeString": "contract Ownable"
+                      "typeIdentifier": "t_contract$_OwnableRole_$640",
+                      "typeString": "contract OwnableRole"
                     }
                   },
                   "id": 354,
@@ -1997,7 +1997,7 @@
             "isConstructor": false,
             "isDeclaredConst": false,
             "modifiers": [],
-            "name": "setOwnable",
+            "name": "setOwnableRole",
             "nodeType": "FunctionDefinition",
             "parameters": {
               "id": 347,
@@ -2088,8 +2088,8 @@
                             "referencedDeclaration": 332,
                             "src": "1167:15:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_Ownable_$640",
-                              "typeString": "contract Ownable"
+                              "typeIdentifier": "t_contract$_OwnableRole_$640",
+                              "typeString": "contract OwnableRole"
                             }
                           },
                           "id": 365,
@@ -2331,8 +2331,8 @@
                             "referencedDeclaration": 332,
                             "src": "1318:15:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_Ownable_$640",
-                              "typeString": "contract Ownable"
+                              "typeIdentifier": "t_contract$_OwnableRole_$640",
+                              "typeString": "contract OwnableRole"
                             }
                           },
                           "id": 384,
@@ -2909,8 +2909,8 @@
                             "referencedDeclaration": 332,
                             "src": "1709:15:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_Ownable_$640",
-                              "typeString": "contract Ownable"
+                              "typeIdentifier": "t_contract$_OwnableRole_$640",
+                              "typeString": "contract OwnableRole"
                             }
                           },
                           "id": 427,
@@ -3028,8 +3028,8 @@
                         "referencedDeclaration": 332,
                         "src": "1768:15:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Ownable_$640",
-                          "typeString": "contract Ownable"
+                          "typeIdentifier": "t_contract$_OwnableRole_$640",
+                          "typeString": "contract OwnableRole"
                         }
                       },
                       "id": 436,

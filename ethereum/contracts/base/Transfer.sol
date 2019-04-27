@@ -1,8 +1,8 @@
 pragma solidity ^0.4.23;
 
-import "../core/Ownable.sol";
+import "../accesscontrol/OwnableRoleRole.sol";
 
-contract Transfer is Ownable {
+contract Transfer is OwnableRole {
 
     address private Owner;
 

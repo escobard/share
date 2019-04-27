@@ -1,18 +1,18 @@
 pragma solidity ^0.4.24;
 
-import "../core/Ownable.sol";
+import "../accesscontrol/OwnableRoleRole.sol";
 
 // TODO - deploy this, and grab address
 // Define a contract 'LotteryRole' to manage this role - checks if address is parent contracts lottery
 contract LotteryRole{
 
     address private Lottery;
-    Ownable private ownableContract;
+    OwnableRole private ownableContract;
 
     // adds ownableContract library to the contract
 
     constructor(address _ownable) public {
-        ownableContract = Ownable(_ownable);
+        ownableContract = OwnableRole(_ownable);
     }
 
     function setLottery(address _lottery, address _sender) public payable {
