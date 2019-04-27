@@ -32,13 +32,14 @@ contract Share {
     /// @param _charityRole address, contains the address of the CharityRole contract
     /// @param _lotteryRole address, contains the address of the LotteryRole contract
     /// @param _donationBase address, contains the address of the DonationBase contract
-    constructor(address _ownerRole, address _charityRole, address _lotteryRole, address _donationBase) public {
+    constructor(address _ownerRole, address _charityRole, address _lotteryRole, address _donorRole, address _donationBase) public {
         Owner = msg.sender;
 
         // sets the address for the instance of each helper contract
         ownerRole = OwnerRole(_ownerRole);
         charityRole = CharityRole(_charityRole);
         lotteryRole = LotteryRole(_lotteryRole);
+        donorRole = DonorRole(_donorRole);
         donationBase = DonationBase(_donationBase);
     }
 

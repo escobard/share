@@ -12,6 +12,7 @@ module.exports = function(deployer) {
     OwnerRole.address,
     CharityRole.address,
     LotteryRole.address,
+    DonorRole.address,
     DonationBase.address,
     { gas: 3000000 }
   );

@@ -2,6 +2,7 @@
 const LotteryRole = artifacts.require("./LotteryRole.sol"),
   CharityRole = artifacts.require("./CharityRole.sol"),
   OwnerRole = artifacts.require("./OwnerRole.sol"),
+  DonorRole = artifacts.require("./DonorRole.sol"),
   DonationBase = artifacts.require("./DonationBase.sol");
 Share = artifacts.require("./Share.sol");
 
@@ -25,6 +26,9 @@ contract("Share", accounts => {
     this.lotteryRole = await LotteryRole.new(this.ownerRole.address, {
       from: owner
     });
+    this.donorRole = await DonorRole.new(this.ownerRole.address, {
+      from: owner
+    });
     this.donationBase = await DonationBase.new(this.ownerRole.address, {
       from: owner
     });
@@ -32,6 +36,7 @@ contract("Share", accounts => {
       this.ownerRole.address,
       this.charityRole.address,
       this.lotteryRole.address,
+      this.donorRole.address,
       this.donationBase.address,
       { from: owner }
     );
