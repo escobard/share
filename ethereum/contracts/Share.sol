@@ -18,6 +18,7 @@ contract Share {
     OwnerRole private ownerRole;
     CharityRole private charityRole;
     LotteryRole private lotteryRole;
+    DonationBase private donationBase;
 
     // assigns an ID to each donation
     uint private donationID = 1;
@@ -83,7 +84,7 @@ contract Share {
         Owner.transfer(ownerAmount);
 
         // stores all the data
-        donationBase.Donations[donationID] = donationBase.Donation(Owner, Lottery, Charity, msg.sender, amount, charityAmount, lotteryAmount, ownerAmount, donationID);
+        DonationBase.Donations[donationID] = donationBase.Donation(Owner, Lottery, Charity, msg.sender, amount, charityAmount, lotteryAmount, ownerAmount, donationID);
 
         // add lotteryEntrees struct
         donationBase.LotteryEntrees[donationID] = msg.sender;
@@ -113,7 +114,7 @@ contract Share {
         // requires the owner to call this function, only owner address can access donationID atm
         require(ownerRole.isOwner(msg.sender));
 
-        Donation memory donation = Donations[_id];
+        DonationBase.Donation memory donation = donationBase.Donations[_id];
 
         return ( donation.owner, donation.lottery, donation.charity, donation.donor, donation.amount, donation.charityAmount, donation.lotteryAmount, donation.ownerAmount, donation.id);
     }

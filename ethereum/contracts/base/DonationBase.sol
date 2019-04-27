@@ -12,7 +12,7 @@ contract DonationBase {
     /// @dev key of structure is the transactionHash, in v2 a donationId will be introduced
     /// @param Donation structure, contains donation metadata
 
-    mapping(uint => Donation) private Donations;
+    mapping(uint => Donation) public Donations;
 
     /// @notice Initiates the contract once deployed, only available to owner
     /// @dev Need to test the syntax here, unsure the require function works
