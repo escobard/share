@@ -93,15 +93,27 @@ contract DonationBase {
 
     function setProcessed(
         address _owner,
+        uint _amount,
+        uint _charityAmount,
+        uint _lotteryAmount,
+        uint _ownerAmount,
         uint _donationID
     )public payable{
         require(ownerRole.isOwner(_owner));
 
         require(state == State.Received);
 
-        Donation memory donation;
+        Donation memory donation = Donations[_donationID];
 
         donation.donationState = state;
+
+        donation.amount = _amount;
+
+        donation.charityAmount = _charityAmount;
+
+        donation.lotteryAmount = _lotteryAmount;
+
+        donation.ownerAmount = _ownerAmount;
 
         Donations[_donationID] = donation;
 
