@@ -15,7 +15,7 @@ contract DonationBase {
     /// @dev
     /// @param donor address, will be expanded for v2
 
-    mapping(address => address) private LotteryEntrees;
+    mapping(uint => address) private LotteryEntrees;
 
     /// @notice Contains the mapping for donation data
     /// @dev key of structure is the transactionHash, in v2 a donationId will be introduced
@@ -64,6 +64,92 @@ contract DonationBase {
         uint _donationID
     ) public payable {
 
+        require(ownerRole.isOwner(_owner));
+
         Donations[_donationID] = Donation(_owner, _lottery, _charity, _donor, _amount, _charityAmount, _lotteryAmount, _ownerAmount, _donationID);
+    }
+
+    function setLottery(
+        address _owner,
+        address _donor,
+        uint _donationId)
+    public payable {
+
+        require(ownerRole.isOwner(_owner));
+
+        LotteryEntrees[_donationId] = _donor;
+
+    }
+
+    function getDonationOwner(
+        address _owner,
+        uint _donationID
+    ) public view returns(address){
+        require(ownerRole.isOwner(_owner));
+        return Donations[_donationID].owner;
+    }
+
+    function getDonationLottery(
+        address _owner,
+        uint _donationID
+    ) public view returns(address){
+        require(ownerRole.isOwner(_owner));
+        return Donations[_donationID].lottery;
+    }
+
+    function getDonationCharity(
+        address _owner,
+        uint _donationID
+    ) public view returns(address){
+        require(ownerRole.isOwner(_owner));
+        return Donations[_donationID].charity;
+    }
+
+    function getDonationDonor(
+        address _owner,
+        uint _donationID
+    ) public view returns(address){
+        require(ownerRole.isOwner(_owner));
+        return Donations[_donationID].donor;
+    }
+
+    function getDonationAmount(
+        address _owner,
+        uint _donationID
+    ) public view returns(uint){
+        require(ownerRole.isOwner(_owner));
+        return Donations[_donationID].amount;
+    }
+
+    function getDonationCharityAmount(
+        address _owner,
+        uint _donationID
+    ) public view returns(uint){
+        require(ownerRole.isOwner(_owner));
+        return Donations[_donationID].charityAmount;
+    }
+
+    function getDonationLotteryAmount(
+        address _owner,
+        uint _donationID
+    ) public view returns(uint){
+        require(ownerRole.isOwner(_owner));
+        return Donations[_donationID].lotteryAmount;
+    }
+
+    function getDonationOwnerAmount(
+        address _owner,
+        uint _donationID
+    ) public view returns(uint){
+        require(ownerRole.isOwner(_owner));
+        return Donations[_donationID].ownerAmount;
+    }
+
+    function getDonationId(
+        address _owner,
+        uint _donationID
+    ) public view returns(uint){
+        require(ownerRole.isOwner(_owner));
+        return Donations[_donationID].id;
     }
 }

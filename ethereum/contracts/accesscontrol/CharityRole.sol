@@ -17,11 +17,6 @@ contract CharityRole {
     ownerRole = OwnerRole(_ownable);
   }
 
-  // can be restricted to pure, not sure what that means yet
-  function setOwnerRole(address _ownable) public {
-    ownerRole = OwnerRole(_ownable);
-  }
-
   function setCharity(address _charity, address _sender) public payable {
 
     // can't use modifiers with imported contracts, if importing instance to my knowledge

@@ -85,10 +85,10 @@ contract Share {
 
         // stores all the data
 
-        donationBase.setDonation(Owner, Lottery, Charity, msg.sender, amount, charityAmount, lotteryAmount, ownerAmount, donationID)
+        donationBase.setDonation(Owner, Lottery, Charity, msg.sender, amount, charityAmount, lotteryAmount, ownerAmount, donationID);
 
         // add lotteryEntrees struct
-        donationBase.LotteryEntrees[donationID] = msg.sender;
+        donationBase.setLottery(Owner, msg.sender, donationID);
 
         // updates donationID;
         donationID = donationID + 1;
@@ -102,7 +102,8 @@ contract Share {
         return donationID;
     }
 
-    function fetchDonation(uint _id) public view returns (address owner,
+    function fetchDonation(uint _donationID) public view returns (
+        address owner,
         address lottery,
         address charity,
         address donor,
@@ -110,12 +111,21 @@ contract Share {
         uint charityAmount,
         uint lotteryAmount,
         uint ownerAmount,
-        uint id){
+        uint id
+    ){
 
         // requires the owner to call this function, only owner address can access donationID atm
         require(ownerRole.isOwner(msg.sender));
 
-        DonationBase.Donation memory donation = donationBase.Donations[_id];
+        owner = donationBase.getDonationOwner(msg.sender, _donationID);
+        lottery = donationBase.getDonationLottery(msg.sender, _donationID);
+        charity = donationBase.getDonationCharity(msg.sender, _donationID);
+        donor = donationBase.getDonationDonor(msg.sender, _donationID);
+        amount = donationBase.getDonationAmount(msg.sender, _donationID);
+        charityAmount = donationBase.getDonationCharityAmount(msg.sender, _donationID);
+        lotteryAmount = donationBase.getDonationLotteryAmount(msg.sender, _donationID);
+        ownerAmount = donationBase.getDonationOwnerAmount(msg.sender, _donationID);
+        id = donationBase.getDonationId(msg.sender, _donationID);
 
         return ( donation.owner, donation.lottery, donation.charity, donation.donor, donation.amount, donation.charityAmount, donation.lotteryAmount, donation.ownerAmount, donation.id);
     }
