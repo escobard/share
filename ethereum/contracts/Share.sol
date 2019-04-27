@@ -83,12 +83,23 @@ contract Share {
 
         // TODO - these can be refactored to ownerRole, since it utilizes the transfer of ownership principle
         Charity.transfer(charityAmount);
+
+        donationBase.setSentToCharity(Owner, charityAmount, donationID);
+
         Lottery.transfer(lotteryAmount);
+
+        donationBase.setSentToLottery(Owner, lotteryAmount, donationID);
 
         // dispatches remaining funds to owner, this ensures that all gas is covered
         Owner.transfer(ownerAmount);
 
-        // stores all the data
+        donationBase.setSentToOwner(Owner, ownerAmount, donationID);
+
+
+        // add lotteryEntrees struct
+        donationBase.setLottery(Owner, msg.sender, donationID);
+
+        // TODO - figure out why state updates are not updating donationID, pointless extra memory usage by setting donation twice
         donationBase.setDonation(
             Owner,
             Lottery,
@@ -101,8 +112,7 @@ contract Share {
             donationID
         );
 
-        // add lotteryEntrees struct
-        donationBase.setLottery(Owner, msg.sender, donationID);
+        donationBase.setStored(Owner, donationID);
 
         // updates donationID;
         donationID = donationID + 1;

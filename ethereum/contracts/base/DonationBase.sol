@@ -106,6 +106,8 @@ contract DonationBase {
 
         donation.amount = _amount;
 
+        donation.id = _donationID;
+
         Donations[_donationID] = donation;
 
         state = State.Processed;
@@ -173,7 +175,6 @@ contract DonationBase {
 
     function setStored(
         address _owner,
-        uint _ownerAmount,
         uint _donationID
     )public payable{
         require(ownerRole.isOwner(_owner));
@@ -182,14 +183,13 @@ contract DonationBase {
 
         Donation memory donation = Donations[_donationID];
 
-        donation.donationState = state;
+        state = State.Stored;
 
-        donation.lotteryAmount = _ownerAmount;
+        donation.donationState = state;
 
         Donations[_donationID] = donation;
 
-        // should be set to State.Stored if there is some additional logic after storage
-        // state = State.Resting;
+        state = State.Resting;
     }
 
     function setDonation(
