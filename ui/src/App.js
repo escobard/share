@@ -86,7 +86,7 @@ class App extends Component {
           fetchedDonation: donationArray,
           fetchDonationTitle: "fetchDonation success",
           // donationId logic here needs to be revised, should grab donationId from fetched donation.
-          fetchDonationMessage: `Donation #${"donationId"} fetched, find your donation data below.`,
+          fetchDonationMessage: `Donation fetched, find your donation data below.`,
           fetchDonationStatus: "green"
         });
 
@@ -146,7 +146,7 @@ class App extends Component {
       fetchedDonation
     } = this.state;
 
-    console.log("App state", this.state);
+    // console.log("App state", this.state);
     return (
       <main className="application">
         <Navigation />
