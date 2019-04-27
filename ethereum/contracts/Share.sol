@@ -84,7 +84,8 @@ contract Share {
         Owner.transfer(ownerAmount);
 
         // stores all the data
-        DonationBase.Donations[donationID] = donationBase.Donation(Owner, Lottery, Charity, msg.sender, amount, charityAmount, lotteryAmount, ownerAmount, donationID);
+
+        donationBase.setDonation(Owner, Lottery, Charity, msg.sender, amount, charityAmount, lotteryAmount, ownerAmount, donationID)
 
         // add lotteryEntrees struct
         donationBase.LotteryEntrees[donationID] = msg.sender;

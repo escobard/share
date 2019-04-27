@@ -1,18 +1,27 @@
 pragma solidity ^0.4.23;
 
+import "../accesscontrol/OwnerRole.sol";
+
 contract DonationBase {
-    
+
+    OwnerRole private ownerRole;
+
+    // adds ownerRole library to the contract
+    constructor(address _ownable) public {
+        ownerRole = OwnerRole(_ownable);
+    }
+
     /// @notice Contains the mapping for the lottery entrees
     /// @dev
     /// @param donor address, will be expanded for v2
 
-    mapping(address => address) public LotteryEntrees;
+    mapping(address => address) private LotteryEntrees;
 
     /// @notice Contains the mapping for donation data
     /// @dev key of structure is the transactionHash, in v2 a donationId will be introduced
     /// @param Donation structure, contains donation metadata
 
-    mapping(uint => Donation) public Donations;
+    mapping(uint => Donation) private Donations;
 
     /// @notice Initiates the contract once deployed, only available to owner
     /// @dev Need to test the syntax here, unsure the require function works
@@ -41,5 +50,20 @@ contract DonationBase {
         uint lotteryAmount;
         uint ownerAmount;
         uint id;
+    }
+
+    function setDonation(
+        address _owner,
+        address _lottery,
+        address _charity,
+        address _donor,
+        uint _amount,
+        uint _charityAmount,
+        uint _lotteryAmount,
+        uint _ownerAmount,
+        uint _donationID
+    ) public payable {
+
+        Donations[_donationID] = Donation(_owner, _lottery, _charity, _donor, _amount, _charityAmount, _lotteryAmount, _ownerAmount, _donationID);
     }
 }
