@@ -4,13 +4,13 @@ workflows: # tells circleCI to do all test jobs for ui and api, then deploy both
     jobs:
     - test-build-ui
     - test-build-api
-    - deploy-ui:
+    - heroku-deploy-ui:
         requires:
         - test-build-ui
         filters:
           branches:
             only: master
-    - deploy-api:
+    - heroku-deploy-api:
         requires:
         - test-build-api
         filters:
