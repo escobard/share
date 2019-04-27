@@ -94,9 +94,6 @@ contract DonationBase {
     function setProcessed(
         address _owner,
         uint _amount,
-        uint _charityAmount,
-        uint _lotteryAmount,
-        uint _ownerAmount,
         uint _donationID
     )public payable{
         require(ownerRole.isOwner(_owner));
@@ -109,14 +106,90 @@ contract DonationBase {
 
         donation.amount = _amount;
 
+        Donations[_donationID] = donation;
+
+        state = State.Processed;
+    }
+
+    function setSentToCharity(
+        address _owner,
+        uint _charityAmount,
+        uint _donationID
+    )public payable{
+        require(ownerRole.isOwner(_owner));
+
+        require(state == State.Processed);
+
+        Donation memory donation = Donations[_donationID];
+
+        donation.donationState = state;
+
         donation.charityAmount = _charityAmount;
-
-        donation.lotteryAmount = _lotteryAmount;
-
-        donation.ownerAmount = _ownerAmount;
 
         Donations[_donationID] = donation;
 
+        state = State.SentToCharity;
+    }
+
+    function setSentToLottery(
+        address _owner,
+        uint _lotteryAmount,
+        uint _donationID
+    )public payable{
+        require(ownerRole.isOwner(_owner));
+
+        require(state == State.SentToCharity);
+
+        Donation memory donation = Donations[_donationID];
+
+        donation.donationState = state;
+
+        donation.lotteryAmount = _lotteryAmount;
+
+        Donations[_donationID] = donation;
+
+        state = State.SentToLottery;
+    }
+
+    function setSentToOwner(
+        address _owner,
+        uint _ownerAmount,
+        uint _donationID
+    )public payable{
+        require(ownerRole.isOwner(_owner));
+
+        require(state == State.SentToLottery);
+
+        Donation memory donation = Donations[_donationID];
+
+        donation.donationState = state;
+
+        donation.lotteryAmount = _ownerAmount;
+
+        Donations[_donationID] = donation;
+
+        state = State.SentToOwner;
+    }
+
+    function setStored(
+        address _owner,
+        uint _ownerAmount,
+        uint _donationID
+    )public payable{
+        require(ownerRole.isOwner(_owner));
+
+        require(state == State.SentToOwner);
+
+        Donation memory donation = Donations[_donationID];
+
+        donation.donationState = state;
+
+        donation.lotteryAmount = _ownerAmount;
+
+        Donations[_donationID] = donation;
+
+        // should be set to State.Stored if there is some additional logic after storage
+        state = State.Rested;
     }
 
     function setDonation(
