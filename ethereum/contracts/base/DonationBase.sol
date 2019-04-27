@@ -189,7 +189,7 @@ contract DonationBase {
         Donations[_donationID] = donation;
 
         // should be set to State.Stored if there is some additional logic after storage
-        state = State.Rested;
+        // state = State.Resting;
     }
 
     function setDonation(
