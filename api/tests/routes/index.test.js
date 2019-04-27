@@ -17,7 +17,8 @@ describe("Testing all routes", () => {
       .get("/health")
       .expect(
         {
-          healthy: true
+          healthy: true,
+          process: "dev"
         },
         done
       );
