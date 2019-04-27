@@ -33,7 +33,7 @@ contract DonationBase {
         SentToOwner,
         Stored
     }
-    State constant state = State.Resting;
+    State state = State.Resting;
     /// @notice Contains the stucture of the star metadata
     /// @dev key of structure is the provided transaction hash, will be donationId in v2
     /// @param owner address, contains the address of the contract owner
@@ -177,8 +177,11 @@ contract DonationBase {
     function getDonationState(
         address _owner,
         uint _donationID
-    ) public view returns(uint){
+    ) public constant returns(State){
         require(ownerRole.isOwner(_owner));
-        return Donations[_donationID].donationState;
+
+        Donation memory donation = Donations[_donationID];
+
+        return donation.donationState;
     }
 }
