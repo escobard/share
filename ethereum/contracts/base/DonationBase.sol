@@ -25,6 +25,7 @@ contract DonationBase {
 
     enum State
     {
+        Resting,
         Received,
         Processed,
         SentToCharity,
@@ -32,7 +33,7 @@ contract DonationBase {
         SentToOwner,
         Stored
     }
-
+    State constant state = State.Resting;
     /// @notice Contains the stucture of the star metadata
     /// @dev key of structure is the provided transaction hash, will be donationId in v2
     /// @param owner address, contains the address of the contract owner
@@ -82,7 +83,7 @@ contract DonationBase {
 
         require(ownerRole.isOwner(_owner));
 
-        Donations[_donationID] = Donation(_owner, _lottery, _charity, _donor, _amount, _charityAmount, _lotteryAmount, _ownerAmount, _donationID);
+        Donations[_donationID] = Donation(_owner, _lottery, _charity, _donor, _amount, _charityAmount, _lotteryAmount, _ownerAmount, _donationID, state);
     }
 
     function setLottery(
