@@ -3,8 +3,13 @@ pragma solidity ^0.4.23;
 
 // actor contracts
 import "./accesscontrol/CharityRole.sol";
-import "./core/Ownable.sol";
+import "./accesscontrol/OwnerRole.sol";
 import "./accesscontrol/LotteryRole.sol";
+import "./accesscontrol/DonorRole.sol";
+
+// base contract
+import "./base/DonationBase.sol";
+
 
 contract Share {
 
@@ -12,84 +17,51 @@ contract Share {
     address private Lottery;
     address private Charity;
     bool private initialized = false;
-    Ownable private ownableContract;
-    CharityRole private charityContract;
-    LotteryRole private lotteryContract;
+    OwnerRole private ownerRole;
+    CharityRole private charityRole;
+    LotteryRole private lotteryRole;
+    DonorRole private donorRole;
+    DonationBase private donationBase;
 
     // assigns an ID to each donation
     uint private donationID = 1;
 
     /// @notice sets the owner to the Owner variable upon contract init
     /// @dev can be expanded to account for many more constructor features
-    constructor(address _ownable, address _charityRole, address _lotteryRole) public {
+    /// @param _ownerRole address, contains the address of the OwnerRole contract
+    /// @param _charityRole address, contains the address of the CharityRole contract
+    /// @param _lotteryRole address, contains the address of the LotteryRole contract
+    /// @param _donationBase address, contains the address of the DonationBase contract
+    constructor(address _ownerRole, address _charityRole, address _lotteryRole, address _donorRole, address _donationBase) public {
         Owner = msg.sender;
 
         // sets the address for the instance of each helper contract
-        ownableContract = Ownable(_ownable);
-        charityContract = CharityRole(_charityRole);
-        lotteryContract = LotteryRole(_lotteryRole);
+        ownerRole = OwnerRole(_ownerRole);
+        charityRole = CharityRole(_charityRole);
+        lotteryRole = LotteryRole(_lotteryRole);
+        donorRole = DonorRole(_donorRole);
+        donationBase = DonationBase(_donationBase);
     }
-
-    /// @notice Contains the stucture of the star metadata
-    /// @dev key of structure is the provided transaction hash, will be donationId in v2
-    /// @param owner address, contains the address of the contract owner
-    /// @param lottery address, contains the address of the lottery - ether account for v1, contract for v2
-    /// @param charity address, contains the address of the charity - an ether account for v1 and v2
-    /// @param donor address, contains the address of the contract owner - ether account always
-    /// @param amount uint, contains the original amount donated - all amounts are after gas
-    /// @param charityAmount, contains the remaining 95% of original amount sent to charity
-    /// @param lotteryAmount uint, contains the 4% of original amount sent to lottery
-    /// @param ownerAmount, contains the 1% of original amount sent to owner
-    /// @param id, contains the value of the last submitted donation - is returned to ui
-    // TODO - refactor all data handling, updating, and transfer to a BASE data management contract in the future
-    struct Donation {
-        address owner;
-        address lottery;
-        address charity;
-        address donor;
-        uint amount;
-        uint charityAmount;
-        uint lotteryAmount;
-        uint ownerAmount;
-        uint id;
-    }
-
-    /// @notice Contains the mapping for the lottery entrees
-    /// @dev
-    /// @param donor address, will be expanded for v2
-
-    mapping(address => address) public lotteryEntrees;
-
-    /// @notice Contains the mapping for donation data
-    /// @dev key of structure is the transactionHash, in v2 a donationId will be introduced
-    /// @param Donation structure, contains donation metadata
-
-    mapping(uint => Donation) private Donations;
-
-    /// @notice Initiates the contract once deployed, only available to owner
-    /// @dev Need to test the syntax here, unsure the require function works
-    /// @param _lottery address, contains the ethereum public key for lottery account
-    /// @param _charity address, contains the ethereum public key for charity account
 
     // TODO - this logic must also include the new contract
     function initiateContract(address _lottery, address _charity) public payable{
 
-        require(initialized == false && ownableContract.isOwner(msg.sender));
+        require(initialized == false && ownerRole.isOwner(msg.sender));
 
         // TODO - this logic must add the smart contract address for CharityRole
         // TODO - ei - Charity = CharityRole(_charity) - argument must contain address of contract
 
         // sets the lottery for the lotteryRole contract
-        lotteryContract.setLottery(_lottery, msg.sender);
+        lotteryRole.setLottery(_lottery, msg.sender);
 
         // gets lottery address
-        Lottery = lotteryContract.getLottery(msg.sender);
+        Lottery = lotteryRole.getLottery(msg.sender);
 
         // sets the charity for the charityRole contract
-        charityContract.setCharity(_charity, msg.sender);
+        charityRole.setCharity(_charity, msg.sender);
 
         // gets charity address
-        Charity = charityContract.getCharity(msg.sender);
+        Charity = charityRole.getCharity(msg.sender);
 
         initialized = true;
     }
@@ -99,24 +71,52 @@ contract Share {
 
     function makeDonation() public payable{
         // owner, charity, and lottery accounts cannot utilize the handleFunds function
-        require(initialized == true && !ownableContract.isOwner(msg.sender) && !charityContract.isCharity() && !lotteryContract.isLottery());
+        require(initialized == true && !ownerRole.isOwner(msg.sender) && !charityRole.isCharity() && !lotteryRole.isLottery());
 
-        // creates the amount variable, used to set the amount later on in this function
-        // these math. functions can be move to the API to avoid gas cost for calculations
+        donorRole.setDonor(msg.sender, Owner);
+        address Donor = donorRole.getDonor(Owner);
+
+        donationBase.setReceived(Owner, Lottery, Charity, Donor, donationID);
+
         uint amount = msg.value;
         uint charityAmount = amount * 95 / 100;
         uint lotteryAmount = amount * 4 / 100;
         uint ownerAmount = amount * 1 / 100;
 
-        // TODO - these can be refactored to ownableContract, since it utilizes the transfer of ownership principle
+        donationBase.setProcessed(Owner, amount, donationID);
+
+        // TODO - these can be refactored to ownerRole, since it utilizes the transfer of ownership principle
         Charity.transfer(charityAmount);
+
+        donationBase.setSentToCharity(Owner, charityAmount, donationID);
+
         Lottery.transfer(lotteryAmount);
+
+        donationBase.setSentToLottery(Owner, lotteryAmount, donationID);
 
         // dispatches remaining funds to owner, this ensures that all gas is covered
         Owner.transfer(ownerAmount);
 
-        // stores all the data
-        Donations[donationID] = Donation(Owner, Lottery, Charity, msg.sender, amount, charityAmount, lotteryAmount, ownerAmount, donationID);
+        donationBase.setSentToOwner(Owner, ownerAmount, donationID);
+
+
+        // add lotteryEntrees struct
+        donationBase.setLottery(Owner, Donor, donationID);
+
+        // TODO - figure out why state updates are not updating donationID, pointless extra memory usage by setting donation twice
+        donationBase.setDonation(
+            Owner,
+            Lottery,
+            Charity,
+            Donor,
+            amount,
+            charityAmount,
+            lotteryAmount,
+            ownerAmount,
+            donationID
+        );
+
+        donationBase.setStored(Owner, donationID);
 
         // updates donationID;
         donationID = donationID + 1;
@@ -125,12 +125,13 @@ contract Share {
     function fetchDonationID() public view returns (uint){
 
         // requires the owner to call this function, only owner address can access donationID atm
-        require(ownableContract.isOwner(msg.sender));
+        require(ownerRole.isOwner(msg.sender));
 
         return donationID;
     }
 
-    function fetchDonation(uint _id) public view returns (address owner,
+    function fetchDonation(uint _donationID) public view returns (
+        address owner,
         address lottery,
         address charity,
         address donor,
@@ -138,18 +139,27 @@ contract Share {
         uint charityAmount,
         uint lotteryAmount,
         uint ownerAmount,
-        uint id){
+        uint id
+    ){
 
         // requires the owner to call this function, only owner address can access donationID atm
-        require(ownableContract.isOwner(msg.sender));
+        require(ownerRole.isOwner(msg.sender));
 
-        Donation memory donation = Donations[_id];
+        owner = donationBase.getDonationOwner(msg.sender, _donationID);
+        lottery = donationBase.getDonationLottery(msg.sender, _donationID);
+        charity = donationBase.getDonationCharity(msg.sender, _donationID);
+        donor = donationBase.getDonationDonor(msg.sender, _donationID);
+        amount = donationBase.getDonationAmount(msg.sender, _donationID);
+        charityAmount = donationBase.getDonationCharityAmount(msg.sender, _donationID);
+        lotteryAmount = donationBase.getDonationLotteryAmount(msg.sender, _donationID);
+        ownerAmount = donationBase.getDonationOwnerAmount(msg.sender, _donationID);
+        id = donationBase.getDonationId(msg.sender, _donationID);
 
-        return ( donation.owner, donation.lottery, donation.charity, donation.donor, donation.amount, donation.charityAmount, donation.lotteryAmount, donation.ownerAmount, donation.id);
+        return ( owner, lottery, charity, donor, amount, charityAmount, lotteryAmount, ownerAmount, id);
     }
 
     function isInitialized() public view returns(bool){
-        require(ownableContract.isOwner(msg.sender));
+        require(ownerRole.isOwner(msg.sender));
         return initialized;
     }
 
