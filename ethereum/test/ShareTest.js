@@ -1,8 +1,9 @@
 // this grabs the Share.sol file within /contracts
 const LotteryRole = artifacts.require("./LotteryRole.sol"),
   CharityRole = artifacts.require('./CharityRole.sol'),
-  Share = artifacts.require('./Share.sol'),
-  OwnerRole = artifacts.require("./OwnerRole.sol");
+  OwnerRole = artifacts.require("./OwnerRole.sol"),
+  DonationBase = artifacts.require("./DonationBase.sol")
+  Share = artifacts.require('./Share.sol');
 
 // extracts the accounts array from the contract
 contract("Share", accounts => {
@@ -19,9 +20,10 @@ contract("Share", accounts => {
 
     beforeEach(async () => {
         this.ownerRole = await OwnerRole.new({ from: owner});
-        this.charityContract = await CharityRole.new(this.ownerRole.address, { from: owner});
-        this.lotteryContract = await LotteryRole.new(this.ownerRole.address, { from: owner});
-        this.contract = await Share.new(this.ownerRole.address, this.charityContract.address, this.lotteryContract.address, { from: owner });
+        this.charityRole = await CharityRole.new(this.ownerRole.address, { from: owner});
+        this.lotteryRole = await LotteryRole.new(this.ownerRole.address, { from: owner});
+        this.donationBase = await DonationBase.new(this.ownerRole.address, { from: owner});
+        this.contract = await Share.new(this.ownerRole.address, this.charityRole.address, this.lotteryRole.address, this.donationBase.address, { from: owner });
     });
 
     describe("Tests contract initiation", () =>{
@@ -37,8 +39,8 @@ contract("Share", accounts => {
 
                 // will comment back in when lottery contract is completed
                 assert.equal(await this.ownerRole.getOwner({from: owner}), owner);
-                assert.equal(await this.charityContract.getCharity(owner, {from: owner}), charity);
-                assert.equal(await this.lotteryContract.getLottery(owner, {from: owner}), lottery);
+                assert.equal(await this.charityRole.getCharity(owner, {from: owner}), charity);
+                assert.equal(await this.lotteryRole.getLottery(owner, {from: owner}), lottery);
                 assert.equal(await this.contract.isInitialized({from: owner}), true);
             })
         });
