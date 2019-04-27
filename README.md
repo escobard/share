@@ -9,7 +9,11 @@ In addition to automated transaction handling, this product also:
 
 ## Usage
 
+The product can be accessed here: https://share-ui.herokuapp.com/
 
+Follow the instructions within the messages to utilize.
+
+    
 
 ## Product Technology
 
