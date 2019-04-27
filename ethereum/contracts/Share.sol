@@ -72,7 +72,7 @@ contract Share {
         // creates the amount variable, used to set the amount later on in this function
         // these math. functions can be move to the API to avoid gas cost for calculations
 
-        donationBase.setReceived(Owner, donationID);
+        donationBase.setReceived(Owner, Lottery, Charity, msg.sender, donationID);
 
         uint amount = msg.value;
         uint charityAmount = amount * 95 / 100;

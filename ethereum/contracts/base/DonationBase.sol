@@ -59,10 +59,16 @@ contract DonationBase {
         State donationState;
     }
 
+    // TODO - update all functions with proper commentary
     function setReceived(
         address _owner,
+        address _lottery,
+        address _charity,
+        address _donor,
         uint _donationID
     )public payable{
+
+        // TODO - update literally all required statements with errors
         require(ownerRole.isOwner(_owner));
 
         require(state == State.Resting);
@@ -71,9 +77,17 @@ contract DonationBase {
 
         donation.donationState = state;
 
-        state = State.Received;
+        donation.owner = _owner;
+
+        donation.lottery = _lottery;
+
+        donation.charity = _charity;
+
+        donation.donor = _donor;
 
         Donations[_donationID] = donation;
+
+        state = State.Received;
 
     }
 
