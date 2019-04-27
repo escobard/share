@@ -25,16 +25,13 @@ contract DonationBase {
 
     enum State
     {
-        Received,  // 0
-        Processed,  // 1
-        SentToCharity,     // 2
-        SentToLottery,    // 3
-        SentToOwner,       // 4
-        Shipped,    // 5
-        Received,   // 6
-        Purchased   // 7
+        Received,
+        Processed,
+        SentToCharity,
+        SentToLottery,
+        SentToOwner,
+        Stored
     }
-
 
     /// @notice Contains the stucture of the star metadata
     /// @dev key of structure is the provided transaction hash, will be donationId in v2
@@ -58,17 +55,18 @@ contract DonationBase {
         uint lotteryAmount;
         uint ownerAmount;
         uint id;
+        State donationState;
     }
 
-    event Harvested(uint upc);
-    event Processed(uint upc);
-    event Packed(uint upc);
-    event ForSale(uint upc);
-    event Sold(uint upc);
-    event Shipped(uint upc);
-    event Received(uint upc);
-    event Purchased(uint upc);
+    function setReceived(
+        address _owner,
+        uint _donationID
+    ){
+        require(ownerRole.isOwner(_owner));
 
+        Donation memory donation = Donations[_donationID];
+
+    }
 
     function setDonation(
         address _owner,

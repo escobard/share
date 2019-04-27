@@ -84,8 +84,17 @@ contract Share {
         Owner.transfer(ownerAmount);
 
         // stores all the data
-
-        donationBase.setDonation(Owner, Lottery, Charity, msg.sender, amount, charityAmount, lotteryAmount, ownerAmount, donationID);
+        donationBase.setDonation(
+            Owner,
+            Lottery,
+            Charity,
+            msg.sender,
+            amount,
+            charityAmount,
+            lotteryAmount,
+            ownerAmount,
+            donationID
+        );
 
         // add lotteryEntrees struct
         donationBase.setLottery(Owner, msg.sender, donationID);
