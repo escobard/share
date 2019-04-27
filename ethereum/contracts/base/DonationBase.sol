@@ -65,7 +65,11 @@ contract DonationBase {
     ){
         require(ownerRole.isOwner(_owner));
 
-        Donation memory donation = Donations[_donationID];
+        Donation memory donation;
+
+        donation.donationState = state;
+
+        Donations[_donationID] = donation;
 
     }
 
