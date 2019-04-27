@@ -6,6 +6,9 @@ import "./accesscontrol/CharityRole.sol";
 import "./accesscontrol/OwnerRole.sol";
 import "./accesscontrol/LotteryRole.sol";
 
+// base contract
+import "./base/DonationBase.sol";
+
 contract Share {
 
     address private Owner;
