@@ -67,6 +67,13 @@ router.post("/", fetchDonationBaseValidation, protocolSetup, fetchDonationEtherV
           ownerAmount,
           donationID
         } = donation;
+
+
+        amount = web3.utils.fromWei(amount, "ether");
+        charityAmount = web3.utils.fromWei(charityAmount, "ether");
+        lotteryAmount = web3.utils.fromWei(lotteryAmount, "ether");
+        ownerAmount = web3.utils.fromWei(ownerAmount, "ether");
+
         switch (true) {
           // returns all data if requester is donation owner
           // must be set to lowercase, solidity stores all address hashes in uppercase

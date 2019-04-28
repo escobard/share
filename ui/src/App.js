@@ -113,7 +113,7 @@ class App extends Component {
         let message;
 
         // checks for api validation error
-        if (error.response.data.errors){
+        if (error.response){
           errors = error.response.data.errors;
           status = error.response.data.status;
           message = `API rejection: ${status} ${errors}`
