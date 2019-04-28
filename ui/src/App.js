@@ -94,10 +94,28 @@ class App extends Component {
       })
       .catch(error => {
 
-        console.log("fetchDonation error response:", error);
+        let errors;
+        let status;
+        let message;
+
+        // checks for api validation error
+        if (error.response.data.errors){
+
+          // grabs errors from error response
+          errors = error.response.data.errors;
+
+          // grabs status from error response
+          status = error.response.data.status;
+          message = `API rejection: ${status} ${errors}`
+        }
+        else{
+
+          message = `API rejection: ${error}`
+        }
+        console.log("fetchDonation error response:", error.response.data.errors);
         this.setState({
           fetchDonationTitle: "fetchDonation error(s)",
-          fetchDonationMessage: `API rejection: ${error}`,
+          fetchDonationMessage: message,
           fetchDonationStatus: "red"
         });
 

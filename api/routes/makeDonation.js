@@ -20,7 +20,7 @@ try {
       // TODO - refactor into its own middleware, using a new util for the contract itself, extend this with its own class
       let contractInitialized = await share.methods.isInitialized.call({from: owner_pu});
 
-      console.log("INITIALIZED?", contractInitialized);
+      console.log("is contract initialized?", contractInitialized);
 
       // donor address public
       let donorPub = address_pu;
@@ -29,6 +29,7 @@ try {
       // donor address private
       let donorPriv = address_pr;
 
+      // TODO - make this into a middleware in the future
       if (contractInitialized === false) {
         console.log("Initializing Contract...", req.body);
 

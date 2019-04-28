@@ -45,7 +45,7 @@ contract DonationBase {
     /// @param lotteryAmount uint, contains the 4% of original amount sent to lottery
     /// @param ownerAmount, contains the 1% of original amount sent to owner
     /// @param id, contains the value of the last submitted donation - is returned to ui
-    // TODO - refactor all data handling, updating, and transfer to a BASE data management contract in the future
+    // TODO - add a timeStamp property (decoded by the API to int date format with js) to keep drack of donation dates
     struct Donation {
         address owner;
         address lottery;
