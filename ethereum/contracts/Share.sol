@@ -31,6 +31,7 @@ contract Share {
     /// @param _ownerRole address, contains the address of the OwnerRole contract
     /// @param _charityRole address, contains the address of the CharityRole contract
     /// @param _lotteryRole address, contains the address of the LotteryRole contract
+    /// @param _donorRole address, contains the address of the DonorRole contract
     /// @param _donationBase address, contains the address of the DonationBase contract
     constructor(address _ownerRole, address _charityRole, address _lotteryRole, address _donorRole, address _donationBase) public {
         Owner = msg.sender;

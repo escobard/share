@@ -7,13 +7,69 @@ In addition to automated transaction handling, this product also:
 1) takes 4% of every donation and places it in a lottery which awards 5 random donors at the end of every month.
 2) retains 1% of every donation to fund product advancement. 
 
-## Usage
+## DAPP
 
-The product can be accessed here: https://share-ui.herokuapp.com/
+### DAPP Local setup
 
-Follow the instructions within the messages to utilize.
+Both the `UI` and `API` applications must be running for the product to work as intended.
 
-    
+#### UI Installation
+
+```
+cd ui
+npm install
+npm start
+```
+
+#### API Installation
+
+```
+cd ui
+npm install
+npm start
+```
+
+#### Truffle setup && usage
+
+```angular2html
+cd ethereum
+npm install
+truffle develop
+test
+```
+
+### DAPP Usage
+
+The product can be accessed here: http://localhost:3000/, after the `Local Setup` process documented above has been completed.
+
+Follow the instructions within the messages to utilize, expanded instructions below.
+
+#### Make donation form
+
+Enter a valid `public address`, the `public address' private key` and an ether amount `smaller than 1`.
+
+Feel free to use the following test account for a working `public / private` pair:
+
+```angular2html
+
+public address: 0xa102c7EE530B635E56f133a20786091eB800f640
+
+private key: 1E8722F6E86B4E856B4BA2F75F492F4123242713E4E57C3789AFDCF2F631954A
+
+```
+
+#### Fetch Donation 
+
+Enter a valid `public address`, and a `donationID which has been created with the public address`.
+
+Feel free to use the following test account for a working `public / donationID` pair:
+
+```angular2html
+
+public address: 0xa102c7EE530B635E56f133a20786091eB800f640
+
+donationId: 1
+``` 
 
 ## Product Technology
 

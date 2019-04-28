@@ -19,7 +19,7 @@ class App extends Component {
     // TODO setting to true to always display fetch form in case reviewer does not want to make a donation
     makeDonationTitle: "Make Donation form instructions",
     makeDonationMessage:
-      "Enter a valid public key in the Address Public field, the public address' private key in the Address Private field, and an ether value smaller than 1 in the Amount field.",
+      "Enter a valid public key in the Address Public field, the public address' private key in the Private Key field, and an ether value smaller than 1 in the Amount field.",
     makeDonationStatus: null,
     fetchDonationTitle: "Fetch Donation form instructions",
     fetchDonationMessage:
@@ -56,10 +56,25 @@ class App extends Component {
         });
       })
       .catch(error => {
-        console.log("makeDonation error response:", error);
+
+        let errors;
+        let status;
+        let message;
+
+        // checks for api validation error
+        if (error.response){
+          errors = error.response.data.errors;
+          status = error.response.data.status;
+          message = `API rejection: ${status} ${errors}`
+          console.log("makeDonation error response:",  error.response.data.errors);
+        }
+        else{
+          message = `API rejection: ${error}`
+        }
+
         this.setState({
           makeDonationTitle: "makeDonation() error(s)",
-          makeDonationMessage: `API rejection: ${error}`,
+          makeDonationMessage: message,
           makeDonationStatus: "red"
         });
       });
@@ -94,10 +109,24 @@ class App extends Component {
       })
       .catch(error => {
 
-        console.log("fetchDonation error response:", error);
+        let errors;
+        let status;
+        let message;
+
+        // checks for api validation error
+        if (error.response){
+          errors = error.response.data.errors;
+          status = error.response.data.status;
+          message = `API rejection: ${status} ${errors}`
+          console.log("fetchDonation error response:", error.response.data.errors);
+        }
+        else{
+          message = `API rejection: ${error}`
+        }
+
         this.setState({
           fetchDonationTitle: "fetchDonation error(s)",
-          fetchDonationMessage: `API rejection: ${error}`,
+          fetchDonationMessage: message,
           fetchDonationStatus: "red"
         });
 

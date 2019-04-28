@@ -17,10 +17,16 @@ try {
     // ensures web3 instance is available, may want to consider moving all intial web3 logic outside of the route
     if (web3) {
 
+      // this is where the transaction has been validation, send a response to the UI to trigger timer
+      global.makeDonation = {
+        status: 'Donation Validated! Sending to Ethereum...',
+        result: 'validated'
+      };
+
       // TODO - refactor into its own middleware, using a new util for the contract itself, extend this with its own class
       let contractInitialized = await share.methods.isInitialized.call({from: owner_pu});
 
-      console.log("INITIALIZED?", contractInitialized);
+      console.log("is contract initialized?", contractInitialized);
 
       // donor address public
       let donorPub = address_pu;
@@ -29,6 +35,7 @@ try {
       // donor address private
       let donorPriv = address_pr;
 
+      // TODO - make this into a middleware in the future
       if (contractInitialized === false) {
         console.log("Initializing Contract...", req.body);
 

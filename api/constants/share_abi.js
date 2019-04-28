@@ -1,27 +1,8 @@
 const abi = [
   {
-    "constant": true,
     "inputs": [
       {
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "name": "lotteryEntrees",
-    "outputs": [
-      {
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "name": "_ownable",
+        "name": "_ownerRole",
         "type": "address"
       },
       {
@@ -30,6 +11,14 @@ const abi = [
       },
       {
         "name": "_lotteryRole",
+        "type": "address"
+      },
+      {
+        "name": "_donorRole",
+        "type": "address"
+      },
+      {
+        "name": "_donationBase",
         "type": "address"
       }
     ],
@@ -82,7 +71,7 @@ const abi = [
     "constant": true,
     "inputs": [
       {
-        "name": "_id",
+        "name": "_donationID",
         "type": "uint256"
       }
     ],
