@@ -56,10 +56,24 @@ class App extends Component {
         });
       })
       .catch(error => {
-        console.log("makeDonation error response:", error);
+
+        let errors;
+        let status;
+        let message;
+
+        // checks for api validation error
+        if (error.response.data.errors){
+          errors = error.response.data.errors;
+          status = error.response.data.status;
+          message = `API rejection: ${status} ${errors}`
+        }
+        else{
+          message = `API rejection: ${error}`
+        }
+        console.log("makeDonation error response:",  error.response.data.errors);
         this.setState({
           makeDonationTitle: "makeDonation() error(s)",
-          makeDonationMessage: `API rejection: ${error}`,
+          makeDonationMessage: message,
           makeDonationStatus: "red"
         });
       });
@@ -100,16 +114,11 @@ class App extends Component {
 
         // checks for api validation error
         if (error.response.data.errors){
-
-          // grabs errors from error response
           errors = error.response.data.errors;
-
-          // grabs status from error response
           status = error.response.data.status;
           message = `API rejection: ${status} ${errors}`
         }
         else{
-
           message = `API rejection: ${error}`
         }
         console.log("fetchDonation error response:", error.response.data.errors);
