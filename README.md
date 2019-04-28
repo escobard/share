@@ -7,11 +7,13 @@ In addition to automated transaction handling, this product also:
 1) takes 4% of every donation and places it in a lottery which awards 5 random donors at the end of every month.
 2) retains 1% of every donation to fund product advancement. 
 
-## Local setup
+## DAPP
+
+### DAPP Local setup
 
 Both the `UI` and `API` applications must be running for the product to work as intended.
 
-### UI Installation
+#### UI Installation
 
 ```
 cd ui
@@ -19,7 +21,7 @@ npm install
 npm start
 ```
 
-### API Installation
+#### API Installation
 
 ```
 cd ui
@@ -27,13 +29,22 @@ npm install
 npm start
 ```
 
-## Usage
+#### Truffle setup && usage
+
+```angular2html
+cd ethereum
+npm install
+truffle develop
+test
+```
+
+### DAPP Usage
 
 The product can be accessed here: http://localhost:3000/, after the `Local Setup` process documented above has been completed.
 
 Follow the instructions within the messages to utilize, expanded instructions below.
 
-### Make donation form
+#### Make donation form
 
 Enter a valid `public address`, the `public address' private key` and an ether amount `smaller than 1`.
 
@@ -47,7 +58,7 @@ private key: 1E8722F6E86B4E856B4BA2F75F492F4123242713E4E57C3789AFDCF2F631954A
 
 ```
 
-### Fetch Donation 
+#### Fetch Donation 
 
 Enter a valid `public address`, and a `donationID which has been created with the public address`.
 
