@@ -22,7 +22,7 @@ class etherUtils {
     }
 
     this.contract ={
-      contract_pu: process.env.CONTRACT_ADDRESS,
+      contract_pu: process.env.SHARE_ADDRESS,
       contract_abi: ShareABI
     }
 
