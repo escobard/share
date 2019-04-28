@@ -42,7 +42,7 @@ module.exports = async (req, res, next) => {
 // adding 3 seperate validation cases, custom validation only handles a SINGLE boolean
   await validation.customValidation(
     address_pu !== donation.donor,
-    " Public address provided must exist within fetched donation"
+    "Public address provided must exist within fetched donation"
   );
 
   await validation.customValidation(
@@ -63,7 +63,7 @@ module.exports = async (req, res, next) => {
     console.error("Ether business validation errors:", etherErrors);
     return res.status(400).json({
       status: "Ether business validation errors:",
-      errors: etherErrors.join()
+      errors: "Public address provided must exist within fetched donation"
     });
   }
 
