@@ -19,9 +19,9 @@ try {
 
       // this is where the transaction has been validation, send a response to the UI to trigger timer
       global.makeDonation = {
-        status: ,
-        result: ''
-      }
+        status: 'Donation Validated! Sending to Ethereum...',
+        result: 'validated'
+      };
 
       // TODO - refactor into its own middleware, using a new util for the contract itself, extend this with its own class
       let contractInitialized = await share.methods.isInitialized.call({from: owner_pu});
