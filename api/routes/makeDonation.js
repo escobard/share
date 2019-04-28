@@ -18,10 +18,14 @@ try {
     if (web3) {
 
       // this is where the transaction has been validation, send a response to the UI to trigger timer
+      /*
       global.makeDonation = {
         status: 'Donation Validated! Sending to Ethereum...',
         result: 'validated'
       };
+
+      res.status(200).json(global.makeDonation);
+      */
 
       // TODO - refactor into its own middleware, using a new util for the contract itself, extend this with its own class
       let contractInitialized = await share.methods.isInitialized.call({from: owner_pu});

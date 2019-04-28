@@ -51,12 +51,6 @@ Charity contract address:[https://rinkeby.etherscan.io/address/0xc8c307be39ecb26
 
 Lottery contract address:[https://rinkeby.etherscan.io/address/0x946f7ab8a3d7e2ae10b850ef667c3732fa61fa62]
 
-Node Version: v10.14.1 
-
-Truffle Version: v4.1.15
-
-Web3 version: ^1.0.0-beta.46
-
 ## Reviewer Test Accounts - Click text for rinkeby.etherscan link
 
 Owner account: [https://rinkeby.etherscan.io/address/0xcb82438b0443593191ec05d07bb9dbf6eb73594c]
