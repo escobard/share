@@ -68,11 +68,10 @@ router.post("/", fetchDonationBaseValidation, protocolSetup, fetchDonationEtherV
           donationID
         } = donation;
 
-
-        amount = web3.utils.fromWei(amount, "ether");
-        charityAmount = web3.utils.fromWei(charityAmount, "ether");
-        lotteryAmount = web3.utils.fromWei(lotteryAmount, "ether");
-        ownerAmount = web3.utils.fromWei(ownerAmount, "ether");
+        amount = web3.utils.fromWei(amount.toString(), "ether");
+        charityAmount = web3.utils.fromWei(charityAmount.toString(), "ether");
+        lotteryAmount = web3.utils.fromWei(lotteryAmount.toString(), "ether");
+        ownerAmount = web3.utils.fromWei(ownerAmount.toString(), "ether");
 
         switch (true) {
           // returns all data if requester is donation owner
