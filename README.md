@@ -7,9 +7,29 @@ In addition to automated transaction handling, this product also:
 1) takes 4% of every donation and places it in a lottery which awards 5 random donors at the end of every month.
 2) retains 1% of every donation to fund product advancement. 
 
+## Local setup
+
+Both the `UI` and `API` applications must be running for the product to work as intended.
+
+### UI Installation
+
+```
+cd ui
+npm install
+npm start
+```
+
+### API Installation
+
+```
+cd ui
+npm install
+npm start
+```
+
 ## Usage
 
-The product can be accessed here: http://localhost:3000/
+The product can be accessed here: http://localhost:3000/, after the `Local Setup` process documented above has been completed.
 
 Follow the instructions within the messages to utilize, expanded instructions below.
 
