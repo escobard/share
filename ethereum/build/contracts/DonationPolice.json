@@ -3,22 +3,22 @@
   "abi": [],
   "bytecode": "0x6080604052348015600f57600080fd5b50603580601d6000396000f3006080604052600080fd00a165627a7a723058201db880b5f890015918eb83f8c7d321a1709648447586d082e6a45ffad1a183a60029",
   "deployedBytecode": "0x6080604052600080fd00a165627a7a723058201db880b5f890015918eb83f8c7d321a1709648447586d082e6a45ffad1a183a60029",
-  "sourceMap": "194:30:7:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;194:30:7;;;;;;;",
-  "deployedSourceMap": "194:30:7:-;;;;;",
+  "sourceMap": "194:30:6:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;194:30:6;;;;;;;",
+  "deployedSourceMap": "194:30:6:-;;;;;",
   "source": "pragma solidity ^0.4.24;\r\n\r\n/// Provides basic authorization control\r\n\r\n// TODO - may include in the submission but most likely not, not necessary and overly complicates smart contract logic\r\n\r\ncontract DonationPolice {\r\n\r\n}\r\n",
   "sourcePath": "D:\\Documents\\School\\Share\\ethereum\\contracts\\core\\DonationPolice.sol",
   "ast": {
     "absolutePath": "/D/Documents/School/Share/ethereum/contracts/core/DonationPolice.sol",
     "exportedSymbols": {
       "DonationPolice": [
-        1604
+        1567
       ]
     },
-    "id": 1605,
+    "id": 1568,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1603,
+        "id": 1566,
         "literals": [
           "solidity",
           "^",
@@ -26,7 +26,7 @@
           ".24"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:24:7"
+        "src": "0:24:6"
       },
       {
         "baseContracts": [],
@@ -34,31 +34,31 @@
         "contractKind": "contract",
         "documentation": "Provides basic authorization control",
         "fullyImplemented": true,
-        "id": 1604,
+        "id": 1567,
         "linearizedBaseContracts": [
-          1604
+          1567
         ],
         "name": "DonationPolice",
         "nodeType": "ContractDefinition",
         "nodes": [],
-        "scope": 1605,
-        "src": "194:30:7"
+        "scope": 1568,
+        "src": "194:30:6"
       }
     ],
-    "src": "0:226:7"
+    "src": "0:226:6"
   },
   "legacyAST": {
     "absolutePath": "/D/Documents/School/Share/ethereum/contracts/core/DonationPolice.sol",
     "exportedSymbols": {
       "DonationPolice": [
-        1604
+        1567
       ]
     },
-    "id": 1605,
+    "id": 1568,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1603,
+        "id": 1566,
         "literals": [
           "solidity",
           "^",
@@ -66,7 +66,7 @@
           ".24"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:24:7"
+        "src": "0:24:6"
       },
       {
         "baseContracts": [],
@@ -74,18 +74,18 @@
         "contractKind": "contract",
         "documentation": "Provides basic authorization control",
         "fullyImplemented": true,
-        "id": 1604,
+        "id": 1567,
         "linearizedBaseContracts": [
-          1604
+          1567
         ],
         "name": "DonationPolice",
         "nodeType": "ContractDefinition",
         "nodes": [],
-        "scope": 1605,
-        "src": "194:30:7"
+        "scope": 1568,
+        "src": "194:30:6"
       }
     ],
-    "src": "0:226:7"
+    "src": "0:226:6"
   },
   "compiler": {
     "name": "solc",
@@ -93,5 +93,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.2",
-  "updatedAt": "2019-04-27T08:21:14.707Z"
+  "updatedAt": "2019-04-28T20:15:54.045Z"
 }
