@@ -66,11 +66,12 @@ class App extends Component {
           errors = error.response.data.errors;
           status = error.response.data.status;
           message = `API rejection: ${status} ${errors}`
+          console.log("makeDonation error response:",  error.response.data.errors);
         }
         else{
           message = `API rejection: ${error}`
         }
-        console.log("makeDonation error response:",  error.response.data.errors);
+
         this.setState({
           makeDonationTitle: "makeDonation() error(s)",
           makeDonationMessage: message,
@@ -117,11 +118,12 @@ class App extends Component {
           errors = error.response.data.errors;
           status = error.response.data.status;
           message = `API rejection: ${status} ${errors}`
+          console.log("fetchDonation error response:", error.response.data.errors);
         }
         else{
           message = `API rejection: ${error}`
         }
-        console.log("fetchDonation error response:", error.response.data.errors);
+
         this.setState({
           fetchDonationTitle: "fetchDonation error(s)",
           fetchDonationMessage: message,
