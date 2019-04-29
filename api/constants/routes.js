@@ -3,6 +3,7 @@ const routes = {
     health: '/health',
     greetings: '/greetings',
     makeDonation: '/makeDonation',
+    makeDonationStatus: '/makeDonationStatus',
     fetchDonation: '/fetchDonation'
 };
 

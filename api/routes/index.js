@@ -7,5 +7,6 @@ module.exports = app => {
 
   // ether routes
   app.use(routes.makeDonation, require("../routes/makeDonation"));
+  app.use(routes.makeDonationStatus, require("../routes/makeDonationStatus"));
   app.use(routes.fetchDonation, require("../routes/fetchDonation"));
 };
