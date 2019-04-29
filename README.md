@@ -5,8 +5,8 @@ This product automates peer-to-charity donations, facilitated by the ethereum pr
 In addition:
 
 1) 4% of every donation is placed in a lottery.
-    - 5 random donors at the end of every month.
-    - process automated for v2.0.
+    - awarded to 5 random donors at the end of every month.
+    - lottery fulfillment to be automated for v2.0.
 2) 1% of every donation is returned to the product ownner. 
 
 Production version available here: https://share-ui.herokuapp.com/
@@ -29,7 +29,11 @@ In addition, the following stack was chosen to rapidly deliver a production read
 
 More documentation on product concept can be found here: [documentation/concept.md](https://github.com/escobard/share/blob/master/documentation/concept.md)
 
-## DAPP Usage
+## Documentation
+
+Documentation has been fragmented into several different markdown files, to facilitate collaboration.
+
+### DAPP Usage
 
 Production version available here: https://share-ui.herokuapp.com/
 
@@ -61,6 +65,26 @@ Devops documentation can be found here: [documentation/devops.md](https://github
 
 Contribution documentation can be found here: [documentation/contribution.md](https://github.com/escobard/share/blob/master/documentation/contribution.md)
 
+## Ethereum Accounts
+
+Owner account: [https://rinkeby.etherscan.io/address/0xcb82438b0443593191ec05d07bb9dbf6eb73594c]
+
+Charity account: [https://rinkeby.etherscan.io/address/0x9b41DB553536D504d16bC6B8d00BCA9255522242]
+
+Lottery account: [https://rinkeby.etherscan.io/address/0x46a3e9029f58bec0c7ba45d1d296bc60fc0b0afc]
+
+Share contract address:[https://rinkeby.etherscan.io/address/0x2a6aa952b2323061abcb0e88186b4963dbd380cb]
+
+OwnerRole contract address:[https://rinkeby.etherscan.io/address/0x0cf186b6298e648a60ee64736de3e178e445bcf5]
+
+CharityRole contract address:[https://rinkeby.etherscan.io/address/0xbcf3ed961a5d8ec0798bbd593a1adfeeca5e3c11]
+
+LotteryRole contract address:[https://rinkeby.etherscan.io/address/0xed0a954a82fced1b06665465302ac193af9b242c]
+
+DonorRole contract address:[https://rinkeby.etherscan.io/address/0x644938c9815e53c5a4c538bcff9a72149f0bc35c]
+
+DonorRole contract address:[https://rinkeby.etherscan.io/address/0xa14e0cff209f04287bfaa208377ecf046186a9f1]
+
 ## Libraries, Frameworks & Tools
 
 [React](https://reactjs.org/)
@@ -81,22 +105,3 @@ Contribution documentation can be found here: [documentation/contribution.md](ht
 
 [Truffle](https://truffleframework.com/)
 
-## Ethereum Accounts
-
-Owner account: [https://rinkeby.etherscan.io/address/0xcb82438b0443593191ec05d07bb9dbf6eb73594c]
-
-Charity account: [https://rinkeby.etherscan.io/address/0x9b41DB553536D504d16bC6B8d00BCA9255522242]
-
-Lottery account: [https://rinkeby.etherscan.io/address/0x46a3e9029f58bec0c7ba45d1d296bc60fc0b0afc]
-
-Share contract address:[https://rinkeby.etherscan.io/address/0x2a6aa952b2323061abcb0e88186b4963dbd380cb]
-
-OwnerRole contract address:[https://rinkeby.etherscan.io/address/0x0cf186b6298e648a60ee64736de3e178e445bcf5]
-
-CharityRole contract address:[https://rinkeby.etherscan.io/address/0xbcf3ed961a5d8ec0798bbd593a1adfeeca5e3c11]
-
-LotteryRole contract address:[https://rinkeby.etherscan.io/address/0xed0a954a82fced1b06665465302ac193af9b242c]
-
-DonorRole contract address:[https://rinkeby.etherscan.io/address/0x644938c9815e53c5a4c538bcff9a72149f0bc35c]
-
-DonorRole contract address:[https://rinkeby.etherscan.io/address/0xa14e0cff209f04287bfaa208377ecf046186a9f1]
