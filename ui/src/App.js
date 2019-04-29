@@ -13,6 +13,8 @@ import {
   apiRoutes
 } from "./constants";
 
+const headers = { "Access-Control-Allow-Origin": "*" };
+
 class App extends Component {
 
   state = {
@@ -28,8 +30,39 @@ class App extends Component {
     donationID: false,
     donorAddress: false,
     fetchedDonation: false,
-    formMessage: ""
+    formMessage: "",
+    time: 0,
+    isOn: false,
+    start: 0
   };
+
+  startTimer = () => {
+    this.setState({
+      isOn: true,
+      time: this.state.time,
+      start: Date.now() - this.state.time
+    })
+    this.timer = setInterval(() => this.setState({
+      time: Date.now() - this.state.start
+    }), 1);
+  };
+
+  stopTimer= () => {
+    this.setState({isOn: false})
+    clearInterval(this.timer)
+  };
+
+  resetTimer = () => {
+    this.setState({time: 0, isOn: false})
+  };
+
+  checkStatus = () =>{
+    axios
+      .get(apiRoutes.makeDonationStatus, { headers})
+      .then(response =>{
+
+      })
+  }
 
   /** Submits the donation POST request to the API
    * @param {object} request, contains all request data
@@ -39,7 +72,7 @@ class App extends Component {
     // TODO this value must be improved for v2, address is validated through first form, which then gives the user access to the second form, which will be either a makeDonation form, or a grant access to fetchDonation if the user's address has already created a donation, need to implement this logic in all layers
 
     // TODO - refactor into constants
-    let headers = { "Access-Control-Allow-Origin": "*" };
+
 
     axios
       .post(apiRoutes.makeDonation, request, { headers })

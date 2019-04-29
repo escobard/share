@@ -85,8 +85,6 @@ try {
       }
 
       console.log("Donation created! Donation ID:", currentDonation);
-
-      return res.status(200).json(global.makeDonation);
     } else {
       res.status(400).json("Web3 instances failed to load!");
     }
