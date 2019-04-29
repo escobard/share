@@ -47,7 +47,7 @@ class App extends Component {
     console.log('donationStatus', apiRoutes.makeDonationStatus);
     this.timer = setInterval(async () =>
         await this.checkStatus()
-    , 3000);
+    , 1000);
   };
 
   stopTimer= () => {
@@ -63,10 +63,22 @@ class App extends Component {
     await axios
       .get(apiRoutes.makeDonationStatus, { headers})
       .then(response =>{
-        console.log('RESPONSE', response)
+        // console.log('RESPONSE', response)
 
         if(response.data.result === 'created'){
           this.stopTimer();
+          this.resetTimer();
+
+          let { data: { result, status, donationID}} = response;
+
+          return this.setState({
+            time: Date.now() - this.state.start,
+            donationStatus: result,
+            donationID: donationID,
+            makeDonationTitle: "makeDonation() success",
+            makeDonationMessage: status,
+            makeDonationStatus: 'green'
+          })
         }
         return this.setState({
           time: Date.now() - this.state.start,
@@ -110,7 +122,7 @@ class App extends Component {
           donorAddress: request.address_pu,
           makeDonationTitle: "makeDonation() started",
           makeDonationMessage: data.status,
-          makeDonationStatus: null
+          makeDonationStatus: 'blue'
         });
 
         // starts logic to check for donationStatus
@@ -236,7 +248,7 @@ class App extends Component {
       fetchedDonation
     } = this.state;
 
-    console.log("App state", this.state);
+    // console.log("App state", this.state);
     return (
       <main className="application">
         <Navigation />
