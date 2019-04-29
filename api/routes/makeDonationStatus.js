@@ -29,16 +29,7 @@ router.get('/', (req, res) => {
 
     // deletes to indicate no donation currently being created
     delete global.makeDonation;
-    return;
   }
-
-
-
-  res.status(200).json(
-    {
-      healthy: true,
-      process: global.environment,
-    });
 });
 
 module.exports = router;
