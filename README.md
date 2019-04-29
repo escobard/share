@@ -1,13 +1,8 @@
-# Share - An Ethereum automated charitable contributions product
+# Share - An Ethereum automated donations product
 
 This product automates peer-to-charity donations, facilitated by the ethereum protocol.
 
-In addition:
-
-1) 4% of every donation is placed in a lottery.
-    - awarded to 5 random donors at the end of every month.
-    - lottery fulfillment to be automated for v2.0.
-2) 1% of every donation is returned to the product ownner. 
+In addition, 4% of every donation is placed in a lottery and 1% of every donation is returned to the product owner. 
 
 Production version available here: https://share-ui.herokuapp.com/
 
@@ -18,7 +13,7 @@ This product follows the traditional MVC (Model View Controller) paradigm where:
     - The View = the React user interface - is handled in the `/ui` directory
     - The Controller = the Node restful api  - handled in the `/api` directory
 
-In addition, the following stack was chosen to rapidly deliver a production ready decentralized product:
+Furthermore, the following stack was chosen to rapidly deliver a production ready decentralized product:
 
 1) Heroku for automatic deployment / hosting of the UI / API layers.
 2) CircleCI for continuous integration and deployment.
@@ -27,7 +22,7 @@ In addition, the following stack was chosen to rapidly deliver a production read
 3) Node with Express for the restful API.
 5) Truffle to test, compile, develop, and deploy solidity smart contracts.
 
-More documentation on product concept can be found here: [documentation/concept.md](https://github.com/escobard/share/blob/master/documentation/concept.md)
+Expanded product concept and highlights can be found here: [documentation/concept.md](https://github.com/escobard/share/blob/master/documentation/concept.md)
 
 ## Documentation
 

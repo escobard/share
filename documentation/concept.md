@@ -1,17 +1,24 @@
-# Concept
+# Share - An Ethereum automated charitable contributions product
 
-## Share - An Ethereum automated charitable contributions product
+This product automates peer-to-charity donations, facilitated by the ethereum protocol.
 
-This proof of concept is built with the purpose of delivering a product that automatically handles peer-to-charity contributions facilitated by the ethereum protocol.
+In addition:
 
-In addition to automated transaction handling, this product also:
+1) 4% of every donation is placed in a lottery.
+    - awarded to 5 random donors at the end of every month.
+    - lottery fulfillment to be automated for v2.0.
+2) 1% of every donation is returned to the product ownner. 
 
-1) takes 4% of every donation and places it in a lottery which awards 5 random donors at the end of every month.
-2) retains 1% of every donation to fund product advancement. 
+Production version available here: https://share-ui.herokuapp.com/
 
 ## Product Technology
 
-The following technology was chosen to rapidly deliver a production ready decentralized product:
+This product follows the traditional MVC (Model View Controller) paradigm where:
+    - The Model = the Ethereum blockchain protocol - is handled in the `/ethereum` directory
+    - The View = the React user interface - is handled in the `/ui` directory
+    - The Controller = the Node restful api  - handled in the `/api` directory
+
+In addition, the following stack was chosen to rapidly deliver a production ready decentralized product:
 
 1) Heroku for automatic deployment / hosting of the UI / API layers.
 2) CircleCI for continuous integration and deployment.
@@ -42,6 +49,8 @@ The following technology was chosen to rapidly deliver a production ready decent
     - multi-contract interaction.
     - automated multi-transaction process.
     - transfer of ownership from one user to another.
+    - supply chain state tracking
+    - access / base / core smart contract paradigm
 4) Truffle:
     - automatic deployment to Rinkeby and Ganache of all contracts.
     - smart contract business logic testing.
