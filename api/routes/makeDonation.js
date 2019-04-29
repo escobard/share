@@ -80,7 +80,7 @@ try {
 
       global.makeDonation = {
         status: `Donation created! Your donationID is: ${currentDonation}`,
-          result: 'created'
+        result: 'created'
       }
 
       console.log("Donation ID:", currentDonation);
