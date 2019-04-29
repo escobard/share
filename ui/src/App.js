@@ -47,12 +47,22 @@ class App extends Component {
         let { data } = response;
 
         console.log("makeDonation API response: ", data);
-        this.setState({
+
+        /* will need this for final case
+                this.setState({
           donationID: data,
           donorAddress: request.address_pu,
           makeDonationTitle: "makeDonation() success",
           makeDonationMessage: `Donation created! Here is your donation's ID: ${data}`,
           makeDonationStatus: "green"
+        });
+        */
+        this.setState({
+          donationID: data,
+          donorAddress: request.address_pu,
+          makeDonationTitle: "makeDonation() success",
+          makeDonationMessage: data.status,
+          makeDonationStatus: null
         });
       })
       .catch(error => {
