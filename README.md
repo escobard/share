@@ -9,9 +9,9 @@ Production version available here: https://share-ui.herokuapp.com/
 ## Product Technology
 
 This product follows the traditional MVC (Model View Controller) paradigm where:
-    - The Model = the Ethereum blockchain protocol - is handled in the `/ethereum` directory
-    - The View = the React user interface - is handled in the `/ui` directory
-    - The Controller = the Node restful api  - handled in the `/api` directory
+   - The Model = the Ethereum blockchain protocol - is handled in the `/ethereum` directory
+   - The View = the React user interface - is handled in the `/ui` directory
+   - The Controller = the Node restful api  - handled in the `/api` directory
 
 Furthermore, the following stack was chosen to rapidly deliver a production ready decentralized product:
 
