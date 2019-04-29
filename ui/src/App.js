@@ -37,17 +37,17 @@ class App extends Component {
   };
 
   startTimer = async () => {
+
     this.setState({
       isOn: true,
       time: this.state.time,
       start: Date.now() - this.state.time
     });
-    let donationStatus = await this.checkStatus();
-    console.log('donationStatus', donationStatus);
-    this.timer = setInterval(() => this.setState({
-      time: Date.now() - this.state.start,
-      donationStatus: ''
-    }), 3);
+
+    console.log('donationStatus', apiRoutes.makeDonationStatus);
+    this.timer = setInterval(async () =>
+        await this.checkStatus()
+    , 3000);
   };
 
   stopTimer= () => {
@@ -59,13 +59,24 @@ class App extends Component {
     this.setState({time: 0, isOn: false})
   };
 
-  checkStatus = () =>{
-    axios
+  checkStatus = async () =>{
+    await axios
       .get(apiRoutes.makeDonationStatus, { headers})
       .then(response =>{
         console.log('RESPONSE', response)
-        return response;
+
+        if(response.data.result === 'created'){
+          this.stopTimer();
+        }
+        return this.setState({
+          time: Date.now() - this.state.start,
+          donationStatus: response.data.result
+        })
       })
+      .catch(err =>{
+        return err;
+      });
+
   }
 
   /** Submits the donation POST request to the API
@@ -97,10 +108,12 @@ class App extends Component {
         this.setState({
           donationID: data,
           donorAddress: request.address_pu,
-          makeDonationTitle: "makeDonation() success",
+          makeDonationTitle: "makeDonation() started",
           makeDonationMessage: data.status,
           makeDonationStatus: null
         });
+
+        // starts logic to check for donationStatus
         this.startTimer();
       })
       .catch(error => {
@@ -223,7 +236,7 @@ class App extends Component {
       fetchedDonation
     } = this.state;
 
-    // console.log("App state", this.state);
+    console.log("App state", this.state);
     return (
       <main className="application">
         <Navigation />

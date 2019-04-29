@@ -52,7 +52,7 @@ console.log('root', apiRoot)
 const apiRoutes = {
   makeDonation: `${apiRoot + "/makeDonation"}`,
   fetchDonation: `${apiRoot + "/fetchDonation"}`,
-  makeDonationStatus: `${apiRoot} + "/makeDonationStatus"`
+  makeDonationStatus: `${apiRoot + "/makeDonationStatus"}`,
 };
 
 export { makeDonationFields, fetchDonationFields, apiRoutes };
