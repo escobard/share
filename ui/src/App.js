@@ -36,15 +36,18 @@ class App extends Component {
     start: 0
   };
 
-  startTimer = () => {
+  startTimer = async () => {
     this.setState({
       isOn: true,
       time: this.state.time,
       start: Date.now() - this.state.time
-    })
+    });
+    let donationStatus = await this.checkStatus();
+    console.log('donationStatus', donationStatus);
     this.timer = setInterval(() => this.setState({
-      time: Date.now() - this.state.start
-    }), 1);
+      time: Date.now() - this.state.start,
+      donationStatus: ''
+    }), 3);
   };
 
   stopTimer= () => {
@@ -60,7 +63,8 @@ class App extends Component {
     axios
       .get(apiRoutes.makeDonationStatus, { headers})
       .then(response =>{
-
+        console.log('RESPONSE', response)
+        return response;
       })
   }
 
@@ -97,6 +101,7 @@ class App extends Component {
           makeDonationMessage: data.status,
           makeDonationStatus: null
         });
+        this.startTimer();
       })
       .catch(error => {
 
