@@ -1,5 +1,5 @@
 require("dotenv").config();
-
+// TODO - clean up this file, move to /services directory
 let Web3 = require("web3"),
   Tx = require("ethereumjs-tx");
 

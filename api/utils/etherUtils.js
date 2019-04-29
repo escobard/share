@@ -5,7 +5,7 @@
  * @param contract: address of the smart contract
  * @param
  */
-
+// TODO - clean up this file, move to /services directory
 const Web3 =require("web3"),
 ShareABI = require("../constants/share_abi");
 
