@@ -67,22 +67,24 @@ class App extends Component {
 
         if(response.data.result === 'created'){
           this.stopTimer();
-          this.resetTimer();
 
           let { data: { result, status, donationID}} = response;
 
-          return this.setState({
-            time: this.state.time + 1,
+          this.setState({
             donationStatus: result,
             donationID: donationID,
             makeDonationTitle: "makeDonation() success",
-            makeDonationMessage: status,
+            makeDonationMessage: `Time spent creating donation: ${this.state.time} seconds. `+ status,
             makeDonationStatus: 'green'
           })
+          return this.resetTimer();
         }
         return this.setState({
-          time: Date.now() - this.state.start,
-          donationStatus: response.data.result
+          time: this.state.time + 1,
+          donationStatus: response.data.result,
+          makeDonationTitle: "makeDonation() started",
+          makeDonationMessage: 'Donation Validated! ' + `Time spent creating donation: ${this.state.time} seconds. `,
+          makeDonationStatus: 'blue'
         })
       })
       .catch(err =>{
@@ -100,23 +102,11 @@ class App extends Component {
 
     // TODO - refactor into constants
 
-
     axios
       .post(apiRoutes.makeDonation, request, { headers })
       .then(response => {
         let { data } = response;
 
-        console.log("makeDonation API response: ", data);
-
-        /* will need this for final case
-                this.setState({
-          donationID: data,
-          donorAddress: request.address_pu,
-          makeDonationTitle: "makeDonation() success",
-          makeDonationMessage: `Donation created! Here is your donation's ID: ${data}`,
-          makeDonationStatus: "green"
-        });
-        */
         this.setState({
           donationID: data,
           donorAddress: request.address_pu,

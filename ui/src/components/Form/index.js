@@ -231,7 +231,7 @@ class DynamicForm extends Component {
     } = this.state;
     let { fields, name, messageHeader, messageValue, messageStatus  } = this.props;
 
-    console.log("STATE", this.state);
+    // console.log("STATE", this.state);
 
     return (
       <Fragment>
