@@ -1,10 +1,12 @@
 # Share - An Ethereum automated charitable contributions product
 
-This proof of concept is built with the purpose of delivering a product that automatically handles peer-to-charity contributions facilitated by the ethereum protocol.
+This product automatically handles peer-to-charity contributions facilitated by the ethereum protocol.
 
-In addition to automated transaction handling, this product also:
+In addition this product also:
 
-1) takes 4% of every donation and places it in a lottery which awards 5 random donors at the end of every month.
+1) takes 4% of every donation and places it in a lottery.
+    - 5 random donors at the end of every month.
+    - process automated for v2.0.
 2) retains 1% of every donation to fund product advancement. 
 
 ## DAPP
@@ -107,7 +109,12 @@ DonorRole contract address:[https://rinkeby.etherscan.io/address/0xa14e0cff209f0
 
 ## Product Technology
 
-The following technology was chosen to rapidly deliver a production ready decentralized product:
+This product follows the traditional MVC (Model View Controller) paradigm where:
+    - The Model = the Ethereum blockchain protocol - is handled in the `/ethereum` directory
+    - The View = the React user interface - is handled in the `/ui` directory
+    - The Controller = the Node restful api  - handled in the `/api` directory
+
+In addition, the following stack was chosen to rapidly deliver a production ready decentralized product:
 
 1) Heroku for automatic deployment / hosting of the UI / API layers.
 2) CircleCI for continuous integration and deployment.
