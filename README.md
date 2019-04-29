@@ -1,6 +1,6 @@
 # Share - An Ethereum automated charitable contributions product
 
-This product automatically handles peer-to-charity contributions facilitated by the ethereum protocol.
+This product automates peer-to-charity donations, facilitated by the ethereum protocol.
 
 In addition:
 
