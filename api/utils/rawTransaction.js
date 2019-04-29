@@ -149,6 +149,12 @@ async function sendRawTransaction(
   } catch (error) {
     console.error("Raw transaction failed", error.message);
 
+    global.makeDonation = {
+      status: `Donation ethereum error!`,
+      result: 'error',
+      errors: error.message
+    }
+
     return res.status(400).json({
       status: "Raw transaction failed",
       error: error.message

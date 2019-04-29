@@ -10,6 +10,29 @@ router.get('/', (req, res) => {
       errors: "No donation request active, make a donation first."
     });
   }
+  
+  // checks if global donation has been sent to ethereum
+  if (global.makeDonation.result === 'validated'){
+    return res.status(200).json(global.makeDonation);
+  }
+
+  // checks if global donation error has been thrown
+  if (global.makeDonation.result === 'error'){
+    res.status(400).json(global.makeDonation);
+    delete global.makeDonation;
+    return
+  }
+
+  // checks if donation has been created
+  if (global.makeDonation.result === 'created'){
+    res.status(200).json(global.makeDonation);
+
+    // deletes to indicate no donation currently being created
+    delete global.makeDonation;
+    return;
+  }
+
+
 
   res.status(200).json(
     {

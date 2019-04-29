@@ -23,7 +23,7 @@ try {
         status: 'Donation Validated! Sending to Ethereum...',
         result: 'validated'
       };
-
+      console.log('MaKEDONATION', global.makeDonation)
       res.status(200).json(global.makeDonation);
 
 
@@ -80,12 +80,11 @@ try {
 
       global.makeDonation = {
         status: `Donation created! Your donationID is: ${currentDonation}`,
-        result: 'created'
+        result: 'created',
+        donationID: currentDonation
       }
 
-      console.log("Donation ID:", currentDonation);
-
-      res.status(200).json(currentDonation);
+      console.log("Donation created! Donation ID:", currentDonation);
     } else {
       res.status(400).json("Web3 instances failed to load!");
     }
