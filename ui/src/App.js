@@ -44,7 +44,6 @@ class App extends Component {
       start: Date.now() - this.state.time
     });
 
-    console.log('donationStatus', apiRoutes.makeDonationStatus);
     this.timer = setInterval(async () =>
         await this.checkStatus()
     , 1000);
@@ -129,7 +128,7 @@ class App extends Component {
           errors = error.response.data.errors;
           status = error.response.data.status;
           message = `API rejection: ${status} ${errors}`
-          console.log("makeDonation error response:",  error.response.data.errors);
+          //console.log("makeDonation error response:",  error.response.data.errors);
         }
         else{
           message = `API rejection: ${error}`
@@ -160,7 +159,7 @@ class App extends Component {
           return [key, data[key]];
         });
 
-        console.log("fetchDonation API response: ", response.data);
+        // console.log("fetchDonation API response: ", response.data);
         this.setState({
           fetchedDonation: donationArray,
           fetchDonationTitle: "fetchDonation() success",
