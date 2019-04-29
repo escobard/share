@@ -72,7 +72,7 @@ class App extends Component {
           let { data: { result, status, donationID}} = response;
 
           return this.setState({
-            time: Date.now() - this.state.start,
+            time: this.state.time + 1,
             donationStatus: result,
             donationID: donationID,
             makeDonationTitle: "makeDonation() success",
@@ -157,6 +157,7 @@ class App extends Component {
    * @param {object} request, contains all request data
    **/
 
+  // TODO - handle fetchDonation the same way makeDonation is handled with a timer
   fetchDonation = request => {
     let headers = { "Access-Control-Allow-Origin": "*" };
     axios
@@ -172,7 +173,7 @@ class App extends Component {
         console.log("fetchDonation API response: ", response.data);
         this.setState({
           fetchedDonation: donationArray,
-          fetchDonationTitle: "fetchDonation success",
+          fetchDonationTitle: "fetchDonation() success",
           // donationId logic here needs to be revised, should grab donationId from fetched donation.
           fetchDonationMessage: `Donation fetched, find your donation data below.`,
           fetchDonationStatus: "green"
