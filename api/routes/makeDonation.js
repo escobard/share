@@ -23,7 +23,7 @@ try {
         status: 'Donation Validated! Sending to Ethereum...',
         result: 'validated'
       };
-      console.log('MaKEDONATION', global.makeDonation)
+      console.log(global.makeDonation)
       res.status(200).json(global.makeDonation);
 
 
