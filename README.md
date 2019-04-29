@@ -9,6 +9,10 @@ In addition to automated transaction handling, this product also:
 
 ## DAPP
 
+Production product available here: https://share-ui.herokuapp.com/
+
+It's encouraged for reviewers to test the DAPP locally, to have access to the logs.
+
 ### DAPP Local setup
 
 Both the `UI` and `API` applications must be running for the product to work as intended.
