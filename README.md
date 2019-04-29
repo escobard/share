@@ -83,7 +83,7 @@ Node Version: v10.14.1
 
 Truffle Version: v4.1.15
 
-Web3 version: ^1.0.0-beta.46
+Web3 version: v1.0.0-beta.46
 
 Donor test account 1: [https://rinkeby.etherscan.io/address/0xa102c7ee530b635e56f133a20786091eb800f640] - PRIVATE KEY: `1E8722F6E86B4E856B4BA2F75F492F4123242713E4E57C3789AFDCF2F631954A`
 

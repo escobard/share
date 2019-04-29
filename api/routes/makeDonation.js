@@ -55,8 +55,6 @@ try {
         res.status(200).json('Initializing contract, send another donation!');
       }
 
-      console.log("Contract initialized! Creating Donation...");
-
       await sendRawTransaction(
         share.methods.makeDonation(),
         donorPub,
@@ -84,7 +82,7 @@ try {
         donationID: currentDonation
       }
 
-      console.log("Donation created! Donation ID:", currentDonation);
+      console.log(global.makeDonation);
     } else {
       res.status(400).json("Web3 instances failed to load!");
     }
