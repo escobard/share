@@ -74,7 +74,7 @@ Feel free to use the following test account for a working `public / donationID` 
 
 public address: 0xa102c7EE530B635E56f133a20786091eB800f640
 
-donationId: 1
+donationId: 8
 ``` 
 
 ## Reviewer Info
