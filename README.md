@@ -9,6 +9,10 @@ In addition to automated transaction handling, this product also:
 
 ## DAPP
 
+Production product available here: https://share-ui.herokuapp.com/
+
+It's encouraged for reviewers to test the DAPP locally, to have access to the logs.
+
 ### DAPP Local setup
 
 Both the `UI` and `API` applications must be running for the product to work as intended.
@@ -85,17 +89,21 @@ Donor test account 2: [https://rinkeby.etherscan.io/address/0xe71a0829e03c6e26fc
 
 Owner account: [https://rinkeby.etherscan.io/address/0xcb82438b0443593191ec05d07bb9dbf6eb73594c]
 
-Charity account: [https://rinkeby.etherscan.io/address/0x9b41db553536d504d16bc6b8d00bca9255522242]
+Charity account: [https://rinkeby.etherscan.io/address/0x9b41DB553536D504d16bC6B8d00BCA9255522242]
 
 Lottery account: [https://rinkeby.etherscan.io/address/0x46a3e9029f58bec0c7ba45d1d296bc60fc0b0afc]
 
-Share contract address:[https://rinkeby.etherscan.io/address/0x8b9ca2c57a03d154f37c1276f313f1124ca45a72]
+Share contract address:[https://rinkeby.etherscan.io/address/0x2a6aa952b2323061abcb0e88186b4963dbd380cb]
 
-OwnerRole contract address:[https://rinkeby.etherscan.io/address/0x84806f1790c4e4cd0699e402f0b47f887b6223ba]
+OwnerRole contract address:[https://rinkeby.etherscan.io/address/0x0cf186b6298e648a60ee64736de3e178e445bcf5]
 
-Charity contract address:[https://rinkeby.etherscan.io/address/0xc8c307be39ecb269758d1f4a41532298db880ace]
+CharityRole contract address:[https://rinkeby.etherscan.io/address/0xbcf3ed961a5d8ec0798bbd593a1adfeeca5e3c11]
 
-Lottery contract address:[https://rinkeby.etherscan.io/address/0x946f7ab8a3d7e2ae10b850ef667c3732fa61fa62]
+LotteryRole contract address:[https://rinkeby.etherscan.io/address/0xed0a954a82fced1b06665465302ac193af9b242c]
+
+DonorRole contract address:[https://rinkeby.etherscan.io/address/0x644938c9815e53c5a4c538bcff9a72149f0bc35c]
+
+DonorRole contract address:[https://rinkeby.etherscan.io/address/0xa14e0cff209f04287bfaa208377ecf046186a9f1]
 
 ## Product Technology
 

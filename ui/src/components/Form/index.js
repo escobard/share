@@ -134,8 +134,8 @@ class DynamicForm extends Component {
       } else {
         this.props.setMessage(
           'fetchDonation',
-          "green",
-          "fetchDonation() validated",
+          "blue",
+          "fetchDonation() started",
           `Fetching donation...`
         );
       }

@@ -46,7 +46,7 @@ router.post("/", fetchDonationBaseValidation, protocolSetup, fetchDonationEtherV
           );
       }
 
-      console.log("Initialization complete! Fetching donation...", donationID);
+      console.log("Initialization complete! Fetching donation...", id);
 
       let donation = await share.methods.fetchDonation(id).call({from: owner_pu});
 

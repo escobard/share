@@ -13,6 +13,8 @@ import {
   apiRoutes
 } from "./constants";
 
+const headers = { "Access-Control-Allow-Origin": "*" };
+
 class App extends Component {
 
   state = {
@@ -28,8 +30,68 @@ class App extends Component {
     donationID: false,
     donorAddress: false,
     fetchedDonation: false,
-    formMessage: ""
+    formMessage: "",
+    time: 0,
+    isOn: false,
+    start: 0
   };
+
+  startTimer = async () => {
+
+    this.setState({
+      isOn: true,
+      time: this.state.time,
+      start: Date.now() - this.state.time
+    });
+
+    console.log('donationStatus', apiRoutes.makeDonationStatus);
+    this.timer = setInterval(async () =>
+        await this.checkStatus()
+    , 1000);
+  };
+
+  stopTimer= () => {
+    this.setState({isOn: false})
+    clearInterval(this.timer)
+  };
+
+  resetTimer = () => {
+    this.setState({time: 0, isOn: false})
+  };
+
+  checkStatus = async () =>{
+    await axios
+      .get(apiRoutes.makeDonationStatus, { headers})
+      .then(response =>{
+        // console.log('RESPONSE', response)
+
+        if(response.data.result === 'created'){
+          this.stopTimer();
+
+          let { data: { result, status, donationID}} = response;
+
+          this.setState({
+            donationStatus: result,
+            donationID: donationID,
+            makeDonationTitle: "makeDonation() success",
+            makeDonationMessage: `Time spent creating donation: ${this.state.time} seconds. `+ status,
+            makeDonationStatus: 'green'
+          })
+          return this.resetTimer();
+        }
+        return this.setState({
+          time: this.state.time + 1,
+          donationStatus: response.data.result,
+          makeDonationTitle: "makeDonation() started",
+          makeDonationMessage: 'Donation Validated! ' + `Time spent creating donation: ${this.state.time} seconds. `,
+          makeDonationStatus: 'blue'
+        })
+      })
+      .catch(err =>{
+        return err;
+      });
+
+  }
 
   /** Submits the donation POST request to the API
    * @param {object} request, contains all request data
@@ -39,21 +101,22 @@ class App extends Component {
     // TODO this value must be improved for v2, address is validated through first form, which then gives the user access to the second form, which will be either a makeDonation form, or a grant access to fetchDonation if the user's address has already created a donation, need to implement this logic in all layers
 
     // TODO - refactor into constants
-    let headers = { "Access-Control-Allow-Origin": "*" };
 
     axios
       .post(apiRoutes.makeDonation, request, { headers })
       .then(response => {
         let { data } = response;
 
-        console.log("makeDonation API response: ", data);
         this.setState({
           donationID: data,
           donorAddress: request.address_pu,
-          makeDonationTitle: "makeDonation() success",
-          makeDonationMessage: `Donation created! Here is your donation's ID: ${data}`,
-          makeDonationStatus: "green"
+          makeDonationTitle: "makeDonation() started",
+          makeDonationMessage: data.status,
+          makeDonationStatus: 'blue'
         });
+
+        // starts logic to check for donationStatus
+        this.startTimer();
       })
       .catch(error => {
 
@@ -84,6 +147,7 @@ class App extends Component {
    * @param {object} request, contains all request data
    **/
 
+  // TODO - handle fetchDonation the same way makeDonation is handled with a timer
   fetchDonation = request => {
     let headers = { "Access-Control-Allow-Origin": "*" };
     axios
@@ -99,7 +163,7 @@ class App extends Component {
         console.log("fetchDonation API response: ", response.data);
         this.setState({
           fetchedDonation: donationArray,
-          fetchDonationTitle: "fetchDonation success",
+          fetchDonationTitle: "fetchDonation() success",
           // donationId logic here needs to be revised, should grab donationId from fetched donation.
           fetchDonationMessage: `Donation fetched, find your donation data below.`,
           fetchDonationStatus: "green"
