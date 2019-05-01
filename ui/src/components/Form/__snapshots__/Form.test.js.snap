@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Form snapshot renders should render correctly in mode 1`] = `
+exports[`Form snapshot renders should render correctly 1`] = `
 <Fragment>
   <p>
     Form has no input props!
