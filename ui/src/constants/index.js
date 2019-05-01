@@ -1,4 +1,4 @@
-const makeDonationFields = [
+export const makeDonationFields = [
   {
     name: "addressPub",
     label: "Address Public",
@@ -23,7 +23,7 @@ const makeDonationFields = [
   }
 ];
 
-const fetchDonationFields = [
+export const fetchDonationFields = [
   {
     name: "address",
     label: "Address Public",
@@ -49,10 +49,10 @@ const apiRoot = environment === "heroku" ? "https://share-controller.herokuapp.c
 
 console.log('root', apiRoot)
 
-const apiRoutes = {
+export const apiRoutes = {
   makeDonation: `${apiRoot + "/makeDonation"}`,
   fetchDonation: `${apiRoot + "/fetchDonation"}`,
   makeDonationStatus: `${apiRoot + "/makeDonationStatus"}`,
 };
 
-export { makeDonationFields, fetchDonationFields, apiRoutes };
+export const headers = { "Access-Control-Allow-Origin": "*" };

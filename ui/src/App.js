@@ -10,15 +10,13 @@ import "./styles/global.scss";
 import {
   makeDonationFields,
   fetchDonationFields,
-  apiRoutes
+  apiRoutes,
+  headers
 } from "./constants";
-
-const headers = { "Access-Control-Allow-Origin": "*" };
 
 class App extends Component {
 
   state = {
-    // TODO setting to true to always display fetch form in case reviewer does not want to make a donation
     makeDonationTitle: "Make Donation form instructions",
     makeDonationMessage:
       "Enter a valid public key in the Address Public field, the public address' private key in the Private Key field, and an ether value smaller than 1 in the Amount field.",
@@ -35,6 +33,11 @@ class App extends Component {
     isOn: false,
     start: 0
   };
+
+  /** Triggers logic to dynamically generate inputState
+   * @param {object[]} props.fields, required, determines form value state
+   * @returns {Component}, Form
+   **/
 
   startTimer = async () => {
 
