@@ -35,11 +35,6 @@ class DynamicForm extends Component {
     }
   }
 
-  /* purely used to test mounted values for now
-  componentDidMount() {
-    console.log(this.state);
-  } */
-
   // TODO - refactor to parent component in the future for re-usability
   /** Submits the form, handles trigger for POST request to API
    * @dev the argument needs to be re-worked after refactor to parent component

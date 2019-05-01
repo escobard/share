@@ -121,7 +121,6 @@ class App extends Component {
   makeDonation = request => {
     // TODO this value must be improved for v2, address is validated through first form, which then gives the user access to the second form, which will be either a makeDonation form, or a grant access to fetchDonation if the user's address has already created a donation, need to implement this logic in all layers
 
-
     // TODO - refactor the promise logic to an util
     axios
       .post(apiRoutes.makeDonation, request, { headers })
@@ -186,7 +185,6 @@ class App extends Component {
         return this.setState({
           fetchedDonation: donationArray,
           fetchDonationTitle: "fetchDonation() success",
-          // donationId logic here needs to be revised, should grab donationId from fetched donation.
           fetchDonationMessage: `Donation fetched, find your donation data below.`,
           fetchDonationStatus: "green"
         });
@@ -217,6 +215,7 @@ class App extends Component {
       });
   };
 
+  // TODO - get rid of this entire function, redundant
   /** Sets the message value after form validation checks
    * @param {string} formName, name of the form to update parent state
    * @param {string} state, state of message component
@@ -247,6 +246,7 @@ class App extends Component {
   };
 
   render() {
+
     let {
       makeDonationTitle,
       makeDonationMessage,
@@ -258,7 +258,6 @@ class App extends Component {
       fetchedDonation
     } = this.state;
 
-    // console.log("App state", this.state);
     return (
       <main className="application">
         <Navigation />
