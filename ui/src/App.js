@@ -265,7 +265,6 @@ class App extends Component {
           <Form
             makeDonation={this.makeDonation}
             fields={makeDonationFields}
-            donationID={donationID}
             messageHeader={makeDonationTitle}
             messageValue={makeDonationMessage}
             messageStatus={makeDonationStatus}

@@ -3,6 +3,7 @@ import { Table } from "semantic-ui-react";
 
 import "./styles.scss"
 
+// TODO - add commentary, and add jest snapshots
 class DonationTable extends Component {
 
   displayDonation = fetchedDonation => {

@@ -5,8 +5,6 @@ import "./styles.scss";
 
 /** Handles the rendering of a form, dynamically renders fields based on props.fields
  * @param {object[]} props.fields, required, determines rendered form fields
- * @param {function} props.fetchDonation / props.makeDonation, one required, determines axios post logic
- * @param {string} donationID, optional, returned donationID from makeDonation()
  * @param {string} messageHeader, optional, base messageHeader value with instructions
  * @param {string} messageValue, optional, base messageContent value with instructions
  * @param {string} messageStatus, optional, updates message color
@@ -14,6 +12,8 @@ import "./styles.scss";
  **/
 
 class DynamicForm extends Component {
+
+  // TODO move this to parent
   state = {
     messageErrors: [],
   };
