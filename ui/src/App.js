@@ -34,9 +34,9 @@ class App extends Component {
     start: 0
   };
 
-  /** Triggers logic to dynamically generate inputState
-   * @param {object[]} props.fields, required, determines form value state
-   * @returns {Component}, Form
+  /** Triggers logic to start the timer
+   * @name startTimer
+   * @dev every second checkStatus request is triggered, to check donationStatus from API
    **/
 
   startTimer = async () => {
@@ -52,14 +52,26 @@ class App extends Component {
     , 1000);
   };
 
+  /** Triggers logic to stop the timer
+   * @name stopTimer
+   **/
+
   stopTimer= () => {
     this.setState({isOn: false})
     clearInterval(this.timer)
   };
 
+  /** Triggers logic to stop the timer
+   * @name resetTimer
+   **/
+
   resetTimer = () => {
     this.setState({time: 0, isOn: false})
   };
+
+  /** Sends GET request
+   * @name stopTimer
+   **/
 
   checkStatus = async () =>{
     await axios
