@@ -15,7 +15,6 @@ import {
 } from "./constants";
 
 class App extends Component {
-
   state = {
     makeDonationTitle: "Make Donation form instructions",
     makeDonationMessage:
@@ -40,25 +39,22 @@ class App extends Component {
    **/
 
   startTimer = async () => {
-
     this.setState({
       isOn: true,
       time: this.state.time,
       start: Date.now() - this.state.time
     });
 
-    this.timer = setInterval(async () =>
-        await this.checkStatus()
-    , 1000);
+    this.timer = setInterval(async () => await this.checkStatus(), 1000);
   };
 
   /** Triggers logic to stop the timer
    * @name stopTimer
    **/
 
-  stopTimer= () => {
-    this.setState({isOn: false})
-    clearInterval(this.timer)
+  stopTimer = () => {
+    this.setState({ isOn: false });
+    clearInterval(this.timer);
   };
 
   /** Triggers logic to stop the timer
@@ -66,56 +62,67 @@ class App extends Component {
    **/
 
   resetTimer = () => {
-    this.setState({time: 0, isOn: false})
+    this.setState({ time: 0, isOn: false });
   };
 
-  /** Sends GET request
-   * @name stopTimer
+  /** Sends GET request to API to check donationStatus
+   * @dev refer to the /makeDonationStatus route within the API request handling logic
+   * @name checkStatus
+   * @returns this.resetTimer || this.setState || err
    **/
 
-  checkStatus = async () =>{
+  checkStatus = async () => {
     await axios
-      .get(apiRoutes.makeDonationStatus, { headers})
-      .then(response =>{
+      .get(apiRoutes.makeDonationStatus, { headers })
+      .then(response => {
         // console.log('RESPONSE', response)
 
-        if(response.data.result === 'created'){
+        // ends the timer if donation has been created.
+        if (response.data.result === "created") {
           this.stopTimer();
 
-          let { data: { result, status, donationID}} = response;
+          let {
+            data: { result, status, donationID }
+          } = response;
 
           this.setState({
             donationStatus: result,
             donationID: donationID,
             makeDonationTitle: "makeDonation() success",
-            makeDonationMessage: `Time spent creating donation: ${this.state.time} seconds. `+ status,
-            makeDonationStatus: 'green'
-          })
+            makeDonationMessage:
+              `Time spent creating donation: ${this.state.time} seconds. ` +
+              status,
+            makeDonationStatus: "green"
+          });
           return this.resetTimer();
         }
+
         return this.setState({
           time: this.state.time + 1,
           donationStatus: response.data.result,
           makeDonationTitle: "makeDonation() started",
-          makeDonationMessage: 'Donation Validated! ' + `Time spent creating donation: ${this.state.time} seconds. `,
-          makeDonationStatus: 'blue'
-        })
+          makeDonationMessage:
+            "Donation Validated! " +
+            `Time spent creating donation: ${this.state.time} seconds. `,
+          makeDonationStatus: "blue"
+        });
       })
-      .catch(err =>{
+      .catch(err => {
         return err;
       });
-
-  }
+  };
 
   /** Submits the donation POST request to the API
+   * @dev this requests triggers the timer, and checkStatus logic
    * @param {object} request, contains all request data
+   * @returns this.startTimer() || this.setState()
    **/
 
   makeDonation = request => {
     // TODO this value must be improved for v2, address is validated through first form, which then gives the user access to the second form, which will be either a makeDonation form, or a grant access to fetchDonation if the user's address has already created a donation, need to implement this logic in all layers
 
-    // TODO - refactor into constants
 
+    // TODO - refactor the promise logic to an util
     axios
       .post(apiRoutes.makeDonation, request, { headers })
       .then(response => {
@@ -126,30 +133,31 @@ class App extends Component {
           donorAddress: request.address_pu,
           makeDonationTitle: "makeDonation() started",
           makeDonationMessage: data.status,
-          makeDonationStatus: 'blue'
+          makeDonationStatus: "blue"
         });
 
         // starts logic to check for donationStatus
-        this.startTimer();
+        return this.startTimer();
       })
       .catch(error => {
+
+        // TODO - refactor this into its own function
 
         let errors;
         let status;
         let message;
 
         // checks for api validation error
-        if (error.response){
+        if (error.response) {
           errors = error.response.data.errors;
           status = error.response.data.status;
-          message = `API rejection: ${status} ${errors}`
+          message = `API rejection: ${status} ${errors}`;
           //console.log("makeDonation error response:",  error.response.data.errors);
-        }
-        else{
-          message = `API rejection: ${error}`
+        } else {
+          message = `API rejection: ${error}`;
         }
 
-        this.setState({
+        return this.setState({
           makeDonationTitle: "makeDonation() error(s)",
           makeDonationMessage: message,
           makeDonationStatus: "red"
@@ -158,56 +166,54 @@ class App extends Component {
   };
 
   /** Submits the fetch donation POST request to the API
+   * @devs
    * @param {object} request, contains all request data
+   * @returns this.setState()
    **/
 
-  // TODO - handle fetchDonation the same way makeDonation is handled with a timer
   fetchDonation = request => {
-    let headers = { "Access-Control-Allow-Origin": "*" };
+
     axios
       .post(apiRoutes.fetchDonation, request, { headers })
       .then(response => {
         let { data } = response;
 
-        // needs to be turned into a usable array of data to work with react
+        // donation object from ethereum is turned into an array to work with react
         let donationArray = Object.keys(data).map(key => {
           return [key, data[key]];
         });
 
-        // console.log("fetchDonation API response: ", response.data);
-        this.setState({
+        return this.setState({
           fetchedDonation: donationArray,
           fetchDonationTitle: "fetchDonation() success",
           // donationId logic here needs to be revised, should grab donationId from fetched donation.
           fetchDonationMessage: `Donation fetched, find your donation data below.`,
           fetchDonationStatus: "green"
         });
-
-
       })
       .catch(error => {
-
         let errors;
         let status;
         let message;
 
         // checks for api validation error
-        if (error.response){
+        if (error.response) {
           errors = error.response.data.errors;
           status = error.response.data.status;
-          message = `API rejection: ${status} ${errors}`
-          console.log("fetchDonation error response:", error.response.data.errors);
-        }
-        else{
-          message = `API rejection: ${error}`
+          message = `API rejection: ${status} ${errors}`;
+          console.log(
+            "fetchDonation error response:",
+            error.response.data.errors
+          );
+        } else {
+          message = `API rejection: ${error}`;
         }
 
-        this.setState({
+        return this.setState({
           fetchDonationTitle: "fetchDonation error(s)",
           fetchDonationMessage: message,
           fetchDonationStatus: "red"
         });
-
       });
   };
 
@@ -220,25 +226,24 @@ class App extends Component {
 
   setMessage = (formName, state, header, content) => {
     switch (formName) {
-      case 'makeDonation':{
+      case "makeDonation": {
         return this.setState({
           makeDonationStatus: state,
           makeDonationTitle: header,
-          makeDonationMessage: content,
+          makeDonationMessage: content
         });
       }
-      case 'fetchDonation':{
+      case "fetchDonation": {
         return this.setState({
           fetchDonationStatus: state,
           fetchDonationTitle: header,
-          fetchDonationMessage: content,
+          fetchDonationMessage: content
         });
       }
       default: {
         return;
       }
     }
-
   };
 
   render() {
