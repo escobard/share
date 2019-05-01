@@ -12,10 +12,9 @@ import "./styles.scss";
  **/
 
 class DynamicForm extends Component {
-
   // TODO move this to parent
   state = {
-    messageErrors: [],
+    messageErrors: []
   };
 
   /** Triggers logic to dynamically generate inputState
@@ -35,7 +34,7 @@ class DynamicForm extends Component {
     }
   }
 
-  // TODO - refactor to parent component in the future for re-usability
+  // TODO - refactor validation logic to parent
   /** Submits the form, handles trigger for POST request to API
    * @dev the argument needs to be re-worked after refactor to parent component
    **/
@@ -45,7 +44,6 @@ class DynamicForm extends Component {
     let { value0, value1, value2, messageErrors } = this.state;
 
     if (makeDonation) {
-
       // turns number string into actual number
       value2 = parseFloat(value2);
 
@@ -61,11 +59,7 @@ class DynamicForm extends Component {
         " Address Private must be valid private key"
       );
 
-      this.validateField(
-        value2,
-        isNaN(value2),
-        " Amount must be a number"
-      );
+      this.validateField(value2, isNaN(value2), " Amount must be a number");
 
       this.validateField(
         value2,
@@ -75,8 +69,9 @@ class DynamicForm extends Component {
 
       // sets messagesState
       if (messageErrors.length > 0) {
+        // TODO - get rid of setMessage and start using setState once at parent
         this.props.setMessage(
-          'makeDonation',
+          "makeDonation",
           "red",
           "makeDonation() error(s)",
           `Contains the following error(s): ${messageErrors.join()}.`
@@ -85,7 +80,7 @@ class DynamicForm extends Component {
         return;
       } else {
         this.props.setMessage(
-          'makeDonation',
+          "makeDonation",
           "green",
           "makeDonation() validated",
           `Making donation...`
@@ -101,7 +96,6 @@ class DynamicForm extends Component {
     }
 
     if (fetchDonation) {
-
       // turns number string into actual number
       value1 = parseInt(value1);
 
@@ -111,15 +105,11 @@ class DynamicForm extends Component {
         "Address Public must be valid public key"
       );
 
-      this.validateField(
-        value1,
-        isNaN(value1),
-        " Amount must be a number"
-      );
+      this.validateField(value1, isNaN(value1), " Amount must be a number");
 
       if (messageErrors.length > 0) {
         this.props.setMessage(
-          'fetchDonation',
+          "fetchDonation",
           "red",
           "fetchDonation() error(s)",
           `Contains the following error(s): ${messageErrors.join()}.`
@@ -128,7 +118,7 @@ class DynamicForm extends Component {
         return;
       } else {
         this.props.setMessage(
-          'fetchDonation',
+          "fetchDonation",
           "blue",
           "fetchDonation() started",
           `Fetching donation...`
@@ -139,8 +129,9 @@ class DynamicForm extends Component {
     }
   };
 
-  /** Sets the message value after form validation checks
-    * @returns updates state
+  // TODO - move to parent
+  /** Resets the message array after form validation checks
+   * @returns this.setState()
    **/
 
   emptyErrors = () => {
@@ -148,6 +139,8 @@ class DynamicForm extends Component {
       messageErrors: []
     });
   };
+
+  // TODO - move to parent
 
   /** Validates a form value
    * @dev can be split out into a validation class to re-use in api / ui layers
@@ -168,7 +161,7 @@ class DynamicForm extends Component {
    **/
 
   inputState = (fieldObject, index) => {
-   Object.keys(fieldObject).map(key => {
+    Object.keys(fieldObject).map(key => {
       // only creates state for the error / value variables
       if (key === "error" || key === "value") {
         // uses index argument to create scalable state for each object in this.fields
@@ -181,12 +174,12 @@ class DynamicForm extends Component {
   };
 
   /** Handles the change of each field's input, when the user types into a field
+   * @dev this is where field level validation could be introduced
    * @param {string} value, new field value
    * @param {string} fieldKey, state.fieldKey, determines which state to update dynamically
    **/
 
   inputChange = (value, fieldKey) => {
-
     this.setState({ [fieldKey]: value });
   };
 
@@ -221,10 +214,14 @@ class DynamicForm extends Component {
   };
 
   render() {
-    const {
-      hasFields,
-    } = this.state;
-    let { fields, name, messageHeader, messageValue, messageStatus  } = this.props;
+    const { hasFields } = this.state;
+    let {
+      fields,
+      name,
+      messageHeader,
+      messageValue,
+      messageStatus
+    } = this.props;
 
     // console.log("STATE", this.state);
 
@@ -238,10 +235,7 @@ class DynamicForm extends Component {
               content={messageValue}
             />
             <Form.Group widths="equal">{this.renderFields(fields)}</Form.Group>
-            <Form.Field
-              onClick={() => this.submitForm(name)}
-              control={Button}
-            >
+            <Form.Field onClick={() => this.submitForm(name)} control={Button}>
               Submit
             </Form.Field>
           </Form>
