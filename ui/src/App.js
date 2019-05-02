@@ -215,47 +215,45 @@ class App extends Component {
   };
 
   /** Submits the fetch donation POST request to the API
-   * @devs
+   * @devs this function returns the fetched donation object from ethereum, via the API
    * @param {object} request, contains all request data
-   * @returns this.setState()
+   * @returns /fetchDonation route response, or validation errors
    **/
 
-  fetchDonation = (value0, value1) => {
+  fetchDonation = (address_pu, donationID) => {
 
     let { messageErrors } = this.state;
 
-    value1 = parseInt(value1);
+    donationID = parseInt(donationID);
 
     this.validateField(
-      value0,
-      value0.length !== 42,
+      address_pu,
+      address_pu.length !== 42,
       "Address Public must be valid public key"
     );
 
-    this.validateField(value1, isNaN(value1), " Amount must be a number");
+    this.validateField(donationID, isNaN(donationID), " Amount must be a number");
 
     if (messageErrors.length > 0) {
-      this.setMessage(
-        "fetchDonation",
-        "red",
-        "fetchDonation() error(s)",
-        `Contains the following error(s): ${messageErrors.join()}.`
-      );
+      this.setState({
+        fetchDonationStatus: "red",
+        fetchDonationTitle: "fetchDonation() error(s)",
+        fetchDonationMessage: `Contains the following error(s): ${messageErrors.join()}.`
+    });
       this.emptyErrors();
       return;
     } else {
-      this.setMessage(
-        "fetchDonation",
-        "blue",
-        "fetchDonation() started",
-        `Fetching donation...`
-      );
+      this.setState({
+        fetchDonationStatus: "blue",
+        fetchDonationTitle: "fetchDonation() started",
+        fetchDonationMessage: `Fetching donation...`
+    });
     }
 
     axios
       .post(
         apiRoutes.fetchDonation,
-        { address_pu: value0, id: value1 },
+        { address_pu: address_pu, id: donationID },
         { headers }
       )
       .then(response => {
@@ -297,36 +295,6 @@ class App extends Component {
           fetchDonationStatus: "red"
         });
       });
-  };
-
-  // TODO - get rid of this entire function, redundant
-  /** Sets the message value after form validation checks
-   * @param {string} formName, name of the form to update parent state
-   * @param {string} state, state of message component
-   * @param {string} header, message header string
-   * @param {string} content, message content string
-   **/
-
-  setMessage = (formName, state, header, content) => {
-    switch (formName) {
-      case "makeDonation": {
-        return this.setState({
-          makeDonationStatus: state,
-          makeDonationTitle: header,
-          makeDonationMessage: content
-        });
-      }
-      case "fetchDonation": {
-        return this.setState({
-          fetchDonationStatus: state,
-          fetchDonationTitle: header,
-          fetchDonationMessage: content
-        });
-      }
-      default: {
-        return;
-      }
-    }
   };
 
   /** Validates a form value
