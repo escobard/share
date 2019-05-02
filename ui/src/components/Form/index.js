@@ -45,56 +45,6 @@ class DynamicForm extends Component {
 
     if (makeDonation) {
       makeDonation(value0, value1, value2);
-      /*
-      // turns number string into actual number
-      value2 = parseFloat(value2);
-
-      this.validateField(
-        value0,
-        value0.length !== 42,
-        "Address Public must be valid public key"
-      );
-
-      this.validateField(
-        value1,
-        value1.length !== 64,
-        " Address Private must be valid private key"
-      );
-
-      this.validateField(value2, isNaN(value2), " Amount must be a number");
-
-      this.validateField(
-        value2,
-        value2 > 1,
-        " Amount cannot be more than 1 ether"
-      );
-
-      // sets messagesState
-      if (messageErrors.length > 0) {
-        // TODO - get rid of setMessage and start using setState once at parent
-        this.props.setMessage(
-          "makeDonation",
-          "red",
-          "makeDonation() error(s)",
-          `Contains the following error(s): ${messageErrors.join()}.`
-        );
-        this.emptyErrors();
-        return;
-      } else {
-        this.props.setMessage(
-          "makeDonation",
-          "green",
-          "makeDonation() validated",
-          `Making donation...`
-        );
-      }
-
-      // sends valuable data to parent, to send actual post request
-      makeDonation({
-        address_pu: value0.toUpperCase(),
-        address_pr: value1,
-        amount: value2
-      });*/
     }
 
     if (fetchDonation) {

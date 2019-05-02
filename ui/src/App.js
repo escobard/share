@@ -118,11 +118,10 @@ class App extends Component {
    * @param {string} address_pu, contains public address form field value
    * @param {string} private_key, contains private address form field value
    * @param {string} amount, contains amount form field value
-   * @returns this.startTimer() || this.setState()
+   * @returns /makeDonation route response, or validation errors
    **/
 
   makeDonation = (address_pu, private_key, amount) => {
-
     let { messageErrors } = this.state;
 
     amount = parseFloat(amount);
@@ -150,38 +149,38 @@ class App extends Component {
     // sets messagesState
     if (messageErrors.length > 0) {
       // TODO - get rid of setMessage and start using setState once at parent
-      this.setMessage(
-        "makeDonation",
-        "red",
-        "makeDonation() error(s)",
-        `Contains the following error(s): ${messageErrors.join()}.`
-      );
+      this.setState({
+        makeDonationStatus: "red",
+        makeDonationTitle: "makeDonation() error(s)",
+        makeDonationMessage: `Contains the following error(s): ${messageErrors.join()}.`
+      });
       this.emptyErrors();
       return;
     } else {
-      this.setMessage(
-        "makeDonation",
-        "green",
-        "makeDonation() validated",
-        `Making donation...`
-      );
+      this.setState({
+        makeDonationStatus: "green",
+        makeDonationTitle: "makeDonation() validated",
+        makeDonationMessage: `Making donation...`
+      });
     }
-
-    let request = {
-      address_pu: address_pu.toUpperCase(),
-      address_pr: private_key,
-      amount: amount
-    };
 
     // TODO - refactor the promise logic to an util
     axios
-      .post(apiRoutes.makeDonation, request, { headers })
+      .post(
+        apiRoutes.makeDonation,
+        {
+          address_pu: address_pu.toUpperCase(),
+          address_pr: private_key,
+          amount: amount
+        },
+        { headers }
+      )
       .then(response => {
         let { data } = response;
 
         this.setState({
           donationID: data,
-          donorAddress: request.address_pu,
+          donorAddress: address_pu,
           makeDonationTitle: "makeDonation() started",
           makeDonationMessage: data.status,
           makeDonationStatus: "blue"
@@ -191,7 +190,6 @@ class App extends Component {
         return this.startTimer();
       })
       .catch(error => {
-
         // TODO - refactor this into its own function
 
         let errors;
@@ -223,7 +221,6 @@ class App extends Component {
    **/
 
   fetchDonation = request => {
-
     axios
       .post(apiRoutes.fetchDonation, request, { headers })
       .then(response => {
@@ -297,7 +294,6 @@ class App extends Component {
     }
   };
 
-
   /** Validates a form value
    * @dev can be split out into a validation class to re-use in api / ui layers
    * @param {*} value, property to validate
@@ -322,7 +318,6 @@ class App extends Component {
   };
 
   render() {
-
     let {
       makeDonationTitle,
       makeDonationMessage,
