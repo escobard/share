@@ -316,6 +316,12 @@ class App extends Component {
     }
   };
 
+  /** Validates validateFetchDonation form values
+   * @name validateFetchDonation
+   * @dev used to reduce clutter in makeDonation
+   * @param {string} address_pu, contains public address form field value
+   * @param {string} donationID, contains amount form field value
+   **/
   validateFetchDonation = (address_pu, donationID) => {
     let { messageErrors } = this.state;
 
@@ -346,7 +352,7 @@ class App extends Component {
         fetchDonationMessage: `Fetching donation...`
       });
     }
-  }
+  };
 
   render() {
     let {
