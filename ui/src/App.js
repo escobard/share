@@ -123,7 +123,6 @@ class App extends Component {
    **/
 
   makeDonation = (address_pu, private_key, amount) => {
-
     let { messageErrors } = this.state;
 
     amount = parseFloat(amount);
@@ -131,7 +130,7 @@ class App extends Component {
     this.validateMakeDonation(address_pu, private_key, amount);
 
     // only runs request, if no validation errors are present
-    if (messageErrors.length === 0){
+    if (messageErrors.length === 0) {
       axios
         .post(
           apiRoutes.makeDonation,
@@ -180,90 +179,69 @@ class App extends Component {
           });
         });
     }
-
   };
 
   /** Submits the fetch donation POST request to the API
    * @devs this function returns the fetched donation object from ethereum, via the API
-   * @param {object} request, contains all request data
+   * @param {string} address_pu, contains public address form field value
+   * @param {string} donationID, contains amount form field value
    * @returns /fetchDonation route response, or validation errors
    **/
 
   fetchDonation = (address_pu, donationID) => {
-
     let { messageErrors } = this.state;
 
     donationID = parseInt(donationID);
 
-    this.validateField(
-      address_pu,
-      address_pu.length !== 42,
-      "Address Public must be valid public key"
-    );
+    this.validateFetchDonation(address_pu, donationID);
 
-    this.validateField(donationID, isNaN(donationID), " Amount must be a number");
+    if (messageErrors.length === 0) {
+      axios
+        .post(
+          apiRoutes.fetchDonation,
+          { address_pu: address_pu, id: donationID },
+          { headers }
+        )
+        .then(response => {
+          let { data } = response;
 
-    if (messageErrors.length > 0) {
-      this.setState({
-        fetchDonationStatus: "red",
-        fetchDonationTitle: "fetchDonation() error(s)",
-        fetchDonationMessage: `Contains the following error(s): ${messageErrors.join()}.`
-    });
-      this.emptyErrors();
-      return;
-    } else {
-      this.setState({
-        fetchDonationStatus: "blue",
-        fetchDonationTitle: "fetchDonation() started",
-        fetchDonationMessage: `Fetching donation...`
-    });
+          // donation object from ethereum is turned into an array to work with react
+          let donationArray = Object.keys(data).map(key => {
+            return [key, data[key]];
+          });
+
+          return this.setState({
+            fetchedDonation: donationArray,
+            fetchDonationTitle: "fetchDonation() success",
+            fetchDonationMessage: `Donation fetched, find your donation data below.`,
+            fetchDonationStatus: "green"
+          });
+        })
+        .catch(error => {
+          let errors;
+          let status;
+          let message;
+
+          // checks for api validation error
+          if (error.response) {
+            errors = error.response.data.errors;
+            status = error.response.data.status;
+            message = `API rejection: ${status} ${errors}`;
+            console.log(
+              "fetchDonation error response:",
+              error.response.data.errors
+            );
+          } else {
+            message = `API rejection: ${error}`;
+          }
+
+          return this.setState({
+            fetchDonationTitle: "fetchDonation error(s)",
+            fetchDonationMessage: message,
+            fetchDonationStatus: "red"
+          });
+        });
     }
-
-    axios
-      .post(
-        apiRoutes.fetchDonation,
-        { address_pu: address_pu, id: donationID },
-        { headers }
-      )
-      .then(response => {
-        let { data } = response;
-
-        // donation object from ethereum is turned into an array to work with react
-        let donationArray = Object.keys(data).map(key => {
-          return [key, data[key]];
-        });
-
-        return this.setState({
-          fetchedDonation: donationArray,
-          fetchDonationTitle: "fetchDonation() success",
-          fetchDonationMessage: `Donation fetched, find your donation data below.`,
-          fetchDonationStatus: "green"
-        });
-      })
-      .catch(error => {
-        let errors;
-        let status;
-        let message;
-
-        // checks for api validation error
-        if (error.response) {
-          errors = error.response.data.errors;
-          status = error.response.data.status;
-          message = `API rejection: ${status} ${errors}`;
-          console.log(
-            "fetchDonation error response:",
-            error.response.data.errors
-          );
-        } else {
-          message = `API rejection: ${error}`;
-        }
-
-        return this.setState({
-          fetchDonationTitle: "fetchDonation error(s)",
-          fetchDonationMessage: message,
-          fetchDonationStatus: "red"
-        });
-      });
   };
 
   /** Validates a form value
@@ -288,6 +266,14 @@ class App extends Component {
       messageErrors: []
     });
   };
+
+  /** Validates makeDonation form values
+   * @name validateMakeDonation
+   * @dev used to reduce clutter in makeDonation
+   * @param {string} address_pu, contains public address form field value
+   * @param {string} private_key, contains private address form field value
+   * @param {string} amount, contains amount form field value
+   **/
 
   validateMakeDonation = (address_pu, private_key, amount) => {
     let { messageErrors } = this.state;
@@ -321,12 +307,43 @@ class App extends Component {
         makeDonationMessage: `Contains the following error(s): ${messageErrors.join()}.`
       });
       this.emptyErrors();
-      return;
     } else {
       this.setState({
         makeDonationStatus: "green",
         makeDonationTitle: "makeDonation() validated",
         makeDonationMessage: `Making donation...`
+      });
+    }
+  };
+
+  validateFetchDonation = (address_pu, donationID) => {
+    let { messageErrors } = this.state;
+
+    this.validateField(
+      address_pu,
+      address_pu.length !== 42,
+      "Address Public must be valid public key"
+    );
+
+    this.validateField(
+      donationID,
+      isNaN(donationID),
+      " Amount must be a number"
+    );
+
+    if (messageErrors.length > 0) {
+      this.setState({
+        fetchDonationStatus: "red",
+        fetchDonationTitle: "fetchDonation() error(s)",
+        fetchDonationMessage: `Contains the following error(s): ${messageErrors.join()}.`
+      });
+      this.emptyErrors();
+      return;
+    } else {
+      this.setState({
+        fetchDonationStatus: "blue",
+        fetchDonationTitle: "fetchDonation() started",
+        fetchDonationMessage: `Fetching donation...`
       });
     }
   }
