@@ -67,8 +67,8 @@ class App extends Component {
   };
 
   /** Sends GET request to API to check donationStatus
-   * @dev refer to the /makeDonationStatus route within the API request handling logic
    * @name checkStatus
+   * @dev refer to the /makeDonationStatus route within the API request handling logic
    * @returns this.resetTimer || this.setState || err
    **/
 
@@ -114,6 +114,7 @@ class App extends Component {
   };
 
   /** Submits the donation POST request to the API
+   * @name makeDonation
    * @dev this requests triggers the timer, and checkStatus logic
    * @param {string} address_pu, contains public address form field value
    * @param {string} private_key, contains private address form field value
@@ -122,96 +123,64 @@ class App extends Component {
    **/
 
   makeDonation = (address_pu, private_key, amount) => {
+
     let { messageErrors } = this.state;
 
     amount = parseFloat(amount);
 
-    this.validateField(
-      address_pu,
-      address_pu.length !== 42,
-      "Address Public must be valid public key"
-    );
+    this.validateMakeDonation(address_pu, private_key, amount);
 
-    this.validateField(
-      private_key,
-      private_key.length !== 64,
-      " Address Private must be valid private key"
-    );
+    // only runs request, if no validation errors are present
+    if (messageErrors.length === 0){
+      axios
+        .post(
+          apiRoutes.makeDonation,
+          {
+            address_pu: address_pu.toUpperCase(),
+            address_pr: private_key,
+            amount: amount
+          },
+          { headers }
+        )
+        .then(response => {
+          let { data } = response;
 
-    this.validateField(amount, isNaN(amount), " Amount must be a number");
+          this.setState({
+            donationID: data,
+            donorAddress: address_pu,
+            makeDonationTitle: "makeDonation() started",
+            makeDonationMessage: data.status,
+            makeDonationStatus: "blue"
+          });
 
-    this.validateField(
-      amount,
-      amount > 1,
-      " Amount cannot be more than 1 ether"
-    );
+          // starts logic to check for donationStatus
+          return this.startTimer();
+        })
+        .catch(error => {
+          // TODO - refactor this into its own function
 
-    // sets messagesState
-    if (messageErrors.length > 0) {
-      // TODO - get rid of setMessage and start using setState once at parent
-      this.setState({
-        makeDonationStatus: "red",
-        makeDonationTitle: "makeDonation() error(s)",
-        makeDonationMessage: `Contains the following error(s): ${messageErrors.join()}.`
-      });
-      this.emptyErrors();
-      return;
-    } else {
-      this.setState({
-        makeDonationStatus: "green",
-        makeDonationTitle: "makeDonation() validated",
-        makeDonationMessage: `Making donation...`
-      });
+          let errors;
+          let status;
+          let message;
+
+          // checks for api validation error
+          if (error.response) {
+            errors = error.response.data.errors;
+            status = error.response.data.status;
+            message = `API rejection: ${status} ${errors}`;
+            //console.log("makeDonation error response:",  error.response.data.errors);
+          } else {
+            message = `API rejection: ${error}`;
+          }
+
+          return this.setState({
+            makeDonationTitle: "makeDonation() error(s)",
+            makeDonationMessage: message,
+            makeDonationStatus: "red"
+          });
+        });
     }
 
-    // TODO - refactor the promise logic to an util
-    axios
-      .post(
-        apiRoutes.makeDonation,
-        {
-          address_pu: address_pu.toUpperCase(),
-          address_pr: private_key,
-          amount: amount
-        },
-        { headers }
-      )
-      .then(response => {
-        let { data } = response;
-
-        this.setState({
-          donationID: data,
-          donorAddress: address_pu,
-          makeDonationTitle: "makeDonation() started",
-          makeDonationMessage: data.status,
-          makeDonationStatus: "blue"
-        });
-
-        // starts logic to check for donationStatus
-        return this.startTimer();
-      })
-      .catch(error => {
-        // TODO - refactor this into its own function
-
-        let errors;
-        let status;
-        let message;
-
-        // checks for api validation error
-        if (error.response) {
-          errors = error.response.data.errors;
-          status = error.response.data.status;
-          message = `API rejection: ${status} ${errors}`;
-          //console.log("makeDonation error response:",  error.response.data.errors);
-        } else {
-          message = `API rejection: ${error}`;
-        }
-
-        return this.setState({
-          makeDonationTitle: "makeDonation() error(s)",
-          makeDonationMessage: message,
-          makeDonationStatus: "red"
-        });
-      });
   };
 
   /** Submits the fetch donation POST request to the API
@@ -320,6 +289,48 @@ class App extends Component {
     });
   };
 
+  validateMakeDonation = (address_pu, private_key, amount) => {
+    let { messageErrors } = this.state;
+
+    this.validateField(
+      address_pu,
+      address_pu.length !== 42,
+      "Address Public must be valid public key"
+    );
+
+    this.validateField(
+      private_key,
+      private_key.length !== 64,
+      " Address Private must be valid private key"
+    );
+
+    this.validateField(amount, isNaN(amount), " Amount must be a number");
+
+    this.validateField(
+      amount,
+      amount > 1,
+      " Amount cannot be more than 1 ether"
+    );
+
+    // sets messagesState
+    if (messageErrors.length > 0) {
+      // TODO - get rid of setMessage and start using setState once at parent
+      this.setState({
+        makeDonationStatus: "red",
+        makeDonationTitle: "makeDonation() error(s)",
+        makeDonationMessage: `Contains the following error(s): ${messageErrors.join()}.`
+      });
+      this.emptyErrors();
+      return;
+    } else {
+      this.setState({
+        makeDonationStatus: "green",
+        makeDonationTitle: "makeDonation() validated",
+        makeDonationMessage: `Making donation...`
+      });
+    }
+  }
+
   render() {
     let {
       makeDonationTitle,
@@ -328,7 +339,6 @@ class App extends Component {
       fetchDonationTitle,
       fetchDonationMessage,
       fetchDonationStatus,
-      donationID,
       fetchedDonation
     } = this.state;
 
