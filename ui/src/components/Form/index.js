@@ -44,6 +44,8 @@ class DynamicForm extends Component {
     let { value0, value1, value2, messageErrors } = this.state;
 
     if (makeDonation) {
+      makeDonation(value0, value1, value2);
+      /*
       // turns number string into actual number
       value2 = parseFloat(value2);
 
@@ -92,7 +94,7 @@ class DynamicForm extends Component {
         address_pu: value0.toUpperCase(),
         address_pr: value1,
         amount: value2
-      });
+      });*/
     }
 
     if (fetchDonation) {
@@ -129,19 +131,6 @@ class DynamicForm extends Component {
     }
   };
 
-  // TODO - move to parent
-  /** Resets the message array after form validation checks
-   * @returns this.setState()
-   **/
-
-  emptyErrors = () => {
-    this.setState({
-      messageErrors: []
-    });
-  };
-
-  // TODO - move to parent
-
   /** Validates a form value
    * @dev can be split out into a validation class to re-use in api / ui layers
    * @param {*} value, property to validate
@@ -153,6 +142,16 @@ class DynamicForm extends Component {
     if (condition) {
       this.setState({ messageErrors: this.state.messageErrors.push(error) });
     }
+  };
+
+  /** Resets the message array after form validation checks
+   * @returns this.setState()
+   **/
+
+  emptyErrors = () => {
+    this.setState({
+      messageErrors: []
+    });
   };
 
   /** Creates the input state dynamically, based on passed props.fields data
