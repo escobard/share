@@ -115,33 +115,35 @@ class App extends Component {
 
   /** Submits the donation POST request to the API
    * @dev this requests triggers the timer, and checkStatus logic
-   * @param {object} request, contains all request data
+   * @param {string} address_pu, contains public address form field value
+   * @param {string} private_key, contains private address form field value
+   * @param {string} amount, contains amount form field value
    * @returns this.startTimer() || this.setState()
    **/
 
-  makeDonation = (value0, value1, value2) => {
+  makeDonation = (address_pu, private_key, amount) => {
 
     let { messageErrors } = this.state;
 
-    value2 = parseFloat(value2);
+    amount = parseFloat(amount);
 
     this.validateField(
-      value0,
-      value0.length !== 42,
+      address_pu,
+      address_pu.length !== 42,
       "Address Public must be valid public key"
     );
 
     this.validateField(
-      value1,
-      value1.length !== 64,
+      private_key,
+      private_key.length !== 64,
       " Address Private must be valid private key"
     );
 
-    this.validateField(value2, isNaN(value2), " Amount must be a number");
+    this.validateField(amount, isNaN(amount), " Amount must be a number");
 
     this.validateField(
-      value2,
-      value2 > 1,
+      amount,
+      amount > 1,
       " Amount cannot be more than 1 ether"
     );
 
@@ -166,9 +168,9 @@ class App extends Component {
     }
 
     let request = {
-      address_pu: value0.toUpperCase(),
-      address_pr: value1,
-      amount: value2
+      address_pu: address_pu.toUpperCase(),
+      address_pr: private_key,
+      amount: amount
     };
 
     // TODO - refactor the promise logic to an util
