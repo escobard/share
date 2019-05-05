@@ -134,29 +134,15 @@ class App extends Component {
       }
 
       let response = await makeDonation(request);
-      console.log(response);
-      // checks for API validation errors
-      if (response.data.errors){
 
-        let { status, errors } = response;
-
-        const message = `API rejection: ${status} ${errors}`;
-
-        return this.setState({
-          makeDonationTitle: "makeDonation() error(s)",
-          makeDonationMessage: message,
-          makeDonationStatus: "red"
-        });
-      }
       // checks for API promise rejections
-      else if(!response.data){
+      if(!response.status){
         return this.setState({
           makeDonationTitle: "makeDonation() error(s)",
           makeDonationMessage: response,
           makeDonationStatus: "red"
         });
       }
-      // checks for success cases
       else if(response.data.result === 'validated'){
         const { data: { status } } = response;
 
