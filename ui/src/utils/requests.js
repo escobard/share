@@ -27,7 +27,6 @@ export const makeDonation = async request => {
   return await axios
     .post(apiRoutes.makeDonation, request, { headers })
     .then(response => {
-      let { data } = response;
       return response;
     })
     .catch(error => {
@@ -46,6 +45,45 @@ export const makeDonation = async request => {
       } else {
         message = `API rejection: ${error}`;
       }
+      return message;
+    });
+};
+
+/** Sends POST request to API to fetchDonation
+ * @dev refer to the /fetchDonation route within the API request handling logic
+ * @name fetchDonation
+ * @returns resolved promise || rejected promise
+ **/
+
+export const fetchDonation = async request =>{
+  return await axios
+    .post(
+      apiRoutes.fetchDonation,
+      request,
+      { headers }
+    )
+    .then(response => {
+
+      return response;
+    })
+    .catch(error => {
+      let errors;
+      let status;
+      let message;
+
+      // checks for api validation error
+      if (error.response) {
+        errors = error.response.data.errors;
+        status = error.response.data.status;
+        message = `API rejection: ${status} ${errors}`;
+        console.log(
+          "fetchDonation error response:",
+          error.response.data.errors
+        );
+      } else {
+        message = `API rejection: ${error}`;
+      }
+
       return message;
     });
 };

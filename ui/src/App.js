@@ -14,7 +14,7 @@ import {
   headers
 } from "./constants";
 
-import { makeDonation, makeDonationStatus } from "./utils/requests";
+import {fetchDonation, makeDonation, makeDonationStatus} from "./utils/requests";
 
 class App extends Component {
   state = {
@@ -166,7 +166,7 @@ class App extends Component {
    * @returns /fetchDonation route response, or validation errors
    **/
 
-  fetchDonation = (address_pu, donationID) => {
+  fetchDonation = async (address_pu, donationID) => {
     let { messageErrors } = this.state;
 
     donationID = parseInt(donationID);
@@ -174,10 +174,25 @@ class App extends Component {
     this.validateFetchDonation(address_pu, donationID);
 
     if (messageErrors.length === 0) {
+
+      const request = { address_pu: address_pu, id: donationID };
+
+      let response = await fetchDonation(request);
+
+      // checks for API promise rejections
+      if (!response.status){
+        return this.setState({
+          fetchDonationTitle: "fetchDonation error(s)",
+          fetchDonationMessage: message,
+          fetchDonationStatus: "red"
+        });
+      }
+      else if(response.data.result ===)
+
       axios
         .post(
           apiRoutes.fetchDonation,
-          { address_pu: address_pu, id: donationID },
+          request,
           { headers }
         )
         .then(response => {
