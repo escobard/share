@@ -121,6 +121,7 @@ class App extends Component {
 
     amount = parseFloat(amount);
 
+    // triggers validation logic
     this.validateMakeDonation(address_pu, private_key, amount);
 
     // only runs request, if no validation errors are present
