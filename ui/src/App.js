@@ -14,7 +14,7 @@ import {
   headers
 } from "./constants";
 
-import { makeDonationStatus } from "./utils/requests";
+import { makeDonation, makeDonationStatus } from "./utils/requests";
 
 class App extends Component {
   state = {
@@ -116,7 +116,7 @@ class App extends Component {
    * @returns /makeDonation route response, or validation errors
    **/
 
-  makeDonation = (address_pu, private_key, amount) => {
+  makeDonation = async (address_pu, private_key, amount) => {
     let { messageErrors } = this.state;
 
     amount = parseFloat(amount);
@@ -125,53 +125,50 @@ class App extends Component {
 
     // only runs request, if no validation errors are present
     if (messageErrors.length === 0) {
-      axios
-        .post(
-          apiRoutes.makeDonation,
-          {
-            address_pu: address_pu.toUpperCase(),
-            address_pr: private_key,
-            amount: amount
-          },
-          { headers }
-        )
-        .then(response => {
-          let { data } = response;
 
-          this.setState({
-            donationID: data,
-            donorAddress: address_pu,
-            makeDonationTitle: "makeDonation() started",
-            makeDonationMessage: data.status,
-            makeDonationStatus: "blue"
-          });
+      const request = {
+        address_pu: address_pu.toUpperCase(),
+        address_pr: private_key,
+        amount: amount
+      }
 
-          // starts logic to check for donationStatus
-          return this.startTimer();
-        })
-        .catch(error => {
-          // TODO - refactor this into its own function
+      let response = await makeDonation(request);
 
-          let errors;
-          let status;
-          let message;
+      // checks for API validation errors
+      if (response.data.errors){
 
-          // checks for api validation error
-          if (error.response) {
-            errors = error.response.data.errors;
-            status = error.response.data.status;
-            message = `API rejection: ${status} ${errors}`;
-            //console.log("makeDonation error response:",  error.response.data.errors);
-          } else {
-            message = `API rejection: ${error}`;
-          }
+        let { status, errors } = response;
 
-          return this.setState({
-            makeDonationTitle: "makeDonation() error(s)",
-            makeDonationMessage: message,
-            makeDonationStatus: "red"
-          });
+        const message = `API rejection: ${status} ${errors}`;
+
+        return this.setState({
+          makeDonationTitle: "makeDonation() error(s)",
+          makeDonationMessage: message,
+          makeDonationStatus: "red"
         });
+      }
+      // checks for API promise rejections
+      else if(!response.data){
+        return this.setState({
+          makeDonationTitle: "makeDonation() error(s)",
+          makeDonationMessage: response,
+          makeDonationStatus: "red"
+        });
+      }
+      // checks for success cases
+      else if(response.data.result === 'validated'){
+        const { data: { status } } = response;
+
+        this.setState({
+          donorAddress: address_pu,
+          makeDonationTitle: "makeDonation() started",
+          makeDonationMessage: status,
+          makeDonationStatus: "blue"
+        });
+
+        // starts logic to check for donationStatus
+        return this.startTimer();
+      }
     }
   };
 
