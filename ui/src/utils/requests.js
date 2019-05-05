@@ -8,7 +8,13 @@ import { apiRoutes, headers } from "../constants";
  **/
 
 export const makeDonationStatus = async () => {
-  return await axios.get(apiRoutes.makeDonationStatus, { headers });
+  try{
+    return await axios.get(apiRoutes.makeDonationStatus, { headers });
+  }
+  catch(err){
+    return err;
+  }
+
 };
 
 /** Sends POST request to API to makeDonation
@@ -17,5 +23,10 @@ export const makeDonationStatus = async () => {
  * @return unresolved promise
  **/
 export const makeDonation = async request => {
-  return await axios.post(apiRoutes.makeDonation, request, { headers });
+  try{
+    return await axios.post(apiRoutes.makeDonation, request, { headers });
+  }
+  catch(err){
+    return err;
+  }
 };

@@ -128,13 +128,13 @@ class App extends Component {
     if (messageErrors.length === 0) {
 
       const request = {
-        address_pu: address_pu.toUpperCase(),
+        address_pu: address_pu,
         address_pr: private_key,
         amount: amount
       }
 
       let response = await makeDonation(request);
-
+      console.log(response);
       // checks for API validation errors
       if (response.data.errors){
 
