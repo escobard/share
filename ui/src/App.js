@@ -183,57 +183,25 @@ class App extends Component {
       if (!response.status){
         return this.setState({
           fetchDonationTitle: "fetchDonation error(s)",
-          fetchDonationMessage: message,
+          fetchDonationMessage: response,
           fetchDonationStatus: "red"
         });
       }
-      else if(response.data.result ===)
+      else if(response.data.result === "fetched"){
+        const { data: { donation } } = response;
 
-      axios
-        .post(
-          apiRoutes.fetchDonation,
-          request,
-          { headers }
-        )
-        .then(response => {
-          let { data } = response;
-
-          // donation object from ethereum is turned into an array to work with react
-          let donationArray = Object.keys(data).map(key => {
-            return [key, data[key]];
-          });
-
-          return this.setState({
-            fetchedDonation: donationArray,
-            fetchDonationTitle: "fetchDonation() success",
-            fetchDonationMessage: `Donation fetched, find your donation data below.`,
-            fetchDonationStatus: "green"
-          });
-        })
-        .catch(error => {
-          let errors;
-          let status;
-          let message;
-
-          // checks for api validation error
-          if (error.response) {
-            errors = error.response.data.errors;
-            status = error.response.data.status;
-            message = `API rejection: ${status} ${errors}`;
-            console.log(
-              "fetchDonation error response:",
-              error.response.data.errors
-            );
-          } else {
-            message = `API rejection: ${error}`;
-          }
-
-          return this.setState({
-            fetchDonationTitle: "fetchDonation error(s)",
-            fetchDonationMessage: message,
-            fetchDonationStatus: "red"
-          });
+        // donation object from ethereum is turned into an array to work with react
+        let donationArray = Object.keys(donation).map(key => {
+          return [key, donation[key]];
         });
+
+        return this.setState({
+          fetchedDonation: donationArray,
+          fetchDonationTitle: "fetchDonation() success",
+          fetchDonationMessage: `Donation ${donation.id} fetched, find your donation data below.`,
+          fetchDonationStatus: "green"
+        });
+      }
     }
   };
 
