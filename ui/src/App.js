@@ -14,6 +14,8 @@ import {
   headers
 } from "./constants";
 
+import { makeDonationStatus } from "./utils/requests";
+
 class App extends Component {
   state = {
     messageErrors: [],
@@ -73,44 +75,36 @@ class App extends Component {
    **/
 
   checkStatus = async () => {
-    await axios
-      .get(apiRoutes.makeDonationStatus, { headers })
-      .then(response => {
-        // console.log('RESPONSE', response)
+    let response = await makeDonationStatus();
 
-        // ends the timer if donation has been created.
-        if (response.data.result === "created") {
-          this.stopTimer();
+    // ends the timer if donation has been created.
+    if (response.data.result === "created") {
+      this.stopTimer();
 
-          let {
-            data: { result, status, donationID }
-          } = response;
+      let {
+        data: { result, status, donationID }
+      } = response;
 
-          this.setState({
-            donationStatus: result,
-            donationID: donationID,
-            makeDonationTitle: "makeDonation() success",
-            makeDonationMessage:
-              `Time spent creating donation: ${this.state.time} seconds. ` +
-              status,
-            makeDonationStatus: "green"
-          });
-          return this.resetTimer();
-        }
-
-        return this.setState({
-          time: this.state.time + 1,
-          donationStatus: response.data.result,
-          makeDonationTitle: "makeDonation() started",
-          makeDonationMessage:
-            "Donation Validated! " +
-            `Time spent creating donation: ${this.state.time} seconds. `,
-          makeDonationStatus: "blue"
-        });
-      })
-      .catch(err => {
-        return err;
+      this.setState({
+        donationStatus: result,
+        donationID: donationID,
+        makeDonationTitle: "makeDonation() success",
+        makeDonationMessage:
+          `Time spent creating donation: ${this.state.time} seconds. ` + status,
+        makeDonationStatus: "green"
       });
+      return this.resetTimer();
+    } else {
+      return this.setState({
+        time: this.state.time + 1,
+        donationStatus: response.data.result,
+        makeDonationTitle: "makeDonation() started",
+        makeDonationMessage:
+          "Donation Validated! " +
+          `Time spent creating donation: ${this.state.time} seconds. `,
+        makeDonationStatus: "blue"
+      });
+    }
   };
 
   /** Submits the donation POST request to the API
