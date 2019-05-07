@@ -19,7 +19,7 @@ export const makeDonationStatus = async () => {
 };
 
 /** Cleans up API / promise rejection errors for UI error display
- * @dev created to avoid clutter
+ * @dev helper util created to avoid catch clutter
  * @name cleanError
  * @return string
  **/
@@ -77,23 +77,6 @@ export const fetchDonation = async request =>{
       return response;
     })
     .catch(error => {
-      let errors;
-      let status;
-      let message;
-
-      // checks for api validation error
-      if (error.response) {
-        errors = error.response.data.errors;
-        status = error.response.data.status;
-        message = `API rejection: ${status} ${errors}`;
-        console.log(
-          "fetchDonation error response:",
-          error.response.data.errors
-        );
-      } else {
-        message = `API rejection: ${error}`;
-      }
-
-      return message;
+      return cleanError(error);
     });
 };
