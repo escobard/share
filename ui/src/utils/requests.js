@@ -8,14 +8,11 @@ import { apiRoutes, headers } from "../constants";
  **/
 
 export const makeDonationStatus = async () => {
-  try{
+  try {
     return await axios.get(apiRoutes.makeDonationStatus, { headers });
+  } catch (error) {
+    return cleanError(error);
   }
-  catch(err){
-    console.log('ERROR', err)
-    return err;
-  }
-
 };
 
 /** Cleans up API / promise rejection errors for UI error display
@@ -24,8 +21,7 @@ export const makeDonationStatus = async () => {
  * @return string
  **/
 
-const cleanError = (error) =>{
-
+const cleanError = error => {
   let errors;
   let status;
   let message;
@@ -65,15 +61,10 @@ export const makeDonation = async request => {
  * @returns resolved promise || rejected promise
  **/
 
-export const fetchDonation = async request =>{
+export const fetchDonation = async request => {
   return await axios
-    .post(
-      apiRoutes.fetchDonation,
-      request,
-      { headers }
-    )
+    .post(apiRoutes.fetchDonation, request, { headers })
     .then(response => {
-
       return response;
     })
     .catch(error => {
