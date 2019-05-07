@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import axios from "axios";
 
 import Navigation from "./components/Navigation";
 import Form from "./components/Form";
@@ -10,8 +9,6 @@ import "./styles/global.scss";
 import {
   makeDonationFields,
   fetchDonationFields,
-  apiRoutes,
-  headers
 } from "./constants";
 
 import {fetchDonation, makeDonation, makeDonationStatus} from "./utils/requests";

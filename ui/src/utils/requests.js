@@ -18,11 +18,36 @@ export const makeDonationStatus = async () => {
 
 };
 
+/** Cleans up API / promise rejection errors for UI error display
+ * @dev created to avoid clutter
+ * @name cleanError
+ * @return string
+ **/
+
+const cleanError = (error) =>{
+
+  let errors;
+  let status;
+  let message;
+
+  // checks for api validation error
+  if (error.response) {
+    errors = error.response.data.errors;
+    status = error.response.data.status;
+    message = `API rejection: ${status} ${errors}`;
+    //console.log("makeDonation error response:",  error.response.data.errors);
+  } else {
+    message = `API rejection: ${error}`;
+  }
+  return message;
+};
+
 /** Sends POST request to API to makeDonation
  * @dev refer to the /makeDonation route within the API request handling logic
  * @name makeDonation
  * @returns resolved promise || rejected promise
  **/
+
 export const makeDonation = async request => {
   return await axios
     .post(apiRoutes.makeDonation, request, { headers })
@@ -30,22 +55,7 @@ export const makeDonation = async request => {
       return response;
     })
     .catch(error => {
-      // TODO - refactor this into its own function
-
-      let errors;
-      let status;
-      let message;
-
-      // checks for api validation error
-      if (error.response) {
-        errors = error.response.data.errors;
-        status = error.response.data.status;
-        message = `API rejection: ${status} ${errors}`;
-        //console.log("makeDonation error response:",  error.response.data.errors);
-      } else {
-        message = `API rejection: ${error}`;
-      }
-      return message;
+      return cleanError(error);
     });
 };
 
