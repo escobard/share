@@ -20,8 +20,8 @@ describe("Testing all routes", () => {
           healthy: true,
           process: "dev"
         },
-        done()
       );
+    done();
   });
 
   it("404 everything else", done => {
