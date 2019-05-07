@@ -1,13 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Form snapshot renders should render correctly 1`] = `
-<Fragment>
-  <p>
-    Form has no input props!
-  </p>
-</Fragment>
-`;
-
 exports[`Form snapshot renders should render fetchDonation form correctly 1`] = `
 <Fragment>
   <Form
