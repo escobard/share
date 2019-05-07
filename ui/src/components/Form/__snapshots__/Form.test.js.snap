@@ -1,9 +1,86 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Form snapshot renders should render correctly 1`] = `
+exports[`Form snapshot renders should render fetchDonation form correctly 1`] = `
 <Fragment>
-  <p>
-    Form has no input props!
-  </p>
+  <Form
+    as="form"
+  >
+    <Message />
+    <FormGroup
+      widths="equal"
+    >
+      <FormInput
+        as={[Function]}
+        control={[Function]}
+        key="0"
+        label="Address Public"
+        name="address"
+        onChange={[Function]}
+        placeholder="Enter user's public address"
+      />
+      <FormInput
+        as={[Function]}
+        control={[Function]}
+        key="1"
+        label="Donation ID"
+        name="id"
+        onChange={[Function]}
+        placeholder="Enter the Donation ID"
+      />
+    </FormGroup>
+    <FormField
+      control={[Function]}
+      onClick={[Function]}
+    >
+      Submit
+    </FormField>
+  </Form>
+</Fragment>
+`;
+
+exports[`Form snapshot renders should render makeDonation form correctly 1`] = `
+<Fragment>
+  <Form
+    as="form"
+  >
+    <Message />
+    <FormGroup
+      widths="equal"
+    >
+      <FormInput
+        as={[Function]}
+        control={[Function]}
+        key="0"
+        label="Address Public"
+        name="addressPub"
+        onChange={[Function]}
+        placeholder="Donor's public address"
+      />
+      <FormInput
+        as={[Function]}
+        control={[Function]}
+        key="1"
+        label="Private Key"
+        name="privKey"
+        onChange={[Function]}
+        placeholder="Donor's private address - only used to SIGN raw transactions within API, not stored or cached"
+      />
+      <FormInput
+        as={[Function]}
+        control={[Function]}
+        key="2"
+        label="Amount"
+        name="amount"
+        onChange={[Function]}
+        placeholder="Donation amount in ether"
+      />
+    </FormGroup>
+    <FormField
+      control={[Function]}
+      onClick={[Function]}
+    >
+      Submit
+    </FormField>
+  </Form>
 </Fragment>
 `;

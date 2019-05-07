@@ -12,10 +12,6 @@ import "./styles.scss";
  **/
 
 class DynamicForm extends Component {
-  // TODO move this to parent
-  state = {
-    messageErrors: []
-  };
 
   /** Triggers logic to dynamically generate inputState
    * @param {object[]} props.fields, required, determines form value state
@@ -34,124 +30,21 @@ class DynamicForm extends Component {
     }
   }
 
-  // TODO - refactor validation logic to parent
   /** Submits the form, handles trigger for POST request to API
    * @dev the argument needs to be re-worked after refactor to parent component
    **/
 
   submitForm = () => {
     let { makeDonation, fetchDonation } = this.props;
-    let { value0, value1, value2, messageErrors } = this.state;
+    let { value0, value1, value2 } = this.state;
 
     if (makeDonation) {
-      // turns number string into actual number
-      value2 = parseFloat(value2);
-
-      this.validateField(
-        value0,
-        value0.length !== 42,
-        "Address Public must be valid public key"
-      );
-
-      this.validateField(
-        value1,
-        value1.length !== 64,
-        " Address Private must be valid private key"
-      );
-
-      this.validateField(value2, isNaN(value2), " Amount must be a number");
-
-      this.validateField(
-        value2,
-        value2 > 1,
-        " Amount cannot be more than 1 ether"
-      );
-
-      // sets messagesState
-      if (messageErrors.length > 0) {
-        // TODO - get rid of setMessage and start using setState once at parent
-        this.props.setMessage(
-          "makeDonation",
-          "red",
-          "makeDonation() error(s)",
-          `Contains the following error(s): ${messageErrors.join()}.`
-        );
-        this.emptyErrors();
-        return;
-      } else {
-        this.props.setMessage(
-          "makeDonation",
-          "green",
-          "makeDonation() validated",
-          `Making donation...`
-        );
-      }
-
-      // sends valuable data to parent, to send actual post request
-      makeDonation({
-        address_pu: value0.toUpperCase(),
-        address_pr: value1,
-        amount: value2
-      });
+      makeDonation(value0, value1, value2);
     }
 
     if (fetchDonation) {
-      // turns number string into actual number
-      value1 = parseInt(value1);
 
-      this.validateField(
-        value0,
-        value0.length !== 42,
-        "Address Public must be valid public key"
-      );
-
-      this.validateField(value1, isNaN(value1), " Amount must be a number");
-
-      if (messageErrors.length > 0) {
-        this.props.setMessage(
-          "fetchDonation",
-          "red",
-          "fetchDonation() error(s)",
-          `Contains the following error(s): ${messageErrors.join()}.`
-        );
-        this.emptyErrors();
-        return;
-      } else {
-        this.props.setMessage(
-          "fetchDonation",
-          "blue",
-          "fetchDonation() started",
-          `Fetching donation...`
-        );
-      }
-
-      fetchDonation({ address_pu: value0, id: value1 });
-    }
-  };
-
-  // TODO - move to parent
-  /** Resets the message array after form validation checks
-   * @returns this.setState()
-   **/
-
-  emptyErrors = () => {
-    this.setState({
-      messageErrors: []
-    });
-  };
-
-  // TODO - move to parent
-
-  /** Validates a form value
-   * @dev can be split out into a validation class to re-use in api / ui layers
-   * @param {*} value, property to validate
-   * @param {*} condition, functional condition to validate / invalidate value
-   * @param {string} error, string of error to add to this.state.errors
-   **/
-
-  validateField = (value, condition, error) => {
-    if (condition) {
-      this.setState({ messageErrors: this.state.messageErrors.push(error) });
+      fetchDonation(value0, value1);
     }
   };
 

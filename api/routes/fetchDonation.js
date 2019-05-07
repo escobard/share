@@ -122,8 +122,17 @@ router.post("/", fetchDonationBaseValidation, protocolSetup, fetchDonationEtherV
 
       // filters the donation, returning trimmed data to user depending on access control
       let fetchedDonation = authenticateUser(address_pu);
-      console.log(fetchedDonation)
-      res.status(200).json(fetchedDonation);
+
+
+      const response = {
+        status: 'Donation Fetched!',
+        result: 'fetched',
+        donation: fetchedDonation
+      };
+
+      console.log('Fetched Donation: ', response);
+
+      res.status(200).json(response);
     } else {
       res
         .status(400)

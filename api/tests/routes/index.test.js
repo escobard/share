@@ -20,13 +20,13 @@ describe("Testing all routes", () => {
           healthy: true,
           process: "dev"
         },
-        done
       );
+    done();
   });
 
   it("404 everything else", done => {
     request(server)
       .get("/foo/bar")
-      .expect(404, done);
+      .expect(404, done());
   });
 });

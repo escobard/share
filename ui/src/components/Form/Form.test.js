@@ -1,12 +1,17 @@
+import React from "react";
+import { shallow } from "enzyme";
+import DynamicForm from "./index";
+import { fetchDonationFields, makeDonationFields } from "../../constants";
 
-import React from 'react';
-import { shallow } from 'enzyme';
-import ShareForm from './index';
+describe("Form snapshot renders", () => {
+  it("should render makeDonation form correctly", () => {
+    const component = shallow(<DynamicForm fields={makeDonationFields} />);
 
-describe('Form snapshot renders', () => {
-    it('should render correctly', () => {
-        const component = shallow(<ShareForm />);
+    expect(component).toMatchSnapshot();
+  });
+  it("should render fetchDonation form correctly", () => {
+    const component = shallow(<DynamicForm fields={fetchDonationFields} />);
 
-        expect(component).toMatchSnapshot();
-    });
+    expect(component).toMatchSnapshot();
+  });
 });
