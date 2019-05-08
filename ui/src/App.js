@@ -12,6 +12,7 @@ import {
 } from "./constants";
 
 import {fetchDonation, makeDonation, makeDonationStatus} from "./utils/requests";
+import Footer from "./components/Footer";
 
 class App extends Component {
   state = {
@@ -258,7 +259,6 @@ class App extends Component {
 
     // sets messagesState
     if (messageErrors.length > 0) {
-      // TODO - get rid of setMessage and start using setState once at parent
       this.setState({
         makeDonationStatus: "red",
         makeDonationTitle: "makeDonation() error(s)",
@@ -355,7 +355,7 @@ class App extends Component {
           </section>
         ) : null}
 
-        <footer> Copyright &copy; 2019, git@escobard</footer>
+        <Footer/>
       </main>
     );
   }
