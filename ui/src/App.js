@@ -259,7 +259,6 @@ class App extends Component {
 
     // sets messagesState
     if (messageErrors.length > 0) {
-      // TODO - get rid of setMessage and start using setState once at parent
       this.setState({
         makeDonationStatus: "red",
         makeDonationTitle: "makeDonation() error(s)",
