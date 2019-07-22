@@ -1,6 +1,6 @@
 # Share - An Ethereum automated donations product
 
-This product automates peer-to-charity donations, facilitated by the ethereum protocol.
+A decentralized product that automates peer-to-charity donations, powered by Ethereum.
 
 In addition, 4% of every donation is placed in a lottery and 1% of every donation is returned to the product owner. 
 
